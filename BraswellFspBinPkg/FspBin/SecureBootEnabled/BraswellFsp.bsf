@@ -69,8 +69,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PcdPnpSettings                  1 bytes    $_DEFAULT_ = 3
         $gPlatformFspPkgTokenSpaceGuid_PcdSdDetectChk                  1 bytes    $_DEFAULT_ = 1
 
-    Find "$BSWFSP$"
+    Find "BSWSBFSP"
         $gPlatformFspPkgTokenSpaceGuid_PcdImageRevision                4 bytes    $_DEFAULT_ = 0x01010700
+        Skip 24 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PcdEnableSecureBoot             1 bytes    $_DEFAULT_ = 2
 
 EndStruct
 
@@ -159,6 +161,12 @@ List &gPlatformFspPkgTokenSpaceGuid_PcdSataInterfaceSpeed
     Selection 3 , "GEN3"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_PcdEnableSecureBoot
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
+    Selection 2 , "Auto"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_PcdApertureSize
     Selection 0x1 , "128 MB"
     Selection 0x2 , "256 MB"
@@ -176,6 +184,8 @@ BeginInfoBlock
 EndInfoBlock
 
 Page "Platform"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdEnableSecureBoot, "Enable Secure Boot", &gPlatformFspPkgTokenSpaceGuid_PcdEnableSecureBoot,
+        Help "Enable/disable secure boot. Auto by default."
     Combo $gPlatformFspPkgTokenSpaceGuid_PcdTurboMode, "Processor Turbo Mode", &EN_DIS,
         Help "Enable/disable Processor Turbo Mode."
     Combo $gPlatformFspPkgTokenSpaceGuid_PcdPnpSettings, "Pnp Setting Type", &gPlatformFspPkgTokenSpaceGuid_PcdPnpSettings,

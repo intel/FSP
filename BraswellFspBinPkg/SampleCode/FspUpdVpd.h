@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2015, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2016, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -457,6 +457,27 @@ typedef struct {
   UINT8                       PcdSdDetectChk;
 /** Offset 0x0163
 **/
+  UINT8                       I2C0Frequency;
+/** Offset 0x0164
+**/
+  UINT8                       I2C1Frequency;
+/** Offset 0x0165
+**/
+  UINT8                       I2C2Frequency;
+/** Offset 0x0166
+**/
+  UINT8                       I2C3Frequency;
+/** Offset 0x0167
+**/
+  UINT8                       I2C4Frequency;
+/** Offset 0x0168
+**/
+  UINT8                       I2C5Frequency;
+/** Offset 0x0169
+**/
+  UINT8                       I2C6Frequency;
+/** Offset 0x016A
+**/
   UINT8                       ReservedSiliconInitUpd[411];
 } SILICON_INIT_UPD;
 
@@ -489,19 +510,13 @@ typedef struct _UPD_DATA_REGION {
 /** Offset 0x0100
 **/
   SILICON_INIT_UPD            SiliconInitUpd;
-/** Offset 0x02FE
+/** Offset 0x0305
 **/
   UINT16                      PcdRegionTerminator;
-/** Offset 0x0300
-**/
-  UINT8                       UnusedUpdSpace4[2123];
-/** Offset 0x0B4B
-**/
-  UINT8                       PcdPaddingSpace;
 } UPD_DATA_REGION;
 
-#define FSP_IMAGE_ID    0x5053464253575342        /* 'BSWSBFSP' */
-#define FSP_IMAGE_REV   0x01010401 
+#define FSP_IMAGE_ID    0x2450534657534224        /* '$BSWFSP$' */
+#define FSP_IMAGE_REV   0x01010700 
 
 typedef struct _VPD_DATA_REGION {
 /** Offset 0x0000
@@ -514,14 +529,6 @@ typedef struct _VPD_DATA_REGION {
 /** Offset 0x000C
 **/
   UINT32                      PcdUpdRegionOffset;
-/** Offset 0x0010
-**/
-  UINT8                       UnusedVpdSpace0[20];
-/** Offset 0x0024
-    Enable Secure Boot
-    Enable/disable secure boot. Auto by default.
-**/
-  UINT8                       PcdEnableSecureBoot;
 } VPD_DATA_REGION;
 
 #pragma pack()

@@ -513,9 +513,15 @@ typedef struct _UPD_DATA_REGION {
 /** Offset 0x0305
 **/
   UINT16                      PcdRegionTerminator;
+/** Offset 0x0307
+**/
+  UINT8                       UnusedUpdSpace4[2116];
+/** Offset 0x0B4B
+**/
+  UINT8                       PcdPaddingSpace;
 } UPD_DATA_REGION;
 
-#define FSP_IMAGE_ID    0x2450534657534224        /* '$BSWFSP$' */
+#define FSP_IMAGE_ID    0x5053464253575342        /* 'BSWSBFSP' */
 #define FSP_IMAGE_REV   0x01010700 
 
 typedef struct _VPD_DATA_REGION {
@@ -529,6 +535,14 @@ typedef struct _VPD_DATA_REGION {
 /** Offset 0x000C
 **/
   UINT32                      PcdUpdRegionOffset;
+/** Offset 0x0010
+**/
+  UINT8                       UnusedVpdSpace0[20];
+/** Offset 0x0024
+    Enable Secure Boot
+    Enable/disable secure boot. Auto by default.
+**/
+  UINT8                       PcdEnableSecureBoot;
 } VPD_DATA_REGION;
 
 #pragma pack()
