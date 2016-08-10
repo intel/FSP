@@ -16,7 +16,7 @@ Intel FSP Home Page www.intel.com/FSP
 
 
 # FSP Project Information
-# Each FSP project will be hosted in a separate branch.
-#
-# FSP Project Name - Branch Name
+Each FSP project will be hosted in a separate branch.
+
+#FSP Project Name - Branch Name
 Braswell - Braswell
