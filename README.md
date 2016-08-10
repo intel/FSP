@@ -13,3 +13,10 @@ Intel FSP Home Page www.intel.com/FSP
 ## GitHub
 * v1.0 https://github.com/tianocore/edk2/tree/master/IntelFspPkg
 * v2.0 https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg
+
+
+# FSP Project Information
+# Each FSP project will be hosted in a separate branch.
+#
+# FSP Project Name - Branch Name
+Braswell - Braswell
