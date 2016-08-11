@@ -20,3 +20,6 @@ Each FSP project will be hosted in a separate branch.
 
 #FSP Project Name - Branch Name - Git command
 Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Atom™ x5-E8000 Processor - Braswell - git clone -b Braswell https://github.com/IntelFsp/FSP.git
+
+Intel® Atom™ processor E3800 product family - Bay Trail
+git clone -b BayTrail https://github.com/IntelFsp/FSP.git
