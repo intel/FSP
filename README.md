@@ -23,3 +23,6 @@ Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Ato
 
 Intel® Atom™ processor E3800 product family - Bay Trail - 
 git clone -b BayTrail https://github.com/IntelFsp/FSP.git
+
+Intel® Atom™ processor C2000 product family - Rangeley -
+git clone -b Rangeley https://github.com/IntelFsp/FSP.git
