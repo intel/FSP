@@ -1,0 +1,118 @@
+================================================================================
+Intel(R) Firmware Support Package (Intel® FSP) for 4th Generation Intel®
+Core™ Processors with Mobile Intel® QM87 and HM86 Chipsets Release Notes
+
+Release name: SHARKBAY_FSP_GOLD_002_04-JUN-2014
+June 4, 2014
+
+================================================================================
+================================================================================
+Copyright (c)  2014, Intel Corporation.
+This Intel® Firmware Support Package ("Software") is furnished under license and 
+may only be used or copied in accordance with the terms of that license. 
+No license, express or implied, by estoppel or otherwise, to any intellectual 
+property rights is granted by this document. The Software is subject to change 
+without notice, and should not be construed as a commitment by Intel Corporation
+to market, license, sell or support any product or technology. Unless otherwise 
+provided for in the license under which this Software is provided, the Software 
+is provided AS IS, with no warranties of any kind, express or implied.
+Except as expressly permitted by the Software license, neither Intel Corporation
+nor its suppliers assumes any responsibility or liability for any errors or 
+inaccuracies that may appear herein. Except as expressly permitted by the 
+Software license, no part of the Software may be reproduced, stored in a 
+retrieval system, transmitted in any form, or distributed by any means without 
+the express written consent of Intel Corporation.
+
+================================================================================
+================================================================================
+RELEASE NOTES CONTENTS
+================================================================================
+1.   OVERVIEW
+2.   RELEASE INFORMATION
+3.   INTEGRATION NOTES
+4.   SUPPORTED FEATURES
+5.   FSP CONFIGURATION
+6.   LIMITATIONS
+7.   KNOWN ISSUES
+8.   CHANGE LOG
+
+================================================================================
+1.  OVERVIEW
+================================================================================
+This package contains required binary image(s) and collateral for the
+Intel(R) Firmware Support Package (Intel® FSP) for 4th Generation Intel® Core™
+Processors with Mobile Intel® QM87 and HM86 Chipsets.
+
+================================================================================
+2.  RELEASE INFORMATION
+================================================================================
+This release has been integrated into a coreboot Proof of Concept (POC)
+bootloader and verified on the Lava Canyon and White Tip Mountain 1
+Customer Reference Boards (CRBs).
+
+================================================================================
+3.  INTEGRATION NOTES
+================================================================================
+Several header and source files are provided in the package to assist with
+integrating the FSP with the bootloader.
+
+Please consult the Intel® FSP Integration Guide for further information.
+
+================================================================================
+4.  SUPPORTED FEATURES
+================================================================================
+- 4th Generation Intel® Core™ Processors B0 and C0 stepping 
+- Mobile Intel® QM87 and HM86 Chipsets B0 stepping 
+- Memory Detection and Initialization
+- Fast Boot support
+- 8 GB Max Addressable Memory @ 1066/1333 MT/s
+  - If only 1 DIMM is used, channel 0 must be used.
+  - Both memory channels must be populated with DIMMs of same configuration.
+- MTRR Initialization on all CPU threads
+- PCI Express initialization
+- SATA
+- HD Audio
+- USB 2.0 and 3.0 ports
+- Configuration options through Intel BCT
+- Rebase to a different base address through Intel BCT
+
+================================================================================
+5.  FSP CONFIGURATION
+================================================================================
+When integrating with a bootloader the FSP should be placed at the same base 
+address that it is configured to.
+
+A Binary Configuration Tool for Intel® FSP is available as a companion tool and 
+is intended to be used to: 
+
+  - Change configuration options based on provided BSF and FSP.
+  - Rebase the FSP to a different Base Address.
+
+Please refer the Binary Configuration Tool User's Guide for the usage 
+instructions.
+
+================================================================================
+6.  LIMITATIONS
+================================================================================
+
+
+================================================================================
+7.  KNOWN ISSUES
+================================================================================
+
+
+================================================================================
+8.  CHANGE LOG
+================================================================================
+Release SHARKBAY_FSP_GOLD_001_16-DEC-2013: (December 16, 2013)
+ - First public release
+
+ Notes:
+   *. When XHCI is enabled, ECHI controllers are disabled to save power
+  **. RMT is only enabled when Fastboot is disabled or during the first boot.
+      To capture RMT debug messages, please enable debug serial output and 
+      set MRC debug level to "ALL" through BCT
+
+Release SHARKBAY_FSP_GOLD_002_04-JUN-2014: (June 4, 2014)
+ - Resolved an issue enabling graphics for Haswell ULT.
+ - Resolved a resource allocation issue with the SATA controller in IDE mode.
