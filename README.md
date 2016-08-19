@@ -17,4 +17,5 @@ Intel® Atom™ processor E3800 product family | Bay Trail | -git clone -b BayTr
 Intel® Atom™ processor C2000 product family | Rangeley  | -git clone -b Rangeley https://github.com/IntelFsp/FSP.git
 6th Generation Intel® Core™ processors and chipsets | Skylake  | -git clone -b Skylake https://github.com/IntelFsp/FSP.git
 5th Generation Intel® Core™ processors and chipsets | Broadwell  | -git clone -b Broadwell https://github.com/IntelFsp/FSP.git
+4th Generation Intel® Core™ processors with mobile Intel® QM87 and HM86 chipsets | Shark Bay mobile | -git clone -b SharkBay https://github.com/IntelFsp/FSP.git
 
