@@ -14,6 +14,7 @@ FSP Project Name | Branch Name | Git command
 :--------------- | :---------: | :----------
 Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Atom™ x5-E8000 Processor | Braswell | git clone -b Braswell https://github.com/IntelFsp/FSP.git
 Intel® Atom™ processor E3800 product family | Bay Trail | git clone -b BayTrail https://github.com/IntelFsp/FSP.git
+Intel® Atom™ processor E6xx series with Intel® Platform Controller Hub EG20T | Queen Bay: Tunnel Creek and Topcliff | git clone -b QueensBay https://github.com/IntelFsp/FSP.git
 Intel® Atom™ processor C2000 product family | Rangeley  | git clone -b Rangeley https://github.com/IntelFsp/FSP.git
 6th Generation Intel® Core™ processors and chipsets | Skylake  | git clone -b Skylake https://github.com/IntelFsp/FSP.git
 5th Generation Intel® Core™ processors and chipsets | Broadwell  | git clone -b Broadwell https://github.com/IntelFsp/FSP.git
