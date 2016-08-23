@@ -8,7 +8,7 @@ www.intel.com/FSP
 https://github.com/IntelFsp/FSP/wiki
 
 ## Support and Issue Submission Link
-https://shnintelsf2crm.intel.myshn.net/console
+http://www.intel.com/content/www/xr/ar/design/support/ips/training/access-and-login.html
 
 # FSP Project Information
 Each FSP project will be hosted in a separate branch.
