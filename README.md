@@ -16,6 +16,7 @@ Each FSP project will be hosted in a separate branch.
 
 FSP Project Name | Branch Name | Git command
 :--------------- | :---------: | :----------
+Intel® Atom™ processor E3900 product family (formerly Apollo Lake, Compliant with FSP v2.0 Specification) | Apollo Lake | git clone -b ApolloLake https://github.com/IntelFsp/FSP.git
 Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Atom™ x5-E8000 Processor (formerly Braswell, Compliant with FSP v1.1 Specification) | Braswell | git clone -b Braswell https://github.com/IntelFsp/FSP.git
 Intel® Atom™ processor E3800 product family (formerly Bay Trail, Compliant with FSP v1.0 Specification) | BayTrail | git clone -b BayTrail https://github.com/IntelFsp/FSP.git
 Intel® Atom™ processor E6xx series with Intel® Platform Controller Hub EG20T (formerly Queens Bay: Tunnel Creek and Topcliff, Compliant with FSP v1.0 Specification) | QueensBay | git clone -b QueensBay https://github.com/IntelFsp/FSP.git
