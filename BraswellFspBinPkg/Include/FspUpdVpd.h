@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2016, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2017, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -478,7 +478,10 @@ typedef struct {
   UINT8                       I2C6Frequency;
 /** Offset 0x016A
 **/
-  UINT8                       ReservedSiliconInitUpd[411];
+  UINT16                      APTaskTimeoutCnt;
+/** Offset 0x016C
+**/
+  UINT8                       ReservedSiliconInitUpd[409];
 } SILICON_INIT_UPD;
 
 #define FSP_UPD_SIGNATURE                0x2444505557534224        /* '$BSWUPD$' */
@@ -516,7 +519,7 @@ typedef struct _UPD_DATA_REGION {
 } UPD_DATA_REGION;
 
 #define FSP_IMAGE_ID    0x2450534657534224        /* '$BSWFSP$' */
-#define FSP_IMAGE_REV   0x01010700 
+#define FSP_IMAGE_REV   0x01010800 
 
 typedef struct _VPD_DATA_REGION {
 /** Offset 0x0000
