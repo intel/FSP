@@ -8,7 +8,7 @@
   be modified by end users or could render the generated boot loader
   inoperable.
 
-  Copyright (c) 2016 Intel Corporation. All rights reserved
+  Copyright (c) 2017 Intel Corporation. All rights reserved
   This software and associated documentation (if any) is furnished
   under a license and may only be used or copied in accordance
   with the terms of the license. Except as permitted by such
@@ -60,10 +60,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PcdEccSupport                   1 bytes    $_DEFAULT_ = 1
         $gPlatformFspPkgTokenSpaceGuid_PcdSerialPortBaudRate           1 bytes    $_DEFAULT_ = 1
         Skip 8 bytes
-        $gPlatformFspPkgTokenSpaceGuid_PcdCustomerRevision            32 bytes    $_DEFAULT_ = "version xxx"
+        $gPlatformFspPkgTokenSpaceGuid_PcdCustomerRevision            32 bytes    $_DEFAULT_ = 0x76,0x65,0x72,0x73,0x69,0x6F,0x6E,0x20,0x78,0x78,0x78,0x00
 
     Find "AVNRNG-V"
-        $gPlatformFspPkgTokenSpaceGuid_PcdImageRevision                4 bytes    $_DEFAULT_ = 0x00000150
+        $gPlatformFspPkgTokenSpaceGuid_PcdImageRevision                4 bytes    $_DEFAULT_ = 0x00000160
         Skip 24 bytes
         $gPlatformFspPkgTokenSpaceGuid_PcdSpdWriteProtect              1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PcdTcoEnable                    1 bytes    $_DEFAULT_ = 0x00
@@ -101,8 +101,6 @@ List &gPlatformFspPkgTokenSpaceGuid_PcdSerialPortBaudRate
     Selection 6 , "19200"
     Selection 12 , "9600"
     Selection 24 , "4800"
-    Selection 48 , "2400"
-    Selection 96 , "1200"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_PcdMrcInitTsegSize
