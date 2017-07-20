@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2016, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2017, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -35,7 +35,7 @@ are permitted provided that the following conditions are met:
 
 #include <FspUpd.h>
 
-#pragma pack(push, 1)
+#pragma pack(1)
 
 
 /** Fsp T Common UPD
@@ -71,32 +71,6 @@ typedef struct {
   UINT8                       Reserved1[12];
 } FSPT_COMMON_UPD;
 
-/** Fsp T Test Configuration
-**/
-typedef struct {
-
-/** Offset 0x0060
-**/
-  UINT32                      Signature;
-
-/** Offset 0x0064
-**/
-  UINT8                       ReservedFsptTestUpd[28];
-} FSP_T_TEST_CONFIG;
-
-/** Fsp T Restricted Configuration
-**/
-typedef struct {
-
-/** Offset 0x0080
-**/
-  UINT32                      Signature;
-
-/** Offset 0x0084
-**/
-  UINT8                       ReservedFsptRestrictedUpd[12];
-} FSP_T_RESTRICTED_CONFIG;
-
 /** Fsp T UPD Configuration
 **/
 typedef struct {
@@ -111,21 +85,17 @@ typedef struct {
 
 /** Offset 0x0040
 **/
-  UINT8                       ReservedFsptUpd1[32];
+  UINT8                       ReservedFsptUpd1[16];
 
-/** Offset 0x0060
+/** Offset 0x0050
 **/
-  FSP_T_TEST_CONFIG           FsptTestConfig;
+  UINT8                       UnusedUpdSpace0[6];
 
-/** Offset 0x0080
-**/
-  FSP_T_RESTRICTED_CONFIG     FsptRestrictedConfig;
-
-/** Offset 0x0090
+/** Offset 0x0056
 **/
   UINT16                      UpdTerminator;
 } FSPT_UPD;
 
-#pragma pack(pop)
+#pragma pack()
 
 #endif

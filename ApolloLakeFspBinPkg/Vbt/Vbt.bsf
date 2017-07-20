@@ -86,7 +86,8 @@ SKIP                                       1 byte      ; Skip bmp_bits_1 complet
 ALIGN
 
 ; bmp_Bits_2
-SKIP                                       6 bits
+$Kvmr_Session_Enable                       1 bit       ; KVMR session enable/boot to fake DVI Display feature
+SKIP                                       5 bits
 $bmp_Dynamic_CdClock_Supported             1 bit       ; Enable/Disable Dynamic CD Clock select
 $Hotplug_Support_Enb                       1 bit       ; Hot Plug support in DOS
 ALIGN
@@ -189,7 +190,8 @@ SKIP                                       6 bytes     ; Skip till Flags 0 field
 SKIP                                       1 bit       ; Skip EDID less enable bit used for EFP's
 $Int_LFP_Compression_Enable                1 bit       ; Compression enable bit
 $Int_LFP_Compression_Method_Select         1 bit       ; Compression method select PPS/CPS
-SKIP                                       5 bits      ; Skip remaining bits of Flags 0
+$Int_LFP_Dual_Pipe_Ganged_Enable           1 bit       ; Dual pipe ganged support enable bit for LFP
+SKIP                                       4 bits      ; Skip remaining bits of Flags 0
 ALIGN
 
 $Int_LFP_Compression_Struct_Index          4 bits      ; Compression structure index in Block 55
@@ -227,13 +229,14 @@ $Int_EFP1_Dock_Redriver_Present            1 bit       ; Set if dock Redriver is
 SKIP                                       1 bit       ; Reserved
 ALIGN
 $Int_EFP1_HDMI_LS_Type                     5 bits      ; HDMI Level shifter configuration
-SKIP                                       3 bits      ; Reserved
+$Int_EFP1_HDMI_Maximum_Data_Rate           3 bits      ; HDMI maximum data rate
 ALIGN
 SKIP                                       2 bytes     ; Skip EDIDless DTD offset
 $EFP1_EDIDless_en                          1 bit       ; EDIDless enable bit
 $EFP1_Compression_Enable                   1 bit       ; Compression enable bit
 $EFP1_Compression_Method_Select            1 bit       ; Compression method select PPS/CPS
-SKIP                                       5 bits      ; Skip remaining bits
+$EFP1_Dual_Pipe_Ganged_Enable              1 bit       ; EFP1 dual pipe ganged display enable bit
+SKIP                                       4 bits      ; Skip remaining bits
 ALIGN
 $EFP1_Compression_Struct_Index             4 bits      ; Compression structure index in Block 55
 SKIP                                       4 bits      ; Reserved bits
@@ -276,13 +279,14 @@ $Int_EFP2_Dock_Redriver_Present            1 bit       ; Set if dock Redriver is
 SKIP                                       1 bit       ; Reserved
 ALIGN
 $Int_EFP2_HDMI_LS_Type                     5 bits      ; HDMI Level shifter configuration
-SKIP                                       3 bits      ; Reserved
+$Int_EFP2_HDMI_Maximum_Data_Rate           3 bits      ; HDMI maximum data rate
 ALIGN
 SKIP                                       2 bytes     ; Skip EDIDless DTD offset
 $EFP2_EDIDless_en                          1 bit       ; EDIDless enable bit
 $EFP2_Compression_Enable                   1 bit       ; Compression enable bit
 $EFP2_Compression_Method_Select            1 bit       ; Compression method select PPS/CPS
-SKIP                                       5 bits      ; Skip remaining bits
+$EFP2_Dual_Pipe_Ganged_Enable              1 bit       ; EFP2 dual pipe ganged display enable bit
+SKIP                                       4 bits      ; Skip remaining bits
 ALIGN
 $EFP2_Compression_Struct_Index             4 bits      ; Compression structure index in Block 55
 SKIP                                       4 bits      ; Reserved bits
@@ -310,7 +314,56 @@ SKIP                                       3 bytes     ; GPIO resource ID and GP
 $Int_EFP2_Dp_Boost_Magnitude               4 bits      ; DP IBoost magnitude level
 $Int_EFP2_Hdmi_Boost_Magnitude             4 bits      ; HDMI IBoost magnitude level
 
-SKIP                                       38 bytes    ; Skip device data structure
+; Device 3
+SKIP                                       2 bytes     ; Skip Device Handle
+$Int_EFP3_Type                             2 bytes     ; Device type
+SKIP                                       1 byte      ; I2C Speed
+$Int_EFP3_OnBoard_Pre_emphasis             3 bits      ; Set DisplayPort pre-emphasis level for onboard Redriver
+$Int_EFP3_OnBoard_Voltage_swing            3 bits      ; Set DisplayPort voltage swing level for onboard Redriver
+$Int_EFP3_OnBoard_Redriver_Present         1 bit       ; Set if onboard Redriver is present
+SKIP                                       1 bit       ; Reserved
+ALIGN
+$Int_EFP3_Dock_Pre_emphasis                3 bits      ; Set DisplayPort Redriver pre-emphasis level for dock Redriver
+$Int_EFP3_Dock_Voltage_swing               3 bits      ; Set DisplayPort Redriver voltage swing level for dock Redriver
+$Int_EFP3_Dock_Redriver_Present            1 bit       ; Set if dock Redriver is present
+SKIP                                       1 bit       ; Reserved
+ALIGN
+$Int_EFP3_HDMI_LS_Type                     5 bits      ; HDMI Level shifter configuration
+$Int_EFP3_HDMI_Maximum_Data_Rate           3 bits      ; HDMI maximum data rate
+ALIGN
+SKIP                                       2 bytes     ; Skip EDIDless DTD offset
+$EFP3_EDIDless_en                          1 bit       ; EDIDless enable bit
+$EFP3_Compression_Enable                   1 bit       ; Compression enable bit
+$EFP3_Compression_Method_Select            1 bit       ; Compression method select PPS/CPS
+$EFP3_Dual_Pipe_Ganged_Enable              1 bit       ; EFP3 dual pipe ganged display enable bit
+SKIP                                       4 bits      ; Skip remaining bits
+ALIGN
+$EFP3_Compression_Struct_Index             4 bits      ; Compression structure index in Block 55
+SKIP                                       4 bits      ; Reserved bits
+ALIGN
+SKIP                                       2 bytes     ; Skip Reserved_1
+SKIP                                       2 bytes     ; skip add-in module table offset
+$Int_EFP3_Port                             1 byte      ; EFP1 port
+SKIP                                       2 bytes     ; Skip I2C bus and slave address
+$Int_EFP3_DDC_Pin                          1 byte      ; EFP1 DDC Pin
+SKIP                                       3 bytes     ; Timing info pointer and DVO Config
+$Int_EFP3_Port_Dockable                    1 bit       ; HDMI/DP Docked Port
+$EFP3_Lane_Reversal                        1 bit       ; Port Reversal
+$EFP3_LSPcon_Options                       1 bit       ; Hdmi2.0 support options
+$Int_EFP3_IBoost_Enable                    1 bit       ; IBoost enable/disable bit
+$EFP3_HPD_Inversion_Enable                 1 bit       ; HPD inversion bit
+SKIP                                       3 bits      ; Reserved
+ALIGN
+SKIP                                       1 byte      ; Obsolete: Was used for EFP compatibility field
+$Int_EFP3_AUX_Channel                      1 byte      ; DP AUX channel
+SKIP                                       1 byte      ; Obsolete: Was used for Dongle Detect
+SKIP                                       6 bytes     ; Skip to end of child structure
+$EFP3_USB_C_DongleFeature_Enabled          1 bit       ; USB type C dongle feature enabled
+SKIP                                       7 bits      ; Reserved
+SKIP                                       3 bytes     ; GPIO resource ID and GPIO number
+$Int_EFP3_Dp_Boost_Magnitude               4 bits      ; DP IBoost magnitude level
+$Int_EFP3_Hdmi_Boost_Magnitude             4 bits      ; HDMI IBoost magnitude level
+
 SKIP                                       38 bytes    ; Skip device data structure
 SKIP                                       38 bytes    ; Skip device data structure
 SKIP                                       38 bytes    ; Skip device data structure
@@ -711,7 +764,8 @@ ALIGN
 ; bmp_Driver_Flags_1
 $CUIHotK_Static_Display                    1 bit
 $Embedded_Platform                         1 bit
-SKIP                                       6 bits
+$Disable_DisplayEnum                       1 bit       ; Used in RCR 2262110
+SKIP                                       5 bits
 ALIGN
 
 $Legacy_Monitor_Max_X                      2 bytes
@@ -740,7 +794,7 @@ $Inter_Pixel_Storage                       1 bit       ; Hidden feature.
 $Dynamic_FPS_Enable                        1 bit       ; Dynamic Frames per second(DFPS) feature Enable/Disable Flag.
 $DMRRS                                     1 bit       ; Dynamic media refresh rate enable/disable
 $ADT                                       1 bit       ; Assertive display technology enable/disable
-SKIP                                       1 bit       ; Reserved
+$HPD_Wake                                  1 bit       ; HPD events routing to display driver when system is in S0ix/DC9, enable/disable
 $PC_Fields_Enable                          1 bit       ; PC Feature field's validity Flag.
 ALIGN
 
@@ -1218,6 +1272,167 @@ $eDP_Full_Link_Train_Vswing_15             4 bits      ; Panel #15 Full link tra
 $eDP_Full_Link_Train_PreEmp_16             4 bits      ; Panel #16 Full link training initial Pre-emphasis
 $eDP_Full_Link_Train_Vswing_16             4 bits      ; Panel #16 Full link training initial Voltage Swing
 
+$eDP_Apical_Display_Ip_Enable_01           1 bit       ; Panel #01 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_02           1 bit       ; Panel #02 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_03           1 bit       ; Panel #03 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_04           1 bit       ; Panel #04 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_05           1 bit       ; Panel #05 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_06           1 bit       ; Panel #06 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_07           1 bit       ; Panel #07 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_08           1 bit       ; Panel #08 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_09           1 bit       ; Panel #09 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_10           1 bit       ; Panel #10 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_11           1 bit       ; Panel #11 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_12           1 bit       ; Panel #12 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_13           1 bit       ; Panel #13 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_14           1 bit       ; Panel #14 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_15           1 bit       ; Panel #15 Apical Display IP Enable bit
+$eDP_Apical_Display_Ip_Enable_16           1 bit       ; Panel #16 Apical Display IP Enable bit
+
+; Panel #01 Apical Display IP parameters
+$eDP_Panel_Oui_01                          4 bytes     ; Panel #01 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_01                  4 bytes     ; Panel #01 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_01              4 bytes     ; Panel #01 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_01                 4 bytes     ; Panel #01 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_01                     4 bytes     ; Panel #01 Apical specific DPCD backlight
+$eDP_Ambient_Light_01                      4 bytes     ; Panel #01 Apical specific Ambient light
+$eDP_Backlight_Scale_01                    4 bytes     ; Panel #01 Apical specific backlight scale value
+
+; Panel #02 Apical Display IP parameters
+$eDP_Panel_Oui_02                          4 bytes     ; Panel #02 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_02                  4 bytes     ; Panel #02 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_02              4 bytes     ; Panel #02 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_02                 4 bytes     ; Panel #02 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_02                     4 bytes     ; Panel #02 Apical specific DPCD backlight
+$eDP_Ambient_Light_02                      4 bytes     ; Panel #02 Apical specific Ambient light
+$eDP_Backlight_Scale_02                    4 bytes     ; Panel #02 Apical specific backlight scale value
+
+; Panel #03 Apical Display IP parameters
+$eDP_Panel_Oui_03                          4 bytes     ; Panel #03 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_03                  4 bytes     ; Panel #03 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_03              4 bytes     ; Panel #03 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_03                 4 bytes     ; Panel #03 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_03                     4 bytes     ; Panel #03 Apical specific DPCD backlight
+$eDP_Ambient_Light_03                      4 bytes     ; Panel #03 Apical specific Ambient light
+$eDP_Backlight_Scale_03                    4 bytes     ; Panel #03 Apical specific backlight scale value
+
+; Panel #04 Apical Display IP parameters
+$eDP_Panel_Oui_04                          4 bytes     ; Panel #04 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_04                  4 bytes     ; Panel #04 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_04              4 bytes     ; Panel #04 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_04                 4 bytes     ; Panel #04 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_04                     4 bytes     ; Panel #04 Apical specific DPCD backlight
+$eDP_Ambient_Light_04                      4 bytes     ; Panel #04 Apical specific Ambient light
+$eDP_Backlight_Scale_04                    4 bytes     ; Panel #04 Apical specific backlight scale value
+
+; Panel #05 Apical Display IP parameters
+$eDP_Panel_Oui_05                          4 bytes     ; Panel #05 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_05                  4 bytes     ; Panel #05 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_05              4 bytes     ; Panel #05 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_05                 4 bytes     ; Panel #05 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_05                     4 bytes     ; Panel #05 Apical specific DPCD backlight
+$eDP_Ambient_Light_05                      4 bytes     ; Panel #05 Apical specific Ambient light
+$eDP_Backlight_Scale_05                    4 bytes     ; Panel #05 Apical specific backlight scale value
+
+; Panel #06 Apical Display IP parameters
+$eDP_Panel_Oui_06                          4 bytes     ; Panel #06 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_06                  4 bytes     ; Panel #06 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_06              4 bytes     ; Panel #06 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_06                 4 bytes     ; Panel #06 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_06                     4 bytes     ; Panel #06 Apical specific DPCD backlight
+$eDP_Ambient_Light_06                      4 bytes     ; Panel #06 Apical specific Ambient light
+$eDP_Backlight_Scale_06                    4 bytes     ; Panel #06 Apical specific backlight scale value
+
+; Panel #07 Apical Display IP parameters
+$eDP_Panel_Oui_07                          4 bytes     ; Panel #07 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_07                  4 bytes     ; Panel #07 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_07              4 bytes     ; Panel #07 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_07                 4 bytes     ; Panel #07 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_07                     4 bytes     ; Panel #07 Apical specific DPCD backlight
+$eDP_Ambient_Light_07                      4 bytes     ; Panel #07 Apical specific Ambient light
+$eDP_Backlight_Scale_07                    4 bytes     ; Panel #07 Apical specific backlight scale value
+
+; Panel #08 Apical Display IP parameters
+$eDP_Panel_Oui_08                          4 bytes     ; Panel #08 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_08                  4 bytes     ; Panel #08 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_08              4 bytes     ; Panel #08 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_08                 4 bytes     ; Panel #08 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_08                     4 bytes     ; Panel #08 Apical specific DPCD backlight
+$eDP_Ambient_Light_08                      4 bytes     ; Panel #08 Apical specific Ambient light
+$eDP_Backlight_Scale_08                    4 bytes     ; Panel #08 Apical specific backlight scale value
+
+; Panel #09 Apical Display IP parameters
+$eDP_Panel_Oui_09                          4 bytes     ; Panel #09 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_09                  4 bytes     ; Panel #09 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_09              4 bytes     ; Panel #09 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_09                 4 bytes     ; Panel #09 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_09                     4 bytes     ; Panel #09 Apical specific DPCD backlight
+$eDP_Ambient_Light_09                      4 bytes     ; Panel #09 Apical specific Ambient light
+$eDP_Backlight_Scale_09                    4 bytes     ; Panel #09 Apical specific backlight scale value
+
+; Panel #10 Apical Display IP parameters
+$eDP_Panel_Oui_10                          4 bytes     ; Panel #10 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_10                  4 bytes     ; Panel #10 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_10              4 bytes     ; Panel #10 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_10                 4 bytes     ; Panel #10 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_10                     4 bytes     ; Panel #10 Apical specific DPCD backlight
+$eDP_Ambient_Light_10                      4 bytes     ; Panel #10 Apical specific Ambient light
+$eDP_Backlight_Scale_10                    4 bytes     ; Panel #10 Apical specific backlight scale value
+
+; Panel #11 Apical Display IP parameters
+$eDP_Panel_Oui_11                          4 bytes     ; Panel #11 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_11                  4 bytes     ; Panel #11 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_11              4 bytes     ; Panel #11 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_11                 4 bytes     ; Panel #11 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_11                     4 bytes     ; Panel #11 Apical specific DPCD backlight
+$eDP_Ambient_Light_11                      4 bytes     ; Panel #11 Apical specific Ambient light
+$eDP_Backlight_Scale_11                    4 bytes     ; Panel #11 Apical specific backlight scale value
+
+; Panel #12 Apical Display IP parameters
+$eDP_Panel_Oui_12                          4 bytes     ; Panel #12 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_12                  4 bytes     ; Panel #12 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_12              4 bytes     ; Panel #12 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_12                 4 bytes     ; Panel #12 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_12                     4 bytes     ; Panel #12 Apical specific DPCD backlight
+$eDP_Ambient_Light_12                      4 bytes     ; Panel #12 Apical specific Ambient light
+$eDP_Backlight_Scale_12                    4 bytes     ; Panel #12 Apical specific backlight scale value
+
+; Panel #13 Apical Display IP parameters
+$eDP_Panel_Oui_13                          4 bytes     ; Panel #13 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_13                  4 bytes     ; Panel #13 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_13              4 bytes     ; Panel #13 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_13                 4 bytes     ; Panel #13 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_13                     4 bytes     ; Panel #13 Apical specific DPCD backlight
+$eDP_Ambient_Light_13                      4 bytes     ; Panel #13 Apical specific Ambient light
+$eDP_Backlight_Scale_13                    4 bytes     ; Panel #13 Apical specific backlight scale value
+
+; Panel #14 Apical Display IP parameters
+$eDP_Panel_Oui_14                          4 bytes     ; Panel #14 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_14                  4 bytes     ; Panel #14 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_14              4 bytes     ; Panel #14 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_14                 4 bytes     ; Panel #14 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_14                     4 bytes     ; Panel #14 Apical specific DPCD backlight
+$eDP_Ambient_Light_14                      4 bytes     ; Panel #14 Apical specific Ambient light
+$eDP_Backlight_Scale_14                    4 bytes     ; Panel #14 Apical specific backlight scale value
+
+; Panel #15 Apical Display IP parameters
+$eDP_Panel_Oui_15                          4 bytes     ; Panel #15 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_15                  4 bytes     ; Panel #15 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_15              4 bytes     ; Panel #15 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_15                 4 bytes     ; Panel #15 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_15                     4 bytes     ; Panel #15 Apical specific DPCD backlight
+$eDP_Ambient_Light_15                      4 bytes     ; Panel #15 Apical specific Ambient light
+$eDP_Backlight_Scale_15                    4 bytes     ; Panel #15 Apical specific backlight scale value
+
+; Panel #16 Apical Display IP parameters
+$eDP_Panel_Oui_16                          4 bytes     ; Panel #16 Apical specific Panel OUI
+$eDP_Dpcd_Base_Address_16                  4 bytes     ; Panel #16 Apical specific DPCD base address
+$eDP_Dpcd_Irdidix_Control0_16              4 bytes     ; Panel #16 Apical specific DPCD Idridix control 0
+$eDP_Dpcd_Option_Select_16                 4 bytes     ; Panel #16 Apical specific DPCD option select
+$eDP_Dpcd_Backlight_16                     4 bytes     ; Panel #16 Apical specific DPCD backlight
+$eDP_Ambient_Light_16                      4 bytes     ; Panel #16 Apical specific Ambient light
+$eDP_Backlight_Scale_16                    4 bytes     ; Panel #16 Apical specific backlight scale value
+
 ;==============================================================================
 ; Block 28 - EDID-less EFP support - Panel data
 ;------------------------------------------------------------------------------
@@ -1314,6 +1529,23 @@ $Blt_Control_13                            2 bits      ; 00 = Default, 01 = CCFL
 $Blt_Control_14                            2 bits      ; 00 = Default, 01 = CCFL backlight, 10 = LED backlight
 $Blt_Control_15                            2 bits      ; 00 = Default, 01 = CCFL backlight, 10 = LED backlight
 $Blt_Control_16                            2 bits      ; 00 = Default, 01 = CCFL backlight, 10 = LED backlight
+
+$LcdVcc_On_During_S0_State_01              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #01
+$LcdVcc_On_During_S0_State_02              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #02
+$LcdVcc_On_During_S0_State_03              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #03
+$LcdVcc_On_During_S0_State_04              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #04
+$LcdVcc_On_During_S0_State_05              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #05
+$LcdVcc_On_During_S0_State_06              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #06
+$LcdVcc_On_During_S0_State_07              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #07
+$LcdVcc_On_During_S0_State_08              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #08
+$LcdVcc_On_During_S0_State_09              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #09
+$LcdVcc_On_During_S0_State_10              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #10
+$LcdVcc_On_During_S0_State_11              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #11
+$LcdVcc_On_During_S0_State_12              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #12
+$LcdVcc_On_During_S0_State_13              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #13
+$LcdVcc_On_During_S0_State_14              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #14
+$LcdVcc_On_During_S0_State_15              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #15
+$LcdVcc_On_During_S0_State_16              1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #16
 
 ;==============================================================================
 ; Block 41 - Flat Panel Data Tables Pointers
@@ -1901,7 +2133,6 @@ $Lfp_Pwm_Controller_Selection_15           4 bits      ; Pwm Controller Selectio
 
 $Lfp_Pwm_Source_Selection_16               4 bits      ; Pwm Source Selection for Panel #16
 $Lfp_Pwm_Controller_Selection_16           4 bits      ; Pwm Controller Selection for Panel #16
-
 
 ;==============================================================================
 ; Block 44 - BIA (Backlight Image Adaption) Support
@@ -2792,6 +3023,17 @@ $Mipi_PmicI2cBusNo_4                       1 byte
 $Mipi_PmicI2cBusNo_5                       1 byte
 $Mipi_PmicI2cBusNo_6                       1 byte
 
+;==============================================================================
+; Block 54 - RGB Palette entries
+;------------------------------------------------------------------------------
+
+SKIP                                       3 bytes     ;Block ID/size
+$Enable_Correction                         1 bit       ;Enable/Disable Gamma Correction
+SKIP                                       7 bits      ;Reserved
+$Red_Table                                 256 bytes
+$Green_Table                               256 bytes
+$Blue_Table                                256 bytes
+
 ;=============================================================================
 ; Block 55 - Compression Block
 ;-----------------------------------------------------------------------------
@@ -3028,6 +3270,7 @@ List    &Int_EFP_Port_List
   Selection       0x00,       "N/A"
   Selection       0x01,       "HDMI-B"
   Selection       0x02,       "HDMI-C"
+  Selection       0x0A,       "DisplayPort-A"
   Selection       0x07,       "DisplayPort-B"
   Selection       0x08,       "DisplayPort-C"
 EndList
@@ -3035,11 +3278,12 @@ EndList
 List    &LFP_Port_List
   Selection       0x0A,       "Embedded DisplayPort-A"
   Selection       0x15,       "MIPI Port A"
-  Selection       0x17,       "MIPI Port C"
+  ;  Selection       0x17,       "MIPI Port C"
 EndList
 
 List    &Int_DP_AUX_Channel_List
   Selection       0x00,       "N/A"
+  Selection       0x40,       "DisplayPort-A AUX Channel"
   Selection       0x10,       "DisplayPort-B AUX Channel"
   Selection       0x20,       "DisplayPort-C AUX Channel"
 EndList
@@ -3161,7 +3405,6 @@ List    &eDP_VSwing_Preemph_table_List
   Selection       0x1,        "Default VSwing/Pre-Emphasis Table"
 EndList
 
-
 List    &Under_Over_List
   Selection       0x0,        "Enable Underscan and Overscan modes"
   Selection       0x1,        "Enable only overscan modes"
@@ -3196,6 +3439,7 @@ List    &DisplayList
   Selection       0x08,       "LFP"
   Selection       0x04,       "EFP1"
   Selection       0x40,       "EFP2"
+  Selection       0x20,       "EFP3"
   Selection       0x00,       "None"
 EndList
 
@@ -3237,7 +3481,7 @@ List    &Video_Command_Mode_List
 EndList
 
 List    &Packet_Sequence_Video_Mode_List
-  ;Selection    0x0,    "Reserved"
+  ;Selection       0x0,        "Reserved"
   Selection       0x1,        "Non-burst with sync pulse"
   Selection       0x2,        "Non-burst with sync events"
   Selection       0x3,        "Burst Mode"
@@ -3317,10 +3561,11 @@ List    &RgbFlip
 EndList
 
 List    &Pwm_Source_List
-  ;Selection 0x0,  "PWM From PMIC"
-  ;Selection 0x1,  "PWM From LPSS"
+  ; Selection       0x0,        "PWM From PMIC"
+  ; Selection       0x1,        "PWM From LPSS"
   Selection       0x2,        "PWM From Display Engine"
   Selection       0x3,        "PWM From LCD Panel"
+  Selection       0x4,        "Panel driver interface"
 EndList
 
 List    &Pwm_Controller_List
@@ -3347,28 +3592,11 @@ List    &Hdmi2SupportOptions
   Selection       0x01,       "Enabled"
 EndList
 
-List    &Compression_Method_List
-  Selection       0x00,       "Using PPS"
-  Selection       0x01,       "Using CPS"
-EndList
-
-List    &Compression_Struct_Index_List
-  Selection       0x00,       "Compression Parameters 1"
-  Selection       0x01,       "Compression Parameters 2"
-EndList
-
-List    &Line_Buffer_Depth_List
-  Selection       0x08,       "8 bits"
-  Selection       0x09,       "9 bits"
-  Selection       0x10,       "10 bits"
-  Selection       0x11,       "11 bits"
-  Selection       0x12,       "12 bits"
-EndList
-
-List    &Bits_Per_Component_List
-  Selection       0x08,       "8 bits"
-  Selection       0x10,       "10 bits"
-  Selection       0x12,       "12 bits"
+List    &PsrWakeupTimeOptions
+  Selection       0x00,       "500 usec"
+  Selection       0x01,       "100 usec"
+  Selection       0x02,       "2.5 msec"
+  Selection       0x03,       "0 (Skip)"
 EndList
 
 ;==============================================================================
@@ -3385,7 +3613,7 @@ EndInfoBlock
 ;------------------------------------------------------------------------------
 Page      "VBT Information"
   Title     "PLATFORM : Broxton"
-  Title     "VBT version: 199"
+  Title     "VBT version: 207"
 
   #IF       ($LFP_Device_Class == 0x1806)
     Title     "Supported LFP type: eDP"
@@ -3407,6 +3635,12 @@ Page      "General Platform Configuration"
 
   Combo     $bmp_Dynamic_CdClock_Supported, "Dynamic CD Clock Support: ", &Disabled_Enabled_List,
   Help      "Enabling this feature configures optimal CD Clock frequency at run time .\n "
+
+  Combo     $Kvmr_Session_Enable, "KVMR Session/Fake DVI Display Support: ", &Disabled_Enabled_List,
+  Help      "When enabled, GOP and Gfx driver will keep a display pipe enable even if no displays are attached.\n"
+            "When no displays are attached, GOP or Gfx driver will check VBT settings for EFP1/2/3 for DVI support.\n"
+            "If any EFP setting supports DVI display type, GOP/driver will enable that port.\n"
+            "If none of the EFP settings support DVI display type, GOP/driver will enable DVI on port-B by default."
 
 EndPage   ; General platform Configuration
 
@@ -3567,9 +3801,9 @@ Page      "UEFI GOP Driver Configuration"
 EndPage   ; "UEFI GOP Driver Configuration"
 
 ;============================================================================
-; Page - Windows Graphics driver Configuration
+; Page - OS Graphics driver Configuration
 ;----------------------------------------------------------------------------
-Page      "Windows Graphics driver Configuration"
+Page      "OS Graphics driver Configuration"
 
   Link      "General Features" , "General Features"
   Link      "Display Features" , "Display Features"
@@ -3581,6 +3815,13 @@ Page      "Windows Graphics driver Configuration"
     EditNum   $VBT_Customization_Version, "  VBT Customization Version:", DEC,
     Help      "This feature allows the OEM to have a customized VBT version number. "
               "The permissible values for VBT Customization version is from 0 to 255."
+
+    Combo     $Disable_DisplayEnum, "Display subsystem disabled:", &No_Yes_List,
+    Help      "This option allows windows driver to be aware that display subsystem is not needed. "
+              "Driver could choose not to activate any display hardware if this bit is set. "
+              "However this is only valid if there’s no LFP on the system or no Force projectable connector. "
+              "Please see driver documentation for detailed driver behaviour."
+
   EndPage   ; General Features"
 
   Page      "Display Features"
@@ -3618,6 +3859,13 @@ Page      "Windows Graphics driver Configuration"
     Help      "This feature when set to yes, will allow for rotation. "
               "Otherwise, when the feature is set to no, "
               "the rotation functionality will be disabled within the driver."
+
+    Title     "HPD Wake:"
+
+    Combo     $HPD_Wake, "    HPD wake source from S0ix/DC9", &Disabled_Enabled_List,
+    Help      "This feature enables HPD events like Hotplug/unplug as a wake up source from S0ix/DC9"
+              " in supported platforms. Based on the bit configuration, h/w and f/w routes the HPD interrupt"
+              " to the OS/driver. The behavior (whether to wake the system from S0ix/DC9 or not)is controlled by display driver."
 
   EndPage   ; Display features
 
@@ -3713,7 +3961,7 @@ Page      "Windows Graphics driver Configuration"
                 "A minimum of two points are required (min and max)."
     EndPage   ; "ADB Response Data"
   EndPage   ; Power Conservation
-EndPage   ; "Windows Graphics driver Configuration"
+EndPage   ; "OS Graphics driver Configuration"
 
 ;==============================================================================
 ; Page - Display Configurations
@@ -3778,13 +4026,17 @@ Page      "Integrated Display Configuration"
               "If disabled, there will be no attempt to read an EDID and "
               "other methods will be used to set panel timing."
 
-    ; Combo     $180_Deg_Rotation_Enable, "Enable 180 Degree Rotation:", &No_Yes_List,
-    ; Help      "This feature when set to yes, will enable 180 Degree rotation "
-    ;           "otherwise, the rotation functionality will be disabled."
+    Combo     $180_Deg_Rotation_Enable, "Enable 180 Degree Rotation:", &No_Yes_List,
+    Help      "This feature when set to yes, will enable 180 Degree rotation "
+              "otherwise, the rotation functionality will be disabled."
 
     #IF       ($LFP_Device_Class == 0x1806)
       Combo     $LFP_Lane_Reversal, "DDI Lane Reversal: ", &Disabled_Enabled_List,
       Help      "This feature, when enabled, will set lane reversal bit for Selected Port "
+	  Combo	    $Enable_Correction, "Gamma/Brightness/Contrast Correction Enable:", &Disabled_Enabled_List,
+      Help	    "This option will allow users to disable/enable Gamma/Brightness/Contrast correction feature for eDP. By default it will be disabled.\r\n"
+                "On enabling one can find option for entering values for Red/Blue/Green Palette Table under LFP Panel configuration.\r\n"
+		        "Each Red/Blue/Green Palette Table has 256 entries/rows of 1-byte each. Enter required values in these fields.\r\n"
     #ENDIF
 
     Title     "    "
@@ -3806,7 +4058,10 @@ Page      "Integrated Display Configuration"
       Link      "Panel #14 ", "Panel #14 "
       Link      "Panel #15 ", "Panel #15 "
       Link      "Panel #16 ", "Panel #16 "
-    #ENDIF
+      #IF($Enable_Correction == 1)
+	    Link "RGB Palette Table ", "RGB Palette Table "
+      #ENDIF
+	 #ENDIF
 
     ;==============================================================================
     ; Page - Panel #01 (640x480) Flat Panel parameters
@@ -3865,6 +4120,8 @@ Page      "Integrated Display Configuration"
 
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "eDP Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_01, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used. "
@@ -3893,11 +4150,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC01, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "eDP Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_01, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_01, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -3956,6 +4216,7 @@ Page      "Integrated Display Configuration"
           Help      "This feature allows for the selection of the Voltage Swing value for the embedded DP link. "
                     "It will be used if the sink indicates that no aux handshake is required during link training."
         EndPage
+
         Page      "PSR feature"
           Link      "Close Table" , ".."
 
@@ -3976,14 +4237,40 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_01, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_01, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_01, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_01, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_01, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+
+          Combo     $eDP_Apical_Display_Ip_Enable_01, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_01, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_01, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_01, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_01, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_01, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_01, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_01, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       #ENDIF
 
       Page      "DTD Timings"
@@ -4195,23 +4482,23 @@ Page      "Integrated Display Configuration"
           ;Combo   $DPhyParamFlag_01,  "\tDPhyParamFlag:",  &DPhyParamFlag_List,
           ;Help    "This feature helps to select whether DPhyParamFlag is valid or not valid"
 
-          EditNum   $HsTxTimeOut_01,  "\tHS Transmission Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
+          ;EditNum   $HsTxTimeOut_01,  "\tHS Transmission Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
 
-          EditNum   $LpRxTimeOut_01,  "\tLP Reception Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
+          ;EditNum   $LpRxTimeOut_01,  "\tLP Reception Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
 
-          EditNum   $TurnAroundTimeOut_01,  "\tBus Turn Around Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
+          ;EditNum   $TurnAroundTimeOut_01,  "\tBus Turn Around Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
 
-          EditNum   $DeviceResetTimer_01,  "\tDevice Reset Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
+          ;EditNum   $DeviceResetTimer_01,  "\tDevice Reset Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
 
-          EditNum   $MasterInitTimer_01,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
+          ;EditNum   $MasterInitTimer_01,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
 
           ;EditNum $LpByteClkRegValue_01,  "\tLpByteClk Register:", HEX,
           ;Help    "This feature allows to enter LpByteClk Register."
@@ -4359,6 +4646,8 @@ Page      "Integrated Display Configuration"
 
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "eDP Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_02, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used. "
@@ -4387,11 +4676,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC02, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "eDP Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_02, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_02, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -4471,14 +4763,40 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_02, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_02, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_02, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_02, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_02, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+
+          Combo     $eDP_Apical_Display_Ip_Enable_02, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_02, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_02, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_02, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_02, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_02, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_02, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_02, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       #ENDIF
 
       Page      "DTD Timings"
@@ -4662,7 +4980,6 @@ Page      "Integrated Display Configuration"
           Help      "Select the MIPI Port for sending Panel PWM/BkltController On/Off Commands in case of Dual link MIPI panels\n"
                     "This field is ignored in single link MIPI case"
 
-
           Combo     $RgbFlip_02, "\tRGB/BGR Panel Selection", &RgbFlip,
           Help      "Select if the panel is RGB or BGR\n"
 
@@ -4691,23 +5008,23 @@ Page      "Integrated Display Configuration"
           ;Combo   $DPhyParamFlag_02,  "\tDPhyParamFlag:",  &DPhyParamFlag_List,
           ;Help    "This feature helps to select whether DPhyParamFlag is valid or not valid"
 
-          EditNum   $HsTxTimeOut_02,  "\tHS Transmission Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
+          ;EditNum   $HsTxTimeOut_02,  "\tHS Transmission Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
 
-          EditNum   $LpRxTimeOut_02,  "\tLP Reception Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
+          ;EditNum   $LpRxTimeOut_02,  "\tLP Reception Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
 
-          EditNum   $TurnAroundTimeOut_02,  "\tBus Turn Around Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
+          ;EditNum   $TurnAroundTimeOut_02,  "\tBus Turn Around Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
 
-          EditNum   $DeviceResetTimer_02,  "\tDevice Reset Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
+          ;EditNum   $DeviceResetTimer_02,  "\tDevice Reset Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
 
-          EditNum   $MasterInitTimer_02,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
+          ;EditNum   $MasterInitTimer_02,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
 
           ;EditNum $LpByteClkRegValue_02,  "\tLpByteClk Register:", HEX,
           ;Help    "This feature allows to enter LpByteClk Register."
@@ -4855,6 +5172,8 @@ Page      "Integrated Display Configuration"
 
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "eDP Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_03, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used. "
@@ -4880,15 +5199,17 @@ Page      "Integrated Display Configuration"
                   "(mV) \t\t Level-2/800mV \t\t 800mV, 0db \t\t 800mV, 3.5db \t\t N/A \t\t\t N/A\n"
                   "\t\t Level-3/1200mV \t\t 1200mV, 0db \t\t N/A \t\t\t N/A \t\t\t N/A\n"
 
-
         Combo     $Enable_SSC03, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "eDP Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_03, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_03, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -4968,14 +5289,40 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_03, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_03, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_03, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_03, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_03, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+
+          Combo     $eDP_Apical_Display_Ip_Enable_03, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_03, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_03, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_03, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_03, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_03, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_03, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_03, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       #ENDIF
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -5158,7 +5505,6 @@ Page      "Integrated Display Configuration"
           Help      "Select the MIPI Port for sending Panel PWM/BkltController On/Off Commands in case of Dual link MIPI panels\n"
                     "This field is ignored in single link MIPI case"
 
-
           Combo     $RgbFlip_03, "\tRGB/BGR Panel Selection", &RgbFlip,
           Help      "Select if the panel is RGB or BGR\n"
 
@@ -5187,23 +5533,23 @@ Page      "Integrated Display Configuration"
           ;Combo   $DPhyParamFlag_03,  "\tDPhyParamFlag:",  &DPhyParamFlag_List,
           ;Help    "This feature helps to select whether DPhyParamFlag is valid or not valid"
 
-          EditNum   $HsTxTimeOut_03,  "\tHS Transmission Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
+          ;EditNum   $HsTxTimeOut_03,  "\tHS Transmission Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
 
-          EditNum   $LpRxTimeOut_03,  "\tLP Reception Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
+          ;EditNum   $LpRxTimeOut_03,  "\tLP Reception Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
 
-          EditNum   $TurnAroundTimeOut_03,  "\tBus Turn Around Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
+          ;EditNum   $TurnAroundTimeOut_03,  "\tBus Turn Around Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
 
-          EditNum   $DeviceResetTimer_03,  "\tDevice Reset Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
+          ;EditNum   $DeviceResetTimer_03,  "\tDevice Reset Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
 
-          EditNum   $MasterInitTimer_03,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
+          ;EditNum   $MasterInitTimer_03,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
 
           ;EditNum $LpByteClkRegValue_03,  "\tLpByteClk Register:", HEX,
           ;Help    "This feature allows to enter LpByteClk Register."
@@ -5351,6 +5697,8 @@ Page      "Integrated Display Configuration"
 
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "eDP Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_04, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used. "
@@ -5376,15 +5724,17 @@ Page      "Integrated Display Configuration"
                   "(mV) \t\t Level-2/800mV \t\t 800mV, 0db \t\t 800mV, 3.5db \t\t N/A \t\t\t N/A\n"
                   "\t\t Level-3/1200mV \t\t 1200mV, 0db \t\t N/A \t\t\t N/A \t\t\t N/A\n"
 
-
         Combo     $Enable_SSC04, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "eDP Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_04, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_04, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -5464,14 +5814,40 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_04, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_04, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_04, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_04, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_04, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+
+          Combo     $eDP_Apical_Display_Ip_Enable_04, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_04, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_04, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_04, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_04, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_04, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_04, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_04, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       #ENDIF
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -5654,7 +6030,6 @@ Page      "Integrated Display Configuration"
           Help      "Select the MIPI Port for sending Panel PWM/BkltController On/Off Commands in case of Dual link MIPI panels\n"
                     "This field is ignored in single link MIPI case"
 
-
           Combo     $RgbFlip_04, "\tRGB/BGR Panel Selection", &RgbFlip,
           Help      "Select if the panel is RGB or BGR\n"
 
@@ -5683,23 +6058,23 @@ Page      "Integrated Display Configuration"
           ;Combo   $DPhyParamFlag_04,  "\tDPhyParamFlag:",  &DPhyParamFlag_List,
           ;Help    "This feature helps to select whether DPhyParamFlag is valid or not valid"
 
-          EditNum   $HsTxTimeOut_04,  "\tHS Transmission Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
+          ;EditNum   $HsTxTimeOut_04,  "\tHS Transmission Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
 
-          EditNum   $LpRxTimeOut_04,  "\tLP Reception Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
+          ;EditNum   $LpRxTimeOut_04,  "\tLP Reception Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
 
-          EditNum   $TurnAroundTimeOut_04,  "\tBus Turn Around Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
+          ;EditNum   $TurnAroundTimeOut_04,  "\tBus Turn Around Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
 
-          EditNum   $DeviceResetTimer_04,  "\tDevice Reset Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
+          ;EditNum   $DeviceResetTimer_04,  "\tDevice Reset Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
 
-          EditNum   $MasterInitTimer_04,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
+          ;EditNum   $MasterInitTimer_04,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
 
           ;EditNum $LpByteClkRegValue_04,  "\tLpByteClk Register:", HEX,
           ;Help    "This feature allows to enter LpByteClk Register."
@@ -5847,6 +6222,8 @@ Page      "Integrated Display Configuration"
 
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "eDP Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_05, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used. "
@@ -5875,11 +6252,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC05, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "eDP Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_05, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_05, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -5959,14 +6339,40 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_05, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_05, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_05, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_05, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_05, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+
+          Combo     $eDP_Apical_Display_Ip_Enable_05, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_05, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_05, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_05, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_05, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_05, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_05, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_05, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       #ENDIF
 
       Page      "DTD Timings"
@@ -6150,7 +6556,6 @@ Page      "Integrated Display Configuration"
           Help      "Select the MIPI Port for sending Panel PWM/BkltController On/Off Commands in case of Dual link MIPI panels\n"
                     "This field is ignored in single link MIPI case"
 
-
           Combo     $RgbFlip_05, "\tRGB/BGR Panel Selection", &RgbFlip,
           Help      "Select if the panel is RGB or BGR\n"
 
@@ -6179,23 +6584,23 @@ Page      "Integrated Display Configuration"
           ;Combo   $DPhyParamFlag_05,  "\tDPhyParamFlag:",  &DPhyParamFlag_List,
           ;Help    "This feature helps to select whether DPhyParamFlag is valid or not valid"
 
-          EditNum   $HsTxTimeOut_05,  "\tHS Transmission Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
+          ;EditNum   $HsTxTimeOut_05,  "\tHS Transmission Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
 
-          EditNum   $LpRxTimeOut_05,  "\tLP Reception Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
+          ;EditNum   $LpRxTimeOut_05,  "\tLP Reception Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
 
-          EditNum   $TurnAroundTimeOut_05,  "\tBus Turn Around Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
+          ;EditNum   $TurnAroundTimeOut_05,  "\tBus Turn Around Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
 
-          EditNum   $DeviceResetTimer_05,  "\tDevice Reset Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
+          ;EditNum   $DeviceResetTimer_05,  "\tDevice Reset Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
 
-          EditNum   $MasterInitTimer_05,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
+          ;EditNum   $MasterInitTimer_05,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
 
           ;EditNum $LpByteClkRegValue_05,  "\tLpByteClk Register:", HEX,
           ;Help    "This feature allows to enter LpByteClk Register."
@@ -6342,6 +6747,8 @@ Page      "Integrated Display Configuration"
 
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "eDP Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_06, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -6370,11 +6777,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC06, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "eDP Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_06, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_06, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -6454,14 +6864,40 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_06, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_06, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_06, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_06, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_06, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+
+          Combo     $eDP_Apical_Display_Ip_Enable_06, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_06, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_06, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_06, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_06, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_06, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_06, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_06, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       #ENDIF
 
       Page      "DTD Timings"
@@ -6645,7 +7081,6 @@ Page      "Integrated Display Configuration"
           Help      "Select the MIPI Port for sending Panel PWM/BkltController On/Off Commands in case of Dual link MIPI panels\n"
                     "This field is ignored in single link MIPI case"
 
-
           Combo     $RgbFlip_06, "\tRGB/BGR Panel Selection", &RgbFlip,
           Help      "Select if the panel is RGB or BGR\n"
 
@@ -6674,23 +7109,23 @@ Page      "Integrated Display Configuration"
           ;Combo   $DPhyParamFlag_06,  "\tDPhyParamFlag:",  &DPhyParamFlag_List,
           ;Help    "This feature helps to select whether DPhyParamFlag is valid or not valid"
 
-          EditNum   $HsTxTimeOut_06,  "\tHS Transmission Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
+          ;EditNum   $HsTxTimeOut_06,  "\tHS Transmission Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI HS Transmission Time Out Counter in ByteClocks."
 
-          EditNum   $LpRxTimeOut_06,  "\tLP Reception Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
+          ;EditNum   $LpRxTimeOut_06,  "\tLP Reception Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI LP Reception Time Out Counter in TxEscClk."
 
-          EditNum   $TurnAroundTimeOut_06,  "\tBus Turn Around Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
+          ;EditNum   $TurnAroundTimeOut_06,  "\tBus Turn Around Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Bus Turn Around Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0xF clock cycles and maximum value is 0x14 clock cycles"
 
-          EditNum   $DeviceResetTimer_06,  "\tDevice Reset Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
+          ;EditNum   $DeviceResetTimer_06,  "\tDevice Reset Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Device Reset Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x15 clock cycles and maximum value is 0xFFFF clock cycles"
 
-          EditNum   $MasterInitTimer_06,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
-          Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
-                    "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
+          ;EditNum   $MasterInitTimer_06,  "\tDSI Host Controller Initialization Time Out Counter:", HEX,
+          ;Help      "This feature allows to enter MIPI DSI Host Controller Initialization Time Out Counter in TxEscClk.\n"
+          ;          "Minimum value is 0x7D0 clock cycles and maximum value is 0x4E20 clock cycles"
 
           ;EditNum $LpByteClkRegValue_06,  "\tLpByteClk Register:", HEX,
           ;Help    "This feature allows to enter LpByteClk Register."
@@ -6836,6 +7271,8 @@ Page      "Integrated Display Configuration"
 
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_07, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -6864,11 +7301,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC07, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_07, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_07, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -7085,14 +7525,40 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_07, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_07, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_07, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_07, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_07, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+
+          Combo     $eDP_Apical_Display_Ip_Enable_07, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_07, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_07, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_07, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_07, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_07, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_07, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_07, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage
 
       ;==============================================================================
@@ -7144,6 +7610,8 @@ Page      "Integrated Display Configuration"
         TitleB    "Integrated eDP Settings"
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_08, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -7172,11 +7640,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC08, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_08, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_08, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -7319,34 +7790,34 @@ Page      "Integrated Display Configuration"
           Combo     $Override_EDID_Data_08, "Override the EDID values", &No_Yes_List,
           Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-          EditNum   $Red_Green_08, "   Red_Green_bits (Bits 1:0 at 19h)" , EHEX,
+          EditNum   $Red_Green_08, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
-          EditNum   $Blue_White_08, "   Blue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
+          EditNum   $Blue_White_08, "\tBlue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Blue, White Coordinates represented as Bx1 Bx0 By1 By0 Wx1 Wx0 Wy1 Wy0"
 
-          EditNum   $Red_x_08, "   Red_x (Bits 9:2 at 1Bh)" , EHEX,
+          EditNum   $Red_x_08, "\tRed_x (Bits 9:2 at 1Bh)" , EHEX,
           Help      " Bits 9:2 of red color x coordinate"
 
-          EditNum   $Red_y_08, "   Red_y (Bits 9:2 at 1Ch)" , EHEX,
+          EditNum   $Red_y_08, "\tRed_y (Bits 9:2 at 1Ch)" , EHEX,
           Help      " Bits 9:2 of red color y coordinate"
 
-          EditNum   $Green_x_08, "   Green_x (Bits 9:2 at 1Dh)" , EHEX,
+          EditNum   $Green_x_08, "\tGreen_x (Bits 9:2 at 1Dh)" , EHEX,
           Help      " Bits 9:2 of Green color x coordinate"
 
-          EditNum   $Green_y_08, "   Green_y (Bits 9:2 at 1Eh)" , EHEX,
+          EditNum   $Green_y_08, "\tGreen_y (Bits 9:2 at 1Eh)" , EHEX,
           Help      " Bits 9:2 of Green color y coordinate"
 
-          EditNum   $Blue_x_08, "   Blue_x (Bits 9:2 at 1Fh)" , EHEX,
+          EditNum   $Blue_x_08, "\tBlue_x (Bits 9:2 at 1Fh)" , EHEX,
           Help      " Bits 9:2 of Blue color x coordinate"
 
-          EditNum   $Blue_y_08, "   Blue_y (Bits 9:2 at 20h)" , EHEX,
+          EditNum   $Blue_y_08, "\tBlue_y (Bits 9:2 at 20h)" , EHEX,
           Help      " Bits 9:2 of Blue color y coordinate"
 
-          EditNum   $White_x_08, "   White_x (Bits 9:2 at 21h)" , EHEX,
+          EditNum   $White_x_08, "\tWhite_x (Bits 9:2 at 21h)" , EHEX,
           Help      " Bits 9:2 of White color x coordinate"
 
-          EditNum   $White_y_08, "   White_y (Bits 9:2 at 22h)" , EHEX,
+          EditNum   $White_y_08, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
           Help      " Bits 9:2 of White color y coordinate"
         EndPage   ; Chromaticity Control
 
@@ -7393,14 +7864,39 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_08, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_08, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_08, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_08, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_08, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+          Combo     $eDP_Apical_Display_Ip_Enable_08, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_08, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_08, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_08, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_08, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_08, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_08, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_08, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage
 
       ;==============================================================================
@@ -7452,6 +7948,8 @@ Page      "Integrated Display Configuration"
         TitleB    "Integrated eDP Settings"
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_09, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -7480,11 +7978,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC09, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_09, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_09, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -7627,34 +8128,34 @@ Page      "Integrated Display Configuration"
           Combo     $Override_EDID_Data_09, "Override the EDID values", &No_Yes_List,
           Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-          EditNum   $Red_Green_09, "   Red_Green_bits (Bits 1:0 at 19h)" , EHEX,
+          EditNum   $Red_Green_09, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
-          EditNum   $Blue_White_09, "   Blue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
+          EditNum   $Blue_White_09, "\tBlue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Blue, White Coordinates represented as Bx1 Bx0 By1 By0 Wx1 Wx0 Wy1 Wy0"
 
-          EditNum   $Red_x_09, "   Red_x (Bits 9:2 at 1Bh)" , EHEX,
+          EditNum   $Red_x_09, "\tRed_x (Bits 9:2 at 1Bh)" , EHEX,
           Help      " Bits 9:2 of red color x coordinate"
 
-          EditNum   $Red_y_09, "   Red_y (Bits 9:2 at 1Ch)" , EHEX,
+          EditNum   $Red_y_09, "\tRed_y (Bits 9:2 at 1Ch)" , EHEX,
           Help      " Bits 9:2 of red color y coordinate"
 
-          EditNum   $Green_x_09, "   Green_x (Bits 9:2 at 1Dh)" , EHEX,
+          EditNum   $Green_x_09, "\tGreen_x (Bits 9:2 at 1Dh)" , EHEX,
           Help      " Bits 9:2 of Green color x coordinate"
 
-          EditNum   $Green_y_09, "   Green_y (Bits 9:2 at 1Eh)" , EHEX,
+          EditNum   $Green_y_09, "\tGreen_y (Bits 9:2 at 1Eh)" , EHEX,
           Help      " Bits 9:2 of Green color y coordinate"
 
-          EditNum   $Blue_x_09, "   Blue_x (Bits 9:2 at 1Fh)" , EHEX,
+          EditNum   $Blue_x_09, "\tBlue_x (Bits 9:2 at 1Fh)" , EHEX,
           Help      " Bits 9:2 of Blue color x coordinate"
 
-          EditNum   $Blue_y_09, "   Blue_y (Bits 9:2 at 20h)" , EHEX,
+          EditNum   $Blue_y_09, "\tBlue_y (Bits 9:2 at 20h)" , EHEX,
           Help      " Bits 9:2 of Blue color y coordinate"
 
-          EditNum   $White_x_09, "   White_x (Bits 9:2 at 21h)" , EHEX,
+          EditNum   $White_x_09, "\tWhite_x (Bits 9:2 at 21h)" , EHEX,
           Help      " Bits 9:2 of White color x coordinate"
 
-          EditNum   $White_y_09, "   White_y (Bits 9:2 at 22h)" , EHEX,
+          EditNum   $White_y_09, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
           Help      " Bits 9:2 of White color y coordinate"
         EndPage   ; Chromaticity Control
 
@@ -7701,14 +8202,39 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_09, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_09, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_09, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_09, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_09, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+          Combo     $eDP_Apical_Display_Ip_Enable_09, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_09, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_09, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_09, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_09, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_09, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_09, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_09, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage
 
       ;==============================================================================
@@ -7760,6 +8286,8 @@ Page      "Integrated Display Configuration"
         TitleB    "Integrated eDP Settings"
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_10, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -7785,15 +8313,17 @@ Page      "Integrated Display Configuration"
                   "(mV) \t\t Level-2/800mV \t\t 800mV, 0db \t\t 800mV, 3.5db \t\t N/A \t\t\t N/A\n"
                   "\t\t Level-3/1200mV \t\t 1200mV, 0db \t\t N/A \t\t\t N/A \t\t\t N/A\n"
 
-
         Combo     $Enable_SSC10, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_10, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_10, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -7936,34 +8466,34 @@ Page      "Integrated Display Configuration"
           Combo     $Override_EDID_Data_10, "Override the EDID values", &No_Yes_List,
           Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-          EditNum   $Red_Green_10, "   Red_Green_bits (Bits 1:0 at 19h)" , EHEX,
+          EditNum   $Red_Green_10, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
-          EditNum   $Blue_White_10, "   Blue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
+          EditNum   $Blue_White_10, "\tBlue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Blue, White Coordinates represented as Bx1 Bx0 By1 By0 Wx1 Wx0 Wy1 Wy0"
 
-          EditNum   $Red_x_10, "   Red_x (Bits 9:2 at 1Bh)" , EHEX,
+          EditNum   $Red_x_10, "\tRed_x (Bits 9:2 at 1Bh)" , EHEX,
           Help      " Bits 9:2 of red color x coordinate"
 
-          EditNum   $Red_y_10, "   Red_y (Bits 9:2 at 1Ch)" , EHEX,
+          EditNum   $Red_y_10, "\tRed_y (Bits 9:2 at 1Ch)" , EHEX,
           Help      " Bits 9:2 of red color y coordinate"
 
-          EditNum   $Green_x_10, "   Green_x (Bits 9:2 at 1Dh)" , EHEX,
+          EditNum   $Green_x_10, "\tGreen_x (Bits 9:2 at 1Dh)" , EHEX,
           Help      " Bits 9:2 of Green color x coordinate"
 
-          EditNum   $Green_y_10, "   Green_y (Bits 9:2 at 1Eh)" , EHEX,
+          EditNum   $Green_y_10, "\tGreen_y (Bits 9:2 at 1Eh)" , EHEX,
           Help      " Bits 9:2 of Green color y coordinate"
 
-          EditNum   $Blue_x_10, "   Blue_x (Bits 9:2 at 1Fh)" , EHEX,
+          EditNum   $Blue_x_10, "\tBlue_x (Bits 9:2 at 1Fh)" , EHEX,
           Help      " Bits 9:2 of Blue color x coordinate"
 
-          EditNum   $Blue_y_10, "   Blue_y (Bits 9:2 at 20h)" , EHEX,
+          EditNum   $Blue_y_10, "\tBlue_y (Bits 9:2 at 20h)" , EHEX,
           Help      " Bits 9:2 of Blue color y coordinate"
 
-          EditNum   $White_x_10, "   White_x (Bits 9:2 at 21h)" , EHEX,
+          EditNum   $White_x_10, "\tWhite_x (Bits 9:2 at 21h)" , EHEX,
           Help      " Bits 9:2 of White color x coordinate"
 
-          EditNum   $White_y_10, "   White_y (Bits 9:2 at 22h)" , EHEX,
+          EditNum   $White_y_10, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
           Help      " Bits 9:2 of White color y coordinate"
         EndPage   ; Chromaticity Control
 
@@ -8010,14 +8540,39 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_10, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_10, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_10, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_10, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_10, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+          Combo     $eDP_Apical_Display_Ip_Enable_10, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_10, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_10, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_10, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_10, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_10, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_10, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_10, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage
 
       ;==============================================================================
@@ -8069,6 +8624,8 @@ Page      "Integrated Display Configuration"
         TitleB    "Integrated eDP Settings"
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_11, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -8094,15 +8651,17 @@ Page      "Integrated Display Configuration"
                   "(mV) \t\t Level-2/800mV \t\t 800mV, 0db \t\t 800mV, 3.5db \t\t N/A \t\t\t N/A\n"
                   "\t\t Level-3/1200mV \t\t 1200mV, 0db \t\t N/A \t\t\t N/A \t\t\t N/A\n"
 
-
         Combo     $Enable_SSC11, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_11, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_11, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -8245,34 +8804,34 @@ Page      "Integrated Display Configuration"
           Combo     $Override_EDID_Data_11, "Override the EDID values", &No_Yes_List,
           Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-          EditNum   $Red_Green_11, "   Red_Green_bits (Bits 1:0 at 19h)" , EHEX,
+          EditNum   $Red_Green_11, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
-          EditNum   $Blue_White_11, "   Blue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
+          EditNum   $Blue_White_11, "\tBlue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Blue, White Coordinates represented as Bx1 Bx0 By1 By0 Wx1 Wx0 Wy1 Wy0"
 
-          EditNum   $Red_x_11, "   Red_x (Bits 9:2 at 1Bh)" , EHEX,
+          EditNum   $Red_x_11, "\tRed_x (Bits 9:2 at 1Bh)" , EHEX,
           Help      " Bits 9:2 of red color x coordinate"
 
-          EditNum   $Red_y_11, "   Red_y (Bits 9:2 at 1Ch)" , EHEX,
+          EditNum   $Red_y_11, "\tRed_y (Bits 9:2 at 1Ch)" , EHEX,
           Help      " Bits 9:2 of red color y coordinate"
 
-          EditNum   $Green_x_11, "   Green_x (Bits 9:2 at 1Dh)" , EHEX,
+          EditNum   $Green_x_11, "\tGreen_x (Bits 9:2 at 1Dh)" , EHEX,
           Help      " Bits 9:2 of Green color x coordinate"
 
-          EditNum   $Green_y_11, "   Green_y (Bits 9:2 at 1Eh)" , EHEX,
+          EditNum   $Green_y_11, "\tGreen_y (Bits 9:2 at 1Eh)" , EHEX,
           Help      " Bits 9:2 of Green color y coordinate"
 
-          EditNum   $Blue_x_11, "   Blue_x (Bits 9:2 at 1Fh)" , EHEX,
+          EditNum   $Blue_x_11, "\tBlue_x (Bits 9:2 at 1Fh)" , EHEX,
           Help      " Bits 9:2 of Blue color x coordinate"
 
-          EditNum   $Blue_y_11, "   Blue_y (Bits 9:2 at 20h)" , EHEX,
+          EditNum   $Blue_y_11, "\tBlue_y (Bits 9:2 at 20h)" , EHEX,
           Help      " Bits 9:2 of Blue color y coordinate"
 
-          EditNum   $White_x_11, "   White_x (Bits 9:2 at 21h)" , EHEX,
+          EditNum   $White_x_11, "\tWhite_x (Bits 9:2 at 21h)" , EHEX,
           Help      " Bits 9:2 of White color x coordinate"
 
-          EditNum   $White_y_11, "   White_y (Bits 9:2 at 22h)" , EHEX,
+          EditNum   $White_y_11, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
           Help      " Bits 9:2 of White color y coordinate"
         EndPage   ; Chromaticity Control
 
@@ -8319,14 +8878,39 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_11, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_11, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_11, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_11, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_11, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+          Combo     $eDP_Apical_Display_Ip_Enable_11, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_11, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_11, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_11, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_11, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_11, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_11, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_11, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage
 
       ;==============================================================================
@@ -8377,6 +8961,8 @@ Page      "Integrated Display Configuration"
         TitleB    "Integrated eDP Settings"
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_12, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -8405,11 +8991,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC12, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_12, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_12, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -8627,14 +9216,39 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_12, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_12, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_12, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_12, "  TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_12, "  TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+          Combo     $eDP_Apical_Display_Ip_Enable_12, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_12, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_12, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_12, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_12, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_12, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_12, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_12, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage
 
       ;==============================================================================
@@ -8685,6 +9299,8 @@ Page      "Integrated Display Configuration"
 
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_13, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -8713,11 +9329,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC13, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_13, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_13, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -8860,34 +9479,34 @@ Page      "Integrated Display Configuration"
           Combo     $Override_EDID_Data_13, "Override the EDID values", &No_Yes_List,
           Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-          EditNum   $Red_Green_13, "   Red_Green_bits (Bits 1:0 at 19h)" , EHEX,
+          EditNum   $Red_Green_13, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
-          EditNum   $Blue_White_13, "   Blue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
+          EditNum   $Blue_White_13, "\tBlue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Blue, White Coordinates represented as Bx1 Bx0 By1 By0 Wx1 Wx0 Wy1 Wy0"
 
-          EditNum   $Red_x_13, "   Red_x (Bits 9:2 at 1Bh)" , EHEX,
+          EditNum   $Red_x_13, "\tRed_x (Bits 9:2 at 1Bh)" , EHEX,
           Help      " Bits 9:2 of red color x coordinate"
 
-          EditNum   $Red_y_13, "   Red_y (Bits 9:2 at 1Ch)" , EHEX,
+          EditNum   $Red_y_13, "\tRed_y (Bits 9:2 at 1Ch)" , EHEX,
           Help      " Bits 9:2 of red color y coordinate"
 
-          EditNum   $Green_x_13, "   Green_x (Bits 9:2 at 1Dh)" , EHEX,
+          EditNum   $Green_x_13, "\tGreen_x (Bits 9:2 at 1Dh)" , EHEX,
           Help      " Bits 9:2 of Green color x coordinate"
 
-          EditNum   $Green_y_13, "   Green_y (Bits 9:2 at 1Eh)" , EHEX,
+          EditNum   $Green_y_13, "\tGreen_y (Bits 9:2 at 1Eh)" , EHEX,
           Help      " Bits 9:2 of Green color y coordinate"
 
-          EditNum   $Blue_x_13, "   Blue_x (Bits 9:2 at 1Fh)" , EHEX,
+          EditNum   $Blue_x_13, "\tBlue_x (Bits 9:2 at 1Fh)" , EHEX,
           Help      " Bits 9:2 of Blue color x coordinate"
 
-          EditNum   $Blue_y_13, "   Blue_y (Bits 9:2 at 20h)" , EHEX,
+          EditNum   $Blue_y_13, "\tBlue_y (Bits 9:2 at 20h)" , EHEX,
           Help      " Bits 9:2 of Blue color y coordinate"
 
-          EditNum   $White_x_13, "   White_x (Bits 9:2 at 21h)" , EHEX,
+          EditNum   $White_x_13, "\tWhite_x (Bits 9:2 at 21h)" , EHEX,
           Help      " Bits 9:2 of White color x coordinate"
 
-          EditNum   $White_y_13, "   White_y (Bits 9:2 at 22h)" , EHEX,
+          EditNum   $White_y_13, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
           Help      " Bits 9:2 of White color y coordinate"
         EndPage   ; Chromaticity Control
 
@@ -8935,14 +9554,39 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_13, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_13, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_13, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_13, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_13, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+          Combo     $eDP_Apical_Display_Ip_Enable_13, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_13, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_13, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_13, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_13, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_13, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_13, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_13, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage
 
       ;==============================================================================
@@ -8993,6 +9637,8 @@ Page      "Integrated Display Configuration"
         TitleB    "Integrated eDP Settings"
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_14, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -9021,11 +9667,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC14, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_14, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_14, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -9168,34 +9817,34 @@ Page      "Integrated Display Configuration"
           Combo     $Override_EDID_Data_14, "Override the EDID values", &No_Yes_List,
           Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-          EditNum   $Red_Green_14, "   Red_Green_bits (Bits 1:0 at 19h)" , EHEX,
+          EditNum   $Red_Green_14, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
-          EditNum   $Blue_White_14, "   Blue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
+          EditNum   $Blue_White_14, "\tBlue_White_bits (Bits 1:0 at 1Ah)" , EHEX,
           Help      " Lower order bytes (bits 1 and 0) of Blue, White Coordinates represented as Bx1 Bx0 By1 By0 Wx1 Wx0 Wy1 Wy0"
 
-          EditNum   $Red_x_14, "   Red_x (Bits 9:2 at 1Bh)" , EHEX,
+          EditNum   $Red_x_14, "\tRed_x (Bits 9:2 at 1Bh)" , EHEX,
           Help      " Bits 9:2 of red color x coordinate"
 
-          EditNum   $Red_y_14, "   Red_y (Bits 9:2 at 1Ch)" , EHEX,
+          EditNum   $Red_y_14, "\tRed_y (Bits 9:2 at 1Ch)" , EHEX,
           Help      " Bits 9:2 of red color y coordinate"
 
-          EditNum   $Green_x_14, "   Green_x (Bits 9:2 at 1Dh)" , EHEX,
+          EditNum   $Green_x_14, "\tGreen_x (Bits 9:2 at 1Dh)" , EHEX,
           Help      " Bits 9:2 of Green color x coordinate"
 
-          EditNum   $Green_y_14, "   Green_y (Bits 9:2 at 1Eh)" , EHEX,
+          EditNum   $Green_y_14, "\tGreen_y (Bits 9:2 at 1Eh)" , EHEX,
           Help      " Bits 9:2 of Green color y coordinate"
 
-          EditNum   $Blue_x_14, "   Blue_x (Bits 9:2 at 1Fh)" , EHEX,
+          EditNum   $Blue_x_14, "\tBlue_x (Bits 9:2 at 1Fh)" , EHEX,
           Help      " Bits 9:2 of Blue color x coordinate"
 
-          EditNum   $Blue_y_14, "   Blue_y (Bits 9:2 at 20h)" , EHEX,
+          EditNum   $Blue_y_14, "\tBlue_y (Bits 9:2 at 20h)" , EHEX,
           Help      " Bits 9:2 of Blue color y coordinate"
 
-          EditNum   $White_x_14, "   White_x (Bits 9:2 at 21h)" , EHEX,
+          EditNum   $White_x_14, "\tWhite_x (Bits 9:2 at 21h)" , EHEX,
           Help      " Bits 9:2 of White color x coordinate"
 
-          EditNum   $White_y_14, "   White_y (Bits 9:2 at 22h)" , EHEX,
+          EditNum   $White_y_14, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
           Help      " Bits 9:2 of White color y coordinate"
         EndPage   ; Chromaticity Control
 
@@ -9242,14 +9891,39 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_14, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_14, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_14, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_14, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_14, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+          Combo     $eDP_Apical_Display_Ip_Enable_14, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_14, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_14, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_14, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_14, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_14, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_14, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_14, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage
 
       ;==============================================================================
@@ -9300,6 +9974,8 @@ Page      "Integrated Display Configuration"
         TitleB    "Integrated eDP Settings"
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_15, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -9328,11 +10004,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC15, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_15, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_15, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -9549,14 +10228,39 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_15, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_15, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_15, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_15, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_15, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+          Combo     $eDP_Apical_Display_Ip_Enable_15, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_15, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_15, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_15, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_15, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_15, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_15, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_15, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage
 
       ;==============================================================================
@@ -9607,6 +10311,8 @@ Page      "Integrated Display Configuration"
         TitleB    "Integrated eDP Settings"
         Link      "eDP Fast Link Training Configuration Parameters" , "eDP Fast Link Training Configuration Parameters"
         Link      "Panel Power Sequencing Parameters Table" , "Panel Power Sequencing"
+        Link      "PSR feature" ,"PSR feature"
+        Link      "Apical Feature" , "Apical Feature"
 
         Combo     $eDP_Panel_Color_Depth_16, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
         Help      "This feature specifies the color depth of eDP panel used."
@@ -9635,12 +10341,14 @@ Page      "Integrated Display Configuration"
         Combo     $Enable_SSC16, "\teDP Spread Spectrum Clock:", &Disabled_Enabled_List,
         Help      "This feature will allow users to disable/enable Spread Spectrum Clock for eDP.\r\n "
 
-
-        Title     " "
-        Link      "PSR feature" ,"PSR feature"
-
         Page      "Panel Power Sequencing"
           Link      "Close Table", ".."
+
+          ;Combo     $LcdVcc_On_During_S0_State_16, "Keep Panel Power enabled during S0 state: ", &No_Yes_List,
+          ;Help      "This feature allows the panel power to be kept enabled during S0 state of the display.\r\n"
+          ;          "When the user selects Yes, graphics driver will not disable Vcc when system is in S0 state.\r\n"
+          ;          "When the user selects No, graphics driver will disable Vcc whenever panel is turned off. (In all Sx states).\r\n"
+          ;          "Note: This option is only applicable for Windows Graphics driver."
 
           Combo     $eDP_T3_Optimization_16, "T3 optimization", &Disabled_Enabled_List,
           Help      "This feature enables or disables T3 optimization. \r\n"
@@ -9857,17 +10565,75 @@ Page      "Integrated Display Configuration"
           EditNum   $PSR_IdleFrames2Wait_16, "Idle frames to wait:", DEC,
           Help      "Idle frames to wait for PSR enable.\n Allowed values 0-15. Default value is 0."
 
-          EditNum   $PSR_TP1_WaitTime_16, "TP1 WakeUp Time:", DEC,
+          Combo     $PSR_TP1_WaitTime_16, "TP1 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP1(Training Pattern1) time during PSR exit(wake up)\n"
-                    "TP1 wake up time in multiples of 100us"
 
-          EditNum   $PSR_TP_2_3_WaitTime_16, "TP2/TP3 WakeUp Time:", DEC,
+          Combo     $PSR_TP_2_3_WaitTime_16, "TP2/TP3 WakeUp Time:", &PsrWakeupTimeOptions,
           Help      "This field selects the link training TP2(Training Pattern2) or TP3(Training Pattern3) time during PSR exit(wake up)\n"
-                    "TP2/TP3 wake up time in multiples of 100us"
         EndPage   ; PSR feature
+
+        Page      "Apical Feature"
+          Link      "Close Table" , ".."
+          Combo     $eDP_Apical_Display_Ip_Enable_16, "Apical Assertive Display IP", &Disabled_Enabled_List,
+          Help      "This field enables/disables the Apical Assertive Display IP for this panel."
+
+          EditNum   $eDP_Panel_Oui_16, "\tPanel OUI (IEEE OUI)", EHEX,
+          Help      "This field specifies the Apical IP specific Panel OUI field."
+
+          EditNum   $eDP_Dpcd_Base_Address_16, "\tDPCD Base Address", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD base address field."
+
+          EditNum   $eDP_Dpcd_Irdidix_Control0_16, "\tDPCD Irdidix Control 0", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD Irdidix control 0 field."
+
+          EditNum   $eDP_Dpcd_Option_Select_16, "\tDPCD Option Select", EHEX,
+          Help      "This field specifies the Apical IP specific DPCD option select field."
+
+          EditNum   $eDP_Dpcd_Backlight_16, "\tDPCD Backlight", EHEX,
+          Help      "This field specifies the Apical IP specific backlight value."
+
+          EditNum   $eDP_Ambient_Light_16, "\tAmbient Light", EHEX,
+          Help      "This field specifies the Apical IP specific Ambient light value."
+
+          EditNum   $eDP_Backlight_Scale_16, "\tBacklight scale", EHEX,
+          Help      "This field specifies the Apical IP specific backlight scale field."
+        EndPage   ; Apical Feature
       EndPage   ; "Panel #16 "
     #ENDIF
-  EndPage   ; "Integrated LFP Features"
+
+	;==============================================================================
+    ; Page - RGB Palette Table
+    ;------------------------------------------------------------------------------
+      #if($Enable_Correction == 1)
+        Page "RGB Palette Table"
+	      Link    "Red Palette Table" , 	"Red Palette Table"
+	      Link    "Green Palette Table",  "Green Palette Table"
+	      Link    "Blue Palette Table", 	"Blue Palette Table"
+	
+		  Page "Red Palette Table"
+		    Link    "Close Table" , ".."
+		    Table    $Red_Table "Red Palette Table",
+		    Column "Red", 1 byte, EHEX,
+		    Help	"Enter values for Red Palette. Allowed range for entering values in each row is 0-FF (in decimal 0-255). Input format is of type Hexadecimal."
+		  EndPage
+	
+     	  Page "Green Palette Table"
+		    Link    "Close Table" , ".."
+		    Table    $Green_Table "Green Palette Table",
+		    Column "Green", 1 byte, EHEX,
+		    Help	"Enter values for Green Palette. Allowed range for entering values in each row is 0-FF (in decimal 0-255). Input format is of type Hexadecimal."
+	      EndPage
+	
+	      Page "Blue Palette Table"
+		    Link    "Close Table" , ".."
+		    Table    $Blue_Table "Blue Palette Table",
+		    Column "Blue", 1 byte, EHEX,
+	        Help	"Enter values for Blue Palette. Allowed range for entering values in each row is 0-FF (in decimal 0-255). Input format is of type Hexadecimal."
+	      EndPage
+        EndPage	
+      #endif
+
+EndPage   ; "Integrated LFP Features"
 
   ;==============================================================================
   ; Page - Integrated DisplayPort/HDMI Configuration
@@ -9889,6 +10655,7 @@ Page      "Integrated Display Configuration"
     Title     "DisplayPort Device Configuration "
     Link      "Device 1 Configuration" , "Device 1 (EFP1)"
     Link      "Device 2 Configuration" , "Device 2 (EFP2)"
+    Link      "Device 3 Configuration" , "Device 3 (EFP3)"
 
     ;==============================================================================
     ; Page - Device 1 (EFP1)
@@ -10156,6 +10923,139 @@ Page      "Integrated Display Configuration"
       #ENDIF    ; Embedded platform
     EndPage   ; "Device 2"  (EFP2)
 
+    ;==============================================================================
+    ; Page - Device 3 (EFP3)
+    ;------------------------------------------------------------------------------
+    Page      "Device 3 (EFP3)"
+      Link      "Close Window" , ".."
+
+      Combo     $Int_EFP3_Type, "Select Device Type:", &Int_EFP_Device_Type_List,
+      Help      "This feature specifies the Device Type for this add-in device."
+
+      Combo     $Int_EFP3_Port, "Select Output Port:", &Int_EFP_Port_List,
+      Help      "This feature specifies which DVO port the device is configured."
+
+      Combo     $EFP3_HPD_Inversion_Enable, "HPD Inversion:", &Disabled_Enabled_List,
+      Help      "This feature when enabled, will enable HPD inversion for Selected Port"
+
+      Combo     $Int_EFP3_DDC_Pin, "Select DDC Bus GPIO Pin Pair:", &GPIO_Pin_List,
+      Help      "This feature specifies the GPIO pin pair used as DDC bus by this device. "
+                "If this device doesn't support DDC bus, this field will be ignored."
+
+      Combo     $Int_EFP3_AUX_Channel, "Select AUX Channel:", &Int_DP_AUX_Channel_List,
+      Help      "This feature specifies the AUX Channel for int-DisplayPort. "
+                "This field is valid only if integrated DP is selected for Device Type."
+
+      Combo     $Int_EFP3_HDMI_LS_Type, "Select HDMI level shifter configuration:", &Hdmi_LS_List,
+      Help      "This feature specifies the Level shifter configuration for HDMI. "
+                "This field is valid only if HDMI is selected for Device Type."
+
+      #IF       ($Embedded_Platform == 1)    ; Embedded platform
+        Title     "    "
+
+        Combo     $EFP3_EDIDless_en, "EDIDless Panel: ", &No_Yes_List,
+        Help      "If the Attached panel is EDIDless select Yes and the supplied DTD takes priority."
+
+        Link      "EDID-less EFP Panel DTD Timings" , "EDID-less EFP Panel DTD Timings"
+      #ENDIF    ;  Embedded platform
+
+      Title     "    "
+
+      Combo     $EFP3_LSPcon_Options, "OnBoard LSPCON for HDMI 2.0: ", &Hdmi2SupportOptions,
+      Help      "This option is used to enable or disable the OnBoard LSPCON chip."
+
+      Combo     $EFP3_Lane_Reversal, "DDI Lane Reversal: ", &Disabled_Enabled_List,
+      Help      "This feature, when enabled, will set lane reversal bit for selected Port "
+
+      Combo     $EFP3_USB_C_DongleFeature_Enabled, "USB-Type-C Dongle Feature Enabled:", &Disabled_Enabled_List,
+      Help      "This option Enables/Disables USB-Type-C Dongle Feature for USB Type C port for DP panels.\r\n"
+
+      Combo     $Int_EFP3_Port_Dockable, "Dockable Port: ", &No_Yes_List,
+      Help      "This feature will describe if this Port is Dockable or Not."
+
+      Title     "Select DisplayPort Redriver "
+      Link      "Select DisplayPort Redriver Configuration ( Dock/ OnBoard )" , "Select DisplayPort Redriver Configuration ( Dock/ OnBoard )"
+
+      Page      "Select DisplayPort Redriver Configuration ( Dock/ OnBoard )"
+        Combo     $Int_EFP3_OnBoard_Redriver_Present, "Non-dock topology: (OnBoard)", &No_Yes_List,
+        Help      "This feature will describe if Non-Dock Topology/OnBoard Redriver DP Link is present or Not."
+
+        Combo     $Int_EFP3_OnBoard_Pre_emphasis, "\tPre-Emphasis Level:", &DP_eDP_Link_PreEmp_List,
+        Help      "This feature allows for the selection of Pre-emphasis level for the OnBoard redriver DP link.\r\n"
+                  "Level 0 (0 dB)\n"
+                  "Level 1 (3.5 dB)\n"
+                  "Level 2 (6.0 dB)\n"
+                  "Level 3 (9.5 dB)"
+
+        Combo     $Int_EFP3_OnBoard_Voltage_swing, "\tVoltage Swing Level:", &DP_eDP_Link_VSwing_List,
+        Help      "This feature allows for the selection of voltage swing level for the OnBoard redriver DP link.\r\n"
+                  "Swing-0 (0.4 V)\n" 
+                  "Swing-1 (0.6 V)\n"
+                  "Swing-2 (0.8 V)\n"
+        ; "Swing-3 (1.2 V)"
+
+        Title     "    "
+        Combo     $Int_EFP3_Dock_Redriver_Present, "Dock Topology: (Mobile only)", &No_Yes_List,
+        Help      "This feature will describe if Dock Topology/Dock Redriver DP Link is present or not."
+
+        Combo     $Int_EFP3_Dock_Pre_emphasis, "\tPre-Emphasis Level:", &DP_eDP_Link_PreEmp_List,
+        Help      "This feature allows for the selection of Pre-emphasis level for the Dock redriver DP link.\r\n"
+                  "Level 0 (0 dB)\n"
+                  "Level 1 (3.5 dB)\n"
+                  "Level 2 (6.0 dB)\n"
+                  "Level 3 (9.5 dB)"
+
+        Combo     $Int_EFP3_Dock_Voltage_swing, "\tVoltage Swing Level:", &DP_eDP_Link_VSwing_List,
+        Help      "This feature allows for the selection of voltage swing level for the Dock redriver DP link.\r\n"
+                  "Swing-0 (0.4 V)\n" 
+                  "Swing-1 (0.6 V)\n"
+                  "Swing-2 (0.8 V)\n"
+        ; "Swing-3 (1.2 V)"
+      EndPage   ; "DisplayPort Redriver Configuration"
+
+      #IF       ($Embedded_Platform == 1)    ; Embedded platform
+        Page      "EDID-less EFP Panel DTD Timings"
+          Link      "Close Table" , ".."
+
+          Table     $EFP3_DTD " DTD Timings Values",
+          Column    "Timings" , 1 byte , EHEX,
+          Help      "This feature allows for the definition of the DTD timings parameters. "
+                    "The table is the 18-byte DTD structure defined in the VESA EDID version 1.x.\r\n\r\n"
+                    "\tByte1 \t: Low Byte of DClk in 10 KHz\r\n"
+                    "\tByte2 \t: High Byte of DClk in 10 KHz\r\n"
+                    "\tByte3 \t: Horizontal Active in pixels, LSB\r\n"
+                    "\tByte4 \t: Horizontal Blanking in pixels, LSB\r\n"
+                    "\tByte5 \t: Bit 7-4: Upper 4 bits of Hor. Active\r\n"
+                    "\t   \t: Bit 3-0: Upper 4 bits of Hor. Blanking\r\n"
+                    "\tByte6 \t: Vertical Active in lines, LSB\r\n"
+                    "\tByte7 \t: Vertical Blanking in lines, LSB\r\n"
+                    "\tByte8 \t: Bit 7-4: Upper 4 bits of Vert. Active\r\n"
+                    "\t   \t: Bit 3-0: Upper 4 bits of Vert. Blanking\r\n"
+                    "\tByte9  \t: HSync Offset from Hor. Blanking in pix., LSB\r\n"
+                    "\tByte10 \t: HSync Pulse Width in pixels, LSB\r\n"
+                    "\tByte11 \t: Bit 7-4: Lower 4 bits of VSync Offset\r\n"
+                    "\t   \t: Bit 3-0: Lower 4 bits of VSync Pulse Width\r\n"
+                    "\tByte12 \t: Bit 7-6: Upper 2 bits of HSync Offset\r\n"
+                    "\t   \t: Bit 5-4: Upper 2 bits of HSync Pulse Width\r\n"
+                    "\t   \t: Bit 3-2: Upper 2 bits of VSync Offset\r\n"
+                    "\t   \t: Bit 1-0: Upper 2 bits of VSync Pulse Width\r\n"
+                    "\tByte13 \t: Horizontal Image Size, LSB\r\n"
+                    "\tByte14 \t: Vertical Image Size, LSB\r\n"
+                    "\tByte15 \t: Bit 7-4: Upper 4 bits of Hor. Image Size\r\n"
+                    "\t   \t: Bit 3-0: Upper 4 bits of Vert. Image Size\r\n"
+                    "\tByte16 \t: Horizontal Border in pixels\r\n"
+                    "\tByte17 \t: Vertical Border in lines\r\n"
+                    "\tByte18 \t: Flags:\r\n"
+                    "\t   \t:   Bit 7:   0 = Non-interlaced, 1 = Interlaced\r\n"
+                    "\t   \t:   Bit 6-5: 00 = Reserved\r\n"
+                    "\t   \t:   Bit 4-3: 11 = Digital Separate\r\n"
+                    "\t   \t:   Bit 2:   Vertical Polarity (0 = Negative, 1 = Positive)\r\n"
+                    "\t   \t:   Bit 1:   Horizontal Polarity (0 = Negative, 1 = Positive)\r\n"
+                    "\t   \t:   Bit 0:   0 = Reserved"
+        EndPage   ; "EDID-less EFP Panel DTD Timings"
+      #ENDIF    ; Embedded platform
+    EndPage   ; "Device 3 (EFP3)"
+
   EndPage   ; "Integrated DisplayPort/HDMI Configuration with External Connectors"
 EndPage   ; Display configuration
 
@@ -10271,8 +11171,8 @@ Page      "Modes Removal Table"
   Help      "This feature allows removing support for selected modes resolutions.\r\n"
             "X-Resolution, Y-Resolution, and BPP in Decimal or Hexadecimal (0FFFFh or 0FFh means disable all).\r\n\r\n"
             "Refresh Rate bitmap selection (0 = Do not remove, 1 = Remove):\r\n"
-            "\tBit \t  15-14 \t13 \t12 \t11 \t10 \t9 \t8 \t7 \t6 \t5 \t4 \t3 \t2 \t1 \t0 \r\n"
-            "\tRRate(Hz)  Rsvd \t25 \t24 \t50 \t40 \t30 \t120 \t100 \t85 \t75 \t72 \t70 \t60 \t56 \t43 \r\n\r\n"
+            "\tBit \t     15 \t14 \t13 \t12 \t11 \t10 \t9 \t8 \t7 \t6 \t5 \t4 \t3 \t2 \t1 \t0 \r\n"
+            "\tRRate(Hz)  Rsvd \t48 \t25 \t24 \t50 \t40 \t30 \t120 \t100 \t85 \t75 \t72 \t70 \t60 \t56 \t43 \r\n\r\n"
             "Removal Flags bitmap selection (0 = Do not remove, 1 = Remove):\r\n"
             "\tBit        \t     7 \t  6 \t\t5 \t4 \t3 \t2 \t1 \t0 \r\n"
             "\tComponent  Rsvd \tTV Scan Mode \tLFP \tEFP \tRsvd \tRsvd \tDriver \tVBIOS \r\n\r\n"
@@ -10326,7 +11226,7 @@ Page      "OEM Customizable Modes"
     EditNum   $OEM_Mode_Flags1, "Support Flags:", BIN,
     Help      "Support flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
               "\tBit 7\tBit 6\tBit 5\tBit 4\tBit 3\tBit 2\tBit 1\tBit 0\r\n"
-              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tDriver\tVBIOS"
+              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tGOP\tDriver\tVBIOS"
 
     EditNum   $OEM_Display_Flags1, "Display Flags:", BIN,
     Help      "Display Flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
@@ -10399,7 +11299,7 @@ Page      "OEM Customizable Modes"
     EditNum   $OEM_Mode_Flags2, "Support Flags:", BIN,
     Help      "Support flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
               "\tBit 7\tBit 6\tBit 5\tBit 4\tBit 3\tBit 2\tBit 1\tBit 0\r\n"
-              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tDriver\tVBIOS"
+              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tGOP\tDriver\tVBIOS"
 
     EditNum   $OEM_Display_Flags2, "Display Flags:", BIN,
     Help      "Display Flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
@@ -10476,7 +11376,7 @@ Page      "OEM Customizable Modes"
     EditNum   $OEM_Mode_Flags3, "Support Flags:", BIN,
     Help      "Support flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
               "\tBit 7\tBit 6\tBit 5\tBit 4\tBit 3\tBit 2\tBit 1\tBit 0\r\n"
-              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tDriver\tRsvd"
+              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tGOP\tDriver\tRsvd"
 
     EditNum   $OEM_Display_Flags3, "Display Flags:", BIN,
     Help      "Display Flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
@@ -10552,7 +11452,7 @@ Page      "OEM Customizable Modes"
     EditNum   $OEM_Mode_Flags4, "Support Flags:", BIN,
     Help      "Support flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
               "\tBit 7\tBit 6\tBit 5\tBit 4\tBit 3\tBit 2\tBit 1\tBit 0\r\n"
-              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tDriver\tRsvd"
+              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tGOP\tDriver\tRsvd"
 
     EditNum   $OEM_Display_Flags4, "Display Flags:", BIN,
     Help      "Display Flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
@@ -10629,7 +11529,7 @@ Page      "OEM Customizable Modes"
     EditNum   $OEM_Mode_Flags5, "Support Flags:", BIN,
     Help      "Support flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
               "\tBit 7\tBit 6\tBit 5\tBit 4\tBit 3\tBit 2\tBit 1\tBit 0\r\n"
-              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tDriver\tRsvd"
+              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tGOP\tDriver\tRsvd"
 
     EditNum   $OEM_Display_Flags5, "Display Flags:", BIN,
     Help      "Display Flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
@@ -10705,7 +11605,7 @@ Page      "OEM Customizable Modes"
     EditNum   $OEM_Mode_Flags6, "Support Flags:", BIN,
     Help      "Support flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"
               "\tBit 7\tBit 6\tBit 5\tBit 4\tBit 3\tBit 2\tBit 1\tBit 0\r\n"
-              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tDriver\tRsvd"
+              "\tRsvd\tRsvd\tRsvd\tRsvd\tRsvd\tGOP\tDriver\tRsvd"
 
     EditNum   $OEM_Display_Flags6, "Display Flags:", BIN,
     Help      "Display Flags: (0 = Disabled, 1 = Enabled)\r\n\r\n"

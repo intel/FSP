@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2016, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2017, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -51,17 +51,17 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_DDR3LPageSize                    1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_DDR3LASR                         1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_ScramblerSupport                 1 bytes    $_DEFAULT_ = 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_InterleavedMode                  1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_ChannelHashMask                  2 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SliceHashMask                    2 bytes    $_DEFAULT_ = 0x00
-        $gBroxtonFspPkgTokenSpaceGuid_InterleavedMode                  1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_ChannelsSlicesEnable             1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_MinRefRate2xEnable               1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_DualRankSupportEnable            1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_RmtMode                          1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_MemorySizeLimit                  2 bytes    $_DEFAULT_ = 0x0000
         $gBroxtonFspPkgTokenSpaceGuid_LowMemoryMaxValue                2 bytes    $_DEFAULT_ = 0x0000
-        $gBroxtonFspPkgTokenSpaceGuid_DisableFastBoot                  1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_HighMemoryMaxValue               2 bytes    $_DEFAULT_ = 0x0000
+        $gBroxtonFspPkgTokenSpaceGuid_DisableFastBoot                  1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_DIMM0SPDAddress                  1 bytes    $_DEFAULT_ = 0xA0
         $gBroxtonFspPkgTokenSpaceGuid_DIMM1SPDAddress                  1 bytes    $_DEFAULT_ = 0xA4
         $gBroxtonFspPkgTokenSpaceGuid_Ch0_RankEnable                   1 bytes    $_DEFAULT_ = 0x00
@@ -97,23 +97,23 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_Ch3_Mode2N                       1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_Ch3_OdtLevels                    1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_RmtCheckRun                      1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_RmtMarginCheckScaleHighThreshold   2 bytes    $_DEFAULT_ = 0x0000
         $gBroxtonFspPkgTokenSpaceGuid_Ch0_Bit_swizzling               32 bytes    $_DEFAULT_ = 0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F
         $gBroxtonFspPkgTokenSpaceGuid_Ch1_Bit_swizzling               32 bytes    $_DEFAULT_ = 0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F
         $gBroxtonFspPkgTokenSpaceGuid_Ch2_Bit_swizzling               32 bytes    $_DEFAULT_ = 0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F
         $gBroxtonFspPkgTokenSpaceGuid_Ch3_Bit_swizzling               32 bytes    $_DEFAULT_ = 0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F
-        $gBroxtonFspPkgTokenSpaceGuid_RmtMarginCheckScaleHighThreshold   2 bytes    $_DEFAULT_ = 0x0000
         $gBroxtonFspPkgTokenSpaceGuid_MsgLevelMask                     4 bytes    $_DEFAULT_ = 0x00000000
         Skip 4 bytes
-        $gPlatformFspPkgTokenSpaceGuid_PreMemGpioTableEntryNum         1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PreMemGpioTablePinNum           4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PreMemGpioTablePtr              4 bytes    $_DEFAULT_ = 0x00000000
+        $gPlatformFspPkgTokenSpaceGuid_PreMemGpioTableEntryNum         1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_EnhancePort8xhDecoding           1 bytes    $_DEFAULT_ = 0x01
-        $gBroxtonFspPkgTokenSpaceGuid_OemLoadingBase                   4 bytes    $_DEFAULT_ = 0x7AD00000
-        $gBroxtonFspPkgTokenSpaceGuid_OemFileName                     16 bytes    $_DEFAULT_ = ""
         $gBroxtonFspPkgTokenSpaceGuid_SpdWriteEnable                   1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_MrcDataSaving                    1 bytes    $_DEFAULT_ = 0x00
-        $gBroxtonFspPkgTokenSpaceGuid_eMMCTraceLen                     1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_OemLoadingBase                   4 bytes    $_DEFAULT_ = 0x7AD00000
+        $gBroxtonFspPkgTokenSpaceGuid_OemFileName                     16 bytes    $_DEFAULT_ = ""
         Skip 4 bytes
+        $gBroxtonFspPkgTokenSpaceGuid_eMMCTraceLen                     1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SkipCseRbp                       1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_NpkEn                            1 bytes    $_DEFAULT_ = 0x03
         $gBroxtonFspPkgTokenSpaceGuid_FwTraceEn                        1 bytes    $_DEFAULT_ = 0x01
@@ -131,6 +131,10 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_SwTraceEn                        1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PeriodicRetrainingDisable        1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_EnableResetSystem                1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_EnableS3Heci2                    1 bytes    $_DEFAULT_ = 0x01
+        Skip 7 bytes
+        $gBroxtonFspPkgTokenSpaceGuid_StartTimerTickerOfPfetAssert     8 bytes    $_DEFAULT_ = 0x00000000
+        $gBroxtonFspPkgTokenSpaceGuid_RtEn                             1 bytes    $_DEFAULT_ = 0x00
 
     Find "APLUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x01
@@ -148,7 +152,6 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_C1e                              1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_BiProcHot                        1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_PkgCStateLimit                   1 bytes    $_DEFAULT_ = 0x02
-        Skip 1 bytes
         $gBroxtonFspPkgTokenSpaceGuid_CStateAutoDemotion               1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_CStateUnDemotion                 1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_MaxCoreCState                    1 bytes    $_DEFAULT_ = 0x08
@@ -160,9 +163,9 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_P2sbUnhide                       1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_IpuEn                            1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_IpuAcpiMode                      1 bytes    $_DEFAULT_ = 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_ForceWake                        1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_GttMmAdr                         4 bytes    $_DEFAULT_ = 0xBF000000
         $gBroxtonFspPkgTokenSpaceGuid_GmAdr                            4 bytes    $_DEFAULT_ = 0xA0000000
-        $gBroxtonFspPkgTokenSpaceGuid_ForceWake                        1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PavpLock                         1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_GraphicsFreqModify               1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_GraphicsFreqReq                  1 bytes    $_DEFAULT_ = 0x00
@@ -177,11 +180,11 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_FastBoot                         1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_DynSR                            1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SaIpuEnable                      1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_PmSupport                        1 bytes    $_DEFAULT_ = 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_EnableRenderStandby              1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_LogoSize                         4 bytes    $_DEFAULT_ = 0x00000000
         $gBroxtonFspPkgTokenSpaceGuid_LogoPtr                          4 bytes    $_DEFAULT_ = 0x00000000
         $gBroxtonFspPkgTokenSpaceGuid_GraphicsConfigPtr                4 bytes    $_DEFAULT_ = 0x00000000
-        $gBroxtonFspPkgTokenSpaceGuid_PmSupport                        1 bytes    $_DEFAULT_ = 0x01
-        $gBroxtonFspPkgTokenSpaceGuid_EnableRenderStandby              1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_PavpEnable                       1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_PavpPr3                          1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_CdClock                          1 bytes    $_DEFAULT_ = 0x04
@@ -218,17 +221,16 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_AudioDspPwrGate                  1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_Mmt                              1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_Hmt                              1 bytes    $_DEFAULT_ = 0x00
-        $gBroxtonFspPkgTokenSpaceGuid_BiosCfgLockDown                  1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_HDAudioPwrGate                   1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_HDAudioClkGate                   1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_DspFeatureMask                   4 bytes    $_DEFAULT_ = 0x00000000
         $gBroxtonFspPkgTokenSpaceGuid_DspPpModuleMask                  4 bytes    $_DEFAULT_ = 0x00000000
+        $gBroxtonFspPkgTokenSpaceGuid_BiosCfgLockDown                  1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_Hpet                             1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_HpetBdfValid                     1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_HpetBusNumber                    1 bytes    $_DEFAULT_ = 0xFA
         $gBroxtonFspPkgTokenSpaceGuid_HpetDeviceNumber                 1 bytes    $_DEFAULT_ = 0x1F
         $gBroxtonFspPkgTokenSpaceGuid_HpetFunctionNumber               1 bytes    $_DEFAULT_ = 0x00
-        Skip 4 bytes
         $gBroxtonFspPkgTokenSpaceGuid_IoApicBdfValid                   1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_IoApicBusNumber                  1 bytes    $_DEFAULT_ = 0xFA
         $gBroxtonFspPkgTokenSpaceGuid_IoApicDeviceNumber               1 bytes    $_DEFAULT_ = 0x0F
@@ -242,6 +244,7 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_SpiEiss                          1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_BiosLockSwSmiNumber              1 bytes    $_DEFAULT_ = 0xA9
         $gBroxtonFspPkgTokenSpaceGuid_LPSS_S0ixEnable                  1 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
         $gBroxtonFspPkgTokenSpaceGuid_I2cClkGateCfg                    8 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gBroxtonFspPkgTokenSpaceGuid_HsuartClkGateCfg                 4 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01
         $gBroxtonFspPkgTokenSpaceGuid_SpiClkGateCfg                    3 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01
@@ -260,14 +263,15 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_Spi0Enable                       1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_Spi1Enable                       1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_Spi2Enable                       1 bytes    $_DEFAULT_ = 0x01
-        $gBroxtonFspPkgTokenSpaceGuid_Uart2KernelDebugBaseAddress      4 bytes    $_DEFAULT_ = 0x0000000
         $gBroxtonFspPkgTokenSpaceGuid_OsDbgEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_DciEn                            1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_Uart2KernelDebugBaseAddress      4 bytes    $_DEFAULT_ = 0x0000000
         $gBroxtonFspPkgTokenSpaceGuid_PcieClockGatingDisabled          1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRootPort8xhDecode            1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_Pcie8xhDecodePortIndex           1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRootPortPeerMemoryWriteEnable   1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieAspmSwSmiNumber              1 bytes    $_DEFAULT_ = 0xAA
+        Skip 1 bytes
         $gBroxtonFspPkgTokenSpaceGuid_PcieRootPortEn                   6 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpHide                       6 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpSlotImplemented            6 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
@@ -305,6 +309,7 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_SataPwrOptEnable                 1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_eSATASpeedLimit                  1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SpeedLimit                       1 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
         $gBroxtonFspPkgTokenSpaceGuid_SataPortsEnable                  2 bytes    $_DEFAULT_ = 0x01, 0x01
         $gBroxtonFspPkgTokenSpaceGuid_SataPortsDevSlp                  2 bytes    $_DEFAULT_ = 0x00, 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SataPortsHotPlug                 2 bytes    $_DEFAULT_ = 0x00, 0x00
@@ -314,10 +319,10 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_SataPortsSolidStateDrive         2 bytes    $_DEFAULT_ = 0x00, 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SataPortsEnableDitoConfig        2 bytes    $_DEFAULT_ = 0x00, 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SataPortsDmVal                   2 bytes    $_DEFAULT_ = 0x0F, 0x0F
+        Skip 2 bytes
         $gBroxtonFspPkgTokenSpaceGuid_SataPortsDitoVal                 4 bytes    $_DEFAULT_ = 0x71,0x02,0x71,0x02
         $gBroxtonFspPkgTokenSpaceGuid_SubSystemVendorId                2 bytes    $_DEFAULT_ = 0x8086
         $gBroxtonFspPkgTokenSpaceGuid_SubSystemId                      2 bytes    $_DEFAULT_ = 0x7270
-        Skip 10 bytes
         $gBroxtonFspPkgTokenSpaceGuid_CRIDSettings                     1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_ResetSelect                      1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SdcardEnabled                    1 bytes    $_DEFAULT_ = 0x01
@@ -331,41 +336,43 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_StartFramePulse                  1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SmbusEnable                      1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_ArpEnable                        1 bytes    $_DEFAULT_ = 0x01
-        Skip 2 bytes
+        Skip 1 bytes
         $gBroxtonFspPkgTokenSpaceGuid_NumRsvdSmbusAddresses            2 bytes    $_DEFAULT_ = 0x0080
         $gBroxtonFspPkgTokenSpaceGuid_RsvdSmbusAddressTable          128 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_DisableComplianceMode            1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_UsbPerPortCtl                    1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_Usb30Mode                        1 bytes    $_DEFAULT_ = 0x02
+        Skip 1 bytes
         $gBroxtonFspPkgTokenSpaceGuid_PortUsb20Enable                  8 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gBroxtonFspPkgTokenSpaceGuid_PortUs20bOverCurrentPin          8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        $gBroxtonFspPkgTokenSpaceGuid_PortUsb30Enable                  6 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
-        $gBroxtonFspPkgTokenSpaceGuid_PortUs30bOverCurrentPin          6 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gBroxtonFspPkgTokenSpaceGuid_UsbOtg                           1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_HsicSupportEnable                1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_PortUsb30Enable                  6 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_PortUs30bOverCurrentPin          6 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gBroxtonFspPkgTokenSpaceGuid_SsicPortEnable                   2 bytes    $_DEFAULT_ = 0x00, 0x00
         $gBroxtonFspPkgTokenSpaceGuid_DlanePwrGating                   2 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_VtdEnable                        1 bytes    $_DEFAULT_ = 0x00
-        $gBroxtonFspPkgTokenSpaceGuid_ResetWaitTimer                   2 bytes    $_DEFAULT_ = 0x012C
         $gBroxtonFspPkgTokenSpaceGuid_LockDownGlobalSmi                1 bytes    $_DEFAULT_ = 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_ResetWaitTimer                   2 bytes    $_DEFAULT_ = 0x012C
         $gBroxtonFspPkgTokenSpaceGuid_RtcLock                          1 bytes    $_DEFAULT_ = 0x01
-        $gBroxtonFspPkgTokenSpaceGuid_SsicRate                         2 bytes    $_DEFAULT_ = 0x01, 0x01
         $gBroxtonFspPkgTokenSpaceGuid_SataTestMode                     1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_SsicRate                         2 bytes    $_DEFAULT_ = 0x01, 0x01
         $gBroxtonFspPkgTokenSpaceGuid_DynamicPowerGating               2 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpLtrMaxSnoopLatency        12 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpSnoopLatencyOverrideMode   6 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02, 0x02, 0x02
+        Skip 2 bytes
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpSnoopLatencyOverrideValue  12 bytes    $_DEFAULT_ = 0x3C,0x00,0x3C,0x00,0x00,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpSnoopLatencyOverrideMultiplier   6 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02, 0x02, 0x02
+        $gBroxtonFspPkgTokenSpaceGuid_SkipMpInit                       1 bytes    $_DEFAULT_ = 0
+        $gBroxtonFspPkgTokenSpaceGuid_DciAutoDetect                    1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpLtrMaxNonSnoopLatency     12 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpNonSnoopLatencyOverrideMode   6 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02, 0x02, 0x02
+        $gBroxtonFspPkgTokenSpaceGuid_TcoTimerHaltLock                 1 bytes    $_DEFAULT_ = 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_PwrBtnOverridePeriod             1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpNonSnoopLatencyOverrideValue  12 bytes    $_DEFAULT_ = 0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpNonSnoopLatencyOverrideMultiplier   6 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02, 0x02, 0x02
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpSlotPowerLimitScale        6 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpSlotPowerLimitValue        6 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        $gBroxtonFspPkgTokenSpaceGuid_SkipMpInit                       1 bytes    $_DEFAULT_ = 0
-        $gBroxtonFspPkgTokenSpaceGuid_DciAutoDetect                    1 bytes    $_DEFAULT_ = 0x01
-        $gBroxtonFspPkgTokenSpaceGuid_TcoTimerHaltLock                 1 bytes    $_DEFAULT_ = 0x01
-        $gBroxtonFspPkgTokenSpaceGuid_PwrBtnOverridePeriod             1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_DisableNativePowerButton         1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PowerButterDebounceMode          1 bytes    $_DEFAULT_ = 0x01
         $gBroxtonFspPkgTokenSpaceGuid_SdioTxCmdCntl                    4 bytes    $_DEFAULT_ = 0x00000505
@@ -387,10 +394,20 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_EmmcRxCmdDataCntl2               4 bytes    $_DEFAULT_ = 0x0001003b
         $gBroxtonFspPkgTokenSpaceGuid_EmmcMasterSwCntl                 4 bytes    $_DEFAULT_ = 0x00000001
         $gBroxtonFspPkgTokenSpaceGuid_PcieRpSelectableDeemphasis       6 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
-        Skip 1 bytes
         $gBroxtonFspPkgTokenSpaceGuid_MonitorMwaitEnable               1 bytes    $_DEFAULT_ = 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_HdAudioDspUaaCompliance          1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_IPC                             16 bytes    $_DEFAULT_ = 0xF8,0xEE,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF
-        $gKabylakeFspPkgTokenSpaceGuid_SataPortsDisableDynamicPg       2 bytes    $_DEFAULT_ = 0x00, 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_SataPortsDisableDynamicPg        2 bytes    $_DEFAULT_ = 0x00, 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_InitS3Cpu                        1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_SkipPunitInit                    1 bytes    $_DEFAULT_ = 0x00
+        Skip 4 bytes
+        $gBroxtonFspPkgTokenSpaceGuid_PortUsb20PerPortTxPeHalf         8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_PortUsb20PerPortPeTxiSet         8 bytes    $_DEFAULT_ = 0x07, 0x06, 0x06, 0x06, 0x07, 0x07, 0x07, 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_PortUsb20PerPortTxiSet           8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03
+        $gBroxtonFspPkgTokenSpaceGuid_PortUsb20HsSkewSel               8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_PortUsb20IUsbTxEmphasisEn        8 bytes    $_DEFAULT_ = 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x01
+        $gBroxtonFspPkgTokenSpaceGuid_PortUsb20PerPortRXISet           8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_PortUsb20HsNpreDrvSel            8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03
 
 EndStruct
 
@@ -707,6 +724,11 @@ List &gBroxtonFspPkgTokenSpaceGuid_PwrBtnOverridePeriod
     Selection 0x5 , "14s"
 EndList
 
+List &gBroxtonFspPkgTokenSpaceGuid_EnableS3Heci2
+    Selection 0x0 , "Disabled"
+    Selection 0x1 , "Eabled"
+EndList
+
 List &gBroxtonFspPkgTokenSpaceGuid_Ch1_DramDensity
     Selection 0b0000 , "4Gb"
     Selection 0b0001 , "6Gb"
@@ -893,14 +915,14 @@ Page "FSP MemoryInit Settings"
         Help "NOTE: Only for memory down. This is specific to ddr3l and used for refresh adjustment in Self Refresh, does not affect LP4. 0x00:Not Supported(Default), 0x01:Supported."
     Combo $gBroxtonFspPkgTokenSpaceGuid_ScramblerSupport, "ScramblerSupport", &EN_DIS,
         Help "Scrambler Support -  Enable or disable the memory scrambler. Data scrambling is provided as a means to increase signal integrity/reduce RFI generated by the DRAM interface. This is achieved by randomizing seed that encodes/decodes memory data so repeating a worse case pattern is hard to repeat. 00: Disable Scrambler Support, 01: Enable Scrambler Support"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_InterleavedMode, "InterleavedMode", &gBroxtonFspPkgTokenSpaceGuid_InterleavedMode,
+        Help "This field is ignored if one of the PnP channel configurations is used. If the memory configuration is different, then the field is used directly to populate. 0x00:Disable(Default), 0x02:Enable."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_ChannelHashMask, "ChannelHashMask", HEX,
         Help "ChannelHashMask and SliceHashMask allow for the channel hashing algorithm to be modified. These inputs are not used for configurations where an optimized ChannelHashMask has been provided by the PnP validation teams. 0x00(Default)."
              "Valid range: 0x0 ~ 0xF"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_SliceHashMask, "SliceHashMask", HEX,
         Help "ChannelHashMask and SliceHashMask allow for the channel hashing algorithm to be modified. These inputs are not used for configurations where an optimized ChannelHashMask has been provided by the PnP validation teams. 0x00(Default)."
              "Valid range: 0x0 ~ 0xF"
-    Combo $gBroxtonFspPkgTokenSpaceGuid_InterleavedMode, "InterleavedMode", &gBroxtonFspPkgTokenSpaceGuid_InterleavedMode,
-        Help "This field is ignored if one of the PnP channel configurations is used. If the memory configuration is different, then the field is used directly to populate. 0x00:Disable(Default), 0x02:Enable."
     Combo $gBroxtonFspPkgTokenSpaceGuid_ChannelsSlicesEnable, "ChannelsSlicesEnable", &EN_DIS,
         Help "ChannelSlicesEnable field is not used at all on BXTP. The Channel Slice Configuration is calculated internally based on the enabled channel configuration. 0x00:Disable(Default), 0x01:Enable."
     Combo $gBroxtonFspPkgTokenSpaceGuid_MinRefRate2xEnable, "MinRefRate2xEnable", &EN_DIS,
@@ -915,11 +937,11 @@ Page "FSP MemoryInit Settings"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_LowMemoryMaxValue, "LowMemoryMaxValue", HEX,
         Help "Low Memory Max Value: This value is used to restrict the amount of memory below 4GB and the calculations based on it. Value is in MB.Example encodings are: 0x400 = 1GB, 0x800 = 2GB, 0x1000 = 4GB, 0x2000 8GB. 0x0000(Default)."
              "Valid range: 0x0000 ~ 0xFFFF"
-    Combo $gBroxtonFspPkgTokenSpaceGuid_DisableFastBoot, "DisableFastBoot", &EN_DIS,
-        Help "00:Disabled; Use saved training data (if valid) after first boot(Default), 01:Enabled; Full re-train of memory on every boot."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_HighMemoryMaxValue, "HighMemoryMaxValue", HEX,
         Help "High Memory Max Value: This value is used to restrict the amount of memory above 4GB and the calculations based on it. Value is in MB. Example encodings are: 0x0400:1GB, 0x0800:2GB, 0x1000:4GB, 0x2000:8GB. 0x00(Default)."
              "Valid range: 0x0000 ~ 0xFFFF"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_DisableFastBoot, "DisableFastBoot", &EN_DIS,
+        Help "00:Disabled; Use saved training data (if valid) after first boot(Default), 01:Enabled; Full re-train of memory on every boot."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_DIMM0SPDAddress, "DIMM0SPDAddress", HEX,
         Help "DIMM0 SPD Address (NOTE: Only for DDR3L only. Please put 0 for MemoryDown. 0xA0(Default)."
              "Valid range: 0x00 ~ 0xFF"
@@ -1013,6 +1035,9 @@ Page "FSP MemoryInit Settings"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_RmtCheckRun, "RmtCheckRun", HEX,
         Help "Parameter used to determine whether to run the margin check. Bit 0 is used for MINIMUM MARGIN CHECK and bit 1 is used for DEGRADE MARGIN CHECK"
              "Valid range: 0x00 ~ 0xFF"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_RmtMarginCheckScaleHighThreshold, "RmtMarginCheckScaleHighThreshold", HEX,
+        Help "Percentage used to determine the margin tolerances over the failing margin."
+             "Valid range: 0x00 ~ 0xFFFF"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_Ch0_Bit_swizzling, "Ch0_Bit_swizzling", HEX,
         Help "Channel 0 PHY to DUnit DQ mapping (only used if not 1-1 mapping)Range: 0-32. Frequently asked questions: Q: The DQS (strobes) need to go with the corresponding byte lanes on the DDR module. Are the DQS being swapped around as well? Ans: Yes, DQ strobes need to follow the DQ byte lane they correspond too. So for example if you have DQ[7:0] swapped with DQ[15:8], DQS0 pair also need to be swapped with DQS1 pair. Also, the spreadsheet used for Amenia is essentially a swizzle value lookup that specifies what DRAM DQ bit a particular SoC DQ bit is connected to. Some confusion can arrise from the fact that the indexes to the array do not necessarily map 1:1 to an SoC DQ pin. For example, the CH0 array at index 0 maps to SoC DQB8. The value of 9 at index 0 tells us that SoC DQB8 is connected to DRAM DQA9. Q: The PDG indicates a 2 physical channels need to be stuffed and operated together. Are the CHx_A and CHx_B physical channels operated in tandem or completely separate? If separate, why requirement of pairing them? Ans: We have 2 PHY instances on the SoC each supporting up to 2 x32 LP4 channels. If you have 4 channels both PHYs are active, but if you have 2 channels in order to power gate one PHY, those two channel populated must be on one PHY instance. So yes all channels are independent of each other, but there are some restrictions on how they need to be populated. Q: How is it that an LPDDR4 device is identified as having a x16 width when all 32-bits are used at the same time with a single chip select? That's effectively a x32 device. Ans:LPDDR4 DRAM devices are x16. Each die has 2 x16 devices on them. To make a x32 channel the CS of the two devices in the same die are connected together to make a single rank of one x32 channel (SDP). The second die in the DDP package makes the second rank."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
@@ -1025,32 +1050,29 @@ Page "FSP MemoryInit Settings"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_Ch3_Bit_swizzling, "Ch3_Bit_swizzling", HEX,
         Help "Channel 3 PHY to DUnit DQ mapping (only used if not 1-1 mapping)Range: 0-32."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
-    EditNum $gBroxtonFspPkgTokenSpaceGuid_RmtMarginCheckScaleHighThreshold, "RmtMarginCheckScaleHighThreshold", HEX,
-        Help "Percentage used to determine the margin tolerances over the failing margin."
-             "Valid range: 0x00 ~ 0xFFFF"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_MsgLevelMask, "MsgLevelMask", HEX,
         Help "32 bits used to mask out debug messages. Masking out bit 0 mask all other messages."
              "Valid range: 0x00 ~ 0xFFFFFFFF"
-    EditNum $gPlatformFspPkgTokenSpaceGuid_PreMemGpioTableEntryNum, "PreMem GPIO Table Entry Number. Currently maximum entry number is 4", HEX,
-        Help "Number of Entries in PreMem GPIO Table. 0(Default)."
-             "Valid range: 0x0 ~ 0x04"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PreMemGpioTablePinNum, "PreMem GPIO Pin Number for each table", HEX,
         Help "Number of Pins in each PreMem GPIO Table. 0(Default)."
              "Valid range: 0x0 ~ 0xFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PreMemGpioTablePtr, "PreMem GPIO Table Pointer", HEX,
         Help "Pointer to Array of pointers to PreMem GPIO Table. 0x00000000(Default)."
              "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PreMemGpioTableEntryNum, "PreMem GPIO Table Entry Number. Currently maximum entry number is 4", HEX,
+        Help "Number of Entries in PreMem GPIO Table. 0(Default)."
+             "Valid range: 0x0 ~ 0x04"
     Combo $gBroxtonFspPkgTokenSpaceGuid_EnhancePort8xhDecoding, "Enhance the port 8xh decoding", &EN_DIS,
         Help "Enable/Disable Enhance the port 8xh decoding. 0:Disable, 1:Enable(Default)."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_SpdWriteEnable, "SPD Data Write", &EN_DIS,
+        Help "Enable/Disable SPD data write on the SMBUS. 0x00:Disable(Default), 0x01:Enable."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_MrcDataSaving, "MRC Training Data Saving", &EN_DIS,
+        Help "Enable/Disable MRC training data saving in FSP. 0x00:Disable(Default), 0x01:Enable."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_OemLoadingBase, "OEM File Loading Address", HEX,
         Help "Determine the memory base address to load a specified file from CSE file system after memory is available."
              "Valid range: 0x00000000 ~ 0xFFFFFFFF"
     EditText $gBroxtonFspPkgTokenSpaceGuid_OemFileName, "OEM File Name to Load",
         Help "Specify a file name to load from CSE file system after memory is available. Empty indicates no file needs to be loaded."
-    Combo $gBroxtonFspPkgTokenSpaceGuid_SpdWriteEnable, "SPD Data Write", &EN_DIS,
-        Help "Enable/Disable SPD data write on the SMBUS. 0x00:Disable(Default), 0x01:Enable."
-    Combo $gBroxtonFspPkgTokenSpaceGuid_MrcDataSaving, "MRC Training Data Saving", &EN_DIS,
-        Help "Enable/Disable MRC training data saving in FSP. 0x00:Disable(Default), 0x01:Enable."
     Combo $gBroxtonFspPkgTokenSpaceGuid_eMMCTraceLen, "eMMC Trace Length", &gBroxtonFspPkgTokenSpaceGuid_eMMCTraceLen,
         Help "Select eMMC trace length to load OEM file from when loading OEM file name is specified. 0x0:Long(Default), 0x1:Short."
     Combo $gBroxtonFspPkgTokenSpaceGuid_SkipCseRbp, "Skip CSE RBP to support zero sized IBB", &EN_DIS,
@@ -1097,6 +1119,13 @@ Page "FSP MemoryInit Settings"
         Help "Periodic Retraining Disable - This option allows customers to disable LPDDR4 Periodic Retraining for debug purposes. Periodic Retraining should be enabled in production. Periodic retraining allows the platform to operate reliably over a larger voltage and temperature range. This field has no effect for DDR3L and LPDDR3 memory type configurations. 0x00: Enable Periodic Retraining (default); 0x01: Disable Periodic Retraining (debug configuration only)"
     Combo $gBroxtonFspPkgTokenSpaceGuid_EnableResetSystem, "Enable Reset System", &gBroxtonFspPkgTokenSpaceGuid_EnableResetSystem,
         Help " Enable FSP to trigger reset instead of returning reset request. 0x00: Return the Return Status from FSP if a reset is required. (default); 0x01: Perform Reset inside FSP instead of returning from the API."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_EnableS3Heci2, "Enable HECI2 in S3 resume path", &gBroxtonFspPkgTokenSpaceGuid_EnableS3Heci2,
+        Help " Enable HECI2 in S3 resume path. 0x00: Skip HECI2 initialization in S3 resume. ; 0x01: Enable HECI2 in S3 resume path.(Default)"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_StartTimerTickerOfPfetAssert, "PCIE SLOT Power Enable Assert Time - PFET.", HEX,
+        Help "ACPI Timer Ticker to measure when PCIE Slot Power is enabled through PFET. FSP will wait for 100ms for the power to be stable, before de-asserting PERST bin. Customer who designed the board PCIE slot Power automatically enabled, can pass value of zero here."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_RtEn, "Real Time Enabling", &EN_DIS,
+        Help "Real-Time Feature Configuration Bits settings. 0x0:Disabled (default), 0x1:Enabled"
 EndPage
 
 Page "FSP SiliconInit Settings"
@@ -1157,14 +1186,14 @@ Page "FSP SiliconInit Settings"
         Help "Enable/Disable IPU Device. 0:Disable, 1:Enable(Default)."
     Combo $gBroxtonFspPkgTokenSpaceGuid_IpuAcpiMode, "IMGU ACPI mode selection", &gBroxtonFspPkgTokenSpaceGuid_IpuAcpiMode,
         Help "0:Auto, 1:IGFX Child device(Default), 2:ACPI device."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_ForceWake, "Enable ForceWake", &EN_DIS,
+        Help "Enable/disable ForceWake Models. 0:Disable(Default), 1:Enable."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_GttMmAdr, "GttMmAdr", HEX,
         Help "GttMmAdr structure for initialization. 0xBF000000(Default)."
              "Valid range: 0x00000000 ~ 0xFFFFFFFF"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_GmAdr, "GmAdr", HEX,
         Help "GmAdr structure for initialization. 0xA0000000(Default)."
              "Valid range: 0x00000000 ~ 0xFFFFFFFF"
-    Combo $gBroxtonFspPkgTokenSpaceGuid_ForceWake, "Enable ForceWake", &EN_DIS,
-        Help "Enable/disable ForceWake Models. 0:Disable(Default), 1:Enable."
     Combo $gBroxtonFspPkgTokenSpaceGuid_PavpLock, "Enable PavpLock", &EN_DIS,
         Help "Enable/disable PavpLock. 0:Disable(Default), 1:Enable."
     Combo $gBroxtonFspPkgTokenSpaceGuid_GraphicsFreqModify, "Enable GraphicsFreqModify", &EN_DIS,
@@ -1273,8 +1302,6 @@ Page "FSP SiliconInit Settings"
         Help "Enable/Disable HD-Audio CSME Memory Transfers. 0:VC0(Default), 1:VC2."
     Combo $gBroxtonFspPkgTokenSpaceGuid_Hmt, "HD-Audio Host Memory Transfers", &gBroxtonFspPkgTokenSpaceGuid_Hmt,
         Help "Enable/Disable HD-Audio Host Memory Transfers. 0:VC0(Default), 1:VC2."
-    Combo $gBroxtonFspPkgTokenSpaceGuid_BiosCfgLockDown, "HD-Audio BIOS Configuration Lock Down", &EN_DIS,
-        Help "Enable/Disable HD-Audio BIOS Configuration Lock Down. 0:Disable(Default), 1:Enable."
     Combo $gBroxtonFspPkgTokenSpaceGuid_HDAudioPwrGate, "HD-Audio Power Gating", &EN_DIS,
         Help "Enable/Disable HD-Audio BIOS Configuration Lock Down. 0:Disable(Default), 1:Enable."
     Combo $gBroxtonFspPkgTokenSpaceGuid_HDAudioClkGate, "HD-Audio Clock Gatingn", &EN_DIS,
@@ -1285,6 +1312,8 @@ Page "FSP SiliconInit Settings"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_DspPpModuleMask, "Bitmask of supported DSP Post-Processing Modules", HEX,
         Help "Set HD-Audio Bitmask of supported DSP Post-Processing Modules. 0x00000000(Default)."
              "Valid range: 0x00 ~ 0xFFFFFFFF"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_BiosCfgLockDown, "HD-Audio BIOS Configuration Lock Down", &EN_DIS,
+        Help "Enable/Disable HD-Audio BIOS Configuration Lock Down. 0:Disable(Default), 1:Enable. This option is deprecated"
     Combo $gBroxtonFspPkgTokenSpaceGuid_Hpet, "Enable High Precision Timer", &EN_DIS,
         Help "Enable/Disable Hpet. 0:Disable, 1:Enable(Default)."
     Combo $gBroxtonFspPkgTokenSpaceGuid_HpetBdfValid, "Hpet Valid BDF Value", &EN_DIS,
@@ -1369,13 +1398,13 @@ Page "FSP SiliconInit Settings"
         Help "Enable/Disable SPI Device 1. 0:Disabled, 1:PCI Mode(Default), 2:ACPI Mode."
     Combo $gBroxtonFspPkgTokenSpaceGuid_Spi2Enable, "SPI UART Device 2", &gBroxtonFspPkgTokenSpaceGuid_Spi2Enable,
         Help "Enable/Disable SPI Device 2. 0:Disabled, 1:PCI Mode(Default), 2:ACPI Mode."
-    EditNum $gBroxtonFspPkgTokenSpaceGuid_Uart2KernelDebugBaseAddress, "UART Debug Base Address", HEX,
-        Help "UART Debug Base Address. 0x00000000(Default)."
-             "Valid range: 0x00000000 ~ 0xFFFFFFFF"
     Combo $gBroxtonFspPkgTokenSpaceGuid_OsDbgEnable, "OS Debug Feature", &EN_DIS,
         Help "Enable/Disable OS Debug Feature. 0:Disable(Default), 1: Enable."
     Combo $gBroxtonFspPkgTokenSpaceGuid_DciEn, "DCI Feature", &EN_DIS,
         Help "Enable/Disable DCI Feature. 0:Disable(Default), 1: Enable."
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_Uart2KernelDebugBaseAddress, "UART Debug Base Address", HEX,
+        Help "UART Debug Base Address. 0x00000000(Default)."
+             "Valid range: 0x00000000 ~ 0xFFFFFFFF"
     Combo $gBroxtonFspPkgTokenSpaceGuid_PcieClockGatingDisabled, "Enable PCIE Clock Gating", &gBroxtonFspPkgTokenSpaceGuid_PcieClockGatingDisabled,
         Help "Enable/disable PCIE Clock Gating. 0:Enable, 1:Disable(Default)."
     Combo $gBroxtonFspPkgTokenSpaceGuid_PcieRootPort8xhDecode, "Enable PCIE Root Port 8xh Decode", &EN_DIS,
@@ -1572,16 +1601,16 @@ Page "FSP SiliconInit Settings"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUs20bOverCurrentPin, "USB20 Over Current Pin", HEX,
         Help "Over Current Pin number of USB 2.0 Port. 0x00(Default)."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_UsbOtg, "XDCI Support", &gBroxtonFspPkgTokenSpaceGuid_UsbOtg,
+        Help "Enable/Disable XDCI. 0:Disable, 1:PCI_Mode(Default), 2:ACPI_mode."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_HsicSupportEnable, "Enable XHCI HSIC Support", &EN_DIS,
+        Help "Enable/Disable USB HSIC1. 0:Disable(Default), 1:Enable."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUsb30Enable, "Enable USB3 ports", HEX,
         Help "Enable/disable per USB3 ports. One byte for each port, byte0 for port0, byte1 for port1, and so on. 0x01(Default)."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFF"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUs30bOverCurrentPin, "USB20 Over Current Pin", HEX,
         Help "Over Current Pin number of USB 3.0 Port. 0x01(Default)."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFF"
-    Combo $gBroxtonFspPkgTokenSpaceGuid_UsbOtg, "XDCI Support", &gBroxtonFspPkgTokenSpaceGuid_UsbOtg,
-        Help "Enable/Disable XDCI. 0:Disable, 1:PCI_Mode(Default), 2:ACPI_mode."
-    Combo $gBroxtonFspPkgTokenSpaceGuid_HsicSupportEnable, "Enable XHCI HSIC Support", &EN_DIS,
-        Help "Enable/Disable USB HSIC1. 0:Disable(Default), 1:Enable."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_SsicPortEnable, "Enable XHCI SSIC Support", HEX,
         Help "Enable/disable XHCI SSIC ports. One byte for each port, byte0 for port0, byte1 for port1. 0x00(Default)."
              "Valid range: 0x00 ~ 0xFFFF"
@@ -1589,18 +1618,18 @@ Page "FSP SiliconInit Settings"
         Help "Enable/Disable SSIC Data lane Power Gating. 0:Disable, 1:Enable(Default)."
     Combo $gBroxtonFspPkgTokenSpaceGuid_VtdEnable, "VT-d", &EN_DIS,
         Help "Enable/Disable VT-d. 0:Disable(Default), 1:Enable."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_LockDownGlobalSmi, "SMI Lock bit", &EN_DIS,
+        Help "Enable/Disable SMI_LOCK bit to prevent writes to the Global SMI Enable bit. 0:Disable, 1:Enable(Default)."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_ResetWaitTimer, "HDAudio Delay Timer", HEX,
         Help "The delay timer after Azalia reset. 0x012C(Default)."
              "Valid range: 0x0000 ~ 0xFFFF"
-    Combo $gBroxtonFspPkgTokenSpaceGuid_LockDownGlobalSmi, "SMI Lock bit", &EN_DIS,
-        Help "Enable/Disable SMI_LOCK bit to prevent writes to the Global SMI Enable bit. 0:Disable, 1:Enable(Default)."
     Combo $gBroxtonFspPkgTokenSpaceGuid_RtcLock, "RTC Lock Bits", &EN_DIS,
         Help "Enable/Disable RTC Lock Bits. 0:Disable, 1:Enable(Default)."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_SataTestMode, "SATA Test Mode Selection", &EN_DIS,
+        Help "Enable/Disable SATA Test Mode. 0:Disable(Default), 1:Enable."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_SsicRate, "XHCI SSIC RATE", HEX,
         Help "Set XHCI SSIC1 Rate to A Series or B Series. 1:A Series(Default), 2:B Series."
              "Valid range: 0x00 ~ 0xFF"
-    Combo $gBroxtonFspPkgTokenSpaceGuid_SataTestMode, "SATA Test Mode Selection", &EN_DIS,
-        Help "Enable/Disable SATA Test Mode. 0:Disable(Default), 1:Enable."
     Combo $gBroxtonFspPkgTokenSpaceGuid_DynamicPowerGating, "SMBus Dynamic Power Gating", &EN_DIS,
         Help "Enable/Disable SMBus dynamic power gating. 0:Disable(Default), 1:Enable."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_PcieRpLtrMaxSnoopLatency, "Max Snoop Latency", HEX,
@@ -1615,12 +1644,20 @@ Page "FSP SiliconInit Settings"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_PcieRpSnoopLatencyOverrideMultiplier, "  Snoop Latency Multiplier", HEX,
         Help "LTR Snoop Latency Multiplier of PCH PCIE. 0:1ns, 1:32ns, 2:1024ns(Default), 3:32768ns, 4:1048576ns, 5:33554432ns."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFF"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_SkipMpInit, "Skip Multi-Processor Initialization", &EN_DIS,
+        Help "When this is skipped, boot loader must initialize processors before SilicionInit API. 0: Initialize(Default), <b>1: Skip"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_DciAutoDetect, "DCI Auto Detect", &EN_DIS,
+        Help "Deprecated: Enable/disable DCI AUTO mode. Enabled(Default)."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_PcieRpLtrMaxNonSnoopLatency, "Max Non-Snoop Latency", HEX,
         Help "Latency Tolerance Reporting, Max Non-Snoop Latency. 0x0000(Default)."
              "Valid range: 0x0000 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFF"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_PcieRpNonSnoopLatencyOverrideMode, "  Non Snoop Latency Override", HEX,
         Help "Non Snoop Latency Override for PCH PCIE. \nDisabled:Disable override.\nManual:Manually enter override values.\nAuto: Maintain default BIOS flow. 0:Disable, 1:Enable, 2:Auto(Default)."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFF"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_TcoTimerHaltLock, "Halt and Lock TCO Timer", &gBroxtonFspPkgTokenSpaceGuid_TcoTimerHaltLock,
+        Help "Halt and Lock the TCO Timer (Watchdog)."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_PwrBtnOverridePeriod, "Power Button Override Period", &gBroxtonFspPkgTokenSpaceGuid_PwrBtnOverridePeriod,
+        Help "specifies how long will PMC wait before initiating a global reset. 000b-4s(default), 001b-6s, 010b-8s, 011b-10s, 100b-12s, 101b-14s.)"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_PcieRpNonSnoopLatencyOverrideValue, "  Non Snoop Latency Value", HEX,
         Help "LTR Non Snoop Latency value of PCH PCIE. 0:Minimum, 0x03FF:Maximum, 0x003C(Default)."
              "Valid range: 0x0000 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFF"
@@ -1633,14 +1670,6 @@ Page "FSP SiliconInit Settings"
     EditNum $gBroxtonFspPkgTokenSpaceGuid_PcieRpSlotPowerLimitValue, "PCIE Root Port Slot Power Limit Value", HEX,
         Help "Specifies upper limit on power supplie by slot. 0x00(Default)."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFF"
-    Combo $gBroxtonFspPkgTokenSpaceGuid_SkipMpInit, "Skip Multi-Processor Initialization", &EN_DIS,
-        Help "When this is skipped, boot loader must initialize processors before SilicionInit API. 0: Initialize(Default), <b>1: Skip"
-    Combo $gBroxtonFspPkgTokenSpaceGuid_DciAutoDetect, "DCI Auto Detect", &EN_DIS,
-        Help "Enable/disable DCI AUTO mode. Enabled(Default)."
-    Combo $gBroxtonFspPkgTokenSpaceGuid_TcoTimerHaltLock, "Halt and Lock TCO Timer", &gBroxtonFspPkgTokenSpaceGuid_TcoTimerHaltLock,
-        Help "Halt and Lock the TCO Timer (Watchdog)."
-    Combo $gBroxtonFspPkgTokenSpaceGuid_PwrBtnOverridePeriod, "Power Button Override Period", &gBroxtonFspPkgTokenSpaceGuid_PwrBtnOverridePeriod,
-        Help "specifies how long will PMC wait before initiating a global reset. 000b-4s(default), 001b-6s, 010b-8s, 011b-10s, 100b-12s, 101b-14s.)"
     Combo $gBroxtonFspPkgTokenSpaceGuid_DisableNativePowerButton, "Power Button Native Mode Disable", &EN_DIS,
         Help "Disable power button native mode, when 1, this will result in the PMC logic constantly seeing the power button as de-asserted. 0 (default))"
     Combo $gBroxtonFspPkgTokenSpaceGuid_PowerButterDebounceMode, "Power Button Debounce Mode", &EN_DIS,
@@ -1704,11 +1733,38 @@ Page "FSP SiliconInit Settings"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFF"
     Combo $gBroxtonFspPkgTokenSpaceGuid_MonitorMwaitEnable, "Monitor Mwait Enable", &EN_DIS,
         Help "Enable/Disable Monitor Mwait. For Windows* OS, this should be Enabled. For Linux based OS, this should be Disabled. 0:Disable, 1:Enable(Default)."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_HdAudioDspUaaCompliance, "Universal Audio Architecture compliance for DSP enabled system", &EN_DIS,
+        Help "0: Not-UAA Compliant (Intel SST driver supported only), 1: UAA Compliant (HDA Inbox driver or SST driver supported)."
     EditNum $gBroxtonFspPkgTokenSpaceGuid_IPC, "IRQ Interrupt Polarity Control", HEX,
         Help "Set IRQ Interrupt Polarity Control to ITSS.IPC[0]~IPC[3]. 0:Active High, 1:Active Low"
              "Valid range: 0x00000000 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
-    EditNum $gKabylakeFspPkgTokenSpaceGuid_SataPortsDisableDynamicPg, "Disable ModPHY dynamic power gate", HEX,
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_SataPortsDisableDynamicPg, "Disable ModPHY dynamic power gate", HEX,
         Help "Disable ModPHY dynamic power gate for the specific SATA port."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_InitS3Cpu, "Init CPU during S3 resume", &EN_DIS,
+        Help "0: Do not initialize CPU during S3 resume. 1: Initialize CPU during S3 resume."
+    Combo $gBroxtonFspPkgTokenSpaceGuid_SkipPunitInit, "Skip P-unit Initialization", &EN_DIS,
+        Help "When this is skipped, boot loader must initialize P-unit before SilicionInit API. 0: Initialize(Default), 1: Skip"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUsb20PerPortTxPeHalf, "PerPort Half Bit Pre-emphasis", HEX,
+        Help "PerPort Half Bit Pre-emphasis. Value of register USB2_PER_PORT_PPX [14]"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUsb20PerPortPeTxiSet, "PerPort HS Pre-emphasis Bias", HEX,
+        Help "PerPort HS Pre-emphasis Bias. Value of register USB2_PER_PORT_PPX [13:11]"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUsb20PerPortTxiSet, "PerPort HS Transmitter Bias", HEX,
+        Help "PerPort HS Transmitter Bias. Value of register USB2_PER_PORT_PPX [10:8]"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUsb20HsSkewSel, "Select the skew direction for HS transition", HEX,
+        Help "Select the skew direction for HS transition. Value of register USB2_PER_PORT_2_PPX [25]"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUsb20IUsbTxEmphasisEn, "Per Port HS Transmitter Emphasis", HEX,
+        Help "Per Port HS Transmitter Emphasis. Value of register USB2_PER_PORT_2_PPX [24:23]"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUsb20PerPortRXISet, "PerPort HS Receiver Bias", HEX,
+        Help "PerPort HS Receiver Bias. Value of register  USB2_PER_PORT_2_PPX [19:17]"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_PortUsb20HsNpreDrvSel, "Delay/skew's strength control for HS driver", HEX,
+        Help "Delay/skew's strength control for HS driver. Value of register USB2_PER_PORT_2_PPX [1:0]"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
 EndPage
 

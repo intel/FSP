@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2016, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2017, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -35,7 +35,7 @@ are permitted provided that the following conditions are met:
 
 #include <FspUpd.h>
 
-#pragma pack(push, 1)
+#pragma pack(1)
 
 
 #define MAX_CHANNELS_NUM 4
@@ -202,27 +202,27 @@ typedef struct {
 **/
   UINT8                       ScramblerSupport;
 
-/** Offset 0x0053 - ChannelHashMask
-  ChannelHashMask and SliceHashMask allow for the channel hashing algorithm to be
-  modified. These inputs are not used for configurations where an optimized ChannelHashMask
-  has been provided by the PnP validation teams. 0x00(Default).
-**/
-  UINT16                      ChannelHashMask;
-
-/** Offset 0x0055 - SliceHashMask
-  ChannelHashMask and SliceHashMask allow for the channel hashing algorithm to be
-  modified. These inputs are not used for configurations where an optimized ChannelHashMask
-  has been provided by the PnP validation teams. 0x00(Default).
-**/
-  UINT16                      SliceHashMask;
-
-/** Offset 0x0057 - InterleavedMode
+/** Offset 0x0053 - InterleavedMode
   This field is ignored if one of the PnP channel configurations is used. If the memory
   configuration is different, then the field is used directly to populate. 0x00:Disable(Default),
   0x02:Enable.
   0x0:Disable, 0x2:Enable
 **/
   UINT8                       InterleavedMode;
+
+/** Offset 0x0054 - ChannelHashMask
+  ChannelHashMask and SliceHashMask allow for the channel hashing algorithm to be
+  modified. These inputs are not used for configurations where an optimized ChannelHashMask
+  has been provided by the PnP validation teams. 0x00(Default).
+**/
+  UINT16                      ChannelHashMask;
+
+/** Offset 0x0056 - SliceHashMask
+  ChannelHashMask and SliceHashMask allow for the channel hashing algorithm to be
+  modified. These inputs are not used for configurations where an optimized ChannelHashMask
+  has been provided by the PnP validation teams. 0x00(Default).
+**/
+  UINT16                      SliceHashMask;
 
 /** Offset 0x0058 - ChannelsSlicesEnable
   ChannelSlicesEnable field is not used at all on BXTP. The Channel Slice Configuration
@@ -265,19 +265,19 @@ typedef struct {
 **/
   UINT16                      LowMemoryMaxValue;
 
-/** Offset 0x0060 - DisableFastBoot
-  00:Disabled; Use saved training data (if valid) after first boot(Default), 01:Enabled;
-  Full re-train of memory on every boot.
-  $EN_DIS
-**/
-  UINT8                       DisableFastBoot;
-
-/** Offset 0x0061 - HighMemoryMaxValue
+/** Offset 0x0060 - HighMemoryMaxValue
   High Memory Max Value: This value is used to restrict the amount of memory above
   4GB and the calculations based on it. Value is in MB. Example encodings are: 0x0400:1GB,
   0x0800:2GB, 0x1000:4GB, 0x2000:8GB. 0x00(Default).
 **/
   UINT16                      HighMemoryMaxValue;
+
+/** Offset 0x0062 - DisableFastBoot
+  00:Disabled; Use saved training data (if valid) after first boot(Default), 01:Enabled;
+  Full re-train of memory on every boot.
+  $EN_DIS
+**/
+  UINT8                       DisableFastBoot;
 
 /** Offset 0x0063 - DIMM0SPDAddress
   DIMM0 SPD Address (NOTE: Only for DDR3L only. Please put 0 for MemoryDown. 0xA0(Default).
@@ -586,7 +586,12 @@ typedef struct {
 **/
   UINT8                       RmtCheckRun;
 
-/** Offset 0x0086 - Ch0_Bit_swizzling
+/** Offset 0x0086 - RmtMarginCheckScaleHighThreshold
+  Percentage used to determine the margin tolerances over the failing margin.
+**/
+  UINT16                      RmtMarginCheckScaleHighThreshold;
+
+/** Offset 0x0088 - Ch0_Bit_swizzling
   Channel 0 PHY to DUnit DQ mapping (only used if not 1-1 mapping)Range: 0-32. Frequently
   asked questions: Q: The DQS (strobes) need to go with the corresponding byte lanes
   on the DDR module. Are the DQS being swapped around as well? Ans: Yes, DQ strobes
@@ -612,25 +617,20 @@ typedef struct {
 **/
   UINT8                       Ch0_Bit_swizzling[32];
 
-/** Offset 0x00A6 - Ch1_Bit_swizzling
+/** Offset 0x00A8 - Ch1_Bit_swizzling
   Channel 1 PHY to DUnit DQ mapping (only used if not 1-1 mapping)Range: 0-32.
 **/
   UINT8                       Ch1_Bit_swizzling[32];
 
-/** Offset 0x00C6 - Ch2_Bit_swizzling
+/** Offset 0x00C8 - Ch2_Bit_swizzling
   Channel 2 PHY to DUnit DQ mapping (only used if not 1-1 mapping)Range: 0-32.
 **/
   UINT8                       Ch2_Bit_swizzling[32];
 
-/** Offset 0x00E6 - Ch3_Bit_swizzling
+/** Offset 0x00E8 - Ch3_Bit_swizzling
   Channel 3 PHY to DUnit DQ mapping (only used if not 1-1 mapping)Range: 0-32.
 **/
   UINT8                       Ch3_Bit_swizzling[32];
-
-/** Offset 0x0106 - RmtMarginCheckScaleHighThreshold
-  Percentage used to determine the margin tolerances over the failing margin.
-**/
-  UINT16                      RmtMarginCheckScaleHighThreshold;
 
 /** Offset 0x0108 - MsgLevelMask
   32 bits used to mask out debug messages. Masking out bit 0 mask all other messages.
@@ -639,22 +639,22 @@ typedef struct {
 
 /** Offset 0x010C
 **/
-  UINT32                      UnusedUpdSpace0;
+  UINT8                       UnusedUpdSpace0[4];
 
-/** Offset 0x0110 - PreMem GPIO Table Entry Number. Currently maximum entry number is 4
-  Number of Entries in PreMem GPIO Table. 0(Default).
-**/
-  UINT8                       PreMemGpioTableEntryNum;
-
-/** Offset 0x0111 - PreMem GPIO Pin Number for each table
+/** Offset 0x0110 - PreMem GPIO Pin Number for each table
   Number of Pins in each PreMem GPIO Table. 0(Default).
 **/
   UINT8                       PreMemGpioTablePinNum[4];
 
-/** Offset 0x0115 - PreMem GPIO Table Pointer
+/** Offset 0x0114 - PreMem GPIO Table Pointer
   Pointer to Array of pointers to PreMem GPIO Table. 0x00000000(Default).
 **/
   UINT32                      PreMemGpioTablePtr;
+
+/** Offset 0x0118 - PreMem GPIO Table Entry Number. Currently maximum entry number is 4
+  Number of Entries in PreMem GPIO Table. 0(Default).
+**/
+  UINT8                       PreMemGpioTableEntryNum;
 
 /** Offset 0x0119 - Enhance the port 8xh decoding
   Enable/Disable Enhance the port 8xh decoding. 0:Disable, 1:Enable(Default).
@@ -662,40 +662,40 @@ typedef struct {
 **/
   UINT8                       EnhancePort8xhDecoding;
 
-/** Offset 0x011A - OEM File Loading Address
-  Determine the memory base address to load a specified file from CSE file system
-  after memory is available.
-**/
-  UINT32                      OemLoadingBase;
-
-/** Offset 0x011E - OEM File Name to Load
-  Specify a file name to load from CSE file system after memory is available. Empty
-  indicates no file needs to be loaded.
-**/
-  UINT8                       OemFileName[16];
-
-/** Offset 0x012E - SPD Data Write
+/** Offset 0x011A - SPD Data Write
   Enable/Disable SPD data write on the SMBUS. 0x00:Disable(Default), 0x01:Enable.
   $EN_DIS
 **/
   UINT8                       SpdWriteEnable;
 
-/** Offset 0x012F - MRC Training Data Saving
+/** Offset 0x011B - MRC Training Data Saving
   Enable/Disable MRC training data saving in FSP. 0x00:Disable(Default), 0x01:Enable.
   $EN_DIS
 **/
   UINT8                       MrcDataSaving;
 
-/** Offset 0x0130 - eMMC Trace Length
+/** Offset 0x011C - OEM File Loading Address
+  Determine the memory base address to load a specified file from CSE file system
+  after memory is available.
+**/
+  UINT32                      OemLoadingBase;
+
+/** Offset 0x0120 - OEM File Name to Load
+  Specify a file name to load from CSE file system after memory is available. Empty
+  indicates no file needs to be loaded.
+**/
+  UINT8                       OemFileName[16];
+
+/** Offset 0x0130
+**/
+  VOID*                       MrcBootDataPtr;
+
+/** Offset 0x0134 - eMMC Trace Length
   Select eMMC trace length to load OEM file from when loading OEM file name is specified.
   0x0:Long(Default), 0x1:Short.
   0x0:Long, 0x1:Short
 **/
   UINT8                       eMMCTraceLen;
-
-/** Offset 0x0131
-**/
-  VOID*                       MrcBootDataPtr;
 
 /** Offset 0x0135 - Skip CSE RBP to support zero sized IBB
   Enable/Disable skip CSE RBP for bootloader which loads IBB without assistance of
@@ -800,36 +800,39 @@ typedef struct {
 **/
   UINT8                       EnableResetSystem;
 
-/** Offset 0x014C
+/** Offset 0x014C - Enable HECI2 in S3 resume path
+  Enable HECI2 in S3 resume path. 0x00: Skip HECI2 initialization in S3 resume. ;
+  0x01: Enable HECI2 in S3 resume path.(Default)
+  0x0:Disabled, 0x1:Eabled
 **/
-  UINT8                       ReservedFspmUpd[4];
-} FSP_M_CONFIG;
+  UINT8                       EnableS3Heci2;
 
-/** Fsp M Test Configuration
+/** Offset 0x014D
 **/
-typedef struct {
+  UINT8                       UnusedUpdSpace1[3];
 
 /** Offset 0x0150
 **/
-  UINT32                      Signature;
+  VOID*                       VariableNvsBufferPtr;
 
-/** Offset 0x0154
+/** Offset 0x0154 - PCIE SLOT Power Enable Assert Time - PFET.
+  ACPI Timer Ticker to measure when PCIE Slot Power is enabled through PFET. FSP will
+  wait for 100ms for the power to be stable, before de-asserting PERST bin. Customer
+  who designed the board PCIE slot Power automatically enabled, can pass value of
+  zero here.
 **/
-  UINT8                       ReservedFspmTestUpd[28];
-} FSP_M_TEST_CONFIG;
+  UINT64                      StartTimerTickerOfPfetAssert;
 
-/** Fsp M Restricted Configuration
+/** Offset 0x015C - Real Time Enabling
+  Real-Time Feature Configuration Bits settings. 0x0:Disabled (default), 0x1:Enabled
+  $EN_DIS
 **/
-typedef struct {
+  UINT8                       RtEn;
 
-/** Offset 0x0170
+/** Offset 0x015D
 **/
-  UINT32                      Signature;
-
-/** Offset 0x0174
-**/
-  UINT8                       ReservedFspmRestrictedUpd[138];
-} FSP_M_RESTRICTED_CONFIG;
+  UINT8                       ReservedFspmUpd[3];
+} FSP_M_CONFIG;
 
 /** Fsp M UPD Configuration
 **/
@@ -847,19 +850,15 @@ typedef struct {
 **/
   FSP_M_CONFIG                FspmConfig;
 
-/** Offset 0x0150
+/** Offset 0x0160
 **/
-  FSP_M_TEST_CONFIG           FspmTestConfig;
-
-/** Offset 0x0170
-**/
-  FSP_M_RESTRICTED_CONFIG     FspmRestrictedConfig;
+  UINT8                       UnusedUpdSpace2[158];
 
 /** Offset 0x01FE
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;
 
-#pragma pack(pop)
+#pragma pack()
 
 #endif

@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2016, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2017, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -35,7 +35,7 @@ are permitted provided that the following conditions are met:
 
 #include <FspEas.h>
 
-#pragma pack(push, 1)
+#pragma pack(1)
 
 #define FSPT_UPD_SIGNATURE               0x545F4450554C5041        /* 'APLUPD_T' */
 
@@ -43,6 +43,6 @@ are permitted provided that the following conditions are met:
 
 #define FSPS_UPD_SIGNATURE               0x535F4450554C5041        /* 'APLUPD_S' */
 
-#pragma pack(pop)
+#pragma pack()
 
 #endif
