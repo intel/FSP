@@ -1,0 +1,165 @@
+INTEL CORPORATION 
+RESTRICTED USE LICENSE AGREEMENT
+INTEL(r) PRE-PRODUCTION FIRMWARE SUPPORT PACKAGE
+(Intel Confidential)
+
+IMPORTANT - READ BEFORE COPYING, INSTALLING OR USING.
+
+Do not copy, install, use or load software identified in this Agreement or any associated materials until 
+you have carefully read the following terms and conditions. By copying, installing, using or loading the 
+software identified in this Agreement or any associated materials, you agree to the terms of this 
+Agreement. If you do not wish to so agree, do not copy, install, use or load the software or any associated 
+materials.  If you are an employee, representative or agent of a legal entity, you represent and warrant 
+that you have the authority to bind such legal entity to this Agreement.
+
+General Terms and Conditions
+
+This agreement ("Agreement") is by and between Licensee and Intel Corporation, a Delaware 
+corporation, having its principal place of business at 2200 Mission College Boulevard, Santa Clara, 
+California 95054 ("Intel") and is effective as of the first date Licensee copies, installs, uses or loads the 
+software identified in this Agreement or any associated materials ("Effective Date").  Intel and Licensee 
+are sometimes referred to individually as a "Party" and collectively referred to as the "Parties". 
+
+
+1.  	PURPOSE.  Intel Corporation ("Intel") desires to provide certain information and materials 
+("Technology") to Licensee solely for Licensee's internal evaluation and review in order to advise 
+Intel as to possible modifications to the Technology or to evaluate the desirability of cooperating 
+with Intel in developing products based on the Technology.  Licensee may not disclose, distribute 
+or make commercial use of the Technology.
+
+2.  	TECHNOLOGY.  For purposes of this Agreement, the Technology, as described in Attachment 
+"A" attached hereto, is under development by Intel and may include software, specifications, 
+prototypes, or other materials.  Title to the Technology remains with Intel or its suppliers.  
+Licensee shall not mortgage, pledge or encumber the Technology in any way.  Licensee shall 
+return all the Technology, keeping no copies, upon termination or expiration of this Agreement.
+
+3.  	LICENSE TO USE.  Intel grants Licensee for the term of this Agreement a royalty-free, personal, 
+nontransferable, nonexclusive license under its copyrights to use the Technology only for the 
+purposes described in paragraph 1 above.  Subject to paragraph 6, Licensee may make 
+modifications to the Technology which is provided in a form other than object code.  Licensee 
+shall not disassemble, reverse-engineer, or decompile any software not provided to Licensee in 
+source code form.   EXCEPT AS PROVIDED HEREIN, NO OTHER LICENSE, EXPRESS OR 
+IMPLIED, BY ESTOPPEL OR OTHERWISE, TO ANY OTHER INTELLECTUAL PROPERTY 
+RIGHTS IS GRANTED HEREIN.
+
+4.  	CONFIDENTIALITY.  The Technology includes confidential information of Intel.  Licensee may 
+not reveal, disclose or distribute the Technology in any form, or display it publicly or distribute any 
+product thereof, or use it or any information relating to it except for the purposes of this 
+Agreement.  Licensee may only disclose the Technology available to its employees whose duties 
+require such access and who are obligated to maintain the Technology in confidence.  This 
+obligation of confidentiality shall not apply to information which is shown by contemporaneous 
+documentation to be (i) rightfully available to the public other than by breach of this Agreement by 
+Licensee; (ii) rightfully received by Licensee from a third party without breach of a duty to Intel; 
+(iii) independently developed by Licensee's employees without access to the Technology; or (iv) 
+rightfully known to Licensee prior to first receipt from Intel.
+
+5. 			FEEDBACK. This Agreement does NOT obligate Licensee to provide Intel with comments or 
+suggestions regarding the Technlogy.  However, should Licensee provide Intel with comments or 
+suggestions for the modification, correction, improvement or enhancement of the Technology, 
+Licensee grants to Intel a non-exclusive, irrevocable, worldwide, royalty-free license, with the right 
+to sublicense, Intel's licensees and customers, under Licensee's intellectual property rights, the 
+rights to use and disclose such comments and suggestions in any manner Intel chooses and to 
+display, perform, copy, make, have made, use, sell, and otherwise dispose of Intel's and its 
+sublicensee's products embodying such comments and suggestions in any manner and via any 
+media Intel chooses, without reference to the source.
+
+6.	NO OBLIGATION.  Licensee shall have no duty to purchase or license any product from Intel.  
+Intel and its suppliers shall have no obligation to provide support for, or develop a final version of, 
+the Technology or to license any version of it.
+
+7.  	MODIFICATION.  Licensee shall provide Intel with any modifications made to Technology and 
+shall grant Intel a perpetual, irrevocable, worldwide, royalty-free, sublicensable license to all such 
+modifications.  Such license shall not extend to pre-existing works or inventions of Licensee.
+
+8.  	WARRANTY DISCLAIMER.  INTEL AND ITS SUPPLIERS MAKE NO WARRANTIES WITH 
+RESPECT TO THE TECHNOLOGY, EITHER EXPRESS OR IMPLIED, INCLUDING ANY 
+IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR 
+PURPOSE, OR ANY IMPLIED WARRANTY OF NONINFRINGEMENT.  THE TECHNOLOGY IS 
+PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND.
+
+9.  	LIMITATION OF LIABILITY.  INTEL AND ITS SUPPLIERS SHALL NOT BE LIABLE FOR ANY 
+PROPERTY DAMAGE, PERSONAL INJURY, LOSS OF PROFITS, INTERRUPTION OF 
+BUSINESS OR ANY SPECIAL, CONSEQUENTIAL OR INCIDENTAL DAMAGES, HOWEVER 
+CAUSED, WHETHER FOR BREACH OF WARRANTY, CONTRACT, STRICT LIABILITY OR 
+OTHERWISE.  INTEL AND ITS SUPPLIERS DISCLAIM ALL LIABILITY, INCLUDING LIABILITY 
+FOR INFRINGEMENT OF ANY INTELLECTUAL PROPERTY RIGHTS RELATING TO THE 
+TECHNOLOGY PROVIDED UNDER THIS AGREEMENT.
+
+10.  	EXPIRATION.  This Agreement is effective as of the date signed, and shall expire 180 days after 
+its execution, except for paragraphs 4 and 6, which shall survive termination or expiration.   Intel 
+may terminate this Agreement immediately after a breach by Licensee.  
+
+11.  	GENERAL.
+
+Controlling Law. Any claim arising under or relating to this Agreement shall be governed by the 
+internal substantive laws of the State of Delaware, without regard to principles of conflict of laws.  
+Each party hereby agrees to jurisdiction and venue in the courts of the State of Delaware or 
+federal courts located in Delaware, for all disputes and litigation arising under or relating to this 
+Agreement.  This provision is meant to comply with 6 Del. C. Section 2708(a).
+
+Remedies.  Licensee acknowledges that any disclosure, commercialization, or public use of the 
+Technology would cause irreparable injury to Intel and consents to the grant of an injunction by 
+any court of competent jurisdiction in the event of a threatened breach.
+
+Nonassignment.  Licensee's rights and duties hereunder may not be sublicensed, assigned or 
+transferred without Intel's prior written consent.
+
+Entire Agreement.  This Agreement contains the entire agreement of the parties with respect to 
+this subject matter and may not be modified or changed in any manner except by a writing 
+executed by the parties.  All prior discussions and negotiations are superseded by this 
+Agreement.
+
+
+ 
+RESTRICTED USE LICENSE AGREEMENT
+(Intel Confidential)
+
+
+
+
+Attachment "A"
+
+
+Intel Technology
+
+Inte(r) Firmware Support Package, for low-level CPU and Chipset initilization, consisting of object files and 
+associated build and configuration tools, supporting the following platforms:
+
+
+Intel(r) Atom(tm) Processor E6xx Series with Intel(r) Platform Controller Hub EG20T (Crown Bay: Tunnel 
+Creek / Top Cliff)
+
+Intel(r) Xeon(r), Intel(r) Core(tm), Intel(r) Pentium(r) and Intel(r) Celeron(r) Processors with the Intel(r) 8900 
+Communications Chipset (Cystal Forest: Sandy Bridge / Cave Creek, Ivy Bridge / Cave Creek, and 
+Haswell / Cave Creek)
+
+2nd Generation Intel(r) Core(tm) and Intel(r) Celeron(r) processors with Mobile Intel(r) QM67/HM65 Express 
+Chipsets (Huron River:  Sandy Bridge / Cougar Point)
+
+3rd Generation Intel(r) Core(tm) Processors with Mobile Intel(r) HM76/QM77 Express Chipsets (Chief River: 
+Ivy Bridge / Panther Point)
+
+Shark Bay:  Haswell-MB / Lynx Point
+
+Shark Bay ULT: Haswell-ULT
+
+Bay Trail:  Valleyview SoC
+
+Rangeley SoC
+
+Braswell SoC
+
+Boadwell-MB/Lynx Point or WildCat Point
+
+Broadwell DE SoC
+
+SkyLake
+
+ApolloLake
+
+Denverton-NS SoC
+
+
+
+FSP RULAC - Rev 18-Jan-2013	1 of 3	INTEL CONFIDENTIAL
+
