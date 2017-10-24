@@ -20,4 +20,5 @@ Each FSP project will be hosted in a separate branch.
 
 #FSP Project Name - Branch Name - Git command
 Intel® Atom™ processor C3XXX product family - DenvertonNS - 
+
 git clone -b DenvertonNS https://github.com/IntelFsp/FSP.git
