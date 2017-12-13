@@ -174,7 +174,7 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_CoreVoltageAdaptive             2 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_CoreVoltageOffset               2 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_CorePllVoltageOffset            1 bytes    $_DEFAULT_ = 0x00
-        $gKabylakeFspPkgTokenSpaceGuid_RingDownBin                     1 bytes    $_DEFAULT_ = 0x00
+        $gKabylakeFspPkgTokenSpaceGuid_RingDownBin                     1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_BclkAdaptiveVoltage             1 bytes    $_DEFAULT_ = 0x00
         $gSkylakeFspPkgTokenSpaceGuid_BiosGuard                        1 bytes    $_DEFAULT_ = 0x00
         $gSkylakeFspPkgTokenSpaceGuid_EnableSgx                        1 bytes    $_DEFAULT_ = 0x00
@@ -243,13 +243,15 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_PeciSxReset                     1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PcdSerialDebugBaudRate          1 bytes    $_DEFAULT_ = 0x07
         $gKabylakeFspPkgTokenSpaceGuid_PcdSerialDebugLevel             1 bytes    $_DEFAULT_ = 0x03
+        $gKabylakeFspPkgTokenSpaceGuid_EvLoader                        1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_GtPllVoltageOffset              1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_RingPllVoltageOffset            1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_SaPllVoltageOffset              1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_McPllVoltageOffset              1 bytes    $_DEFAULT_ = 0x00
-        $gKabylakeFspPkgTokenSpaceGuid_RealtimeMemoryTiming            1 bytes    $_DEFAULT_ = 0x0
-        $gKabylakeFspPkgTokenSpaceGuid_EvLoader                        1 bytes    $_DEFAULT_ = 0x00
-        Skip 10 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_RealtimeMemoryTiming            1 bytes    $_DEFAULT_ = 0x00
+        $gKabylakeFspPkgTokenSpaceGuid_Avx3RatioOffset                 1 bytes    $_DEFAULT_ = 0x00
+        $gKabylakeFspPkgTokenSpaceGuid_CleanMemory                     1 bytes    $_DEFAULT_ = 0x00
+        Skip 8 bytes
         $gKabylakeFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_BdatEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_ScanExtGfxForLegacyOpRom        1 bytes    $_DEFAULT_ = 0x01
@@ -787,7 +789,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_SixCoreRatioLimit               1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_SevenCoreRatioLimit             1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_EightCoreRatioLimit             1 bytes    $_DEFAULT_ = 0x00
-        $gKabylakeFspPkgTokenSpaceGuid_ReservedCpuPostMemTest          2 bytes    $_DEFAULT_ = 0x00
+        $gKabylakeFspPkgTokenSpaceGuid_ThreeStrikeCounterDisable       1 bytes    $_DEFAULT_ = 0x00
+        $gKabylakeFspPkgTokenSpaceGuid_ReservedCpuPostMemTest          1 bytes    $_DEFAULT_ = 0x00
         $gSkylakeFspPkgTokenSpaceGuid_SgxSinitDataFromTpm              1 bytes    $_DEFAULT_ = 0xFF
         $gKabylakeFspPkgTokenSpaceGuid_EndOfPostMessage                1 bytes    $_DEFAULT_ = 0x1
         $gKabylakeFspPkgTokenSpaceGuid_DisableD0I3SettingForHeci       1 bytes    $_DEFAULT_ = 0x0
@@ -1354,6 +1357,11 @@ List &gKabylakeFspPkgTokenSpaceGuid_SpdProfileSelected
     Selection 1 , "Custom profile"
     Selection 2 , "XMP profile 1"
     Selection 3 , "XMP profile 2"
+EndList
+
+List &gKabylakeFspPkgTokenSpaceGuid_ThreeStrikeCounterDisable
+    Selection 0 , " False"
+    Selection 1 , " True"
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_PegSlotPowerLimitScale
@@ -1927,6 +1935,8 @@ Page "Sunrise Point PCH"
         Help "Baud Rate for Serial Debug Messages. 3:9600, 4:19200, 6:56700, 7:115200."
     Combo $gKabylakeFspPkgTokenSpaceGuid_PcdSerialDebugLevel, "PcdSerialDebugLevel", &gKabylakeFspPkgTokenSpaceGuid_PcdSerialDebugLevel,
         Help "Serial Debug Message Level. 0:Disable, 1:Error Only, 2:Error & Warnings, 3:Load, Error, Warnings & Info, 4:Load, Error, Warnings, Info & Event, 5:Load, Error, Warnings, Info & Verbose"
+    Combo $gKabylakeFspPkgTokenSpaceGuid_EvLoader, "Enable or Disable EV Loader", &EN_DIS,
+        Help "Enable or Disable EV Loader; <b>0: Disable;</b> 1: Enable."
     Combo $gKabylakeFspPkgTokenSpaceGuid_GtPllVoltageOffset, "GT PLL voltage offset", &gKabylakeFspPkgTokenSpaceGuid_GtPllVoltageOffset,
         Help "Core PLL voltage offset. <b>0: No offset</b>. Range 0-63"
     Combo $gKabylakeFspPkgTokenSpaceGuid_RingPllVoltageOffset, "Ring PLL voltage offset", &gKabylakeFspPkgTokenSpaceGuid_RingPllVoltageOffset,
@@ -1937,8 +1947,11 @@ Page "Sunrise Point PCH"
         Help "Core PLL voltage offset. <b>0: No offset</b>. Range 0-63"
     Combo $gKabylakeFspPkgTokenSpaceGuid_RealtimeMemoryTiming, "Realtime Memory Timing", &gKabylakeFspPkgTokenSpaceGuid_RealtimeMemoryTiming,
         Help "0(Default): Disabled, 1: Enabled. When enabled, it will allow the system to perform realtime memory timing changes after MRC_DONE."
-    Combo $gKabylakeFspPkgTokenSpaceGuid_EvLoader, "Enable or Disable EV Loader", &EN_DIS,
-        Help "Enable or Disable EV Loader; <b>0: Disable;</b> 1: Enable."
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_Avx3RatioOffset, "AVX3 Ratio Offset", HEX,
+        Help "0(Default)= No Offset. Range 0 - 31. Specifies number of bins to decrease AVX ratio vs. Core Ratio. Uses Mailbox MSR 0x150, cmd 0x1B."
+             "Valid range: 0 ~ 31"
+    Combo $gKabylakeFspPkgTokenSpaceGuid_CleanMemory, "Ask MRC to clear memory content", &EN_DIS,
+        Help "Ask MRC to clear memory content <b>0: Do not Clear Memory;</b> 1: Clear Memory."
     EditNum $gKabylakeFspPkgTokenSpaceGuid_PcieRpCompletionTimeout, "PCIE RP Completion Timeout", HEX,
         Help "The root port completion timeout(see: PCH_PCIE_COMPLETION_TIMEOUT). Default is PchPcieCompletionTO_Default."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
@@ -2687,6 +2700,8 @@ Page "Sunrise Point PCH"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_EightCoreRatioLimit, "8-Core Ratio Limit", DEC,
         Help "8-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused 8-Core Ratio Limit + OC Bins.This 8-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 83"
              "Valid range: 0 ~ 83"
+    Combo $gKabylakeFspPkgTokenSpaceGuid_ThreeStrikeCounterDisable, "Set Three Strike Counter Disable", &gKabylakeFspPkgTokenSpaceGuid_ThreeStrikeCounterDisable,
+        Help "False (default): Three Strike counter will be incremented and True: Prevents Three Strike counter from incrementing; <b>0: False</b>; 1: True."
     Combo $gKabylakeFspPkgTokenSpaceGuid_ReservedCpuPostMemTest, "ReservedCpuPostMemTest", &EN_DIS,
         Help "Reserved for CPU Post-Mem Test"
     EditNum $gSkylakeFspPkgTokenSpaceGuid_SgxSinitDataFromTpm, "SgxSinitDataFromTpm", HEX,
@@ -3088,7 +3103,7 @@ Page "Memory Reference Code"
         Help "Core PLL voltage offset. <b>0: No offset</b>. Range 0-63"
              "Valid range: 0 ~ 63"
     Combo $gKabylakeFspPkgTokenSpaceGuid_RingDownBin, "Ring Downbin", &EN_DIS,
-        Help "Ring Downbin enable/disable. When enabled, CPU will ensure the ring ratio is always lower than the core ratio.<b>0: Disable</b>; 1: Enable."
+        Help "Ring Downbin enable/disable. When enabled, CPU will ensure the ring ratio is always lower than the core ratio. 0: Disable; <b>1: Enable.</b>"
     Combo $gKabylakeFspPkgTokenSpaceGuid_BclkAdaptiveVoltage, "BCLK Adaptive Voltage Enable", &EN_DIS,
         Help "When enabled, the CPU V/F curves are aware of BCLK frequency when calculated. </b>0: Disable;<b> 1: Enable"
     Combo $gSkylakeFspPkgTokenSpaceGuid_BiosGuard, "BiosGuard", &EN_DIS,

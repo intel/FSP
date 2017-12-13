@@ -844,7 +844,7 @@ typedef struct {
 
 /** Offset 0x02E3 - Ring Downbin
   Ring Downbin enable/disable. When enabled, CPU will ensure the ring ratio is always
-  lower than the core ratio.<b>0: Disable</b>; 1: Enable.
+  lower than the core ratio. 0: Disable; <b>1: Enable.</b>
   $EN_DIS
 **/
   UINT8                       RingDownBin;

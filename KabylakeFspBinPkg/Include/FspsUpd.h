@@ -2776,11 +2776,18 @@ typedef struct {
 **/
   UINT8                       EightCoreRatioLimit;
 
-/** Offset 0x0888 - ReservedCpuPostMemTest
+/** Offset 0x0888 - Set Three Strike Counter Disable
+  False (default): Three Strike counter will be incremented and True: Prevents Three
+  Strike counter from incrementing; <b>0: False</b>; 1: True.
+  0: False, 1: True
+**/
+  UINT8                       ThreeStrikeCounterDisable;
+
+/** Offset 0x0889 - ReservedCpuPostMemTest
   Reserved for CPU Post-Mem Test
   $EN_DIS
 **/
-  UINT8                       ReservedCpuPostMemTest[2];
+  UINT8                       ReservedCpuPostMemTest[1];
 
 /** Offset 0x088A - SgxSinitDataFromTpm
   SgxSinitDataFromTpm default values

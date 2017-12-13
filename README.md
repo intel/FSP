@@ -21,6 +21,7 @@ Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Ato
 Intel® Atom™ processor E3800 product family (formerly Bay Trail, Compliant with FSP v1.0 Specification) | BayTrail | git clone -b BayTrail https://github.com/IntelFsp/FSP.git
 Intel® Atom™ processor E6xx series with Intel® Platform Controller Hub EG20T (formerly Queens Bay: Tunnel Creek and Topcliff, Compliant with FSP v1.0 Specification) | QueensBay | git clone -b QueensBay https://github.com/IntelFsp/FSP.git
 Intel® Atom™ processor C2000 product family (formerly Rangeley, Compliant with FSP v1.0 Specification) | Rangeley  | git clone -b Rangeley https://github.com/IntelFsp/FSP.git
+7th Generation Intel® Core™ Processors and chipsets (formerly Kaby Lake, Compliant with FSP v1.9 Specification) | Kabylake | git clone -b Kabylake https://github.com/IntelFsp/FSP.git
 6th Generation Intel® Core™ processors and chipsets (formerly SkyLake, Compliant with FSP v1.1 Specification) | Skylake  | git clone -b Skylake https://github.com/IntelFsp/FSP.git
 5th Generation Intel® Core™ processors and chipsets (formerly Broadwell, Compliant with FSP v1.0 Specification) | Broadwell  | git clone -b Broadwell https://github.com/IntelFsp/FSP.git
 4th Generation Intel® Core™ processors with mobile Intel® QM87 and HM86 chipsets (formerly Shark Bay mobile: Haswell and Lynx Point, Compliant with FSP v1.0 Specification) | SharkBay | git clone -b SharkBay https://github.com/IntelFsp/FSP.git
