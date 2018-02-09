@@ -2892,7 +2892,7 @@ EndInfoBlock
 ;------------------------------------------------------------------------------
 Page      "VBT Information"
   Title     "PLATFORM : Skylake/Kabylake"
-  Title     "VBT version: 211"
+  Title     "VBT version: 212"
 
   #IF       $LVDS_Config == 3
     Title     "Supported LFP type: eDP"
@@ -3550,12 +3550,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_01, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_01, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_01, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_01, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -3586,6 +3580,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_01, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_01, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_01, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -3597,6 +3594,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_01,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_01, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_01, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -3933,12 +3933,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_02, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_02, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_02, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_02, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -3969,6 +3963,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_02, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_02, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_02, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -3980,6 +3977,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_02,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_02, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_02, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -4316,12 +4316,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_03, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_03, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_03, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_03, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -4352,6 +4346,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_03, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_03, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_03, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -4363,6 +4360,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_03,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_03, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_03, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -4698,12 +4698,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_04, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_04, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_04, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_04, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -4734,6 +4728,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_04, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_04, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_04, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -4745,6 +4742,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_04,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_04, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_04, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -5081,12 +5081,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_05, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_05, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_05, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_05, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -5117,6 +5111,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_05, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_05, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_05, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -5128,6 +5125,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_05,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_05, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_05, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -5466,12 +5466,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_06, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_06, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_06, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_06, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -5502,6 +5496,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_06, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_06, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_06, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -5513,6 +5510,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_06,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_06, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_06, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -5848,12 +5848,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_07, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_07, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_07, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_07, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -5884,6 +5878,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_07, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_07, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_07, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -5895,6 +5892,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_07,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_07, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_07, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -6230,12 +6230,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_08, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_08, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_08, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_08, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -6266,6 +6260,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_08, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_08, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_08, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -6277,6 +6274,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_08,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_08, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_08, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -6613,12 +6613,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_09, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_09, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_09, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_09, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -6649,6 +6643,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_09, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_09, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_09, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -6660,6 +6657,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_09,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_09, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_09, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -6995,12 +6995,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_10, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_10, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_10, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_10, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -7031,6 +7025,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_10, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_10, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_10, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -7042,6 +7039,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_10,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_10, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_10, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -7377,12 +7377,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_11, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_11, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_11, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_11, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -7413,6 +7407,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_11, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_11, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_11, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -7424,6 +7421,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_11,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_11, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_11, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -7759,12 +7759,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_12, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_12, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_12, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_12, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -7795,6 +7789,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_12, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_12, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_12, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -7806,6 +7803,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_12,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_12, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_12, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -8142,12 +8142,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_13, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_13, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_13, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_13, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -8178,6 +8172,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_13, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_13, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_13, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -8189,6 +8186,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_13,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_13, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_13, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -8525,12 +8525,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_14, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_14, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_14, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_14, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -8561,6 +8555,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_14, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_14, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_14, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -8572,6 +8569,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_14,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_14, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_14, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -8907,12 +8907,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_15, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_15, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_15, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_15, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -8943,6 +8937,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_15, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_15, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_15, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -8954,6 +8951,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_15,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_15, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_15, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -9290,12 +9290,6 @@ Page      "Integrated Display Configuration"
         Combo     $Override_EDID_Data_16, "Override the EDID values", &No_Yes_List,
         Help      "This option when enabled along with Chromaticity feature will override EDID values through following VBT data"
 
-        Combo     $Override_LUM_Data_16, "Override Luminance values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
-
-        Combo     $Override_Gamma_Data_16, "Override Gamma values", &No_Yes_List,
-        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
-
         EditNum   $Red_Green_16, "\tRed_Green_bits (Bits 1:0 at 19h)" , EHEX,
         Help      " Lower order bytes (bits 1 and 0) of Red, Green Coordinates represented as Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0"
 
@@ -9326,6 +9320,9 @@ Page      "Integrated Display Configuration"
         EditNum   $White_y_16, "\tWhite_y (Bits 9:2 at 22h)" , EHEX,
         Help      " Bits 9:2 of White color y coordinate"
 
+        Combo     $Override_LUM_Data_16, "Override Luminance values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override luminance values following VBT values"
+
         EditNum   $MinLuminance_16, "\tMinimum Luminance" , EHEX,
         Help      "Minimum luminance value. \r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
@@ -9337,6 +9334,9 @@ Page      "Integrated Display Configuration"
         EditNum   $MaxLuminance_16,"\tMaximum Luminance" , EHEX,
         Help      "Maximum luminance value(Relatively smaller portion of screen).\r\n"
                   "2 byte value, encoded in IEEE 754 half-precision binary floating point format"
+
+        Combo     $Override_Gamma_Data_16, "Override Gamma values", &No_Yes_List,
+        Help      "This option when enabled along with Chromaticity feature will override gamma values through following VBT data"
 
         EditNum   $Gamma_16, "\tPanel gamma" , EHEX,
         Help      " Value shall define the gamma range, from 1.00 to 3.54, as follows: \r\n"
@@ -9519,14 +9519,12 @@ Page      "Integrated Display Configuration"
       Help      "This field is applicable only if IBoost is enabled for the selected port."
                 "The IBoost magnitude levels supported on SKL/KBL are 0x1, 0x3, 0x7"
 
-      #IF       ($Embedded_Platform == 1)    ; Embedded platform
-        Title     "    "
+      Title     "    "
 
-        Combo     $EFP1_EDIDless_en, "EDIDless Panel: ", &No_Yes_List,
-        Help      "If the Attached panel is EDIDless select Yes and the supplied DTD takes priority."
+      Combo     $EFP1_EDIDless_en, "EDIDless Panel: ", &No_Yes_List,
+      Help      "If the Attached panel is EDIDless select Yes and the supplied DTD takes priority."
+      Link      "EDID-less EFP Panel DTD Timings" , "EDID-less EFP Panel DTD Timings"
 
-        Link      "EDID-less EFP Panel DTD Timings" , "EDID-less EFP Panel DTD Timings"
-      #ENDIF    ;  Embedded platform
 
       Title     "    "
 
@@ -9587,47 +9585,45 @@ Page      "Integrated Display Configuration"
         ; "Swing-3 (1.2 V)"
       EndPage   ; "DisplayPort Redriver Configuration"
 
-      #IF       ($Embedded_Platform == 1)    ; Embedded platform
-        Page      "EDID-less EFP Panel DTD Timings"
-          Link      "Close Table" , ".."
+      Page      "EDID-less EFP Panel DTD Timings"
+        Link      "Close Table" , ".."
 
-          Table     $EFP1_DTD " DTD Timings Values",
-          Column    "Timings" , 1 byte , EHEX,
-          Help      "This feature allows for the definition of the DTD timings parameters. "
-                    "The table is the 18-byte DTD structure defined in the VESA EDID version 1.x.\r\n\r\n"
-                    "\tByte1 \t: Low Byte of DClk in 10 KHz\r\n"
-                    "\tByte2 \t: High Byte of DClk in 10 KHz\r\n"
-                    "\tByte3 \t: Horizontal Active in pixels, LSB\r\n"
-                    "\tByte4 \t: Horizontal Blanking in pixels, LSB\r\n"
-                    "\tByte5 \t: Bit 7-4: Upper 4 bits of Hor. Active\r\n"
-                    "\t   \t: Bit 3-0: Upper 4 bits of Hor. Blanking\r\n"
-                    "\tByte6 \t: Vertical Active in lines, LSB\r\n"
-                    "\tByte7 \t: Vertical Blanking in lines, LSB\r\n"
-                    "\tByte8 \t: Bit 7-4: Upper 4 bits of Vert. Active\r\n"
-                    "\t   \t: Bit 3-0: Upper 4 bits of Vert. Blanking\r\n"
-                    "\tByte9  \t: HSync Offset from Hor. Blanking in pix., LSB\r\n"
-                    "\tByte10 \t: HSync Pulse Width in pixels, LSB\r\n"
-                    "\tByte11 \t: Bit 7-4: Lower 4 bits of VSync Offset\r\n"
-                    "\t   \t: Bit 3-0: Lower 4 bits of VSync Pulse Width\r\n"
-                    "\tByte12 \t: Bit 7-6: Upper 2 bits of HSync Offset\r\n"
-                    "\t   \t: Bit 5-4: Upper 2 bits of HSync Pulse Width\r\n"
-                    "\t   \t: Bit 3-2: Upper 2 bits of VSync Offset\r\n"
-                    "\t   \t: Bit 1-0: Upper 2 bits of VSync Pulse Width\r\n"
-                    "\tByte13 \t: Horizontal Image Size, LSB\r\n"
-                    "\tByte14 \t: Vertical Image Size, LSB\r\n"
-                    "\tByte15 \t: Bit 7-4: Upper 4 bits of Hor. Image Size\r\n"
-                    "\t   \t: Bit 3-0: Upper 4 bits of Vert. Image Size\r\n"
-                    "\tByte16 \t: Horizontal Border in pixels\r\n"
-                    "\tByte17 \t: Vertical Border in lines\r\n"
-                    "\tByte18 \t: Flags:\r\n"
-                    "\t   \t:   Bit 7:   0 = Non-interlaced, 1 = Interlaced\r\n"
-                    "\t   \t:   Bit 6-5: 00 = Reserved\r\n"
-                    "\t   \t:   Bit 4-3: 11 = Digital Separate\r\n"
-                    "\t   \t:   Bit 2:   Vertical Polarity (0 = Negative, 1 = Positive)\r\n"
-                    "\t   \t:   Bit 1:   Horizontal Polarity (0 = Negative, 1 = Positive)\r\n"
-                    "\t   \t:   Bit 0:   0 = Reserved"
-        EndPage   ; "EDID-less EFP Panel DTD Timings"
-      #ENDIF    ; Embedded platform
+        Table     $EFP1_DTD " DTD Timings Values",
+        Column    "Timings" , 1 byte , EHEX,
+        Help      "This feature allows for the definition of the DTD timings parameters. "
+                  "The table is the 18-byte DTD structure defined in the VESA EDID version 1.x.\r\n\r\n"
+                  "\tByte1 \t: Low Byte of DClk in 10 KHz\r\n"
+                  "\tByte2 \t: High Byte of DClk in 10 KHz\r\n"
+                  "\tByte3 \t: Horizontal Active in pixels, LSB\r\n"
+                  "\tByte4 \t: Horizontal Blanking in pixels, LSB\r\n"
+                  "\tByte5 \t: Bit 7-4: Upper 4 bits of Hor. Active\r\n"
+                  "\t   \t: Bit 3-0: Upper 4 bits of Hor. Blanking\r\n"
+                  "\tByte6 \t: Vertical Active in lines, LSB\r\n"
+                  "\tByte7 \t: Vertical Blanking in lines, LSB\r\n"
+                  "\tByte8 \t: Bit 7-4: Upper 4 bits of Vert. Active\r\n"
+                  "\t   \t: Bit 3-0: Upper 4 bits of Vert. Blanking\r\n"
+                  "\tByte9  \t: HSync Offset from Hor. Blanking in pix., LSB\r\n"
+                  "\tByte10 \t: HSync Pulse Width in pixels, LSB\r\n"
+                  "\tByte11 \t: Bit 7-4: Lower 4 bits of VSync Offset\r\n"
+                  "\t   \t: Bit 3-0: Lower 4 bits of VSync Pulse Width\r\n"
+                  "\tByte12 \t: Bit 7-6: Upper 2 bits of HSync Offset\r\n"
+                  "\t   \t: Bit 5-4: Upper 2 bits of HSync Pulse Width\r\n"
+                  "\t   \t: Bit 3-2: Upper 2 bits of VSync Offset\r\n"
+                  "\t   \t: Bit 1-0: Upper 2 bits of VSync Pulse Width\r\n"
+                  "\tByte13 \t: Horizontal Image Size, LSB\r\n"
+                  "\tByte14 \t: Vertical Image Size, LSB\r\n"
+                  "\tByte15 \t: Bit 7-4: Upper 4 bits of Hor. Image Size\r\n"
+                  "\t   \t: Bit 3-0: Upper 4 bits of Vert. Image Size\r\n"
+                  "\tByte16 \t: Horizontal Border in pixels\r\n"
+                  "\tByte17 \t: Vertical Border in lines\r\n"
+                  "\tByte18 \t: Flags:\r\n"
+                  "\t   \t:   Bit 7:   0 = Non-interlaced, 1 = Interlaced\r\n"
+                  "\t   \t:   Bit 6-5: 00 = Reserved\r\n"
+                  "\t   \t:   Bit 4-3: 11 = Digital Separate\r\n"
+                  "\t   \t:   Bit 2:   Vertical Polarity (0 = Negative, 1 = Positive)\r\n"
+                  "\t   \t:   Bit 1:   Horizontal Polarity (0 = Negative, 1 = Positive)\r\n"
+                  "\t   \t:   Bit 0:   0 = Reserved"
+      EndPage   ; "EDID-less EFP Panel DTD Timings"
     EndPage   ; "Device 1 (EFP1)"
 
     ;==============================================================================
@@ -9665,14 +9661,12 @@ Page      "Integrated Display Configuration"
       Help      "This field is applicable only if IBoost is enabled for the selected port."
                 "The IBoost magnitude levels supported on SKL/KBL are 0x1, 0x3, 0x7"
 
-      #IF       ($Embedded_Platform == 1)    ; Embedded platform
-        Title     "    "
+      Title     "    "
 
-        Combo     $EFP2_EDIDless_en, "EDIDless Panel: ", &No_Yes_List,
-        Help      "If the Attached panel is EDIDless select Yes and the supplied DTD takes priority."
+      Combo     $EFP2_EDIDless_en, "EDIDless Panel: ", &No_Yes_List,
+      Help      "If the Attached panel is EDIDless select Yes and the supplied DTD takes priority."
+      Link      "EDID-less EFP Panel DTD Timings" , "EDID-less EFP Panel DTD Timings"
 
-        Link      "EDID-less EFP Panel DTD Timings" , "EDID-less EFP Panel DTD Timings"
-      #ENDIF    ; Embedded platform
 
       Title     "    "
 
@@ -9733,47 +9727,45 @@ Page      "Integrated Display Configuration"
         ; "Swing-3 (1.2 V)"
       EndPage   ; "DisplayPort Redriver Configuration"
 
-      #IF       ($Embedded_Platform == 1)    ; Embedded platform
-        Page      "EDID-less EFP Panel DTD Timings"
-          Link      "Close Table" , ".."
+      Page      "EDID-less EFP Panel DTD Timings"
+        Link      "Close Table" , ".."
 
-          Table     $EFP2_DTD " DTD Timings Values",
-          Column    "Timings" , 1 byte , EHEX,
-          Help      "This feature allows for the definition of the DTD timings parameters. "
-                    "The table is the 18-byte DTD structure defined in the VESA EDID version 1.x.\r\n\r\n"
-                    "\tByte1 \t: Low Byte of DClk in 10 KHz\r\n"
-                    "\tByte2 \t: High Byte of DClk in 10 KHz\r\n"
-                    "\tByte3 \t: Horizontal Active in pixels, LSB\r\n"
-                    "\tByte4 \t: Horizontal Blanking in pixels, LSB\r\n"
-                    "\tByte5 \t: Bit 7-4: Upper 4 bits of Hor. Active\r\n"
-                    "\t   \t: Bit 3-0: Upper 4 bits of Hor. Blanking\r\n"
-                    "\tByte6 \t: Vertical Active in lines, LSB\r\n"
-                    "\tByte7 \t: Vertical Blanking in lines, LSB\r\n"
-                    "\tByte8 \t: Bit 7-4: Upper 4 bits of Vert. Active\r\n"
-                    "\t   \t: Bit 3-0: Upper 4 bits of Vert. Blanking\r\n"
-                    "\tByte9  \t: HSync Offset from Hor. Blanking in pix., LSB\r\n"
-                    "\tByte10 \t: HSync Pulse Width in pixels, LSB\r\n"
-                    "\tByte11 \t: Bit 7-4: Lower 4 bits of VSync Offset\r\n"
-                    "\t   \t: Bit 3-0: Lower 4 bits of VSync Pulse Width\r\n"
-                    "\tByte12 \t: Bit 7-6: Upper 2 bits of HSync Offset\r\n"
-                    "\t   \t: Bit 5-4: Upper 2 bits of HSync Pulse Width\r\n"
-                    "\t   \t: Bit 3-2: Upper 2 bits of VSync Offset\r\n"
-                    "\t   \t: Bit 1-0: Upper 2 bits of VSync Pulse Width\r\n"
-                    "\tByte13 \t: Horizontal Image Size, LSB\r\n"
-                    "\tByte14 \t: Vertical Image Size, LSB\r\n"
-                    "\tByte15 \t: Bit 7-4: Upper 4 bits of Hor. Image Size\r\n"
-                    "\t   \t: Bit 3-0: Upper 4 bits of Vert. Image Size\r\n"
-                    "\tByte16 \t: Horizontal Border in pixels\r\n"
-                    "\tByte17 \t: Vertical Border in lines\r\n"
-                    "\tByte18 \t: Flags:\r\n"
-                    "\t   \t:   Bit 7:   0 = Non-interlaced, 1 = Interlaced\r\n"
-                    "\t   \t:   Bit 6-5: 00 = Reserved\r\n"
-                    "\t   \t:   Bit 4-3: 11 = Digital Separate\r\n"
-                    "\t   \t:   Bit 2:   Vertical Polarity (0 = Negative, 1 = Positive)\r\n"
-                    "\t   \t:   Bit 1:   Horizontal Polarity (0 = Negative, 1 = Positive)\r\n"
-                    "\t   \t:   Bit 0:   0 = Reserved"
-        EndPage   ; "EDID-less EFP Panel DTD Timings"
-      #ENDIF    ; Embedded platform
+        Table     $EFP2_DTD " DTD Timings Values",
+        Column    "Timings" , 1 byte , EHEX,
+        Help      "This feature allows for the definition of the DTD timings parameters. "
+                  "The table is the 18-byte DTD structure defined in the VESA EDID version 1.x.\r\n\r\n"
+                  "\tByte1 \t: Low Byte of DClk in 10 KHz\r\n"
+                  "\tByte2 \t: High Byte of DClk in 10 KHz\r\n"
+                  "\tByte3 \t: Horizontal Active in pixels, LSB\r\n"
+                  "\tByte4 \t: Horizontal Blanking in pixels, LSB\r\n"
+                  "\tByte5 \t: Bit 7-4: Upper 4 bits of Hor. Active\r\n"
+                  "\t   \t: Bit 3-0: Upper 4 bits of Hor. Blanking\r\n"
+                  "\tByte6 \t: Vertical Active in lines, LSB\r\n"
+                  "\tByte7 \t: Vertical Blanking in lines, LSB\r\n"
+                  "\tByte8 \t: Bit 7-4: Upper 4 bits of Vert. Active\r\n"
+                  "\t   \t: Bit 3-0: Upper 4 bits of Vert. Blanking\r\n"
+                  "\tByte9  \t: HSync Offset from Hor. Blanking in pix., LSB\r\n"
+                  "\tByte10 \t: HSync Pulse Width in pixels, LSB\r\n"
+                  "\tByte11 \t: Bit 7-4: Lower 4 bits of VSync Offset\r\n"
+                  "\t   \t: Bit 3-0: Lower 4 bits of VSync Pulse Width\r\n"
+                  "\tByte12 \t: Bit 7-6: Upper 2 bits of HSync Offset\r\n"
+                  "\t   \t: Bit 5-4: Upper 2 bits of HSync Pulse Width\r\n"
+                  "\t   \t: Bit 3-2: Upper 2 bits of VSync Offset\r\n"
+                  "\t   \t: Bit 1-0: Upper 2 bits of VSync Pulse Width\r\n"
+                  "\tByte13 \t: Horizontal Image Size, LSB\r\n"
+                  "\tByte14 \t: Vertical Image Size, LSB\r\n"
+                  "\tByte15 \t: Bit 7-4: Upper 4 bits of Hor. Image Size\r\n"
+                  "\t   \t: Bit 3-0: Upper 4 bits of Vert. Image Size\r\n"
+                  "\tByte16 \t: Horizontal Border in pixels\r\n"
+                  "\tByte17 \t: Vertical Border in lines\r\n"
+                  "\tByte18 \t: Flags:\r\n"
+                  "\t   \t:   Bit 7:   0 = Non-interlaced, 1 = Interlaced\r\n"
+                  "\t   \t:   Bit 6-5: 00 = Reserved\r\n"
+                  "\t   \t:   Bit 4-3: 11 = Digital Separate\r\n"
+                  "\t   \t:   Bit 2:   Vertical Polarity (0 = Negative, 1 = Positive)\r\n"
+                  "\t   \t:   Bit 1:   Horizontal Polarity (0 = Negative, 1 = Positive)\r\n"
+                  "\t   \t:   Bit 0:   0 = Reserved"
+      EndPage   ; "EDID-less EFP Panel DTD Timings"
     EndPage   ; "Device 2"  (EFP2)
 
     ;==============================================================================
@@ -9811,14 +9803,11 @@ Page      "Integrated Display Configuration"
       Help      "This field is applicable only if IBoost is enabled for the selected port."
                 "The IBoost magnitude levels supported on SKL/KBL are 0x1, 0x3, 0x7"
 
-      #IF       ($Embedded_Platform == 1)    ; Embedded platform
-        Title     "    "
+      Title     "    "
 
-        Combo     $EFP3_EDIDless_en, "EDIDless Panel: ", &No_Yes_List,
-        Help      "If the Attached panel is EDIDless select Yes and the supplied DTD takes priority."
-
-        Link      "EDID-less EFP Panel DTD Timings" , "EDID-less EFP Panel DTD Timings"
-      #ENDIF    ; Embedded platform
+      Combo     $EFP3_EDIDless_en, "EDIDless Panel: ", &No_Yes_List,
+      Help      "If the Attached panel is EDIDless select Yes and the supplied DTD takes priority."
+      Link      "EDID-less EFP Panel DTD Timings" , "EDID-less EFP Panel DTD Timings"
 
       Title     "    "
 
@@ -9879,47 +9868,45 @@ Page      "Integrated Display Configuration"
         ; "Swing-3 (1.2 V)"
       EndPage   ; "DisplayPort Redriver Configuration"
 
-      #IF       ($Embedded_Platform == 1)    ; Embedded platform
-        Page      "EDID-less EFP Panel DTD Timings"
-          Link      "Close Table" , ".."
+      Page      "EDID-less EFP Panel DTD Timings"
+        Link      "Close Table" , ".."
 
-          Table     $EFP3_DTD " DTD Timings Values",
-          Column    "Timings" , 1 byte , EHEX,
-          Help      "This feature allows for the definition of the DTD timings parameters. "
-                    "The table is the 18-byte DTD structure defined in the VESA EDID version 1.x.\r\n\r\n"
-                    "\tByte1 \t: Low Byte of DClk in 10 KHz\r\n"
-                    "\tByte2 \t: High Byte of DClk in 10 KHz\r\n"
-                    "\tByte3 \t: Horizontal Active in pixels, LSB\r\n"
-                    "\tByte4 \t: Horizontal Blanking in pixels, LSB\r\n"
-                    "\tByte5 \t: Bit 7-4: Upper 4 bits of Hor. Active\r\n"
-                    "\t   \t: Bit 3-0: Upper 4 bits of Hor. Blanking\r\n"
-                    "\tByte6 \t: Vertical Active in lines, LSB\r\n"
-                    "\tByte7 \t: Vertical Blanking in lines, LSB\r\n"
-                    "\tByte8 \t: Bit 7-4: Upper 4 bits of Vert. Active\r\n"
-                    "\t   \t: Bit 3-0: Upper 4 bits of Vert. Blanking\r\n"
-                    "\tByte9  \t: HSync Offset from Hor. Blanking in pix., LSB\r\n"
-                    "\tByte10 \t: HSync Pulse Width in pixels, LSB\r\n"
-                    "\tByte11 \t: Bit 7-4: Lower 4 bits of VSync Offset\r\n"
-                    "\t   \t: Bit 3-0: Lower 4 bits of VSync Pulse Width\r\n"
-                    "\tByte12 \t: Bit 7-6: Upper 2 bits of HSync Offset\r\n"
-                    "\t   \t: Bit 5-4: Upper 2 bits of HSync Pulse Width\r\n"
-                    "\t   \t: Bit 3-2: Upper 2 bits of VSync Offset\r\n"
-                    "\t   \t: Bit 1-0: Upper 2 bits of VSync Pulse Width\r\n"
-                    "\tByte13 \t: Horizontal Image Size, LSB\r\n"
-                    "\tByte14 \t: Vertical Image Size, LSB\r\n"
-                    "\tByte15 \t: Bit 7-4: Upper 4 bits of Hor. Image Size\r\n"
-                    "\t   \t: Bit 3-0: Upper 4 bits of Vert. Image Size\r\n"
-                    "\tByte16 \t: Horizontal Border in pixels\r\n"
-                    "\tByte17 \t: Vertical Border in lines\r\n"
-                    "\tByte18 \t: Flags:\r\n"
-                    "\t   \t:   Bit 7:   0 = Non-interlaced, 1 = Interlaced\r\n"
-                    "\t   \t:   Bit 6-5: 00 = Reserved\r\n"
-                    "\t   \t:   Bit 4-3: 11 = Digital Separate\r\n"
-                    "\t   \t:   Bit 2:   Vertical Polarity (0 = Negative, 1 = Positive)\r\n"
-                    "\t   \t:   Bit 1:   Horizontal Polarity (0 = Negative, 1 = Positive)\r\n"
-                    "\t   \t:   Bit 0:   0 = Reserved"
-        EndPage   ; "EDID-less EFP Panel DTD Timings"
-      #ENDIF    ; Embedded platform
+        Table     $EFP3_DTD " DTD Timings Values",
+        Column    "Timings" , 1 byte , EHEX,
+        Help      "This feature allows for the definition of the DTD timings parameters. "
+                  "The table is the 18-byte DTD structure defined in the VESA EDID version 1.x.\r\n\r\n"
+                  "\tByte1 \t: Low Byte of DClk in 10 KHz\r\n"
+                  "\tByte2 \t: High Byte of DClk in 10 KHz\r\n"
+                  "\tByte3 \t: Horizontal Active in pixels, LSB\r\n"
+                  "\tByte4 \t: Horizontal Blanking in pixels, LSB\r\n"
+                  "\tByte5 \t: Bit 7-4: Upper 4 bits of Hor. Active\r\n"
+                  "\t   \t: Bit 3-0: Upper 4 bits of Hor. Blanking\r\n"
+                  "\tByte6 \t: Vertical Active in lines, LSB\r\n"
+                  "\tByte7 \t: Vertical Blanking in lines, LSB\r\n"
+                  "\tByte8 \t: Bit 7-4: Upper 4 bits of Vert. Active\r\n"
+                  "\t   \t: Bit 3-0: Upper 4 bits of Vert. Blanking\r\n"
+                  "\tByte9  \t: HSync Offset from Hor. Blanking in pix., LSB\r\n"
+                  "\tByte10 \t: HSync Pulse Width in pixels, LSB\r\n"
+                  "\tByte11 \t: Bit 7-4: Lower 4 bits of VSync Offset\r\n"
+                  "\t   \t: Bit 3-0: Lower 4 bits of VSync Pulse Width\r\n"
+                  "\tByte12 \t: Bit 7-6: Upper 2 bits of HSync Offset\r\n"
+                  "\t   \t: Bit 5-4: Upper 2 bits of HSync Pulse Width\r\n"
+                  "\t   \t: Bit 3-2: Upper 2 bits of VSync Offset\r\n"
+                  "\t   \t: Bit 1-0: Upper 2 bits of VSync Pulse Width\r\n"
+                  "\tByte13 \t: Horizontal Image Size, LSB\r\n"
+                  "\tByte14 \t: Vertical Image Size, LSB\r\n"
+                  "\tByte15 \t: Bit 7-4: Upper 4 bits of Hor. Image Size\r\n"
+                  "\t   \t: Bit 3-0: Upper 4 bits of Vert. Image Size\r\n"
+                  "\tByte16 \t: Horizontal Border in pixels\r\n"
+                  "\tByte17 \t: Vertical Border in lines\r\n"
+                  "\tByte18 \t: Flags:\r\n"
+                  "\t   \t:   Bit 7:   0 = Non-interlaced, 1 = Interlaced\r\n"
+                  "\t   \t:   Bit 6-5: 00 = Reserved\r\n"
+                  "\t   \t:   Bit 4-3: 11 = Digital Separate\r\n"
+                  "\t   \t:   Bit 2:   Vertical Polarity (0 = Negative, 1 = Positive)\r\n"
+                  "\t   \t:   Bit 1:   Horizontal Polarity (0 = Negative, 1 = Positive)\r\n"
+                  "\t   \t:   Bit 0:   0 = Reserved"
+      EndPage   ; "EDID-less EFP Panel DTD Timings"
     EndPage   ; "Device 3  (EFP3)"
 
     ;==============================================================================

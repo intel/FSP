@@ -1,6 +1,6 @@
 /** @file
   Header file for SMBIOS Cache Info HOB
-
+ @copyright
  Copyright (c) 2015, Intel Corporation. All rights reserved.<BR>
 
  This program and the accompanying materials are licensed and made available under

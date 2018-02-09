@@ -3,37 +3,35 @@
   Memory S3 Save data, Memory Info data and Memory Platform
   data hobs.
 
- @copyright
-  INTEL CONFIDENTIAL
-  Copyright 1999 - 2016 Intel Corporation.
+  @copyright
+  Copyright (c) 1999 - 2017, Intel Corporation. All rights reserved.<BR>
 
-  The source code contained or described herein and all documents related to the
-  source code ("Material") are owned by Intel Corporation or its suppliers or
-  licensors. Title to the Material remains with Intel Corporation or its suppliers
-  and licensors. The Material may contain trade secrets and proprietary and
-  confidential information of Intel Corporation and its suppliers and licensors,
-  and is protected by worldwide copyright and trade secret laws and treaty
-  provisions. No part of the Material may be used, copied, reproduced, modified,
-  published, uploaded, posted, transmitted, distributed, or disclosed in any way
-  without Intel's prior express written permission.
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
 
-  No license under any patent, copyright, trade secret or other intellectual
-  property right is granted to or conferred upon you by disclosure or delivery
-  of the Materials, either expressly, by implication, inducement, estoppel or
-  otherwise. Any license under such intellectual property rights must be
-  express and approved by Intel in writing.
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this
+  list of conditions and the following disclaimer in the documentation and/or
+  other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors may
+  be used to endorse or promote products derived from this software without
+  specific prior written permission.
 
-  Unless otherwise agreed by Intel in writing, you may not remove or alter
-  this notice or any other notice embedded in Materials by Intel or
-  Intel's suppliers or licensors in any way.
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+  THE POSSIBILITY OF SUCH DAMAGE.
 
-  This file contains an 'Intel Peripheral Driver' and is uniquely identified as
-  "Intel Reference Module" and is licensed for Intel CPUs and chipsets under
-  the terms of your license agreement with Intel or your vendor. This file may
-  be modified by the user, subject to additional terms of the license agreement.
-
-@par Specification Reference:
 **/
+
 #ifndef _MEM_INFO_HOB_H_
 #define _MEM_INFO_HOB_H_
 
@@ -146,7 +144,7 @@ typedef struct {
 #define MRC_DDR_TYPE_UNKNOWN  3
 #endif
 
-#define MAX_PROFILE_NUM 4 // number of memory profiles supported
+#define MAX_PROFILE_NUM     4 // number of memory profiles supported
 #define MAX_XMP_PROFILE_NUM 2 // number of XMP profiles supported
 
 //
@@ -175,59 +173,69 @@ typedef struct {
   UINT16 tWTR_S;    ///< Number of tCK cycles for the channel DIMM's minimum internal write to read command delay time for different bank groups.
 } MRC_CH_TIMING;
 
+typedef struct {
+  UINT8 SG;         ///< Number of tCK cycles between transactions in the same bank group.
+  UINT8 DG;         ///< Number of tCK cycles between transactions when switching bank groups.
+  UINT8 DR;         ///< Number of tCK cycles between transactions when switching between Ranks (in the same DIMM).
+  UINT8 DD;         ///< Number of tCK cycles between transactions when switching between DIMMs.
+} MRC_TA_TIMING;
+
 ///
 /// Memory SMBIOS & OC Memory Data Hob
 ///
 typedef struct {
-  UINT8  Status;                            ///< See MrcDimmStatus for the definition of this field.
-  UINT8  DimmId;
-  UINT32 DimmCapacity;                      ///< DIMM size in MBytes.
-  UINT16 MfgId;
-  UINT8  ModulePartNum[20];                 ///< Module part number for DDR3 is 18 bytes however for DRR4 20 bytes as per JEDEC Spec, so reserving 20 bytes
-  UINT8  RankInDimm;                        ///< The number of ranks in this DIMM.
-  UINT8  SpdDramDeviceType;                 ///< Save SPD DramDeviceType information needed for SMBIOS structure creation.
-  UINT8  SpdModuleType;                     ///< Save SPD ModuleType information needed for SMBIOS structure creation.
-  UINT8  SpdModuleMemoryBusWidth;           ///< Save SPD ModuleMemoryBusWidth information needed for SMBIOS structure creation.
-  UINT8  SpdSave[MAX_SPD_SAVE];             ///< Save SPD Manufacturing information needed for SMBIOS structure creation.
+  UINT8            Status;                  ///< See MrcDimmStatus for the definition of this field.
+  UINT8            DimmId;
+  UINT32           DimmCapacity;            ///< DIMM size in MBytes.
+  UINT16           MfgId;
+  UINT8            ModulePartNum[20];       ///< Module part number for DDR3 is 18 bytes however for DRR4 20 bytes as per JEDEC Spec, so reserving 20 bytes
+  UINT8            RankInDimm;              ///< The number of ranks in this DIMM.
+  UINT8            SpdDramDeviceType;       ///< Save SPD DramDeviceType information needed for SMBIOS structure creation.
+  UINT8            SpdModuleType;           ///< Save SPD ModuleType information needed for SMBIOS structure creation.
+  UINT8            SpdModuleMemoryBusWidth; ///< Save SPD ModuleMemoryBusWidth information needed for SMBIOS structure creation.
+  UINT8            SpdSave[MAX_SPD_SAVE];   ///< Save SPD Manufacturing information needed for SMBIOS structure creation.
 } DIMM_INFO;
 
 typedef struct {
-  UINT8         Status;                     ///< Indicates whether this channel should be used.
-  UINT8         ChannelId;
-  UINT8         DimmCount;                  ///< Number of valid DIMMs that exist in the channel.
-  MRC_CH_TIMING Timing[MAX_PROFILE_NUM];    ///< The channel timing values.
-  DIMM_INFO     Dimm[MAX_DIMM];             ///< Save the DIMM output characteristics.
+  UINT8            Status;                  ///< Indicates whether this channel should be used.
+  UINT8            ChannelId;
+  UINT8            DimmCount;               ///< Number of valid DIMMs that exist in the channel.
+  MRC_CH_TIMING    Timing[MAX_PROFILE_NUM]; ///< The channel timing values.
+  DIMM_INFO        DimmInfo[MAX_DIMM];      ///< Save the DIMM output characteristics.
 } CHANNEL_INFO;
 
 typedef struct {
-  UINT8            Status;                  ///< Indicates whether this controller should be used.
-  UINT16           DeviceId;                ///< The PCI device id of this memory controller.
-  UINT8            RevisionId;              ///< The PCI revision id of this memory controller.
-  UINT8            ChannelCount;            ///< Number of valid channels that exist on the controller.
-  CHANNEL_INFO     Channel[MAX_CH];         ///< The following are channel level definitions.
+  UINT8             Status;                  ///< Indicates whether this controller should be used.
+  UINT16            DeviceId;                ///< The PCI device id of this memory controller.
+  UINT8             RevisionId;              ///< The PCI revision id of this memory controller.
+  UINT8             ChannelCount;            ///< Number of valid channels that exist on the controller.
+  CHANNEL_INFO      ChannelInfo[MAX_CH];     ///< The following are channel level definitions.
+  MRC_TA_TIMING     tRd2Rd;                  ///< Read-to-Read   Turn Around Timings
+  MRC_TA_TIMING     tRd2Wr;                  ///< Read-to-Write  Turn Around Timings
+  MRC_TA_TIMING     tWr2Rd;                  ///< Write-to-Read  Turn Around Timings
+  MRC_TA_TIMING     tWr2Wr;                  ///< Write-to-Write Turn Around Timings
 } CONTROLLER_INFO;
 
 typedef struct {
-  EFI_HOB_GUID_TYPE EfiHobGuidType;
   UINT8             Revision;
-  UINT16            DataWidth;
+  UINT16            DataWidth;              ///< Data width, in bits, of this memory device
   /** As defined in SMBIOS 3.0 spec
     Section 7.18.2 and Table 75
   **/
-  UINT8             DdrType;                ///< DDR type: DDR3, DDR4, or LPDDR3
-  UINT32            Frequency;              ///< The system's common memory controller frequency in MT/s.
+  UINT8             MemoryType;             ///< DDR type: DDR3, DDR4, or LPDDR3
+  UINT16            MaximumMemoryClockSpeed;///< The maximum capable speed of the device, in megahertz (MHz)
+  UINT16            ConfiguredMemoryClockSpeed; ///< The configured clock speed to the memory device, in megahertz (MHz)
   /** As defined in SMBIOS 3.0 spec
     Section 7.17.3 and Table 72
   **/
   UINT8             ErrorCorrectionType;
 
   SiMrcVersion      Version;
-  UINT32            FreqMax;
   BOOLEAN           EccSupport;
   UINT8             MemoryProfile;
   UINT32            TotalPhysicalMemorySize;
-  UINT32            DefaultXmptCK[MAX_XMP_PROFILE_NUM]; // Stores the tCK value read from SPD XMP profiles if they exist.
-  UINT8             XmpProfileEnable;                   // If XMP capable DIMMs are detected, this will indicate which XMP Profiles are common among all DIMMs.
+  UINT32            DefaultXmptCK[MAX_XMP_PROFILE_NUM];///< Stores the tCK value read from SPD XMP profiles if they exist.
+  UINT8             XmpProfileEnable;                  ///< If XMP capable DIMMs are detected, this will indicate which XMP Profiles are common among all DIMMs.
   UINT8             Ratio;
   UINT8             RefClk;
   UINT32            VddVoltage[MAX_PROFILE_NUM];
@@ -260,6 +268,7 @@ typedef struct {
   MEMORY_PLATFORM_DATA Data;
   UINT8                *Buffer;
 } MEMORY_PLATFORM_DATA_HOB;
+
 #pragma pack (pop)
 
 #endif // _MEM_INFO_HOB_H_

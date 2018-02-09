@@ -1,7 +1,7 @@
 /** @file
 
   Boot Setting File for Platform Configuration.
-
+  @copyright
   Copyright (c) 2017, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
@@ -120,10 +120,10 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_Peg2PowerDownUnusedLanes        1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_InitPcieAspmAfterOprom          1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_PegDisableSpreadSpectrumClocking   1 bytes    $_DEFAULT_ = 0x0
-        $gKabylakeFspPkgTokenSpaceGuid_DmiGen3RootPortPreset           4 bytes    $_DEFAULT_ = 0x08,0x08,0x08,0x08
+        $gKabylakeFspPkgTokenSpaceGuid_DmiGen3RootPortPreset           4 bytes    $_DEFAULT_ = 0x04,0x04,0x04,0x04
         $gKabylakeFspPkgTokenSpaceGuid_DmiGen3EndPointPreset           4 bytes    $_DEFAULT_ = 0x07,0x07,0x07,0x07
         $gKabylakeFspPkgTokenSpaceGuid_DmiGen3EndPointHint             4 bytes    $_DEFAULT_ = 0x02,0x02,0x02,0x02
-        $gKabylakeFspPkgTokenSpaceGuid_DmiGen3RxCtlePeaking            2 bytes    $_DEFAULT_ = 0x0C,0x0C
+        $gKabylakeFspPkgTokenSpaceGuid_DmiGen3RxCtlePeaking            2 bytes    $_DEFAULT_ = 0x03,0x03
         $gKabylakeFspPkgTokenSpaceGuid_DmiDeEmphasis                   1 bytes    $_DEFAULT_ = 0x1
         $gKabylakeFspPkgTokenSpaceGuid_PegGen3RxCtlePeaking            8 bytes    $_DEFAULT_ = 0x0C,0x0C,0x0C,0x0C,0x0C,0x0C,0x0C,0x0C
         $gKabylakeFspPkgTokenSpaceGuid_PegDataPtr                      4 bytes    $_DEFAULT_ = 0
@@ -264,14 +264,14 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_Peg0Gen3EqPh2Enable             1 bytes    $_DEFAULT_ = 0x2
         $gKabylakeFspPkgTokenSpaceGuid_Peg1Gen3EqPh2Enable             1 bytes    $_DEFAULT_ = 0x2
         $gKabylakeFspPkgTokenSpaceGuid_Peg2Gen3EqPh2Enable             1 bytes    $_DEFAULT_ = 0x2
-        $gKabylakeFspPkgTokenSpaceGuid_Peg0Gen3EqPh3Method             1 bytes    $_DEFAULT_ = 0x2
-        $gKabylakeFspPkgTokenSpaceGuid_Peg1Gen3EqPh3Method             1 bytes    $_DEFAULT_ = 0x2
-        $gKabylakeFspPkgTokenSpaceGuid_Peg2Gen3EqPh3Method             1 bytes    $_DEFAULT_ = 0x2
+        $gKabylakeFspPkgTokenSpaceGuid_Peg0Gen3EqPh3Method             1 bytes    $_DEFAULT_ = 0x0
+        $gKabylakeFspPkgTokenSpaceGuid_Peg1Gen3EqPh3Method             1 bytes    $_DEFAULT_ = 0x0
+        $gKabylakeFspPkgTokenSpaceGuid_Peg2Gen3EqPh3Method             1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_PegGen3ProgramStaticEq          1 bytes    $_DEFAULT_ = 0x1
         $gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqAlwaysAttempt           1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqNumberOfPresets         1 bytes    $_DEFAULT_ = 0x2
         $gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqEnableVocTest           1 bytes    $_DEFAULT_ = 0x2
-        $gKabylakeFspPkgTokenSpaceGuid_PegRxCemTestingMode             1 bytes    $_DEFAULT_ = 0x01
+        $gKabylakeFspPkgTokenSpaceGuid_PegRxCemTestingMode             1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_PegRxCemLoopbackLane            1 bytes    $_DEFAULT_ = 0
         $gKabylakeFspPkgTokenSpaceGuid_PegGenerateBdatMarginTable      1 bytes    $_DEFAULT_ = 0x00
         Skip 6 bytes
@@ -279,11 +279,11 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_PegGen3RxCtleOverride           1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PegGen3Rsvd                     1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PanelPowerEnable                1 bytes    $_DEFAULT_ = 0x01
-        $gKabylakeFspPkgTokenSpaceGuid_PegGen3RootPortPreset          16 bytes    $_DEFAULT_ = 0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08
+        $gKabylakeFspPkgTokenSpaceGuid_PegGen3RootPortPreset          16 bytes    $_DEFAULT_ = 0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07
         $gKabylakeFspPkgTokenSpaceGuid_PegGen3EndPointPreset          16 bytes    $_DEFAULT_ = 0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07
-        $gKabylakeFspPkgTokenSpaceGuid_PegGen3EndPointHint            16 bytes    $_DEFAULT_ = 0x06,0x06,0x06,0x06,0x06,0x06,0x06,0x06,0x06,0x06,0x06,0x06,0x06,0x06,0x06,0x06
-        $gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqJitterDwellTime         2 bytes    $_DEFAULT_ = 1000
-        $gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqJitterErrorTarget       2 bytes    $_DEFAULT_ = 1
+        $gKabylakeFspPkgTokenSpaceGuid_PegGen3EndPointHint            16 bytes    $_DEFAULT_ = 0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02
+        $gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqJitterDwellTime         2 bytes    $_DEFAULT_ = 3000
+        $gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqJitterErrorTarget       2 bytes    $_DEFAULT_ = 2
         $gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqVocDwellTime            2 bytes    $_DEFAULT_ = 10000
         $gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqVocErrorTarget          2 bytes    $_DEFAULT_ = 2
         $gKabylakeFspPkgTokenSpaceGuid_SaPreMemTestRsvd                4 bytes    $_DEFAULT_ = 0x00
@@ -293,7 +293,7 @@ StructDef
         $gSkylakeFspPkgTokenSpaceGuid_TxtLcpPdBase                     8 bytes    $_DEFAULT_ = 0x0000000000000000
         $gSkylakeFspPkgTokenSpaceGuid_TxtLcpPdSize                     8 bytes    $_DEFAULT_ = 0x0000000000000000
         $gSkylakeFspPkgTokenSpaceGuid_TotalFlashSize                   2 bytes    $_DEFAULT_ = 0x0000
-        $gSkylakeFspPkgTokenSpaceGuid_BiosSize                         2 bytes    $_DEFAULT_ = 0x0000
+        $gSkylakeFspPkgTokenSpaceGuid_BiosSize                         2 bytes    $_DEFAULT_ = 0x2000
         $gKabylakeFspPkgTokenSpaceGuid_PchDciEn                        1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PchDciAutoDetect                1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_SmbusDynamicPowerGating         1 bytes    $_DEFAULT_ = 0x00
@@ -327,7 +327,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_ScsSdCardEnabled                1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_PchIshEnable                    1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_ShowSpiController               1 bytes    $_DEFAULT_ = 0x00
-        Skip 2 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_SpiFlashCfgLockDown             1 bytes    $_DEFAULT_ = 0x01
+        Skip 1 bytes
         $gKabylakeFspPkgTokenSpaceGuid_MicrocodeRegionBase             4 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_MicrocodeRegionSize             4 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_TurboMode                       1 bytes    $_DEFAULT_ = 0x1
@@ -376,7 +377,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_WatchDogTimerOs                 2 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_WatchDogTimerBios               2 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_AmtSolEnabled                   1 bytes    $_DEFAULT_ = 0x0
-        Skip 163 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_PcieRpClkSrcNumber             24 bytes    $_DEFAULT_ = 0x02, 0x1f, 0x1f, 0x1f, 0x03, 0x01, 0x1f, 0x1f, 0x05, 0x04, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f
+        Skip 139 bytes
         $gKabylakeFspPkgTokenSpaceGuid_DefaultSvid                     2 bytes    $_DEFAULT_ = 0x8086
         $gKabylakeFspPkgTokenSpaceGuid_DefaultSid                      2 bytes    $_DEFAULT_ = 0x2015
         $gKabylakeFspPkgTokenSpaceGuid_CridEnable                      1 bytes    $_DEFAULT_ = 0x0
@@ -672,7 +674,8 @@ StructDef
         $gSkylakeFspPkgTokenSpaceGuid_SgxEpoch1                        8 bytes    $_DEFAULT_ = 0xFFFFFFFFFFFFFFFF
         $gKabylakeFspPkgTokenSpaceGuid_MeUnconfigOnRtcClear            1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_MeUnconfigIsValid               1 bytes    $_DEFAULT_ = 0x01
-        Skip 10 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_IslVrCmd                        1 bytes    $_DEFAULT_ = 0x00
+        Skip 9 bytes
         $gKabylakeFspPkgTokenSpaceGuid_ChapDeviceEnable                1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_SkipPamLock                     1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_EdramTestMode                   1 bytes    $_DEFAULT_ = 0x2
@@ -763,8 +766,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_RaceToHalt                      1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_MaxRatio                        2 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_StateRatio                     80 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
-        $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl0Irtl       2 bytes    $_DEFAULT_ = 0x4B
-        $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl1Irtl       2 bytes    $_DEFAULT_ = 0x6B
+        $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl0Irtl       2 bytes    $_DEFAULT_ = 0x4E
+        $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl1Irtl       2 bytes    $_DEFAULT_ = 0x76
         $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl2Irtl       2 bytes    $_DEFAULT_ = 0x94
         $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl3Irtl       2 bytes    $_DEFAULT_ = 0xFA
         $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl4Irtl       2 bytes    $_DEFAULT_ = 0x14C
@@ -815,7 +818,7 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_PcieEnablePort8xhDecode         1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PchPciePort8xhDecodePortIndex   1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PchPmDisableEnergyReport        1 bytes    $_DEFAULT_ = 0x00
-        $gKabylakeFspPkgTokenSpaceGuid_PchPmPmcReadDisable             1 bytes    $_DEFAULT_ = 0x01
+        $gKabylakeFspPkgTokenSpaceGuid_PchPmPmcReadDisable             1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_SataTestMode                    1 bytes    $_DEFAULT_ = 0x00
 
 EndStruct
@@ -839,6 +842,12 @@ List &gKabylakeFspPkgTokenSpaceGuid_Peg1MaxLinkSpeed
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_Peg2Gen3EqPh2Enable
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gKabylakeFspPkgTokenSpaceGuid_PkgCStateDemotion
     Selection 0 , "Disable"
     Selection 1 , "Enable"
     Selection 2 , "Auto"
@@ -946,9 +955,11 @@ List &gKabylakeFspPkgTokenSpaceGuid_Peg0Gen3EqPh2Enable
     Selection 2 , "Auto"
 EndList
 
-List &gKabylakeFspPkgTokenSpaceGuid_PegDeEmphasis
-    Selection 0 , "Disable"
-    Selection 2 , "L1"
+List &gKabylakeFspPkgTokenSpaceGuid_SlowSlewRateForSa
+    Selection 0 , " Fast/2"
+    Selection 1 , " Fast/4"
+    Selection 2 , " Fast/8"
+    Selection 3 , " Fast/16"
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_TxtEnable
@@ -1053,12 +1064,6 @@ List &gKabylakeFspPkgTokenSpaceGuid_GttSize
     Selection 3 , "8MB"
 EndList
 
-List &gKabylakeFspPkgTokenSpaceGuid_PegMaxPayload
-    Selection 0xFF , " Auto"
-    Selection 0x1 , " Force 128B"
-    Selection 0x2 , " Force 256B"
-EndList
-
 List &gKabylakeFspPkgTokenSpaceGuid_Peg0Gen3EqPh3Method
     Selection 0 , "Auto"
     Selection 1 , "HwEq"
@@ -1134,13 +1139,6 @@ List &gKabylakeFspPkgTokenSpaceGuid_DdrFreqLimit
     Selection 2133 , "2133"
     Selection 2400 , "2400"
     Selection 0 , "Auto"
-EndList
-
-List &gKabylakeFspPkgTokenSpaceGuid_SlowSlewRateForSa
-    Selection 0 , " Fast/2"
-    Selection 1 , " Fast/4"
-    Selection 2 , " Fast/8"
-    Selection 3 , " Fast/16"
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_Peg1PowerDownUnusedLanes
@@ -1301,6 +1299,12 @@ List &gSiPkgTokenSpaceGuid_PcdIsaSerialUartBase
     Selection 1 , "0x2F8"
 EndList
 
+List &gKabylakeFspPkgTokenSpaceGuid_PkgCStateUnDemotion
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
 List &gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqNumberOfPresets
     Selection 0 , "P7 P3 P5"
     Selection 1 , "P0 to P9"
@@ -1362,13 +1366,6 @@ EndList
 List &gKabylakeFspPkgTokenSpaceGuid_ThreeStrikeCounterDisable
     Selection 0 , " False"
     Selection 1 , " True"
-EndList
-
-List &gKabylakeFspPkgTokenSpaceGuid_PegSlotPowerLimitScale
-    Selection 0 , "1.0x"
-    Selection 1 , "0.1x"
-    Selection 2 , "0.01x"
-    Selection 3 , "0x001x"
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_SaGv
@@ -1439,6 +1436,8 @@ Page "Sunrise Point PCH"
         Help "Enable/disable ISH Controller."
     Combo $gKabylakeFspPkgTokenSpaceGuid_ShowSpiController, "Show SPI controller", &EN_DIS,
         Help "Enable/disable to show SPI controller."
+    Combo $gKabylakeFspPkgTokenSpaceGuid_SpiFlashCfgLockDown, "Flash Configuration Lock Down", &EN_DIS,
+        Help "Enable/disable flash lock down. If platform decides to skip this programming, it must lock SPI flash register DLOCK, FLOCKDN, and WRSDIS before end of post."
     EditNum $gKabylakeFspPkgTokenSpaceGuid_MicrocodeRegionBase, "MicrocodeRegionBase", HEX,
         Help "Memory Base of Microcode Updates"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
@@ -1561,6 +1560,9 @@ Page "Sunrise Point PCH"
         Help "16 bits Value, Set BIOS watchdog timer."
     Combo $gKabylakeFspPkgTokenSpaceGuid_AmtSolEnabled, "SOL Switch", &EN_DIS,
         Help "Enable/Disable. 0: Disable, 1: enable, Serial Over Lan enable/disable state by Mebx"
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_PcieRpClkSrcNumber, "Configure CLKSRC Number", HEX,
+        Help "Configure Root Port CLKSRC Number. Each value in arrary can be between 0-6 for valid clock numbers or 0x1F for an invalid number. One byte for each port, byte0 for port1, byte1 for port2, and so on."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_DefaultSvid, "Subsystem Vendor ID for SA devices", HEX,
         Help "Subsystem ID that will be programmed to SA devices: Default SubSystemVendorId=0x8086"
              "Valid range: 0x00 ~ 0xFFFF"
@@ -1574,13 +1576,15 @@ Page "Sunrise Point PCH"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_PegPhysicalSlotNumber, "PCIe Physical Slot Number per root port", HEX,
         Help "Physical Slot Number per root port"
              "Valid range: 0 ~ 8191"
-    Combo $gKabylakeFspPkgTokenSpaceGuid_PegDeEmphasis, "PCIe DeEmphasis control per root port", &gKabylakeFspPkgTokenSpaceGuid_PegDeEmphasis,
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_PegDeEmphasis, "PCIe DeEmphasis control per root port", HEX,
         Help "0: -6dB, 1(Default): -3.5dB"
+             "Valid range: 0x00 ~ 0xFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_PegSlotPowerLimitValue, "PCIe Slot Power Limit value per root port", HEX,
         Help "Slot power limit value per root port"
-             "Valid range: 0x00 ~ 0xFF"
-    Combo $gKabylakeFspPkgTokenSpaceGuid_PegSlotPowerLimitScale, "PCIe Slot Power Limit scale per root port", &gKabylakeFspPkgTokenSpaceGuid_PegSlotPowerLimitScale,
+             "Valid range: 0x00 ~ 0xFFFFFF"
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_PegSlotPowerLimitScale, "PCIe Slot Power Limit scale per root port", HEX,
         Help "Slot power limit scale per root port"
+             "Valid range: 0x00 ~ 0xFFFFFF"
     Combo $gKabylakeFspPkgTokenSpaceGuid_PavpEnable, "Enable/Disable PavpEnable", &EN_DIS,
         Help "Enable(Default): Enable PavpEnable, Disable: Disable PavpEnable"
     Combo $gKabylakeFspPkgTokenSpaceGuid_CdClock, "CdClock Frequency selection", &gKabylakeFspPkgTokenSpaceGuid_CdClock,
@@ -2420,6 +2424,9 @@ Page "Sunrise Point PCH"
         Help "Enable(Default): Enable ME Unconfig On Rtc Clear, Disable: Disable ME Unconfig On Rtc Clear"
     Combo $gKabylakeFspPkgTokenSpaceGuid_MeUnconfigIsValid, "Check if MeUnconfigOnRtcClear is valid", &EN_DIS,
         Help "The MeUnconfigOnRtcClear item could be not valid due to CMOS is clear."
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_IslVrCmd, "Activates VR mailbox command for Intersil VR C-state issues.", HEX,
+        Help "Intersil VR mailbox command. <b>0 - no mailbox command sent.</b>  1 - VR mailbox command sent for IA/GT rails only. 2 - VR mailbox command sent for IA/GT/SA rails."
+             "Valid range: 0x0 ~ 0x7"
     Combo $gKabylakeFspPkgTokenSpaceGuid_ChapDeviceEnable, "Enable/Disable Device 7 ", &EN_DIS,
         Help "Enable: Device  7 enabled, Disable (Default): Device 7 disabled"
     Combo $gKabylakeFspPkgTokenSpaceGuid_SkipPamLock, "Skip PAM register lock", &EN_DIS,
@@ -2430,8 +2437,9 @@ Page "Sunrise Point PCH"
         Help "Enable: Enable DMI Extended Sync Control, Disable(Default): Disable DMI Extended Sync Control"
     Combo $gKabylakeFspPkgTokenSpaceGuid_DmiIot, "DMI IOT Control", &EN_DIS,
         Help "Enable: Enable DMI IOT Control, Disable(Default): Disable DMI IOT Control"
-    Combo $gKabylakeFspPkgTokenSpaceGuid_PegMaxPayload, "PEG Max Payload size per root port", &gKabylakeFspPkgTokenSpaceGuid_PegMaxPayload,
-        Help "0xFF(Default):Auto, 0x1: Force 128B, 0X2: Force 256B"
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_PegMaxPayload, "PEG Max Payload size per root port", HEX,
+        Help "0xFF(Default):Auto, 0x1: Force 128B, 0x2: Force 256B"
+             "Valid range: 0x00 ~ 0xFFFFFF"
     Combo $gKabylakeFspPkgTokenSpaceGuid_RenderStandby, "Enable/Disable IGFX RenderStandby", &EN_DIS,
         Help "Enable(Default): Enable IGFX RenderStandby, Disable: Disable IGFX RenderStandby"
     Combo $gKabylakeFspPkgTokenSpaceGuid_PmSupport, "Enable/Disable IGFX PmSupport", &EN_DIS,
@@ -2576,14 +2584,14 @@ Page "Sunrise Point PCH"
         Help "Configure C-State Configuration Lock; 0: Disable; <b>1: Enable</b>."
     Combo $gKabylakeFspPkgTokenSpaceGuid_C1e, "Enable or Disable Enhanced C-states", &EN_DIS,
         Help "Enable or Disable Enhanced C-states. 0: Disable; <b>1: Enable</b>"
-    Combo $gKabylakeFspPkgTokenSpaceGuid_PkgCStateDemotion, "Enable or Disable Package C-State Demotion", &EN_DIS,
+    Combo $gKabylakeFspPkgTokenSpaceGuid_PkgCStateDemotion, "Enable or Disable Package C-State Demotion", &gKabylakeFspPkgTokenSpaceGuid_PkgCStateDemotion,
         Help "Enable or Disable Package C-State Demotion. 0: Disable; 1: Enable; <b>2: Auto</b> (Auto: Enabled for Skylake; Disabled for Kabylake)"
-    Combo $gKabylakeFspPkgTokenSpaceGuid_PkgCStateUnDemotion, "Enable or Disable Package C-State UnDemotion", &EN_DIS,
+    Combo $gKabylakeFspPkgTokenSpaceGuid_PkgCStateUnDemotion, "Enable or Disable Package C-State UnDemotion", &gKabylakeFspPkgTokenSpaceGuid_PkgCStateUnDemotion,
         Help "Enable or Disable Package C-State UnDemotion. 0: Disable; 1: Enable; <b>2: Auto</b> (Auto: Enabled for Skylake; Disabled for Kabylake)"
     Combo $gKabylakeFspPkgTokenSpaceGuid_CStatePreWake, "Enable or Disable CState-Pre wake", &EN_DIS,
-        Help "Enable or Disable CState-Pre wake. Disable; <b>1: Enable</b>"
+        Help "Enable or Disable CState-Pre wake. 0: Disable; <b>1: Enable</b>"
     Combo $gKabylakeFspPkgTokenSpaceGuid_TimedMwait, "Enable or Disable TimedMwait Support.", &EN_DIS,
-        Help "Enable or Disable TimedMwait Support. <b>Disable</b>; 1: Enable"
+        Help "Enable or Disable TimedMwait Support. <b>0: Disable</b>; 1: Enable"
     Combo $gKabylakeFspPkgTokenSpaceGuid_CstCfgCtrIoMwaitRedirection, "Enable or Disable IO to MWAIT redirection", &EN_DIS,
         Help "Enable or Disable IO to MWAIT redirection; <b>0: Disable</b>; 1: Enable."
     EditNum $gKabylakeFspPkgTokenSpaceGuid_PkgCStateLimit, "Set the Max Pkg Cstate", HEX,
@@ -2613,7 +2621,7 @@ Page "Sunrise Point PCH"
     Combo $gKabylakeFspPkgTokenSpaceGuid_ProcHotLock, "Lock prochot configuration", &EN_DIS,
         Help "Lock prochot configuration Enable/Disable; <b>0: Disable</b>; 1: Enable"
     Combo $gKabylakeFspPkgTokenSpaceGuid_ConfigTdpLevel, "Configuration for boot TDP selection", &gKabylakeFspPkgTokenSpaceGuid_ConfigTdpLevel,
-        Help "Configuration for boot TDP selection; <b>0: TDP Nominal</b>; 1: TDP Down; 2: TDP Up;0xFF : Deactivate"
+        Help "Configuration for boot TDP selection; <b>0: TDP Nominal</b>; 1: TDP Down; 2: TDP Up; 0xFF: Deactivate"
     Combo $gKabylakeFspPkgTokenSpaceGuid_RaceToHalt, "Race To Halt", &EN_DIS,
         Help "Enable/Disable Race To Halt feature. RTH will dynamically increase CPU frequency in order to enter pkg C-State faster to reduce overall power. (RTH is controlled through MSR 1FC bit 20)Disable; <b>1: Enable</b>"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_MaxRatio, "Max P-State Ratio", HEX,
@@ -2623,10 +2631,10 @@ Page "Sunrise Point PCH"
         Help "Maximum P-state ratio to use in the custom P-state table. NumOfCustomPStates has valid range between 0 to 40. For no. of P-States supported(NumOfCustomPStates) , StateRatio[NumOfCustomPStates] are configurable. Valid Range of value is 0 to 0x7F"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl0Irtl, "Interrupt Response Time Limit of C-State LatencyContol0", HEX,
-        Help "Interrupt Response Time Limit of C-State LatencyContol0. Range of value 0 to 0x3FF"
+        Help "Interrupt Response Time Limit of C-State LatencyContol0.Range of value 0 to 0x3FF, Default is 0x4E, Server Platform is 0x4B"
              "Valid range: 0x00 ~ 0x3FF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl1Irtl, "Interrupt Response Time Limit of C-State LatencyContol1", HEX,
-        Help "Interrupt Response Time Limit of C-State LatencyContol1.Range of value 0 to 0x3FF"
+        Help "Interrupt Response Time Limit of C-State LatencyContol1.Range of value 0 to 0x3FF, Default is 0x76, Server Platform is 0x6B"
              "Valid range: 0x00 ~ 0x3FF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_CstateLatencyControl2Irtl, "Interrupt Response Time Limit of C-State LatencyContol2", HEX,
         Help "Interrupt Response Time Limit of C-State LatencyContol2.Range of value 0 to 0x3FF"
@@ -2768,7 +2776,7 @@ Page "Sunrise Point PCH"
     Combo $gKabylakeFspPkgTokenSpaceGuid_PchPmDisableEnergyReport, "PCH Pm Disable Energy Report", &EN_DIS,
         Help "Disable/Enable PCH to CPU enery report feature."
     Combo $gKabylakeFspPkgTokenSpaceGuid_PchPmPmcReadDisable, "PCH Pm Pmc Read Disable", &EN_DIS,
-        Help "When set to true, this bit disallows host reads to PMC XRAM."
+        Help "Deprecated"
     Combo $gKabylakeFspPkgTokenSpaceGuid_SataTestMode, "PCH Sata Test Mode", &EN_DIS,
         Help "Allow entrance to the PCH SATA test modes."
 EndPage
@@ -2964,7 +2972,7 @@ Page "Memory Reference Code"
     Combo $gKabylakeFspPkgTokenSpaceGuid_PegDisableSpreadSpectrumClocking, "PCIe Disable Spread Spectrum Clocking", &gKabylakeFspPkgTokenSpaceGuid_PegDisableSpreadSpectrumClocking,
         Help "PCIe Disable Spread Spectrum Clocking. Normal Operation(0x0)(Default) - SSC enabled, Disable SSC(0X1) - Disable SSC per platform design or for compliance testing"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_DmiGen3RootPortPreset, "DMI Gen3 Root port preset values per lane", HEX,
-        Help "Used for programming DMI Gen3 preset values per lane. Range: 0-9, 8 is default for each lane"
+        Help "Used for programming DMI Gen3 preset values per lane. Range: 0-9, 4 is default for each lane"
              "Valid range: 0x00 ~ 0xFFFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_DmiGen3EndPointPreset, "DMI Gen3 End port preset values per lane", HEX,
         Help "Used for programming DMI Gen3 preset values per lane. Range: 0-9, 7 is default for each lane"
@@ -2973,7 +2981,7 @@ Page "Memory Reference Code"
         Help "Used for programming DMI Gen3 Hint values per lane. Range: 0-6, 2 is default for each lane"
              "Valid range: 0x00 ~ 0xFFFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_DmiGen3RxCtlePeaking, "DMI Gen3 RxCTLEp per-Bundle control", HEX,
-        Help "Range: 0-15, 12 is default for each bundle, must be specified based upon platform design"
+        Help "Range: 0-15, 3 is default for each bundle, must be specified based upon platform design"
              "Valid range: 0x00 ~ 0xFFFF"
     Combo $gKabylakeFspPkgTokenSpaceGuid_DmiDeEmphasis, "DeEmphasis control for DMI", &gKabylakeFspPkgTokenSpaceGuid_DmiDeEmphasis,
         Help "DeEmphasis control for DMI. 0=-6dB, 1(Default)=-3.5 dB"
