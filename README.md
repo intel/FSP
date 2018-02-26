@@ -30,7 +30,3 @@ Intel® Xeon® E3-1125C v2, E3-1105C v2, Intel® Pentium® B925C, Intel® Core�
 Intel® Xeon® Processor D Product Family (formerly Broadwell-DE, Compliant with FSP v1.0 Specification) | Broadwell-DE | git clone -b Broadwell-DE https://github.com/IntelFsp/FSP.git
 Intel® Atom™ processor C3XXX product family (formerly Denverton, Compliant with FSP v2.0 Specification) | DenvertonNS | git clone -b DenvertonNS https://github.com/IntelFsp/FSP.git
 
-# FSP Issue Communication
-## Intel® Atom™ processor E3900 product family (formerly Apollo Lake)
-Issue: Some write-one clear bits in GEN_PMCON1 will be cleared unexpectedly in FSP which results in unable to obtain reset type in OS layer
-Expected fix: To be fixed in MR4 release in Q4'2017 timeframe
