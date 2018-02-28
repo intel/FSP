@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2017, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -412,10 +412,21 @@ typedef struct {
   UINT8                       Ch1_Option;
 
 /** Offset 0x0071 - Ch1_OdtConfig
-  BIT[0] TX ODT: DDR3L & LPDDR3 only: 0 - WEAK_ODT_CONFIG, 1 - STRONG_ODT_CONFIG;
-  LPDDR4: X = Don't Care; BIT[4] RX ODT DDR3L only: 0 = RZQ/4 (60 Ohms)  = MRC_SMIP_DDR3L_RX_ODT_RTT_WR_60_OHMS,
-  1 = RZQ/2 (120 Ohms) = MRC_SMIP_DDR3L_RX_ODT_RTT_WR_120_OHMS; LPDDR3 & LPDDR4:
-  X = Don't Care
+  [0] RX ODT - DDR3L & LPDDR3 only: Change the READ ODT strength , for SOC termination
+  during a READ transaction, ON DQ BITs. STRONG ==> 60 OHMS roughly, WEAK ==> 120
+  OHMS or so roughly. Purpose: Save power on these technologies which burn power
+  directly proportional to ODT strength, because ODT looks like a PU and PD (e.g.
+  a resistor divider, which always burns power when ODT is ON).   0 - WEAK_ODT_CONFIG,
+  1 - STRONG_ODT_CONFIG. LPDDR4:   X - Don't Care. [1] CA ODT - LPDDR4 Only: The
+  customer needs to choose this based on their actual board strapping (how they tie
+  the DRAM's ODT PINs). Effect: LPDDR4 MR11 will be set based on this setting. CAODT_A_B_HIGH_LOW
+  ==> MR11 = 0x34, which is CA ODT = 80 ohms. CAODT_A_B_HIGH_HIGH ==> MR11 = 0x24,
+  which is CA ODT = 120 ohms (results in 60 ohm final   effective impedance on CA/CLK/CS
+  signals). Purpose: To improve signal integrity and provide a much more optimized
+  CA VREF value during training.  Not to save power.  0 - ODT_AB_HIGH_LOW (default),
+  1 - ODT_AB_HIGH_HIGH. DDR3L & LPDDR3:  X - Don't Care. [4] TX ODT. DDR3L only:
+  0 = RZQ/4 (60 Ohms)  = MRC_SMIP_DDR3L_TX_ODT_RTT_WR_60_OHMS,   1 = RZQ/2 (120
+  Ohms) = MRC_SMIP_DDR3L_TX_ODT_RTT_WR_120_OHMS. LPDDR3 & LPDDR4:   X = Don't Care
 **/
   UINT8                       Ch1_OdtConfig;
 
@@ -482,10 +493,21 @@ typedef struct {
   UINT8                       Ch2_Option;
 
 /** Offset 0x0079 - Ch2_OdtConfig
-  BIT[0] TX ODT: DDR3L & LPDDR3 only: 0 - WEAK_ODT_CONFIG, 1 - STRONG_ODT_CONFIG;
-  LPDDR4: X = Don't Care; BIT[4] RX ODT DDR3L only: 0 = RZQ/4 (60 Ohms)  = MRC_SMIP_DDR3L_RX_ODT_RTT_WR_60_OHMS,
-  1 = RZQ/2 (120 Ohms) = MRC_SMIP_DDR3L_RX_ODT_RTT_WR_120_OHMS; LPDDR3 & LPDDR4:
-  X = Don't Care
+  [0] RX ODT - DDR3L & LPDDR3 only: Change the READ ODT strength , for SOC termination
+  during a READ transaction, ON DQ BITs. STRONG ==> 60 OHMS roughly, WEAK ==> 120
+  OHMS or so roughly. Purpose: Save power on these technologies which burn power
+  directly proportional to ODT strength, because ODT looks like a PU and PD (e.g.
+  a resistor divider, which always burns power when ODT is ON).   0 - WEAK_ODT_CONFIG,
+  1 - STRONG_ODT_CONFIG. LPDDR4:   X - Don't Care. [1] CA ODT - LPDDR4 Only: The
+  customer needs to choose this based on their actual board strapping (how they tie
+  the DRAM's ODT PINs). Effect: LPDDR4 MR11 will be set based on this setting. CAODT_A_B_HIGH_LOW
+  ==> MR11 = 0x34, which is CA ODT = 80 ohms. CAODT_A_B_HIGH_HIGH ==> MR11 = 0x24,
+  which is CA ODT = 120 ohms (results in 60 ohm final   effective impedance on CA/CLK/CS
+  signals). Purpose: To improve signal integrity and provide a much more optimized
+  CA VREF value during training.  Not to save power.  0 - ODT_AB_HIGH_LOW (default),
+  1 - ODT_AB_HIGH_HIGH. DDR3L & LPDDR3:  X - Don't Care. [4] TX ODT. DDR3L only:
+  0 = RZQ/4 (60 Ohms)  = MRC_SMIP_DDR3L_TX_ODT_RTT_WR_60_OHMS,   1 = RZQ/2 (120
+  Ohms) = MRC_SMIP_DDR3L_TX_ODT_RTT_WR_120_OHMS. LPDDR3 & LPDDR4:   X = Don't Care
 **/
   UINT8                       Ch2_OdtConfig;
 
@@ -552,10 +574,21 @@ typedef struct {
   UINT8                       Ch3_Option;
 
 /** Offset 0x0081 - Ch3_OdtConfig
-  BIT[0] TX ODT: DDR3L & LPDDR3 only: 0 - WEAK_ODT_CONFIG, 1 - STRONG_ODT_CONFIG;
-  LPDDR4: X = Don't Care; BIT[4] RX ODT DDR3L only: 0 = RZQ/4 (60 Ohms)  = MRC_SMIP_DDR3L_RX_ODT_RTT_WR_60_OHMS,
-  1 = RZQ/2 (120 Ohms) = MRC_SMIP_DDR3L_RX_ODT_RTT_WR_120_OHMS; LPDDR3 & LPDDR4:
-  X = Don't Care
+  [0] RX ODT - DDR3L & LPDDR3 only: Change the READ ODT strength , for SOC termination
+  during a READ transaction, ON DQ BITs. STRONG ==> 60 OHMS roughly, WEAK ==> 120
+  OHMS or so roughly. Purpose: Save power on these technologies which burn power
+  directly proportional to ODT strength, because ODT looks like a PU and PD (e.g.
+  a resistor divider, which always burns power when ODT is ON).   0 - WEAK_ODT_CONFIG,
+  1 - STRONG_ODT_CONFIG. LPDDR4:   X - Don't Care. [1] CA ODT - LPDDR4 Only: The
+  customer needs to choose this based on their actual board strapping (how they tie
+  the DRAM's ODT PINs). Effect: LPDDR4 MR11 will be set based on this setting. CAODT_A_B_HIGH_LOW
+  ==> MR11 = 0x34, which is CA ODT = 80 ohms. CAODT_A_B_HIGH_HIGH ==> MR11 = 0x24,
+  which is CA ODT = 120 ohms (results in 60 ohm final   effective impedance on CA/CLK/CS
+  signals). Purpose: To improve signal integrity and provide a much more optimized
+  CA VREF value during training.  Not to save power.  0 - ODT_AB_HIGH_LOW (default),
+  1 - ODT_AB_HIGH_HIGH. DDR3L & LPDDR3:  X - Don't Care. [4] TX ODT. DDR3L only:
+  0 = RZQ/4 (60 Ohms)  = MRC_SMIP_DDR3L_TX_ODT_RTT_WR_60_OHMS,   1 = RZQ/2 (120
+  Ohms) = MRC_SMIP_DDR3L_TX_ODT_RTT_WR_120_OHMS. LPDDR3 & LPDDR4:   X = Don't Care
 **/
   UINT8                       Ch3_OdtConfig;
 
