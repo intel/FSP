@@ -658,7 +658,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_Usb3OverCurrentPin             10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x01, 0x01, 0x02, 0x02, 0x03, 0x03, 0x04, 0x04
         $gKabylakeFspPkgTokenSpaceGuid_Early8254ClockGatingEnable      1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_SataRstOptaneMemory             1 bytes    $_DEFAULT_ = 0x01
-        Skip 3 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_SataRstCpuAttachedStorage       1 bytes    $_DEFAULT_ = 0x01
+        Skip 2 bytes
         $gKabylakeFspPkgTokenSpaceGuid_PchPcieDeviceOverrideTablePtr   4 bytes    $_DEFAULT_ = 0x00000000
         $gKabylakeFspPkgTokenSpaceGuid_EnableTcoTimer                  1 bytes    $_DEFAULT_ = 0x00
         $gSkylakeFspPkgTokenSpaceGuid_EcCmdProvisionEav                1 bytes    $_DEFAULT_ = 0xFF
@@ -2388,6 +2389,8 @@ Page "Sunrise Point PCH"
         Help "Set 8254CGE=1 is required for C11 support. However, set 8254CGE=1 in POST time might fail to boot legacy OS which using 8254 timer. Make sure it won't break legacy OS boot before enabling this."
     Combo $gKabylakeFspPkgTokenSpaceGuid_SataRstOptaneMemory, "PCH Sata Rst Optane Memory", &EN_DIS,
         Help "Optane Memory"
+    Combo $gKabylakeFspPkgTokenSpaceGuid_SataRstCpuAttachedStorage, "PCH SATA RST CPU attached storage", &EN_DIS,
+        Help "RST CPU attached storage"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_PchPcieDeviceOverrideTablePtr, "Pch PCIE device override table pointer", HEX,
         Help "The PCIe device table is being used to override PCIe device ASPM settings. This is a pointer points to a 32bit address. And it's only used in PostMem phase. Please refer to PCH_PCIE_DEVICE_OVERRIDE structure for the table. Last entry VendorId must be 0."
              "Valid range: 0x00 ~ 0xFFFFFFFF"

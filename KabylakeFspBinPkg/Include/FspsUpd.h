@@ -1981,9 +1981,15 @@ typedef struct {
 **/
   UINT8                       SataRstOptaneMemory;
 
-/** Offset 0x0721
+/** Offset 0x0721 - PCH SATA RST CPU attached storage
+  RST CPU attached storage
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace19[3];
+  UINT8                       SataRstCpuAttachedStorage;
+
+/** Offset 0x0722
+**/
+  UINT8                       UnusedUpdSpace19[2];
 
 /** Offset 0x0724 - Pch PCIE device override table pointer
   The PCIe device table is being used to override PCIe device ASPM settings. This
