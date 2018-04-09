@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (C) 2017, Intel Corporation
+Copyright (C) 2018, Intel Corporation
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -76,7 +76,7 @@ typedef struct _UPD_DATA_REGION {
 } UPD_DATA_REGION;
 
 #define VPD_IMAGE_ID    0x562D474E524E5641        /* 'AVNRNG-V' */
-#define VPD_IMAGE_REV   0x00000160 
+#define VPD_IMAGE_REV   0x00000170 
 
 typedef struct _VPD_DATA_REGION {
   UINT64                      PcdVpdRegionSign;              /* Offset 0x0000 */
