@@ -185,7 +185,9 @@ StructDef
         $gSkylakeFspPkgTokenSpaceGuid_TxtDprMemorySize                 4 bytes    $_DEFAULT_ = 0x00000000
         $gSkylakeFspPkgTokenSpaceGuid_TxtHeapMemorySize                4 bytes    $_DEFAULT_ = 0x00000000
         $gSkylakeFspPkgTokenSpaceGuid_FlashWearOutProtection           1 bytes    $_DEFAULT_ = 0x00
-        $gKabylakeFspPkgTokenSpaceGuid_ReservedSecurityPreMem          9 bytes    $_DEFAULT_ = 0x00
+        $gKabylakeFspPkgTokenSpaceGuid_TvbRatioClipping                1 bytes    $_DEFAULT_ = 0x0
+        $gKabylakeFspPkgTokenSpaceGuid_TvbVoltageOptimization          1 bytes    $_DEFAULT_ = 0x1
+        $gKabylakeFspPkgTokenSpaceGuid_ReservedSecurityPreMem          7 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PchHpetEnable                   1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_PchHpetBdfValid                 1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PchHpetBase                     4 bytes    $_DEFAULT_ = 0xFED00000
@@ -392,7 +394,7 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_PeiGraphicsPeimInit             1 bytes    $_DEFAULT_ = 0x1
         $gKabylakeFspPkgTokenSpaceGuid_SaImguEnable                    1 bytes    $_DEFAULT_ = 0x1
         $gKabylakeFspPkgTokenSpaceGuid_GmmEnable                       1 bytes    $_DEFAULT_ = 0x1
-        $gKabylakeFspPkgTokenSpaceGuid_X2ApicOptOut                    1 bytes    $_DEFAULT_ = 0x1
+        $gKabylakeFspPkgTokenSpaceGuid_X2ApicOptOut                    1 bytes    $_DEFAULT_ = 0x0
         Skip 1 bytes
         $gKabylakeFspPkgTokenSpaceGuid_VtdBaseAddress                  8 bytes    $_DEFAULT_ = 0x00,0x00,0xD9,0xFE,0x00,0x10,0xD9,0xFE
         Skip 19 bytes
@@ -676,7 +678,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_MeUnconfigOnRtcClear            1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_MeUnconfigIsValid               1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_IslVrCmd                        1 bytes    $_DEFAULT_ = 0x00
-        Skip 9 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_VrPowerDeliveryDesign           4 bytes    $_DEFAULT_ = 0x00000000
+        Skip 5 bytes
         $gKabylakeFspPkgTokenSpaceGuid_ChapDeviceEnable                1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_SkipPamLock                     1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_EdramTestMode                   1 bytes    $_DEFAULT_ = 0x2
@@ -804,8 +807,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_PchLockDownRtcLock              1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_PchSbiUnlock                    1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PchSbAccessUnlock               1 bytes    $_DEFAULT_ = 0x00
-        $gKabylakeFspPkgTokenSpaceGuid_PcieRpLtrMaxSnoopLatency       48 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
-        $gKabylakeFspPkgTokenSpaceGuid_PcieRpLtrMaxNoSnoopLatency     48 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+        $gKabylakeFspPkgTokenSpaceGuid_PcieRpLtrMaxSnoopLatency       48 bytes    $_DEFAULT_ = 0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10
+        $gKabylakeFspPkgTokenSpaceGuid_PcieRpLtrMaxNoSnoopLatency     48 bytes    $_DEFAULT_ = 0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10,0x03,0x10
         $gKabylakeFspPkgTokenSpaceGuid_PcieRpSnoopLatencyOverrideMode  24 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02
         $gKabylakeFspPkgTokenSpaceGuid_PcieRpSnoopLatencyOverrideMultiplier  24 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02
         $gKabylakeFspPkgTokenSpaceGuid_PcieRpSnoopLatencyOverrideValue  48 bytes    $_DEFAULT_ = 0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00
@@ -877,6 +880,11 @@ List &gKabylakeFspPkgTokenSpaceGuid_ConfigTdpLevel
     Selection 1 , "TDP Down"
     Selection 2 , "TDP Up"
     Selection 0xFF , "Deactivate"
+EndList
+
+List &gKabylakeFspPkgTokenSpaceGuid_TvbVoltageOptimization
+    Selection 0 , " Disabled"
+    Selection 1 , " Enabled"
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_RingPllVoltageOffset
@@ -1006,12 +1014,9 @@ List &gKabylakeFspPkgTokenSpaceGuid_Gen3SwEqAlwaysAttempt
     Selection 1 , "Enable"
 EndList
 
-List &gKabylakeFspPkgTokenSpaceGuid_DmiGen3EqPh3Method
-    Selection 0 , "Auto"
-    Selection 1 , "HwEq"
-    Selection 2 , "SwEq"
-    Selection 3 , "StaticEq"
-    Selection 4 , "BypassPhase3"
+List &gKabylakeFspPkgTokenSpaceGuid_TvbRatioClipping
+    Selection 0 , " Disabled"
+    Selection 1 , " Enabled"
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_DmiAspm
@@ -1183,6 +1188,14 @@ List &gKabylakeFspPkgTokenSpaceGuid_Peg1Gen3EqPh2Enable
     Selection 0 , "Disable"
     Selection 1 , "Enable"
     Selection 2 , "Auto"
+EndList
+
+List &gKabylakeFspPkgTokenSpaceGuid_DmiGen3EqPh3Method
+    Selection 0 , "Auto"
+    Selection 1 , "HwEq"
+    Selection 2 , "SwEq"
+    Selection 3 , "StaticEq"
+    Selection 4 , "BypassPhase3"
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_RefClk
@@ -1597,7 +1610,7 @@ Page "Sunrise Point PCH"
     Combo $gKabylakeFspPkgTokenSpaceGuid_GmmEnable, "Enable or disable GMM device", &EN_DIS,
         Help "0=Disable, 1(Default)=Enable"
     Combo $gKabylakeFspPkgTokenSpaceGuid_X2ApicOptOut, "State of X2APIC_OPT_OUT bit in the DMAR table", &EN_DIS,
-        Help "0=Disable/Clear, 1(Default)=Enable/Set"
+        Help "0=Disable/Clear, 1=Enable/Set"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_VtdBaseAddress, "Base addresses for VT-d function MMIO access", HEX,
         Help "Base addresses for VT-d MMIO access per VT-d engine"
              "Valid range: 0 ~ 0xFFFFFFFF"
@@ -2430,6 +2443,9 @@ Page "Sunrise Point PCH"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_IslVrCmd, "Activates VR mailbox command for Intersil VR C-state issues.", HEX,
         Help "Intersil VR mailbox command. <b>0 - no mailbox command sent.</b>  1 - VR mailbox command sent for IA/GT rails only. 2 - VR mailbox command sent for IA/GT/SA rails."
              "Valid range: 0x0 ~ 0x7"
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_VrPowerDeliveryDesign, "CPU VR Power Delivery Design", HEX,
+        Help "Used to communicate the power delivery design capability of the board. This value is an enum of the available power delivery segments that are defined in the Platform Design Guide."
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
     Combo $gKabylakeFspPkgTokenSpaceGuid_ChapDeviceEnable, "Enable/Disable Device 7 ", &EN_DIS,
         Help "Enable: Device  7 enabled, Disable (Default): Device 7 disabled"
     Combo $gKabylakeFspPkgTokenSpaceGuid_SkipPamLock, "Skip PAM register lock", &EN_DIS,
@@ -3140,6 +3156,10 @@ Page "Memory Reference Code"
              "Valid range: 0x00 ~ 0xFFFFFFFF"
     Combo $gSkylakeFspPkgTokenSpaceGuid_FlashWearOutProtection, "FlashWearOutProtection", &EN_DIS,
         Help "Enable/Disable. 0: Disable, Enable/Disable FlashWearOutProtection feature, 1: enable"
+    Combo $gKabylakeFspPkgTokenSpaceGuid_TvbRatioClipping, "Thermal Velocity Boost Ratio clipping", &gKabylakeFspPkgTokenSpaceGuid_TvbRatioClipping,
+        Help "0(Default): Disabled, 1: Enabled. This service controls Core frequency reduction caused by high package temperatures for processors that implement the Intel Thermal Velocity Boost (TVB) feature"
+    Combo $gKabylakeFspPkgTokenSpaceGuid_TvbVoltageOptimization, "Thermal Velocity Boost voltage optimization", &gKabylakeFspPkgTokenSpaceGuid_TvbVoltageOptimization,
+        Help "0: Disabled, 1: Enabled(Default). This service controls thermal based voltage optimizations for processors that implement the Intel Thermal Velocity Boost (TVB) feature."
     Combo $gKabylakeFspPkgTokenSpaceGuid_ReservedSecurityPreMem, "ReservedSecurityPreMem", &EN_DIS,
         Help "Reserved for Security Pre-Mem"
     Combo $gKabylakeFspPkgTokenSpaceGuid_PchHpetEnable, "PCH HPET Enabled", &EN_DIS,

@@ -906,11 +906,26 @@ typedef struct {
 **/
   UINT8                       FlashWearOutProtection;
 
-/** Offset 0x0301 - ReservedSecurityPreMem
+/** Offset 0x0301 - Thermal Velocity Boost Ratio clipping
+  0(Default): Disabled, 1: Enabled. This service controls Core frequency reduction
+  caused by high package temperatures for processors that implement the Intel Thermal
+  Velocity Boost (TVB) feature
+  0: Disabled, 1: Enabled
+**/
+  UINT8                       TvbRatioClipping;
+
+/** Offset 0x0302 - Thermal Velocity Boost voltage optimization
+  0: Disabled, 1: Enabled(Default). This service controls thermal based voltage optimizations
+  for processors that implement the Intel Thermal Velocity Boost (TVB) feature.
+  0: Disabled, 1: Enabled
+**/
+  UINT8                       TvbVoltageOptimization;
+
+/** Offset 0x0303 - ReservedSecurityPreMem
   Reserved for Security Pre-Mem
   $EN_DIS
 **/
-  UINT8                       ReservedSecurityPreMem[9];
+  UINT8                       ReservedSecurityPreMem[7];
 
 /** Offset 0x030A - PCH HPET Enabled
   Enable/disable PCH HPET.

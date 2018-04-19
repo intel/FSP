@@ -539,7 +539,7 @@ typedef struct {
   UINT8                       GmmEnable;
 
 /** Offset 0x021A - State of X2APIC_OPT_OUT bit in the DMAR table
-  0=Disable/Clear, 1(Default)=Enable/Set
+  0=Disable/Clear, 1=Enable/Set
   $EN_DIS
 **/
   UINT8                       X2ApicOptOut;
@@ -2080,9 +2080,16 @@ typedef struct {
 **/
   UINT8                       IslVrCmd;
 
-/** Offset 0x077B
+/** Offset 0x077B - CPU VR Power Delivery Design
+  Used to communicate the power delivery design capability of the board. This value
+  is an enum of the available power delivery segments that are defined in the Platform
+  Design Guide.
 **/
-  UINT8                       ReservedFspsUpd[5];
+  UINT32                      VrPowerDeliveryDesign;
+
+/** Offset 0x077F
+**/
+  UINT8                       ReservedFspsUpd[1];
 } FSP_S_CONFIG;
 
 /** Fsp S Test Configuration
