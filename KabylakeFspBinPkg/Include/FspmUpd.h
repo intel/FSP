@@ -742,7 +742,7 @@ typedef struct {
 
 /** Offset 0x02CF - Maximum Core Turbo Ratio Override
   Maximum core turbo ratio override allows to increase CPU core frequency beyond the
-  fused max turbo ratio limit. <b>0: Hardware defaults.</b> Range: 0-83
+  fused max turbo ratio limit. <b>0: Hardware defaults.</b> Range: 0-255
 **/
   UINT8                       CoreMaxOcRatio;
 
@@ -753,13 +753,13 @@ typedef struct {
   UINT8                       CoreVoltageMode;
 
 /** Offset 0x02D1 - Minimum clr turbo ratio override
-  Minimum clr turbo ratio override. <b>0: Hardware defaults.</b> Range: 0-83
+  Minimum clr turbo ratio override. <b>0: Hardware defaults.</b> Range: 0-255
 **/
   UINT8                       RingMinOcRatio;
 
 /** Offset 0x02D2 - Maximum clr turbo ratio override
   Maximum clr turbo ratio override allows to increase CPU clr frequency beyond the
-  fused max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-83
+  fused max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-255
 **/
   UINT8                       RingMaxOcRatio;
 
@@ -1277,9 +1277,15 @@ typedef struct {
 **/
   UINT8                       CleanMemory;
 
-/** Offset 0x051C
+/** Offset 0x051C - TjMax Offset
+  TjMax offset. Specified value here is clipped by pCode (125 - TjMax Offset) to support
+  TjMax in the range of 62 to 115 deg Celsius. Valid Range 0 - 63
 **/
-  UINT8                       ReservedFspmUpd[4];
+  UINT8                       TjMaxOffset;
+
+/** Offset 0x051D
+**/
+  UINT8                       ReservedFspmUpd[3];
 } FSP_M_CONFIG;
 
 /** Fsp M Test Configuration

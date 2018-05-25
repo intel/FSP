@@ -514,9 +514,8 @@ typedef struct {
   UINT8                       PavpEnable;
 
 /** Offset 0x0216 - CdClock Frequency selection
-  0=308.57 Mhz, 1=337.5 Mhz, 2=432 Mhz, 3=450 Mhz, 4=540 Mhz, 5=617.14 Mhz, 6(Default)= 675 Mhz
-  0: 308.57 Mhz, 1: 337.5 Mhz, 2: 432 Mhz, 3: 450 Mhz, 4: 540 Mhz, 5: 617.14 Mhz,
-  6: 675 Mhz
+  0=337.5 Mhz, 1=450 Mhz, 2=540 Mhz, 3(Default)= 675 Mhz
+  0: 337.5 Mhz, 1: 450 Mhz, 2: 540 Mhz, 3: 675 Mhz
 **/
   UINT8                       CdClock;
 
@@ -671,9 +670,16 @@ typedef struct {
 **/
   UINT16                      TdcPowerLimit[5];
 
-/** Offset 0x0290
+/** Offset 0x0290 - CPU VR Power Delivery Design
+  Used to communicate the power delivery design capability of the board. This value
+  is an enum of the available power delivery segments that are defined in the Platform
+  Design Guide.
 **/
-  UINT8                       UnusedUpdSpace11[8];
+  UINT32                      VrPowerDeliveryDesign;
+
+/** Offset 0x0294
+**/
+  UINT8                       UnusedUpdSpace11[4];
 
 /** Offset 0x0298 - AcLoadline
   PCODE MMIO Mailbox: AcLoadline in 1/100 mOhms (ie. 1250 = 12.50 mOhm); Range is
@@ -2080,16 +2086,9 @@ typedef struct {
 **/
   UINT8                       IslVrCmd;
 
-/** Offset 0x077B - CPU VR Power Delivery Design
-  Used to communicate the power delivery design capability of the board. This value
-  is an enum of the available power delivery segments that are defined in the Platform
-  Design Guide.
+/** Offset 0x077B
 **/
-  UINT32                      VrPowerDeliveryDesign;
-
-/** Offset 0x077F
-**/
-  UINT8                       ReservedFspsUpd[1];
+  UINT8                       ReservedFspsUpd[5];
 } FSP_S_CONFIG;
 
 /** Fsp S Test Configuration
@@ -2184,31 +2183,28 @@ typedef struct {
   UINT8                       SaPostMemTestRsvd[11];
 
 /** Offset 0x079C - 1-Core Ratio Limit
-  1-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused
-  1-Core Ratio Limit + OC Bins.This 1-Core Ratio Limit Must be greater than or equal
-  to 2-Core Ratio Limit, 3-Core Ratio Limit, 4-Core Ratio Limit, 5-Core Ratio Limit,
-  6-Core Ratio Limit, 7-Core Ratio Limit, 8-Core Ratio Limit. Range is 0 to 83
+  1-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 1-Core
+  Ratio Limit Must be greater than or equal to 2-Core Ratio Limit, 3-Core Ratio Limit,
+  4-Core Ratio Limit, 5-Core Ratio Limit, 6-Core Ratio Limit, 7-Core Ratio Limit,
+  8-Core Ratio Limit. Range is 0 to 255
 **/
   UINT8                       OneCoreRatioLimit;
 
 /** Offset 0x079D - 2-Core Ratio Limit
-  2-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused
-  2-Core Ratio Limit + OC Bins.This 2-Core Ratio Limit Must be Less than or equal
-  to 1-Core Ratio Limit.Range is 0 to 83
+  2-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 2-Core
+  Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255
 **/
   UINT8                       TwoCoreRatioLimit;
 
 /** Offset 0x079E - 3-Core Ratio Limit
-  3-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused
-  3-Core Ratio Limit + OC Bins.This 3-Core Ratio Limit Must be Less than or equal
-  to 1-Core Ratio Limit.Range is 0 to 83
+  3-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 3-Core
+  Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255
 **/
   UINT8                       ThreeCoreRatioLimit;
 
 /** Offset 0x079F - 4-Core Ratio Limit
-  4-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused
-  4-Core Ratio Limit + OC Bins.This 4-Core Ratio Limit Must be Less than or equal
-  to 1-Core Ratio Limit.Range is 0 to 83
+  4-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 4-Core
+  Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255
 **/
   UINT8                       FourCoreRatioLimit;
 
@@ -2785,30 +2781,26 @@ typedef struct {
   UINT32                      CpuS3ResumeData;
 
 /** Offset 0x0884 - 5-Core Ratio Limit
-  5-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused
-  5-Core Ratio Limit + OC Bins.This 5-Core Ratio Limit Must be Less than or equal
-  to 1-Core Ratio Limit.Range is 0 to 83
+  5-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 5-Core
+  Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255
 **/
   UINT8                       FiveCoreRatioLimit;
 
 /** Offset 0x0885 - 6-Core Ratio Limit
-  6-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused
-  6-Core Ratio Limit + OC Bins.This 6-Core Ratio Limit Must be Less than or equal
-  to 1-Core Ratio Limit.Range is 0 to 83
+  6-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 6-Core
+  Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255
 **/
   UINT8                       SixCoreRatioLimit;
 
 /** Offset 0x0886 - 7-Core Ratio Limit
-  7-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused
-  7-Core Ratio Limit + OC Bins.This 7-Core Ratio Limit Must be Less than or equal
-  to 1-Core Ratio Limit.Range is 0 to 83
+  7-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 7-Core
+  Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255
 **/
   UINT8                       SevenCoreRatioLimit;
 
 /** Offset 0x0887 - 8-Core Ratio Limit
-  8-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused
-  8-Core Ratio Limit + OC Bins.This 8-Core Ratio Limit Must be Less than or equal
-  to 1-Core Ratio Limit.Range is 0 to 83
+  8-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 8-Core
+  Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255
 **/
   UINT8                       EightCoreRatioLimit;
 

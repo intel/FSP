@@ -253,7 +253,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_RealtimeMemoryTiming            1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_Avx3RatioOffset                 1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_CleanMemory                     1 bytes    $_DEFAULT_ = 0x00
-        Skip 8 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_TjMaxOffset                     1 bytes    $_DEFAULT_ = 0x00
+        Skip 7 bytes
         $gKabylakeFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_BdatEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_ScanExtGfxForLegacyOpRom        1 bytes    $_DEFAULT_ = 0x01
@@ -390,7 +391,7 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_PegSlotPowerLimitValue          3 bytes    $_DEFAULT_ = 0x4B,0x4B,0x4B
         $gKabylakeFspPkgTokenSpaceGuid_PegSlotPowerLimitScale          3 bytes    $_DEFAULT_ = 0x00,0x00,0x00
         $gKabylakeFspPkgTokenSpaceGuid_PavpEnable                      1 bytes    $_DEFAULT_ = 0x1
-        $gKabylakeFspPkgTokenSpaceGuid_CdClock                         1 bytes    $_DEFAULT_ = 0x6
+        $gKabylakeFspPkgTokenSpaceGuid_CdClock                         1 bytes    $_DEFAULT_ = 0x3
         $gKabylakeFspPkgTokenSpaceGuid_PeiGraphicsPeimInit             1 bytes    $_DEFAULT_ = 0x1
         $gKabylakeFspPkgTokenSpaceGuid_SaImguEnable                    1 bytes    $_DEFAULT_ = 0x1
         $gKabylakeFspPkgTokenSpaceGuid_GmmEnable                       1 bytes    $_DEFAULT_ = 0x1
@@ -417,7 +418,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_SlowSlewRateForSa               1 bytes    $_DEFAULT_ = 0x00
         Skip 9 bytes
         $gKabylakeFspPkgTokenSpaceGuid_TdcPowerLimit                  10 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
-        Skip 8 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_VrPowerDeliveryDesign           4 bytes    $_DEFAULT_ = 0x00000000
+        Skip 4 bytes
         $gKabylakeFspPkgTokenSpaceGuid_AcLoadline                     10 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gKabylakeFspPkgTokenSpaceGuid_DcLoadline                     10 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gKabylakeFspPkgTokenSpaceGuid_Psi1Threshold                  10 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
@@ -678,8 +680,7 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_MeUnconfigOnRtcClear            1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_MeUnconfigIsValid               1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_IslVrCmd                        1 bytes    $_DEFAULT_ = 0x00
-        $gKabylakeFspPkgTokenSpaceGuid_VrPowerDeliveryDesign           4 bytes    $_DEFAULT_ = 0x00000000
-        Skip 5 bytes
+        Skip 9 bytes
         $gKabylakeFspPkgTokenSpaceGuid_ChapDeviceEnable                1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_SkipPamLock                     1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_EdramTestMode                   1 bytes    $_DEFAULT_ = 0x2
@@ -992,13 +993,10 @@ List &gKabylakeFspPkgTokenSpaceGuid_PrimaryDisplay
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_CdClock
-    Selection 0 , " 308.57 Mhz"
-    Selection 1 , " 337.5 Mhz"
-    Selection 2 , " 432 Mhz"
-    Selection 3 , " 450 Mhz"
-    Selection 4 , " 540 Mhz"
-    Selection 5 , " 617.14 Mhz"
-    Selection 6 , " 675 Mhz"
+    Selection 0 , " 337.5 Mhz"
+    Selection 1 , " 450 Mhz"
+    Selection 2 , " 540 Mhz"
+    Selection 3 , " 675 Mhz"
 EndList
 
 List &gKabylakeFspPkgTokenSpaceGuid_Peg1Gen3EqPh3Method
@@ -1602,7 +1600,7 @@ Page "Sunrise Point PCH"
     Combo $gKabylakeFspPkgTokenSpaceGuid_PavpEnable, "Enable/Disable PavpEnable", &EN_DIS,
         Help "Enable(Default): Enable PavpEnable, Disable: Disable PavpEnable"
     Combo $gKabylakeFspPkgTokenSpaceGuid_CdClock, "CdClock Frequency selection", &gKabylakeFspPkgTokenSpaceGuid_CdClock,
-        Help "0=308.57 Mhz, 1=337.5 Mhz, 2=432 Mhz, 3=450 Mhz, 4=540 Mhz, 5=617.14 Mhz, 6(Default)= 675 Mhz"
+        Help "0=337.5 Mhz, 1=450 Mhz, 2=540 Mhz, 3(Default)= 675 Mhz"
     Combo $gKabylakeFspPkgTokenSpaceGuid_PeiGraphicsPeimInit, "Enable/Disable PeiGraphicsPeimInit", &EN_DIS,
         Help "Enable: Enable PeiGraphicsPeimInit, Disable(Default): Disable PeiGraphicsPeimInit"
     Combo $gKabylakeFspPkgTokenSpaceGuid_SaImguEnable, "Enable/Disable SA IMGU(SKYCAM)", &EN_DIS,
@@ -1659,9 +1657,12 @@ Page "Sunrise Point PCH"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_TdcPowerLimit, "Thermal Design Current current limit", HEX,
         Help "PCODE MMIO Mailbox: Thermal Design Current current limit. Specified in 1/8A units. Range is 0-4095. 1000 = 125A. <b>0: Auto</b>. For all VR Indexes"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_VrPowerDeliveryDesign, "CPU VR Power Delivery Design", HEX,
+        Help "Used to communicate the power delivery design capability of the board. This value is an enum of the available power delivery segments that are defined in the Platform Design Guide."
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_AcLoadline, "AcLoadline", HEX,
         Help "PCODE MMIO Mailbox: AcLoadline in 1/100 mOhms (ie. 1250 = 12.50 mOhm); Range is 0-6249. <b>Intel Recommended Defaults vary by domain and SKU."
-             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_DcLoadline, "DcLoadline", HEX,
         Help "PCODE MMIO Mailbox: DcLoadline in 1/100 mOhms (ie. 1250 = 12.50 mOhm); Range is 0-6249.<b>Intel Recommended Defaults vary by domain and SKU.</b>"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
@@ -1970,6 +1971,9 @@ Page "Sunrise Point PCH"
              "Valid range: 0 ~ 31"
     Combo $gKabylakeFspPkgTokenSpaceGuid_CleanMemory, "Ask MRC to clear memory content", &EN_DIS,
         Help "Ask MRC to clear memory content <b>0: Do not Clear Memory;</b> 1: Clear Memory."
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_TjMaxOffset, "TjMax Offset", HEX,
+        Help "TjMax offset. Specified value here is clipped by pCode (125 - TjMax Offset) to support TjMax in the range of 62 to 115 deg Celsius. Valid Range 0 - 63"
+             "Valid range: 0x00 ~ 0x3F"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_PcieRpCompletionTimeout, "PCIE RP Completion Timeout", HEX,
         Help "The root port completion timeout(see: PCH_PCIE_COMPLETION_TIMEOUT). Default is PchPcieCompletionTO_Default."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
@@ -2443,9 +2447,6 @@ Page "Sunrise Point PCH"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_IslVrCmd, "Activates VR mailbox command for Intersil VR C-state issues.", HEX,
         Help "Intersil VR mailbox command. <b>0 - no mailbox command sent.</b>  1 - VR mailbox command sent for IA/GT rails only. 2 - VR mailbox command sent for IA/GT/SA rails."
              "Valid range: 0x0 ~ 0x7"
-    EditNum $gKabylakeFspPkgTokenSpaceGuid_VrPowerDeliveryDesign, "CPU VR Power Delivery Design", HEX,
-        Help "Used to communicate the power delivery design capability of the board. This value is an enum of the available power delivery segments that are defined in the Platform Design Guide."
-             "Valid range: 0x00 ~ 0xFFFFFFFF"
     Combo $gKabylakeFspPkgTokenSpaceGuid_ChapDeviceEnable, "Enable/Disable Device 7 ", &EN_DIS,
         Help "Enable: Device  7 enabled, Disable (Default): Device 7 disabled"
     Combo $gKabylakeFspPkgTokenSpaceGuid_SkipPamLock, "Skip PAM register lock", &EN_DIS,
@@ -2472,17 +2473,17 @@ Page "Sunrise Point PCH"
     Combo $gKabylakeFspPkgTokenSpaceGuid_SaPostMemTestRsvd, "SaPostMemTestRsvd", &EN_DIS,
         Help "Reserved for SA Post-Mem Test"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_OneCoreRatioLimit, "1-Core Ratio Limit", DEC,
-        Help "1-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused 1-Core Ratio Limit + OC Bins.This 1-Core Ratio Limit Must be greater than or equal to 2-Core Ratio Limit, 3-Core Ratio Limit, 4-Core Ratio Limit, 5-Core Ratio Limit, 6-Core Ratio Limit, 7-Core Ratio Limit, 8-Core Ratio Limit. Range is 0 to 83"
-             "Valid range: 0 ~ 83"
+        Help "1-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 1-Core Ratio Limit Must be greater than or equal to 2-Core Ratio Limit, 3-Core Ratio Limit, 4-Core Ratio Limit, 5-Core Ratio Limit, 6-Core Ratio Limit, 7-Core Ratio Limit, 8-Core Ratio Limit. Range is 0 to 255"
+             "Valid range: 0 ~ 255"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_TwoCoreRatioLimit, "2-Core Ratio Limit", DEC,
-        Help "2-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused 2-Core Ratio Limit + OC Bins.This 2-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 83"
-             "Valid range: 0 ~ 83"
+        Help "2-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 2-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255"
+             "Valid range: 0 ~ 255"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_ThreeCoreRatioLimit, "3-Core Ratio Limit", DEC,
-        Help "3-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused 3-Core Ratio Limit + OC Bins.This 3-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 83"
-             "Valid range: 0 ~ 83"
+        Help "3-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 3-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255"
+             "Valid range: 0 ~ 255"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_FourCoreRatioLimit, "4-Core Ratio Limit", DEC,
-        Help "4-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused 4-Core Ratio Limit + OC Bins.This 4-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 83"
-             "Valid range: 0 ~ 83"
+        Help "4-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 4-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255"
+             "Valid range: 0 ~ 255"
     Combo $gKabylakeFspPkgTokenSpaceGuid_Hwp, "Enable or Disable HWP", &EN_DIS,
         Help "Enable or Disable HWP(Hardware P states) Support. 0: Disable; <b>1: Enable;</b> 2-3:Reserved"
     Combo $gKabylakeFspPkgTokenSpaceGuid_HdcControl, "Hardware Duty Cycle Control", &EN_DIS,
@@ -2716,17 +2717,17 @@ Page "Sunrise Point PCH"
         Help "Pointer to CPU S3 Resume Data"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_FiveCoreRatioLimit, "5-Core Ratio Limit", DEC,
-        Help "5-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused 5-Core Ratio Limit + OC Bins.This 5-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 83"
-             "Valid range: 0 ~ 83"
+        Help "5-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 5-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255"
+             "Valid range: 0 ~ 255"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_SixCoreRatioLimit, "6-Core Ratio Limit", DEC,
-        Help "6-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused 6-Core Ratio Limit + OC Bins.This 6-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 83"
-             "Valid range: 0 ~ 83"
+        Help "6-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 6-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255"
+             "Valid range: 0 ~ 255"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_SevenCoreRatioLimit, "7-Core Ratio Limit", DEC,
-        Help "7-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused 7-Core Ratio Limit + OC Bins.This 7-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 83"
-             "Valid range: 0 ~ 83"
+        Help "7-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 7-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255"
+             "Valid range: 0 ~ 255"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_EightCoreRatioLimit, "8-Core Ratio Limit", DEC,
-        Help "8-Core Ratio Limit: For XE part: LFM to 255, For overclocking part: LFM to Fused 8-Core Ratio Limit + OC Bins.This 8-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 83"
-             "Valid range: 0 ~ 83"
+        Help "8-Core Ratio Limit: LFM to Fused max, For overclocking part: LFM to 255. This 8-Core Ratio Limit Must be Less than or equal to 1-Core Ratio Limit.Range is 0 to 255"
+             "Valid range: 0 ~ 255"
     Combo $gKabylakeFspPkgTokenSpaceGuid_ThreeStrikeCounterDisable, "Set Three Strike Counter Disable", &gKabylakeFspPkgTokenSpaceGuid_ThreeStrikeCounterDisable,
         Help "False (default): Three Strike counter will be incremented and True: Prevents Three Strike counter from incrementing; <b>0: False</b>; 1: True."
     Combo $gKabylakeFspPkgTokenSpaceGuid_ReservedCpuPostMemTest, "ReservedCpuPostMemTest", &EN_DIS,
@@ -3087,16 +3088,16 @@ Page "Memory Reference Code"
     Combo $gKabylakeFspPkgTokenSpaceGuid_OcLock, "Over clocking Lock", &EN_DIS,
         Help "Over clocking Lock Enable/Disable; <b>0: Disable</b>; 1: Enable."
     EditNum $gKabylakeFspPkgTokenSpaceGuid_CoreMaxOcRatio, "Maximum Core Turbo Ratio Override", DEC,
-        Help "Maximum core turbo ratio override allows to increase CPU core frequency beyond the fused max turbo ratio limit. <b>0: Hardware defaults.</b> Range: 0-83"
-             "Valid range: 0 ~ 83"
+        Help "Maximum core turbo ratio override allows to increase CPU core frequency beyond the fused max turbo ratio limit. <b>0: Hardware defaults.</b> Range: 0-255"
+             "Valid range: 0 ~ 255"
     Combo $gKabylakeFspPkgTokenSpaceGuid_CoreVoltageMode, "Core voltage mode", &EN_DIS,
         Help "Core voltage mode; <b>0: Adaptive</b>; 1: Override."
     EditNum $gKabylakeFspPkgTokenSpaceGuid_RingMinOcRatio, "Minimum clr turbo ratio override", DEC,
-        Help "Minimum clr turbo ratio override. <b>0: Hardware defaults.</b> Range: 0-83"
-             "Valid range: 0 ~ 83"
+        Help "Minimum clr turbo ratio override. <b>0: Hardware defaults.</b> Range: 0-255"
+             "Valid range: 0 ~ 255"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_RingMaxOcRatio, "Maximum clr turbo ratio override", DEC,
-        Help "Maximum clr turbo ratio override allows to increase CPU clr frequency beyond the fused max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-83"
-             "Valid range: 0 ~ 83"
+        Help "Maximum clr turbo ratio override allows to increase CPU clr frequency beyond the fused max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-255"
+             "Valid range: 0 ~ 255"
     Combo $gKabylakeFspPkgTokenSpaceGuid_HyperThreading, "Hyper Threading Enable/Disable", &EN_DIS,
         Help "Enable or Disable Hyper Threading; 0: Disable; <b>1: Enable</b>"
     Combo $gKabylakeFspPkgTokenSpaceGuid_CpuRatioOverride, "Enable or Disable CPU Ratio Override", &EN_DIS,
