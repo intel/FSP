@@ -1,0 +1,27 @@
+## @file
+#  Component description file for CoffeeLake Fsp Bin package.
+#
+# @copyright
+#  Copyright (c) 2015 - 2017, Intel Corporation. All rights reserved.<BR>
+#  This program and the accompanying materials are licensed and made available under
+#  the terms and conditions of the BSD License that accompanies this distribution.
+#  The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.php.
+#
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#
+# @par Specification
+##
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = CoffeeLakeFspBinPkg
+  PACKAGE_GUID                   = 8C3989BC-3C66-44A2-B290-23848EF42970
+  PACKAGE_VERSION                = 1.02
+
+[Includes]
+  Include
+
+[Guids]
+  gFspInfoGuid                  = { 0x067e0f25, 0x374f, 0x47c2, { 0x17, 0x92, 0x86, 0xdc, 0xdb, 0xc4, 0x8a, 0xc9 }}
