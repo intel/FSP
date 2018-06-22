@@ -11,14 +11,12 @@ Intel FSP Home Page www.intel.com/FSP
   https://firmware.intel.com/sites/default/files/BSF_1_0.pdf
  
 ## GitHub
-* v1.0 https://github.com/tianocore/edk2/tree/master/IntelFspPkg
 * v2.0 https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg
 
 
 # FSP Project Information
 Each FSP project will be hosted in a separate branch.
 
-#FSP Project Name - Branch Name - Git command
-Intel® Atom™ processor C3XXX product family - DenvertonNS - 
-
-git clone -b DenvertonNS https://github.com/IntelFsp/FSP.git
+FSP Project Name | Branch Name | Git command
+:--------------- | :---------: | :----------
+Intel® Atom processor C3XXX product family | Denverton-NS | git clone -b DenvertonNS https://github.com/IntelFsp/FSP.git
