@@ -4,7 +4,7 @@
   data hobs.
 
   @copyright
-  Copyright (c) 1999 - 2017, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 1999 - 2018, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -202,6 +202,10 @@ typedef struct {
   UINT8            DimmCount;               ///< Number of valid DIMMs that exist in the channel.
   MRC_CH_TIMING    Timing[MAX_PROFILE_NUM]; ///< The channel timing values.
   DIMM_INFO        DimmInfo[MAX_DIMM];      ///< Save the DIMM output characteristics.
+  MRC_TA_TIMING    tRd2Rd;                  ///< Read-to-Read   Turn Around Timings
+  MRC_TA_TIMING    tRd2Wr;                  ///< Read-to-Write  Turn Around Timings
+  MRC_TA_TIMING    tWr2Rd;                  ///< Write-to-Read  Turn Around Timings
+  MRC_TA_TIMING    tWr2Wr;                  ///< Write-to-Write Turn Around Timings
 } CHANNEL_INFO;
 
 typedef struct {
@@ -210,10 +214,10 @@ typedef struct {
   UINT8             RevisionId;              ///< The PCI revision id of this memory controller.
   UINT8             ChannelCount;            ///< Number of valid channels that exist on the controller.
   CHANNEL_INFO      ChannelInfo[MAX_CH];     ///< The following are channel level definitions.
-  MRC_TA_TIMING     tRd2Rd;                  ///< Read-to-Read   Turn Around Timings
-  MRC_TA_TIMING     tRd2Wr;                  ///< Read-to-Write  Turn Around Timings
-  MRC_TA_TIMING     tWr2Rd;                  ///< Write-to-Read  Turn Around Timings
-  MRC_TA_TIMING     tWr2Wr;                  ///< Write-to-Write Turn Around Timings
+  MRC_TA_TIMING     tRd2Rd;                  ///< Deprecated and moved to CHANNEL_INFO. Read-to-Read   Turn Around Timings
+  MRC_TA_TIMING     tRd2Wr;                  ///< Deprecated and moved to CHANNEL_INFO. Read-to-Write  Turn Around Timings
+  MRC_TA_TIMING     tWr2Rd;                  ///< Deprecated and moved to CHANNEL_INFO. Write-to-Read  Turn Around Timings
+  MRC_TA_TIMING     tWr2Wr;                  ///< Deprecated and moved to CHANNEL_INFO. Write-to-Write Turn Around Timings
 } CONTROLLER_INFO;
 
 typedef struct {
