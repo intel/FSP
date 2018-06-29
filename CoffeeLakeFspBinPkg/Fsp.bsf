@@ -684,7 +684,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_RampDown                        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_CpuMpPpi                        4 bytes    $_DEFAULT_ = 0
         $gPlatformFspPkgTokenSpaceGuid_CpuMpHob                        4 bytes    $_DEFAULT_ = 0
-        $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction   19 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_DebugInterfaceEnable            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction   18 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchDmiAspm                      1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchPwrOptEnable                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchWriteProtectionEnable        5 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00
@@ -3071,8 +3072,8 @@ Page "PCH 2"
         Help "Enable/Disable. 0: Disable, 1: enable, Remote Assistance enable/disable state by Mebx"
     Combo $gPlatformFspPkgTokenSpaceGuid_AmtKvmEnabled, "KVM Switch", &EN_DIS,
         Help "Enable/Disable. 0: Disable, 1: enable, KVM enable/disable state by Mebx"
-    Combo $gPlatformFspPkgTokenSpaceGuid_ForcMebxSyncUp, "KVM Switch", &EN_DIS,
-        Help "Enable/Disable. 0: Disable, 1: enable, KVM enable/disable state by Mebx"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ForcMebxSyncUp, "MEBX execution", &EN_DIS,
+        Help "Enable/Disable. 0: Disable, 1: enable, Force MEBX execution"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRpSlotImplemented, "PCH PCIe root port connection type", HEX,
         Help "0: built-in device, 1:slot"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
@@ -4014,6 +4015,8 @@ Page "System Agent 2"
     EditNum $gPlatformFspPkgTokenSpaceGuid_CpuMpHob, "CpuMpHob", HEX,
         Help "Pointer for CpuMpHob. This is optional data buffer for CpuMpPpi usage."
              "Valid range: 0x0 ~ 0xFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DebugInterfaceEnable, "Enable or Disable processor debug features", &EN_DIS,
+        Help "Enable or Disable processor debug features; <b>0: Disable</b>; 1: Enable."
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction, "ReservedCpuPostMemProduction", &EN_DIS,
         Help "Reserved for CPU Post-Mem Production"
     EditNum $gPlatformFspPkgTokenSpaceGuid_BgpdtHash, "BgpdtHash[4]", HEX,
@@ -4161,8 +4164,8 @@ Page "System Agent 2"
         Help "Enable or Disable Monitor /MWAIT instructions; 0: Disable; <b>1: Enable</b>."
     Combo $gPlatformFspPkgTokenSpaceGuid_MachineCheckEnable, "Enable or Disable initialization of machine check registers", &EN_DIS,
         Help "Enable or Disable initialization of machine check registers; 0: Disable; <b>1: Enable</b>."
-    Combo $gPlatformFspPkgTokenSpaceGuid_DebugInterfaceEnable, "Enable or Disable processor debug features", &EN_DIS,
-        Help "Enable or Disable processor debug features; <b>0: Disable</b>; 1: Enable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_DebugInterfaceEnable, "Deprecated DO NOT USE Enable or Disable processor debug features", &EN_DIS,
+        Help "@deprecated Enable or Disable processor debug features; <b>0: Disable</b>; 1: Enable."
     Combo $gPlatformFspPkgTokenSpaceGuid_DebugInterfaceLockEnable, "Lock or Unlock debug interface features", &EN_DIS,
         Help "Lock or Unlock debug interface features; 0: Disable; <b>1: Enable</b>."
     Combo $gPlatformFspPkgTokenSpaceGuid_ApIdleManner, "AP Idle Manner of waiting for SIPI", &gPlatformFspPkgTokenSpaceGuid_ApIdleManner,

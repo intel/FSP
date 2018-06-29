@@ -625,8 +625,8 @@ typedef struct {
 **/
   UINT8                       AmtKvmEnabled;
 
-/** Offset 0x0161 - KVM Switch
-  Enable/Disable. 0: Disable, 1: enable, KVM enable/disable state by Mebx
+/** Offset 0x0161 - MEBX execution
+  Enable/Disable. 0: Disable, 1: enable, Force MEBX execution
   $EN_DIS
 **/
   UINT8                       ForcMebxSyncUp;
@@ -1142,11 +1142,17 @@ typedef struct {
 **/
   UINT32                      CpuMpHob;
 
-/** Offset 0x0333 - ReservedCpuPostMemProduction
+/** Offset 0x0333 - Enable or Disable processor debug features
+  Enable or Disable processor debug features; <b>0: Disable</b>; 1: Enable.
+  $EN_DIS
+**/
+  UINT8                       DebugInterfaceEnable;
+
+/** Offset 0x0334 - ReservedCpuPostMemProduction
   Reserved for CPU Post-Mem Production
   $EN_DIS
 **/
-  UINT8                       ReservedCpuPostMemProduction[19];
+  UINT8                       ReservedCpuPostMemProduction[18];
 
 /** Offset 0x0346 - Enable DMI ASPM
   Deprecated.
@@ -2630,8 +2636,8 @@ typedef struct {
 **/
   UINT8                       MachineCheckEnable;
 
-/** Offset 0x07EE - Enable or Disable processor debug features
-  Enable or Disable processor debug features; <b>0: Disable</b>; 1: Enable.
+/** Offset 0x07EE - Deprecated DO NOT USE Enable or Disable processor debug features
+  @deprecated Enable or Disable processor debug features; <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       DebugInterfaceEnable;
