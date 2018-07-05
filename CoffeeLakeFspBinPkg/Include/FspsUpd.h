@@ -1636,7 +1636,7 @@ typedef struct {
   Select 'Auto', it will be auto-configured according to probe type. Select 'Enabled'
   will disable SLP_S0# assertion whereas 'Disabled' will enable SLP_S0# assertion
   when debug is enabled. \n
-  Note: This BIOS option should keep 'Auto', other options are intended for advanced 
+  Note: This BIOS option should keep 'Auto', other options are intended for advanced
   configuration only.
   0:Disabled, 1:Enabled, 2:Auto
 **/
@@ -1647,7 +1647,7 @@ typedef struct {
   keep PMC default settings. Or select the desired debug probe type for S0ix Override
   settings.\n
   Reminder: DCI OOB (aka BSSB) uses CCA probe.\n
-  Note: This BIOS option should keep 'Auto', other options are intended for advanced 
+  Note: This BIOS option should keep 'Auto', other options are intended for advanced
   configuration only.
   0:No Change, 1:DCI OOB, 2:USB2 DbC, 3:Auto
 **/
@@ -2243,7 +2243,7 @@ typedef struct {
 
 /** Offset 0x0785 - SendEcCmd
   SendEcCmd function pointer. \n
-  @code typedef EFI_STATUS (EFIAPI *PLATFORM_SEND_EC_COMMAND) (IN EC_COMMAND_TYPE 
+  @code typedef EFI_STATUS (EFIAPI *PLATFORM_SEND_EC_COMMAND) (IN EC_COMMAND_TYPE
   EcCmdType, IN UINT8  EcCmd, IN UINT8  SendData, IN OUT UINT8  *ReceiveData); @endcode
 **/
   UINT64                      SendEcCmd;
