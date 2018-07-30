@@ -193,8 +193,13 @@ typedef struct {
 **/
   UINT8                       PcdCaMirrorEn;
 /** Offset 0x0043
+    DDR3 Auto Self Refresh
+    Enable/Disable DDR3 Auto Self Refresh
 **/
-  UINT8                       ReservedMemoryInitUpd[189];
+  UINT8                       PcdDdr3AutoSelfRefreshEnable;
+/** Offset 0x0044
+**/
+  UINT8                       ReservedMemoryInitUpd[188];
 } MEMORY_INIT_UPD;
 
 typedef struct {
@@ -441,8 +446,8 @@ typedef struct {
 **/
   UINT8                       PcdTurboMode;
 /** Offset 0x0161
-    Pnp-Power & Performance
-    select Pnp type 
+    Pnp Setting Type
+    Select Pnp type 
 **/
   UINT8                       PcdPnpSettings;
 /** Offset 0x0162
@@ -487,10 +492,16 @@ typedef struct _UPD_DATA_REGION {
 /** Offset 0x02FE
 **/
   UINT16                      PcdRegionTerminator;
+/** Offset 0x0300
+**/
+  UINT8                       UnusedUpdSpace4[2123];
+/** Offset 0x0B4B
+**/
+  UINT8                       PcdPaddingSpace;
 } UPD_DATA_REGION;
 
-#define FSP_IMAGE_ID    0x2450534657534224        /* '$BSWFSP$' */
-#define FSP_IMAGE_REV   0x01010200 
+#define FSP_IMAGE_ID    0x5053464253575342        /* 'BSWSBFSP' */
+#define FSP_IMAGE_REV   0x01010401 
 
 typedef struct _VPD_DATA_REGION {
 /** Offset 0x0000
@@ -503,6 +514,14 @@ typedef struct _VPD_DATA_REGION {
 /** Offset 0x000C
 **/
   UINT32                      PcdUpdRegionOffset;
+/** Offset 0x0010
+**/
+  UINT8                       UnusedVpdSpace0[20];
+/** Offset 0x0024
+    Enable Secure Boot
+    Enable/disable secure boot. Auto by default.
+**/
+  UINT8                       PcdEnableSecureBoot;
 } VPD_DATA_REGION;
 
 #pragma pack()
