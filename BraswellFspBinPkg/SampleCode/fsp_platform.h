@@ -58,8 +58,8 @@ typedef struct {
 } EFI_GRAPHICS_OUTPUT_MODE_INFORMATION;
 
 typedef struct { 
-  EFI_PHYSICAL_ADDRESS FrameBufferBase; 
-  uint32_t FrameBufferSize;
+  uint64_t FrameBufferBase; 
+  uint64_t FrameBufferSize;
   EFI_GRAPHICS_OUTPUT_MODE_INFORMATION GraphicsMode;  
 } PLATFORM_GRAPHICS_OUTPUT; 
 
