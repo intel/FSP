@@ -486,7 +486,9 @@ typedef struct {
   UINT8                       CpuTraceHubMemReg1Size;
 
 /** Offset 0x00F6 - Enable or Disable Peci C10 Reset command
-  Enable or Disable Peci C10 Reset command; <b>0: Disable;</b> 1: Enable.
+  Enable or Disable Peci C10 Reset command. If Enabled, BIOS will send the CPU message
+  to disable peci reset on C10 exit. The default value is <b>0: Disable</b> for CNL,
+  and <b>1: Enable</b> for all other CPU's
   $EN_DIS
 **/
   UINT8                       PeciC10Reset;
@@ -2295,11 +2297,18 @@ typedef struct {
 **/
   UINT8                       DualDimmPerChannelBoardType;
 
-/** Offset 0x0510 - CFL Reserved
+/** Offset 0x0510 - DDR4 Mixed U-DIMM 2DPC Limitation
+  Enable/Disable 2667 Frequency Limitation for DDR4 U-DIMM Mixed Dimm 2DPC population.
+  Disable(Default)=0, Enable=1
+  $EN_DIS
+**/
+  UINT8                       Ddr4MixedUDimm2DpcLimit;
+
+/** Offset 0x0511 - CFL Reserved
   Reserved FspmConfig CFL
   $EN_DIS
 **/
-  UINT8                       ReservedFspmUpdCfl[3];
+  UINT8                       ReservedFspmUpdCfl[2];
 
 /** Offset 0x0513 - Memory Test on Warm Boot
   Run Base Memory Test on Warm Boot

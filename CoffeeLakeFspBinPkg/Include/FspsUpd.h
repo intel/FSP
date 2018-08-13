@@ -1234,9 +1234,15 @@ typedef struct {
 **/
   UINT8                       PchHdaIDispCodecDisconnect;
 
-/** Offset 0x036E
+/** Offset 0x036E - USB LFPS Filter selection
+  For each byte bits 2:0 are for p, bits 4:6 are for n. 0h:1.6ns, 1h:2.4ns, 2h:3.2ns,
+  3h:4.0ns, 4h:4.8ns, 5h:5.6ns, 6h:6.4ns.
 **/
-  UINT8                       UnusedUpdSpace11[15];
+  UINT8                       PchUsbHsioFilterSel[10];
+
+/** Offset 0x0378
+**/
+  UINT8                       UnusedUpdSpace11[5];
 
 /** Offset 0x037D - Enable PCH Io Apic Entry 24-119
   0: Disable; 1: Enable.
@@ -1443,9 +1449,21 @@ typedef struct {
 **/
   UINT8                       PcieRpMaxPayload[24];
 
-/** Offset 0x04E6
+/** Offset 0x04E6 - PCH USB3 RX HSIO Tuning parameters
+  Bits 7:3 are for Signed Magnatude number added to the CTLE code, Bits 2:0 are for
+  controlling the input offset
 **/
-  UINT8                       UnusedUpdSpace14[24];
+  UINT8                       PchUsbHsioRxTuningParameters[10];
+
+/** Offset 0x04F0 - PCH USB3 HSIO Rx Tuning Enable
+  Mask for enabling tuning of HSIO Rx signals of USB3 ports. Bits: 0 - HsioCtrlAdaptOffsetCfgEnable,
+  1 - HsioFilterSelNEnable, 2 - HsioFilterSelPEnable, 3 - HsioOlfpsCfgPullUpDwnResEnable
+**/
+  UINT8                       PchUsbHsioRxTuningEnable[10];
+
+/** Offset 0x04FA
+**/
+  UINT8                       UnusedUpdSpace14[4];
 
 /** Offset 0x04FE - PCIE RP Pcie Speed
   Determines each PCIE Port speed capability. 0: Auto; 1: Gen1; 2: Gen2; 3: Gen3 (see:
@@ -1545,9 +1563,17 @@ typedef struct {
 **/
   UINT8                       PcieRpFunctionSwap;
 
-/** Offset 0x0667
+/** Offset 0x0667 - Teton Glacier Support
+  Enables support for the Teton Glacier card.
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace17[2];
+  UINT8                       TetonGlacierSupport;
+
+/** Offset 0x0668 - Teton Glacier Cycle Router
+  Specify to which cycle router Teton Glacier is connected, it is valid only when
+  Teton Glacier support is enabled. Default is 0 for CNP-H system and 1 for CNP-LP system
+**/
+  UINT8                       TetonGlacierCR;
 
 /** Offset 0x0669 - PCH Pm PME_B0_S5_DIS
   When cleared (default), wake events from PME_B0_STS are allowed in S5 if PME_B0_EN = 1.
@@ -1573,7 +1599,7 @@ typedef struct {
 
 /** Offset 0x066F
 **/
-  UINT8                       UnusedUpdSpace18;
+  UINT8                       UnusedUpdSpace17;
 
 /** Offset 0x0670 - PCH Pm Wol Enable Override
   Corresponds to the WOL Enable Override bit in the General PM Configuration B (GEN_PMCON_B) register.
@@ -1662,7 +1688,7 @@ typedef struct {
 
 /** Offset 0x067D
 **/
-  UINT8                       UnusedUpdSpace19[3];
+  UINT8                       UnusedUpdSpace18[3];
 
 /** Offset 0x0680 - PCH Pm Lpc Clock Run
   This member describes whether or not the LPC ClockRun feature of PCH should be enabled.
@@ -1696,7 +1722,7 @@ typedef struct {
 
 /** Offset 0x0685
 **/
-  UINT8                       UnusedUpdSpace20;
+  UINT8                       UnusedUpdSpace19;
 
 /** Offset 0x0686 - PCH Pm Disable Native Power Button
   Power button native mode disable.
@@ -1736,7 +1762,7 @@ typedef struct {
 
 /** Offset 0x068C
 **/
-  UINT8                       UnusedUpdSpace21;
+  UINT8                       UnusedUpdSpace20;
 
 /** Offset 0x068D - PCH Sata Pwr Opt Enable
   SATA Power Optimizer on PCH side.
@@ -1925,7 +1951,7 @@ typedef struct {
 
 /** Offset 0x0700
 **/
-  UINT8                       UnusedUpdSpace22;
+  UINT8                       UnusedUpdSpace21;
 
 /** Offset 0x0701 - PcdSerialIoUart0PinMuxing
   Select SerialIo Uart0 pin muxing. Setting applicable only if SerialIO UART0 is enabled.
@@ -1935,7 +1961,7 @@ typedef struct {
 
 /** Offset 0x0702
 **/
-  UINT8                       UnusedUpdSpace23[1];
+  UINT8                       UnusedUpdSpace22[1];
 
 /** Offset 0x0703 - Enables UART hardware flow control, CTS and RTS lines
   Enables UART hardware flow control, CTS and RTS linesh.
@@ -2208,7 +2234,7 @@ typedef struct {
 
 /** Offset 0x0753
 **/
-  UINT8                       UnusedUpdSpace24;
+  UINT8                       UnusedUpdSpace23;
 
 /** Offset 0x0754 - Pch PCIE device override table pointer
   The PCIe device table is being used to override PCIe device ASPM settings. This
@@ -3247,7 +3273,7 @@ typedef struct {
 
 /** Offset 0x0A61
 **/
-  UINT8                       UnusedUpdSpace25[17];
+  UINT8                       UnusedUpdSpace24[17];
 
 /** Offset 0x0A72 - Skip POSTBOOT SAI
   Deprecated
