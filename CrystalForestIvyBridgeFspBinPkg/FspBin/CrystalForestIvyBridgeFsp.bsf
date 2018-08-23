@@ -1,0 +1,1171 @@
+//
+// This file contains an 'Intel Peripheral Driver' and is      
+// licensed for Intel CPUs and chipsets under the terms of your
+// license agreement with Intel or your vendor.  This file must not
+// be modified by end users or could render the generated boot loader
+// inoperable.
+//
+// @file
+// Boot Setting File for Platform: Stargo 2 Platform
+//
+// Copyright (c) 2010-2013 Intel Corporation. All rights reserved
+// This software and associated documentation (if any) is furnished
+// under a license and may only be used or copied in accordance
+// with the terms of the license. Except as permitted by such
+// license, no part of this software or documentation may be
+// reproduced, stored in a retrieval system, or transmitted in any
+// form or by any means without the express written consent of
+// Intel Corporation.
+//
+//
+
+
+GlobalDataDef
+  SKUID = 0, "DEFAULT"
+
+  CategoryID = %IVBSA,      0x00000001, "Ivy Bridge System Agent"
+  CategoryID = %CCKPCH,      0x00000002, "Cave Creek PCH"
+  CategoryID = %CPUINIT,      0x00000004, "CPU Features"
+  
+EndGlobalData
+
+StructDef
+
+    Find "ST2-FSPV"
+    $gPlatformFspPkgTokenSpaceGuid_PcdImageRevision          4 bytes $_DEFAULT_ = 0x00000080
+    Skip 24 bytes
+    $gPlatformFspPkgTokenSpaceGuid_PcdMeStolenSize        4 bytes $_DEFAULT_ = 0x0001 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdVgaMemoryEnable        1 byte $_DEFAULT_ =  1 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdFastTrainingMode        1 byte $_DEFAULT_ =  0 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdTsegSize        4 byte $_DEFAULT_ =  0x00800000 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdSpdAddress 8 bytes $_DEFAULT_ =  0xA0, 0x00, 0xA2, 0x00, 0x00, 0x00, 0x00, 0x00 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdEccSupport        1 byte $_DEFAULT_ =  1 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDdrFreqLimit        2 byte $_DEFAULT_ =  0 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdNModeSupport        1 byte $_DEFAULT_ =  0x10 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdScramblerSupport        1 byte $_DEFAULT_ =  1 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdRmtCrosserEnable        1 byte $_DEFAULT_ =  0 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdThermalManagement        1 byte $_DEFAULT_ =  1 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdPowerDownMode        1 byte $_DEFAULT_ =  0xFF %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDisableDimmChannel0        1 byte $_DEFAULT_ =  0 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDisableDimmChannel1        1 byte $_DEFAULT_ =  0 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDDR3Voltage        1 byte $_DEFAULT_ =  3 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDmiVc1        1 byte $_DEFAULT_ =  1 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDmiVcp        1 byte $_DEFAULT_ =  1 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDmiVcm        1 byte $_DEFAULT_ =  1 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDmiGen2        1 byte $_DEFAULT_ =  2 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdPegGenx 4 bytes $_DEFAULT_ =  0x00, 0x00, 0x00, 0x00 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdMmioSize        2 byte $_DEFAULT_ =  0x400 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdGttSize        2 byte $_DEFAULT_ =  2 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdIgdDvmt50PreAlloc        1 byte $_DEFAULT_ =  2 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdAlwaysEnablePeg        1 byte $_DEFAULT_ =  0 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdInternalGraphics        1 byte $_DEFAULT_ =  2 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdPrimaryDisplay        1 byte $_DEFAULT_ =  3 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdApertureSize        1 byte $_DEFAULT_ =  2 %IVBSA
+
+    $gPlatformFspPkgTokenSpaceGuid_PcdHpetEnable        1 byte $_DEFAULT_ =  1 %CCKPCH
+
+    $gPlatformFspPkgTokenSpaceGuid_PcdDmiAspm        1 byte $_DEFAULT_ =  3 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdPegAspm        1 byte $_DEFAULT_ =  0 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDmiExtSync        1 byte $_DEFAULT_ =  0 %IVBSA
+    $gPlatformFspPkgTokenSpaceGuid_PcdDeEmphasis        1 byte $_DEFAULT_ =  1 %IVBSA 
+    
+    $gPlatformFspPkgTokenSpaceGuid_PcdFeatureConfigure        1 byte $_DEFAULT_ =  1 %CPUINIT
+    $gPlatformFspPkgTokenSpaceGuid_PcdLimitCpuidMaximumValue        1 byte $_DEFAULT_ =  0 %CPUINIT
+    $gPlatformFspPkgTokenSpaceGuid_PcdVmxEnable        1 byte $_DEFAULT_ =  1 %CPUINIT
+    $gPlatformFspPkgTokenSpaceGuid_PcdTxtEnable        1 byte $_DEFAULT_ =  0 %CPUINIT
+    $gPlatformFspPkgTokenSpaceGuid_PcdMonitorMwaitEnable        1 byte $_DEFAULT_ =  1 %CPUINIT
+    $gPlatformFspPkgTokenSpaceGuid_PcdExecuteDisableBit        1 byte $_DEFAULT_ =  1 %CPUINIT
+    $gPlatformFspPkgTokenSpaceGuid_PcdFastString        1 byte $_DEFAULT_ =  1 %CPUINIT
+    $gPlatformFspPkgTokenSpaceGuid_PcdMachineCheckEnable        1 byte $_DEFAULT_ =  1 %CPUINIT  
+    $gPlatformFspPkgTokenSpaceGuid_PcdXapicEnable        1 byte $_DEFAULT_ =  0 %CPUINIT
+    $gPlatformFspPkgTokenSpaceGuid_PcdDcaEnable        1 byte $_DEFAULT_ =  0 %CPUINIT
+    
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSata        1 byte $_DEFAULT_ = 1 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSmbus        1 byte $_DEFAULT_ = 1 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciClockRun        1 byte $_DEFAULT_ = 1 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchEhci        1 byte $_DEFAULT_ = 1 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortEn        8 bytes $_DEFAULT_ = 0x0000000001010101 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0En 1 byte $_DEFAULT_ =  0x01 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1En 1 byte $_DEFAULT_ =  0x01 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2En 1 byte $_DEFAULT_ =  0x01 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3En 1 byte $_DEFAULT_ =  0x01 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4En 1 byte $_DEFAULT_ =  0x00 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5En 1 byte $_DEFAULT_ =  0x00 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6En 1 byte $_DEFAULT_ =  0x00 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7En 1 byte $_DEFAULT_ =  0x00 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortSIE        8 bytes $_DEFAULT_ = 0x0000000001010101 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0SIE         1 byte $_DEFAULT_ =  0x01 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1SIE         1 byte $_DEFAULT_ =  0x01 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2SIE         1 byte $_DEFAULT_ =  0x01 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3SIE         1 byte $_DEFAULT_ =  0x01 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4SIE         1 byte $_DEFAULT_ =  0x00 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5SIE         1 byte $_DEFAULT_ =  0x00 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6SIE         1 byte $_DEFAULT_ =  0x00 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7SIE         1 byte $_DEFAULT_ =  0x00 %CCKPCH
+
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortAspm        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0Aspm        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1Aspm        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2Aspm        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3Aspm        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4Aspm        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5Aspm        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6Aspm        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7Aspm        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortExtSync        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0ExtSync        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1ExtSync        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2ExtSync        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3ExtSync        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4ExtSync        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5ExtSync        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6ExtSync        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7ExtSync        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortURE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0URE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1URE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2URE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3URE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4URE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5URE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6URE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7URE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortFEE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0FEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1FEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2FEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3FEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4FEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5FEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6FEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7FEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortNFE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0NFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1NFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2NFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3NFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4NFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5NFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6NFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7NFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortCEE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0CEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1CEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2CEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3CEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4CEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5CEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6CEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7CEE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortCTD        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0CTD        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1CTD        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2CTD        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3CTD        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4CTD        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5CTD        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6CTD        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7CTD        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortPIE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0PIE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1PIE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2PIE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3PIE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4PIE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5PIE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6PIE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7PIE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortSFE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0SFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1SFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2SFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3SFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4SFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5SFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6SFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7SFE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortSNE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0SNE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1SNE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2SNE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3SNE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4SNE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5SNE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6SNE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7SNE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortSCE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0SCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1SCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2SCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3SCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4SCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5SCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6SCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7SCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortPMCE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0PMCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1PMCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2PMCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3PMCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4PMCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5PMCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6PMCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7PMCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchPciePortHPCE        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0HPCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1HPCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2HPCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3HPCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4HPCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5HPCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6HPCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7HPCE        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataMode        1 byte $_DEFAULT_ = 1 %CCKPCH
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchSataPortEn        8 bytes $_DEFAULT_ = 0x010100000000 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0En        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1En        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2En        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3En        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4En        1 byte $_DEFAULT_ = 1 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5En        1 byte $_DEFAULT_ = 1 %CCKPCH
+    Skip 2 bytes
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchSataPortHP        8 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0HP        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1HP        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2HP        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3HP        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4HP        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5HP        1 byte $_DEFAULT_ = 0 %CCKPCH
+    Skip 2 bytes
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchSataPortIS        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0IS        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1IS        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2IS        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3IS        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4IS        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5IS        1 byte $_DEFAULT_ = 0 %CCKPCH
+    Skip 2 bytes
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchSataPortEX        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0EX        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1EX        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2EX        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3EX        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4EX        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5EX        1 byte $_DEFAULT_ = 0 %CCKPCH
+    Skip 2 bytes
+    
+    //$gPlatformFspPkgTokenSpaceGuid_PcdPchSataPortMUL        8 bytes $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0MUL        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1MUL        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2MUL        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3MUL        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4MUL        1 byte $_DEFAULT_ = 0 %CCKPCH
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5MUL        1 byte $_DEFAULT_ = 0 %CCKPCH
+    Skip 2 bytes
+    
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchWatchDog        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchUsbPerPortCtl        1 byte $_DEFAULT_ = 1 %CCKPCH
+    
+    $gPlatformFspPkgTokenSpaceGuid_PcdPchDmiAspm        1 byte $_DEFAULT_ = 0 %CCKPCH
+    
+EndStruct
+
+List &EN_DIS
+    Selection 0x1 , "Enabled"
+    Selection 0x0 , "Disabled"
+EndList
+
+List &MEM_SIZES
+    Selection 0x00, "0 MB"
+    Selection 0x01, "1 MB"
+    Selection 0x02, "2 MB"
+    Selection 0x04, "4 MB"
+    Selection 0x08, "8 MB"
+EndList
+
+List &APER_MEM
+    Selection 0x01, "128 MB"
+    Selection 0x02, "256 MB"
+    Selection 0x03, "512 MB"
+EndList
+
+List &GTT_MEM
+    Selection 0x00, "Disable"
+    Selection 0x01, "1 MB"
+    Selection 0x02, "2 MB"
+EndList
+
+List &GMS_MEM
+    Selection 00h, "0 MB"
+    Selection 01h, "32 MB"
+    Selection 02h, "64 MB"
+    Selection 03h, "96 MB"
+    Selection 04h, "128 MB"
+    Selection 05h, "160 MB"
+    Selection 06h, "192 MB"
+    Selection 07h, "224 MB"
+    Selection 08h, "256 MB"
+    Selection 09h, "288 MB"
+    Selection 0Ah, "320 MB"
+    Selection 0Bh, "352 MB"
+    Selection 0Ch, "384 MB"
+    Selection 0Dh, "416 MB"
+    Selection 0Eh, "448 MB"
+    Selection 0Fh, "480 MB"
+    Selection 10h, "512 MB"
+    Selection 11h, "1 GB"
+EndList
+
+List &DDR_FREQ
+    Selection 0x00,  "Auto"
+    Selection 0x01,  "800"
+    Selection 0x02, "1067"
+    Selection 0x03, "1333"
+    Selection 0x04, "1400"
+    Selection 0x05, "1600"
+    Selection 0x06, "1800"
+    Selection 0x07, "1867"
+    Selection 0x08, "2000"
+    Selection 0x09, "2133"
+    Selection 0x0A, "2200"
+    Selection 0x0B, "2400"
+    Selection 0x0C, "2600"
+    Selection 0x0D, "2667"
+    Selection 0x0E, "2800"
+EndList
+
+List &DIMM_CTRL
+    Selection 0, "Enable Both"
+    Selection 1, "Disable DIMM0"
+    Selection 2, "Disable DIMM1"
+    Selection 3, "Disable Both"
+EndList
+
+List &DDR3LV
+    Selection 0, "Disable"
+    Selection 1, "DDR3"
+    Selection 2, "DDR3L"
+    Selection 3, "DDR3 & DDR3L"
+EndList
+
+List &N_MODE
+    Selection 16, "Auto"
+    Selection 0, "1 N Mode"
+    Selection 2, "2 N Mode"
+EndList
+
+List &ASPM
+    Selection 0, "Disable"
+    Selection 1, "Enable L0s"
+    Selection 2, "Enable L1"
+    Selection 3, "Enable L0s and L1"
+    Selection 4, "AutoConfig"
+EndList
+
+List &PEG_CONFIG
+    Selection 0, "Enable Peg when a PCIe device was detected"
+    Selection 1, "Always enable Peg"
+EndList
+
+List &PRI_DISP
+    Selection 0, "IGD"
+    Selection 1, "PEG"
+    Selection 2, "PCI"
+    Selection 3, "Auto"  
+EndList
+
+List &EN_DIS_AUTO
+    Selection 0, "Disable"
+    Selection 1, "Enable"
+    Selection 2, "Auto"
+EndList
+
+List &PWRDOWN_MODE
+    Selection 0, "Power Down Disabled"
+    Selection 1, "APD"
+    Selection 2, "PPD"
+    Selection 3, "APD & PPD"
+    Selection 6, "DLL OFF"
+    Selection 7, "APD & DLL OFF"
+    Selection 0xFF, "Default"
+EndList
+
+List &SATA_MODE
+    Selection 0, "IDE"
+    Selection 1, "AHCI"
+//    Selection 2, "RAID"
+EndList
+
+List &COMPLETION_TIMEOUT
+    Selection 0, "Default"
+    Selection 1, "50-100us"
+    Selection 2, "1-10ms"
+    Selection 3, "16-55ms"
+    Selection 4, "65-210ms"
+    Selection 5, "260-900ms"
+    Selection 6, "1-3.5s"
+    Selection 7, "4-13s"
+    Selection 8, "17-64s"
+    Selection 9, "Disabled"
+EndList
+                             
+BeginInfoBlock
+  PPVer "0.1"
+  Description "Stargo 2 FSP Configuration"
+EndInfoBlock
+
+Page "Ivy Bridge System Agent"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdMeStolenSize, "ME Stolen Memory Size", &MEM_SIZES,
+            Help "Size of memory reserved for ME, in MB."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdVgaMemoryEnable, "IGD Memory Reserve", &EN_DIS,
+            Help "Configure IGD Memory Reserve"				
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdFastTrainingMode, "Memory Fast Training Mode", &EN_DIS,
+            Help "Configure Memory Fast Training Mode"	
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PcdTsegSize, "TSEG Memory Size", HEX,
+            Help "Size of memory reserved for TSEG, in Byte."            
+    Table $gPlatformFspPkgTokenSpaceGuid_PcdSpdAddress "Configure Memory DIMM SPD Address", 
+                      Column "DIMM 0",   1 byte, HEX
+                      Column "DIMM 1",   1 byte, HEX
+                      Column "DIMM 2",   1 byte, HEX
+                      Column "DIMM 3",   1 byte, HEX
+                      Column "n/a",   1 byte,  HEX
+                      Column "n/a",   1 byte,  HEX
+                      Column "n/a",   1 byte,  HEX
+                      Column "n/a",   1 byte,  HEX,
+            Help "Configure Memory DIMM SPD Address."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdEccSupport, "ECC", &EN_DIS,
+            Help "Configure Memory ECC"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDdrFreqLimit, "DDR Frequency Limitation", &DDR_FREQ,
+            Help "DDR Frequency Limitation, default Auto"            
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdNModeSupport, "NMode Selection", &N_MODE,
+            Help "NModeSupport configuration, default Auto"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdScramblerSupport, "Scrambler", &EN_DIS,
+            Help "Scrambler configuration"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdRmtCrosserEnable, "Rmt Crosser", &EN_DIS,
+            Help "Rmt Crosser configuration"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdThermalManagement, "Thermal Management", &EN_DIS,
+            Help "Thermal Management configuration"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdPowerDownMode, "Power Down Mode", &PWRDOWN_MODE,
+            Help "Powern Down Mode configuration, default 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDisableDimmChannel0, "DIMM Channel 0", &DIMM_CTRL,
+            Help "DIMM Channel 0 configuration"            
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDisableDimmChannel1, "DIMM Channel 1", &DIMM_CTRL,
+            Help "DIMM Channel 1 configuration"            
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDDR3Voltage, "DDR3 Voltage", &DDR3LV,
+            Help "DDR3 Voltage Support configuration"     
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDmiVc1, "SA DMI Vc1", &EN_DIS,
+            Help "SA DMI Vc1 configuration"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDmiVcp, "SA DMI Vcp", &EN_DIS,
+            Help "SA DMI Vcp configuration"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDmiVcm, "SA DMI Vcm", &EN_DIS,
+            Help "SA DMI Vcm configuration"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDmiGen2, "SA DMI Gen2", &EN_DIS_AUTO,
+            Help "SA DMI Gen2 Mode configuration"
+    Table $gPlatformFspPkgTokenSpaceGuid_PcdPegGenx "Configure Peg Genx", 
+                      Column "Peg 0",   1 byte, HEX
+                      Column "Peg 1",   1 byte, HEX
+                      Column "Peg 2",   1 byte, HEX
+                      Column "Peg 3",   1 byte, HEX,
+            Help "Configure PEG Genx Mode."           
+              "0 - Auto"            
+              "1 - Gen1"            
+              "2 - Gen2"            
+              "3 - Gen3"                            
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PcdMmioSize, "MMIO Size", HEX,
+            Help "Size of memory reserved for MMIO, in MB."               
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdGttSize, "GTT Size", &GTT_MEM,
+            Help "Configure Graphics GTT Memory Size."            
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdIgdDvmt50PreAlloc, "Graphics Mode Select Memory Size", &GMS_MEM,
+            Help "Configure Graphics Mode Select Memory Pre-allocated size."   
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdAlwaysEnablePeg, "PEG", &PEG_CONFIG,
+            Help "Configure PEG."   
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdInternalGraphics, "IGD", &EN_DIS_AUTO,
+            Help "Configure IGD."            
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdPrimaryDisplay, "Primary Display Device", &PRI_DISP,
+            Help "Configure Primary Display Device."    
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdApertureSize, "Aperture Size", &APER_MEM,
+            Help "Configure Aperture Size."    
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDmiAspm, "DMI ASPM", &ASPM,
+            Help "Configure DMI ASPM."    
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdPegAspm, "PEG ASPM", &ASPM,
+            Help "Configure PEG ASPM."    
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDmiExtSync, "DMI Exit Sync", &EN_DIS,
+            Help "Determines if force extended transmission of FTS ordered sets when exiting L0s prior to entering L0."    
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDeEmphasis, "SA DeEmphasis", &EN_DIS,
+            Help "Configure SA DeEmphasis."  
+EndPage
+
+Page "Cave Creek PCH"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdHpetEnable, "PCH HPET", &EN_DIS,
+            Help "Enable/Disable PCH HPET."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSmbus, "PCH SMBUS", &EN_DIS,
+            Help "Enable/Disable PCH SMBUS."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciClockRun, "PCI Clock Run", &EN_DIS,
+            Help "Enable/Disable PCH PCI Clock Run."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchEhci, "PCH EHCI", &EN_DIS,
+            Help "Enable/Disable PCH EHCI."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchWatchDog, "PCH Watchdog", &EN_DIS,
+            Help "Enable/Disable PCH Watchdog."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchUsbPerPortCtl, "PCH USB Per Port Control", &EN_DIS,
+            Help "Enable/Disable PCH USB Per-Port Control."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchDmiAspm, "PCH DMI ASPM", &ASPM,
+            Help "Configure PCH DMI ASPM."
+    
+    Page "Root Port"
+        Page "Port 0"
+            Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0En, "Status", &EN_DIS,
+                    Help "Enables PCI root port 0."
+            #if $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0En == 1
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0SIE, "Slot", &EN_DIS,
+                        Help "Enable/Disable the PCH PCI-E slot."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0Aspm, "ASPM", &ASPM,
+                        Help "Configure PCH PCI-E ASPM."
+                             "0 -- Disable"
+                             "1 -- Enable L0s"
+                             "2 -- Enable L1"
+                             "3 -- Enable L0s and L1"
+                             "4 -- AutoConfig"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0ExtSync, "Extended Synchronization", &EN_DIS,
+                        Help "Configure PCH PCI-E Extended Synchronization for Logic Analyzer use."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0URE, "Unsupported Request Report", &EN_DIS,
+                        Help "Configure unsupported request report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0FEE, "Fatal Error Report", &EN_DIS,
+                        Help "Configure fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0NFE, "No Fatal Error Report", &EN_DIS,
+                        Help "Configure no fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0CEE, "Correctable Error Report", &EN_DIS,
+                        Help "Configure correctable error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0CTD, "Completion Timer Expire", &COMPLETION_TIMEOUT,
+                        Help "Configure Completion timer expire setting."
+                             "0 -- Default"
+                             "1 -- 50-100us"
+                             "2 -- 1-10ms"
+                             "3 -- 16-55ms"
+                             "4 -- 65-210ms"
+                             "5 -- 260-900ms"
+                             "6 -- 1-3.5s"
+                             "7 -- 4-13s"
+                             "8 -- 17-64s"
+                             "9 -- Disabled"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0PIE, "PME Interrupt", &EN_DIS,
+                        Help "Configure PME interrupt."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0SFE, "System Error Report On Fatal Error", &EN_DIS,
+                        Help "Configure system error report on fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0SNE, "System Error Report On Non-Fatal Error", &EN_DIS,
+                        Help "Configure system error report on non-fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0SCE, "System Error Report On Correctable Error", &EN_DIS,
+                        Help "Configure system error report on correctable error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0PMCE, "SCI", &EN_DIS,
+                        Help "Configure SCI."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort0HPCE, "Hotplug Enabling", &EN_DIS,
+                        Help "Configure hotplug."
+                             "01 - Enable, 00 - Disable"
+            #endif
+        EndPage
+        
+        Page "Port 1"
+            Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1En, "Status", &EN_DIS,
+                    Help "Enables PCI root port 1."
+            #if $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1En == 1
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1SIE, "Slot", &EN_DIS,
+                        Help "Enable/Disable the PCH PCI-E slot."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1Aspm, "ASPM", &ASPM,
+                        Help "Configure PCH PCI-E ASPM."
+                             "0 -- Disable"
+                             "1 -- Enable L0s"
+                             "2 -- Enable L1"
+                             "3 -- Enable L0s and L1"
+                             "4 -- AutoConfig"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1ExtSync, "Extended Synchronization", &EN_DIS,
+                        Help "Configure PCH PCI-E Extended Synchronization for Logic Analyzer use."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1URE, "Unsupported Request Report", &EN_DIS,
+                        Help "Configure unsupported request report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1FEE, "Fatal Error Report", &EN_DIS,
+                        Help "Configure fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1NFE, "No Fatal Error Report", &EN_DIS,
+                        Help "Configure no fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1CEE, "Correctable Error Report", &EN_DIS,
+                        Help "Configure correctable error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1CTD, "Completion Timer Expire", &COMPLETION_TIMEOUT,
+                        Help "Configure Completion timer expire setting."
+                             "0 -- Default"
+                             "1 -- 50-100us"
+                             "2 -- 1-10ms"
+                             "3 -- 16-55ms"
+                             "4 -- 65-210ms"
+                             "5 -- 260-900ms"
+                             "6 -- 1-3.5s"
+                             "7 -- 4-13s"
+                             "8 -- 17-64s"
+                             "9 -- Disabled"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1PIE, "PME Interrupt", &EN_DIS,
+                        Help "Configure PME interrupt."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1SFE, "System Error Report On Fatal Error", &EN_DIS,
+                        Help "Configure system error report on fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1SNE, "System Error Report On Non-Fatal Error", &EN_DIS,
+                        Help "Configure system error report on non-fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1SCE, "System Error Report On Correctable Error", &EN_DIS,
+                        Help "Configure system error report on correctable error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1PMCE, "SCI", &EN_DIS,
+                        Help "Configure SCI."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort1HPCE, "Hotplug Enabling", &EN_DIS,
+                        Help "Configure hotplug."
+                             "01 - Enable, 00 - Disable"
+            #endif
+        EndPage
+        
+        Page "Port 2"
+            Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2En, "Status", &EN_DIS,
+                    Help "Enables PCI root port 0."
+            #if $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2En == 1
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2SIE, "Slot", &EN_DIS,
+                        Help "Enable/Disable the PCH PCI-E slot."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2Aspm, "ASPM", &ASPM,
+                        Help "Configure PCH PCI-E ASPM."
+                             "0 -- Disable"
+                             "1 -- Enable L0s"
+                             "2 -- Enable L1"
+                             "3 -- Enable L0s and L1"
+                             "4 -- AutoConfig"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2ExtSync, "Extended Synchronization", &EN_DIS,
+                        Help "Configure PCH PCI-E Extended Synchronization for Logic Analyzer use."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2URE, "Unsupported Request Report", &EN_DIS,
+                        Help "Configure unsupported request report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2FEE, "Fatal Error Report", &EN_DIS,
+                        Help "Configure fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2NFE, "No Fatal Error Report", &EN_DIS,
+                        Help "Configure no fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2CEE, "Correctable Error Report", &EN_DIS,
+                        Help "Configure correctable error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2CTD, "Completion Timer Expire", &COMPLETION_TIMEOUT,
+                        Help "Configure Completion timer expire setting."
+                             "0 -- Default"
+                             "1 -- 50-100us"
+                             "2 -- 1-10ms"
+                             "3 -- 16-55ms"
+                             "4 -- 65-210ms"
+                             "5 -- 260-900ms"
+                             "6 -- 1-3.5s"
+                             "7 -- 4-13s"
+                             "8 -- 17-64s"
+                             "9 -- Disabled"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2PIE, "PME Interrupt", &EN_DIS,
+                        Help "Configure PME interrupt."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2SFE, "System Error Report On Fatal Error", &EN_DIS,
+                        Help "Configure system error report on fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2SNE, "System Error Report On Non-Fatal Error", &EN_DIS,
+                        Help "Configure system error report on non-fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2SCE, "System Error Report On Correctable Error", &EN_DIS,
+                        Help "Configure system error report on correctable error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2PMCE, "SCI", &EN_DIS,
+                        Help "Configure SCI."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort2HPCE, "Hotplug Enabling", &EN_DIS,
+                        Help "Configure hotplug."
+                             "01 - Enable, 00 - Disable"
+            #endif
+        EndPage
+        
+        Page "Port 3"
+            Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3En, "Status", &EN_DIS,
+                    Help "Enables PCI root port 3."
+            #if $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3En == 1
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3SIE, "Slot", &EN_DIS,
+                        Help "Enable/Disable the PCH PCI-E slot."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3Aspm, "ASPM", &ASPM,
+                        Help "Configure PCH PCI-E ASPM."
+                             "0 -- Disable"
+                             "1 -- Enable L0s"
+                             "2 -- Enable L1"
+                             "3 -- Enable L0s and L1"
+                             "4 -- AutoConfig"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3ExtSync, "Extended Synchronization", &EN_DIS,
+                        Help "Configure PCH PCI-E Extended Synchronization for Logic Analyzer use."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3URE, "Unsupported Request Report", &EN_DIS,
+                        Help "Configure unsupported request report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3FEE, "Fatal Error Report", &EN_DIS,
+                        Help "Configure fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3NFE, "No Fatal Error Report", &EN_DIS,
+                        Help "Configure no fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3CEE, "Correctable Error Report", &EN_DIS,
+                        Help "Configure correctable error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3CTD, "Completion Timer Expire", &COMPLETION_TIMEOUT,
+                        Help "Configure Completion timer expire setting."
+                             "0 -- Default"
+                             "1 -- 50-100us"
+                             "2 -- 1-10ms"
+                             "3 -- 16-55ms"
+                             "4 -- 65-210ms"
+                             "5 -- 260-900ms"
+                             "6 -- 1-3.5s"
+                             "7 -- 4-13s"
+                             "8 -- 17-64s"
+                             "9 -- Disabled"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3PIE, "PME Interrupt", &EN_DIS,
+                        Help "Configure PME interrupt."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3SFE, "System Error Report On Fatal Error", &EN_DIS,
+                        Help "Configure system error report on fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3SNE, "System Error Report On Non-Fatal Error", &EN_DIS,
+                        Help "Configure system error report on non-fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3SCE, "System Error Report On Correctable Error", &EN_DIS,
+                        Help "Configure system error report on correctable error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3PMCE, "SCI", &EN_DIS,
+                        Help "Configure SCI."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort3HPCE, "Hotplug Enabling", &EN_DIS,
+                        Help "Configure hotplug."
+                             "01 - Enable, 00 - Disable"
+            #endif
+        EndPage
+        
+        Page "Port 4"
+            Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4En, "Status", &EN_DIS,
+                    Help "Enables PCI root port 4."
+            #if $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4En == 1
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4SIE, "Slot", &EN_DIS,
+                        Help "Enable/Disable the PCH PCI-E slot."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4Aspm, "ASPM", &ASPM,
+                        Help "Configure PCH PCI-E ASPM."
+                             "0 -- Disable"
+                             "1 -- Enable L0s"
+                             "2 -- Enable L1"
+                             "3 -- Enable L0s and L1"
+                             "4 -- AutoConfig"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4ExtSync, "Extended Synchronization", &EN_DIS,
+                        Help "Configure PCH PCI-E Extended Synchronization for Logic Analyzer use."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4URE, "Unsupported Request Report", &EN_DIS,
+                        Help "Configure unsupported request report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4FEE, "Fatal Error Report", &EN_DIS,
+                        Help "Configure fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4NFE, "No Fatal Error Report", &EN_DIS,
+                        Help "Configure no fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4CEE, "Correctable Error Report", &EN_DIS,
+                        Help "Configure correctable error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4CTD, "Completion Timer Expire", &COMPLETION_TIMEOUT,
+                        Help "Configure Completion timer expire setting."
+                             "0 -- Default"
+                             "1 -- 50-100us"
+                             "2 -- 1-10ms"
+                             "3 -- 16-55ms"
+                             "4 -- 65-210ms"
+                             "5 -- 260-900ms"
+                             "6 -- 1-3.5s"
+                             "7 -- 4-13s"
+                             "8 -- 17-64s"
+                             "9 -- Disabled"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4PIE, "PME Interrupt", &EN_DIS,
+                        Help "Configure PME interrupt."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4SFE, "System Error Report On Fatal Error", &EN_DIS,
+                        Help "Configure system error report on fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4SNE, "System Error Report On Non-Fatal Error", &EN_DIS,
+                        Help "Configure system error report on non-fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4SCE, "System Error Report On Correctable Error", &EN_DIS,
+                        Help "Configure system error report on correctable error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4PMCE, "SCI", &EN_DIS,
+                        Help "Configure SCI."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort4HPCE, "Hotplug Enabling", &EN_DIS,
+                        Help "Configure hotplug."
+                             "01 - Enable, 00 - Disable"
+            #endif
+        EndPage
+        
+        Page "Port 5"
+            Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5En, "Status", &EN_DIS,
+                    Help "Enables PCI root port 5."
+            #if $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5En == 1
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5SIE, "Slot", &EN_DIS,
+                        Help "Enable/Disable the PCH PCI-E slot."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5Aspm, "ASPM", &ASPM,
+                        Help "Configure PCH PCI-E ASPM."
+                             "0 -- Disable"
+                             "1 -- Enable L0s"
+                             "2 -- Enable L1"
+                             "3 -- Enable L0s and L1"
+                             "4 -- AutoConfig"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5ExtSync, "Extended Synchronization", &EN_DIS,
+                        Help "Configure PCH PCI-E Extended Synchronization for Logic Analyzer use."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5URE, "Unsupported Request Report", &EN_DIS,
+                        Help "Configure unsupported request report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5FEE, "Fatal Error Report", &EN_DIS,
+                        Help "Configure fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5NFE, "No Fatal Error Report", &EN_DIS,
+                        Help "Configure no fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5CEE, "Correctable Error Report", &EN_DIS,
+                        Help "Configure correctable error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5CTD, "Completion Timer Expire", &COMPLETION_TIMEOUT,
+                        Help "Configure Completion timer expire setting."
+                             "0 -- Default"
+                             "1 -- 50-100us"
+                             "2 -- 1-10ms"
+                             "3 -- 16-55ms"
+                             "4 -- 65-210ms"
+                             "5 -- 260-900ms"
+                             "6 -- 1-3.5s"
+                             "7 -- 4-13s"
+                             "8 -- 17-64s"
+                             "9 -- Disabled"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5PIE, "PME Interrupt", &EN_DIS,
+                        Help "Configure PME interrupt."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5SFE, "System Error Report On Fatal Error", &EN_DIS,
+                        Help "Configure system error report on fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5SNE, "System Error Report On Non-Fatal Error", &EN_DIS,
+                        Help "Configure system error report on non-fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5SCE, "System Error Report On Correctable Error", &EN_DIS,
+                        Help "Configure system error report on correctable error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5PMCE, "SCI", &EN_DIS,
+                        Help "Configure SCI."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort5HPCE, "Hotplug Enabling", &EN_DIS,
+                        Help "Configure hotplug."
+                             "01 - Enable, 00 - Disable"
+            #endif
+        EndPage
+        
+        Page "Port 6"
+            Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6En, "Status", &EN_DIS,
+                    Help "Enables PCI root port 6."
+            #if $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6En == 1
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6SIE, "Slot", &EN_DIS,
+                        Help "Enable/Disable the PCH PCI-E slot."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6Aspm, "ASPM", &ASPM,
+                        Help "Configure PCH PCI-E ASPM."
+                             "0 -- Disable"
+                             "1 -- Enable L0s"
+                             "2 -- Enable L1"
+                             "3 -- Enable L0s and L1"
+                             "4 -- AutoConfig"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6ExtSync, "Extended Synchronization", &EN_DIS,
+                        Help "Configure PCH PCI-E Extended Synchronization for Logic Analyzer use."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6URE, "Unsupported Request Report", &EN_DIS,
+                        Help "Configure unsupported request report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6FEE, "Fatal Error Report", &EN_DIS,
+                        Help "Configure fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6NFE, "No Fatal Error Report", &EN_DIS,
+                        Help "Configure no fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6CEE, "Correctable Error Report", &EN_DIS,
+                        Help "Configure correctable error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6CTD, "Completion Timer Expire", &COMPLETION_TIMEOUT,
+                        Help "Configure Completion timer expire setting."
+                             "0 -- Default"
+                             "1 -- 50-100us"
+                             "2 -- 1-10ms"
+                             "3 -- 16-55ms"
+                             "4 -- 65-210ms"
+                             "5 -- 260-900ms"
+                             "6 -- 1-3.5s"
+                             "7 -- 4-13s"
+                             "8 -- 17-64s"
+                             "9 -- Disabled"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6PIE, "PME Interrupt", &EN_DIS,
+                        Help "Configure PME interrupt."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6SFE, "System Error Report On Fatal Error", &EN_DIS,
+                        Help "Configure system error report on fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6SNE, "System Error Report On Non-Fatal Error", &EN_DIS,
+                        Help "Configure system error report on non-fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6SCE, "System Error Report On Correctable Error", &EN_DIS,
+                        Help "Configure system error report on correctable error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6PMCE, "SCI", &EN_DIS,
+                        Help "Configure SCI."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort6HPCE, "Hotplug Enabling", &EN_DIS,
+                        Help "Configure hotplug."
+                             "01 - Enable, 00 - Disable"
+            #endif
+        EndPage
+        
+        Page "Port 7"
+            Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7En, "Status", &EN_DIS,
+                    Help "Enables PCI root port 7."
+            #if $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7En == 1
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7SIE, "Slot", &EN_DIS,
+                        Help "Enable/Disable the PCH PCI-E slot."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7Aspm, "ASPM", &ASPM,
+                        Help "Configure PCH PCI-E ASPM."
+                             "0 -- Disable"
+                             "1 -- Enable L0s"
+                             "2 -- Enable L1"
+                             "3 -- Enable L0s and L1"
+                             "4 -- AutoConfig"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7ExtSync, "Extended Synchronization", &EN_DIS,
+                        Help "Configure PCH PCI-E Extended Synchronization for Logic Analyzer use."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7URE, "Unsupported Request Report", &EN_DIS,
+                        Help "Configure unsupported request report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7FEE, "Fatal Error Report", &EN_DIS,
+                        Help "Configure fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7NFE, "No Fatal Error Report", &EN_DIS,
+                        Help "Configure no fatal error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7CEE, "Correctable Error Report", &EN_DIS,
+                        Help "Configure correctable error report."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7CTD, "Completion Timer Expire", &COMPLETION_TIMEOUT,
+                        Help "Configure Completion timer expire setting."
+                             "0 -- Default"
+                             "1 -- 50-100us"
+                             "2 -- 1-10ms"
+                             "3 -- 16-55ms"
+                             "4 -- 65-210ms"
+                             "5 -- 260-900ms"
+                             "6 -- 1-3.5s"
+                             "7 -- 4-13s"
+                             "8 -- 17-64s"
+                             "9 -- Disabled"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7PIE, "PME Interrupt", &EN_DIS,
+                        Help "Configure PME interrupt."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7SFE, "System Error Report On Fatal Error", &EN_DIS,
+                        Help "Configure system error report on fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7SNE, "System Error Report On Non-Fatal Error", &EN_DIS,
+                        Help "Configure system error report on non-fatal error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7SCE, "System Error Report On Correctable Error", &EN_DIS,
+                        Help "Configure system error report on correctable error."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7PMCE, "SCI", &EN_DIS,
+                        Help "Configure SCI."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchPciePort7HPCE, "Hotplug Enabling", &EN_DIS,
+                        Help "Configure hotplug."
+                             "01 - Enable, 00 - Disable"
+            #endif
+        EndPage
+    EndPage
+    
+    Page "SATA"
+        Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSata, "SATA Controller", &EN_DIS,
+            Help "Enable/Disable SATA controller."
+        Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataMode, "SATA Mode", &SATA_MODE,
+            Help "Configure PCH SATA Mode."
+        
+        #if $gPlatformFspPkgTokenSpaceGuid_PcdPchSata == TRUE
+            Page "Port 0"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0En, "Port 0", &EN_DIS,
+                        Help "Enable/Disable SATA Port 0."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0HP, "Hotplug Disk Support", &EN_DIS,
+                        Help "Configure hotplug disk support on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0IS, "SATA Interlock Switch", &EN_DIS,
+                        Help "Configure SATA interlock switch."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0EX, "External SATA Support", &EN_DIS,
+                        Help "Configure support for external SATA on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort0MUL, "Multiplier SATA Port Support", &EN_DIS,
+                        Help "Configure support for multiplier SATA port."
+                             "01 - Supported, 00 - Not Supported"
+            EndPage
+            
+            Page "Port 1"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1En, "Port 1", &EN_DIS,
+                        Help "Enable/Disable SATA Port 1."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1HP, "Hotplug Disk Support", &EN_DIS,
+                        Help "Configure hotplug disk support on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1IS, "SATA Interlock Switch", &EN_DIS,
+                        Help "Configure SATA interlock switch."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1EX, "External SATA Support", &EN_DIS,
+                        Help "Configure support for external SATA on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort1MUL, "Multiplier SATA Port Support", &EN_DIS,
+                        Help "Configure support for multiplier SATA port."
+                             "01 - Supported, 00 - Not Supported"
+            EndPage
+            
+            Page "Port 2"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2En, "Port 2", &EN_DIS,
+                        Help "Enable/Disable SATA Port 2."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2HP, "Hotplug Disk Support", &EN_DIS,
+                        Help "Configure hotplug disk support on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2IS, "SATA Interlock Switch", &EN_DIS,
+                        Help "Configure SATA interlock switch."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2EX, "External SATA Support", &EN_DIS,
+                        Help "Configure support for external SATA on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort2MUL, "Multiplier SATA Port Support", &EN_DIS,
+                        Help "Configure support for multiplier SATA port."
+                             "01 - Supported, 00 - Not Supported"
+            EndPage
+            
+            Page "Port 3"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3En, "Port 3", &EN_DIS,
+                        Help "Enable/Disable SATA Port 3."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3HP, "Hotplug Disk Support", &EN_DIS,
+                        Help "Configure hotplug disk support on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3IS, "SATA Interlock Switch", &EN_DIS,
+                        Help "Configure SATA interlock switch."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3EX, "External SATA Support", &EN_DIS,
+                        Help "Configure support for external SATA on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort3MUL, "Multiplier SATA Port Support", &EN_DIS,
+                        Help "Configure support for multiplier SATA port."
+                             "01 - Supported, 00 - Not Supported"
+            EndPage
+            
+            Page "Port 4"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4En, "Port 4", &EN_DIS,
+                        Help "Enable/Disable SATA Port 4."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4HP, "Hotplug Disk Support", &EN_DIS,
+                        Help "Configure hotplug disk support on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4IS, "SATA Interlock Switch", &EN_DIS,
+                        Help "Configure SATA interlock switch."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4EX, "External SATA Support", &EN_DIS,
+                        Help "Configure support for external SATA on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort4MUL, "Multiplier SATA Port Support", &EN_DIS,
+                        Help "Configure support for multiplier SATA port."
+                             "01 - Supported, 00 - Not Supported"
+            EndPage
+            
+            Page "Port 5"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5En, "Port 5", &EN_DIS,
+                        Help "Enable/Disable SATA Port 5."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5HP, "Hotplug Disk Support", &EN_DIS,
+                        Help "Configure hotplug disk support on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5IS, "SATA Interlock Switch", &EN_DIS,
+                        Help "Configure SATA interlock switch."
+                             "01 - Enable, 00 - Disable"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5EX, "External SATA Support", &EN_DIS,
+                        Help "Configure support for external SATA on SATA port."
+                             "01 - Supported, 00 - Not Supported"
+                Combo $gPlatformFspPkgTokenSpaceGuid_PcdPchSataPort5MUL, "Multiplier SATA Port Support", &EN_DIS,
+                        Help "Configure support for multiplier SATA port."
+                             "01 - Supported, 00 - Not Supported"
+            EndPage
+        #endif
+    EndPage
+EndPage
+
+Page "CPU Features"        
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdFeatureConfigure, "FSP Configure CPU features", &EN_DIS,
+            Help "Determines if FSP is used to configure CPU features."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdLimitCpuidMaximumValue, "Limit MAX CPUID", &EN_DIS,
+            Help "Determines if Limit Max CPUID feature enable or disable."  
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdVmxEnable, "Intel Virtualization Technology", &EN_DIS,
+            Help "Determines if Intel Virtualization Technology enable or disable."  
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdTxtEnable, "Intel Trusted Execution Technology", &EN_DIS,
+            Help "Determines if Intel Trusted Execution Technology enable or disable."  
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdMonitorMwaitEnable, "Monitor & Mwait", &EN_DIS,
+            Help "Determines if Monitor and Mwait enable or disable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdExecuteDisableBit, "Execute Disable Bit", &EN_DIS,
+            Help "Determines if Execute Disable Bit enable or disable."  
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdFastString, "Fast String", &EN_DIS,
+            Help "Determines if Fast String enable or disable."  
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdMachineCheckEnable, "MCE", &EN_DIS,
+            Help "Determines if MCE enable or disable."  
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdXapicEnable, "XAPIC", &EN_DIS,
+            Help "Determines if XAPIC enable or disable."                                                  
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDcaEnable, "DCA", &EN_DIS,
+            Help "Determines if DCA enable or disable."        
+EndPage

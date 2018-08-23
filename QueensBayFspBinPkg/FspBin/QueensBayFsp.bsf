@@ -1,0 +1,79 @@
+//
+// This file contains an 'Intel Peripheral Driver' and is      
+// licensed for Intel CPUs and chipsets under the terms of your
+// license agreement with Intel or your vendor.  This file must not
+// be modified by end users or could render the generated boot loader
+// inoperable.
+//
+// @file
+// Boot Setting File for Platform: Minnow Platform
+//
+// Copyright (c) 2010-2013 Intel Corporation. All rights reserved
+// This software and associated documentation (if any) is furnished
+// under a license and may only be used or copied in accordance
+// with the terms of the license. Except as permitted by such
+// license, no part of this software or documentation may be
+// reproduced, stored in a retrieval system, or transmitted in any
+// form or by any means without the express written consent of
+// Intel Corporation.
+//
+//
+
+
+GlobalDataDef
+  SKUID = 0, "DEFAULT"
+  
+EndGlobalData
+
+StructDef
+
+    Find "MNNOWVPD"
+    $gPlatformFspPkgTokenSpaceGuid_PcdImageRevision          4 bytes $_DEFAULT_ = 0x00000301
+    Skip 24 bytes    
+    $gPlatformFspPkgTokenSpaceGuid_PcdDisablePCIExpPort1     1 byte $_DEFAULT_ = 0x0
+    $gPlatformFspPkgTokenSpaceGuid_PcdDisablePCIExpPort2     1 byte $_DEFAULT_ = 0x0
+    $gPlatformFspPkgTokenSpaceGuid_PcdDisablePCIExpPort3     1 byte $_DEFAULT_ = 0x0
+    $gPlatformFspPkgTokenSpaceGuid_PcdEnableAzalia           1 byte $_DEFAULT_ = 0x1
+    $gPlatformFspPkgTokenSpaceGuid_PcdLegacySegDecode        1 byte $_DEFAULT_ = 0x0
+    $gEfiEg20tTokenSpaceGuid_PcdPCIExpPortToIOH		     1 byte $_DEFAULT_ = 0x0
+    
+    //Find "MNNWUPDR"
+         
+EndStruct
+
+List &EN_DIS
+    Selection 0x1 , "Enabled"
+    Selection 0x0 , "Disabled"
+EndList
+
+List &YES_NO
+    Selection 0x1 , "Yes"
+    Selection 0x0 , "No"
+EndList
+
+List &gEfiEg20tTokenSpaceGuid_PcdPCIExpPortToIOH
+    Selection 0 , "Port 0"
+    Selection 1 , "Port 1"
+    Selection 2 , "Port 2"
+    Selection 3 , "Port 3"
+EndList
+
+BeginInfoBlock
+  PPVer "0.1"
+  Description "Minnow platform."
+EndInfoBlock
+
+Page "Settings"  
+	Combo $gPlatformFspPkgTokenSpaceGuid_PcdDisablePCIExpPort1, "Disable PCI Express Port 1", &YES_NO,
+                Help "Enable/disable PCI Express Port 1"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdDisablePCIExpPort2, "Disable PCI Express Port 2", &YES_NO,
+                Help "Enable/disable PCI Express Port 2."
+	Combo $gPlatformFspPkgTokenSpaceGuid_PcdDisablePCIExpPort3, "Disable PCI Express Port 3", &YES_NO,
+                Help "Enable/disable PCI Express Port 3."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdEnableAzalia, "Enable Azalia", &YES_NO,
+                Help "Enable/disable Intel High Definition Audio (Azalia)."
+	Combo $gEfiEg20tTokenSpaceGuid_PcdPCIExpPortToIOH, "Specify the PCIe root port (0 to 3) that IOH is connected to", &gEfiEg20tTokenSpaceGuid_PcdPCIExpPortToIOH,
+                Help "PCIe root port number that IOH is connected to (0 to 3 is valid range)."  
+	Combo $gPlatformFspPkgTokenSpaceGuid_PcdLegacySegDecode, "Enable Legacy E/F Segment", &EN_DIS,
+                Help "When Enabled, FSP will not decode the E/F Segments to ROM"              
+EndPage
