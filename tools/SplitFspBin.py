@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 ## @ FspTool.py
 #
 # Copyright (c) 2015 - 2018, Intel Corporation. All rights reserved.<BR>
