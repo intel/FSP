@@ -109,7 +109,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuTraceHubMode                 1 bytes    $_DEFAULT_ = 0
         $gPlatformFspPkgTokenSpaceGuid_CpuTraceHubMemReg0Size          1 bytes    $_DEFAULT_ = 4
         $gPlatformFspPkgTokenSpaceGuid_CpuTraceHubMemReg1Size          1 bytes    $_DEFAULT_ = 4
-        $gPlatformFspPkgTokenSpaceGuid_PeciC10Reset                    1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PeciC10Reset                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PeciSxReset                     1 bytes    $_DEFAULT_ = 0x00
         Skip 4 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchHdaEnable                    1 bytes    $_DEFAULT_ = 0x01
@@ -424,8 +424,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_RMTLoopCount                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnBER                           1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DualDimmPerChannelBoardType     1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_Ddr4MixedUDimm2DpcLimit         1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpdCfl              2 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpdCfl              3 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot               1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ThrtCkeMinTmrLpddr              1 bytes    $_DEFAULT_ = 0x40
         Skip 15 bytes
@@ -636,7 +635,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_BltBufferAddress                4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_BltBufferSize                   4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_SaPostMemProductionRsvd        35 bytes    $_DEFAULT_ = 0x00
-        $gCoffeeLakeFspPkgTokenSpaceGuid_PcieRootPortGen2PllL1CgDisable  24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        $gCannonLakeFspPkgTokenSpaceGuid_PcieRootPortGen2PllL1CgDisable  24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_AesEnable                       1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_Psi3Enable                      5 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_Psi4Enable                      5 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01
@@ -701,8 +700,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchHdaIDispLinkTmode            1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaDspUaaCompliance          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaIDispCodecDisconnect      1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PchUsbHsioFilterSel            10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        Skip 5 bytes
+        Skip 15 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchIoApicEntry24_119            1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchIoApicId                     1 bytes    $_DEFAULT_ = 0x02
         Skip 1 bytes
@@ -740,9 +738,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PcieRpSystemErrorOnNonFatalError  24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieRpSystemErrorOnCorrectableError  24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieRpMaxPayload               24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PchUsbHsioRxTuningParameters   10 bytes    $_DEFAULT_ = 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03
-        $gPlatformFspPkgTokenSpaceGuid_PchUsbHsioRxTuningEnable       10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        Skip 4 bytes
+        Skip 24 bytes
         $gPlatformFspPkgTokenSpaceGuid_PcieRpPcieSpeed                24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieRpGen3EqPh3Method          24 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PcieRpPhysicalSlotNumber       24 bytes    $_DEFAULT_ = 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17
@@ -761,8 +757,7 @@ StructDef
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_PcieComplianceTestMode          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieRpFunctionSwap              1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_TetonGlacierSupport             1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_TetonGlacierCR                  1 bytes    $_DEFAULT_ = 0x00
+        Skip 2 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchPmPmeB0S5Dis                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsPolarity           3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieRpImrEnabled                1 bytes    $_DEFAULT_ = 0x01
@@ -1050,7 +1045,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchXhciOcLock                   1 bytes    $_DEFAULT_ = 0x01
         Skip 17 bytes
         $gPlatformFspPkgTokenSpaceGuid_SkipPostBootSai                 1 bytes    $_DEFAULT_ = 0x00
-        $gCoffeeLakeFspPkgTokenSpaceGuid_MctpBroadcastCycle            1 bytes    $_DEFAULT_ = 0x0
+        $gCannonLakeFspPkgTokenSpaceGuid_MctpBroadcastCycle            1 bytes    $_DEFAULT_ = 0x0
 
 EndStruct
 
@@ -2437,8 +2432,6 @@ Page "Memory Reference Code 1"
              "Valid range: 0 ~ 0x20"
     Combo $gPlatformFspPkgTokenSpaceGuid_DualDimmPerChannelBoardType, "Dual Dimm Per-Channel Board Type", &gPlatformFspPkgTokenSpaceGuid_DualDimmPerChannelBoardType,
         Help "Option to indicate if Board Layout includes One/Two DIMMs per channel. This is used to limit maximum frequency for some SKUs."
-    Combo $gPlatformFspPkgTokenSpaceGuid_Ddr4MixedUDimm2DpcLimit, "DDR4 Mixed U-DIMM 2DPC Limitation", &EN_DIS,
-        Help "Enable/Disable 2667 Frequency Limitation for DDR4 U-DIMM Mixed Dimm 2DPC population. Disable(Default)=0, Enable=1"
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpdCfl, "CFL Reserved", &EN_DIS,
         Help "Reserved FspmConfig CFL"
     Combo $gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot, "Memory Test on Warm Boot", &gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot,
@@ -2611,7 +2604,7 @@ Page "System Agent 1"
     Combo $gPlatformFspPkgTokenSpaceGuid_CpuTraceHubMemReg1Size, "CPU Trace Hub Memory Region 1", &gPlatformFspPkgTokenSpaceGuid_CpuTraceHubMemReg1Size,
         Help "CPU Trace Hub Memory Region 1. The avaliable memory size is : 0MB, 1MB, 8MB, 64MB, 128MB, 256MB, 512MB. Note : Limitation of total buffer size (CPU + PCH) is 512MB."
     Combo $gPlatformFspPkgTokenSpaceGuid_PeciC10Reset, "Enable or Disable Peci C10 Reset command", &EN_DIS,
-        Help "Enable or Disable Peci C10 Reset command. If Enabled, BIOS will send the CPU message to disable peci reset on C10 exit. The default value is <b>0: Disable</b> for CNL, and <b>1: Enable</b> for all other CPU's"
+        Help "Enable or Disable Peci C10 Reset command; <b>0: Disable;</b> 1: Enable."
     Combo $gPlatformFspPkgTokenSpaceGuid_PeciSxReset, "Enable or Disable Peci Sx Reset command", &EN_DIS,
         Help "Enable or Disable Peci Sx Reset command; <b>0: Disable;</b> 1: Enable."
     EditNum $gPlatformFspPkgTokenSpaceGuid_SgDelayAfterPwrEn, "SG dGPU Power Delay", HEX,
@@ -3103,7 +3096,7 @@ Page "PCH 2"
         Help "Enable/Disable ModPHY SUS Power Domain Dynamic Gating. Setting not supported on PCH-H. 0: disable, 1: enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_SlpS0WithGbeSupport, "SlpS0WithGbeSupport", &EN_DIS,
         Help "Enable/Disable SLP_S0 with GBE Support. 0: disable, 1: enable"
-    EditNum $gCoffeeLakeFspPkgTokenSpaceGuid_PcieRootPortGen2PllL1CgDisable, "PCIE RP Disable Gen2PLL Shutdown and L1 Clock Gating Enable", HEX,
+    EditNum $gCannonLakeFspPkgTokenSpaceGuid_PcieRootPortGen2PllL1CgDisable, "PCIE RP Disable Gen2PLL Shutdown and L1 Clock Gating Enable", HEX,
         Help "PCIE RP Disable Gen2PLL Shutdown and L1 Clock Gating Enable Workaround needed for Alpine ridge"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchDmiAspm, "Enable DMI ASPM", &EN_DIS,
@@ -3136,9 +3129,6 @@ Page "PCH 2"
         Help "0: Not-UAA Compliant (Intel SST driver supported only), 1: UAA Compliant (HDA Inbox driver or SST driver supported)."
     Combo $gPlatformFspPkgTokenSpaceGuid_PchHdaIDispCodecDisconnect, "iDisplay Audio Codec disconnection", &EN_DIS,
         Help "0: Not disconnected, enumerable, 1: Disconnected SDI, not enumerable."
-    EditNum $gPlatformFspPkgTokenSpaceGuid_PchUsbHsioFilterSel, "USB LFPS Filter selection", HEX,
-        Help "For each byte bits 2:0 are for p, bits 4:6 are for n. 0h:1.6ns, 1h:2.4ns, 2h:3.2ns, 3h:4.0ns, 4h:4.8ns, 5h:5.6ns, 6h:6.4ns."
-             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchIoApicEntry24_119, "Enable PCH Io Apic Entry 24-119", &EN_DIS,
         Help "0: Disable; 1: Enable."
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchIoApicId, "PCH Io Apic ID", HEX,
@@ -3224,12 +3214,6 @@ Page "PCH 2"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRpMaxPayload, "PCIE RP Max Payload", HEX,
         Help "Max Payload Size supported, Default 128B, see enum PCH_PCIE_MAX_PAYLOAD."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
-    EditNum $gPlatformFspPkgTokenSpaceGuid_PchUsbHsioRxTuningParameters, "PCH USB3 RX HSIO Tuning parameters", HEX,
-        Help "Bits 7:3 are for Signed Magnatude number added to the CTLE code, Bits 2:0 are for controlling the input offset"
-             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
-    EditNum $gPlatformFspPkgTokenSpaceGuid_PchUsbHsioRxTuningEnable, "PCH USB3 HSIO Rx Tuning Enable", HEX,
-        Help "Mask for enabling tuning of HSIO Rx signals of USB3 ports. Bits: 0 - HsioCtrlAdaptOffsetCfgEnable, 1 - HsioFilterSelNEnable, 2 - HsioFilterSelPEnable, 3 - HsioOlfpsCfgPullUpDwnResEnable"
-             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRpPcieSpeed, "PCIE RP Pcie Speed", HEX,
         Help "Determines each PCIE Port speed capability. 0: Auto; 1: Gen1; 2: Gen2; 3: Gen3 (see: PCH_PCIE_SPEED)."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
@@ -3274,11 +3258,6 @@ Page "PCH 2"
         Help "Compliance Test Mode shall be enabled when using Compliance Load Board."
     Combo $gPlatformFspPkgTokenSpaceGuid_PcieRpFunctionSwap, "PCIE Rp Function Swap", &EN_DIS,
         Help "Allows BIOS to use root port function number swapping when root port of function 0 is disabled."
-    Combo $gPlatformFspPkgTokenSpaceGuid_TetonGlacierSupport, "Teton Glacier Support", &EN_DIS,
-        Help "Enables support for the Teton Glacier card."
-    EditNum $gPlatformFspPkgTokenSpaceGuid_TetonGlacierCR, "Teton Glacier Cycle Router", HEX,
-        Help "Specify to which cycle router Teton Glacier is connected, it is valid only when Teton Glacier support is enabled. Default is 0 for CNP-H system and 1 for CNP-LP system "
-             "Valid range: 0x0 ~ 0x02"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchPmPmeB0S5Dis, "PCH Pm PME_B0_S5_DIS", &EN_DIS,
         Help "When cleared (default), wake events from PME_B0_STS are allowed in S5 if PME_B0_EN = 1."
     EditNum $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsPolarity, "SPI ChipSelect signal polarity", HEX,
@@ -3624,7 +3603,7 @@ Page "PCH 2"
         Help "If this policy option is enabled then BIOS will program OCCFDONE bit in xHCI meaning that OC mapping data will be consumed by xHCI and OC mapping registers will be locked."
     Combo $gPlatformFspPkgTokenSpaceGuid_SkipPostBootSai, "Skip POSTBOOT SAI", &EN_DIS,
         Help "Deprecated"
-    Combo $gCoffeeLakeFspPkgTokenSpaceGuid_MctpBroadcastCycle, "Mctp Broadcast Cycle", &EN_DIS,
+    Combo $gCannonLakeFspPkgTokenSpaceGuid_MctpBroadcastCycle, "Mctp Broadcast Cycle", &EN_DIS,
         Help "Test, Determine if MCTP Broadcast is enabled <b>0: Disable</b>; 1: Enable."
 EndPage
 
