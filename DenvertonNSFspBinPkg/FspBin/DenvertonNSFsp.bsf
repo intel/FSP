@@ -118,6 +118,14 @@ StructDef
         $gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort5Aspm       1 bytes    $_DEFAULT_ = 0x02
         $gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort6Aspm       1 bytes    $_DEFAULT_ = 0x02
         $gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort7Aspm       1 bytes    $_DEFAULT_ = 0x02
+        $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort0LaneReversal   1 bytes    $_DEFAULT_ = 0
+        $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort1LaneReversal   1 bytes    $_DEFAULT_ = 0
+        $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort2LaneReversal   1 bytes    $_DEFAULT_ = 0
+        $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort3LaneReversal   1 bytes    $_DEFAULT_ = 0
+        $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort4LaneReversal   1 bytes    $_DEFAULT_ = 0
+        $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort5LaneReversal   1 bytes    $_DEFAULT_ = 0
+        $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort6LaneReversal   1 bytes    $_DEFAULT_ = 0
+        $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort7LaneReversal   1 bytes    $_DEFAULT_ = 0
 
 EndStruct
 
@@ -178,6 +186,11 @@ List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdActiveCoreCount
     Selection 13 , "13"
     Selection 14 , "14"
     Selection 15 , "15"
+EndList
+
+List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort2LaneReversal
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
 EndList
 
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort1Aspm
@@ -243,9 +256,19 @@ List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort3LinkSpeed
     Selection 3 , "GEN3"
 EndList
 
+List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort0LaneReversal
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
+EndList
+
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort3DeEmphasis
     Selection 0 , "6dB"
     Selection 1 , "3.5dB"
+EndList
+
+List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort3LaneReversal
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
 EndList
 
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort2Aspm
@@ -292,6 +315,16 @@ List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdDdrFreq
     Selection 6 , "2400"
 EndList
 
+List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort6LaneReversal
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
+EndList
+
+List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort4LaneReversal
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
+EndList
+
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdMrcRmtCpgcNumBursts
     Selection 1 , "1"
     Selection 2 , "2"
@@ -324,6 +357,11 @@ EndList
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdUsb3Port2Pin
     Selection 0 , "OC Pin 0"
     Selection 8 , "No pin mapped"
+EndList
+
+List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort1LaneReversal
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
 EndList
 
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdFsptPort80RouteDisable
@@ -360,6 +398,11 @@ EndList
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdUsb3Port1Pin
     Selection 0 , "OC Pin 0"
     Selection 8 , "No pin mapped"
+EndList
+
+List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort5LaneReversal
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
 EndList
 
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort7Aspm
@@ -412,6 +455,11 @@ EndList
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdUsb2Port3Pin
     Selection 0 , "OC Pin 0"
     Selection 8 , "No pin mapped"
+EndList
+
+List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort7LaneReversal
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
 EndList
 
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdEnableGbE
@@ -502,6 +550,22 @@ Page "SoC"
         Help "Enable PCI Express Active State Power Management settings"
     Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort7Aspm, "PCIe Root Port 7 ASPM", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdPcieRootPort7Aspm,
         Help "Enable PCI Express Active State Power Management settings"
+    Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort0LaneReversal, "PCIe Root Port 0 Lane Reversal", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort0LaneReversal,
+        Help "Enable / Disable Dynamic Lane reversal on PCI Express RootPort"
+    Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort1LaneReversal, "PCIe Root Port 1 Lane Reversal", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort1LaneReversal,
+        Help "Enable / Disable Dynamic Lane reversal on PCI Express RootPort"
+    Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort2LaneReversal, "PCIe Root Port 2 Lane Reversal", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort2LaneReversal,
+        Help "Enable / Disable Dynamic Lane reversal on PCI Express RootPort"
+    Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort3LaneReversal, "PCIe Root Port 3 Lane Reversal", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort3LaneReversal,
+        Help "Enable / Disable Dynamic Lane reversal on PCI Express RootPort"
+    Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort4LaneReversal, "PCIe Root Port 4 Lane Reversal", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort4LaneReversal,
+        Help "Enable / Disable Dynamic Lane reversal on PCI Express RootPort"
+    Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort5LaneReversal, "PCIe Root Port 5 Lane Reversal", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort5LaneReversal,
+        Help "Enable / Disable Dynamic Lane reversal on PCI Express RootPort"
+    Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort6LaneReversal, "PCIe Root Port 6 Lane Reversal", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort6LaneReversal,
+        Help "Enable / Disable Dynamic Lane reversal on PCI Express RootPort"
+    Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort7LaneReversal, "PCIe Root Port 7 Lane Reversal", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdRootPort7LaneReversal,
+        Help "Enable / Disable Dynamic Lane reversal on PCI Express RootPort"
 EndPage
 
 Page "Platform Specific"
