@@ -253,9 +253,57 @@ typedef struct {
 **/
   UINT8                       PcdPcieRootPort7Aspm;
 
-/** Offset 0x0054
+/** Offset 0x0054 - PCIe Root Port 0 Lane Reversal
+  Enable / Disable Dynamic Lane reversal on PCI Express RootPort
+  0:Disabled, 1:Enabled
 **/
-  UINT8                       UnusedUpdSpace2[140];
+  UINT8                       PcdRootPort0LaneReversal;
+
+/** Offset 0x0055 - PCIe Root Port 1 Lane Reversal
+  Enable / Disable Dynamic Lane reversal on PCI Express RootPort
+  0:Disabled, 1:Enabled
+**/
+  UINT8                       PcdRootPort1LaneReversal;
+
+/** Offset 0x0056 - PCIe Root Port 2 Lane Reversal
+  Enable / Disable Dynamic Lane reversal on PCI Express RootPort
+  0:Disabled, 1:Enabled
+**/
+  UINT8                       PcdRootPort2LaneReversal;
+
+/** Offset 0x0057 - PCIe Root Port 3 Lane Reversal
+  Enable / Disable Dynamic Lane reversal on PCI Express RootPort
+  0:Disabled, 1:Enabled
+**/
+  UINT8                       PcdRootPort3LaneReversal;
+
+/** Offset 0x0058 - PCIe Root Port 4 Lane Reversal
+  Enable / Disable Dynamic Lane reversal on PCI Express RootPort
+  0:Disabled, 1:Enabled
+**/
+  UINT8                       PcdRootPort4LaneReversal;
+
+/** Offset 0x0059 - PCIe Root Port 5 Lane Reversal
+  Enable / Disable Dynamic Lane reversal on PCI Express RootPort
+  0:Disabled, 1:Enabled
+**/
+  UINT8                       PcdRootPort5LaneReversal;
+
+/** Offset 0x005A - PCIe Root Port 6 Lane Reversal
+  Enable / Disable Dynamic Lane reversal on PCI Express RootPort
+  0:Disabled, 1:Enabled
+**/
+  UINT8                       PcdRootPort6LaneReversal;
+
+/** Offset 0x005B - PCIe Root Port 7 Lane Reversal
+  Enable / Disable Dynamic Lane reversal on PCI Express RootPort
+  0:Disabled, 1:Enabled
+**/
+  UINT8                       PcdRootPort7LaneReversal;
+
+/** Offset 0x005C
+**/
+  UINT8                       UnusedUpdSpace2[132];
 
 /** Offset 0x00E0
 **/
