@@ -1477,9 +1477,30 @@ typedef struct {
 **/
   UINT8                       PcieRpCompletionTimeout[24];
 
-/** Offset 0x055E
+/** Offset 0x055E - Enable xHCI LTR override
+  Enables override of recommended LTR values for xHCI
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace15[106];
+  UINT8                       PchUsbLtrOverrideEnable;
+
+/** Offset 0x055F - xHCI High Idle Time LTR override
+  Value used for overriding LTR recommendation for xHCI High Idle Time LTR setting
+**/
+  UINT32                      PchUsbLtrHighIdleTimeOverride;
+
+/** Offset 0x0563 - xHCI Medium Idle Time LTR override
+  Value used for overriding LTR recommendation for xHCI Medium Idle Time LTR setting
+**/
+  UINT32                      PchUsbLtrMediumIdleTimeOverride;
+
+/** Offset 0x0567 - xHCI Low Idle Time LTR override
+  Value used for overriding LTR recommendation for xHCI Low Idle Time LTR setting
+**/
+  UINT32                      PchUsbLtrLowIdleTimeOverride;
+
+/** Offset 0x056B
+**/
+  UINT8                       UnusedUpdSpace15[93];
 
 /** Offset 0x05C8 - PCIE RP Aspm
   The ASPM configuration of the root port (see: PCH_PCIE_ASPM_CONTROL). Default is
@@ -1560,8 +1581,7 @@ typedef struct {
   UINT8                       TetonGlacierSupport;
 
 /** Offset 0x0668 - Teton Glacier Cycle Router
-  Specify to which cycle router Teton Glacier is connected, it is valid only when
-  Teton Glacier support is enabled. Default is 0 for CNP-H system and 1 for CNP-LP system
+  Deprecated
 **/
   UINT8                       TetonGlacierCR;
 
@@ -1588,8 +1608,8 @@ typedef struct {
   UINT8                       PcieRpImrSelection;
 
 /** Offset 0x066F - Teton Glacier Detection and Configuration Mode
-  Enables support for Teton Glacier hybrid storage device. 0: Disabled; 1: Static
-  Configuration 2: Dynamic Configuration. Default is 0: Disabled
+  Enables support for Teton Glacier hybrid storage device. 0: Disabled; 1: Deprecated
+  2: Dynamic Configuration. Default is 0: Disabled
   0: Disabled, 1: Static Configuration, 2: Dynamic Configuration
 **/
   UINT8                       TetonGlacierMode;

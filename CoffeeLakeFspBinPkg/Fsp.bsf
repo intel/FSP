@@ -754,7 +754,11 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PcieRpGen3EqPh3Method          24 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PcieRpPhysicalSlotNumber       24 bytes    $_DEFAULT_ = 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17
         $gPlatformFspPkgTokenSpaceGuid_PcieRpCompletionTimeout        24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        Skip 106 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrOverrideEnable         1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrHighIdleTimeOverride   4 bytes    $_DEFAULT_ = 0x00000000
+        $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrMediumIdleTimeOverride   4 bytes    $_DEFAULT_ = 0x00000000
+        $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrLowIdleTimeOverride    4 bytes    $_DEFAULT_ = 0x00000000
+        Skip 93 bytes
         $gPlatformFspPkgTokenSpaceGuid_PcieRpAspm                     24 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04
         $gPlatformFspPkgTokenSpaceGuid_PcieRpL1Substates              24 bytes    $_DEFAULT_ = 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03
         $gPlatformFspPkgTokenSpaceGuid_PcieRpLtrEnable                24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
@@ -3277,6 +3281,17 @@ Page "PCH 2"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRpCompletionTimeout, "PCIE RP Completion Timeout", HEX,
         Help "The root port completion timeout(see: PCH_PCIE_COMPLETION_TIMEOUT). Default is PchPcieCompletionTO_Default."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrOverrideEnable, "Enable xHCI LTR override", &EN_DIS,
+        Help "Enables override of recommended LTR values for xHCI"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrHighIdleTimeOverride, "xHCI High Idle Time LTR override", HEX,
+        Help "Value used for overriding LTR recommendation for xHCI High Idle Time LTR setting"
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrMediumIdleTimeOverride, "xHCI Medium Idle Time LTR override", HEX,
+        Help "Value used for overriding LTR recommendation for xHCI Medium Idle Time LTR setting"
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrLowIdleTimeOverride, "xHCI Low Idle Time LTR override", HEX,
+        Help "Value used for overriding LTR recommendation for xHCI Low Idle Time LTR setting"
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRpAspm, "PCIE RP Aspm", HEX,
         Help "The ASPM configuration of the root port (see: PCH_PCIE_ASPM_CONTROL). Default is PchPcieAspmAutoConfig."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
@@ -3312,7 +3327,7 @@ Page "PCH 2"
     Combo $gPlatformFspPkgTokenSpaceGuid_TetonGlacierSupport, "Teton Glacier Support", &EN_DIS,
         Help "Deprecated"
     EditNum $gPlatformFspPkgTokenSpaceGuid_TetonGlacierCR, "Teton Glacier Cycle Router", HEX,
-        Help "Specify to which cycle router Teton Glacier is connected, it is valid only when Teton Glacier support is enabled. Default is 0 for CNP-H system and 1 for CNP-LP system "
+        Help "Deprecated"
              "Valid range: 0x0 ~ 0x02"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchPmPmeB0S5Dis, "PCH Pm PME_B0_S5_DIS", &EN_DIS,
         Help "When cleared (default), wake events from PME_B0_STS are allowed in S5 if PME_B0_EN = 1."
@@ -3325,7 +3340,7 @@ Page "PCH 2"
         Help "Selects PCIE root port number for IMR feature."
              "Valid range: 0x0 ~ 23"
     Combo $gPlatformFspPkgTokenSpaceGuid_TetonGlacierMode, "Teton Glacier Detection and Configuration Mode", &gPlatformFspPkgTokenSpaceGuid_TetonGlacierMode,
-        Help "Enables support for Teton Glacier hybrid storage device. 0: Disabled; 1: Static Configuration 2: Dynamic Configuration. Default is 0: Disabled"
+        Help "Enables support for Teton Glacier hybrid storage device. 0: Disabled; 1: Deprecated 2: Dynamic Configuration. Default is 0: Disabled"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchPmWolEnableOverride, "PCH Pm Wol Enable Override", &EN_DIS,
         Help "Corresponds to the WOL Enable Override bit in the General PM Configuration B (GEN_PMCON_B) register."
     Combo $gPlatformFspPkgTokenSpaceGuid_PchPmPcieWakeFromDeepSx, "PCH Pm Pcie Wake From DeepSx", &EN_DIS,
