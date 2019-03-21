@@ -2321,9 +2321,15 @@ typedef struct {
 **/
   UINT8                       MrcTrainOnWarm;
 
-/** Offset 0x0517
+/** Offset 0x0517 - Lpddr Dram Odt
+  Override Enable/Disable for the ODT logic for LPDDR3 memory. Default is 2 (AUTO)
+  0:Disable, 1:Enable, 2:AUTO
 **/
-  UINT8                       ReservedFspmUpd[8];
+  UINT8                       LpddrDramOdt;
+
+/** Offset 0x0518
+**/
+  UINT8                       ReservedFspmUpd[7];
 } FSP_M_CONFIG;
 
 /** Fsp M Test Configuration

@@ -188,7 +188,10 @@ typedef struct {
   UINT8                       SerialIoDevMode[12];
 
 /** Offset 0x007B - Address of PCH_DEVICE_INTERRUPT_CONFIG table.
-  The address of the table of PCH_DEVICE_INTERRUPT_CONFIG.
+  The address of the table of PCH_DEVICE_INTERRUPT_CONFIG. For FSP default setting,
+  the IRQ 16~23 are shared with internal PCI devices, and IRQ24 is assinged to SerialIo
+  SPI2 (0:18:6), IRQ32 is assigned to SerialIo I2C4 (0:25:0), IRQ33 is assigned to
+  SerialIo I2C4 (0:25:1), IRQ34 is assigned to SerialIo UART2 (0:25:2).
 **/
   UINT32                      DevIntConfigPtr;
 
@@ -823,11 +826,16 @@ typedef struct {
 **/
   UINT32                      BltBufferSize;
 
-/** Offset 0x023C - SaPostMemProductionRsvd
+/** Offset 0x023C - Program GT Chickent bits
+  Progarm the GT chicken bits in GTTMMADR + 0xD00 BITS [3:1]
+**/
+  UINT8                       ProgramGtChickenBits;
+
+/** Offset 0x023D - SaPostMemProductionRsvd
   Reserved for SA Post-Mem Production
   $EN_DIS
 **/
-  UINT8                       SaPostMemProductionRsvd[35];
+  UINT8                       SaPostMemProductionRsvd[34];
 
 /** Offset 0x025F - PCIE RP Disable Gen2PLL Shutdown and L1 Clock Gating Enable
   PCIE RP Disable Gen2PLL Shutdown and L1 Clock Gating Enable Workaround needed for

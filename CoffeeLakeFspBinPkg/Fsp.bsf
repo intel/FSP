@@ -431,7 +431,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_ThrtCkeMinTmrLpddr              1 bytes    $_DEFAULT_ = 0x40
         $gPlatformFspPkgTokenSpaceGuid_X2ApicOptOut                    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_MrcTrainOnWarm                  1 bytes    $_DEFAULT_ = 0x0
-        Skip 13 bytes
+        $gPlatformFspPkgTokenSpaceGuid_LpddrDramOdt                    1 bytes    $_DEFAULT_ = 0x2
+        Skip 12 bytes
         $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_BdatEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ScanExtGfxForLegacyOpRom        1 bytes    $_DEFAULT_ = 0x01
@@ -641,7 +642,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_DeltaT12PowerCycleDelay         2 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_BltBufferAddress                4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_BltBufferSize                   4 bytes    $_DEFAULT_ = 0x00000000
-        $gPlatformFspPkgTokenSpaceGuid_SaPostMemProductionRsvd        35 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ProgramGtChickenBits            1 bytes    $_DEFAULT_ = 0xE
+        $gPlatformFspPkgTokenSpaceGuid_SaPostMemProductionRsvd        34 bytes    $_DEFAULT_ = 0x00
         $gCoffeeLakeFspPkgTokenSpaceGuid_PcieRootPortGen2PllL1CgDisable  24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_AesEnable                       1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_Psi3Enable                      5 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01
@@ -1654,11 +1656,10 @@ List &gPlatformFspPkgTokenSpaceGuid_EdramTestMode
     Selection 2 , " EDRAM HW mode"
 EndList
 
-List &gPlatformFspPkgTokenSpaceGuid_Peg2MaxLinkSpeed
-    Selection 0 , "Auto"
-    Selection 1 , "Gen1"
-    Selection 2 , "Gen2"
-    Selection 3 , "Gen3"
+List &gPlatformFspPkgTokenSpaceGuid_LpddrDramOdt
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "AUTO"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_Peg1Gen3EqPh2Enable
@@ -1961,6 +1962,13 @@ EndList
 List &gPlatformFspPkgTokenSpaceGuid_DmiDeEmphasis
     Selection 0 , " -6dB"
     Selection 1 , " -3.5dB"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_Peg2MaxLinkSpeed
+    Selection 0 , "Auto"
+    Selection 1 , "Gen1"
+    Selection 2 , "Gen2"
+    Selection 3 , "Gen3"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_Gen3SwEqEnableVocTest
@@ -2472,6 +2480,8 @@ Page "Memory Reference Code 1"
              "Valid range: 0x0 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_MrcTrainOnWarm, "MRC Force training on Warm", &EN_DIS,
         Help "Enables/Disable the MRC training on warm boot"
+    Combo $gPlatformFspPkgTokenSpaceGuid_LpddrDramOdt, "Lpddr Dram Odt", &gPlatformFspPkgTokenSpaceGuid_LpddrDramOdt,
+        Help "Override Enable/Disable for the ODT logic for LPDDR3 memory. Default is 2 (AUTO)"
     Combo $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan, "Skip external display device scanning", &EN_DIS,
         Help "Enable: Do not scan for external display device, Disable (Default): Scan external display devices"
     Combo $gPlatformFspPkgTokenSpaceGuid_BdatEnable, "Generate BIOS Data ACPI Table", &EN_DIS,
@@ -2960,7 +2970,7 @@ Page "PCH 2"
         Help "0:Disabled, 1:PCI Mode, 2:Acpi mode, 3:Hidden mode (Legacy UART mode) - Enable/disable SerialIo I2C0,I2C1,I2C2,I2C3,I2C4,I2C5,SPI0,SPI1,SPI2,UART0,UART1,UART2 device mode respectively. One byte for each controller, byte0 for I2C0, byte1 for I2C1, and so on."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_DevIntConfigPtr, "Address of PCH_DEVICE_INTERRUPT_CONFIG table.", HEX,
-        Help "The address of the table of PCH_DEVICE_INTERRUPT_CONFIG."
+        Help "The address of the table of PCH_DEVICE_INTERRUPT_CONFIG. For FSP default setting, the IRQ 16~23 are shared with internal PCI devices, and IRQ24 is assinged to SerialIo SPI2 (0:18:6), IRQ32 is assigned to SerialIo I2C4 (0:25:0), IRQ33 is assigned to SerialIo I2C4 (0:25:1), IRQ34 is assigned to SerialIo UART2 (0:25:2). "
              "Valid range: 0x00 ~ 0xFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_NumOfDevIntConfig, "Number of DevIntConfig Entry", HEX,
         Help "Number of Device Interrupt Configuration Entry. If this is not zero, the DevIntConfigPtr must not be NULL."
@@ -3965,6 +3975,9 @@ Page "System Agent 2"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_BltBufferSize, "Blt Buffer Size", HEX,
         Help "Size of Blt Buffer, is equal to PixelWidth * PixelHeight * 4 bytes (the size of EFI_GRAPHICS_OUTPUT_BLT_PIXEL)"
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_ProgramGtChickenBits, "Program GT Chickent bits", HEX,
+        Help "Progarm the GT chicken bits in GTTMMADR + 0xD00 BITS [3:1]"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_SaPostMemProductionRsvd, "SaPostMemProductionRsvd", &EN_DIS,
         Help "Reserved for SA Post-Mem Production"
