@@ -1506,9 +1506,57 @@ typedef struct {
 **/
   UINT32                      PchUsbLtrLowIdleTimeOverride;
 
-/** Offset 0x056B
+/** Offset 0x056B - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 3
+  Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 3, Each
+  value in array can be between 0-1. One byte for each port.
 **/
-  UINT8                       UnusedUpdSpace15[93];
+  UINT8                       Usb3HsioTxRate3UniqTranEnable[10];
+
+/** Offset 0x0575 - USB 3.0 TX Output Unique Transition Bit Scale for rate 3
+  USB 3.0 TX Output Unique Transition Bit Scale for rate 3, HSIO_TX_DWORD9[6:0], <b>Default
+  = 4Ch</b>. One byte for each port.
+**/
+  UINT8                       Usb3HsioTxRate3UniqTran[10];
+
+/** Offset 0x057F - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 2
+  Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 2, Each
+  value in array can be between 0-1. One byte for each port.
+**/
+  UINT8                       Usb3HsioTxRate2UniqTranEnable[10];
+
+/** Offset 0x0589 - USB 3.0 TX Output Unique Transition Bit Scale for rate 2
+  USB 3.0 TX Output Unique Transition Bit Scale for rate 2, HSIO_TX_DWORD9[14:8],
+  <b>Default = 4Ch</b>. One byte for each port.
+**/
+  UINT8                       Usb3HsioTxRate2UniqTran[10];
+
+/** Offset 0x0593 - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 1
+  Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 1, Each
+  value in array can be between 0-1. One byte for each port.
+**/
+  UINT8                       Usb3HsioTxRate1UniqTranEnable[10];
+
+/** Offset 0x059D - USB 3.0 TX Output Unique Transition Bit Scale for rate 1
+  USB 3.0 TX Output Unique Transition Bit Scale for rate 1, HSIO_TX_DWORD9[22:16],
+  <b>Default = 4Ch</b>. One byte for each port.
+**/
+  UINT8                       Usb3HsioTxRate1UniqTran[10];
+
+/** Offset 0x05A7 - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 0
+  Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 0, Each
+  value in array can be between 0-1. One byte for each port.
+**/
+  UINT8                       Usb3HsioTxRate0UniqTranEnable[10];
+
+/** Offset 0x05B1 - USB 3.0 TX Output Unique Transition Bit Scale for rate 0
+  USB 3.0 TX Output Unique Transition Bit Scale for rate 0, HSIO_TX_DWORD9[30:24],
+  <b>Default = 4Ch</b>. One byte for each port.
+**/
+  UINT8                       Usb3HsioTxRate0UniqTran[10];
+
+/** Offset 0x05BB
+**/
+  UINT8                       UnusedUpdSpace15[13];
 
 /** Offset 0x05C8 - PCIE RP Aspm
   The ASPM configuration of the root port (see: PCH_PCIE_ASPM_CONTROL). Default is
