@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -635,9 +635,15 @@ typedef struct {
 **/
   UINT8                       PcdDmapX16;
 
-/** Offset 0x0093
+/** Offset 0x0093 - SSC Settings for ICC clock
+  SSC Settings for ICC clock Enable/Disable
+  1:Enabled, 0:Disabled
 **/
-  UINT8                       UnusedUpdSpace0[333];
+  UINT8                       SpsIccClkSscSetting;
+
+/** Offset 0x0094
+**/
+  UINT8                       UnusedUpdSpace0[332];
 
 /** Offset 0x01E0
 **/

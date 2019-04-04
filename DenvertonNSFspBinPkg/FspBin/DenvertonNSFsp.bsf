@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -80,6 +80,7 @@ StructDef
         $gHarrisonvilleFspPkgTokenSpaceGuid_PcdUsb3Port4Pin            1 bytes    $_DEFAULT_ = 8
         $gHarrisonvilleFspPkgTokenSpaceGuid_PcdIOxAPIC0_199            1 bytes    $_DEFAULT_ = 0
         $gHarrisonvilleFspPkgTokenSpaceGuid_PcdDmapX16                 1 bytes    $_DEFAULT_ = 0x0
+        $gHarrisonvilleFspPkgTokenSpaceGuid_SpsIccClkSscSetting        1 bytes    $_DEFAULT_ = 0x1
 
     Find "DNVUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x01
@@ -167,6 +168,11 @@ List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdHsioLanesNumber
     Selection 10 , "10"
     Selection 12 , "12"
     Selection 20 , "20"
+EndList
+
+List &gHarrisonvilleFspPkgTokenSpaceGuid_SpsIccClkSscSetting
+    Selection 1 , "Enabled"
+    Selection 0 , "Disabled"
 EndList
 
 List &gHarrisonvilleFspPkgTokenSpaceGuid_PcdActiveCoreCount
@@ -601,6 +607,8 @@ Page "Platform Specific"
         Help "Enable/disable IOxAPIC 24-119 entries"
     Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdDmapX16, "DMAP_X16", &EN_DIS,
         Help "Enable/Disable DMAP_X16 dynamic MRC field indicating memory device width is x16 or not"
+    Combo $gHarrisonvilleFspPkgTokenSpaceGuid_SpsIccClkSscSetting, "SSC Settings for ICC clock", &gHarrisonvilleFspPkgTokenSpaceGuid_SpsIccClkSscSetting,
+        Help "SSC Settings for ICC clock Enable/Disable"
 EndPage
 
 Page "MRC & Early SoC"
