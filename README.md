@@ -1,7 +1,7 @@
 # Intel® Firmware Support Package (Intel® FSP) Binaries
 Repository of Intel FSP binaries posted by Intel
 
-# Intel® FSP Home Page 
+# Intel® FSP Home Page
 <https://www.intel.com/FSP>
 
 ## Wiki
@@ -21,7 +21,7 @@ Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Ato
 5th Generation Intel® Core™ processors and chipsets (formerly Broadwell) | BroadwellFspBinPkg | v1.0
 Intel® Xeon® Processor D Product Family (formerly Broadwell-DE) | BroadwellDEFspBinPkg | v1.0
 3rd Generation Intel® Core™ processors with mobile Intel® HM76 and QM77 chipsets  (formerly Chief River Platform: Ivy Bridge and Panther Point) | ChiefRiverFspBinPkg | v1.0
-8th Generation Intel® Core™ processors and chipsets (formerly Coffee Lake) | CoffeeLakeFspBinPkg | v2.0
+8th Generation Intel® Core™ processors and chipsets (formerly Coffee Lake and Whiskey Lake) | CoffeeLakeFspBinPkg | v2.0
 Intel® Xeon® E3-1125C v2, E3-1105C v2, Intel® Pentium® B925C, Intel® Core™ i3-3115C for communication infrastructure with Intel® Communication Chipset 89xx Series Platform Controller Hub (formerly Crystal Forest Refresh: Ivy Bridge Gladden and Cave Creek) | CrystalForestIvyBridgeFspBinPkg | v1.0
 Intel® Atom™ processor C3XXX product family (formerly Denverton) | DenvertonNSFspBinPkg | v2.0
 7th Generation Intel® Core™ processors and chipsets (formerly Kaby Lake) | KabylakeFspBinPkg | v2.0
