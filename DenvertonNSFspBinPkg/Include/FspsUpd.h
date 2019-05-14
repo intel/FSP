@@ -308,7 +308,7 @@ typedef struct {
 /** Offset 0x00E0
 **/
   UINT8                       ReservedSiliconInitUpd[16];
-} FSPS_CONFIG;
+} FSP_S_CONFIG;
 
 /** Fsp S UPD Configuration
 **/
@@ -320,7 +320,7 @@ typedef struct {
 
 /** Offset 0x0020
 **/
-  FSPS_CONFIG                 FspsConfig;
+  FSP_S_CONFIG                 FspsConfig;
 
 /** Offset 0x00F0
 **/

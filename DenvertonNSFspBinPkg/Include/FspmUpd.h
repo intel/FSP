@@ -648,7 +648,7 @@ typedef struct {
 /** Offset 0x01E0
 **/
   UINT8                       ReservedMemoryInitUpd[16];
-} FSPM_CONFIG;
+} FSP_M_CONFIG;
 
 /** Fsp M UPD Configuration
 **/
@@ -664,7 +664,7 @@ typedef struct {
 
 /** Offset 0x0040
 **/
-  FSPM_CONFIG                 FspmConfig;
+  FSP_M_CONFIG                 FspmConfig;
 
 /** Offset 0x01F0
 **/

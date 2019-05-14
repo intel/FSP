@@ -77,7 +77,7 @@ typedef struct {
 /** Offset 0x0041
 **/
   UINT8                       ReservedTempRamInitUpd[31];
-} FSPT_CONFIG;
+} FSP_T_CONFIG;
 
 /** Fsp T UPD Configuration
 **/
@@ -93,7 +93,7 @@ typedef struct {
 
 /** Offset 0x0040
 **/
-  FSPT_CONFIG                 FsptConfig;
+  FSP_T_CONFIG                 FsptConfig;
 
 /** Offset 0x0060
 **/
