@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
   @copyright
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -60,7 +60,8 @@ StructDef
         Skip 2 bytes
         $gKabylakeFspPkgTokenSpaceGuid_SmbusEnable                     1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_EnableTraceHub                  1 bytes    $_DEFAULT_ = 0x00
-        Skip 60 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_DpSscMarginEnable               1 bytes    $_DEFAULT_ = 0x00
+        Skip 59 bytes
         $gKabylakeFspPkgTokenSpaceGuid_IgdDvmt50PreAlloc               1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_InternalGfx                     1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_ApertureSize                    1 bytes    $_DEFAULT_ = 0x01
@@ -241,7 +242,7 @@ StructDef
         $gSiPkgTokenSpaceGuid_PcdSerialIoUartNumber                    1 bytes    $_DEFAULT_ = 0x02
         $gSiPkgTokenSpaceGuid_PcdIsaSerialUartBase                     1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PchPmPciePllSsc                 1 bytes    $_DEFAULT_ = 0xFF
-        $gKabylakeFspPkgTokenSpaceGuid_PeciC10Reset                    1 bytes    $_DEFAULT_ = 0x00
+        $gKabylakeFspPkgTokenSpaceGuid_PeciC10Reset                    1 bytes    $_DEFAULT_ = 0x1
         $gKabylakeFspPkgTokenSpaceGuid_PeciSxReset                     1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_PcdSerialDebugBaudRate          1 bytes    $_DEFAULT_ = 0x07
         $gKabylakeFspPkgTokenSpaceGuid_PcdSerialDebugLevel             1 bytes    $_DEFAULT_ = 0x03
@@ -381,7 +382,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_WatchDogTimerBios               2 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_AmtSolEnabled                   1 bytes    $_DEFAULT_ = 0x0
         $gKabylakeFspPkgTokenSpaceGuid_PcieRpClkSrcNumber             24 bytes    $_DEFAULT_ = 0x02, 0x1f, 0x1f, 0x1f, 0x03, 0x01, 0x1f, 0x1f, 0x05, 0x04, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f
-        Skip 139 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_PcieRpForceClkDisableWhenRpDisable  24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        Skip 115 bytes
         $gKabylakeFspPkgTokenSpaceGuid_DefaultSvid                     2 bytes    $_DEFAULT_ = 0x8086
         $gKabylakeFspPkgTokenSpaceGuid_DefaultSid                      2 bytes    $_DEFAULT_ = 0x2015
         $gKabylakeFspPkgTokenSpaceGuid_CridEnable                      1 bytes    $_DEFAULT_ = 0x0
@@ -398,9 +400,10 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_X2ApicOptOut                    1 bytes    $_DEFAULT_ = 0x0
         Skip 1 bytes
         $gKabylakeFspPkgTokenSpaceGuid_VtdBaseAddress                  8 bytes    $_DEFAULT_ = 0x00,0x00,0xD9,0xFE,0x00,0x10,0xD9,0xFE
-        Skip 19 bytes
-        $gKabylakeFspPkgTokenSpaceGuid_SaPostMemProductionRsvd        16 bytes    $_DEFAULT_ = 0x00
-        Skip 7 bytes
+        $gPlatformFspPkgTokenSpaceGuid_ProgramGtChickenBits            1 bytes    $_DEFAULT_ = 0xE
+        Skip 18 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_SaPostMemProductionRsvd        15 bytes    $_DEFAULT_ = 0x00
+        Skip 8 bytes
         $gKabylakeFspPkgTokenSpaceGuid_Psi3Enable                      5 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01
         $gKabylakeFspPkgTokenSpaceGuid_Psi4Enable                      5 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01
         $gKabylakeFspPkgTokenSpaceGuid_ImonSlope                       5 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00
@@ -1575,6 +1578,9 @@ Page "Sunrise Point PCH"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_PcieRpClkSrcNumber, "Configure CLKSRC Number", HEX,
         Help "Configure Root Port CLKSRC Number. Each value in arrary can be between 0-6 for valid clock numbers or 0x1F for an invalid number. One byte for each port, byte0 for port1, byte1 for port2, and so on."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gKabylakeFspPkgTokenSpaceGuid_PcieRpForceClkDisableWhenRpDisable, "Force Disable clock ", HEX,
+        Help "Disables clock even if link is inactive default value is 0"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_DefaultSvid, "Subsystem Vendor ID for SA devices", HEX,
         Help "Subsystem ID that will be programmed to SA devices: Default SubSystemVendorId=0x8086"
              "Valid range: 0x00 ~ 0xFFFF"
@@ -1611,6 +1617,9 @@ Page "Sunrise Point PCH"
         Help "0=Disable/Clear, 1=Enable/Set"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_VtdBaseAddress, "Base addresses for VT-d function MMIO access", HEX,
         Help "Base addresses for VT-d MMIO access per VT-d engine"
+             "Valid range: 0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_ProgramGtChickenBits, "Program GT Chicken bits", HEX,
+        Help "Progarm the GT chicken bits in GTTMMADR + 0xD00 BITS [3:1]"
              "Valid range: 0 ~ 0xFFFFFFFF"
     Combo $gKabylakeFspPkgTokenSpaceGuid_SaPostMemProductionRsvd, "SaPostMemProductionRsvd", &EN_DIS,
         Help "Reserved for SA Post-Mem Production"
@@ -1947,7 +1956,7 @@ Page "Sunrise Point PCH"
         Help "Specifies the Pcie Pll Spread Spectrum Percentage. The default is 0xFF: AUTO - No BIOS override."
              "Valid range: 0x0 ~ 0xFF"
     Combo $gKabylakeFspPkgTokenSpaceGuid_PeciC10Reset, "Enable or Disable Peci C10 Reset command", &EN_DIS,
-        Help "Enable or Disable Peci C10 Reset command; <b>0: Disable;</b> 1: Enable."
+        Help "Enable or Disable Peci C10 Reset command; 0: Disable; <b>1: Enable.</b>"
     Combo $gKabylakeFspPkgTokenSpaceGuid_PeciSxReset, "Enable or Disable Peci Sx Reset command", &EN_DIS,
         Help "Enable or Disable Peci Sx Reset command; <b>0: Disable;</b> 1: Enable."
     Combo $gKabylakeFspPkgTokenSpaceGuid_PcdSerialDebugBaudRate, "PcdSerialDebugBaudRate", &gKabylakeFspPkgTokenSpaceGuid_PcdSerialDebugBaudRate,
@@ -2284,7 +2293,7 @@ Page "Sunrise Point PCH"
     Combo $gKabylakeFspPkgTokenSpaceGuid_SerialIoGpio, "Enable Pch Serial IO GPIO", &EN_DIS,
         Help "Determines if enable Serial IO GPIO."
     EditNum $gKabylakeFspPkgTokenSpaceGuid_SerialIoI2cVoltage, "IO voltage for I2C controllers", HEX,
-        Help "Selects the IO voltage for I2C controllers, 0: PchSerialIoIs33V, 1: PchSerialIoIs18V."
+        Help "Selects the IO voltage for I2C controllers, 0: PchSerialIoIs33V, 1: PchSerialIoIs18V. Note: I2C 2/3/4/5 does not support 3.3V (only 1.8V), due to GPIO GPP_F limitation"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFF"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_SerialIoSpiCsPolarity, "SPI ChipSelect signal polarity", HEX,
         Help "Selects SPI ChipSelect signal polarity."
@@ -2858,6 +2867,8 @@ Page "Memory Reference Code"
         Help "Enable/disable SMBus controller."
     Combo $gKabylakeFspPkgTokenSpaceGuid_EnableTraceHub, "Enable Trace Hub", &EN_DIS,
         Help "Enable/disable Trace Hub function."
+    Combo $gKabylakeFspPkgTokenSpaceGuid_DpSscMarginEnable, "DpSscMarginEnable", &EN_DIS,
+        Help "Enable/Disable. 0: Disable, Use default DisplayPort SSC modulation range 0.5% down spread, 1: Enable DisplayPort SSC range reduction. Note this should only be used on systems that exceeds allowed SSC modulation range as defined in VESA's spec"
     Combo $gKabylakeFspPkgTokenSpaceGuid_IgdDvmt50PreAlloc, "Internal Graphics Pre-allocated Memory", &gKabylakeFspPkgTokenSpaceGuid_IgdDvmt50PreAlloc,
         Help "Size of memory preallocated for internal graphics."
     Combo $gKabylakeFspPkgTokenSpaceGuid_InternalGfx, "Internal Graphics", &EN_DIS,

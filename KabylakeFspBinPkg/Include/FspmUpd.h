@@ -1,7 +1,7 @@
 /** @file
 
   @copyright
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -186,9 +186,17 @@ typedef struct {
 **/
   UINT8                       EnableTraceHub;
 
-/** Offset 0x00A7
+/** Offset 0x00A7 - DpSscMarginEnable
+  Enable/Disable. 0: Disable, Use default DisplayPort SSC modulation range 0.5% down
+  spread, 1: Enable DisplayPort SSC range reduction. Note this should only be used
+  on systems that exceeds allowed SSC modulation range as defined in VESA's spec
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace2[60];
+  UINT8                       DpSscMarginEnable;
+
+/** Offset 0x00A8
+**/
+  UINT8                       UnusedUpdSpace2[59];
 
 /** Offset 0x00E3 - Internal Graphics Pre-allocated Memory
   Size of memory preallocated for internal graphics.
@@ -1202,7 +1210,7 @@ typedef struct {
   UINT8                       PchPmPciePllSsc;
 
 /** Offset 0x0510 - Enable or Disable Peci C10 Reset command
-  Enable or Disable Peci C10 Reset command; <b>0: Disable;</b> 1: Enable.
+  Enable or Disable Peci C10 Reset command; 0: Disable; <b>1: Enable.</b>
   $EN_DIS
 **/
   UINT8                       PeciC10Reset;

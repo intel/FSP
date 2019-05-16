@@ -1,7 +1,7 @@
 /** @file
 
   @copyright
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -459,9 +459,14 @@ typedef struct {
 **/
   UINT8                       PcieRpClkSrcNumber[24];
 
-/** Offset 0x0175
+/** Offset 0x0175 - Force Disable clock 
+  Disables clock even if link is inactive default value is 0
 **/
-  UINT8                       UnusedUpdSpace6[139];
+  UINT8                       PcieRpForceClkDisableWhenRpDisable[24];
+
+/** Offset 0x018D
+**/
+  UINT8                       UnusedUpdSpace6[115];
 
 /** Offset 0x0200 - Subsystem Vendor ID for SA devices
   Subsystem ID that will be programmed to SA devices: Default SubSystemVendorId=0x8086
@@ -552,19 +557,24 @@ typedef struct {
 **/
   UINT32                      VtdBaseAddress[2];
 
-/** Offset 0x0224
+/** Offset 0x0224 - Program GT Chicken bits
+  Progarm the GT chicken bits in GTTMMADR + 0xD00 BITS [3:1]
 **/
-  UINT8                       UnusedUpdSpace8[19];
+  UINT8                       ProgramGtChickenBits;
+
+/** Offset 0x0225
+**/
+  UINT8                       UnusedUpdSpace8[18];
 
 /** Offset 0x0237 - SaPostMemProductionRsvd
   Reserved for SA Post-Mem Production
   $EN_DIS
 **/
-  UINT8                       SaPostMemProductionRsvd[16];
+  UINT8                       SaPostMemProductionRsvd[15];
 
-/** Offset 0x0247
+/** Offset 0x0246
 **/
-  UINT8                       UnusedUpdSpace9[7];
+  UINT8                       UnusedUpdSpace9[8];
 
 /** Offset 0x024E - Power State 3 enable/disable
   PCODE MMIO Mailbox: Power State 3 enable/disable; 0: Disable; <b>1: Enable</b>.
@@ -1732,6 +1742,7 @@ typedef struct {
 
 /** Offset 0x06CB - IO voltage for I2C controllers
   Selects the IO voltage for I2C controllers, 0: PchSerialIoIs33V, 1: PchSerialIoIs18V.
+  Note: I2C 2/3/4/5 does not support 3.3V (only 1.8V), due to GPIO GPP_F limitation
 **/
   UINT8                       SerialIoI2cVoltage[6];
 

@@ -213,6 +213,7 @@ $Int_LFP_AUX_Channel                      1 byte      ; eDP AUX channel
 SKIP                                      11 bytes    ; Skip 11 bytes
 $Int_LFP_Dp_Boost_Magnitude               4 bits      ; eDP IBoost magnitude level
 SKIP                                      4 bits      ; Skip HDMI IBoost magnitude level field for LFP struct
+SKIP                                      1 byte      ; Skip DP Max link rate for EDP.
 
 ; Internal EFP (HDMI/DP) Data structure
 ; Device 1
@@ -267,6 +268,7 @@ $EFP1_DP_Port_Trace_Length                4 bits      ; DP port trace length for
 SKIP                                      3 bytes     ; GPIO resource ID and GPIO number
 $Int_EFP1_Dp_Boost_Magnitude              4 bits      ; DP IBoost magnitude level
 $Int_EFP1_Hdmi_Boost_Magnitude            4 bits      ; HDMI IBoost magnitude level
+SKIP                                      1 byte      ; Skip DP Max link rate
 
 ; Device 2
 SKIP                                      2 bytes     ; Skip Device Handle
@@ -320,6 +322,7 @@ $EFP2_DP_Port_Trace_Length                4 bits      ; DP port trace length for
 SKIP                                      3 bytes     ; GPIO resource ID and GPIO number
 $Int_EFP2_Dp_Boost_Magnitude              4 bits      ; DP IBoost magnitude level
 $Int_EFP2_Hdmi_Boost_Magnitude            4 bits      ; HDMI IBoost magnitude level
+SKIP                                      1 byte      ; Skip DP Max link rate.
 
 ; Device 3
 SKIP                                      2 bytes     ; Skip Device Handle
@@ -373,6 +376,7 @@ $EFP3_DP_Port_Trace_Length                4 bits      ; DP port trace length for
 SKIP                                      3 bytes     ; GPIO resource ID and GPIO number
 $Int_EFP3_Dp_Boost_Magnitude              4 bits      ; DP IBoost magnitude level
 $Int_EFP3_Hdmi_Boost_Magnitude            4 bits      ; HDMI IBoost magnitude level
+SKIP                                      1 byte      ; Skip DP Max link rate
 
 ; Device 4
 SKIP                                      2 bytes     ; Skip Device Handle
@@ -426,10 +430,11 @@ $EFP4_DP_Port_Trace_Length                4 bits      ; DP port trace length for
 SKIP                                      3 bytes     ; GPIO resource ID and GPIO number
 $Int_EFP4_Dp_Boost_Magnitude              4 bits      ; DP IBoost magnitude level
 $Int_EFP4_Hdmi_Boost_Magnitude            4 bits      ; HDMI IBoost magnitude level
+SKIP                                      1 byte      ; Skip DP Max link rate
 
-SKIP                                      38 bytes    ; Skip device data structure
-SKIP                                      38 bytes    ; Skip device data structure
-SKIP                                      38 bytes    ; Skip device data structure
+SKIP                                      39 bytes    ; Skip device data structure
+SKIP                                      39 bytes    ; Skip device data structure
+SKIP                                      39 bytes    ; Skip device data structure
 
 ;==============================================================================
 ; Block 3 - Original Display Toggle List
@@ -2870,6 +2875,7 @@ List    &Pwm_Source_List
   Selection       0x2,        "PWM From Display Engine"
   ; Selection       0x3,        "PWM From LCD Panel"
   Selection       0x4,        "Panel driver interface (OLED)"
+  Selection       0x5,        "VESA eDP AUX Interface"
 EndList
 
 List    &Dp_Port_Trace_Length_List
@@ -2892,7 +2898,7 @@ EndInfoBlock
 ;------------------------------------------------------------------------------
 Page      "VBT Information"
   Title     "PLATFORM : Skylake/Kabylake"
-  Title     "VBT version: 212"
+  Title     "VBT version: 221"
 
   #IF       $LVDS_Config == 3
     Title     "Supported LFP type: eDP"
