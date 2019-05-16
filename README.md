@@ -15,6 +15,7 @@ Each FSP project will be hosted in a separate directory.
 
 FSP Project Name | Directory Name | FSP Specification Version
 :--------------- | :------------- | :------------------------
+8th & 7th Generation Intel® Core™ processors and chipsets (formerly Amber Lake, Kaby Lake Refresh, and Kaby Lake) | AmberlakeFspBinPkg | v2.1
 Intel® Atom™ processor E3900 product family (formerly Apollo Lake) | ApolloLakeFspBinPkg | v2.0
 Intel® Atom™ processor E3800 product family (formerly Bay Trail) | BayTrailFspBinPkg | v1.0
 Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Atom™ x5-E8000 Processor (formerly Braswell) | BraswellFspBinPkg | v1.1
