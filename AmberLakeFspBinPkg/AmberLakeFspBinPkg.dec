@@ -1,0 +1,19 @@
+## @file
+#  Component description file for AmberLake Fsp Bin package.
+#
+# @copyright
+#  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+# @par Specification
+##
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = KabylakeFspBinPkg
+  PACKAGE_GUID                   = 5A536013-A46E-44AD-8B30-738235F77B06
+  PACKAGE_VERSION                = 1.02
+
+[Includes]
+  Include
