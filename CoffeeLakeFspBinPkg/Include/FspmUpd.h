@@ -2327,9 +2327,15 @@ typedef struct {
 **/
   UINT8                       LpddrDramOdt;
 
-/** Offset 0x0518
+/** Offset 0x0518 - DDR4 Skip Refresh Enable
+  Enable/Disable of DDR4 Temperature Controlled Refresh on DRAM. Default is 1 (Enabled)
+  0:Disable, 1:Enable
 **/
-  UINT8                       ReservedFspmUpd[7];
+  UINT8                       Ddr4SkipRefreshEn;
+
+/** Offset 0x0519
+**/
+  UINT8                       ReservedFspmUpd[6];
 } FSP_M_CONFIG;
 
 /** Fsp M Test Configuration

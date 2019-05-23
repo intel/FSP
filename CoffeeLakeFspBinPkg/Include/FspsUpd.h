@@ -511,9 +511,11 @@ typedef struct {
 **/
   UINT8                       Heci3Enabled;
 
-/** Offset 0x014E
+/** Offset 0x014E - HECI1 state
+  Determine if HECI1 is hidden prior to boot to OS. <b>0: Disable</b>; 1: Enable.
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace4;
+  UINT8                       Heci1Disabled;
 
 /** Offset 0x014F - PCHHOT# pin
   Enable PCHHOT# pin assertion when temperature is higher than PchHotLevel. 0: disable, 1: enable
@@ -621,7 +623,7 @@ typedef struct {
 
 /** Offset 0x0162
 **/
-  UINT8                       UnusedUpdSpace5[1];
+  UINT8                       UnusedUpdSpace4[1];
 
 /** Offset 0x0163 - PCH PCIe root port connection type
   0: built-in device, 1:slot
@@ -673,7 +675,7 @@ typedef struct {
 
 /** Offset 0x01FD
 **/
-  UINT8                       UnusedUpdSpace6[3];
+  UINT8                       UnusedUpdSpace5[3];
 
 /** Offset 0x0200 - Enable/Disable SA CRID
   Enable: SA CRID, Disable (Default): SA CRID
@@ -729,7 +731,7 @@ typedef struct {
 
 /** Offset 0x0219
 **/
-  UINT8                       UnusedUpdSpace7;
+  UINT8                       UnusedUpdSpace6;
 
 /** Offset 0x021A - Enable or disable GNA device
   0=Disable, 1(Default)=Enable
@@ -958,7 +960,7 @@ typedef struct {
 
 /** Offset 0x02BB
 **/
-  UINT8                       UnusedUpdSpace8[10];
+  UINT8                       UnusedUpdSpace7[10];
 
 /** Offset 0x02C5 - DcLoadline
   PCODE MMIO Mailbox: DcLoadline in 1/100 mOhms (ie. 1250 = 12.50 mOhm); Range is
@@ -1026,7 +1028,7 @@ typedef struct {
 
 /** Offset 0x0306
 **/
-  UINT8                       UnusedUpdSpace9[6];
+  UINT8                       UnusedUpdSpace8[6];
 
 /** Offset 0x030C - Deprecated DO NOT USE Skip Multi-Processor Initialization
   @deprecated SkipMpInit has been moved to FspmUpd
@@ -1193,7 +1195,7 @@ typedef struct {
 
 /** Offset 0x0367
 **/
-  UINT8                       UnusedUpdSpace10;
+  UINT8                       UnusedUpdSpace9;
 
 /** Offset 0x0368 - VC Type
   Virtual Channel Type Select: 0: VC0, 1: VC1.
@@ -1240,7 +1242,7 @@ typedef struct {
 
 /** Offset 0x0378
 **/
-  UINT8                       UnusedUpdSpace11[5];
+  UINT8                       UnusedUpdSpace10[5];
 
 /** Offset 0x037D - Enable PCH Io Apic Entry 24-119
   0: Disable; 1: Enable.
@@ -1255,7 +1257,7 @@ typedef struct {
 
 /** Offset 0x037F
 **/
-  UINT8                       UnusedUpdSpace12;
+  UINT8                       UnusedUpdSpace11;
 
 /** Offset 0x0380 - Enable PCH ISH SPI GPIO pins assigned
   0: Disable; 1: Enable.
@@ -1355,7 +1357,7 @@ typedef struct {
 
 /** Offset 0x0390
 **/
-  UINT8                       UnusedUpdSpace13[3];
+  UINT8                       UnusedUpdSpace12[3];
 
 /** Offset 0x0393 - Enable LOCKDOWN BIOS LOCK
   Enable the BIOS Lock feature and set EISS bit (D31:F5:RegDCh[5]) for the BIOS region
@@ -1461,7 +1463,7 @@ typedef struct {
 
 /** Offset 0x04FA
 **/
-  UINT8                       UnusedUpdSpace14[4];
+  UINT8                       UnusedUpdSpace13[4];
 
 /** Offset 0x04FE - PCIE RP Pcie Speed
   Determines each PCIE Port speed capability. 0: Auto; 1: Gen1; 2: Gen2; 3: Gen3 (see:
@@ -1556,7 +1558,7 @@ typedef struct {
 
 /** Offset 0x05BB
 **/
-  UINT8                       UnusedUpdSpace15[13];
+  UINT8                       UnusedUpdSpace14[13];
 
 /** Offset 0x05C8 - PCIE RP Aspm
   The ASPM configuration of the root port (see: PCH_PCIE_ASPM_CONTROL). Default is
@@ -1615,7 +1617,7 @@ typedef struct {
 
 /** Offset 0x0664
 **/
-  UINT8                       UnusedUpdSpace16;
+  UINT8                       UnusedUpdSpace15;
 
 /** Offset 0x0665 - PCIE Compliance Test Mode
   Compliance Test Mode shall be enabled when using Compliance Load Board.
@@ -1763,7 +1765,7 @@ typedef struct {
 
 /** Offset 0x067E
 **/
-  UINT8                       UnusedUpdSpace17[2];
+  UINT8                       UnusedUpdSpace16[2];
 
 /** Offset 0x0680 - PCH Pm Lpc Clock Run
   This member describes whether or not the LPC ClockRun feature of PCH should be enabled.
@@ -1797,7 +1799,7 @@ typedef struct {
 
 /** Offset 0x0685
 **/
-  UINT8                       UnusedUpdSpace18;
+  UINT8                       UnusedUpdSpace17;
 
 /** Offset 0x0686 - PCH Pm Disable Native Power Button
   Power button native mode disable.
@@ -1837,7 +1839,7 @@ typedef struct {
 
 /** Offset 0x068C
 **/
-  UINT8                       UnusedUpdSpace19;
+  UINT8                       UnusedUpdSpace18;
 
 /** Offset 0x068D - PCH Sata Pwr Opt Enable
   SATA Power Optimizer on PCH side.
@@ -2026,7 +2028,7 @@ typedef struct {
 
 /** Offset 0x0700
 **/
-  UINT8                       UnusedUpdSpace20;
+  UINT8                       UnusedUpdSpace19;
 
 /** Offset 0x0701 - PcdSerialIoUart0PinMuxing
   Select SerialIo Uart0 pin muxing. Setting applicable only if SerialIO UART0 is enabled.
@@ -2036,7 +2038,7 @@ typedef struct {
 
 /** Offset 0x0702
 **/
-  UINT8                       UnusedUpdSpace21[1];
+  UINT8                       UnusedUpdSpace20[1];
 
 /** Offset 0x0703 - Enables UART hardware flow control, CTS and RTS lines
   Enables UART hardware flow control, CTS and RTS linesh.
@@ -2309,7 +2311,7 @@ typedef struct {
 
 /** Offset 0x0753
 **/
-  UINT8                       UnusedUpdSpace22;
+  UINT8                       UnusedUpdSpace21;
 
 /** Offset 0x0754 - Pch PCIE device override table pointer
   The PCIe device table is being used to override PCIe device ASPM settings. This
@@ -3350,7 +3352,7 @@ typedef struct {
 
 /** Offset 0x0A61
 **/
-  UINT8                       UnusedUpdSpace23[17];
+  UINT8                       UnusedUpdSpace22[17];
 
 /** Offset 0x0A72 - Skip POSTBOOT SAI
   Deprecated

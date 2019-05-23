@@ -427,7 +427,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_X2ApicOptOut                    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_MrcTrainOnWarm                  1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_LpddrDramOdt                    1 bytes    $_DEFAULT_ = 0x2
-        Skip 12 bytes
+        $gPlatformFspPkgTokenSpaceGuid_Ddr4SkipRefreshEn               1 bytes    $_DEFAULT_ = 0x1
+        Skip 11 bytes
         $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_BdatEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ScanExtGfxForLegacyOpRom        1 bytes    $_DEFAULT_ = 0x01
@@ -583,7 +584,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchCnviMfUart1Type              1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchEspiLgmrEnable               1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_Heci3Enabled                    1 bytes    $_DEFAULT_ = 0x0
-        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_Heci1Disabled                   1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PchHotEnable                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SataLedEnable                   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchPmVrAlert                    1 bytes    $_DEFAULT_ = 0x00
@@ -1157,6 +1158,11 @@ List &gPlatformFspPkgTokenSpaceGuid_SlpS0DisQForDebug
     Selection 1 , "DCI OOB"
     Selection 2 , "USB2 DbC"
     Selection 3 , "Auto"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_Ddr4SkipRefreshEn
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_Peg2Enable
@@ -2485,6 +2491,8 @@ Page "Memory Reference Code 1"
         Help "Enables/Disable the MRC training on warm boot"
     Combo $gPlatformFspPkgTokenSpaceGuid_LpddrDramOdt, "Lpddr Dram Odt", &gPlatformFspPkgTokenSpaceGuid_LpddrDramOdt,
         Help "Override Enable/Disable for the ODT logic for LPDDR3 memory. Default is 2 (AUTO)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Ddr4SkipRefreshEn, "DDR4 Skip Refresh Enable", &gPlatformFspPkgTokenSpaceGuid_Ddr4SkipRefreshEn,
+        Help "Enable/Disable of DDR4 Temperature Controlled Refresh on DRAM. Default is 1 (Enabled)"
     Combo $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan, "Skip external display device scanning", &EN_DIS,
         Help "Enable: Do not scan for external display device, Disable (Default): Scan external display devices"
     Combo $gPlatformFspPkgTokenSpaceGuid_BdatEnable, "Generate BIOS Data ACPI Table", &EN_DIS,
@@ -3099,6 +3107,8 @@ Page "PCH 2"
         Help "This option enables or disables espi lgmr"
     Combo $gPlatformFspPkgTokenSpaceGuid_Heci3Enabled, "HECI3 state", &EN_DIS,
         Help "The HECI3 state from Mbp for reference in S3 path or when MbpHob is not installed. 0: disable, 1: enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Heci1Disabled, "HECI1 state", &EN_DIS,
+        Help "Determine if HECI1 is hidden prior to boot to OS. <b>0: Disable</b>; 1: Enable."
     Combo $gPlatformFspPkgTokenSpaceGuid_PchHotEnable, "PCHHOT# pin", &EN_DIS,
         Help "Enable PCHHOT# pin assertion when temperature is higher than PchHotLevel. 0: disable, 1: enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_SataLedEnable, "SATA LED", &EN_DIS,
