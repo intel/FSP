@@ -586,7 +586,7 @@ Page "Platform Specific"
     Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdMemoryThermalThrottling, "Memory Thermal Throttling", &EN_DIS,
         Help "Enable/disable Memory Thermal Throttling management mode"
     Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdSkipMemoryTest, "Memory Test", &EN_DIS,
-        Help "Enable / Disable Memory Test, refer to FSP Integration Guide for details."
+        Help "Enable / Disable Memory Test, refer to FSP Integration Guide for details. When set to 1, Memory Test is skipped."
     Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdUsb2Port1Pin, "USB2 Port 1 OC Pin", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdUsb2Port1Pin,
         Help "Map selected OC pin to the port"
     Combo $gHarrisonvilleFspPkgTokenSpaceGuid_PcdUsb2Port2Pin, "USB2 Port 2 OC Pin", &gHarrisonvilleFspPkgTokenSpaceGuid_PcdUsb2Port2Pin,
