@@ -667,7 +667,8 @@ StructDef
         $gKabylakeFspPkgTokenSpaceGuid_Early8254ClockGatingEnable      1 bytes    $_DEFAULT_ = 0x00
         $gKabylakeFspPkgTokenSpaceGuid_SataRstOptaneMemory             1 bytes    $_DEFAULT_ = 0x01
         $gKabylakeFspPkgTokenSpaceGuid_SataRstCpuAttachedStorage       1 bytes    $_DEFAULT_ = 0x01
-        Skip 2 bytes
+        $gKabylakeFspPkgTokenSpaceGuid_HybridStorageMode               1 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
         $gKabylakeFspPkgTokenSpaceGuid_PchPcieDeviceOverrideTablePtr   4 bytes    $_DEFAULT_ = 0x00000000
         $gKabylakeFspPkgTokenSpaceGuid_EnableTcoTimer                  1 bytes    $_DEFAULT_ = 0x00
         $gSkylakeFspPkgTokenSpaceGuid_EcCmdProvisionEav                1 bytes    $_DEFAULT_ = 0xFF
@@ -2913,6 +2914,8 @@ Page "Sunrise Point PCH"
         Help "Optane Memory"
     Combo $gKabylakeFspPkgTokenSpaceGuid_SataRstCpuAttachedStorage, "PCH SATA RST CPU attached storage", &EN_DIS,
         Help "RST CPU attached storage"
+    Combo $gKabylakeFspPkgTokenSpaceGuid_HybridStorageMode, "Hybrid Storage Mode", &EN_DIS,
+        Help "Enables support for Hybrid storage devices. 0: Disabled; 1: Dynamic Configuration. Default is 0: Disabled"
     EditNum $gKabylakeFspPkgTokenSpaceGuid_PchPcieDeviceOverrideTablePtr, "Pch PCIE device override table pointer", HEX,
         Help "The PCIe device table is being used to override PCIe device ASPM settings. This is a pointer points to a 32bit address. And it's only used in PostMem phase. Please refer to PCH_PCIE_DEVICE_OVERRIDE structure for the table. Last entry VendorId must be 0."
              "Valid range: 0x00 ~ 0xFFFFFFFF"

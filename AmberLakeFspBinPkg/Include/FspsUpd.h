@@ -2010,9 +2010,16 @@ typedef struct {
 **/
   UINT8                       SataRstCpuAttachedStorage;
 
-/** Offset 0x0722
+/** Offset 0x0722 - Hybrid Storage Mode
+  Enables support for Hybrid storage devices. 0: Disabled; 1: Dynamic Configuration.
+  Default is 0: Disabled
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace18[2];
+  UINT8                       HybridStorageMode;
+
+/** Offset 0x0723
+**/
+  UINT8                       UnusedUpdSpace18;
 
 /** Offset 0x0724 - Pch PCIE device override table pointer
   The PCIe device table is being used to override PCIe device ASPM settings. This
