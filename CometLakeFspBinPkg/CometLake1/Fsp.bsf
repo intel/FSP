@@ -1148,6 +1148,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SdCardTxDataDelay2RegValue      4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_SdCardRxCmdDataDelay1RegValue   4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_SdCardRxCmdDataDelay2RegValue   4 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_EnforceEDebugMode               1 bytes    $_DEFAULT_ = 0x0
 
 EndStruct
 
@@ -4775,6 +4776,8 @@ Page "PCH 1"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SdCardRxCmdDataDelay2RegValue, "SdCard Rx CMD + DATA Delay control 2 register value", HEX,
         Help "Please see Rx CMD + DATA Delay control 2 register definition for help"
              "Valid range: 0x00 ~ 0xFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_EnforceEDebugMode, "Enforce Enhanced Debug Mode", &EN_DIS,
+        Help "Determine if ME should enter Enhanced Debug Mode. 0: disable, 1: enable"
 EndPage
 
 Page "PCH 2"
