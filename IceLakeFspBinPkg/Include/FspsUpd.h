@@ -3459,7 +3459,7 @@ typedef struct {
 
 /** Offset 0x0A3E - Mask to enable the usage of external V1p05 VR rail in specific S0ix or Sx states
   Enable External V1P05 Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5,
-  Default is set to 0x1F for ICL-YN and 0 for all other skus.
+  Default is set to 0x1F for ICL-UN/YN and 0 for all other skus.
 **/
   UINT8                       PchFivrExtV1p05RailEnabledStates;
 
@@ -3479,7 +3479,7 @@ typedef struct {
 
 /** Offset 0x0A43 - Mask to enable the usage of external Vnn VR rail in specific S0ix or Sx states
   Enable External Vnn Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5,
-  Default is set to 0x1F for ICL-YN and 0 for all other skus.
+  Default is set to 0x1F for ICL-UN/YN and 0 for all other skus.
 **/
   UINT8                       PchFivrExtVnnRailEnabledStates;
 
@@ -3495,7 +3495,7 @@ typedef struct {
 
 /** Offset 0x0A47 - Mask to enable the usage of external Vnn VR rail in Sx states
   Use only if Ext Vnn Rail config is different in Sx. Enable External Vnn Rail in
-  Sx: BIT0-1:Reserved, BIT2:S3, BIT3:S4, BIT5:S5, Default is set to 0x1C for ICL-YN
+  Sx: BIT0-1:Reserved, BIT2:S3, BIT3:S4, BIT5:S5, Default is set to 0x1C for ICL-UN/YN
   and 0 for all other skus.
 **/
   UINT8                       PchFivrExtVnnRailSxEnabledStates;

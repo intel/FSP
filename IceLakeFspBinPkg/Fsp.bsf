@@ -320,7 +320,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_EnableC6Dram                    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_BiosGuard                       1 bytes    $_DEFAULT_ = 0x01
         Skip 1 bytes
-        $gPlatformFspPkgTokenSpaceGuid_EnableSgx                       1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_EnableSgx                       1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_Txt                             1 bytes    $_DEFAULT_ = 0x00
         Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_PrmrrSize                       4 bytes    $_DEFAULT_ = 0x00000000
@@ -463,7 +463,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PegImrSize                      2 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_EnableAbove4GBMmio              1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_LoadMgUcFw                      1 bytes    $_DEFAULT_ = 0x00
-        Skip 30 bytes
+        $gPlatformFspPkgTokenSpaceGuid_ITbtVtdEnable                   1 bytes    $_DEFAULT_ = 0x0
+        Skip 29 bytes
         $gPlatformFspPkgTokenSpaceGuid_HeciTimeouts                    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DidInitStat                     1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DisableCpuReplacedPolling       1 bytes    $_DEFAULT_ = 0x0
@@ -2019,6 +2020,11 @@ List &gPlatformFspPkgTokenSpaceGuid_Peg3Enable
     Selection 2 , "AUTO"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_ITbtVtdEnable
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_DmiTS1TW
     Selection 0 , "x1"
     Selection 1 , "x2"
@@ -3095,6 +3101,8 @@ Page "System Agent 1"
         Help "Enable/disable above 4GB MMIO resource support"
     Combo $gPlatformFspPkgTokenSpaceGuid_LoadMgUcFw, "Control Load MG uC FW", &EN_DIS,
         Help "Enable/disable Load MG uC FW"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ITbtVtdEnable, "Enable/Disable ITbtVtd", &gPlatformFspPkgTokenSpaceGuid_ITbtVtdEnable,
+        Help "Disabled(0x0): Disable ITbtVtd, Enabled(0x1): Enable ITbtVtd"
 EndPage
 
 Page "PCH 2"
@@ -3873,7 +3881,7 @@ Page "PCH 2"
         Help "Decides the temperature."
              "Valid range: 0x00 ~ 0xFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtV1p05RailEnabledStates, "Mask to enable the usage of external V1p05 VR rail in specific S0ix or Sx states", HEX,
-        Help "Enable External V1P05 Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5, Default is set to 0x1F for ICL-YN and 0 for all other skus."
+        Help "Enable External V1P05 Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5, Default is set to 0x1F for ICL-UN/YN and 0 for all other skus."
              "Valid range: 0x00 ~ 0x1F"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtV1p05RailVoltage, "External V1P05 Voltage Value that will be used in S0i2/S0i3 states", HEX,
         Help "Value is given in 2.5mV increments (0=0mV, 1=2.5mV, 2=5mV...)"
@@ -3882,7 +3890,7 @@ Page "PCH 2"
         Help "Granularity of this setting is 1mA and maximal possible value is 200mA"
              "Valid range: 0x0 ~ 0xC8"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtVnnRailEnabledStates, "Mask to enable the usage of external Vnn VR rail in specific S0ix or Sx states", HEX,
-        Help "Enable External Vnn Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5, Default is set to 0x1F for ICL-YN and 0 for all other skus."
+        Help "Enable External Vnn Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5, Default is set to 0x1F for ICL-UN/YN and 0 for all other skus."
              "Valid range: 0x00 ~ 0x1F"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtVnnRailVoltage, "External Vnn Voltage Value that will be used in S0ix/Sx states", HEX,
         Help "Value is given in 2.5mV increments (0=0mV, 1=2.5mV, 2=5mV...), Default is set to 420"
@@ -3891,7 +3899,7 @@ Page "PCH 2"
         Help "Granularity of this setting is 1mA and maximal possible value is 200mA"
              "Valid range: 0x0 ~ 0xC8"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtVnnRailSxEnabledStates, "Mask to enable the usage of external Vnn VR rail in Sx states", HEX,
-        Help "Use only if Ext Vnn Rail config is different in Sx. Enable External Vnn Rail in Sx: BIT0-1:Reserved, BIT2:S3, BIT3:S4, BIT5:S5, Default is set to 0x1C for ICL-YN and 0 for all other skus."
+        Help "Use only if Ext Vnn Rail config is different in Sx. Enable External Vnn Rail in Sx: BIT0-1:Reserved, BIT2:S3, BIT3:S4, BIT5:S5, Default is set to 0x1C for ICL-UN/YN and 0 for all other skus."
              "Valid range: 0x00 ~ 0x1F"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtVnnRailSxVoltage, "External Vnn Voltage Value that will be used in Sx states", HEX,
         Help "Use only if Ext Vnn Rail config is different in Sx. Value is given in 2.5mV increments (0=0mV, 1=2.5mV, 2=5mV...)"

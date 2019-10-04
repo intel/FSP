@@ -94,7 +94,7 @@ ALIGN
 
 ; bmp_Bits_3
 SKIP                                      2 bits      ; Skip 2 bits
-$180_Deg_Rotation_Enable                  1 bit       ; 180 degree rotation enable for LFP in GOP driver.
+SKIP                                      1 bit       ; Obsolete.
 SKIP                                      5 bits      ; Skip remaining bits.
 ALIGN
 
@@ -884,20 +884,20 @@ ALIGN
 $VBT_Customization_Version                1 byte      ; Customization VBT version number
 
 ; bmp_Driver_Feature_Flags
-$PM_RMPM_Enable                           1 bit       ; Intel Rapid Memory Power Management (RMPM) Enable/Disable Flag.
-$PM_S2DDT_Enable                          1 bit       ; Intel Smart 2D Display Technology (S2DDT) Enable/Disable Flag.
-$PM_DPST_Enable                           1 bit       ; Intel Display Power Saving Technology (DPST) Enable/Disable Flag.
+$PM_RMPM_Enable                           1 bit       ; Intel® Rapid Memory Power Management (RMPM) Enable/Disable Flag.
+$PM_S2DDT_Enable                          1 bit       ; Intel® Smart 2D Display Technology (S2DDT) Enable/Disable Flag.
+SKIP                                      1 bit       ; Obsolete.
 $PM_BLC_Enable                            1 bit       ; Backlight Control (BLC) Enable/Disable Flag.
-$PM_ADB_Enable                            1 bit       ; Intel Automatic Display Brightness (ADB) Enable/Disable Flag.
-$PM_DRRS_Enable                           1 bit       ; Intel Display Refresh Rate Switching (DRRS) Enable/Disable Flag.
+SKIP                                      1 bit       ; Obsolete.
+SKIP                                      1 bit       ; Obsolete.
 $PM_RS_Enable                             1 bit       ; Graphics Render Standby (RS) Enable/Disable Flag.
 $PM_GPMT_Enable                           1 bit       ; Obsolete
 $PM_Turbo_Enable                          1 bit       ; Intel Turbo Boost Technology Enable/Disable Flag.
-$Panel_Self_Refresh                       1 bit       ; Panel Self refresh feature (PSR)
+SKIP                                      1 bit       ; Obsolete.
 $Inter_Pixel_Storage                      1 bit       ; Hidden feature.
 $Dynamic_FPS_Enable                       1 bit       ; Dynamic Frames per second(DFPS) feature Enable/Disable Flag.
-$DMRRS                                    1 bit       ; Dynamic media refresh rate enable/disable
-$ADT                                      1 bit       ; Assertive display technology enable/disable
+SKIP                                      1 bit       ; Obsolete.
+SKIP                                      1 bit       ; Obsolete.
 $HPD_Wake                                 1 bit       ; HPD events routing to display driver when system is in S0ix/DC9, enable/disable
 $PC_Fields_Enable                         1 bit       ; PC Feature field's validity Flag.
 ALIGN
@@ -1626,6 +1626,23 @@ $LcdVcc_On_During_S0_State_14             1 bit       ; Enable flag to keep LCDV
 $LcdVcc_On_During_S0_State_15             1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #15
 $LcdVcc_On_During_S0_State_16             1 bit       ; Enable flag to keep LCDVCC on during S0 state bit for panel #16
 
+$Panel_Rotation_01                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_02                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_03                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_04                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_05                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_06                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_07                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_08                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_09                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_10                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_11                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_12                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_13                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_14                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_15                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+$Panel_Rotation_16                        2 bits      ;  00 = 0 Degree, 01 = 90 Degree, 10 = 180 Degree, 11 = 270 Degree.
+
 ;==============================================================================
 ; Block 41 - Flat Panel Data Tables Pointers
 ;------------------------------------------------------------------------------
@@ -2236,18 +2253,200 @@ $Lfp_Pwm_Controller_Selection_16          4 bits      ; Pwm Controller Selection
 
 SKIP                                      3 bytes     ; Skip block ID and size
 
-SKIP                                      1 bit       ; Reserved
-$BIA_Aggress_Level                        3 bits      ; Power Conservation Preference level
-SKIP                                      1 bit       ; Reserved
-$LACE_Enabled_Status                      1 bit       ; Default Display LACE enabled status
-$Display_LACE_Support                     1 bit       ; Display LACE support
-SKIP                                      1 bit
+SKIP                                      1 byte      ; Obsolete.
+
 ALIGN
 
 $ALS_Response_Data                        20 bytes    ; ALS Response Data
 
-$Agressiveness_Profile                    3 bits      ; Display LACE aggressiveness level profile
+SKIP                                      3 bits      ; Obsolete.
 SKIP                                      5 bits      ; Reserved
+
+$DPST_Enable_01                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #01.
+$DPST_Enable_02                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #02.
+$DPST_Enable_03                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #03.
+$DPST_Enable_04                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #04.
+$DPST_Enable_05                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #05.
+$DPST_Enable_06                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #06.
+$DPST_Enable_07                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #07.
+$DPST_Enable_08                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #08.
+$DPST_Enable_09                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #09.
+$DPST_Enable_10                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #10.
+$DPST_Enable_11                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #11.
+$DPST_Enable_12                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #12.
+$DPST_Enable_13                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #13.
+$DPST_Enable_14                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #14.
+$DPST_Enable_15                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #15.
+$DPST_Enable_16                           1 bit       ; Intel® Display Power Saving Technology (DPST) Enable/Disable Flag for Panel #16.
+
+$PSR_Enable_01                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #01.
+$PSR_Enable_02                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #02.
+$PSR_Enable_03                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #03.
+$PSR_Enable_04                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #04.
+$PSR_Enable_05                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #05.
+$PSR_Enable_06                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #06.
+$PSR_Enable_07                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #07.
+$PSR_Enable_08                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #08.
+$PSR_Enable_09                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #09.
+$PSR_Enable_10                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #10.
+$PSR_Enable_11                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #11.
+$PSR_Enable_12                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #12.
+$PSR_Enable_13                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #13.
+$PSR_Enable_14                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #14.
+$PSR_Enable_15                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #15.
+$PSR_Enable_16                            1 bit       ; Panel Self refresh feature (PSR) Enable/Disable Flag for Panel #16.
+
+$DRRS_Enable_01                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #01.
+$DRRS_Enable_02                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #02.
+$DRRS_Enable_03                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #03.
+$DRRS_Enable_04                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #04.
+$DRRS_Enable_05                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #05.
+$DRRS_Enable_06                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #06.
+$DRRS_Enable_07                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #07.
+$DRRS_Enable_08                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #08.
+$DRRS_Enable_09                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #09.
+$DRRS_Enable_10                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #10.
+$DRRS_Enable_11                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #11.
+$DRRS_Enable_12                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #12.
+$DRRS_Enable_13                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #13.
+$DRRS_Enable_14                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #14.
+$DRRS_Enable_15                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #15.
+$DRRS_Enable_16                           1 bit       ; Intel® Display Refresh Rate Switching (DRRS) Enable/Disable Flag for Panel #16.
+
+$LACE_Enable_01                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #01.
+$LACE_Enable_02                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #02.
+$LACE_Enable_03                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #03.
+$LACE_Enable_04                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #04.
+$LACE_Enable_05                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #05.
+$LACE_Enable_06                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #06.
+$LACE_Enable_07                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #07.
+$LACE_Enable_08                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #08.
+$LACE_Enable_09                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #09.
+$LACE_Enable_10                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #10.
+$LACE_Enable_11                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #11.
+$LACE_Enable_12                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #12.
+$LACE_Enable_13                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #13.
+$LACE_Enable_14                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #14.
+$LACE_Enable_15                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #15.
+$LACE_Enable_16                           1 bit       ; Display LACE Support Feature Enable/Disable Flag for Panel #16.
+
+
+$ADT_Enable_01                            1 bit       ; Assertive display technology enable/disable for Panel #01.
+$ADT_Enable_02                            1 bit       ; Assertive display technology enable/disable for Panel #02.
+$ADT_Enable_03                            1 bit       ; Assertive display technology enable/disable for Panel #03.
+$ADT_Enable_04                            1 bit       ; Assertive display technology enable/disable for Panel #04.
+$ADT_Enable_05                            1 bit       ; Assertive display technology enable/disable for Panel #05.
+$ADT_Enable_06                            1 bit       ; Assertive display technology enable/disable for Panel #06.
+$ADT_Enable_07                            1 bit       ; Assertive display technology enable/disable for Panel #07.
+$ADT_Enable_08                            1 bit       ; Assertive display technology enable/disable for Panel #08.
+$ADT_Enable_09                            1 bit       ; Assertive display technology enable/disable for Panel #09.
+$ADT_Enable_10                            1 bit       ; Assertive display technology enable/disable for Panel #10.
+$ADT_Enable_11                            1 bit       ; Assertive display technology enable/disable for Panel #11.
+$ADT_Enable_12                            1 bit       ; Assertive display technology enable/disable for Panel #12.
+$ADT_Enable_13                            1 bit       ; Assertive display technology enable/disable for Panel #13.
+$ADT_Enable_14                            1 bit       ; Assertive display technology enable/disable for Panel #14.
+$ADT_Enable_15                            1 bit       ; Assertive display technology enable/disable for Panel #15.
+$ADT_Enable_16                            1 bit       ; Assertive display technology enable/disable for Panel #16.
+
+$DMRRS_Enable_01                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #01.
+$DMRRS_Enable_02                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #02.
+$DMRRS_Enable_03                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #03.
+$DMRRS_Enable_04                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #04.
+$DMRRS_Enable_05                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #05.
+$DMRRS_Enable_06                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #06.
+$DMRRS_Enable_07                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #07.
+$DMRRS_Enable_08                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #08.
+$DMRRS_Enable_09                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #09.
+$DMRRS_Enable_10                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #10.
+$DMRRS_Enable_11                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #11.
+$DMRRS_Enable_12                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #12.
+$DMRRS_Enable_13                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #13.
+$DMRRS_Enable_14                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #14.
+$DMRRS_Enable_15                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #15.
+$DMRRS_Enable_16                          1 bit       ; Dynamic media refresh rate enable/disable for Panel #16.
+
+$ADB_Enable_01                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #01.
+$ADB_Enable_02                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #02.
+$ADB_Enable_03                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #03.
+$ADB_Enable_04                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #04.
+$ADB_Enable_05                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #05.
+$ADB_Enable_06                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #06.
+$ADB_Enable_07                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #07.
+$ADB_Enable_08                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #08.
+$ADB_Enable_09                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #09.
+$ADB_Enable_10                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #10.
+$ADB_Enable_11                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #11.
+$ADB_Enable_12                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #12.
+$ADB_Enable_13                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #13.
+$ADB_Enable_14                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #14.
+$ADB_Enable_15                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #15.
+$ADB_Enable_16                            1 bit       ; Intel® Automatic Display Brightness (ADB) Enable/Disable Flag for Panel #16.
+
+$LACE_Status_01                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #01.
+$LACE_Status_02                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #02.
+$LACE_Status_03                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #03.
+$LACE_Status_04                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #04.
+$LACE_Status_05                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #05.
+$LACE_Status_06                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #06.
+$LACE_Status_07                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #07.
+$LACE_Status_08                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #08.
+$LACE_Status_09                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #09.
+$LACE_Status_10                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #10.
+$LACE_Status_11                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #11.
+$LACE_Status_12                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #12.
+$LACE_Status_13                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #13.
+$LACE_Status_14                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #14.
+$LACE_Status_15                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #15.
+$LACE_Status_16                           1 bit       ;Default Display LACE Status  enable/disable Flag for Panel #16.
+
+$DPST_Aggressiveness_Profile_01           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #01.
+$LACE_Aggressiveness_Profile_01           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #01.
+
+$DPST_Aggressiveness_Profile_02           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #02.
+$LACE_Aggressiveness_Profile_02           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #02.
+
+$DPST_Aggressiveness_Profile_03           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #03.
+$LACE_Aggressiveness_Profile_03           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #03.
+
+$DPST_Aggressiveness_Profile_04           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #04.
+$LACE_Aggressiveness_Profile_04           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #04.
+
+$DPST_Aggressiveness_Profile_05           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #05.
+$LACE_Aggressiveness_Profile_05           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #05.
+
+$DPST_Aggressiveness_Profile_06           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #06.
+$LACE_Aggressiveness_Profile_06           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #06.
+
+$DPST_Aggressiveness_Profile_07           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #07.
+$LACE_Aggressiveness_Profile_07           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #07.
+
+$DPST_Aggressiveness_Profile_08           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #08.
+$LACE_Aggressiveness_Profile_08           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #08.
+
+$DPST_Aggressiveness_Profile_09           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #09.
+$LACE_Aggressiveness_Profile_09           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #09.
+
+$DPST_Aggressiveness_Profile_10           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #10.
+$LACE_Aggressiveness_Profile_10           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #10.
+
+$DPST_Aggressiveness_Profile_11           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #11.
+$LACE_Aggressiveness_Profile_11           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #11.
+
+$DPST_Aggressiveness_Profile_12           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #12.
+$LACE_Aggressiveness_Profile_12           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #12.
+
+$DPST_Aggressiveness_Profile_13           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #13.
+$LACE_Aggressiveness_Profile_13           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #13.
+
+$DPST_Aggressiveness_Profile_14           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #14.
+$LACE_Aggressiveness_Profile_14           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #14.
+
+$DPST_Aggressiveness_Profile_15           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #15.
+$LACE_Aggressiveness_Profile_15           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #15.
+
+$DPST_Aggressiveness_Profile_16           4 bits      ;DPST Aggressiveness profile Input Selection for Panel #16.
+$LACE_Aggressiveness_Profile_16           4 bits      ;Lace Aggressiveness profile Input Selection for Panel #16.
+
 ;==============================================================================
 ; Block 46 - Chromaticity  Support
 ;------------------------------------------------------------------------------
@@ -2856,6 +3055,7 @@ List    &Panel_List
   Selection       0x0D,       "PANEL #14"
   Selection       0x0E,       "PANEL #15"
   Selection       0x0F,       "PANEL #16"
+  Selection       0xFF,       "PANEL #FF"
 EndList
 
 List    &eDP_VSwing_Preemph_table_List
@@ -2930,7 +3130,7 @@ EndList
 
 List    &wait_line_link
   Selection       0x00,       "0 lines to wait"
-  Selection       0x01,       "2 lines to wait"
+  Selection       0x01,       "1 lines to wait"
   Selection       0x02,       "4 lines to wait"
   Selection       0x03,       "8 lines to wait"
 EndList
@@ -2987,7 +3187,7 @@ EndInfoBlock
 ;------------------------------------------------------------------------------
 Page      "VBT Information"
   Title     "PLATFORM : Icelake U/Y"
-  Title     "VBT version: 224"
+  Title     "VBT version: 228"
 
   #IF       ($LFP_Device_Class == 0x1806)
     Title     "Supported LFP type: eDP"
@@ -3241,17 +3441,12 @@ Page      "OS Graphics driver Configuration"
 
     Combo     $PC_Fields_Enable, "  PC Features Control Options", &Disabled_Enabled_List,
     Help      "This feature determines the validity of the following PC Features Control Options.\r\n\r\n"
-              "1.  Intel Rapid Memory Power Management (RMPM)\r\n"
-              "2.  Intel Smart 2D Display Technology (S2DDT)\r\n"
-              "3.  Intel Display Power Saving Technology (DPST) (Mobile only)\r\n"
-              "4.  DxgkDDI Backlight Control (DxgkDdiBLC) (Mobile only)\r\n"
-              "5.  Intel Automatic Display Brightness (ADB) (Mobile only)\r\n"
-              "6.  Intel Display Refresh Rate Switching (DRRS) (Mobile only)\r\n"
-              "7.  Graphics Render Standby (RS)\r\n"
-              "8.  Intel Turbo Boost Technology\r\n"
-              "9.  Dynamic Frames Per Second (DFPS)\r\n"
-              "10. Dynamic Media Refresh Rate Switching (DMRRS)\r\n"
-              "11. Assertive Display Technology (ADT)\r\n\r\n"
+              "1.  Intel® Rapid Memory Power Management (RMPM)\r\n"
+              "2.  Intel® Smart 2D Display Technology (S2DDT)\r\n"
+              "3.  DxgkDDI Backlight Control (DxgkDdiBLC) (Mobile only)\r\n"
+              "4.  Graphics Render Standby (RS)\r\n"
+              "5.  Intel® Turbo Boost Technology\r\n"
+              "6.  Dynamic Frames Per Second (DFPS)\r\n"
               "Note: Enable and Save the changes to display all the PC Features Control Options\r\n"
 
     Combo     $PM_RMPM_Enable, "\tIntel Rapid Memory Power Management (RMPM)", &Disabled_Enabled_List,
@@ -3260,39 +3455,8 @@ Page      "OS Graphics driver Configuration"
     Combo     $PM_S2DDT_Enable, "\tIntel Smart 2D Display Technology (S2DDT)", &Disabled_Enabled_List,
     Help      "This feature determines whether Intel Smart 2D Display Technology (S2DDT) is to be enabled. "
 
-    Combo     $PM_DPST_Enable, "\tIntel Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
-    Help      "This feature determines whether the Intel Display Power Savings Technology (DPST) is enabled or disabled. "
-              "Intel DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
-              "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
-              "the LFP is the only active display device."
-
-    Combo     $BIA_Aggress_Level, "\t\tDPST Aggressiveness Level (Mobile only)", &Pwr_Pref_List,
-    Help      "This feature defines the Intel Display Power Saving Technology aggressiveness level if and only if "
-              "the feature Intel Display Power Saving Technology is enabled."
-              "\r\n\r\nThe following are the definitions for each level:"
-              "\r\n1 - Maximum Quality - shall use no DPST "
-              "\r\n2 - Provides  the user the maximum brightness for their embedded Local Flat Panel (LFP)while DPST is in use"
-              "\r\n3 - This level defines maximum amount of brightness with minimal power savings"
-              "\r\n4 - This level defines an intermediate value for brightness amount"
-              "\r\n5 - This level defines an intermediate value for the brightness amount"
-              "\r\n6 - Maximum Battery - Provided the user with the minimum amount of "
-              "brightness capable for their LFP with the maximum power savings"
-
     Combo     $PM_BLC_Enable, "\tDxgkDDI Brightness Control Method (Mobile only)", &Disabled_Enabled_List,
     Help      "This option determines whether the Vista, Win7, and future version DxgkDDI LFP Brightness Control method is to be enabled. "
-
-    Combo     $PM_ADB_Enable, "\tIntel Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
-    Help      "This feature determines whether Intel Automatic Display Brightness is to be enabled. "
-              "Intel Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
-              "depending on the current ambient light environment. "
-              "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
-              "depending on the ambient environment if and only if the LFP is the only active display. "
-              "When disabled, the driver will perform no action."
-
-    Link      "ADB Response Data (Mobile only)" , "ADB Response Data (Mobile only)"
-
-    Combo     $PM_DRRS_Enable, "\tIntel Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
-    Help      "This feature determines whether Intel Display Refresh Rate Switching (DRRS) is to be enabled."
 
     Combo     $PM_RS_Enable, "\tGraphics Render Standby (RS)", &Disabled_Enabled_List,
     Help      "This feature determines whether Graphics Render Standby (RS)is to be enabled."
@@ -3300,26 +3464,10 @@ Page      "OS Graphics driver Configuration"
     Combo     $PM_Turbo_Enable, "\tIntel Turbo Boost Technology", &Disabled_Enabled_List,
     Help      "This feature determines whether Intel Turbo Boost Technology is to be enabled."
 
-    Combo     $Panel_Self_Refresh, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
-    Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
-
     Combo     $Dynamic_FPS_Enable, "\tDynamic Frames Per Second (DFPS)", &Disabled_Enabled_List,
     Help      "This feature determines whether Dynamic Frames Per Second is to be enabled."
 
-    Combo     $DMRRS, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
-    Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled."
 
-    Combo     $ADT, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
-    Help      "This feature determines whether Assertive display technology is to be enabled. "
-
-    Combo     $Display_LACE_Support, "\tDisplay LACE support", &Supported_List,
-    Help      "This feature determines whether LACE is to be Supported."
-
-    Combo     $LACE_Enabled_Status, "\tDisplay LACE enabled status", &Disabled_Enabled_List,
-    Help      "This feature determines whether Display LACE is to be enabled. "
-
-    Combo     $Agressiveness_Profile, "\tLACE Aggressiveness Profile", &Aggressiveness_Level_Profile,
-    Help      "This field specifies the LACE Aggressiveness Profile Level. "
 
     Page      "ADB Response Data (Mobile only)"
       Link      "Close Table" , ".."
@@ -3369,8 +3517,9 @@ Page      "Integrated Display Configuration"
 
     Title     "    "
     Combo     $bmp_Panel_type, "Select Panel Type:", &Panel_List,
-    Help      "This feature selects the Local Flat Panel (LFP) the GOP and driver is to enable.\r\n\r\n"
-              "Default LFP parameter values:\r\n"
+    Help      "Select the Local Flat Panel (LFP) which display driver will enable.\r\n\r\n"
+              "If panel type is selected as 0xFF, Graphics Software will populate panel index by comparing actual PNP ID Data from panel to that of PNP ID Data for each panel in VBT."
+              "The panel index for which PNP ID Data matches with actual connected panel PNP ID Data is used by driver for all further references. EDID Read is assumed to be enabled if panel index is selected as 0xFF."
               "\tPANEL #01: 640x480 LFP\r\n"
               "\tPANEL #02: 800x600 LFP\r\n"
               "\tPANEL #03: 1024x768 LFP\r\n"
@@ -3394,10 +3543,6 @@ Page      "Integrated Display Configuration"
               "use its data to set appropriate timing on current panel. "
               "If disabled, there will be no attempt to read an EDID and "
               "other methods will be used to set panel timing."
-
-    Combo     $180_Deg_Rotation_Enable, "Enable 180 Degree Rotation:", &No_Yes_List,
-    Help      "This feature when set to yes, will enable 180 Degree rotation "
-              "otherwise, the rotation functionality will be disabled."
 
     Combo     $LFP_Lane_Reversal, "DDI Lane Reversal: ", &Disabled_Enabled_List,
     Help      "This feature, when enabled, will set lane reversal bit for Selected Port "
@@ -3482,6 +3627,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_01, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used. "
 
+      Combo     $Panel_Rotation_01, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_1, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -3524,6 +3672,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -3603,7 +3752,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_01, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -3646,6 +3795,58 @@ Page      "Integrated Display Configuration"
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
 
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_01, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_01, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_01, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_01, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $ADT_Enable_01, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_01, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_01, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action."
+
+        Combo     $LACE_Status_01, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_01, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"     
+                  
+        Combo     $LACE_Aggressiveness_Profile_01, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"         
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -3860,6 +4061,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_02, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used. "
 
+      Combo     $Panel_Rotation_02, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_2, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -3902,6 +4106,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -3982,7 +4187,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_02, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -4025,6 +4230,58 @@ Page      "Integrated Display Configuration"
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
 
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_02, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_02, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_02, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_02, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $ADT_Enable_02, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_02, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_02, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_02, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_02, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"   
+                  
+        Combo     $LACE_Aggressiveness_Profile_02, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"   
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -4241,6 +4498,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_03, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used. "
 
+      Combo     $Panel_Rotation_03, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_3, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -4284,6 +4544,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -4364,7 +4625,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_03, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -4406,6 +4667,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_03, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_03, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_03, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_03, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_03, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $ADT_Enable_03, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_03, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_03, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_03, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_03, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"    
+                  
+        Combo     $LACE_Aggressiveness_Profile_03, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -4622,6 +4936,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_04, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used. "
 
+      Combo     $Panel_Rotation_04, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_4, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -4665,6 +4982,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -4745,7 +5063,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_04, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -4787,6 +5105,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_04, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_04, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_04, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_04, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_04, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $ADT_Enable_04, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_04, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_04, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_04, "\tDefault Display LACE Enabled status :", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_04, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST )\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"                  
+                  
+        Combo     $LACE_Aggressiveness_Profile_04, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Agressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -5003,6 +5374,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_05, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used. "
 
+      Combo     $Panel_Rotation_05, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_5, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -5045,6 +5419,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -5125,7 +5500,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_05, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -5167,6 +5542,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_05, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_05, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_05, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_05, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_05, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $ADT_Enable_05, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_05, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_05, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_05, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_05, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"                      
+                  
+        Combo     $LACE_Aggressiveness_Profile_05, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -5381,6 +5809,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_06, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_06, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_6, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -5423,6 +5854,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -5503,7 +5935,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_06, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -5545,6 +5977,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_06, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_06, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_06, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_06, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_06, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled."  
+
+        Combo     $ADT_Enable_06, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_06, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_06, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_06, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_06, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"   
+                  
+        Combo     $LACE_Aggressiveness_Profile_06, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"                   
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -5760,6 +6245,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_07, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_07, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_7, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -5802,6 +6290,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -5882,7 +6371,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_07, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -5924,6 +6413,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_07, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_07, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_07, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_07, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_07, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled. " 
+
+        Combo     $ADT_Enable_07, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_07, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_07, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_07, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_07, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type. \n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery) "                     
+                  
+        Combo     $LACE_Aggressiveness_Profile_07, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Agressiveness level for this Panel Type. \n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -6137,6 +6679,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_08, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_08, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_8, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -6179,6 +6724,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -6259,7 +6805,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_08, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -6301,6 +6847,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_08, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_08, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_08, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_08, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_08, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $ADT_Enable_08, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_08, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_08, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action."   
+
+        Combo     $LACE_Status_08, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_08, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"
+
+        Combo     $LACE_Aggressiveness_Profile_08, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Agressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -6515,6 +7114,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_09, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_09, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_9, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -6557,6 +7159,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -6637,7 +7240,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_09, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -6679,6 +7282,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_09, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_09, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_09, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_09, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_09, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled. "
+
+        Combo     $ADT_Enable_09, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_09, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_09, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action."  
+
+        Combo     $LACE_Status_09, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_09, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"      
+                  
+        Combo     $LACE_Aggressiveness_Profile_09, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Agressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"            
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -6892,6 +7548,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_10, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_10, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_10, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -6935,6 +7594,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -7015,7 +7675,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_10, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -7057,6 +7717,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_10, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_10, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_10, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_10, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_10, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled. "
+
+        Combo     $ADT_Enable_10, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_10, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_10, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action."   
+
+        Combo     $LACE_Status_10, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_10, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"
+                  
+        Combo     $LACE_Aggressiveness_Profile_10, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"                   
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -7270,6 +7983,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_11, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_11, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_11, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -7313,6 +8029,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -7393,7 +8110,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_11, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -7435,6 +8152,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_11, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_11, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_11, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_11, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_11, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled. " 
+
+        Combo     $ADT_Enable_11, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_11, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_11, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_11, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_11, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST  )\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"   
+                  
+        Combo     $LACE_Aggressiveness_Profile_11, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -7647,6 +8417,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_12, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_12, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_12, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -7689,6 +8462,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -7770,7 +8544,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_12, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -7812,6 +8586,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_12, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_12, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_12, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_12, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_12, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled. "
+
+        Combo     $ADT_Enable_12, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_12, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled."
+
+        Combo     $ADB_Enable_12, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_12, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_12, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"    
+                  
+        Combo     $LACE_Aggressiveness_Profile_12, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"             
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -8024,6 +8851,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_13, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_13, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_13, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -8067,6 +8897,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -8148,7 +8979,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_13, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -8190,6 +9021,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_13, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_13, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_13, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_13, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_13, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled. "
+
+        Combo     $ADT_Enable_13, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_13, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_13, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_13, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_13, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"               
+                  
+        Combo     $LACE_Aggressiveness_Profile_13, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -8402,6 +9286,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_14, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_14, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_14, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -8445,6 +9332,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -8525,7 +9413,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_14, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -8567,6 +9455,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_14, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_14, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_14, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_14, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_14, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled. "
+
+        Combo     $ADT_Enable_14, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_14, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_14, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_14, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_14, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"              
+                  
+        Combo     $LACE_Aggressiveness_Profile_14, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Agressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -8779,6 +9720,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_15, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_15, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_15, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -8821,6 +9765,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -8901,7 +9846,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_15, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -8943,6 +9888,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_15, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_15, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_15, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_15, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_15, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled. "
+
+        Combo     $ADT_Enable_15, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_15, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_15, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_15, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_15, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"       
+                  
+        Combo     $LACE_Aggressiveness_Profile_15, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."
@@ -9154,6 +10152,9 @@ Page      "Integrated Display Configuration"
       Combo     $eDP_Panel_Color_Depth_16, "\tPanel Color Depth:", &eDP_Panel_Color_Depth_List,
       Help      "This feature specifies the color depth of eDP panel used."
 
+      Combo     $Panel_Rotation_16, "Panel Rotation:", &Panel_Rotation_List,
+      Help      "This feature specifies the Panel Rotation of eDP panel used."
+
       Combo     $eDP_VswingPreEmph_16, "\tSelect VSwing/Pre-Emphasis table :", &eDP_VSwing_Preemph_table_List,
       Help      "This feature selects the VSwing Pre-Emphasis setting table to be used. "
                 "For Icelake, based on the selection respective table will be used.\r\n"
@@ -9196,6 +10197,7 @@ Page      "Integrated Display Configuration"
       Title     " "
       Link      "PSR feature" ,"PSR feature"
       Link      "Apical Feature" , "Apical Feature"
+      Link      "Power Features" , "Power Features"
 
       Page      "eDP Panel Power Sequencing"
         Link      "Close Table", ".."
@@ -9276,7 +10278,7 @@ Page      "Integrated Display Configuration"
         Combo     $PSR_Lines2Wait_B4LinkS3_16, "Lines to wait before link standby:", &wait_line_link,
         Help      "This field determines Lines to wait before link standby \n"
                   " 0 lines to wait (Default)\r\n"
-                  " 2 lines to wait\r\n"
+                  " 1 lines to wait\r\n"
                   " 4 lines to wait\r\n"
                   " 8 lines to wait\r\n"
                   " Others Reserved"
@@ -9318,6 +10320,59 @@ Page      "Integrated Display Configuration"
         EditNum   $eDP_Backlight_Scale_16, "\tBacklight scale", EHEX,
         Help      "This field specifies the Apical IP specific backlight scale field."
       EndPage   ; Apical Feature
+
+      Page      "Power Features"
+        Link      "Close Table" , ".."
+
+        Combo     $DPST_Enable_16, "\tIntel® Display Power Saving Technology (DPST) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether the Intel® Display Power Savings Technology (DPST) is enabled or disabled. "
+                  "Intel® DPST is a display power savings technology that changes the intensity of colors in order to conserve backlight power."
+                  "\r\n\r\nNote: This technology is only active when the system is running in battery mode and "
+                  "the LFP is the only active display device."
+
+        Combo     $PSR_Enable_16, "\tPanel Self Refresh (PSR)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Panel Self Refresh (PSR) feature is to be enabled."
+
+        Combo     $DRRS_Enable_16, "\tIntel® Display Refresh Rate Switching (DRRS) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Display Refresh Rate Switching (DRRS) is to be enabled."
+
+        Combo     $LACE_Enable_16, "\tEnable Display Lace Support", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Display Lace Support "
+                  "otherwise, the  functionality will be disabled. "
+
+        Combo     $ADT_Enable_16, "\tAssertive Display Technology Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Assertive display technology is to be enabled. "
+
+        Combo     $DMRRS_Enable_16, "\tDynamic Media Refresh Rate Switching Enable/Disable", &Disabled_Enabled_List,
+        Help      "This feature determines whether Dynamic media refresh rate switching is to be enabled. "
+
+        Combo     $ADB_Enable_16, "\tIntel® Automatic Display Brightness (ADB) (Mobile only)", &Disabled_Enabled_List,
+        Help      "This feature determines whether Intel® Automatic Display Brightness is to be enabled. "
+                  "Intel® Automatic Display Brightness adjusts the brightness of the embedded Local Flat Panel (LFP) "
+                  "depending on the current ambient light environment. "
+                  "When enabled, the driver and VBIOS will control the backlight brightness of the LFP "
+                  "depending on the ambient environment if and only if the LFP is the only active display. "
+                  "When disabled, the driver will perform no action." 
+
+        Combo     $LACE_Status_16, "\tDefault Display LACE Enabled status", &Disabled_Enabled_List,
+        Help      "This feature, when enabled, will set Default Display LACE Enabled status "
+                  "otherwise, the  functionality will be disabled."
+
+        Combo     $DPST_Aggressiveness_Profile_16, "\tDPST Aggressiveness Level", &Pwr_Pref_List,
+        Help      "This feature allows for the selection of DPST Aggressiveness level for this Panel Type.\n"
+                  "1 (Maximum Quality with No DPST)\n"
+                  "2\n"
+                  "3\n"    
+                  "4\n"    
+                  "5\n"
+                  "6 (Maximum Battery)"              
+                  
+        Combo     $LACE_Aggressiveness_Profile_16, "\tLACE Aggressiveness Level", &Aggressiveness_Level_Profile,
+        Help      "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\n"
+                  "Minimum   0\n"
+                  "Moderate  1\n"
+                  "High      2"
+      EndPage   ; Power Features
 
       Page      "DTD Timings"
         Link      "Close Table" , ".."

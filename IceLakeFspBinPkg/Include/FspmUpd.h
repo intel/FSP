@@ -2521,9 +2521,15 @@ typedef struct {
 **/
   UINT8                       LoadMgUcFw;
 
-/** Offset 0x04E6
+/** Offset 0x04E6 - Enable/Disable ITbtVtd
+  Disabled(0x0): Disable ITbtVtd, Enabled(0x1): Enable ITbtVtd
+  0:Disable, 1:Enable
 **/
-  UINT8                       SaPreMemRsvd[30];
+  UINT8                       ITbtVtdEnable;
+
+/** Offset 0x04E7
+**/
+  UINT8                       SaPreMemRsvd[29];
 
 /** Offset 0x0504 - HECI Timeouts
   0: Disable, 1: Enable (Default) timeout check for HECI
