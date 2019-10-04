@@ -26,6 +26,7 @@ Intel® Xeon® Processor D Product Family (formerly Broadwell-DE) | BroadwellDEF
 10th Generation Intel® Core™ processors and chipsets (formerly Comet Lake) | CometLakeFspBinPkg | v2.1
 Intel® Xeon® E3-1125C v2, E3-1105C v2, Intel® Pentium® B925C, Intel® Core™ i3-3115C for communication infrastructure with Intel® Communication Chipset 89xx Series Platform Controller Hub (formerly Crystal Forest Refresh: Ivy Bridge Gladden and Cave Creek) | CrystalForestIvyBridgeFspBinPkg | v1.0
 Intel® Atom™ processor C3XXX product family (formerly Denverton) | DenvertonNSFspBinPkg | v2.0
+10th Generation Intel® Core™ processors and chipsets (formerly Ice Lake) | IceLakeFspBinPkg | v2.1
 7th Generation Intel® Core™ processors and chipsets (formerly Kaby Lake) | KabylakeFspBinPkg | v2.0
 Intel® Atom™ processor E6xx series with Intel® Platform Controller Hub EG20T (formerly Queens Bay: Tunnel Creek and Topcliff) | QueensBayFspBinPkg | v1.0
 Intel® Atom™ processor C2000 product family (formerly Rangeley) | RangeleyFspBinPkg | v1.0
