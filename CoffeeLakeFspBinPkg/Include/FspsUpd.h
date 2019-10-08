@@ -91,9 +91,15 @@ typedef struct {
 **/
   UINT8                       PchHdaDspEnable;
 
-/** Offset 0x002E
+/** Offset 0x002E - Enable Write Protect SD Card Pin
+  Enable/disable Write Protect SD Card Pin.
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace0[3];
+  UINT8                       ScsSdCardWpPinEnabled;
+
+/** Offset 0x002F
+**/
+  UINT8                       UnusedUpdSpace0[2];
 
 /** Offset 0x0031 - Enable eMMC Controller
   Enable/disable eMMC Controller.

@@ -2333,9 +2333,15 @@ typedef struct {
 **/
   UINT8                       Ddr4SkipRefreshEn;
 
-/** Offset 0x0519
+/** Offset 0x0519 - Late Command Training Relaxed Reset
+  Enable/Disable Relaxed JEDEC Reset during Late Command Training (Only for DDR4)
+  0:Disable, 1:Enable
 **/
-  UINT8                       ReservedFspmUpd[6];
+  UINT8                       LctRelaxedReset;
+
+/** Offset 0x051A
+**/
+  UINT8                       ReservedFspmUpd[5];
 } FSP_M_CONFIG;
 
 /** Fsp M Test Configuration

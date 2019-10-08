@@ -428,7 +428,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_MrcTrainOnWarm                  1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_LpddrDramOdt                    1 bytes    $_DEFAULT_ = 0x2
         $gPlatformFspPkgTokenSpaceGuid_Ddr4SkipRefreshEn               1 bytes    $_DEFAULT_ = 0x1
-        Skip 11 bytes
+        $gPlatformFspPkgTokenSpaceGuid_LctRelaxedReset                 1 bytes    $_DEFAULT_ = 0x0
+        Skip 10 bytes
         $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_BdatEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ScanExtGfxForLegacyOpRom        1 bytes    $_DEFAULT_ = 0x01
@@ -513,7 +514,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_GraphicsConfigPtr               4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_Device4Enable                   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaDspEnable                 1 bytes    $_DEFAULT_ = 0x01
-        Skip 3 bytes
+        $gPlatformFspPkgTokenSpaceGuid_ScsSdCardWpPinEnabled           1 bytes    $_DEFAULT_ = 0x01
+        Skip 2 bytes
         $gPlatformFspPkgTokenSpaceGuid_ScsEmmcEnabled                  1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ScsEmmcHs400Enabled             1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ScsSdCardEnabled                1 bytes    $_DEFAULT_ = 0x01
@@ -1659,6 +1661,11 @@ List &gPlatformFspPkgTokenSpaceGuid_Peg1MaxLinkWidth
     Selection 3 , "x4"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_LctRelaxedReset
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_EdramTestMode
     Selection 0 , " EDRAM SW disable"
     Selection 1 , " EDRAM SW Enable"
@@ -2493,6 +2500,8 @@ Page "Memory Reference Code 1"
         Help "Override Enable/Disable for the ODT logic for LPDDR3 memory. Default is 2 (AUTO)"
     Combo $gPlatformFspPkgTokenSpaceGuid_Ddr4SkipRefreshEn, "DDR4 Skip Refresh Enable", &gPlatformFspPkgTokenSpaceGuid_Ddr4SkipRefreshEn,
         Help "Enable/Disable of DDR4 Temperature Controlled Refresh on DRAM. Default is 1 (Enabled)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_LctRelaxedReset, "Late Command Training Relaxed Reset", &gPlatformFspPkgTokenSpaceGuid_LctRelaxedReset,
+        Help "Enable/Disable Relaxed JEDEC Reset during Late Command Training (Only for DDR4)"
     Combo $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan, "Skip external display device scanning", &EN_DIS,
         Help "Enable: Do not scan for external display device, Disable (Default): Scan external display devices"
     Combo $gPlatformFspPkgTokenSpaceGuid_BdatEnable, "Generate BIOS Data ACPI Table", &EN_DIS,
@@ -2953,6 +2962,8 @@ EndPage
 Page "PCH 2"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchHdaDspEnable, "Enable HD Audio DSP", &EN_DIS,
         Help "Enable/disable HD Audio DSP feature."
+    Combo $gPlatformFspPkgTokenSpaceGuid_ScsSdCardWpPinEnabled, "Enable Write Protect SD Card Pin", &EN_DIS,
+        Help "Enable/disable Write Protect SD Card Pin."
     Combo $gPlatformFspPkgTokenSpaceGuid_ScsEmmcEnabled, "Enable eMMC Controller", &EN_DIS,
         Help "Enable/disable eMMC Controller."
     Combo $gPlatformFspPkgTokenSpaceGuid_ScsEmmcHs400Enabled, "Enable eMMC HS400 Mode", &EN_DIS,
