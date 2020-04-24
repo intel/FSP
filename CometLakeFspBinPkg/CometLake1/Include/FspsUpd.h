@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2019 - 2020, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -660,9 +660,10 @@ typedef struct {
 **/
   UINT32                      CpuMpHob;
 
-/** Offset 0x0174 - Enable or Disable processor debug features
-  Enable or Disable processor debug features; <b>0: Disable</b>; 1: Enable.
-  $EN_DIS
+/** Offset 0x0174 - CPU Run Control
+  Enable, Disable or Do not configure CPU Run Control; 0: Disable; 1: Enable ; <b>2:
+  No Change</b>
+  0:Disabled, 1:Enabled, 2:No Change
 **/
   UINT8                       DebugInterfaceEnable;
 
@@ -2070,11 +2071,12 @@ typedef struct {
 **/
   UINT8                       PchStartFramePulse;
 
-/** Offset 0x06A7 - Reserved
-  Reserved
+/** Offset 0x06A7 - PCH eSPI Link Configuration Lock (SBLCL)
+  Enable/Disable lock of communication through SET_CONFIG/GET_CONFIG to eSPI slaves
+  addresseses from range 0x0 - 0x7FF
   $EN_DIS
 **/
-  UINT8                       ReservedForFuture1;
+  UINT8                       PchEspiLockLinkConfiguration;
 
 /** Offset 0x06A8 - Thermal Device SMI Enable
   This locks down SMI Enable on Alert Thermal Sensor Trip.
@@ -2921,8 +2923,8 @@ typedef struct {
 
 /** Offset 0x0817 - Enable or Disable Energy Efficient Turbo
   Enable or Disable Energy Efficient Turbo, will be applied in Turbo mode. Disable;
-  <b>1: Enable</b>
-  $EN_DIS
+  1: Enable, <b>2: Auto / Silicon default</b>
+  0: Disable, 1: Enable, 2: Auto
 **/
   UINT8                       EnergyEfficientTurbo;
 
@@ -3275,7 +3277,7 @@ typedef struct {
   UINT8                       EnableItbm;
 
 /** Offset 0x08B7 - Intel Turbo Boost Max Technology 3.0 Driver
-  Intel Turbo Boost Max Technology 3.0 Driver <b>0: Disabled</b>; 1: Enabled
+  @deprecated Intel Turbo Boost Max Technology 3.0 Driver <b>0: Disabled</b>; 1: Enabled
   $EN_DIS
 **/
   UINT8                       EnableItbmDriver;
@@ -3363,11 +3365,25 @@ typedef struct {
 **/
   UINT8                       RatioLimitNumCore7;
 
-/** Offset 0x08C7 - ReservedCpuPostMemTest
+/** Offset 0x08C7 - Dual Tau Boost
+  Enable, Disable Dual Tau Boost feature. This is only applicable for CMLS; <b>0:
+  Disable</b>; 1: Enable
+  $EN_DIS
+**/
+  UINT8                       DualTauBoost;
+
+/** Offset 0x08C8 - ITBMT 3.0 Runtime Periodic SMM timer
+  Periodic SMM Polling timer for ITBMT 3.0 <b>Default 4 - 8 Sec</b>. 0 = Diable periodic
+  SMM, and Valid values 1 - 16ms , 2 - 32ms , 3 - 64ms , 4 - 8 sec , 5 - 16 sec,
+  6 - 32 sec, 7 - 64 sec.
+**/
+  UINT8                       ItbmPeriodicSmmTimer;
+
+/** Offset 0x08C9 - ReservedCpuPostMemTest
   Reserved for CPU Post-Mem Test
   $EN_DIS
 **/
-  UINT8                       ReservedCpuPostMemTest[11];
+  UINT8                       ReservedCpuPostMemTest[9];
 
 /** Offset 0x08D2 - SgxSinitDataFromTpm
   SgxSinitDataFromTpm default values
@@ -3375,8 +3391,9 @@ typedef struct {
   UINT8                       SgxSinitDataFromTpm;
 
 /** Offset 0x08D3 - End of Post message
-  Deprecated
-  0:Disable, 1:Send in PEI, 2:Send in DXE, 3:Reserved
+  Test, Send End of Post message. Disable(0x0): Disable EOP message, Enable(0x1)(Default):
+  Enable EOP message
+  $EN_DIS
 **/
   UINT8                       EndOfPostMessage;
 
@@ -3607,11 +3624,25 @@ typedef struct {
 
 /** Offset 0x0ABD
 **/
-  UINT8                       UnusedUpdSpace31[7];
+  UINT8                       UnusedUpdSpace31[3];
 
-/** Offset 0x0AC4
+/** Offset 0x0AC0 - LogoPixelHeight Address
+  Address of LogoPixelHeight
 **/
-  UINT8                       ReservedFspsTestUpd[12];
+  UINT32                      LogoPixelHeight;
+
+/** Offset 0x0AC4 - LogoPixelWidth Address
+  Address of LogoPixelWidth
+**/
+  UINT32                      LogoPixelWidth;
+
+/** Offset 0x0AC8
+**/
+  UINT8                       UnusedUpdSpace32[4];
+
+/** Offset 0x0ACC
+**/
+  UINT8                       ReservedFspsTestUpd[4];
 } FSP_S_TEST_CONFIG;
 
 /** Fsp S UPD Configuration
@@ -3632,7 +3663,7 @@ typedef struct {
 
 /** Offset 0x0AD0
 **/
-  UINT8                       UnusedUpdSpace32[6];
+  UINT8                       UnusedUpdSpace33[6];
 
 /** Offset 0x0AD6
 **/
