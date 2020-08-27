@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -181,7 +181,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SkipStopPbet                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnableC6Dram                    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_OcSupport                       1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_OcLock                          1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_OcLock                          1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_CoreMaxOcRatio                  1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_CoreVoltageMode                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_DisableMtrrProgram              1 bytes    $_DEFAULT_ = 0x00
@@ -429,7 +429,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_LpddrDramOdt                    1 bytes    $_DEFAULT_ = 0x2
         $gPlatformFspPkgTokenSpaceGuid_Ddr4SkipRefreshEn               1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_LctRelaxedReset                 1 bytes    $_DEFAULT_ = 0x0
-        Skip 10 bytes
+        $gPlatformFspPkgTokenSpaceGuid_RefreshPanicWm                  1 bytes    $_DEFAULT_ = 0x09
+        $gPlatformFspPkgTokenSpaceGuid_RefreshHpWm                     1 bytes    $_DEFAULT_ = 0x08
+        Skip 8 bytes
         $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_BdatEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ScanExtGfxForLegacyOpRom        1 bytes    $_DEFAULT_ = 0x01
@@ -520,7 +522,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_ScsEmmcHs400Enabled             1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ScsSdCardEnabled                1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ShowSpiController               1 bytes    $_DEFAULT_ = 0x00
-        Skip 3 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PchEspiLockLinkConfiguration    1 bytes    $_DEFAULT_ = 0x01
+        Skip 2 bytes
         $gPlatformFspPkgTokenSpaceGuid_MicrocodeRegionBase             4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_MicrocodeRegionSize             4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_TurboMode                       1 bytes    $_DEFAULT_ = 0x1
@@ -576,7 +579,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_ChipsetInitBinPtr               4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_ChipsetInitBinLen               4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PchDmiCwbEnable                 1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PchPostMemRsvd                 28 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_Usb3HsioRxCtrlCompMult         10 bytes    $_DEFAULT_ = 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C
+        $gPlatformFspPkgTokenSpaceGuid_PchPostMemRsvd                 18 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ScsUfsEnabled                   1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchCnviMode                     1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_SdCardPowerEnableActiveHigh     1 bytes    $_DEFAULT_ = 0x01
@@ -766,7 +770,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_Usb3HsioTxRate1UniqTran        10 bytes    $_DEFAULT_ = 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C
         $gPlatformFspPkgTokenSpaceGuid_Usb3HsioTxRate0UniqTranEnable  10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_Usb3HsioTxRate0UniqTran        10 bytes    $_DEFAULT_ = 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C, 0x4C
-        Skip 13 bytes
+        $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsEnable             6 bytes    $_DEFAULT_ = 0x01, 0x00, 0x01, 0x00, 0x01, 0x00
+        Skip 7 bytes
         $gPlatformFspPkgTokenSpaceGuid_PcieRpAspm                     24 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04
         $gPlatformFspPkgTokenSpaceGuid_PcieRpL1Substates              24 bytes    $_DEFAULT_ = 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03
         $gPlatformFspPkgTokenSpaceGuid_PcieRpLtrEnable                24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
@@ -1925,7 +1930,9 @@ EndList
 List &gPlatformFspPkgTokenSpaceGuid_ApertureSize
     Selection 0 , "128 MB"
     Selection 1 , "256 MB"
-    Selection 2 , "512 MB"
+    Selection 3 , "512 MB"
+    Selection 7 , "1024 MB"
+    Selection 15 , " 2048 MB"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_Peg0Enable
@@ -2502,6 +2509,12 @@ Page "Memory Reference Code 1"
         Help "Enable/Disable of DDR4 Temperature Controlled Refresh on DRAM. Default is 1 (Enabled)"
     Combo $gPlatformFspPkgTokenSpaceGuid_LctRelaxedReset, "Late Command Training Relaxed Reset", &gPlatformFspPkgTokenSpaceGuid_LctRelaxedReset,
         Help "Enable/Disable Relaxed JEDEC Reset during Late Command Training (Only for DDR4)"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_RefreshPanicWm, "REFRESH_PANIC_WM", HEX,
+        Help "Refresh Panic Watermark, range 1-9"
+             "Valid range: 0x01 ~ 0x9"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_RefreshHpWm, "REFRESH_HP_WM", HEX,
+        Help "Refresh High Priority Watermark, range 1-9"
+             "Valid range: 0x01 ~ 0x9"
     Combo $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan, "Skip external display device scanning", &EN_DIS,
         Help "Enable: Do not scan for external display device, Disable (Default): Scan external display devices"
     Combo $gPlatformFspPkgTokenSpaceGuid_BdatEnable, "Generate BIOS Data ACPI Table", &EN_DIS,
@@ -2828,7 +2841,7 @@ Page "System Agent 1"
     Combo $gPlatformFspPkgTokenSpaceGuid_OcSupport, "Over clocking support", &EN_DIS,
         Help "Over clocking support; <b>0: Disable</b>; 1: Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_OcLock, "Over clocking Lock", &EN_DIS,
-        Help "Over clocking Lock Enable/Disable; <b>0: Disable</b>; 1: Enable."
+        Help "Over clocking Lock Enable/Disable; 0: Disable; <b>1: Enable</b>"
     EditNum $gPlatformFspPkgTokenSpaceGuid_CoreMaxOcRatio, "Maximum Core Turbo Ratio Override", HEX,
         Help "Maximum core turbo ratio override allows to increase CPU core frequency beyond the fused max turbo ratio limit. <b>0: Hardware defaults.</b> Range: 0-255"
              "Valid range: 0x00 ~ 0xFF"
@@ -2972,6 +2985,8 @@ Page "PCH 2"
         Help "Enable/disable SD Card Controller."
     Combo $gPlatformFspPkgTokenSpaceGuid_ShowSpiController, "Show SPI controller", &EN_DIS,
         Help "Enable/disable to show SPI controller."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchEspiLockLinkConfiguration, "PCH eSPI Link Configuration Lock (SBLCL)", &EN_DIS,
+        Help "Enable/Disable lock of communication through SET_CONFIG/GET_CONFIG to eSPI slaves addresseses from range 0x0 - 0x7FF"
     Combo $gPlatformFspPkgTokenSpaceGuid_SataSalpSupport, "Enable SATA SALP Support", &EN_DIS,
         Help "Enable/disable SATA Aggressive Link Power Management."
     EditNum $gPlatformFspPkgTokenSpaceGuid_SataPortsEnable, "Enable SATA ports", HEX,
@@ -3100,6 +3115,9 @@ Page "PCH 2"
              "Valid range: 0x00 ~ 0xFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchDmiCwbEnable, "PchDmiCwbEnable", &EN_DIS,
         Help "Central Write Buffer feature configurable and disabled by default"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_Usb3HsioRxCtrlCompMult, "CTLE Rate control CPR RCOMP multiplier (Double Rate)", HEX,
+        Help "CTLE Rate control CPR RCOMP multiplier (Double Rate), HSIO_RX_DWORD27 [31:24], One byte for each port."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchPostMemRsvd, "PchPostMemRsvd", &EN_DIS,
         Help "Reserved for PCH Post-Mem"
     Combo $gPlatformFspPkgTokenSpaceGuid_ScsUfsEnabled, "Enable Ufs Controller", &EN_DIS,
@@ -3301,7 +3319,7 @@ Page "PCH 2"
         Help "Bits 7:3 are for Signed Magnatude number added to the CTLE code, Bits 2:0 are for controlling the input offset"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchUsbHsioRxTuningEnable, "PCH USB3 HSIO Rx Tuning Enable", HEX,
-        Help "Mask for enabling tuning of HSIO Rx signals of USB3 ports. Bits: 0 - HsioCtrlAdaptOffsetCfgEnable, 1 - HsioFilterSelNEnable, 2 - HsioFilterSelPEnable, 3 - HsioOlfpsCfgPullUpDwnResEnable"
+        Help "Mask for enabling tuning of HSIO Rx signals of USB3 ports. Bits: 0 - HsioCtrlAdaptOffsetCfgEnable, 1 - HsioFilterSelNEnable, 2 - HsioFilterSelPEnable, 3 - HsioOlfpsCfgPullUpDwnResEnable, 4 - HsioCtrlCompMultEnable"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRpPcieSpeed, "PCIE RP Pcie Speed", HEX,
         Help "Determines each PCIE Port speed capability. 0: Auto; 1: Gen1; 2: Gen2; 3: Gen3 (see: PCH_PCIE_SPEED)."
@@ -3350,6 +3368,9 @@ Page "PCH 2"
     EditNum $gPlatformFspPkgTokenSpaceGuid_Usb3HsioTxRate0UniqTran, "USB 3.0 TX Output Unique Transition Bit Scale for rate 0", HEX,
         Help "USB 3.0 TX Output Unique Transition Bit Scale for rate 0, HSIO_TX_DWORD9[30:24], <b>Default = 4Ch</b>. One byte for each port."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsEnable, "SPI ChipSelect Enable", HEX,
+        Help "SPI0-2 CS0/1 Enable,<b>Default CS0 Enabled, CS1 Disabled = 0x1 0x0</b>. Two bytes for each Spi Controller."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRpAspm, "PCIE RP Aspm", HEX,
         Help "The ASPM configuration of the root port (see: PCH_PCIE_ASPM_CONTROL). Default is PchPcieAspmAutoConfig."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
@@ -4146,10 +4167,10 @@ Page "System Agent 2"
         Help "PCODE MMIO Mailbox: Acoustic Migitation Range.Defines the maximum Ramp Down randomization time in micro ticks.This can be programmed only if AcousticNoiseMigitation is enabled.Range 0-255 <b>0</b>."
              "Valid range: 0x0 ~ 0xFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_CpuMpPpi, "CpuMpPpi", HEX,
-        Help "Pointer for CpuMpPpi"
+        Help "<b>Optional</b> pointer to the boot loader's implementation of EFI_PEI_MP_SERVICES_PPI. If not NULL, FSP will use the boot loader's implementation of multiprocessing. See section 3.6.4 of the FSP Integration Guide for more details."
              "Valid range: 0x0 ~ 0xFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_CpuMpHob, "CpuMpHob", HEX,
-        Help "Pointer for CpuMpHob. This is optional data buffer for CpuMpPpi usage."
+        Help "<b>Optional</b> pointer for CpuMpHob. If the boot loader is a UEFI boot loader, and FspsUpd->FspsConfig.CpuMpPpi != NULL, then FspsUpd->FspsConfig.CpuMpHob must be != NULL. See section 3.6.4 of the FSP Integration Guide for more details."
              "Valid range: 0x0 ~ 0xFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_DebugInterfaceEnable, "Enable or Disable processor debug features", &EN_DIS,
         Help "Enable or Disable processor debug features; <b>0: Disable</b>; 1: Enable."

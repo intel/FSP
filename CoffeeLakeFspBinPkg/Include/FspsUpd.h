@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -125,9 +125,16 @@ typedef struct {
 **/
   UINT8                       ShowSpiController;
 
-/** Offset 0x0035
+/** Offset 0x0035 - PCH eSPI Link Configuration Lock (SBLCL)
+  Enable/Disable lock of communication through SET_CONFIG/GET_CONFIG to eSPI slaves
+  addresseses from range 0x0 - 0x7FF
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace1[3];
+  UINT8                       PchEspiLockLinkConfiguration;
+
+/** Offset 0x0036
+**/
+  UINT8                       UnusedUpdSpace1[2];
 
 /** Offset 0x0038 - MicrocodeRegionBase
   Memory Base of Microcode Updates
@@ -455,11 +462,17 @@ typedef struct {
 **/
   UINT8                       PchDmiCwbEnable;
 
-/** Offset 0x0129 - PchPostMemRsvd
+/** Offset 0x0129 - CTLE Rate control CPR RCOMP multiplier (Double Rate)
+  CTLE Rate control CPR RCOMP multiplier (Double Rate), HSIO_RX_DWORD27 [31:24], One
+  byte for each port.
+**/
+  UINT8                       Usb3HsioRxCtrlCompMult[10];
+
+/** Offset 0x0133 - PchPostMemRsvd
   Reserved for PCH Post-Mem
   $EN_DIS
 **/
-  UINT8                       PchPostMemRsvd[28];
+  UINT8                       PchPostMemRsvd[18];
 
 /** Offset 0x0145 - Enable Ufs Controller
   Enable/disable Ufs 2.0 Controller.
@@ -1133,12 +1146,16 @@ typedef struct {
   UINT8                       RampDown;
 
 /** Offset 0x032B - CpuMpPpi
-  Pointer for CpuMpPpi
+  <b>Optional</b> pointer to the boot loader's implementation of EFI_PEI_MP_SERVICES_PPI.
+  If not NULL, FSP will use the boot loader's implementation of multiprocessing.
+  See section 3.6.4 of the FSP Integration Guide for more details.
 **/
   UINT32                      CpuMpPpi;
 
 /** Offset 0x032F - CpuMpHob
-  Pointer for CpuMpHob. This is optional data buffer for CpuMpPpi usage.
+  <b>Optional</b> pointer for CpuMpHob. If the boot loader is a UEFI boot loader,
+  and FspsUpd->FspsConfig.CpuMpPpi != NULL, then FspsUpd->FspsConfig.CpuMpHob must
+  be != NULL. See section 3.6.4 of the FSP Integration Guide for more details.
 **/
   UINT32                      CpuMpHob;
 
@@ -1463,7 +1480,8 @@ typedef struct {
 
 /** Offset 0x04F0 - PCH USB3 HSIO Rx Tuning Enable
   Mask for enabling tuning of HSIO Rx signals of USB3 ports. Bits: 0 - HsioCtrlAdaptOffsetCfgEnable,
-  1 - HsioFilterSelNEnable, 2 - HsioFilterSelPEnable, 3 - HsioOlfpsCfgPullUpDwnResEnable
+  1 - HsioFilterSelNEnable, 2 - HsioFilterSelPEnable, 3 - HsioOlfpsCfgPullUpDwnResEnable,
+  4 - HsioCtrlCompMultEnable
 **/
   UINT8                       PchUsbHsioRxTuningEnable[10];
 
@@ -1562,9 +1580,15 @@ typedef struct {
 **/
   UINT8                       Usb3HsioTxRate0UniqTran[10];
 
-/** Offset 0x05BB
+/** Offset 0x05BB - SPI ChipSelect Enable
+  SPI0-2 CS0/1 Enable,<b>Default CS0 Enabled, CS1 Disabled = 0x1 0x0</b>. Two bytes
+  for each Spi Controller.
 **/
-  UINT8                       UnusedUpdSpace14[13];
+  UINT8                       SerialIoSpiCsEnable[6];
+
+/** Offset 0x05C1
+**/
+  UINT8                       UnusedUpdSpace14[7];
 
 /** Offset 0x05C8 - PCIE RP Aspm
   The ASPM configuration of the root port (see: PCH_PCIE_ASPM_CONTROL). Default is

@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -240,7 +240,7 @@ typedef struct {
 
 /** Offset 0x00BA - Aperture Size
   Select the Aperture Size.
-  0:128 MB, 1:256 MB, 2:512 MB
+  0:128 MB, 1:256 MB, 2:512 MB (deprecated), 3:512 MB, 7:1024 MB, 15: 2048 MB
 **/
   UINT8                       ApertureSize;
 
@@ -929,7 +929,7 @@ typedef struct {
   UINT8                       OcSupport;
 
 /** Offset 0x0204 - Over clocking Lock
-  Over clocking Lock Enable/Disable; <b>0: Disable</b>; 1: Enable.
+  Over clocking Lock Enable/Disable; 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       OcLock;
@@ -2339,9 +2339,19 @@ typedef struct {
 **/
   UINT8                       LctRelaxedReset;
 
-/** Offset 0x051A
+/** Offset 0x051A - REFRESH_PANIC_WM
+  Refresh Panic Watermark, range 1-9
 **/
-  UINT8                       ReservedFspmUpd[5];
+  UINT8                       RefreshPanicWm;
+
+/** Offset 0x051B - REFRESH_HP_WM
+  Refresh High Priority Watermark, range 1-9
+**/
+  UINT8                       RefreshHpWm;
+
+/** Offset 0x051C
+**/
+  UINT8                       ReservedFspmUpd[3];
 } FSP_M_CONFIG;
 
 /** Fsp M Test Configuration
