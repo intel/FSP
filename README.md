@@ -1,5 +1,5 @@
 # Legacy Intel® Firmware Support Package (Intel® FSP) Binaries
-**&#x1F534;Legacy&#x1F534;** Intel FSP binaries posted by Intel
+**&#x1F534;Legacy&#x1F534;** Intel FSP binaries posted by Intel. For more recent FSP binaries, please see [master branch](https://github.com/intel/FSP).
 
 # Intel® FSP Home Page
 <https://www.intel.com/FSP>
