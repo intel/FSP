@@ -1,0 +1,51 @@
+## @file
+# Library instance to list all DynamicEx PCD FSP consumes.
+#
+# @copyright
+#  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+# @par Specification Reference:
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010017
+  BASE_NAME                      = FspPcdListLibNull
+  FILE_GUID                      = C5D4D79E-3D5C-4EB6-899E-6F1563CB0B32
+  VERSION_STRING                 = 1.0
+  MODULE_TYPE                    = BASE
+  LIBRARY_CLASS                  = NULL
+#
+# The following information is for reference only and not required by the build tools.
+#
+# VALID_ARCHITECTURES = IA32 X64 IPF EBC
+#
+
+[LibraryClasses]
+  BaseLib
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
+  TigerlakeSiliconPkg/SiPkg.dec
+
+[Sources]
+  FspPcdListLibNull.c
+
+[Pcd]
+  #
+  # List all the DynamicEx PCDs that FSP will consume.
+  # FSP Dispatch mode bootloader will include this INF to ensure all the PCDs are
+  # built into PCD database.
+  #
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMaxLogicalProcessorNumber     ## CONSUMES
+  gSiPkgTokenSpaceGuid.PcdSiPciExpressBaseAddress               ## CONSUMES
+  gSiPkgTokenSpaceGuid.PcdPciExpressRegionLength                ## CONSUMES
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMicrocodePatchAddress         ## CONSUMES
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMicrocodePatchRegionSize      ## CONSUMES
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuApLoopMode                    ## CONSUMES
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuApTargetCstate                ## CONSUMES
+  gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiS3Enable                ## CONSUMES
