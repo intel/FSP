@@ -24,6 +24,7 @@ Intel® Atom™ processor C3XXX product family (formerly Denverton) | DenvertonN
 10th Generation Intel® Core™ processors and chipsets (formerly Ice Lake) | IceLakeFspBinPkg | v2.1
 7th Generation Intel® Core™ processors and chipsets (formerly Kaby Lake) | KabylakeFspBinPkg | v2.0
 6th Generation Intel® Core™ processors and chipsets (formerly Sky Lake) | SkylakeFspBinPkg | v1.1
+11th Generation Intel® Core™ processors and chipsets (formerly Tiger Lake) | TigerLakeFspBinPkg | v2.2
 
 ## Legacy FSP Projects
 FSP binaries for older projects can be found in the [legacy branch](https://github.com/intel/FSP/tree/legacy)
