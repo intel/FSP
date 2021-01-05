@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -868,9 +868,15 @@ typedef struct {
 **/
   UINT8                       SkipPciePowerSequence;
 
-/** Offset 0x015E
+/** Offset 0x015E - Refresh Watermark
+  Set the value for Refresh Watermark, bit [7:4] - REFWMPNC, bit [3:0] - REFWMHI.
+  Set to 0x75 by default. Consult with DRAM vendor before modifying.
 **/
-  UINT8                       ReservedFspmUpd[2];
+  UINT8                       RefreshWm;
+
+/** Offset 0x015F
+**/
+  UINT8                       ReservedFspmUpd;
 } FSP_M_CONFIG;
 
 /** Fsp M UPD Configuration

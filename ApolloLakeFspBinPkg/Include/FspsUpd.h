@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -1578,9 +1578,15 @@ typedef struct {
 **/
   UINT8                       PWMEnabled;
 
-/** Offset 0x0373
+/** Offset 0x0373 - P2SB Security Option Enable/Disable
+  Enable/Disable P2SB Security Option. 0:Disable(Default), 1:Enable.
+  $EN_DIS
 **/
-  UINT8                       ReservedFspsUpd[13];
+  UINT8                       P2sbSecEn;
+
+/** Offset 0x0374
+**/
+  UINT8                       ReservedFspsUpd[12];
 } FSP_S_CONFIG;
 
 /** Fsp S UPD Configuration

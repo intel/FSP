@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -136,6 +136,7 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_StartTimerTickerOfPfetAssert     8 bytes    $_DEFAULT_ = 0x00000000
         $gBroxtonFspPkgTokenSpaceGuid_RtEn                             1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SkipPciePowerSequence            1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_RefreshWm                        1 bytes    $_DEFAULT_ = 0x75
 
     Find "APLUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x01
@@ -412,6 +413,7 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_OsSelection                      1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_DptfEnabled                      1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_PWMEnabled                       1 bytes    $_DEFAULT_ = 0x00
+        $gBroxtonFspPkgTokenSpaceGuid_P2sbSecEn                        1 bytes    $_DEFAULT_ = 0x00
 
 EndStruct
 
@@ -1143,6 +1145,9 @@ Page "FSP MemoryInit Settings"
         Help "Real-Time Feature Configuration Bits settings. 0x0:Disabled (default), 0x1:Enabled"
     Combo $gBroxtonFspPkgTokenSpaceGuid_SkipPciePowerSequence, "Skip Pcie Power Sequence", &gBroxtonFspPkgTokenSpaceGuid_SkipPciePowerSequence,
         Help "UPD To Skip PciePowerSequence in FSP if set this UPD is set to 1. 0x0:Disabled (default), 0x1:Skip"
+    EditNum $gBroxtonFspPkgTokenSpaceGuid_RefreshWm, "Refresh Watermark", HEX,
+        Help "Set the value for Refresh Watermark, bit [7:4] - REFWMPNC, bit [3:0] - REFWMHI. Set to 0x75 by default. Consult with DRAM vendor before modifying."
+             "Valid range: 0x0 ~ 0xFF"
 EndPage
 
 Page "FSP SiliconInit Settings"
@@ -1789,5 +1794,7 @@ Page "FSP SiliconInit Settings"
         Help "Intel® Dynamic Platform and Thermal Framework. 0x0:Disabled (default), 0x1:Enabled"
     Combo $gBroxtonFspPkgTokenSpaceGuid_PWMEnabled, "PWM Enabled", &EN_DIS,
         Help "PWM Device Enabling. Windows needs this to be disabled, while Android needs this to be enabled. 0x0:Disabled (default), 0x1:Enabled"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_P2sbSecEn, "P2SB Security Option Enable/Disable", &EN_DIS,
+        Help "Enable/Disable P2SB Security Option. 0:Disable(Default), 1:Enable."
 EndPage
 
