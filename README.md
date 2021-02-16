@@ -18,7 +18,7 @@ FSP Project Name | Directory Name | FSP Specification Version
 10th, 8th & 7th Generation Intel® Core™ processors and chipsets (formerly Comet Lake Y-Series, Amber Lake, Kaby Lake Refresh, and Kaby Lake) | AmberlakeFspBinPkg | v2.1
 Intel® Atom™ processor E3900 product family (formerly Apollo Lake) | ApolloLakeFspBinPkg | v2.0
 Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Atom™ x5-E8000 Processor (formerly Braswell) | BraswellFspBinPkg | v1.1
-8th Generation Intel® Core™ processors and chipsets (formerly Coffee Lake and Whiskey Lake) | CoffeeLakeFspBinPkg | v2.0
+9th & 8th Generation Intel® Core™ processors and chipsets (formerly Coffee Lake Refresh, Coffee Lake, and Whiskey Lake) | CoffeeLakeFspBinPkg | v2.0
 10th Generation Intel® Core™ processors and chipsets (formerly Comet Lake) | CometLakeFspBinPkg | v2.1
 Intel® Atom™ processor C3XXX product family (formerly Denverton) | DenvertonNSFspBinPkg | v2.0
 10th Generation Intel® Core™ processors and chipsets (formerly Ice Lake) | IceLakeFspBinPkg | v2.1
