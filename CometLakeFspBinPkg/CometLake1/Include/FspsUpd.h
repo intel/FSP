@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2019 - 2020, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2019 - 2021, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -1512,7 +1512,7 @@ typedef struct {
   UINT8                       PchLockDownRtcMemoryLock;
 
 /** Offset 0x03B6 - Enable PCIE RP HotPlug
-  Indicate whether the root port is hot plug available.
+  DEPRECATED
 **/
   UINT8                       PcieRpHotPlug[24];
 
@@ -1589,7 +1589,8 @@ typedef struct {
 
 /** Offset 0x0510 - PCH USB3 HSIO Rx Tuning Enable
   Mask for enabling tuning of HSIO Rx signals of USB3 ports. Bits: 0 - HsioCtrlAdaptOffsetCfgEnable,
-  1 - HsioFilterSelNEnable, 2 - HsioFilterSelPEnable, 3 - HsioOlfpsCfgPullUpDwnResEnable
+  1 - HsioFilterSelNEnable, 2 - HsioFilterSelPEnable, 3 - HsioOlfpsCfgPullUpDwnResEnable,
+  4 - HsioCtrlCompMultEnable
 **/
   UINT8                       PchUsbHsioRxTuningEnable[10];
 
@@ -3529,11 +3530,17 @@ typedef struct {
 **/
   UINT8                       PchXhciOcLock;
 
-/** Offset 0x0A79 - ReservedPchPostMemTest
+/** Offset 0x0A79 - CTLE Rate control CPR RCOMP multiplier (Double Rate)
+  CTLE Rate control CPR RCOMP multiplier (Double Rate), HSIO_RX_DWORD27 [31:24], One
+  byte for each port.
+**/
+  UINT8                       Usb3HsioRxCtrlCompMult[10];
+
+/** Offset 0x0A83 - ReservedPchPostMemTest
   Reserved for Pch Post-Mem Test
   $EN_DIS
 **/
-  UINT8                       ReservedPchPostMemTest[16];
+  UINT8                       ReservedPchPostMemTest[6];
 
 /** Offset 0x0A89 - Mctp Broadcast Cycle
   Test, Determine if MCTP Broadcast is enabled <b>0: Disable</b>; 1: Enable.
