@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2020 - 2021, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -2236,11 +2236,18 @@ typedef struct {
 **/
   UINT8                       SataPortsDevSlpResetConfig[8];
 
-/** Offset 0x074C - ReservedPchPostMem
+/** Offset 0x074C - PCH eSPI Link Configuration Lock (SBLCL)
+  Enable/Disable lock of communication through SET_CONFIG/GET_CONFIG to eSPI slaves
+  addresseses from range 0x0 - 0x7FF
+  $EN_DIS
+**/
+  UINT8                       PchEspiLockLinkConfiguration;
+
+/** Offset 0x074D - ReservedPchPostMem
   Reserved for Pch Post-Mem
   $EN_DIS
 **/
-  UINT8                       ReservedPchPostMem[8];
+  UINT8                       ReservedPchPostMem[7];
 
 /** Offset 0x0754
 **/
