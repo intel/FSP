@@ -1,7 +1,7 @@
 /** @file FspsUpd.h
 
  @copyright
-  Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2020 - 2021, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -1153,11 +1153,28 @@ typedef struct {
 **/
   UINT8                       TcCstateLimit;
 
-/** Offset 0x04BC - SaPostMemRsvd
+/** Offset 0x04BC - Disable TC code On USB Connect
+  Enable: Unsupported TC cold capability on Usb Connected, Disable(default): Supported
+  TC cold On Usb Connected
+  $EN_DIS
+**/
+  UINT8                       DisableTccoldOnUsbConnected;
+
+/** Offset 0x04BD - Set Iom stay in TC cold seconds in TCSS
+  Set Iom stay in TC cold seconds in IOM
+**/
+  UINT8                       IomStayInTCColdeSeconds;
+
+/** Offset 0x04BE - Set Iom before entering TC cold seconds in TCSS
+  Set Iom before entering TC cold seconds in IOM
+**/
+  UINT8                       IomBeforeEnteringTCCodeSeconds;
+
+/** Offset 0x04BF - SaPostMemRsvd
   Reserved for PCH Post-Mem
   $EN_DIS
 **/
-  UINT8                       SaPostMemRsvd[5];
+  UINT8                       SaPostMemRsvd[2];
 
 /** Offset 0x04C1 - Enable VMD controller
   Enable/disable to VMD controller.0: Disable(Default); 1: Enable
@@ -4145,13 +4162,19 @@ typedef struct {
 **/
   UINT8                       VmdGlobalMapping;
 
-/** Offset 0x0E9D
+/** Offset 0x0E9D - PCH XHCI LTR Mode Enable
+  Enable/Disable PCH XHCI LTR Mode.0: Disable; 1: Enable(Default).
+  $EN_DIS
+**/
+  UINT8                       PchXhciLtrModeEnable;
+
+/** Offset 0x0E9E
 **/
   UINT8                       UnusedUpdSpace33[3];
 
-/** Offset 0x0EA0
+/** Offset 0x0EA1
 **/
-  UINT8                       ReservedFspsUpd[8];
+  UINT8                       ReservedFspsUpd[7];
 } FSP_S_CONFIG;
 
 /** Fsp S UPD Configuration

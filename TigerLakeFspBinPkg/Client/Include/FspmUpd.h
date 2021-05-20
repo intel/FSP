@@ -1,7 +1,7 @@
 /** @file FspmUpd.h
 
  @copyright
-  Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2020 - 2021, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -1112,11 +1112,27 @@ typedef struct {
 **/
   UINT8                       CpuPcieRpCdrRelock[4];
 
-/** Offset 0x029A - SaPreMemProductionRsvd
+/** Offset 0x029A -  Realtime Memory OverClock
+  Disable/Enables Realtime Memory OverClock
+  $EN_DIS
+**/
+  UINT8                       RealtimeMemoryOC;
+
+/** Offset 0x029B - Xl1el
+  Enable/Disable NewFom for DEKEL Programming. 0: Disable(Default); 1: Enable
+**/
+  UINT8                       CpuPcieNewFom[4];
+
+/** Offset 0x029F - Xl1el
+  Enable/Disable NewFomDisable. 0: Disable(Default); 1: Enable
+**/
+  UINT8                       CpuPcieIotgMode[4];
+
+/** Offset 0x02A3 - SaPreMemProductionRsvd
   Reserved for SA Pre-Mem Production
   $EN_DIS
 **/
-  UINT8                       SaPreMemProductionRsvd[96];
+  UINT8                       SaPreMemProductionRsvd[87];
 
 /** Offset 0x02FA - DMI Max Link Speed
   Auto (0x0): Maximum possible link speed, Gen1(0x1): Limit Link to Gen1 Speed, Gen2(0x2):
@@ -2259,9 +2275,15 @@ typedef struct {
 **/
   UINT8                       RMTBIT;
 
-/** Offset 0x0628
+/** Offset 0x0628 -  Override Performance Downgrade for Mixed Memory
+  Disable/Enables Override Performance Downgrade for Mixed Memory
+  $EN_DIS
 **/
-  UINT8                       Reserved2[2];
+  UINT8                       OverrideDowngradeForMixedMemory;
+
+/** Offset 0x0629
+**/
+  UINT8                       Reserved2[1];
 
 /** Offset 0x062A - Select if CLK0 is shared between Rank0 and Rank1 in DDR4 DDP
   Select if CLK0 is shared between Rank0 and Rank1 in DDR4 DDP
@@ -2935,30 +2957,30 @@ typedef struct {
   UINT8                       DmiHweq;
 
 /** Offset 0x06D2 - Enable/Disable CPU DMI GEN3 Phase 23 Bypass
-  CPU DMI GEN3 Phase 23 Bypass. Disabled(0x0): Disable Phase 23 Bypass, Enabled(0x1)(Default):
+  CPU DMI GEN3 Phase 23 Bypass. Disabled(0x0)(Default): Disable Phase 23 Bypass, Enabled(0x1):
   Enable  Phase 23 Bypass
   $EN_DIS
 **/
   UINT8                       Gen3EqPhase23Bypass;
 
 /** Offset 0x06D3 - Enable/Disable CPU DMI GEN3 Phase 3 Bypass
-  CPU DMI GEN3 Phase 3 Bypass. Disabled(0x0): Disable Phase 3 Bypass, Enabled(0x1)(Default):
+  CPU DMI GEN3 Phase 3 Bypass. Disabled(0x0)(Default): Disable Phase 3 Bypass, Enabled(0x1):
   Enable  Phase 3 Bypass
   $EN_DIS
 **/
   UINT8                       Gen3EqPhase3Bypass;
 
 /** Offset 0x06D4 - Enable/Disable CPU DMI Gen3 EQ Local Transmitter Coefficient Override Enable
-  Program Gen3 EQ Local Transmitter Coefficient Override. Disabled(0x0): Disable Local
-  Transmitter Coefficient Override, Enabled(0x1)(Default): Enable  Local Transmitter
+  Program Gen3 EQ Local Transmitter Coefficient Override. Disabled(0x0)(Default):
+  Disable Local Transmitter Coefficient Override, Enabled(0x1): Enable  Local Transmitter
   Coefficient Override
   $EN_DIS
 **/
   UINT8                       Gen3LtcoEnable;
 
 /** Offset 0x06D5 - Enable/Disable CPU DMI Gen3 EQ Remote Transmitter Coefficient/Preset Override Enable
-  Program Remote Transmitter Coefficient/Preset Override. Disabled(0x0): Disable Remote
-  Transmitter Coefficient/Preset Override, Enabled(0x1)(Default): Enable  Remote
+  Program Remote Transmitter Coefficient/Preset Override. Disabled(0x0)(Default):
+  Disable Remote Transmitter Coefficient/Preset Override, Enabled(0x1): Enable  Remote
   Transmitter Coefficient/Preset Override
   $EN_DIS
 **/
@@ -3184,7 +3206,7 @@ typedef struct {
   UINT8                       PchHdaIDispLinkFrequency;
 
 /** Offset 0x0773 - iDisp-Link T-mode
-  iDisp-Link T-Mode (PCH_HDAUDIO_IDISP_TMODE enum): 0: 2T, 2: 4T, 3: 8T, 4: 16T
+  iDisp-Link T-Mode (PCH_HDAUDIO_IDISP_TMODE enum): 0: 2T, 2: 4T, 3: 8T(Default), 4: 16T
   0: 2T, 2: 4T, 3: 8T, 4: 16T
 **/
   UINT8                       PchHdaIDispLinkTmode;
@@ -3377,12 +3399,12 @@ typedef struct {
   UINT32                      DisableCoreMask;
 
 /** Offset 0x0908 - REFRESH_PANIC_WM
-  Refresh Panic Watermark, range 1-8, Default is 8
+  <b>@deprecated</b> - Not used and has no effect, Please use RefreshWm
 **/
   UINT8                       RefreshPanicWm;
 
 /** Offset 0x0909 - REFRESH_HP_WM
-  Refresh High Priority Watermark, range 1-7, Default is 7
+  <b>@deprecated</b> - Not used and has no effect, Please use RefreshWm
 **/
   UINT8                       RefreshHpWm;
 
@@ -3522,9 +3544,43 @@ typedef struct {
 
 /** Offset 0x0943
 **/
-  UINT8                       UnusedUpdSpace26[4];
+  UINT8                       UnusedUpdSpace26;
 
-/** Offset 0x0947
+/** Offset 0x0944 - The VccIn Max Voltage Limit
+  This will override maximum VCCIN voltage limit to the voltage value specified. <b>0
+  - no override</b> Valid Range 0 to 3000mV
+**/
+  UINT16                      VccInMaxLimit;
+
+/** Offset 0x0946 - VccIO Voltage Override
+  This will override VccIO output voltage level to the voltage value specified. Valid
+  Range 0 to 2000
+**/
+  UINT16                      VccIoVoltageOverride;
+
+/** Offset 0x0948 - Boost VRef Voltage
+  <b> Default: 0: 0.7V </b> 1: 1.0V to support the high frequencies needed for BCLK OC.
+  0: 0.7V , 1:1.0V
+**/
+  UINT8                       BoostRefVoltage;
+
+/** Offset 0x0949 - Pcie Ref Pll SSC
+  Pcie Ref Pll SSC Percentatge. 0x0: 0.0%, 0x1: 0.1%, 0x2:0.2%, 0x3: 0.3%, 0x4: 0.4%,
+  0x5: 0.5%, 0xFE: Disable, 0xFF: Auto
+**/
+  UINT8                       PcieRefPllSsc;
+
+/** Offset 0x094A - Refresh Watermarks
+  Refresh Watermark, High, Low
+  1:Enable Refresh Watermark High (Default), 0:Enable Refresh Watermark Low
+**/
+  UINT8                       RefreshWm;
+
+/** Offset 0x094B
+**/
+  UINT8                       UnusedUpdSpace27[4];
+
+/** Offset 0x094F
 **/
   UINT8                       ReservedFspmUpd2[1];
 } FSP_M_CONFIG;
@@ -3545,11 +3601,11 @@ typedef struct {
 **/
   FSP_M_CONFIG                FspmConfig;
 
-/** Offset 0x0948
+/** Offset 0x0950
 **/
-  UINT8                       UnusedUpdSpace27[6];
+  UINT8                       UnusedUpdSpace28[6];
 
-/** Offset 0x094E
+/** Offset 0x0956
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;

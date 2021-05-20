@@ -983,8 +983,15 @@
                 "Value": ""
               },
               {
+                "Name": "INT_LFP2_Vswing_Override_Enable",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "SKIP",
-                "SizeInBits": "3",
+                "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -1186,8 +1193,22 @@
                 "Value": ""
               },
               {
-                "Name": "EFP1_Slave_Dvo_Port",
-                "SizeInBits": "8",
+                "Name": "EFP1_MaximumFrlRate",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EFP1_IsMaxFrlRateFieldValid ",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "3",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -1529,8 +1550,22 @@
                 "Value": ""
               },
               {
-                "Name": "EFP2_Slave_Dvo_Port",
-                "SizeInBits": "8",
+                "Name": "EFP2_MaximumFrlRate",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EFP2_IsMaxFrlRateFieldValid ",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "3",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -1872,8 +1907,22 @@
                 "Value": ""
               },
               {
-                "Name": "EFP3_Slave_Dvo_Port",
-                "SizeInBits": "8",
+                "Name": "EFP3_MaximumFrlRate",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EFP3_IsMaxFrlRateFieldValid ",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "3",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2215,8 +2264,22 @@
                 "Value": ""
               },
               {
-                "Name": "EFP4_Slave_Dvo_Port",
-                "SizeInBits": "8",
+                "Name": "EFP4_MaximumFrlRate",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EFP4_IsMaxFrlRateFieldValid ",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "3",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2558,8 +2621,22 @@
                 "Value": ""
               },
               {
-                "Name": "EFP5_Slave_Dvo_Port",
-                "SizeInBits": "8",
+                "Name": "EFP5_MaximumFrlRate",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EFP5_IsMaxFrlRateFieldValid ",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "3",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2901,8 +2978,22 @@
                 "Value": ""
               },
               {
-                "Name": "EFP6_Slave_Dvo_Port",
-                "SizeInBits": "8",
+                "Name": "EFP6_MaximumFrlRate",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EFP6_IsMaxFrlRateFieldValid ",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "3",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -3244,8 +3335,22 @@
                 "Value": ""
               },
               {
-                "Name": "EFP7_Slave_Dvo_Port",
-                "SizeInBits": "8",
+                "Name": "EFP7_MaximumFrlRate",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EFP7_IsMaxFrlRateFieldValid ",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "3",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -8285,7 +8390,7 @@
           "Block": {
             "Id": "40",
             "Name": "Start of LVDS BMP Structure Definition",
-            "SizeInBytes": "33",
+            "SizeInBytes": "37",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -8915,6 +9020,118 @@
               },
               {
                 "Name": "Panel_Rotation_16",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_01",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_02",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_03",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_04",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_05",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_06",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_07",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_08",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_09",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_10",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_11",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_12",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_13",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_14",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_15",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "Panel_Position_16",
                 "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
@@ -9956,8 +10173,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_01",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_01",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -9977,8 +10201,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_02",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_02",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -9998,8 +10229,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_03",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_03",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10019,8 +10257,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_04",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_04",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10040,8 +10285,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_05",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_05",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10061,8 +10313,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_06",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_06",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10082,8 +10341,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_07",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_07",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10103,8 +10369,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_08",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_08",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10124,8 +10397,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_09",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_09",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10145,8 +10425,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_10",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_10",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10166,8 +10453,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_11",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_11",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10187,8 +10481,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_12",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_12",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10208,8 +10509,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_13",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_13",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10229,8 +10537,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_14",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_14",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10250,8 +10565,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_15",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_15",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10271,8 +10593,15 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
-                "SizeInBits": "16",
+                "Name": "LeftBorder_16",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "RightBorder_16",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -10397,7 +10726,7 @@
           "Block": {
             "Id": "43",
             "Name": "BLC (Backlight Control) Support",
-            "SizeInBytes": "276",
+            "SizeInBytes": "308",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -12197,6 +12526,118 @@
               {
                 "Name": "BrightnessPrecisionBits_16",
                 "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_01",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_02",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_03",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_04",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_05",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_06",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_07",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_08",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_09",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_10",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_11",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_12",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_13",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_14",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_15",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "HdrDpcdRefreshTimeout_16",
+                "SizeInBits": "16",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -23450,7 +23891,7 @@
               },
               {
                 "WidgetType": "Label",
-                "WidgetName": "VBT Version: 236",
+                "WidgetName": "VBT Version: 240",
                 "Visibility": "",
                 "Data": [],
                 "HelpText": "",
@@ -26032,7 +26473,7 @@
                           {
                             "WidgetType": "ComboBox",
                             "WidgetName": "Select AUX Channel: ",
-                            "Visibility": "Block:2, Field:LFP_Device_Class, Value:6150 or Block:2, Field:LFP2_Device_Class, Value:6150",
+                            "Visibility": "Block:2, Field:LFP_Device_Class, Value:6150",
                             "Data": [
                               "2",
                               "Int_LFP_AUX_Channel"
@@ -26056,7 +26497,7 @@
                           {
                             "WidgetType": "ComboBox",
                             "WidgetName": "Select Panel Type: ",
-                            "Visibility": "Block:2, Field:LFP_Device_Class, Value:6150 or Block:2, Field:LFP2_Device_Class, Value:6150",
+                            "Visibility": "Block:2, Field:LFP_Device_Class, Value:6150",
                             "Data": [
                               "40",
                               "bmp_Panel_type"
@@ -26192,7 +26633,7 @@
                           {
                             "WidgetType": "ComboBox",
                             "WidgetName": "DDI Lane Reversal: ",
-                            "Visibility": "Block:2, Field:LFP_Device_Class, Value:6150 or Block:2, Field:LFP2_Device_Class, Value:6150",
+                            "Visibility": "Block:2, Field:LFP_Device_Class, Value:6150",
                             "Data": [
                               "2",
                               "LFP_Lane_Reversal"
@@ -26205,6 +26646,26 @@
                               },
                               {
                                 "Key": "Disabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Vswing PreEmphasis Table Override: ",
+                            "Visibility": "Block:2, Field:LFP_Device_Class, Value:6150",
+                            "Data": [
+                              "2",
+                              "INT_LFP_Vswing_Override_Enable"
+                            ],
+                            "HelpText": "This feature, when enabled, will allow Graphics driver to use the Vswing and Pre-emphasis values from VBT.\nOEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.\nWhen this field is enabled, corresponding table must be populated in the VBT for PHY Vswing parameters too.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Yes",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "No",
                                 "Value": "0"
                               }
                             ]
@@ -26457,6 +26918,26 @@
                               },
                               {
                                 "Key": "Disabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Vswing PreEmphasis Table Override: ",
+                            "Visibility": "Block:2, Field:LFP2_Device_Class, Value:6150",
+                            "Data": [
+                              "2",
+                              "INT_LFP2_Vswing_Override_Enable"
+                            ],
+                            "HelpText": "This feature, when enabled, will allow Graphics driver to use the Vswing and Pre-emphasis values from VBT.\nOEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.\nWhen this field is enabled, corresponding table must be populated in the VBT for PHY Vswing parameters too.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Yes",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "No",
                                 "Value": "0"
                               }
                             ]
@@ -26764,6 +27245,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_01"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -26773,12 +27274,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -26907,7 +27408,7 @@
                               "eDP_VswingPreEmph_1"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -28176,6 +28677,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_01"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -29416,6 +29928,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_02"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -29425,12 +29957,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -29559,7 +30091,7 @@
                               "eDP_VswingPreEmph_2"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -30828,6 +31360,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_02"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -32068,6 +32611,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_03"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -32077,12 +32640,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -32211,7 +32774,7 @@
                               "eDP_VswingPreEmph_3"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -32861,7 +33424,7 @@
                             "Block": {
                               "PageNum": "5-2-3-5",
                               "PageName": "Power Features",
-                            "Visibility": "",
+                              "Visibility": "",
                               "PageHelpText": "",
                               "PageID": [
                                 {
@@ -33479,6 +34042,17 @@
                                     "PWM_Frequency_03"
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
+                                  "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_03"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
                                   "WidgetValues": []
                                 }
                               ],
@@ -34720,6 +35294,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_04"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -34729,12 +35323,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -34863,7 +35457,7 @@
                               "eDP_VswingPreEmph_4"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -36132,6 +36726,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_04"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -37372,6 +37977,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_05"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -37381,12 +38006,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -37515,7 +38140,7 @@
                               "eDP_VswingPreEmph_5"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -38784,6 +39409,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_05"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -40024,6 +40660,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_06"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -40033,12 +40689,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -40167,7 +40823,7 @@
                               "eDP_VswingPreEmph_6"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -41436,6 +42092,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_06"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -42676,6 +43343,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_07"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -42685,12 +43372,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -42803,7 +43490,7 @@
                               "eDP_VswingPreEmph_7"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-						    "WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -44072,6 +44759,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_07"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -44702,6 +45400,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_08"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -44711,12 +45429,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -44829,7 +45547,7 @@
                               "eDP_VswingPreEmph_8"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -46098,6 +46816,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_08"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -46728,6 +47457,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_09"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -46737,12 +47486,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -46855,7 +47604,7 @@
                               "eDP_VswingPreEmph_9"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-						    "WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -48124,6 +48873,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_09"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -48754,6 +49514,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_10"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -48763,12 +49543,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -48881,7 +49661,7 @@
                               "eDP_VswingPreEmph_10"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -50150,6 +50930,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_10"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -50780,6 +51571,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_11"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -50789,12 +51600,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -50907,7 +51718,7 @@
                               "eDP_VswingPreEmph_11"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -52176,6 +52987,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_11"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -52806,6 +53628,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_12"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -52815,12 +53657,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -52933,7 +53775,7 @@
                               "eDP_VswingPreEmph_12"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -54202,6 +55044,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_12"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -54832,6 +55685,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_13"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -54841,12 +55714,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -54959,7 +55832,7 @@
                               "eDP_VswingPreEmph_13"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -56228,6 +57101,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_13"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -56858,6 +57742,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_14"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -56867,12 +57771,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -56985,7 +57889,7 @@
                               "eDP_VswingPreEmph_14"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-						    "WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -58254,6 +59158,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_14"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -58884,6 +59799,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_15"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -58893,12 +59828,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -59011,7 +59946,7 @@
                               "eDP_VswingPreEmph_15"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -60280,6 +61215,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_15"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -60910,6 +61856,26 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "                Panel Position: ",
+                            "Visibility": "",
+                            "Data": [
+                              "40",
+                              "Panel_Position_16"
+                            ],
+                            "HelpText": "This feature specifies the Panel Position of LFP panel used.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Inside Shell",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Outside Shell",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "                Dual LFP Port Sync: ",
                             "Visibility": "",
                             "Data": [
@@ -60919,12 +61885,12 @@
                             "HelpText": "This feature  will allow users to disable/enable Dual LFP Port Sync and it is applicable for DDI-A, DDI-B in case of eDP and DSI-0, DSI-1 in case of MIPI. \r\n.",
                             "WidgetValues": [
                               {
-                                 "Key": "Enabled",
-                                 "Value": "1"
+                                "Key": "Enabled",
+                                "Value": "1"
                               },
                               {
-                                 "Key": "Disabled",
-                                 "Value": "0"
+                                "Key": "Disabled",
+                                "Value": "0"
                               }
                             ]
                           },
@@ -61037,7 +62003,7 @@
                               "eDP_VswingPreEmph_16"
                             ],
                             "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-						    "WidgetValues": [
+                            "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -62306,6 +63272,17 @@
                                   ],
                                   "HelpText": "This feature allows for the definition of the frequency needed for PWM Inverter.\nNote: The frequency range (entered as a decimal number), for the integrated PWM is 200Hz - 40KHz.",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "EntryInt",
+                                  "WidgetName": "Intel HDR DPCD Refresh Timeout (unit - 10 micro seconds): ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "HdrDpcdRefreshTimeout_16"
+                                  ],
+                                  "HelpText": "This field allows to configure the refresh timeout of Intel HDR DPCDs for different TCON Vendors.\nNote:\n\tThe value is in units of 10 microseconds.\n\tThe range (entered as a decimal number), for the timeout is 0-65535",
+                                  "WidgetValues": []
                                 }
                               ],
                               "NestedPages": []
@@ -63269,6 +64246,62 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "Max FrlRate Field Status",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP1_IsMaxFrlRateFieldValid"
+                            ],
+                            "HelpText": "Indicates if we need to consider the MaxFrlRate field for HDMI2.1\nDisable - Don't consider the MaximumFrlRate for limiting the FrlRates on HDMI2.1 displays\nEnable - MaximumFrlRate given in bits 0 to 3 are used to override Max FRL Rate supported by platform/panel",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Maximum FrlRate ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP1_MaximumFrlRate"
+                            ],
+                            "HelpText": "0000 = FrlRates not supported (HDMI 2.1 is limited to support only TMDS modes)\n0001 = 3 GT/s\n0010 = 6 GT/s\n0011 = 8 GT/s\n0100 = 10 GT/s\n0101 = 12 GT/s",
+                            "WidgetValues": [
+                              {
+                                "Key": "FrlRates not supported",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "3 GT/s",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "6 GT/s",
+                                "Value": "2"
+                              },
+                              {
+                                "Key": "8 GT/s",
+                                "Value": "3"
+                              },
+                              {
+                                "Key": "10 GT/s",
+                                "Value": "4"
+                              },
+                              {
+                                "Key": "12 GT/s",
+                                "Value": "5"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "DP to HDMI Pcon: ",
                             "Visibility": "",
                             "Data": [
@@ -64077,6 +65110,62 @@
                               {
                                 "Key": "Transparent Mode",
                                 "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Max FrlRate Field Status",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP2_IsMaxFrlRateFieldValid"
+                            ],
+                            "HelpText": "Indicates if we need to consider the MaxFrlRate field for HDMI2.1\nDisable - Don't consider the MaximumFrlRate for limiting the FrlRates on HDMI2.1 displays\nEnable - MaximumFrlRate given in bits 0 to 3 are used to override Max FRL Rate supported by platform/panel",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Maximum FrlRate ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP2_MaximumFrlRate"
+                            ],
+                            "HelpText": "0000 = FrlRates not supported (HDMI 2.1 is limited to support only TMDS modes)\n0001 = 3 GT/s\n0010 = 6 GT/s\n0011 = 8 GT/s\n0100 = 10 GT/s\n0101 = 12 GT/s",
+                            "WidgetValues": [
+                              {
+                                "Key": "FrlRates not supported",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "3 GT/s",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "6 GT/s",
+                                "Value": "2"
+                              },
+                              {
+                                "Key": "8 GT/s",
+                                "Value": "3"
+                              },
+                              {
+                                "Key": "10 GT/s",
+                                "Value": "4"
+                              },
+                              {
+                                "Key": "12 GT/s",
+                                "Value": "5"
                               }
                             ]
                           },
@@ -64895,6 +65984,62 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "Max FrlRate Field Status",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP3_IsMaxFrlRateFieldValid"
+                            ],
+                            "HelpText": "Indicates if we need to consider the MaxFrlRate field for HDMI2.1\nDisable - Don't consider the MaximumFrlRate for limiting the FrlRates on HDMI2.1 displays\nEnable - MaximumFrlRate given in bits 0 to 3 are used to override Max FRL Rate supported by platform/panel",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Maximum FrlRate ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP3_MaximumFrlRate"
+                            ],
+                            "HelpText": "0000 = FrlRates not supported (HDMI 2.1 is limited to support only TMDS modes)\n0001 = 3 GT/s\n0010 = 6 GT/s\n0011 = 8 GT/s\n0100 = 10 GT/s\n0101 = 12 GT/s",
+                            "WidgetValues": [
+                              {
+                                "Key": "FrlRates not supported",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "3 GT/s",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "6 GT/s",
+                                "Value": "2"
+                              },
+                              {
+                                "Key": "8 GT/s",
+                                "Value": "3"
+                              },
+                              {
+                                "Key": "10 GT/s",
+                                "Value": "4"
+                              },
+                              {
+                                "Key": "12 GT/s",
+                                "Value": "5"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "DP to HDMI Pcon: ",
                             "Visibility": "",
                             "Data": [
@@ -65703,6 +66848,62 @@
                               {
                                 "Key": "Transparent Mode",
                                 "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Max FrlRate Field Status",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP4_IsMaxFrlRateFieldValid"
+                            ],
+                            "HelpText": "Indicates if we need to consider the MaxFrlRate field for HDMI2.1\nDisable - Don't consider the MaximumFrlRate for limiting the FrlRates on HDMI2.1 displays\nEnable - MaximumFrlRate given in bits 0 to 3 are used to override Max FRL Rate supported by platform/panel",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Maximum FrlRate ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP4_MaximumFrlRate"
+                            ],
+                            "HelpText": "0000 = FrlRates not supported (HDMI 2.1 is limited to support only TMDS modes)\n0001 = 3 GT/s\n0010 = 6 GT/s\n0011 = 8 GT/s\n0100 = 10 GT/s\n0101 = 12 GT/s",
+                            "WidgetValues": [
+                              {
+                                "Key": "FrlRates not supported",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "3 GT/s",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "6 GT/s",
+                                "Value": "2"
+                              },
+                              {
+                                "Key": "8 GT/s",
+                                "Value": "3"
+                              },
+                              {
+                                "Key": "10 GT/s",
+                                "Value": "4"
+                              },
+                              {
+                                "Key": "12 GT/s",
+                                "Value": "5"
                               }
                             ]
                           },
@@ -66521,6 +67722,62 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "Max FrlRate Field Status",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP5_IsMaxFrlRateFieldValid"
+                            ],
+                            "HelpText": "Indicates if we need to consider the MaxFrlRate field for HDMI2.1\nDisable - Don't consider the MaximumFrlRate for limiting the FrlRates on HDMI2.1 displays\nEnable - MaximumFrlRate given in bits 0 to 3 are used to override Max FRL Rate supported by platform/panel",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Maximum FrlRate ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP5_MaximumFrlRate"
+                            ],
+                            "HelpText": "0000 = FrlRates not supported (HDMI 2.1 is limited to support only TMDS modes)\n0001 = 3 GT/s\n0010 = 6 GT/s\n0011 = 8 GT/s\n0100 = 10 GT/s\n0101 = 12 GT/s",
+                            "WidgetValues": [
+                              {
+                                "Key": "FrlRates not supported",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "3 GT/s",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "6 GT/s",
+                                "Value": "2"
+                              },
+                              {
+                                "Key": "8 GT/s",
+                                "Value": "3"
+                              },
+                              {
+                                "Key": "10 GT/s",
+                                "Value": "4"
+                              },
+                              {
+                                "Key": "12 GT/s",
+                                "Value": "5"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "DP to HDMI Pcon: ",
                             "Visibility": "",
                             "Data": [
@@ -67334,6 +68591,62 @@
                           },
                           {
                             "WidgetType": "ComboBox",
+                            "WidgetName": "Max FrlRate Field Status",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP6_IsMaxFrlRateFieldValid"
+                            ],
+                            "HelpText": "Indicates if we need to consider the MaxFrlRate field for HDMI2.1\nDisable - Don't consider the MaximumFrlRate for limiting the FrlRates on HDMI2.1 displays\nEnable - MaximumFrlRate given in bits 0 to 3 are used to override Max FRL Rate supported by platform/panel",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Maximum FrlRate ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP6_MaximumFrlRate"
+                            ],
+                            "HelpText": "0000 = FrlRates not supported (HDMI 2.1 is limited to support only TMDS modes)\n0001 = 3 GT/s\n0010 = 6 GT/s\n0011 = 8 GT/s\n0100 = 10 GT/s\n0101 = 12 GT/s",
+                            "WidgetValues": [
+                              {
+                                "Key": "FrlRates not supported",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "3 GT/s",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "6 GT/s",
+                                "Value": "2"
+                              },
+                              {
+                                "Key": "8 GT/s",
+                                "Value": "3"
+                              },
+                              {
+                                "Key": "10 GT/s",
+                                "Value": "4"
+                              },
+                              {
+                                "Key": "12 GT/s",
+                                "Value": "5"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
                             "WidgetName": "DP to HDMI Pcon: ",
                             "Visibility": "",
                             "Data": [
@@ -68142,6 +69455,62 @@
                               {
                                 "Key": "Transparent Mode",
                                 "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Max FrlRate Field Status",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP7_IsMaxFrlRateFieldValid"
+                            ],
+                            "HelpText": "Indicates if we need to consider the MaxFrlRate field for HDMI2.1\nDisable - Don't consider the MaximumFrlRate for limiting the FrlRates on HDMI2.1 displays\nEnable - MaximumFrlRate given in bits 0 to 3 are used to override Max FRL Rate supported by platform/panel",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "Maximum FrlRate ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP7_MaximumFrlRate"
+                            ],
+                            "HelpText": "0000 = FrlRates not supported (HDMI 2.1 is limited to support only TMDS modes)\n0001 = 3 GT/s\n0010 = 6 GT/s\n0011 = 8 GT/s\n0100 = 10 GT/s\n0101 = 12 GT/s",
+                            "WidgetValues": [
+                              {
+                                "Key": "FrlRates not supported",
+                                "Value": "0"
+                              },
+                              {
+                                "Key": "3 GT/s",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "6 GT/s",
+                                "Value": "2"
+                              },
+                              {
+                                "Key": "8 GT/s",
+                                "Value": "3"
+                              },
+                              {
+                                "Key": "10 GT/s",
+                                "Value": "4"
+                              },
+                              {
+                                "Key": "12 GT/s",
+                                "Value": "5"
                               }
                             ]
                           },
