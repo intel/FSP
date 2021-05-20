@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2020 - 2021, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -1116,17 +1116,25 @@ typedef struct {
   UINT8                       IsTPMPresence;
 
 /** Offset 0x0241 - Intel Speed Optimizer Enable
-  When enabled this feature automatically overclocks your processor. It changes the
-  All Core Frequency along with PL1, PL2, and IccMax. </b>0: Disable;<b> 1: Enable
+  @Deprecated: CML won't support BIOS ISO. And XTU ISO supported depends on Board
+  thermal design. When enabled this feature automatically overclocks your processor.
+  It changes the All Core Frequency along with PL1, PL2, and IccMax. </b>0: Disable;<b> 1: Enable
   $EN_DIS
 **/
   UINT8                       AutoEasyOverclock;
 
-/** Offset 0x0242 - ReservedSecurityPreMem
+/** Offset 0x0242 - Vmax Stress
+  Vmax Stress enable/disable. When enabled, frequency may be clipped the effective
+  max voltage on the silicon is too high.0: Disable; <b>1: Enable.</b>
+  $EN_DIS
+**/
+  UINT8                       VmaxStress;
+
+/** Offset 0x0243 - ReservedSecurityPreMem
   Reserved for Security Pre-Mem
   $EN_DIS
 **/
-  UINT8                       ReservedSecurityPreMem[2];
+  UINT8                       ReservedSecurityPreMem[1];
 
 /** Offset 0x0244 - Base addresses for VT-d function MMIO access
   Base addresses for VT-d MMIO access per VT-d engine
@@ -2518,9 +2526,26 @@ typedef struct {
 **/
   UINT8                       CoreVfPointCount;
 
-/** Offset 0x0553
+/** Offset 0x0553 - REFRESH_PANIC_WM
+  Refresh Panic Watermark, range 1-9
 **/
-  UINT8                       UnusedUpdSpace8[4];
+  UINT8                       RefreshPanicWm;
+
+/** Offset 0x0554 - REFRESH_HP_WM
+  Refresh High Priority Watermark, range 1-9
+**/
+  UINT8                       RefreshHpWm;
+
+/** Offset 0x0555 - Retrain On Fast Fail
+  Restart MRC in Cold mode if SW MemTest fails during Fast flow. Default = Enabled
+**/
+  UINT8                       RetrainOnFastFail;
+
+/** Offset 0x0556 - DllBwEnOverride
+  DllBwEnOverride 0: Disable(Default), 1: Enable
+  $EN_DIS
+**/
+  UINT8                       DllBwEnOverride;
 
 /** Offset 0x0557
 **/
@@ -2749,7 +2774,7 @@ typedef struct {
 
 /** Offset 0x05B1
 **/
-  UINT8                       UnusedUpdSpace9;
+  UINT8                       UnusedUpdSpace8;
 
 /** Offset 0x05B2 - Jitter Dwell Time for PCIe Gen3 Software Equalization
   Range: 0-65535, default is 1000. @warning Do not change from the default
@@ -2792,7 +2817,7 @@ typedef struct {
 
 /** Offset 0x05BD
 **/
-  UINT8                       UnusedUpdSpace10;
+  UINT8                       UnusedUpdSpace9;
 
 /** Offset 0x05BE - Delta T12 Power Cycle Delay required in ms
   Select the value for delay required. 0(Default)= No delay, 0xFFFF = Auto calculate
@@ -2807,11 +2832,17 @@ typedef struct {
 **/
   UINT8                       OemT12DelayOverride;
 
-/** Offset 0x05C1 - SaPreMemTestRsvd
+/** Offset 0x05C1 - State of DMA_CONTROL_GUARANTEE bit in the DMAR table
+  0=Disable/Clear, 1=Enable/Set
+  $EN_DIS
+**/
+  UINT8                       DmaControlGuarantee;
+
+/** Offset 0x05C2 - SaPreMemTestRsvd
   Reserved for SA Pre-Mem Test
   $EN_DIS
 **/
-  UINT8                       SaPreMemTestRsvd[9];
+  UINT8                       SaPreMemTestRsvd[8];
 
 /** Offset 0x05CA - TotalFlashSize
   Enable/Disable. 0: Disable, define default value of TotalFlashSize , 1: enable
@@ -2854,11 +2885,23 @@ typedef struct {
 **/
   UINT8                       SmbusSpdWriteDisable;
 
-/** Offset 0x05D5 - ReservedPchPreMemTest
+/** Offset 0x05D5 - Per Core Max Ratio override
+  Enable or disable Per Core PState OC supported by writing OCMB 0x1D to program new
+  favored core ratio to each Core. <b>0: Disable</b>, 1: enable
+  $EN_DIS
+**/
+  UINT8                       PerCoreRatioOverride;
+
+/** Offset 0x05D6 - Per Core Current Max Ratio
+  Array for the Per Core Max Ratio
+**/
+  UINT8                       PerCoreRatio[10];
+
+/** Offset 0x05E0 - ReservedPchPreMemTest
   Reserved for Pch Pre-Mem Test
   $EN_DIS
 **/
-  UINT8                       ReservedPchPreMemTest[16];
+  UINT8                       ReservedPchPreMemTest[5];
 
 /** Offset 0x05E5 - Force ME DID Init Status
   Test, 0: disable, 1: Success, 2: No Memory in Channels, 3: Memory Init Error, Set
@@ -3017,7 +3060,12 @@ typedef struct {
 **/
   UINT8                       SkipCpuReplacementCheck;
 
-/** Offset 0x0601
+/** Offset 0x0601 - Enable PCIE RP HotPlug
+  Indicate whether the root port is hot plug available
+**/
+  UINT8                       PcieRpHotPlug[24];
+
+/** Offset 0x0619
 **/
   UINT8                       ReservedFspmTestUpd[7];
 } FSP_M_TEST_CONFIG;
@@ -3042,11 +3090,11 @@ typedef struct {
 **/
   FSP_M_TEST_CONFIG           FspmTestConfig;
 
-/** Offset 0x0608
+/** Offset 0x0620
 **/
-  UINT8                       UnusedUpdSpace11[6];
+  UINT8                       UnusedUpdSpace10[6];
 
-/** Offset 0x060E
+/** Offset 0x0626
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;
