@@ -1,0 +1,1 @@
+FSPRel.bin and Fsp.fd are indentical FSP binaries for Slim Bootloader’s environment and coreboot’s environment respectively.
