@@ -21,11 +21,11 @@ Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Ato
 9th & 8th Generation Intel® Core™ processors and chipsets (formerly Coffee Lake Refresh, Coffee Lake, and Whiskey Lake) | CoffeeLakeFspBinPkg | v2.0
 10th Generation Intel® Core™ processors and chipsets (formerly Comet Lake) | CometLakeFspBinPkg | v2.1
 Intel® Atom™ processor C3XXX product family (formerly Denverton) | DenvertonNSFspBinPkg | v2.0
+Intel Atom® x6000E series, and Intel Pentium® and Celeron® N and J Series processors | ElkhartLakeFspBinPkg | v2.1
 10th Generation Intel® Core™ processors and chipsets (formerly Ice Lake) | IceLakeFspBinPkg | v2.1
 7th Generation Intel® Core™ processors and chipsets (formerly Kaby Lake) | KabylakeFspBinPkg | v2.0
 6th Generation Intel® Core™ processors and chipsets (formerly Sky Lake) | SkylakeFspBinPkg | v1.1
 11th Generation Intel® Core™ processors and chipsets (formerly Tiger Lake) | TigerLakeFspBinPkg | v2.2
-Intel Atom® x6000E series, and Intel Pentium® and Celeron® N and J Series processors | ElkhartLakeFspBinPkg | v2.1
 
 ## Legacy FSP Projects
 FSP binaries for older projects can be found in the [legacy branch](https://github.com/intel/FSP/tree/legacy)
