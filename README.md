@@ -6,6 +6,7 @@ Repository of Intel FSP binaries posted by Intel
 
 # Config Editor tool for FSP configuration
 Link: https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg/Tools/ConfigEditor
+
 Readme: https://github.com/tianocore/edk2/blob/master/IntelFsp2Pkg/Tools/UserManuals/ConfigEditorUserManual.md
 
 ## Wiki
