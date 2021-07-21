@@ -1,0 +1,20 @@
+## @file WhitleyFspBinPkg.dec
+#  Component description file for Whitley FSP binary package.
+#
+# @copyright
+#  Copyright 2015 - 2021 Intel Corporation.
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = WhitleyFspBinPkg
+  PACKAGE_GUID                   = 5A536013-A46E-44AD-8B30-738235F77B06
+  PACKAGE_VERSION                = 1.02
+
+[Includes]
+  Include
+
+[Guids]
+  gFspInfoGuid                              = { 0x067e0f25, 0x374f, 0x47c2, { 0x17, 0x92, 0x86, 0xdc, 0xdb, 0xc4, 0x8a, 0xc9 }}

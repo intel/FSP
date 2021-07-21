@@ -1,0 +1,83 @@
+## @file FspPcdListLibNullFvLateSilicon.inf
+# This lists all dynamic PCD used by the FvLateSilicon.fv.  It needs to be provided as part
+# of the *FspBinPkg so edk2 bootloaders can include it and build a complete
+# PCD database.
+#
+# @copyright
+# Copyright (c) 2020 - 2021, Intel Corporation. All rights reserved.<BR>
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = FspPcdListLibNullFvLateSilicon
+  FILE_GUID                      = dc42df7c-2ab0-4aa7-bea7-fcbd552a3535
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = NULL
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  MinPlatformPkg/MinPlatformPkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
+  WhitleySiliconPkg/WhitleySiliconPkg.dec
+  WhitleySiliconPkg/SiliconPkg.dec
+  WhitleySiliconPkg/CpRcPkg.dec
+  WhitleySiliconPkg/Cpu/CpuRcPkg.dec
+  WhitleyOpenBoardPkg/PlatformPkg.dec
+
+[Sources]
+  FspPcdListLibNull.c
+
+[Pcd]
+  gCpuPkgTokenSpaceGuid.PcdCpuConfigContextBuffer
+  gCpuPkgTokenSpaceGuid.PcdPlatformCpuSocketCount
+
+  gOemSkuTokenSpaceGuid.PcdOemSkuBoardSocketCount
+  gOemSkuTokenSpaceGuid.PcdOemSkuMaxChannel
+  gOemSkuTokenSpaceGuid.PcdOemSkuMaxDimmPerChannel
+  gOemSkuTokenSpaceGuid.PcdOemSkuMaxDimmSize
+  gOemSkuTokenSpaceGuid.PcdOemSkuUplinkPortIndex
+
+  gPlatformTokenSpaceGuid.PcdFpgaSwSmiInputValue
+
+  gStructPcdTokenSpaceGuid.PcdFpgaSocketConfig
+  gStructPcdTokenSpaceGuid.PcdMemBootHealthConfig
+  gStructPcdTokenSpaceGuid.PcdPchSetup
+  gStructPcdTokenSpaceGuid.PcdSetup
+  gStructPcdTokenSpaceGuid.PcdSocketCommonRcConfig
+  gStructPcdTokenSpaceGuid.PcdSocketIioConfig
+  gStructPcdTokenSpaceGuid.PcdSocketMemoryConfig
+  gStructPcdTokenSpaceGuid.PcdSocketMpLinkConfig
+  gStructPcdTokenSpaceGuid.PcdSocketPowerManagementConfig
+
+  gEfiMdeModulePkgTokenSpaceGuid.PcdS3BootScriptTablePrivateDataPtr
+  gEfiMdeModulePkgTokenSpaceGuid.PcdS3BootScriptTablePrivateSmmDataPtr
+
+  gCpPlatTokenSpaceGuid.PcdUefiOptimizedBoot
+
+  gOemSkuTokenSpaceGuid.PcdAcpiGnvsAddress
+  gMinPlatformPkgTokenSpaceGuid.PcdPcIoApicEnable
+
+  gEfiCpRcPkgTokenSpaceGuid.PcdPcieMmcfgTablePtr
+  gReferenceCodePolicyTokenSpaceGuid.ReservedD
+  gSiPkgTokenSpaceGuid.PcdHvmModeEnabled
+  gEfiCpRcPkgTokenSpaceGuid.PcdSyshostMemoryAddress
+  gReferenceCodePolicyTokenSpaceGuid.ReservedC
+
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuHotPlugDataAddress
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuProcTraceMemSize
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuProcTraceOutputScheme
+
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmMsrSaveStateEnable
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmProtectedModeEnable
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmUseDelayIndication
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmUseBlockIndication
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmRuntimeCtlHooks
+
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuS3DataAddress
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesCapability
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesSetting
+
