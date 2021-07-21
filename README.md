@@ -31,6 +31,7 @@ Intel Atom® x6000E series, and Intel Pentium® and Celeron® N and J Series pro
 7th Generation Intel® Core™ processors and chipsets (formerly Kaby Lake) | KabylakeFspBinPkg | v2.0
 6th Generation Intel® Core™ processors and chipsets (formerly Sky Lake) | SkylakeFspBinPkg | v1.1
 11th Generation Intel® Core™ processors and chipsets (formerly Tiger Lake) | TigerLakeFspBinPkg | v2.2
+3rd Generation Intel® Xeon® Scalable processors and chipsets (formerly Ice Lake-SP) | WhitleyFspBinPkg | v2.1
 
 ## Legacy FSP Projects
 FSP binaries for older projects can be found in the [legacy branch](https://github.com/intel/FSP/tree/legacy)
