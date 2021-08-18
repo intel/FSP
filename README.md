@@ -25,6 +25,7 @@ Intel® Atom™ processor E3900 product family (formerly Apollo Lake) | ApolloLa
 Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Atom™ x5-E8000 Processor (formerly Braswell) | BraswellFspBinPkg | v1.1
 9th & 8th Generation Intel® Core™ processors and chipsets (formerly Coffee Lake Refresh, Coffee Lake, and Whiskey Lake) | CoffeeLakeFspBinPkg | v2.0
 10th Generation Intel® Core™ processors and chipsets (formerly Comet Lake) | CometLakeFspBinPkg | v2.1
+3rd Generation Intel® Xeon® Scalable processors and chipsets (formerly Cooper Lake) | CedarIslandFspBinPkg | v2.1
 Intel® Atom™ processor C3XXX product family (formerly Denverton) | DenvertonNSFspBinPkg | v2.0
 Intel Atom® x6000E series, and Intel Pentium® and Celeron® N and J Series processors | ElkhartLakeFspBinPkg | v2.1
 10th Generation Intel® Core™ processors and chipsets (formerly Ice Lake) | IceLakeFspBinPkg | v2.1
