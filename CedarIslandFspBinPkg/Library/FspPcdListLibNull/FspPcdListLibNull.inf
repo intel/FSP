@@ -1,0 +1,76 @@
+## @file FspPcdListLibNull.inf
+# This lists all dynamic PCD used by the FSP.  It needs to be provided as part
+# of the *FspBinPkg so edk2 bootloaders can include it and build a complete
+# PCD database.
+#
+# @copyright
+# Copyright (c) 2020 - 2021, Intel Corporation. All rights reserved.<BR>
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = FspPcdListLibNull
+  FILE_GUID                      = 24c7a8e4-3b43-4e8b-86a9-5d379927152e
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = NULL
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
+  MinPlatformPkg/MinPlatformPkg.dec
+  WhitleySiliconPkg/WhitleySiliconPkg.dec
+  WhitleySiliconPkg/SiliconPkg.dec
+  WhitleySiliconPkg/CpRcPkg.dec
+  WhitleySiliconPkg/Cpu/CpuRcPkg.dec
+  WhitleyOpenBoardPkg/PlatformPkg.dec
+
+[Sources]
+  FspPcdListLibNull.c
+
+[Pcd]
+  gCpuPkgTokenSpaceGuid.PcdCpuEnergyPolicy
+
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesCapability
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuS3DataAddress
+  gUefiCpuPkgTokenSpaceGuid.PcdIsPowerOnReset
+
+  gEfiCpRcPkgTokenSpaceGuid.PcdDprMemSize
+  gEfiCpRcPkgTokenSpaceGuid.PcdImonAddr
+  gEfiCpRcPkgTokenSpaceGuid.PcdImr2Enable
+  gEfiCpRcPkgTokenSpaceGuid.PcdImr2Size
+  gEfiCpRcPkgTokenSpaceGuid.PcdLtMemSize
+  gEfiCpRcPkgTokenSpaceGuid.PcdMemMapHostMemoryAddress
+  gEfiCpRcPkgTokenSpaceGuid.PcdMemSrvidMap
+  gEfiCpRcPkgTokenSpaceGuid.PcdPcieMmcfgTablePtr
+  gEfiCpRcPkgTokenSpaceGuid.PcdPeiSyshostMemorySize
+  gEfiCpRcPkgTokenSpaceGuid.PcdSyshostMemoryAddress
+
+  gEfiMdeModulePkgTokenSpaceGuid.PcdGhcbBase
+  gEfiMdeModulePkgTokenSpaceGuid.PcdGhcbSize
+  gEfiMdeModulePkgTokenSpaceGuid.PcdNvStoreDefaultValueBuffer
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetNvStoreDefaultId
+  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeUseSerial
+  gEfiMdeModulePkgTokenSpaceGuid.PcdUse5LevelPageTable
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVpdBaseAddress64
+
+  gPlatformTokenSpaceGuid.ReservedB
+  gPlatformTokenSpaceGuid.PcdPlatformType
+
+  gReferenceCodePolicyTokenSpaceGuid.ReservedC
+  gReferenceCodePolicyTokenSpaceGuid.ReservedD
+  gReferenceCodePolicyTokenSpaceGuid.PcdEvMode
+
+  gSiPkgTokenSpaceGuid.PcdEmuBiosSkipS3MAccess
+  gSiPkgTokenSpaceGuid.PcdHvmModeEnabled
+  gSiPkgTokenSpaceGuid.PcdNumaAcpiDataStaticPointer
+  gSiPkgTokenSpaceGuid.PcdWarmResetEliminationEn
+
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuClockModulationDutyCycle
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesSetting
+  gUefiCpuPkgTokenSpaceGuid.PcdSevEsIsEnabled
+
+  gEfiMdeModulePkgTokenSpaceGuid.PcdUse1GPageTable
