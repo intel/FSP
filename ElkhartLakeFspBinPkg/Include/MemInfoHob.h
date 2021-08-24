@@ -4,7 +4,7 @@
   data hobs.
 
   @copyright
-  Copyright (c) 1999 - 2020, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 1999 - 2019, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials are licensed and made available under
   the terms and conditions of the BSD License that accompanies this distribution.
   The full text of the license may be found at
@@ -17,10 +17,6 @@
 **/
 #ifndef _MEM_INFO_HOB_H_
 #define _MEM_INFO_HOB_H_
-
-#include <Uefi/UefiMultiPhase.h>
-#include <Pi/PiBootMode.h>
-#include <Pi/PiHob.h>
 
 #pragma pack (push, 1)
 
@@ -44,6 +40,25 @@ extern EFI_GUID gSiMemoryPlatformDataGuid;
 #define   B_RANK1_PRS           BIT1
 #define   B_RANK2_PRS           BIT4
 #define   B_RANK3_PRS           BIT5
+
+// @todo remove and use the MdePkg\Include\Pi\PiHob.h
+#if !defined(_PEI_HOB_H_) && !defined(__PI_HOB_H__)
+#ifndef __HOB__H__
+typedef struct _EFI_HOB_GENERIC_HEADER {
+  UINT16  HobType;
+  UINT16  HobLength;
+  UINT32  Reserved;
+} EFI_HOB_GENERIC_HEADER;
+
+typedef struct _EFI_HOB_GUID_TYPE {
+  EFI_HOB_GENERIC_HEADER  Header;
+  EFI_GUID                Name;
+  ///
+  /// Guid specific data goes here
+  ///
+} EFI_HOB_GUID_TYPE;
+#endif
+#endif
 
 ///
 /// Defines taken from MRC so avoid having to include MrcInterface.h
@@ -229,6 +244,8 @@ typedef struct {
   UINT32            BootMode;
   UINT32            TsegSize;
   UINT32            TsegBase;
+  UINT32            MeStolenSize;
+  UINT32            MeStolenBase;
   UINT32            PrmrrSize;
   UINT64            PrmrrBase;
   UINT32            PramSize;
@@ -240,6 +257,26 @@ typedef struct {
   UINT32            PciEBaseAddress;
   PSMI_MEM_INFO     PsmiInfo[MAX_TRACE_CACHE_TYPE];
 } MEMORY_PLATFORM_DATA;
+
+/**
+  Memory IA GT Exlusion Hob
+
+  <b>Revision 1:</b>
+  - Initial version.
+**/
+typedef struct {
+  UINT8             Revision;
+  UINT8             Reserved[3];
+  UINT32            ImrIaExclBaseLow;
+  UINT32            ImrIaExclBaseHigh;
+  UINT32            ImrIaExclLimitLow;
+  UINT32            ImrIaExclLimitHigh;
+  UINT32            ImrGtExclBaseLow;
+  UINT32            ImrGtExclBaseHigh;
+  UINT32            ImrGtExclLimitLow;
+  UINT32            ImrGtExclLimitHigh;
+} MEMORY_IAGT_EXCLUSION_DATA;
+
 
 typedef struct {
   EFI_HOB_GUID_TYPE    EfiHobGuidType;

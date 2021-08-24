@@ -422,9 +422,12 @@ typedef struct {
   UINT8                       UserBd;
 
 /** Offset 0x011A - DDR Frequency Limit
-  Maximum Memory Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867,
-  2133, 2400, 2667, 2933 and 0 for Auto.
-  1067:1067, 1333:1333, 1600:1600, 1867:1867, 2133:2133, 2400:2400, 2667:2667, 2933:2933, 0:Auto
+  Maximum Memory Frequency Selections in Mhz. Options are 1067, 1200, 1333, 1400,
+  1600, 1800, 1867, 2000, 2133, 2200, 2400, 2600, 2667, 2800, 2933, 3000, 3200, 3467,
+  3600, 3733, 4000, 4200, 4267 and 0 for Auto.
+  1067:1067, 1200:1200, 1333:1333, 1400:1400, 1600:1600, 1800:1800, 1867:1867, 2000:2000,
+  2133:2133, 2200:2200, 2400:2400, 2600:2600, 2667:2667, 2800:2800, 2933:2933, 3000:3000,
+  3200:3200, 3467:3467, 3600:3600, 3733:3733, 4000:4000, 4200:4200, 4267:4267, 0:Auto
 **/
   UINT16                      DdrFreqLimit;
 
@@ -442,16 +445,18 @@ typedef struct {
   UINT8                       DdrSpeedControl;
 
 /** Offset 0x011E - Low Frequency
-  SAGV Low Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867, 2133,
-  2400, 2667, 2933 and 0 for Auto.
-  1067:1067, 1333:1333, 1600:1600, 1867:1867, 2133:2133, 2400:2400, 2667:2667, 2933:2933, 0:Auto
+  SAGV Low Frequency Selections in Mhz. Options are 1067, 1200, 1333, 1400, 1600,
+  1800, 1867, 2133, 2400, 2667, 2933, 3200, 3467, 3733, 4000, 4267 and 0 for Auto.
+  1067:1067, 1200:1200, 1333:1333, 1400:1400, 1600:1600, 1800:1800, 1867:1867, 2133:2133,
+  2400:2400, 2667:2667, 2933:2933, 3200:3200, 3467:3467, 3733:3733, 4000:4000, 4267:4267, 0:Auto
 **/
   UINT16                      FreqSaGvLow;
 
 /** Offset 0x0120 - Mid Frequency
-  SAGV Mid Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867, 2133,
-  2400, 2667, 2933 and 0 for Auto.
-  1067:1067, 1333:1333, 1600:1600, 1867:1867, 2133:2133, 2400:2400, 2667:2667, 2933:2933, 0:Auto
+  SAGV Mid Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1800, 1867,
+  2000, 2133, 2400, 2667, 2933, 3200, 3467, 3733, 4000, 4267 and 0 for Auto.
+  1067:1067, 1333:1333, 1600:1600, 1800:1800, 1867:1867, 2000:2000, 2133:2133, 2400:2400,
+  2667:2667, 2933:2933, 3200:3200, 3467:3467, 3733:3733, 4000:4000, 4267:4267, 0:Auto
 **/
   UINT16                      FreqSaGvMid;
 
@@ -2927,85 +2932,110 @@ typedef struct {
   Tcc (Time Coordinated Computing) Tuning Enabled
   $EN_DIS
 **/
-  UINT8                       TccTuningEnablePreMem;
+  UINT8                       TccModeEnablePreMem;
 
-/** Offset 0x06BE
+/** Offset 0x06BE - Tcc Tuning enable/disable
+  <b>@deprecated</b> - Not used and has no effect, Please use DSO Tuning and Software SRAM
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace22[2];
+  UINT8                       TccTuningEnable;
 
-/** Offset 0x06C0 - Tcc Buffer Config File Base Address
-  Tcc (Time Coordinated Computing) Buffer Config File File Base Address
+/** Offset 0x06BF
 **/
-  UINT32                      TccBufferCfgBase;
+  UINT8                       UnusedUpdSpace22;
 
-/** Offset 0x06C4 - Tcc Buffer Config File Size
-  Tcc (Time Coordinated Computing) Buffer Config File Size
+/** Offset 0x06C0 - Tcc Cache Config File Base Address
+  Tcc (Time Coordinated Computing) Cache Config File File Base Address
 **/
-  UINT32                      TccBufferCfgSize;
+  UINT32                      TccCacheCfgBasePreMem;
 
-/** Offset 0x06C8 - Tcc BIOS Config File Base Address
-  Tcc (Time Coordinated Computing) TCC BIOS Config File Base Address
+/** Offset 0x06C4 - Tcc Cache Config File Size
+  Tcc (Time Coordinated Computing) Cache Config File Size
+**/
+  UINT32                      TccCacheCfgSizePreMem;
+
+/** Offset 0x06C8 - Tcc Stream Config File Base Address
+  Tcc (Time Coordinated Computing) Stream Config File Base Address
 **/
   UINT32                      TccStreamCfgBasePreMem;
 
-/** Offset 0x06CC - Tcc BIOS Config File Size
-  Tcc (Time Coordinated Computing) TCC BIOS Config File Size
+/** Offset 0x06CC - Tcc Stream Config File Size
+  Tcc (Time Coordinated Computing) Stream Config File Size
 **/
   UINT32                      TccStreamCfgSizePreMem;
 
-/** Offset 0x06D0 - Force ME DID Init Status
+/** Offset 0x06D0 - Software SRAM enable/disable
+  Enable will allocate part of LLC as SSRAM. If Cache Configuration Subregion is available,
+  it will allocate base off Cache Configuration Subregion
+  $EN_DIS
+**/
+  UINT8                       SoftwareSramEnPreMem;
+
+/** Offset 0x06D1 - Data Streams Optimizer enable/disable
+  Enable will utilize DSO Subregion to tune system.
+  $EN_DIS
+**/
+  UINT8                       DsoTuningEnPreMem;
+
+/** Offset 0x06D2 - TCC Error Log enable/disable
+  Enable will log errors from TCC Flow.
+  $EN_DIS
+**/
+  UINT8                       TccErrorLogEnPreMem;
+
+/** Offset 0x06D3 - Force ME DID Init Status
   Test, 0: disable, 1: Success, 2: No Memory in Channels, 3: Memory Init Error, Set
   ME DID init stat value
   $EN_DIS
 **/
   UINT8                       DidInitStat;
 
-/** Offset 0x06D1 - CPU Replaced Polling Disable
+/** Offset 0x06D4 - CPU Replaced Polling Disable
   Test, 0: disable, 1: enable, Setting this option disables CPU replacement polling loop
   $EN_DIS
 **/
   UINT8                       DisableCpuReplacedPolling;
 
-/** Offset 0x06D2 - ME DID Message
+/** Offset 0x06D5 - ME DID Message
   Test, 0: disable, 1: enable, Enable/Disable ME DID Message (disable will prevent
   the DID message from being sent)
   $EN_DIS
 **/
   UINT8                       SendDidMsg;
 
-/** Offset 0x06D3 - Check HECI message before send
+/** Offset 0x06D6 - Check HECI message before send
   Test, 0: disable, 1: enable, Enable/Disable message check.
   $EN_DIS
 **/
   UINT8                       DisableMessageCheck;
 
-/** Offset 0x06D4 - Skip MBP HOB
+/** Offset 0x06D7 - Skip MBP HOB
   Test, 0: disable, 1: enable, Enable/Disable MOB HOB.
   $EN_DIS
 **/
   UINT8                       SkipMbpHob;
 
-/** Offset 0x06D5 - HECI2 Interface Communication
+/** Offset 0x06D8 - HECI2 Interface Communication
   Test, 0: disable, 1: enable, Adds or Removes HECI2 Device from PCI space.
   $EN_DIS
 **/
   UINT8                       HeciCommunication2;
 
-/** Offset 0x06D6 - Enable KT device
+/** Offset 0x06D9 - Enable KT device
   Test, 0: disable, 1: enable, Enable or Disable KT device.
   $EN_DIS
 **/
   UINT8                       KtDeviceEnable;
 
-/** Offset 0x06D7 - Skip CPU replacement check
+/** Offset 0x06DA - Skip CPU replacement check
   Test, 0: disable, 1: enable, Setting this option to skip CPU replacement check
   $EN_DIS
 **/
   UINT8                       SkipCpuReplacementCheck;
 
-/** Offset 0x06D8
+/** Offset 0x06DB
 **/
-  UINT8                       UnusedUpdSpace23[4];
+  UINT8                       UnusedUpdSpace23[1];
 
 /** Offset 0x06DC
 **/
