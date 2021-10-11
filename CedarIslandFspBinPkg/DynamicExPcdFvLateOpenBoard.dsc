@@ -1,0 +1,51 @@
+## @file DynamicExPcdFvLateOpenBoard.dsc
+# FSP DynamicEx PCDs used for FvLateBoard build.
+#
+# When adding PCD, they should also be added to FspPcdListLibNullFvLateOpenBoard.inf
+#
+# @copyright
+#  Copyright 2018 - 2021 Intel Corporation.
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[PcdsDynamicExDefault]
+  gOemSkuTokenSpaceGuid.PcdOemSkuMemDevFormFactor
+  gPlatformTokenSpaceGuid.ReservedB
+  gPlatformTokenSpaceGuid.PcdHalfWidth
+
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTableType
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesBaseBoardAssetTag
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesBaseBoardLocationInChassis
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesBaseBoardManufacturer
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesBaseBoardProductName
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesBaseBoardSerialNumber
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesBaseBoardVersion
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesBiosReleaseDate
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesBiosVendor
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesBiosVersion
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesChassisAssetTag
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesChassisManufacturer
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesChassisSerialNumber
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesChassisSkuNumber
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesChassisVersion
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesCoolingDeviceDescription
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesManagementDeviceComponentDescription
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesManagementDeviceDescription
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesMemorySerialNumberFormat
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesOemString1
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSysConfigOption1
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemFamily
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemManufacturer
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemPowerSupplyAssetTagNumber
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemPowerSupplyDeviceName
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemPowerSupplyLocation
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemPowerSupplyManufacturer
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemPowerSupplyModelPartNumber
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemPowerSupplyRevisionLevel
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemPowerSupplySerialNumber
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemProductName
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemSerialNumber
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemSkuNumber
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemVersion
+  gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesTemperatureProbeDescription
