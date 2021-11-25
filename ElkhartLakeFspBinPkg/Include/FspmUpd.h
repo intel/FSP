@@ -2731,39 +2731,45 @@ typedef struct {
 **/
   UINT8                       NVMeHoldDisableBit;
 
-/** Offset 0x05FC - PreMemRsvd
+/** Offset 0x05FC - Pcie Ref Pll SSC
+  Pcie Ref Pll SSC Percentatge. 0x0: 0.0%, 0x1: 0.1%, 0x2:0.2%, 0x3: 0.3%, 0x4: 0.4%,
+  0x5: 0.5%, 0xFE: Disable, 0xFF: Auto
+**/
+  UINT8                       PcieRefPllSsc;
+
+/** Offset 0x05FD - PreMemRsvd
   Reserved for Pre-Mem
   $EN_DIS
 **/
   UINT8                       ReservedFspmUpd[18];
 
-/** Offset 0x060E - Skip external display device scanning
+/** Offset 0x060F - Skip external display device scanning
   Enable: Do not scan for external display device, Disable (Default): Scan external
   display devices
   $EN_DIS
 **/
   UINT8                       SkipExtGfxScan;
 
-/** Offset 0x060F - Generate BIOS Data ACPI Table
+/** Offset 0x0610 - Generate BIOS Data ACPI Table
   Enable: Generate BDAT for MRC RMT or SA PCIe data. Disable (Default): Do not generate it
   $EN_DIS
 **/
   UINT8                       BdatEnable;
 
-/** Offset 0x0610 - Detect External Graphics device for LegacyOpROM
+/** Offset 0x0611 - Detect External Graphics device for LegacyOpROM
   Detect and report if external graphics device only support LegacyOpROM or not (to
   support CSM auto-enable). Enable(Default)=1, Disable=0
   $EN_DIS
 **/
   UINT8                       ScanExtGfxForLegacyOpRom;
 
-/** Offset 0x0611 - Lock PCU Thermal Management registers
+/** Offset 0x0612 - Lock PCU Thermal Management registers
   Lock PCU Thermal Management registers. Enable(Default)=1, Disable=0
   $EN_DIS
 **/
   UINT8                       LockPTMregs;
 
-/** Offset 0x0612 - Rsvd
+/** Offset 0x0613 - Rsvd
   Disable(0x0)(Default): Normal Operation - RxCTLE adaptive behavior enabled, Enable(0x1):
   Override RxCTLE - Disable RxCTLE adaptive behavior to keep the configured RxCTLE
   peak values unmodified
@@ -2771,28 +2777,24 @@ typedef struct {
 **/
   UINT8                       PegGen3Rsvd;
 
-/** Offset 0x0613 - Panel Power Enable
+/** Offset 0x0614 - Panel Power Enable
   Control for enabling/disabling VDD force bit (Required only for early enabling of
   eDP panel). 0=Disable, 1(Default)=Enable
   $EN_DIS
 **/
   UINT8                       PanelPowerEnable;
 
-/** Offset 0x0614 - BdatTestType
+/** Offset 0x0615 - BdatTestType
   Indicates the type of Memory Training data to populate into the BDAT ACPI table.
   0:RMT per Rank, 1:RMT per Bit, 2:Margin2D
 **/
   UINT8                       BdatTestType;
 
-/** Offset 0x0615 - SaPreMemTestRsvd
+/** Offset 0x0616 - SaPreMemTestRsvd
   Reserved for SA Pre-Mem Test
   $EN_DIS
 **/
   UINT8                       SaPreMemTestRsvd[98];
-
-/** Offset 0x0677
-**/
-  UINT8                       UnusedUpdSpace19;
 
 /** Offset 0x0678 - TotalFlashSize
   Enable/Disable. 0: Disable, define default value of TotalFlashSize , 1: enable
@@ -2873,7 +2875,7 @@ typedef struct {
 
 /** Offset 0x0693
 **/
-  UINT8                       UnusedUpdSpace20[1];
+  UINT8                       UnusedUpdSpace19[1];
 
 /** Offset 0x0694 - DMIC<N> ClkA Pin Muxing (N - DMIC number)
   Determines DMIC<N> ClkA Pin muxing. See  GPIO_*_MUXING_DMIC<N>_CLKA_*
@@ -2893,7 +2895,7 @@ typedef struct {
 
 /** Offset 0x06A5
 **/
-  UINT8                       UnusedUpdSpace21[3];
+  UINT8                       UnusedUpdSpace20[3];
 
 /** Offset 0x06A8 - DMIC<N> Data Pin Muxing
   Determines DMIC<N> Data Pin muxing. See GPIO_*_MUXING_DMIC<N>_DATA_*
@@ -2929,7 +2931,7 @@ typedef struct {
   UINT8                       PchHdaIDispCodecDisconnect;
 
 /** Offset 0x06BD - Tcc Tuning enable/disable
-  Tcc (Time Coordinated Computing) Tuning Enabled
+  <b>@deprecated</b> - Not used and has no effect, Please use DSO Tuning and Software SRAM
   $EN_DIS
 **/
   UINT8                       TccModeEnablePreMem;
@@ -2942,7 +2944,7 @@ typedef struct {
 
 /** Offset 0x06BF
 **/
-  UINT8                       UnusedUpdSpace22;
+  UINT8                       UnusedUpdSpace21;
 
 /** Offset 0x06C0 - Tcc Cache Config File Base Address
   Tcc (Time Coordinated Computing) Cache Config File File Base Address
@@ -3035,7 +3037,7 @@ typedef struct {
 
 /** Offset 0x06DB
 **/
-  UINT8                       UnusedUpdSpace23[1];
+  UINT8                       UnusedUpdSpace22[1];
 
 /** Offset 0x06DC
 **/
@@ -3060,7 +3062,7 @@ typedef struct {
 
 /** Offset 0x06F0
 **/
-  UINT8                       UnusedUpdSpace24[6];
+  UINT8                       UnusedUpdSpace23[6];
 
 /** Offset 0x06F6
 **/

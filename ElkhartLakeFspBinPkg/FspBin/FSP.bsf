@@ -513,6 +513,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_TempAboveThrottleNotification   1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_MissingCommitBitNotification    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_NVMeHoldDisableBit              1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PcieRefPllSsc                   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpd                18 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_BdatEnable                      1 bytes    $_DEFAULT_ = 0x00
@@ -522,7 +523,6 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PanelPowerEnable                1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_BdatTestType                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SaPreMemTestRsvd               98 bytes    $_DEFAULT_ = 0x00
-        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_TotalFlashSize                  2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_BiosSize                        2 bytes    $_DEFAULT_ = 0x2800
         $gPlatformFspPkgTokenSpaceGuid_TxtAcheckRequest                1 bytes    $_DEFAULT_ = 0x0
@@ -669,10 +669,14 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsEnable            14 bytes    $_DEFAULT_ = 0x01, 0x00, 0x01, 0x00, 0x01, 0x00, 0x01, 0x00, 0x01, 0x00, 0x01, 0x00, 0x01, 0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiDefaultCsOutput      7 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsMode               7 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsGpioMode           7 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsState              7 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        Skip 2 bytes
+        $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsGpioPin           28 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiMisoEnable           3 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiDelayRxClk           3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartMode                7 bytes    $_DEFAULT_ = 0x00, 0x00, 0x02, 0x01, 0x01, 0x01, 0x01
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartBaudRate           28 bytes    $_DEFAULT_ = 0x00,0xC2,0x01,0x00,0x00,0xC2,0x01,0x00,0x00,0xC2,0x01,0x00,0x00,0xC2,0x01,0x00,0x00,0xC2,0x01,0x00,0x00,0xC2,0x01,0x00,0x00,0xC2,0x01,0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartParity              7 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDataBits            7 bytes    $_DEFAULT_ = 0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08
@@ -1154,7 +1158,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_EnableTimedGpio0                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnableTimedGpio1                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnableVnnVoltageRaise           1 bytes    $_DEFAULT_ = 0x00
-        Skip 4 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PchPseGbeSbInterruptEnable      2 bytes    $_DEFAULT_ = 0x00, 0x00
+        Skip 2 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes
@@ -1388,8 +1393,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SataTestMode                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchXhciOcLock                   1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PmcLpmS0ixSubStateEnableMask    1 bytes    $_DEFAULT_ = 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_PchUsbPullUpResistorEnable      1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_MctpBroadcastCycle              1 bytes    $_DEFAULT_ = 0x0
-        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpLtrMaxSnoopLatency     8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpLtrMaxNoSnoopLatency   8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpSnoopLatencyOverrideMode   4 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02
@@ -3066,6 +3071,9 @@ Page "Memory Reference Code"
         Help "1: enable, 0: disable, Enable/disable for Missing Commit Bit Notification"
     Combo $gPlatformFspPkgTokenSpaceGuid_NVMeHoldDisableBit, "NVMeHoldDisableBit", &EN_DIS,
         Help "1: enable, 0: disable, Enable/disable for NVMeHoldDisableBit"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRefPllSsc, "Pcie Ref Pll SSC", HEX,
+        Help "Pcie Ref Pll SSC Percentatge. 0x0: 0.0%, 0x1: 0.1%, 0x2:0.2%, 0x3: 0.3%, 0x4: 0.4%, 0x5: 0.5%, 0xFE: Disable, 0xFF: Auto"
+             "Valid range: 0x00 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpd, "PreMemRsvd", &EN_DIS,
         Help "Reserved for Pre-Mem"
     Combo $gPlatformFspPkgTokenSpaceGuid_BdatEnable, "Generate BIOS Data ACPI Table", &EN_DIS,
@@ -4120,9 +4128,15 @@ Page "PCH(PostMem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsMode, "SPIn Default Chip Select Mode HW/SW", HEX,
         Help "Sets Default CS Mode Hardware or Software. N represents controller index: SPI0, SPI1, ... Available options: 0:HW, 1:SW"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsGpioMode, "SPIn Default Chip Select Pin Native/GPIO", HEX,
+        Help "Sets Default CS Mode Hardware or Software. N represents controller index: SPI0, SPI1, ... Available options: 0:Native, 1:GPIO"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsState, "SPIn Default Chip Select State Low/High", HEX,
         Help "Sets Default CS State Low or High. N represents controller index: SPI0, SPI1, ... Available options: 0:Low, 1:High"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiCsGpioPin, "SerialIoSpiCsPinMuxPolicy", HEX,
+        Help "Select SerialIo SPI Cs pin muxing. Refer to GPIO_*_MUXING_SERIALIO_SPIx_CS* for possible values."
+             "Valid range: 0 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SerialIoSpiMisoEnable, "SPIn Master Input Slave Output Enable/Disable", HEX,
         Help "0:Disabled, 1:Enabled. Sets Native Mode for SPIx MISO GPIO if it is Enabled"
              "Valid range: 0x000000 ~ 0xFFFFFF"
@@ -4770,6 +4784,9 @@ Page "PCH(PostMem)"
         Help "When FALSE, it disables Timed GPIO 1."
     Combo $gPlatformFspPkgTokenSpaceGuid_EnableVnnVoltageRaise, "Enable VNN Voltage Raise.", &EN_DIS,
         Help "When TRUE, it enable VNN Voltage Raise."
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchPseGbeSbInterruptEnable, "Enable PCH PSE GBE sideband interrupt", HEX,
+        Help "Set if PSE GBE are to be set to sideband interrupt. 0: Disable; 1: Enable."
+             "Valid range: 0x0 ~ 0xFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PsOnEnable, "Enable PS_ON.", &EN_DIS,
         Help "PS_ON is a new C10 state from the CPU on desktop SKUs that enables a lower power target that will be required by the California Energy Commission (CEC). When FALSE, PS_ON is to be disabled."
     Combo $gPlatformFspPkgTokenSpaceGuid_PmcCpuC10GatePinEnable, "Pmc Cpu C10 Gate Pin Enable", &EN_DIS,
@@ -4862,6 +4879,8 @@ Page "PCH(PostMem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PmcLpmS0ixSubStateEnableMask, "Low Power Mode Enable/Disable config mask", HEX,
         Help "Configure if respective S0i2/3 sub-states are to be supported. Each bit corresponds to one sub-state (LPMx - BITx): LPM0-s0i2.0, LPM1-s0i2.1, LPM2-s0i2.2, LPM3-s0i3.0, LPM4-s0i3.1, LPM5-s0i3.2, LPM6-s0i3.3, LPM7-s0i3.4."
              "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchUsbPullUpResistorEnable, "PCH USB Internal PullUp Resistor enable", &EN_DIS,
+        Help "1: PCH USB Internal PullUp Resistor enable 0: PCH USB Internal PullUp Resistor disable"
     Combo $gPlatformFspPkgTokenSpaceGuid_MctpBroadcastCycle, "Mctp Broadcast Cycle", &EN_DIS,
         Help "Test, Determine if MCTP Broadcast is enabled <b>0: Disable</b>; 1: Enable."
     EditNum $gPlatformFspPkgTokenSpaceGuid_SerialIoLpssD3, "Enable LPSS Device D3 state", HEX,
@@ -5224,7 +5243,7 @@ EndPage
 
 Page "TCC"
     Combo $gPlatformFspPkgTokenSpaceGuid_TccModeEnablePreMem, "Tcc Tuning enable/disable", &EN_DIS,
-        Help "Tcc (Time Coordinated Computing) Tuning Enabled"
+        Help "<b>@deprecated</b> - Not used and has no effect, Please use DSO Tuning and Software SRAM"
     Combo $gPlatformFspPkgTokenSpaceGuid_TccTuningEnable, "Tcc Tuning enable/disable", &EN_DIS,
         Help "<b>@deprecated</b> - Not used and has no effect, Please use DSO Tuning and Software SRAM"
     EditNum $gPlatformFspPkgTokenSpaceGuid_TccCacheCfgBasePreMem, "Tcc Cache Config File Base Address", HEX,
@@ -5246,7 +5265,7 @@ Page "TCC"
     Combo $gPlatformFspPkgTokenSpaceGuid_TccErrorLogEnPreMem, "TCC Error Log enable/disable", &EN_DIS,
         Help "Enable will log errors from TCC Flow."
     Combo $gPlatformFspPkgTokenSpaceGuid_TccModeEnable, "Tcc Tuning enable/disable", &EN_DIS,
-        Help "Tcc (Time Coordinated Computing) Tuning Enabled"
+        Help "<b>@deprecated</b> - Not used and has no effect, Please use DSO Tuning and Software SRAM"
     Combo $gPlatformFspPkgTokenSpaceGuid_PsfTccEnable, "PSF Tcc", &EN_DIS,
         Help "Psf Tcc (Time Coordinated Computing) Enable will decrease psf transaction latency by disable some psf power management features, 0: Disable, 1: Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_TccModeInitFlag, "TCC Mode Default Flag", &EN_DIS,
@@ -5350,6 +5369,11 @@ Page "Debug"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SaPcieItbtRpSnoopLatencyOverrideValue, "PCIE RP Snoop Latency Override Value", HEX,
         Help "Latency Tolerance Reporting, Snoop Latency Override Value."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PcdSerialDebugLevel, "PcdSerialDebugLevel", &gPlatformFspPkgTokenSpaceGuid_PcdSerialDebugLevel,
+        Help "Serial Debug Message Level. 0:Disable, 1:Error Only, 2:Error & Warnings, 3:Load, Error, Warnings & Info, 4:Load, Error, Warnings, Info & Event, 5:Load, Error, Warnings, Info & Verbose."
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PostCodeOutputPort, "Post Code Output Port", HEX,
+        Help "This option configures Post Code Output Port"
+             "Valid range: 0x0 ~ 0xFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SaPcieItbtRpNonSnoopLatencyOverrideMode, "PCIE RP Non Snoop Latency Override Mode", HEX,
         Help "Latency Tolerance Reporting, Non-Snoop Latency Override Mode."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
@@ -5365,11 +5389,6 @@ Page "Debug"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SaPcieItbtRpLtrConfigLock, "PCIE RP Ltr Config Lock", HEX,
         Help "0: Disable; 1: Enable."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
-    Combo $gPlatformFspPkgTokenSpaceGuid_PcdSerialDebugLevel, "PcdSerialDebugLevel", &gPlatformFspPkgTokenSpaceGuid_PcdSerialDebugLevel,
-        Help "Serial Debug Message Level. 0:Disable, 1:Error Only, 2:Error & Warnings, 3:Load, Error, Warnings & Info, 4:Load, Error, Warnings, Info & Event, 5:Load, Error, Warnings, Info & Verbose."
-    EditNum $gPlatformFspPkgTokenSpaceGuid_PostCodeOutputPort, "Post Code Output Port", HEX,
-        Help "This option configures Post Code Output Port"
-             "Valid range: 0x0 ~ 0xFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_ProcessorTraceMemBase, "Base of memory region allocated for Processor Trace", HEX,
         Help "Base address of memory region allocated for Processor Trace. Processor Trace requires 2^N alignment and size in bytes per thread, from 4KB to 128MB. <b>0: Disable</b>"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
