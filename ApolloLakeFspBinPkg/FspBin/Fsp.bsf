@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2021, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -136,7 +136,7 @@ StructDef
         $gBroxtonFspPkgTokenSpaceGuid_StartTimerTickerOfPfetAssert     8 bytes    $_DEFAULT_ = 0x00000000
         $gBroxtonFspPkgTokenSpaceGuid_RtEn                             1 bytes    $_DEFAULT_ = 0x00
         $gBroxtonFspPkgTokenSpaceGuid_SkipPciePowerSequence            1 bytes    $_DEFAULT_ = 0x00
-        $gBroxtonFspPkgTokenSpaceGuid_RefreshWm                        1 bytes    $_DEFAULT_ = 0x75
+        $gBroxtonFspPkgTokenSpaceGuid_RefreshWm                        1 bytes    $_DEFAULT_ = 0x01
 
     Find "APLUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x01
@@ -763,6 +763,11 @@ List &gBroxtonFspPkgTokenSpaceGuid_I2c3Enable
     Selection 2 , " ACPI Mode"
 EndList
 
+List &gBroxtonFspPkgTokenSpaceGuid_RefreshWm
+    Selection 0x0 , "Low"
+    Selection 0x1 , "High"
+EndList
+
 List &gBroxtonFspPkgTokenSpaceGuid_PcieClockGatingDisabled
     Selection 0 , "Enable"
     Selection 1 , "Disable"
@@ -1145,9 +1150,8 @@ Page "FSP MemoryInit Settings"
         Help "Real-Time Feature Configuration Bits settings. 0x0:Disabled (default), 0x1:Enabled"
     Combo $gBroxtonFspPkgTokenSpaceGuid_SkipPciePowerSequence, "Skip Pcie Power Sequence", &gBroxtonFspPkgTokenSpaceGuid_SkipPciePowerSequence,
         Help "UPD To Skip PciePowerSequence in FSP if set this UPD is set to 1. 0x0:Disabled (default), 0x1:Skip"
-    EditNum $gBroxtonFspPkgTokenSpaceGuid_RefreshWm, "Refresh Watermark", HEX,
-        Help "Set the value for Refresh Watermark, bit [7:4] - REFWMPNC, bit [3:0] - REFWMHI. Set to 0x75 by default. Consult with DRAM vendor before modifying."
-             "Valid range: 0x0 ~ 0xFF"
+    Combo $gBroxtonFspPkgTokenSpaceGuid_RefreshWm, "Refresh Watermarks", &gBroxtonFspPkgTokenSpaceGuid_RefreshWm,
+        Help "Set Refresh Panic Watermark and Refresh High Watermark to HIGH or LOW values. 0x0: Low Watermarks, 0x1: High Watermarks (default)"
 EndPage
 
 Page "FSP SiliconInit Settings"

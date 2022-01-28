@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2021, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -868,9 +868,10 @@ typedef struct {
 **/
   UINT8                       SkipPciePowerSequence;
 
-/** Offset 0x015E - Refresh Watermark
-  Set the value for Refresh Watermark, bit [7:4] - REFWMPNC, bit [3:0] - REFWMHI.
-  Set to 0x75 by default. Consult with DRAM vendor before modifying.
+/** Offset 0x015E - Refresh Watermarks
+  Set Refresh Panic Watermark and Refresh High Watermark to HIGH or LOW values. 0x0:
+  Low Watermarks, 0x1: High Watermarks (default)
+  0x0:Low, 0x1:High
 **/
   UINT8                       RefreshWm;
 
