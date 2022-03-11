@@ -30,7 +30,7 @@
   #and MC2/MC3 share the other. Depending on motherboard layout and other design constraints, this could change
   #BIT   4 => 0 or 1, SVID BUS\Interface 0 or 1 respectively
   #BIT 0:3 => SVID ADDRESS
-!if $(CPU_SKX_ONLY_SUPPORT) == FALSE
+!if $(CPUTARGET) == "ICX"
   gEfiCpRcPkgTokenSpaceGuid.PcdMemSrvidMap.Socket[0].Mc[0]  |0x10  #SVID BUS 1, ADDR 0
   gEfiCpRcPkgTokenSpaceGuid.PcdMemSrvidMap.Socket[0].Mc[1]  |0x10  #SVID BUS 1, ADDR 0
   gEfiCpRcPkgTokenSpaceGuid.PcdMemSrvidMap.Socket[0].Mc[2]  |0x12  #SVID BUS 1, ADDR 2
