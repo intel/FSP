@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2021, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -785,9 +785,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_Usb3HsioTxDownscaleAmp         10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         Skip 80 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchLanEnable                    1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_PchTsnEnable                    1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PchTsnEnable                    2 bytes    $_DEFAULT_ = 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchTsnLinkSpeed                 1 bytes    $_DEFAULT_ = 0x03
         $gPlatformFspPkgTokenSpaceGuid_PchTsnRsvd                      1 bytes    $_DEFAULT_ = 0x00
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchTsn0MacAddressHigh           4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PchTsn0MacAddressLow            4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PciePtm                        24 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
@@ -960,6 +961,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PpinSupport                     1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnableMinVoltageOverride        1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_MinVoltageRuntime               2 bytes    $_DEFAULT_ = 0x00
+        Skip 4 bytes
         $gPlatformFspPkgTokenSpaceGuid_ProcessorTraceMemBase           8 bytes    $_DEFAULT_ = 0x0000000000000000
         $gPlatformFspPkgTokenSpaceGuid_ProcessorTraceMemLength         4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_MinVoltageC8                    2 bytes    $_DEFAULT_ = 0x00
@@ -4899,8 +4901,9 @@ Page "PCH (Post-Mem)"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchLanEnable, "Enable LAN", &EN_DIS,
         Help "Enable/disable LAN controller."
-    Combo $gPlatformFspPkgTokenSpaceGuid_PchTsnEnable, "Enable PCH TSN", &EN_DIS,
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTsnEnable, "Enable PCH TSN", HEX,
         Help "Enable/disable TSN on the PCH."
+             "Valid range: 0x0 ~ 0xFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchTsnLinkSpeed, "TSN Link Speed", &gPlatformFspPkgTokenSpaceGuid_PchTsnLinkSpeed,
         Help "Set TSN Link Speed."
     Combo $gPlatformFspPkgTokenSpaceGuid_PchTsnRsvd, "TSN Reserved Token", &gPlatformFspPkgTokenSpaceGuid_PchTsnRsvd,
