@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2021, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -3037,11 +3037,15 @@ typedef struct {
 
 /** Offset 0x06DB
 **/
-  UINT8                       UnusedUpdSpace22[1];
+  UINT8                       TccStreamCfgStatusPreMem;
 
 /** Offset 0x06DC
 **/
-  UINT8                       ReservedFspmUpd2[20];
+  UINT8                       UnusedUpdSpace22[1];
+
+/** Offset 0x06DD
+**/
+  UINT8                       ReservedFspmUpd2[19];
 } FSP_M_CONFIG;
 
 /** Fsp M UPD Configuration

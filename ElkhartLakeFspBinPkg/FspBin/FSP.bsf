@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2021, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -722,7 +722,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_TsnConfigSize                   4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PseGbeDllOverride               2 bytes    $_DEFAULT_ = 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PseGbeTxDelay                   2 bytes    $_DEFAULT_ = 0x10, 0x10
-        $gPlatformFspPkgTokenSpaceGuid_PciePtm                        24 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PciePtm                        24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PcieDpc                        24 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PcieEdpc                       24 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_UsbPdoProgramming               1 bytes    $_DEFAULT_ = 0x01
@@ -772,7 +772,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchEspiHostC10ReportEnable      1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PmcUsb2PhySusPgEnable           1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchUsbOverCurrentEnable         1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_PchEspiLgmrEnable               1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PchEspiLgmrEnable               1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PchFivrExtV1p05RailCtrlRampTmr   1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_PchFivrExtVnnRailCtrlRampTmr    1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_Heci3Enabled                    1 bytes    $_DEFAULT_ = 0x0
@@ -1101,10 +1101,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SoftwareSramEn                  1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_DsoTuningEn                     1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_TccErrorLogEn                   1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_DisplayFusaConfigEnable         1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_GraphicFusaConfigEnable         1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_OpioFusaConfigEnable            1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_PsfFusaConfigEnable             1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_DisplayFusaConfigEnable         1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_GraphicFusaConfigEnable         1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_OpioFusaConfigEnable            1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PsfFusaConfigEnable             1 bytes    $_DEFAULT_ = 0x0
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchT0Level                      2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_PchT1Level                      2 bytes    $_DEFAULT_ = 0x0000
@@ -1159,7 +1159,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_EnableTimedGpio1                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnableVnnVoltageRaise           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchPseGbeSbInterruptEnable      2 bytes    $_DEFAULT_ = 0x00, 0x00
-        Skip 2 bytes
+        $gPlatformFspPkgTokenSpaceGuid_SnoopFilterQosSupported         1 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes
@@ -1275,18 +1276,18 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PowerLimit3DutyCycle            1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PowerLimit3Lock                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PowerLimit4Lock                 1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_TccActivationOffset             1 bytes    $_DEFAULT_ = 0x0A
-        $gPlatformFspPkgTokenSpaceGuid_TccOffsetClamp                  1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_TccActivationOffset             1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TccOffsetClamp                  1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_TccOffsetLock                   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_NumberOfEntries                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Custom1PowerLimit1Time          1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_Custom1TurboActivationRatio     1 bytes    $_DEFAULT_ = 0x14
         $gPlatformFspPkgTokenSpaceGuid_Custom1ConfigTdpControl         1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Custom2PowerLimit1Time          1 bytes    $_DEFAULT_ = 0x0
-        $gPlatformFspPkgTokenSpaceGuid_Custom2TurboActivationRatio     1 bytes    $_DEFAULT_ = 0x14
+        $gPlatformFspPkgTokenSpaceGuid_Custom2TurboActivationRatio     1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_Custom2ConfigTdpControl         1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Custom3PowerLimit1Time          1 bytes    $_DEFAULT_ = 0x0
-        $gPlatformFspPkgTokenSpaceGuid_Custom3TurboActivationRatio     1 bytes    $_DEFAULT_ = 0x14
+        $gPlatformFspPkgTokenSpaceGuid_Custom3TurboActivationRatio     1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_Custom3ConfigTdpControl         1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ConfigTdpLock                   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ConfigTdpBios                   1 bytes    $_DEFAULT_ = 0x00
@@ -1303,10 +1304,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_Eist                            1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_EnergyEfficientPState           1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_EnergyEfficientTurbo            1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_TStates                         1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_TStates                         1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_BiProcHot                       1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DisableProcHotOut               1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_ProcHotResponse                 1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_ProcHotResponse                 1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DisableVrThermalAlert           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnableAllThermalFunctions       1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ThermalMonitor                  1 bytes    $_DEFAULT_ = 0x01
@@ -1412,7 +1413,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchPseShellEnabled              1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchPseEcliteEnabled             1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchPseOobEnabled                1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PchCpuTempSensorEnable          1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuTempSensorReadEnable         1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchPseWoLEnabled                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchPseAicEnabled                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoLpssD3                  1 bytes    $_DEFAULT_ = 0x01
@@ -4236,7 +4237,7 @@ Page "PCH(PostMem)"
     Combo $gPlatformFspPkgTokenSpaceGuid_SataRstLegacyOrom, "PCH SATA use RST Legacy OROM", &EN_DIS,
         Help "Use PCH SATA RST Legacy OROM when CSM is Enabled"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtV1p05RailEnabledStates, "Mask to enable the usage of external V1p05 VR rail in specific S0ix or Sx states", HEX,
-        Help "Enable External V1P05 Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5"
+        Help "Enable External V1P05 Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT4:S5"
              "Valid range: 0x00 ~ 0x1F"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtV1p05RailSupportedVoltageStates, "Mask to enable the platform configuration of external V1p05 VR rail", HEX,
         Help "External V1P05 Rail Supported Configuration"
@@ -4248,7 +4249,7 @@ Page "PCH(PostMem)"
         Help "Granularity of this setting is 1mA and maximal possible value is 200mA"
              "Valid range: 0x0 ~ 0xC8"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtVnnRailEnabledStates, "Mask to enable the usage of external Vnn VR rail in specific S0ix or Sx states", HEX,
-        Help "Enable External Vnn Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5"
+        Help "Enable External Vnn Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT4:S5"
              "Valid range: 0x00 ~ 0x1F"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtVnnRailSupportedVoltageStates, "Mask to enable the platform configuration of external Vnn VR rail", HEX,
         Help "External Vnn Rail Supported Configuration"
@@ -4260,7 +4261,7 @@ Page "PCH(PostMem)"
         Help "Granularity of this setting is 1mA and maximal possible value is 200mA"
              "Valid range: 0x0 ~ 0xC8"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtVnnRailSxEnabledStates, "Mask to enable the usage of external Vnn VR rail in Sx states", HEX,
-        Help "Use only if Ext Vnn Rail config is different in Sx. Enable External Vnn Rail in Sx: BIT0-1:Reserved, BIT2:S3, BIT3:S4, BIT5:S5"
+        Help "Use only if Ext Vnn Rail config is different in Sx. Enable External Vnn Rail in Sx: BIT0-1:Reserved, BIT2:S3, BIT3:S4, BIT4:S5"
              "Valid range: 0x00 ~ 0x1F"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchFivrExtVnnRailSxVoltage, "External Vnn Voltage Value that will be used in Sx states", HEX,
         Help "Use only if Ext Vnn Rail config is different in Sx. Value is given in 2.5mV increments (0=0mV, 1=2.5mV, 2=5mV...)"
@@ -4787,6 +4788,8 @@ Page "PCH(PostMem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchPseGbeSbInterruptEnable, "Enable PCH PSE GBE sideband interrupt", HEX,
         Help "Set if PSE GBE are to be set to sideband interrupt. 0: Disable; 1: Enable."
              "Valid range: 0x0 ~ 0xFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SnoopFilterQosSupported, "TCC SnoopFilterQosSupported", &EN_DIS,
+        Help "Check if Snoop Filter QOS is supported"
     Combo $gPlatformFspPkgTokenSpaceGuid_PsOnEnable, "Enable PS_ON.", &EN_DIS,
         Help "PS_ON is a new C10 state from the CPU on desktop SKUs that enables a lower power target that will be required by the California Energy Commission (CEC). When FALSE, PS_ON is to be disabled."
     Combo $gPlatformFspPkgTokenSpaceGuid_PmcCpuC10GatePinEnable, "Pmc Cpu C10 Gate Pin Enable", &EN_DIS,
@@ -5230,7 +5233,7 @@ Page "PSE"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchPseOobEnabled, "Enable PSE OOB option", HEX,
         Help "Set if to enable PSE OOB feature. 0: Disable; 1: Enable."
              "Valid range: 0x0 ~ 0xFF"
-    EditNum $gPlatformFspPkgTokenSpaceGuid_PchCpuTempSensorEnable, "Enable CPU Temperature Read", HEX,
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuTempSensorReadEnable, "Enable CPU Temperature Read", HEX,
         Help "Set to enable CPU Temperature Read feature. 0: Disable; 1: Enable."
              "Valid range: 0x0 ~ 0xFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchPseWoLEnabled, "Enable PSE WoL option", HEX,
@@ -5303,7 +5306,7 @@ Page "TCC"
     Combo $gPlatformFspPkgTokenSpaceGuid_DsoTuningEn, "Data Streams Optimizer enable/disable", &EN_DIS,
         Help "Enable will utilize DSO Subregion to tune system."
     Combo $gPlatformFspPkgTokenSpaceGuid_TccErrorLogEn, "TCC Error Log enable/disable", &EN_DIS,
-        Help "Enable will log errors from TCC Flow."
+        Help "@deprecated- only need to set fspm upd TccErrorLogEnPreMem"
 EndPage
 
 Page "Debug"

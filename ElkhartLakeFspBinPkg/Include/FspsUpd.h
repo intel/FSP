@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2021, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -985,7 +985,7 @@ typedef struct {
   UINT8                       SataRstLegacyOrom;
 
 /** Offset 0x0432 - Mask to enable the usage of external V1p05 VR rail in specific S0ix or Sx states
-  Enable External V1P05 Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5
+  Enable External V1P05 Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT4:S5
 **/
   UINT8                       PchFivrExtV1p05RailEnabledStates;
 
@@ -1005,7 +1005,7 @@ typedef struct {
   UINT8                       PchFivrExtV1p05RailIccMax;
 
 /** Offset 0x0437 - Mask to enable the usage of external Vnn VR rail in specific S0ix or Sx states
-  Enable External Vnn Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT5:S5
+  Enable External Vnn Rail in: BIT0:S0i1/S0i2, BIT1:S0i3, BIT2:S3, BIT3:S4, BIT4:S5
 **/
   UINT8                       PchFivrExtVnnRailEnabledStates;
 
@@ -1030,7 +1030,7 @@ typedef struct {
 
 /** Offset 0x043D - Mask to enable the usage of external Vnn VR rail in Sx states
   Use only if Ext Vnn Rail config is different in Sx. Enable External Vnn Rail in
-  Sx: BIT0-1:Reserved, BIT2:S3, BIT3:S4, BIT5:S5
+  Sx: BIT0-1:Reserved, BIT2:S3, BIT3:S4, BIT4:S5
 **/
   UINT8                       PchFivrExtVnnRailSxEnabledStates;
 
@@ -3068,7 +3068,7 @@ typedef struct {
   UINT8                       DsoTuningEn;
 
 /** Offset 0x0B5A - TCC Error Log enable/disable
-  Enable will log errors from TCC Flow.
+  @deprecated- only need to set fspm upd TccErrorLogEnPreMem
   $EN_DIS
 **/
   UINT8                       TccErrorLogEn;
@@ -3399,9 +3399,15 @@ typedef struct {
 **/
   UINT8                       PchPseGbeSbInterruptEnable[2];
 
-/** Offset 0x0BBE
+/** Offset 0x0BBE - TCC SnoopFilterQosSupported
+  Check if Snoop Filter QOS is supported
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace49[2];
+  UINT8                       SnoopFilterQosSupported;
+
+/** Offset 0x0BBF
+**/
+  UINT8                       UnusedUpdSpace49[1];
 
 /** Offset 0x0BC0 - BgpdtHash[4]
   BgpdtHash values
@@ -4902,7 +4908,7 @@ typedef struct {
 /** Offset 0x1091 - Enable CPU Temperature Read
   Set to enable CPU Temperature Read feature. 0: Disable; 1: Enable.
 **/
-  UINT8                       PchCpuTempSensorEnable;
+  UINT8                       CpuTempSensorReadEnable;
 
 /** Offset 0x1092 - Enable PSE WoL option
   Set if to enable PSE WoL feature. 0: Disable; 1: Enable.
@@ -4921,7 +4927,11 @@ typedef struct {
 
 /** Offset 0x1095
 **/
-  UINT8                       ReservedFspsUpd[3];
+  UINT8                       TccStreamCfgStatus;
+
+/** Offset 0x1096
+**/
+  UINT8                       ReservedFspsUpd[2];
 } FSP_S_CONFIG;
 
 /** Fsp S UPD Configuration
