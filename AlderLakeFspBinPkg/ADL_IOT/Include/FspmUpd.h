@@ -3472,11 +3472,11 @@ typedef struct {
 **/
   UINT8                       DRAMDCA;
 
-/** Offset 0x08EA - PreMemRsvd
-  Reserved for Pre-Mem
+/** Offset 0x08EA - EARLY DIMM DFE Training
+  Enable/Disable EARLY DIMM DFE Training
   $EN_DIS
 **/
-  UINT8                       ReservedFspmUpd[1];
+  UINT8                       EARLYDIMMDFE;
 
 /** Offset 0x08EB - Skip external display device scanning
   Enable: Do not scan for external display device, Disable (Default): Scan external
@@ -3956,13 +3956,13 @@ typedef struct {
   UINT8                       SagvSwitchFactorStall;
 
 /** Offset 0x0B23 - Threshold For Switch Down
-  "SAGV heuristics down control: Duration in ms of low activity after which SAGV will
+  SAGV heuristics down control: Duration in ms of low activity after which SAGV will
   switch down, from 1 to 50ms.
 **/
   UINT8                       SagvHeuristicsDownControl;
 
 /** Offset 0x0B24 - Threshold For Switch Up
-  "SAGV heuristics up control: Duration in ms of low activity after which SAGV will
+  SAGV heuristics up control: Duration in ms of low activity after which SAGV will
   switch up, from 1 to 50ms.
 **/
   UINT8                       SagvHeuristicsUpControl;
@@ -4016,13 +4016,32 @@ typedef struct {
 **/
   UINT8                       ThrtCkeMinTmrLpddr;
 
-/** Offset 0x0B41
+/** Offset 0x0B41 - First ECC Dimm BitMask
+  Defines which ECC DIMM should be populated first on a 2DPC board. Bit0: MC0 DIMM0,
+  Bit1: MC0 DIMM1, Bit2: MC1 DIMM0, Bit3: MC1 DIMM1. For each MC, the first DIMM
+  to be populated should be set to '1'
+**/
+  UINT8                       FirstDimmBitMaskEcc;
+
+/** Offset 0x0B42 -  LP5 Bank Mode
+  LP5 Bank Mode. 0: Auto, 1: 8 Bank Mode, 2: 16 Bank Mode, 3: BG Mode, default is 0
+  0:Auto, 1:8 Bank Mode, 2:16 Bank Mode, 3:BG Mode
+**/
+  UINT8                       Lp5BankMode;
+
+/** Offset 0x0B43 - Write DS Training
+  Enable/Disable Write DS Training
+  $EN_DIS
+**/
+  UINT8                       WRDS;
+
+/** Offset 0x0B44
 **/
   UINT8                       UnusedUpdSpace35[5];
 
-/** Offset 0x0B46
+/** Offset 0x0B49
 **/
-  UINT8                       ReservedFspmUpd2[2];
+  UINT8                       ReservedFspmUpd2[7];
 } FSP_M_CONFIG;
 
 /** Fsp M UPD Configuration
@@ -4041,11 +4060,11 @@ typedef struct {
 **/
   FSP_M_CONFIG                FspmConfig;
 
-/** Offset 0x0B48
+/** Offset 0x0B50
 **/
   UINT8                       UnusedUpdSpace36[6];
 
-/** Offset 0x0B4E
+/** Offset 0x0B56
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;

@@ -4282,36 +4282,46 @@ typedef struct {
 **/
   UINT8                       TccMode;
 
-/** Offset 0x1004 - Turbo Ratio Limit Ratio array
+/** Offset 0x1004 - Enable Gt CLOS
+  0(Default)=Disable, 1=Enable
+  $EN_DIS
+**/
+  UINT8                       GtClosEnable;
+
+/** Offset 0x1005 - Turbo Ratio Limit Ratio array
   TurboRatioLimitRatio[7-0] will pair with TurboRatioLimitNumCore[7-0] to determine
   the active core ranges for each frequency point.
 **/
   UINT8                       TurboRatioLimitRatio[8];
 
-/** Offset 0x100C - Turbo Ratio Limit Num Core array
+/** Offset 0x100D - Turbo Ratio Limit Num Core array
   TurboRatioLimitNumCore[7-0] will pair with TurboRatioLimitRatio[7-0] to determine
   the active core ranges for each frequency point.
 **/
   UINT8                       TurboRatioLimitNumCore[8];
 
-/** Offset 0x1014 - ATOM Turbo Ratio Limit Ratio array
+/** Offset 0x1015 - ATOM Turbo Ratio Limit Ratio array
   AtomTurboRatioLimitRatio[7-0] will pair with AtomTurboRatioLimitNumCore[7-0] to
   determine the active core ranges for each frequency point.
 **/
   UINT8                       AtomTurboRatioLimitRatio[8];
 
-/** Offset 0x101C - ATOM Turbo Ratio Limit Num Core array
+/** Offset 0x101D - ATOM Turbo Ratio Limit Num Core array
   AtomTurboRatioLimitNumCore[7-0] will pair with AtomTurboRatioLimitRatio[7-0] to
   determine the active core ranges for each frequency point.
 **/
   UINT8                       AtomTurboRatioLimitNumCore[8];
 
-/** Offset 0x1024 - FspEventHandler
+/** Offset 0x1025
+**/
+  UINT8                       UnusedUpdSpace38[3];
+
+/** Offset 0x1028 - FspEventHandler
   <b>Optional</b> pointer to the boot loader's implementation of FSP_EVENT_HANDLER.
 **/
   UINT32                      FspEventHandler;
 
-/** Offset 0x1028 - Skip setting BIOS_DONE When Fw Update.
+/** Offset 0x102C - Skip setting BIOS_DONE When Fw Update.
   When set to TRUE and boot mode is BOOT_ON_FLASH_UPDATE,skip setting BIOS_DONE MSR
   at EndofPei. Note: BIOS_DONE MSR should be set in later phase before executing
   3rd party code if SiSkipBiosDoneWhenFwUpdate set to TRUE.
@@ -4319,123 +4329,129 @@ typedef struct {
 **/
   UINT8                       SiSkipBiosDoneWhenFwUpdate;
 
-/** Offset 0x1029 - Enable VMD Global Mapping
+/** Offset 0x102D - Enable VMD Global Mapping
   Enable/disable to VMD controller.0: Disable; 1: Enable(Default)
   $EN_DIS
 **/
   UINT8                       VmdGlobalMapping;
 
-/** Offset 0x102A - CPU PCIE Port0 Link Disable
+/** Offset 0x102E - CPU PCIE Port0 Link Disable
   CPU PCIE Port0 Link Disable while Device attached into Port0 and Port1.0: Disable(Default);
   1: Enable.
   $EN_DIS
 **/
   UINT8                       CpuPcieFunc0LinkDisable[4];
 
-/** Offset 0x102E
+/** Offset 0x1032
 **/
   UINT8                       TccStreamCfgStatus;
 
-/** Offset 0x102F - Skip VccIn Configuration
+/** Offset 0x1033 - Skip VccIn Configuration
   Skips VccIn configuration when enabled
   $EN_DIS
 **/
   UINT8                       PmcSkipVccInConfig;
 
-/** Offset 0x1030 - CSE Data Resilience Support
+/** Offset 0x1034 - CSE Data Resilience Support
   0: Disable CSE Data Resilience Support. <b>; 1: Enable CSE Data Resilience Support.</b>
   $EN_DIS
 **/
   UINT8                       CseDataResilience;
 
-/** Offset 0x1031
+/** Offset 0x1035
 **/
-  UINT8                       UnusedUpdSpace38[3];
+  UINT8                       UnusedUpdSpace39[3];
 
-/** Offset 0x1034 - HorizontalResolution for PEI Logo
+/** Offset 0x1038 - HorizontalResolution for PEI Logo
   HorizontalResolution from PEIm Gfx for PEI Logo
 **/
   UINT32                      HorizontalResolution;
 
-/** Offset 0x1038 - VerticalResolution for PEI Logo
+/** Offset 0x103C - VerticalResolution for PEI Logo
   VerticalResolution from PEIm Gfx for PEI Logo
 **/
   UINT32                      VerticalResolution;
 
-/** Offset 0x103C - Touch Host Controller Active Ltr
+/** Offset 0x1040 - Touch Host Controller Active Ltr
   Expose Active Ltr for OS driver to set
 **/
   UINT32                      ThcActiveLtr[2];
 
-/** Offset 0x1044 - Touch Host Controller Idle Ltr
+/** Offset 0x1048 - Touch Host Controller Idle Ltr
   Expose Idle Ltr for OS driver to set
 **/
   UINT32                      ThcIdleLtr[2];
 
-/** Offset 0x104C - Touch Host Controller Hid Over Spi ResetPad
+/** Offset 0x1050 - Touch Host Controller Hid Over Spi ResetPad
   Hid Over Spi ResetPad 0x0 - Use THC HW default Pad, For other pad setting refer
   to GpioPins
 **/
   UINT32                      ThcHidResetPad[2];
 
-/** Offset 0x1054 - Touch Host Controller Hid Over Spi ResetPad Trigger
+/** Offset 0x1058 - Touch Host Controller Hid Over Spi ResetPad Trigger
   Hid Over Spi Reset Pad Trigger 0x0:Low, 0x1:High
 **/
   UINT32                      ThcHidResetPadTrigger[2];
 
-/** Offset 0x105C - Touch Host Controller Hid Over Spi Connection Speed
+/** Offset 0x1060 - Touch Host Controller Hid Over Spi Connection Speed
   Hid Over Spi Connection Speed - SPI Frequency
 **/
   UINT32                      ThcHidConnectionSpeed[2];
 
-/** Offset 0x1064 - Touch Host Controller Hid Over Spi Limit PacketSize
+/** Offset 0x1068 - Touch Host Controller Hid Over Spi Limit PacketSize
   When set, limits SPI read & write packet size to 64B. Otherwise, THC uses Max Soc
   packet size for SPI Read and Write 0x0- Max Soc Packet Size,  0x11 - 64 Bytes
 **/
   UINT32                      ThcLimitPacketSize[2];
 
-/** Offset 0x106C - Touch Host Controller Hid Over Spi Limit PacketSize
+/** Offset 0x1070 - Touch Host Controller Hid Over Spi Limit PacketSize
   Minimum amount of delay the THC/QUICKSPI driver must wait between end of write operation
   and begin of read operation. This value shall be in 10us multiples 0x0: Disabled,
   1-65535 (0xFFFF) - up to 655350 us
 **/
   UINT32                      ThcPerformanceLimitation[2];
 
-/** Offset 0x1074 - Touch Host Controller Hid Over Spi Input Report Header Address
+/** Offset 0x1078 - Touch Host Controller Hid Over Spi Input Report Header Address
   Hid Over Spi Input Report Header Address
 **/
   UINT32                      ThcHidInputReportHeaderAddress[2];
 
-/** Offset 0x107C - Touch Host Controller Hid Over Spi Input Report Body Address
+/** Offset 0x1080 - Touch Host Controller Hid Over Spi Input Report Body Address
   Hid Over Spi Input Report Body Address
 **/
   UINT32                      ThcHidInputReportBodyAddress[2];
 
-/** Offset 0x1084 - Touch Host Controller Hid Over Spi Output Report Address
+/** Offset 0x1088 - Touch Host Controller Hid Over Spi Output Report Address
   Hid Over Spi Output Report Address
 **/
   UINT32                      ThcHidOutputReportAddress[2];
 
-/** Offset 0x108C - Touch Host Controller Hid Over Spi Read Opcode
+/** Offset 0x1090 - Touch Host Controller Hid Over Spi Read Opcode
   Hid Over Spi Read Opcode
 **/
   UINT32                      ThcHidReadOpcode[2];
 
-/** Offset 0x1094 - Touch Host Controller Hid Over Spi Write Opcode
+/** Offset 0x1098 - Touch Host Controller Hid Over Spi Write Opcode
   Hid Over Spi Write Opcode
 **/
   UINT32                      ThcHidWriteOpcode[2];
 
-/** Offset 0x109C - Touch Host Controller Hid Over Spi Flags
+/** Offset 0x10A0 - Touch Host Controller Hid Over Spi Flags
   Hid Over Spi Flags 0x0:Single SPI Mode, 0x4000:Dual SPI Mode, 0x8000:Quad SPI Mode
 **/
   UINT32                      ThcHidFlags[2];
 
-/** Offset 0x10A4
+/** Offset 0x10A8 - Enable L2 Qos Enumerate
+  0(Default)=Disable, 1=Enable
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace39[2];
+  UINT8                       L2QosEnumerationEn;
 
-/** Offset 0x10A6
+/** Offset 0x10A9
+**/
+  UINT8                       UnusedUpdSpace40[5];
+
+/** Offset 0x10AE
 **/
   UINT8                       ReservedFspsUpd[2];
 } FSP_S_CONFIG;
@@ -4456,11 +4472,11 @@ typedef struct {
 **/
   FSP_S_CONFIG                FspsConfig;
 
-/** Offset 0x10A8
+/** Offset 0x10B0
 **/
-  UINT8                       UnusedUpdSpace40[6];
+  UINT8                       UnusedUpdSpace41[6];
 
-/** Offset 0x10AE
+/** Offset 0x10B6
 **/
   UINT16                      UpdTerminator;
 } FSPS_UPD;

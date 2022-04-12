@@ -283,8 +283,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_Gen3RtcoRtpoEnable              1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_DmiGen3Ltcpre                   8 bytes    $_DEFAULT_ = 0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02
         $gPlatformFspPkgTokenSpaceGuid_DmiGen3Ltcpo                    8 bytes    $_DEFAULT_ = 0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02
-        $gPlatformFspPkgTokenSpaceGuid_CpuDmiHwEqGen3CoeffListCm       8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x01, 0x01, 0x01, 0x00, 0x00, 0x00
-        $gPlatformFspPkgTokenSpaceGuid_CpuDmiHwEqGen3CoeffListCp       8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x01, 0x01, 0x01, 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuDmiHwEqGen3CoeffListCm       8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuDmiHwEqGen3CoeffListCp       8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_DmiGen3DsPresetEnable           1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DmiGen3DsPortRxPreset           8 bytes    $_DEFAULT_ = 0x01,0x01,0x01,0x01,0x01,0x01,0x01,0x01
         $gPlatformFspPkgTokenSpaceGuid_DmiGen3DsPortTxPreset           8 bytes    $_DEFAULT_ = 0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07
@@ -664,7 +664,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_LpMode                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_TXDQSDCC                        1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DRAMDCA                         1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpd                 1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_EARLYDIMMDFE                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_BdatEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_LockPTMregs                     1 bytes    $_DEFAULT_ = 0x01
@@ -760,6 +760,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchDmiHwEqGen3CoeffListCp       8 bytes    $_DEFAULT_ = 0x05, 0x03, 0x07, 0x08, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_LctCmdEyeWidth                  2 bytes    $_DEFAULT_ = 0x60
         $gPlatformFspPkgTokenSpaceGuid_ThrtCkeMinTmrLpddr              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_FirstDimmBitMaskEcc             1 bytes    $_DEFAULT_ = 0x0A
+        $gPlatformFspPkgTokenSpaceGuid_Lp5BankMode                     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_WRDS                            1 bytes    $_DEFAULT_ = 0x01
 
     Find "ADLUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x02
@@ -1492,10 +1495,12 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_DsoTuningEn                     1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_TccErrorLogEn                   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_TccMode                         1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_GtClosEnable                    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_TurboRatioLimitRatio            8 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_TurboRatioLimitNumCore          8 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_AtomTurboRatioLimitRatio        8 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_AtomTurboRatioLimitNumCore      8 bytes    $_DEFAULT_ = 0x00
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_FspEventHandler                 4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_SiSkipBiosDoneWhenFwUpdate      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdGlobalMapping                1 bytes    $_DEFAULT_ = 0x01
@@ -1519,6 +1524,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_ThcHidReadOpcode                8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_ThcHidWriteOpcode               8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_ThcHidFlags                     8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_L2QosEnumerationEn              1 bytes    $_DEFAULT_ = 0x0
 
 EndStruct
 
@@ -2252,6 +2258,13 @@ List &gPlatformFspPkgTokenSpaceGuid_IbeccErrInjControl
     Selection 3 , "Inject Correctable Error on insertion counter"
     Selection 5 , " Inject Uncorrectable Error Address match"
     Selection 7 , "Inject Uncorrectable Error on insertion counter"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_Lp5BankMode
+    Selection 0 , "Auto"
+    Selection 1 , "8 Bank Mode"
+    Selection 2 , "16 Bank Mode"
+    Selection 3 , "BG Mode"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_SataMode
@@ -3363,8 +3376,8 @@ Page "Memory Reference Code"
         Help "Enable/Disable TX DQS DCC Training"
     Combo $gPlatformFspPkgTokenSpaceGuid_DRAMDCA, "DRAM DCA Training", &EN_DIS,
         Help "Enable/Disable DRAM DCA Training"
-    Combo $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpd, "PreMemRsvd", &EN_DIS,
-        Help "Reserved for Pre-Mem"
+    Combo $gPlatformFspPkgTokenSpaceGuid_EARLYDIMMDFE, "EARLY DIMM DFE Training", &EN_DIS,
+        Help "Enable/Disable EARLY DIMM DFE Training"
     Combo $gPlatformFspPkgTokenSpaceGuid_BdatEnable, "Generate BIOS Data ACPI Table", &EN_DIS,
         Help "Enable: Generate BDAT for MRC RMT or SA PCIe data. Disable (Default): Do not generate it"
     Combo $gPlatformFspPkgTokenSpaceGuid_LockPTMregs, "Lock PCU Thermal Management registers", &EN_DIS,
@@ -3466,10 +3479,10 @@ Page "Memory Reference Code"
         Help "SAGV Switch Factor IA and GT Stall: IA and GT percentage when system switch to high SAGV point from 1 to 50%."
              "Valid range: 1 ~ 50"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SagvHeuristicsDownControl, "Threshold For Switch Down", DEC,
-        Help ""SAGV heuristics down control: Duration in ms of low activity after which SAGV will switch down, from 1 to 50ms."
+        Help "SAGV heuristics down control: Duration in ms of low activity after which SAGV will switch down, from 1 to 50ms."
              "Valid range: 1 ~ 50"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SagvHeuristicsUpControl, "Threshold For Switch Up", DEC,
-        Help ""SAGV heuristics up control: Duration in ms of low activity after which SAGV will switch up, from 1 to 50ms."
+        Help "SAGV heuristics up control: Duration in ms of low activity after which SAGV will switch up, from 1 to 50ms."
              "Valid range: 1 ~ 50"
     EditNum $gPlatformFspPkgTokenSpaceGuid_FreqLimitMixedConfig_1R1R_8GB, "Frequency Limit for Mixed 2DPC DDR5 1 Rank 8GB and 8GB", DEC,
         Help "Frequency Limit for 2DPC Mixed or non-POR Config. 0: Auto, otherwise a frequency in MT/s, default is 2000"
@@ -3495,6 +3508,13 @@ Page "Memory Reference Code"
     EditNum $gPlatformFspPkgTokenSpaceGuid_ThrtCkeMinTmrLpddr, "For LPDDR Only: Throttler CKEMin Timer", HEX,
         Help "For LPDDR Only: Timer value for CKEMin, range[255;0]. Reqd min of SC_ROUND_T + BYTE_LENGTH (4). Dfault is 0x00"
              "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_FirstDimmBitMaskEcc, "First ECC Dimm BitMask", HEX,
+        Help "Defines which ECC DIMM should be populated first on a 2DPC board. Bit0: MC0 DIMM0, Bit1: MC0 DIMM1, Bit2: MC1 DIMM0, Bit3: MC1 DIMM1. For each MC, the first DIMM to be populated should be set to '1'"
+             "Valid range: 0x00 ~ 0x0F"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Lp5BankMode, " LP5 Bank Mode", &gPlatformFspPkgTokenSpaceGuid_Lp5BankMode,
+        Help " LP5 Bank Mode. 0: Auto, 1: 8 Bank Mode, 2: 16 Bank Mode, 3: BG Mode, default is 0"
+    Combo $gPlatformFspPkgTokenSpaceGuid_WRDS, "Write DS Training", &EN_DIS,
+        Help "Enable/Disable Write DS Training"
 EndPage
 
 Page "CPU (Pre-Mem)"
@@ -4475,6 +4495,8 @@ Page "System Agent (Post-Mem)"
         Help "@deprecated- only need to set fspm upd TccErrorLogEnPreMem"
     Combo $gPlatformFspPkgTokenSpaceGuid_TccMode, "TccMode enable/disable", &EN_DIS,
         Help "Enable will activate TCC Mode and disable will deactivate TCC Mode .This is temporary to skip some of the TCC related register access in Non-RT SKU's"
+    Combo $gPlatformFspPkgTokenSpaceGuid_GtClosEnable, "Enable Gt CLOS", &EN_DIS,
+        Help "0(Default)=Disable, 1=Enable"
     EditNum $gPlatformFspPkgTokenSpaceGuid_TurboRatioLimitRatio, "Turbo Ratio Limit Ratio array", HEX,
         Help "TurboRatioLimitRatio[7-0] will pair with TurboRatioLimitNumCore[7-0] to determine the active core ranges for each frequency point."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
@@ -4545,6 +4567,8 @@ Page "System Agent (Post-Mem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_ThcHidFlags, "Touch Host Controller Hid Over Spi Flags", HEX,
         Help "Hid Over Spi Flags 0x0:Single SPI Mode, 0x4000:Dual SPI Mode, 0x8000:Quad SPI Mode"
              "Valid range: 0 ~ 0xFFFFFFFFFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_L2QosEnumerationEn, "Enable L2 Qos Enumerate", &EN_DIS,
+        Help "0(Default)=Disable, 1=Enable"
 EndPage
 
 Page "PCH (Pre-Mem)"
