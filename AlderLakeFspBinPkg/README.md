@@ -4,4 +4,5 @@ These FSP binaries are intended to be used with 12th Generation Intel® Core™ 
 
 Directory Name | 12th Generation Intel® Core™ (formerly Alder Lake) SKU Description
 :------------- | :-------------------------
-ADL_IOT | ADL-S Series processors for IoT platforms
+ADL_IOT        | Products formerly Alder Lake -S series processors for IoT platforms
+ADL_P_IOT      | Products formerly Alder Lake -P series processoes for IoT platforms
