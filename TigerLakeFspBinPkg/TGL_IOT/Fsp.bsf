@@ -829,7 +829,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchEspiLockLinkConfiguration    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeEnable   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnforceEDebugMode               1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PchPostMemRsvd                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchXhciHsiiEnable               1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeBase   4 bytes    $_DEFAULT_ = 0xF8000000
         $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeLimit   4 bytes    $_DEFAULT_ = 0xF9FFFFFF
         $gPlatformFspPkgTokenSpaceGuid_CnviMode                        1 bytes    $_DEFAULT_ = 0x01
@@ -1663,6 +1663,7 @@ List &gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit
     Selection 2400 , "2400"
     Selection 2667 , "2667"
     Selection 2933 , "2933"
+    Selection 3200 , "3200"
     Selection 0 , "Auto"
 EndList
 
@@ -2758,7 +2759,7 @@ Page "Memory Reference Code"
     Combo $gPlatformFspPkgTokenSpaceGuid_UserBd, "Board Type", &gPlatformFspPkgTokenSpaceGuid_UserBd,
         Help "MrcBoardType, Options are 0=Mobile/Mobile Halo, 1=Desktop/DT Halo, 5=ULT/ULX/Mobile Halo, 7=UP Server"
     Combo $gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit, "DDR Frequency Limit", &gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit,
-        Help "Maximum Memory Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867, 2133, 2400, 2667, 2933 and 0 for Auto."
+        Help "Maximum Memory Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867, 2133, 2400, 2667, 2933, 3200 and 0 for Auto."
     Combo $gPlatformFspPkgTokenSpaceGuid_SaGv, "SA GV", &gPlatformFspPkgTokenSpaceGuid_SaGv,
         Help "System Agent dynamic frequency support and when enabled memory will be training at three different frequencies."
     Combo $gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot, "Memory Test on Warm Boot", &gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot,
@@ -5001,8 +5002,8 @@ Page "PCH (Post-Mem)"
         Help "Enable/Disable lock of communication through SET_CONFIG/GET_CONFIG to eSPI slaves addresseses from range 0x0 - 0x7FF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeEnable, "Extented BIOS Direct Read Decode enable", &EN_DIS,
         Help "Enable/Disable access to bigger than 16MB BIOS Region through Direct Memory Reads. 0: disabled (default), 1: enabled"
-    Combo $gPlatformFspPkgTokenSpaceGuid_PchPostMemRsvd, "PchPostMemRsvd", &EN_DIS,
-        Help "Reserved for PCH Post-Mem"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchXhciHsiiEnable, "PCH xHCI enable HS Interrupt IN Alarm", &EN_DIS,
+        Help "PCH xHCI enable HS Interrupt IN Alarm. 0: disabled (default), 1: enabled"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeBase, "Extended BIOS Direct Read Decode Range base", HEX,
         Help "Bits of 31:16 of a memory address that'll be a base for Extended BIOS Direct Read Decode."
              "Valid range: 0x0 ~ 0xFFFFFFFF"

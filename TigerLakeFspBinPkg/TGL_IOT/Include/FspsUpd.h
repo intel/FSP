@@ -877,11 +877,11 @@ typedef struct {
 **/
   UINT8                       EnforceEDebugMode;
 
-/** Offset 0x03DF - PchPostMemRsvd
-  Reserved for PCH Post-Mem
+/** Offset 0x03DF - PCH xHCI enable HS Interrupt IN Alarm
+  PCH xHCI enable HS Interrupt IN Alarm. 0: disabled (default), 1: enabled
   $EN_DIS
 **/
-  UINT8                       PchPostMemRsvd[1];
+  UINT8                       PchXhciHsiiEnable;
 
 /** Offset 0x03E0 - Extended BIOS Direct Read Decode Range base
   Bits of 31:16 of a memory address that'll be a base for Extended BIOS Direct Read Decode.

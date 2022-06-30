@@ -510,8 +510,9 @@ typedef struct {
 
 /** Offset 0x018E - DDR Frequency Limit
   Maximum Memory Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867,
-  2133, 2400, 2667, 2933 and 0 for Auto.
-  1067:1067, 1333:1333, 1600:1600, 1867:1867, 2133:2133, 2400:2400, 2667:2667, 2933:2933, 0:Auto
+  2133, 2400, 2667, 2933, 3200 and 0 for Auto.
+  1067:1067, 1333:1333, 1600:1600, 1867:1867, 2133:2133, 2400:2400, 2667:2667, 2933:2933,
+  3200:3200, 0:Auto
 **/
   UINT16                      DdrFreqLimit;
 
