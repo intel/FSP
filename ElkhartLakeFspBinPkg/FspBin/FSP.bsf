@@ -459,7 +459,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_EnCmdRate                       1 bytes    $_DEFAULT_ = 0x03
         $gPlatformFspPkgTokenSpaceGuid_Refresh2X                       1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EpgEnable                       1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_RhSolution                      1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_RhSolution                      1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_UserThresholdEnable             1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_UserBudgetEnable                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PowerDownMode                   1 bytes    $_DEFAULT_ = 0xFF
@@ -484,15 +484,17 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_RDTOPT                          1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_RefreshPanicWm                  1 bytes    $_DEFAULT_ = 0x09
         $gPlatformFspPkgTokenSpaceGuid_RefreshHpWm                     1 bytes    $_DEFAULT_ = 0x08
+        $gPlatformFspPkgTokenSpaceGuid_RefreshWm                       1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PcdSerialDebugLevel             1 bytes    $_DEFAULT_ = 0x03
         $gPlatformFspPkgTokenSpaceGuid_FivrFaults                      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_FivrEfficiency                  1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SafeMode                        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_CleanMemory                     1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_UsbTcPortEnPreMem               1 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_PostCodeOutputPort              2 bytes    $_DEFAULT_ = 0x80
         $gPlatformFspPkgTokenSpaceGuid_CridEnable                      1 bytes    $_DEFAULT_ = 0x0
-        Skip 3 bytes
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_BclkRfiFreq                    16 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieImrSize                     2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieImrEnabled                  1 bytes    $_DEFAULT_ = 0x00
@@ -514,7 +516,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_MissingCommitBitNotification    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_NVMeHoldDisableBit              1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PcieRefPllSsc                   1 bytes    $_DEFAULT_ = 0xFF
-        $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpd                18 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpd                17 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_BdatEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ScanExtGfxForLegacyOpRom        1 bytes    $_DEFAULT_ = 0x00
@@ -523,6 +525,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PanelPowerEnable                1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_BdatTestType                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SaPreMemTestRsvd               98 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_TotalFlashSize                  2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_BiosSize                        2 bytes    $_DEFAULT_ = 0x2800
         $gPlatformFspPkgTokenSpaceGuid_TxtAcheckRequest                1 bytes    $_DEFAULT_ = 0x0
@@ -2019,7 +2022,10 @@ EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_RhSolution
     Selection 0 , "Hardware RHP"
-    Selection 1 , "2x Refresh"
+    Selection 1 , "1x Refresh"
+    Selection 2 , "2x Refresh"
+    Selection 3 , "4x Refresh"
+    Selection 4 , "NORMAL Refresh"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_PowerDownMode
@@ -2032,6 +2038,11 @@ EndList
 List &gPlatformFspPkgTokenSpaceGuid_DisPgCloseIdleTimeout
     Selection 0 , "Enabled"
     Selection 1 , "Disabled"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_RefreshWm
+    Selection 1 , "Enable Refresh Watermark High (Default)"
+    Selection 0 , "Enable Refresh Watermark Low"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_PcdSerialDebugLevel
@@ -3026,12 +3037,8 @@ Page "Memory Reference Code"
         Help "Enable/disable Rank Margin Tool Per Bit."
     Combo $gPlatformFspPkgTokenSpaceGuid_RDTOPT, "Read Timing Optimization", &EN_DIS,
         Help "Enables/Disable Read Timing Optimization"
-    EditNum $gPlatformFspPkgTokenSpaceGuid_RefreshPanicWm, "REFRESH_PANIC_WM", HEX,
-        Help "Refresh Panic Watermark, range 1-9, Default is 9"
-             "Valid range: 0x01 ~ 0x9"
-    EditNum $gPlatformFspPkgTokenSpaceGuid_RefreshHpWm, "REFRESH_HP_WM", HEX,
-        Help "Refresh High Priority Watermark, range 1-9, Default is 8"
-             "Valid range: 0x01 ~ 0x9"
+    Combo $gPlatformFspPkgTokenSpaceGuid_RefreshWm, "Refresh Watermarks", &gPlatformFspPkgTokenSpaceGuid_RefreshWm,
+        Help "Refresh Watermark, High, Low"
     Combo $gPlatformFspPkgTokenSpaceGuid_SafeMode, "Safe Mode Support", &EN_DIS,
         Help "This option configures the varous items in the IO and MC to be more conservative.(def=Disable)"
     Combo $gPlatformFspPkgTokenSpaceGuid_CleanMemory, "Ask MRC to clear memory content", &EN_DIS,

@@ -2407,7 +2407,7 @@ typedef struct {
 
 /** Offset 0x05A3 - Row Hammer Solution
   Type of method used to prevent Row Hammer. Default is 2x Refresh
-  0:Hardware RHP, 1:2x Refresh
+  0:Hardware RHP, 1:1x Refresh, 2:2x Refresh, 3:4x Refresh, 4:NORMAL Refresh
 **/
   UINT8                       RhSolution;
 
@@ -2555,16 +2555,22 @@ typedef struct {
   UINT8                       RDTOPT;
 
 /** Offset 0x05BA - REFRESH_PANIC_WM
-  Refresh Panic Watermark, range 1-9, Default is 9
+  DEPRECATED
 **/
   UINT8                       RefreshPanicWm;
 
 /** Offset 0x05BB - REFRESH_HP_WM
-  Refresh High Priority Watermark, range 1-9, Default is 8
+  DEPRECATED
 **/
   UINT8                       RefreshHpWm;
 
-/** Offset 0x05BC - PcdSerialDebugLevel
+/** Offset 0x05BC - Refresh Watermarks
+  Refresh Watermark, High, Low
+  1:Enable Refresh Watermark High (Default), 0:Enable Refresh Watermark Low
+**/
+  UINT8                       RefreshWm;
+
+/** Offset 0x05BD - PcdSerialDebugLevel
   Serial Debug Message Level. 0:Disable, 1:Error Only, 2:Error & Warnings, 3:Load,
   Error, Warnings & Info, 4:Load, Error, Warnings, Info & Event, 5:Load, Error, Warnings,
   Info & Verbose.
@@ -2573,49 +2579,53 @@ typedef struct {
 **/
   UINT8                       PcdSerialDebugLevel;
 
-/** Offset 0x05BD - Fivr Faults
+/** Offset 0x05BE - Fivr Faults
   Fivr Faults; 0: Disabled; <b>1: Enabled.</b>
   $EN_DIS
 **/
   UINT8                       FivrFaults;
 
-/** Offset 0x05BE - Fivr Efficiency
+/** Offset 0x05BF - Fivr Efficiency
   Fivr Efficiency Management; 0: Disabled; <b>1: Enabled.</b>
   $EN_DIS
 **/
   UINT8                       FivrEfficiency;
 
-/** Offset 0x05BF - Safe Mode Support
+/** Offset 0x05C0 - Safe Mode Support
   This option configures the varous items in the IO and MC to be more conservative.(def=Disable)
   $EN_DIS
 **/
   UINT8                       SafeMode;
 
-/** Offset 0x05C0 - Ask MRC to clear memory content
+/** Offset 0x05C1 - Ask MRC to clear memory content
   Ask MRC to clear memory content <b>0: Do not Clear Memory;</b> 1: Clear Memory.
   $EN_DIS
 **/
   UINT8                       CleanMemory;
 
-/** Offset 0x05C1 - TCSS USB Port Enable
+/** Offset 0x05C2 - TCSS USB Port Enable
   Bitmap for per port enabling
 **/
   UINT8                       UsbTcPortEnPreMem;
 
-/** Offset 0x05C2 - Post Code Output Port
+/** Offset 0x05C3
+**/
+  UINT8                       UnusedUpdSpace17;
+
+/** Offset 0x05C4 - Post Code Output Port
   This option configures Post Code Output Port
 **/
   UINT16                      PostCodeOutputPort;
 
-/** Offset 0x05C4 - Enable/Disable SA CRID
+/** Offset 0x05C6 - Enable/Disable SA CRID
   Enable: SA CRID, Disable (Default): SA CRID
   $EN_DIS
 **/
   UINT8                       CridEnable;
 
-/** Offset 0x05C5
+/** Offset 0x05C7
 **/
-  UINT8                       UnusedUpdSpace17[3];
+  UINT8                       UnusedUpdSpace18[1];
 
 /** Offset 0x05C8 - BCLK RFI Frequency
   Bclk RFI Frequency for each SAGV point in Hz units. 98000000Hz = 98MHz <b>0 - No
@@ -2678,7 +2688,7 @@ typedef struct {
 
 /** Offset 0x05F1
 **/
-  UINT8                       UnusedUpdSpace18;
+  UINT8                       UnusedUpdSpace19;
 
 /** Offset 0x05F2 - LTR L1.2 Threshold Value
   LTR L1.2 Threshold Value
@@ -2741,35 +2751,35 @@ typedef struct {
   Reserved for Pre-Mem
   $EN_DIS
 **/
-  UINT8                       ReservedFspmUpd[18];
+  UINT8                       ReservedFspmUpd[17];
 
-/** Offset 0x060F - Skip external display device scanning
+/** Offset 0x060E - Skip external display device scanning
   Enable: Do not scan for external display device, Disable (Default): Scan external
   display devices
   $EN_DIS
 **/
   UINT8                       SkipExtGfxScan;
 
-/** Offset 0x0610 - Generate BIOS Data ACPI Table
+/** Offset 0x060F - Generate BIOS Data ACPI Table
   Enable: Generate BDAT for MRC RMT or SA PCIe data. Disable (Default): Do not generate it
   $EN_DIS
 **/
   UINT8                       BdatEnable;
 
-/** Offset 0x0611 - Detect External Graphics device for LegacyOpROM
+/** Offset 0x0610 - Detect External Graphics device for LegacyOpROM
   Detect and report if external graphics device only support LegacyOpROM or not (to
   support CSM auto-enable). Enable(Default)=1, Disable=0
   $EN_DIS
 **/
   UINT8                       ScanExtGfxForLegacyOpRom;
 
-/** Offset 0x0612 - Lock PCU Thermal Management registers
+/** Offset 0x0611 - Lock PCU Thermal Management registers
   Lock PCU Thermal Management registers. Enable(Default)=1, Disable=0
   $EN_DIS
 **/
   UINT8                       LockPTMregs;
 
-/** Offset 0x0613 - Rsvd
+/** Offset 0x0612 - Rsvd
   Disable(0x0)(Default): Normal Operation - RxCTLE adaptive behavior enabled, Enable(0x1):
   Override RxCTLE - Disable RxCTLE adaptive behavior to keep the configured RxCTLE
   peak values unmodified
@@ -2777,24 +2787,28 @@ typedef struct {
 **/
   UINT8                       PegGen3Rsvd;
 
-/** Offset 0x0614 - Panel Power Enable
+/** Offset 0x0613 - Panel Power Enable
   Control for enabling/disabling VDD force bit (Required only for early enabling of
   eDP panel). 0=Disable, 1(Default)=Enable
   $EN_DIS
 **/
   UINT8                       PanelPowerEnable;
 
-/** Offset 0x0615 - BdatTestType
+/** Offset 0x0614 - BdatTestType
   Indicates the type of Memory Training data to populate into the BDAT ACPI table.
   0:RMT per Rank, 1:RMT per Bit, 2:Margin2D
 **/
   UINT8                       BdatTestType;
 
-/** Offset 0x0616 - SaPreMemTestRsvd
+/** Offset 0x0615 - SaPreMemTestRsvd
   Reserved for SA Pre-Mem Test
   $EN_DIS
 **/
   UINT8                       SaPreMemTestRsvd[98];
+
+/** Offset 0x0677
+**/
+  UINT8                       UnusedUpdSpace20;
 
 /** Offset 0x0678 - TotalFlashSize
   Enable/Disable. 0: Disable, define default value of TotalFlashSize , 1: enable
@@ -2875,7 +2889,7 @@ typedef struct {
 
 /** Offset 0x0693
 **/
-  UINT8                       UnusedUpdSpace19[1];
+  UINT8                       UnusedUpdSpace21[1];
 
 /** Offset 0x0694 - DMIC<N> ClkA Pin Muxing (N - DMIC number)
   Determines DMIC<N> ClkA Pin muxing. See  GPIO_*_MUXING_DMIC<N>_CLKA_*
@@ -2895,7 +2909,7 @@ typedef struct {
 
 /** Offset 0x06A5
 **/
-  UINT8                       UnusedUpdSpace20[3];
+  UINT8                       UnusedUpdSpace22[3];
 
 /** Offset 0x06A8 - DMIC<N> Data Pin Muxing
   Determines DMIC<N> Data Pin muxing. See GPIO_*_MUXING_DMIC<N>_DATA_*
@@ -2944,7 +2958,7 @@ typedef struct {
 
 /** Offset 0x06BF
 **/
-  UINT8                       UnusedUpdSpace21;
+  UINT8                       UnusedUpdSpace23;
 
 /** Offset 0x06C0 - Tcc Cache Config File Base Address
   Tcc (Time Coordinated Computing) Cache Config File File Base Address
@@ -3041,7 +3055,7 @@ typedef struct {
 
 /** Offset 0x06DC
 **/
-  UINT8                       UnusedUpdSpace22[1];
+  UINT8                       UnusedUpdSpace24[1];
 
 /** Offset 0x06DD
 **/
@@ -3066,7 +3080,7 @@ typedef struct {
 
 /** Offset 0x06F0
 **/
-  UINT8                       UnusedUpdSpace23[6];
+  UINT8                       UnusedUpdSpace25[6];
 
 /** Offset 0x06F6
 **/
