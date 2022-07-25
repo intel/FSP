@@ -4802,14 +4802,7 @@
               },
               {
                 "Name": "DisplayShift_Enabled",
-                "SizeInBits": "1",
-                "ByteOffset": "",
-                "BitOffset": "",
-                "Value": ""
-              },
-              {
-                "Name": "SKIP",
-                "SizeInBits": "1",
+                "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -24583,7 +24576,7 @@
             "PageID": [
               {
                 "WidgetType": "Label",
-                "WidgetName": "PLATFORM: AlderLake-P",
+                "WidgetName": "PLATFORM: AlderLake-P/M/N & RaptorLake-P",
                 "Visibility": "",
                 "Data": [],
                 "HelpText": "",
@@ -24591,7 +24584,7 @@
               },
               {
                 "WidgetType": "Label",
-                "WidgetName": "VBT Version: 247",
+                "WidgetName": "VBT Version: 249",
                 "Visibility": "",
                 "Data": [],
                 "HelpText": "",
@@ -24704,11 +24697,15 @@
                 "HelpText": "This feature allows Runtime eDP Display Shift between iGfx and dGfx.",
                 "WidgetValues": [
                   {
-                    "Key": "Yes",
+                    "Key": "Supported between Intel Integrated and Intel Discrete Adapter",
                     "Value": "1"
                   },
                   {
-                    "Key": "No",
+                    "Key": "Supported between Intel Adapter and non-Intel Adapter",
+                    "Value": "2"
+                  },
+                  {
+                    "Key": "Not Supported",
                     "Value": "0"
                   }
                 ]
@@ -66174,23 +66171,23 @@
                                 "Value": "0"
                               },
                               {
-                                "Key": "5.94 Gbps",
+                                "Key": "2.97 Gbps",
                                 "Value": "1"
                               },
                               {
-                                "Key": "3.40 Gbps",
+                                "Key": "1.65 Gbps",
                                 "Value": "2"
                               },
-							  {
-                                "Key": "3.00 Gbps",
+                              {
+                                "Key": "5.94 Gbps",
                                 "Value": "3"
                               },
                               {
-                                "Key": "2.97 Gbps",
+                                "Key": "3.40 Gbps",
                                 "Value": "4"
                               },
                               {
-                                "Key": "1.65 Gbps",
+                                "Key": "3.00 Gbps",
                                 "Value": "5"
                               }
                             ]
@@ -66203,7 +66200,7 @@
                               "2",
                               "Int_EFP1_DP_Port_Max_LinkRate"
                             ],
-                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nHBR3 is the max Link rate supported by ADL-P/M/N. UHBR link rates are supported only by RPL-P. So, choosing a Link rate greater than HBR3 for ADL-P/M/N will automatically force a fallback to HBR3 in GOP and gfx-driver. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
                                 "Key": "Default Max Link Rate supported by Plaftform",
@@ -66224,6 +66221,18 @@
                               {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
+                              },
+                              {
+                                "Key": "UHBR10 (10 Gbps)",
+                                "Value": "5"
+                              },
+                              {
+                                "Key": "UHBR13_5 (13.5 Gbps)",
+                                "Value": "6"
+                              },
+                              {
+                                "Key": "UHBR20 (20 Gbps)",
+                                "Value": "7"
                               }
                             ]
                           },
@@ -67083,23 +67092,23 @@
                                 "Value": "0"
                               },
                               {
-                                "Key": "5.94 Gbps",
+                                "Key": "2.97 Gbps",
                                 "Value": "1"
                               },
                               {
-                                "Key": "3.40 Gbps",
+                                "Key": "1.65 Gbps",
                                 "Value": "2"
                               },
-							  {
-                                "Key": "3.00 Gbps",
+                              {
+                                "Key": "5.94 Gbps",
                                 "Value": "3"
                               },
                               {
-                                "Key": "2.97 Gbps",
+                                "Key": "3.40 Gbps",
                                 "Value": "4"
                               },
                               {
-                                "Key": "1.65 Gbps",
+                                "Key": "3.00 Gbps",
                                 "Value": "5"
                               }
                             ]
@@ -67112,7 +67121,7 @@
                               "2",
                               "Int_EFP2_DP_Port_Max_LinkRate"
                             ],
-                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nHBR3 is the max Link rate supported by ADL-P/M/N. UHBR link rates are supported only by RPL-P. So, choosing a Link rate greater than HBR3 for ADL-P/M/N will automatically force a fallback to HBR3 in GOP and gfx-driver. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
                                 "Key": "Default Max Link Rate supported by Plaftform",
@@ -67133,6 +67142,18 @@
                               {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
+                              },
+                              {
+                                "Key": "UHBR10 (10 Gbps)",
+                                "Value": "5"
+                              },
+                              {
+                                "Key": "UHBR13_5 (13.5 Gbps)",
+                                "Value": "6"
+                              },
+                              {
+                                "Key": "UHBR20 (20 Gbps)",
+                                "Value": "7"
                               }
                             ]
                           },
@@ -67992,23 +68013,23 @@
                                 "Value": "0"
                               },
                               {
-                                "Key": "5.94 Gbps",
+                                "Key": "2.97 Gbps",
                                 "Value": "1"
                               },
                               {
-                                "Key": "3.40 Gbps",
+                                "Key": "1.65 Gbps",
                                 "Value": "2"
                               },
-							  {
-                                "Key": "3.00 Gbps",
+                              {
+                                "Key": "5.94 Gbps",
                                 "Value": "3"
                               },
                               {
-                                "Key": "2.97 Gbps",
+                                "Key": "3.40 Gbps",
                                 "Value": "4"
                               },
                               {
-                                "Key": "1.65 Gbps",
+                                "Key": "3.00 Gbps",
                                 "Value": "5"
                               }
                             ]
@@ -68021,7 +68042,7 @@
                               "2",
                               "Int_EFP3_DP_Port_Max_LinkRate"
                             ],
-                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nHBR3 is the max Link rate supported by ADL-P/M/N. UHBR link rates are supported only by RPL-P. So, choosing a Link rate greater than HBR3 for ADL-P/M/N will automatically force a fallback to HBR3 in GOP and gfx-driver. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
                                 "Key": "Default Max Link Rate supported by Plaftform",
@@ -68042,6 +68063,18 @@
                               {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
+                              },
+                              {
+                                "Key": "UHBR10 (10 Gbps)",
+                                "Value": "5"
+                              },
+                              {
+                                "Key": "UHBR13_5 (13.5 Gbps)",
+                                "Value": "6"
+                              },
+                              {
+                                "Key": "UHBR20 (20 Gbps)",
+                                "Value": "7"
                               }
                             ]
                           },
@@ -68901,23 +68934,23 @@
                                 "Value": "0"
                               },
                               {
-                                "Key": "5.94 Gbps",
+                                "Key": "2.97 Gbps",
                                 "Value": "1"
                               },
                               {
-                                "Key": "3.40 Gbps",
+                                "Key": "1.65 Gbps",
                                 "Value": "2"
                               },
-							  {
-                                "Key": "3.00 Gbps",
+                              {
+                                "Key": "5.94 Gbps",
                                 "Value": "3"
                               },
                               {
-                                "Key": "2.97 Gbps",
+                                "Key": "3.40 Gbps",
                                 "Value": "4"
                               },
                               {
-                                "Key": "1.65 Gbps",
+                                "Key": "3.00 Gbps",
                                 "Value": "5"
                               }
                             ]
@@ -68930,7 +68963,7 @@
                               "2",
                               "Int_EFP4_DP_Port_Max_LinkRate"
                             ],
-                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nHBR3 is the max Link rate supported by ADL-P/M/N. UHBR link rates are supported only by RPL-P. So, choosing a Link rate greater than HBR3 for ADL-P/M/N will automatically force a fallback to HBR3 in GOP and gfx-driver. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
                                 "Key": "Default Max Link Rate supported by Plaftform",
@@ -68951,6 +68984,18 @@
                               {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
+                              },
+                              {
+                                "Key": "UHBR10 (10 Gbps)",
+                                "Value": "5"
+                              },
+                              {
+                                "Key": "UHBR13_5 (13.5 Gbps)",
+                                "Value": "6"
+                              },
+                              {
+                                "Key": "UHBR20 (20 Gbps)",
+                                "Value": "7"
                               }
                             ]
                           },
@@ -69810,23 +69855,23 @@
                                 "Value": "0"
                               },
                               {
-                                "Key": "5.94 Gbps",
+                                "Key": "2.97 Gbps",
                                 "Value": "1"
                               },
                               {
-                                "Key": "3.40 Gbps",
+                                "Key": "1.65 Gbps",
                                 "Value": "2"
                               },
-							  {
-                                "Key": "3.00 Gbps",
+                              {
+                                "Key": "5.94 Gbps",
                                 "Value": "3"
                               },
                               {
-                                "Key": "2.97 Gbps",
+                                "Key": "3.40 Gbps",
                                 "Value": "4"
                               },
                               {
-                                "Key": "1.65 Gbps",
+                                "Key": "3.00 Gbps",
                                 "Value": "5"
                               }
                             ]
@@ -69839,7 +69884,7 @@
                               "2",
                               "Int_EFP5_DP_Port_Max_LinkRate"
                             ],
-                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nHBR3 is the max Link rate supported by ADL-P/M/N. UHBR link rates are supported only by RPL-P. So, choosing a Link rate greater than HBR3 for ADL-P/M/N will automatically force a fallback to HBR3 in GOP and gfx-driver. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
                                 "Key": "Default Max Link Rate supported by Plaftform",
@@ -69860,6 +69905,18 @@
                               {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
+                              },
+                              {
+                                "Key": "UHBR10 (10 Gbps)",
+                                "Value": "5"
+                              },
+                              {
+                                "Key": "UHBR13_5 (13.5 Gbps)",
+                                "Value": "6"
+                              },
+                              {
+                                "Key": "UHBR20 (20 Gbps)",
+                                "Value": "7"
                               }
                             ]
                           },
@@ -70719,23 +70776,23 @@
                                 "Value": "0"
                               },
                               {
-                                "Key": "5.94 Gbps",
+                                "Key": "2.97 Gbps",
                                 "Value": "1"
                               },
                               {
-                                "Key": "3.40 Gbps",
+                                "Key": "1.65 Gbps",
                                 "Value": "2"
                               },
-							  {
-                                "Key": "3.00 Gbps",
+                              {
+                                "Key": "5.94 Gbps",
                                 "Value": "3"
                               },
                               {
-                                "Key": "2.97 Gbps",
+                                "Key": "3.40 Gbps",
                                 "Value": "4"
                               },
                               {
-                                "Key": "1.65 Gbps",
+                                "Key": "3.00 Gbps",
                                 "Value": "5"
                               }
                             ]
@@ -70748,7 +70805,7 @@
                               "2",
                               "Int_EFP6_DP_Port_Max_LinkRate"
                             ],
-                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nHBR3 is the max Link rate supported by ADL-P/M/N. UHBR link rates are supported only by RPL-P. So, choosing a Link rate greater than HBR3 for ADL-P/M/N will automatically force a fallback to HBR3 in GOP and gfx-driver. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
                                 "Key": "Default Max Link Rate supported by Plaftform",
@@ -70769,6 +70826,18 @@
                               {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
+                              },
+                              {
+                                "Key": "UHBR10 (10 Gbps)",
+                                "Value": "5"
+                              },
+                              {
+                                "Key": "UHBR13_5 (13.5 Gbps)",
+                                "Value": "6"
+                              },
+                              {
+                                "Key": "UHBR20 (20 Gbps)",
+                                "Value": "7"
                               }
                             ]
                           },
@@ -71996,7 +72065,7 @@
                         "57",
                         "ComboPhyVswingHbr"
                       ],
-                      "HelpText": "This table defines the Vswing and Pre-emphasis values for Combo PHY ports A/B/C on TGL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
+                      "HelpText": "This table defines the Vswing and Pre-emphasis values for Combo PHY ports A/B/C on ADL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
                       "WidgetValues": [
                         {
                           "ColumnName": "Column 1",
@@ -72064,7 +72133,7 @@
                         "57",
                         "ComboPhyVswingHbr2"
                       ],
-                      "HelpText": "This table defines the Vswing and Pre-emphasis values for Combo PHY ports A/B/C on TGL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
+                      "HelpText": "This table defines the Vswing and Pre-emphasis values for Combo PHY ports A/B/C on ADL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
                       "WidgetValues": [
                         {
                           "ColumnName": "Column 1",
@@ -72132,7 +72201,7 @@
                         "57",
                         "ComboPhyLowVswingHbr2"
                       ],
-                      "HelpText": "This table defines the Low Vswing and Pre-emphasis values for eDP (HBR2) on TGL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
+                      "HelpText": "This table defines the Low Vswing and Pre-emphasis values for eDP (HBR2) on ADL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
                       "WidgetValues": [
                         {
                           "ColumnName": "Column 1",
@@ -72200,7 +72269,7 @@
                         "57",
                         "ComboPhyLowVswingHbr3"
                       ],
-                      "HelpText": "This table defines the Low Vswing and Pre-emphasis values for eDP (HBR3) on TGL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
+                      "HelpText": "This table defines the Low Vswing and Pre-emphasis values for eDP (HBR3) on ADL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
                       "WidgetValues": [
                         {
                           "ColumnName": "Column 1",
@@ -72268,7 +72337,7 @@
                         "57",
                         "DklPhyVswingHbr"
                       ],
-                      "HelpText": "This table defines the Vswing and Pre-emphasis values for DKL PHY ports D to I on TGL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
+                      "HelpText": "This table defines the Vswing and Pre-emphasis values for DKL PHY ports D to I on ADL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
                       "WidgetValues": [
                         {
                           "ColumnName": "Column 1",
@@ -72336,7 +72405,7 @@
                         "57",
                         "DklPhyVswingHbr2"
                       ],
-                      "HelpText": "This table defines the Vswing and Pre-emphasis values for DKL PHY ports D to I on TGL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
+                      "HelpText": "This table defines the Vswing and Pre-emphasis values for DKL PHY ports D to I on ADL platform. The table is aligned as per Intel platform specific configuration. OEM's must not enable or disable this on their own and work with the Intel CE team to change any settings in this page.",
                       "WidgetValues": [
                         {
                           "ColumnName": "Column 1",

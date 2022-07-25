@@ -495,9 +495,14 @@ typedef struct {
 **/
   UINT8                       UserBd;
 
-/** Offset 0x01D1
+/** Offset 0x01D1 - MRC Retraining on RTC Power Loss
+  Specifies whether MRC memory training will occur when RTC power loss is detected.
+  Options are 0=Memory will be re-trained if RTC power loss is detected. 1=Memory
+  will not be re-trained when RTC power loss is detected. (Typically used on board
+  designs without a dedicated RTC battery)
+  0:Disabled, 1:Enabled
 **/
-  UINT8                       UnusedUpdSpace2;
+  UINT8                       DisableMrcRetrainingOnRtcPowerLoss;
 
 /** Offset 0x01D2 - DDR Frequency Limit
   Maximum Memory Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867,
@@ -602,7 +607,7 @@ typedef struct {
 
 /** Offset 0x01E3
 **/
-  UINT8                       UnusedUpdSpace3;
+  UINT8                       UnusedUpdSpace2;
 
 /** Offset 0x01E4 - Memory Voltage
   DRAM voltage (Vdd) (supply voltage for input buffers and core logic of the DRAM
@@ -631,7 +636,7 @@ typedef struct {
 
 /** Offset 0x01E9
 **/
-  UINT8                       UnusedUpdSpace4;
+  UINT8                       UnusedUpdSpace3;
 
 /** Offset 0x01EA - tFAW
   Min Four Activate Window Delay Time, 0: AUTO, max: 63. Only used if FspmUpd->FspmConfig.SpdProfileSelected
@@ -653,7 +658,7 @@ typedef struct {
 
 /** Offset 0x01EF
 **/
-  UINT8                       UnusedUpdSpace5;
+  UINT8                       UnusedUpdSpace4;
 
 /** Offset 0x01F0 - tREFI
   Refresh Interval, 0: AUTO, max: 65535. Only used if FspmUpd->FspmConfig.SpdProfileSelected
@@ -808,7 +813,7 @@ typedef struct {
 
 /** Offset 0x0221
 **/
-  UINT8                       UnusedUpdSpace6[3];
+  UINT8                       UnusedUpdSpace5[3];
 
 /** Offset 0x0224 - Temporary MMIO address for GMADR
   Obsolete field now and it has been extended to 64 bit address, used GmAdr64
@@ -1050,7 +1055,7 @@ typedef struct {
 
 /** Offset 0x0289
 **/
-  UINT8                       UnusedUpdSpace7[7];
+  UINT8                       UnusedUpdSpace6[7];
 
 /** Offset 0x0290 - Temporary MMIO address for GMADR
   The reference code will use this as Temporary MMIO address space to access GMADR
@@ -1076,7 +1081,7 @@ typedef struct {
 
 /** Offset 0x029B
 **/
-  UINT8                       UnusedUpdSpace8;
+  UINT8                       UnusedUpdSpace7;
 
 /** Offset 0x029C - SA/Uncore Voltage Override
   The SA/Uncore voltage override applicable when SA/Uncore voltage mode is in Override
@@ -1113,7 +1118,7 @@ typedef struct {
 
 /** Offset 0x02A3
 **/
-  UINT8                       UnusedUpdSpace9;
+  UINT8                       UnusedUpdSpace8;
 
 /** Offset 0x02A4 - Memory VDDQ Voltage
   DRAM voltage (Vddq) (supply voltage for DQ/DQS of the DRAM chips) in millivolts
@@ -1589,7 +1594,7 @@ typedef struct {
 
 /** Offset 0x03D1
 **/
-  UINT8                       UnusedUpdSpace10;
+  UINT8                       UnusedUpdSpace9;
 
 /** Offset 0x03D2 - Ring voltage override
   The ring voltage override which is applied to the entire range of cpu ring frequencies.
@@ -1641,7 +1646,7 @@ typedef struct {
 
 /** Offset 0x03DD
 **/
-  UINT8                       UnusedUpdSpace11;
+  UINT8                       UnusedUpdSpace10;
 
 /** Offset 0x03DE - Atom L2 Voltage Override
   The atom L2 voltage override which is applied to the entire range of atom L2 frequencies.
@@ -1710,7 +1715,7 @@ typedef struct {
 
 /** Offset 0x03F5
 **/
-  UINT8                       UnusedUpdSpace12[1];
+  UINT8                       UnusedUpdSpace11[1];
 
 /** Offset 0x03F6 - Core VF Point Offset
   Array used to specifies the Core Voltage Offset applied to the each selected VF
@@ -1842,7 +1847,7 @@ typedef struct {
 
 /** Offset 0x049D
 **/
-  UINT8                       UnusedUpdSpace13[3];
+  UINT8                       UnusedUpdSpace12[3];
 
 /** Offset 0x04A0 - CPU BCLK OC Frequency
   CPU BCLK OC Frequency in 10KHz units increasing. Value 9800 (10KHz) = 98MHz <b>0
@@ -1900,7 +1905,7 @@ typedef struct {
 
 /** Offset 0x04B3
 **/
-  UINT8                       UnusedUpdSpace14;
+  UINT8                       UnusedUpdSpace13;
 
 /** Offset 0x04B4 - GT ICCMAX
   GT ICCMAX value is represented in 1/4 A increments. A value of 400 = 100A. <b>4
@@ -1961,7 +1966,7 @@ typedef struct {
 
 /** Offset 0x04BD
 **/
-  UINT8                       UnusedUpdSpace15[3];
+  UINT8                       UnusedUpdSpace14[3];
 
 /** Offset 0x04C0 - Short term Power Limit value for custom cTDP level 1
   Short term Power Limit value for custom cTDP level 1. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
@@ -1976,11 +1981,18 @@ typedef struct {
 **/
   UINT8                       Etvb;
 
-/** Offset 0x04C5 - ReservedCpuPreMem
+/** Offset 0x04C5 - UnderVolt Protection
+  When UnderVolt Protection is enabled, user will be not be able to program under
+  voltage in OS runtime. 0: Disabled; <b>1: Enabled</b>
+  $EN_DIS
+**/
+  UINT8                       UnderVoltProtection;
+
+/** Offset 0x04C6 - ReservedCpuPreMem
   Reserved for Cpu Pre-Mem
   $EN_DIS
 **/
-  UINT8                       ReservedCpuPreMem[7];
+  UINT8                       ReservedCpuPreMem[6];
 
 /** Offset 0x04CC - BiosGuard
   Enable/Disable. 0: Disable, Enable/Disable BIOS Guard feature, 1: enable
@@ -2000,7 +2012,7 @@ typedef struct {
 
 /** Offset 0x04CF
 **/
-  UINT8                       UnusedUpdSpace16;
+  UINT8                       UnusedUpdSpace15;
 
 /** Offset 0x04D0 - PrmrrSize
   Enable/Disable. 0: Disable, define default value of PrmrrSize , 1: enable
@@ -2253,7 +2265,7 @@ typedef struct {
 
 /** Offset 0x0745
 **/
-  UINT8                       UnusedUpdSpace17;
+  UINT8                       UnusedUpdSpace16;
 
 /** Offset 0x0746 - SMBUS Base Address
   SMBUS Base Address (IO space).
@@ -2287,7 +2299,7 @@ typedef struct {
 
 /** Offset 0x0789
 **/
-  UINT8                       UnusedUpdSpace18[3];
+  UINT8                       UnusedUpdSpace17[3];
 
 /** Offset 0x078C - Clk Req GPIO Pin
   Select Clk Req Pin. Refer to GPIO_*_MUXING_SRC_CLKREQ_x* for possible values.
@@ -2359,7 +2371,7 @@ typedef struct {
 
 /** Offset 0x07F5
 **/
-  UINT8                       UnusedUpdSpace19[3];
+  UINT8                       UnusedUpdSpace18[3];
 
 /** Offset 0x07F8 - DMIC<N> Data Pin Muxing
   Determines DMIC<N> Data Pin muxing. See GPIO_*_MUXING_DMIC<N>_DATA_*
@@ -2421,7 +2433,7 @@ typedef struct {
 
 /** Offset 0x0811
 **/
-  UINT8                       UnusedUpdSpace20[3];
+  UINT8                       UnusedUpdSpace19[3];
 
 /** Offset 0x0814 - Serial Io Uart Debug BaudRate
   Set default BaudRate Supported from 0 - default to 6000000. Recommended values 9600,
@@ -2449,7 +2461,7 @@ typedef struct {
 
 /** Offset 0x081B
 **/
-  UINT8                       UnusedUpdSpace21;
+  UINT8                       UnusedUpdSpace20;
 
 /** Offset 0x081C - Serial Io Uart Debug Mmio Base
   Select SerialIo Uart default MMIO resource in SEC/PEI phase when PcdSerialIoUartMode
@@ -3312,7 +3324,7 @@ typedef struct {
 
 /** Offset 0x08BB
 **/
-  UINT8                       UnusedUpdSpace22;
+  UINT8                       UnusedUpdSpace21;
 
 /** Offset 0x08BC - Post Code Output Port
   This option configures Post Code Output Port
@@ -3339,7 +3351,7 @@ typedef struct {
 
 /** Offset 0x08C1
 **/
-  UINT8                       UnusedUpdSpace23[3];
+  UINT8                       UnusedUpdSpace22[3];
 
 /** Offset 0x08C4 - BCLK RFI Frequency
   Bclk RFI Frequency for each SAGV point in Hz units. 98000000Hz = 98MHz <b>0 - No
@@ -3520,7 +3532,7 @@ typedef struct {
 
 /** Offset 0x08F1
 **/
-  UINT8                       UnusedUpdSpace24[3];
+  UINT8                       UnusedUpdSpace23[3];
 
 /** Offset 0x08F4 - PMR Size
   Size of PMR memory buffer. 0x400000 for normal boot and 0x200000 for S3 boot
@@ -3534,7 +3546,7 @@ typedef struct {
 
 /** Offset 0x08F9
 **/
-  UINT8                       UnusedUpdSpace25;
+  UINT8                       UnusedUpdSpace24;
 
 /** Offset 0x08FA - Delta T12 Power Cycle Delay required in ms
   Select the value for delay required. 0= No delay, 0xFFFF(Default) = Auto calculate
@@ -3563,7 +3575,7 @@ typedef struct {
 
 /** Offset 0x0957
 **/
-  UINT8                       UnusedUpdSpace26;
+  UINT8                       UnusedUpdSpace25;
 
 /** Offset 0x0958 - TotalFlashSize
   Enable/Disable. 0: Disable, define default value of TotalFlashSize , 1: enable
@@ -3647,7 +3659,7 @@ typedef struct {
 
 /** Offset 0x0972
 **/
-  UINT8                       UnusedUpdSpace27[2];
+  UINT8                       UnusedUpdSpace26[2];
 
 /** Offset 0x0974 - Hybrid Graphics GPIO information for PEG 1
   Hybrid Graphics GPIO information for PEG 1, for Reset, power and wake GPIOs
@@ -3684,7 +3696,7 @@ typedef struct {
 
 /** Offset 0x0A97
 **/
-  UINT8                       UnusedUpdSpace28;
+  UINT8                       UnusedUpdSpace27;
 
 /** Offset 0x0A98 - SerialIoUartDebugRxPinMux - FSPT
   Select RX pin muxing for SerialIo UART used for debug
@@ -3716,7 +3728,7 @@ typedef struct {
 
 /** Offset 0x0AA9
 **/
-  UINT8                       UnusedUpdSpace29[3];
+  UINT8                       UnusedUpdSpace28[3];
 
 /** Offset 0x0AAC - Tcc Cache Config File Base Address
   Tcc (Time Coordinated Computing) Cache Config File File Base Address
@@ -3801,7 +3813,7 @@ typedef struct {
 
 /** Offset 0x0ACA
 **/
-  UINT8                       UnusedUpdSpace30[6];
+  UINT8                       UnusedUpdSpace29[6];
 
 /** Offset 0x0AD0 - IbeccErrInjAddress
   Address to match against for ECC error injection
@@ -3830,7 +3842,7 @@ typedef struct {
 
 /** Offset 0x0AED
 **/
-  UINT8                       UnusedUpdSpace31[3];
+  UINT8                       UnusedUpdSpace30[3];
 
 /** Offset 0x0AF0 - Debug Value
   Debug Value
@@ -3849,7 +3861,7 @@ typedef struct {
 
 /** Offset 0x0AF9
 **/
-  UINT8                       UnusedUpdSpace32;
+  UINT8                       UnusedUpdSpace31;
 
 /** Offset 0x0AFA - tRFCpb
   Min Internal per bank refresh recovery delay time, 0: AUTO, max: 0xFFFF. Only used
@@ -3901,7 +3913,7 @@ typedef struct {
 
 /** Offset 0x0B05
 **/
-  UINT8                       UnusedUpdSpace33[3];
+  UINT8                       UnusedUpdSpace32[3];
 
 /** Offset 0x0B08 - EccErrInjAddress
   Address to match against for ECC error injection
@@ -3956,20 +3968,20 @@ typedef struct {
   UINT8                       SagvSwitchFactorStall;
 
 /** Offset 0x0B23 - Threshold For Switch Down
-  "SAGV heuristics down control: Duration in ms of low activity after which SAGV will
+  SAGV heuristics down control: Duration in ms of low activity after which SAGV will
   switch down, from 1 to 50ms.
 **/
   UINT8                       SagvHeuristicsDownControl;
 
 /** Offset 0x0B24 - Threshold For Switch Up
-  "SAGV heuristics up control: Duration in ms of low activity after which SAGV will
+  SAGV heuristics up control: Duration in ms of low activity after which SAGV will
   switch up, from 1 to 50ms.
 **/
   UINT8                       SagvHeuristicsUpControl;
 
 /** Offset 0x0B25
 **/
-  UINT8                       UnusedUpdSpace34;
+  UINT8                       UnusedUpdSpace33;
 
 /** Offset 0x0B26 - Frequency Limit for Mixed 2DPC DDR5 1 Rank 8GB and 8GB
   Frequency Limit for 2DPC Mixed or non-POR Config. 0: Auto, otherwise a frequency
@@ -4035,13 +4047,19 @@ typedef struct {
 **/
   UINT8                       WRDS;
 
-/** Offset 0x0B44
+/** Offset 0x0B44 - SAM Overlaoding
+  Enable: copy the sagv frequency point. Disable: not copy.
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace35[5];
+  UINT8                       OverloadSAM;
 
-/** Offset 0x0B49
+/** Offset 0x0B45
 **/
-  UINT8                       ReservedFspmUpd2[7];
+  UINT8                       UnusedUpdSpace34[5];
+
+/** Offset 0x0B4A
+**/
+  UINT8                       ReservedFspmUpd2[6];
 } FSP_M_CONFIG;
 
 /** Fsp M UPD Configuration
@@ -4062,7 +4080,7 @@ typedef struct {
 
 /** Offset 0x0B50
 **/
-  UINT8                       UnusedUpdSpace36[6];
+  UINT8                       UnusedUpdSpace35[6];
 
 /** Offset 0x0B56
 **/
