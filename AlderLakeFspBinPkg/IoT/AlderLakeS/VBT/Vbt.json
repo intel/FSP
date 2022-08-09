@@ -62204,7 +62204,7 @@
                             "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
-                                "Key": "HBR3 (8.1 Gbps)",
+                                "Key": "Default Max Link Rate supported by Plaftform",
                                 "Value": "0"
                               },
                               {
@@ -62218,6 +62218,10 @@
                               {
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
+                              },
+                              {
+                                "Key": "HBR3 (8.1 Gbps)",
+                                "Value": "4"
                               }
                             ]
                           },
@@ -63009,7 +63013,7 @@
                             "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
-                                "Key": "HBR3 (8.1 Gbps)",
+                                "Key": "Default Max Link Rate supported by Plaftform",
                                 "Value": "0"
                               },
                               {
@@ -63023,6 +63027,10 @@
                               {
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
+                              },
+                              {
+                                "Key": "HBR3 (8.1 Gbps)",
+                                "Value": "4"
                               }
                             ]
                           },
@@ -63814,7 +63822,7 @@
                             "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
-                                "Key": "HBR3 (8.1 Gbps)",
+                                "Key": "Default Max Link Rate supported by Plaftform",
                                 "Value": "0"
                               },
                               {
@@ -63828,6 +63836,10 @@
                               {
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
+                              },
+                              {
+                                "Key": "HBR3 (8.1 Gbps)",
+                                "Value": "4"
                               }
                             ]
                           },
@@ -64619,7 +64631,7 @@
                             "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
-                                "Key": "HBR3 (8.1 Gbps)",
+                                "Key": "Default Max Link Rate supported by Plaftform",
                                 "Value": "0"
                               },
                               {
@@ -64633,6 +64645,10 @@
                               {
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
+                              },
+                              {
+                                "Key": "HBR3 (8.1 Gbps)",
+                                "Value": "4"
                               }
                             ]
                           },
@@ -65424,7 +65440,7 @@
                             "HelpText": "This feature limits the maximum link rate for DP Port. This field is valid only if DP is selected for Device Type. \n\nNote: OEM’s need to configure the maximum Link rate as per mother board support.",
                             "WidgetValues": [
                               {
-                                "Key": "HBR3 (8.1 Gbps)",
+                                "Key": "Default Max Link Rate supported by Plaftform",
                                 "Value": "0"
                               },
                               {
@@ -65438,6 +65454,10 @@
                               {
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
+                              },
+                              {
+                                "Key": "HBR3 (8.1 Gbps)",
+                                "Value": "4"
                               }
                             ]
                           },

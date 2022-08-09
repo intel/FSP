@@ -153,7 +153,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_InternalGfx                     1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ApertureSize                    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_UserBd                          1 bytes    $_DEFAULT_ = 0x00
-        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_DisableMrcRetrainingOnRtcPowerLoss   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit                    2 bytes    $_DEFAULT_ = 0
         $gPlatformFspPkgTokenSpaceGuid_SaGv                            1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot               1 bytes    $_DEFAULT_ = 0x01
@@ -396,7 +396,8 @@ StructDef
         Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_CustomPowerLimit1               4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Etvb                            1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPreMem               7 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_UnderVoltProtection             1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPreMem               6 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuard                       1 bytes    $_DEFAULT_ = 0x01
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_Txt                             1 bytes    $_DEFAULT_ = 0x00
@@ -763,6 +764,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_FirstDimmBitMaskEcc             1 bytes    $_DEFAULT_ = 0x0A
         $gPlatformFspPkgTokenSpaceGuid_Lp5BankMode                     1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_WRDS                            1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_OverloadSAM                     1 bytes    $_DEFAULT_ = 0x00
 
     Find "ADLUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x02
@@ -1061,11 +1063,13 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_X2ApicSupport                   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VrPowerDeliveryDesign           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_AcSplitLock                     1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_EnableFastVmode                 5 bytes    $_DEFAULT_ = 0x0, 0x0, 0x0, 0x0, 0x0
         $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction   32 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_GpfaultUcLock                   1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PchPwrOptEnable                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchWriteProtectionEnable        5 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchReadProtectionEnable         5 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchProtectedRangeLimit         10 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PchProtectedRangeBase          10 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaPme                       1 bytes    $_DEFAULT_ = 0x00
@@ -1097,7 +1101,6 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PcieRpSystemErrorOnCorrectableError  28 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieRpMaxPayload               28 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_ThcPort0Assignment              1 bytes    $_DEFAULT_ = 0x0
-        Skip 2 bytes
         $gPlatformFspPkgTokenSpaceGuid_ThcPort0InterruptPinMuxing      4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_ThcPort0WakeOnTouch             1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_ThcPort1Assignment              1 bytes    $_DEFAULT_ = 0x0
@@ -1234,7 +1237,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuRootportUsedForHybridStorage   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchRootportUsedForCpuAttach     1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchAcpiL6dPmeHandling           1 bytes    $_DEFAULT_ = 0x0
-        Skip 7 bytes
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes
@@ -1749,6 +1752,11 @@ List &gPlatformFspPkgTokenSpaceGuid_UserBd
     Selection 4 , "Desktop2DpcTeeTopology"
     Selection 5 , "UltMobile"
     Selection 7 , "UP Server"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_DisableMrcRetrainingOnRtcPowerLoss
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit
@@ -2353,6 +2361,11 @@ List &gPlatformFspPkgTokenSpaceGuid_Avx3Disable
     Selection 1 , " Disable"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_EnableFastVmode
+    Selection 0 , " Disable"
+    Selection 1 , " Enable"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_PchHdaLinkFrequency
     Selection 0 , " 6MHz"
     Selection 1 , " 12MHz"
@@ -2779,6 +2792,8 @@ Page "Memory Reference Code"
              "Valid range: 0x00 ~ 0xFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_UserBd, "Board Type", &gPlatformFspPkgTokenSpaceGuid_UserBd,
         Help "MrcBoardType, Options are 0:Mobile, 1:Desktop1Dpc, 2:Desktop2DpcDaisyChain, 3:Desktop2DpcTeeTopologyAsymmetrical, 4:Desktop2DpcTeeTopology, 5:UltMobile, 7:UP Server"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DisableMrcRetrainingOnRtcPowerLoss, "MRC Retraining on RTC Power Loss", &gPlatformFspPkgTokenSpaceGuid_DisableMrcRetrainingOnRtcPowerLoss,
+        Help "Specifies whether MRC memory training will occur when RTC power loss is detected. Options are 0=Memory will be re-trained if RTC power loss is detected. 1=Memory will not be re-trained when RTC power loss is detected. (Typically used on board designs without a dedicated RTC battery)"
     Combo $gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit, "DDR Frequency Limit", &gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit,
         Help "Maximum Memory Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867, 2133, 2400, 2667, 2933 and 0 for Auto."
     Combo $gPlatformFspPkgTokenSpaceGuid_SaGv, "SA GV", &gPlatformFspPkgTokenSpaceGuid_SaGv,
@@ -3023,6 +3038,8 @@ Page "Memory Reference Code"
              "Valid range: 0x00 ~ 0x3E7F83"
     Combo $gPlatformFspPkgTokenSpaceGuid_Etvb, "Enhanced Thermal Turbo Mode", &EN_DIS,
         Help "When eTVB mode is enabled user will be clipped when temperatures reach 70C <b>0: Disabled</b>; 1: Enabled."
+    Combo $gPlatformFspPkgTokenSpaceGuid_UnderVoltProtection, "UnderVolt Protection", &EN_DIS,
+        Help "When UnderVolt Protection is enabled, user will be not be able to program under voltage in OS runtime. 0: Disabled; <b>1: Enabled</b>"
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPreMem, "ReservedCpuPreMem", &EN_DIS,
         Help "Reserved for Cpu Pre-Mem"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MrcSafeConfig, "MRC Safe Config", HEX,
@@ -3515,6 +3532,8 @@ Page "Memory Reference Code"
         Help " LP5 Bank Mode. 0: Auto, 1: 8 Bank Mode, 2: 16 Bank Mode, 3: BG Mode, default is 0"
     Combo $gPlatformFspPkgTokenSpaceGuid_WRDS, "Write DS Training", &EN_DIS,
         Help "Enable/Disable Write DS Training"
+    Combo $gPlatformFspPkgTokenSpaceGuid_OverloadSAM, "SAM Overlaoding", &EN_DIS,
+        Help "Enable: copy the sagv frequency point. Disable: not copy."
 EndPage
 
 Page "CPU (Pre-Mem)"
@@ -3860,6 +3879,8 @@ Page "CPU (Post-Mem)"
              "Valid range: 0x00 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_AcSplitLock, "AC Split Lock", &EN_DIS,
         Help "Enable/Disable #AC check on split lock. <b>0: Disable</b>; 1: Enable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_EnableFastVmode, "Enable/Disable VR FastVmode. The VR will initiate reactive protection if Fast Vmode is enabled.", &gPlatformFspPkgTokenSpaceGuid_EnableFastVmode,
+        Help "Enable/Disable VR FastVmode; <b>0: Disable</b>; 1: Enable.For all VR by domain"
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction, "ReservedCpuPostMemProduction", &EN_DIS,
         Help "Reserved for CPU Post-Mem Production"
     Combo $gPlatformFspPkgTokenSpaceGuid_GpfaultUcLock, "GP Fault UC Lock", &EN_DIS,
@@ -4494,7 +4515,7 @@ Page "System Agent (Post-Mem)"
     Combo $gPlatformFspPkgTokenSpaceGuid_TccErrorLogEn, "TCC Error Log enable/disable", &EN_DIS,
         Help "@deprecated- only need to set fspm upd TccErrorLogEnPreMem"
     Combo $gPlatformFspPkgTokenSpaceGuid_TccMode, "TccMode enable/disable", &EN_DIS,
-        Help "Enable will activate TCC Mode and disable will deactivate TCC Mode .This is temporary to skip some of the TCC related register access in Non-RT SKU's"
+        Help "DEPRECATED.Enable will activate TCC Mode and disable will deactivate TCC Mode .This is temporary to skip some of the TCC related register access in Non-RT SKU's"
     Combo $gPlatformFspPkgTokenSpaceGuid_GtClosEnable, "Enable Gt CLOS", &EN_DIS,
         Help "0(Default)=Disable, 1=Enable"
     EditNum $gPlatformFspPkgTokenSpaceGuid_TurboRatioLimitRatio, "Turbo Ratio Limit Ratio array", HEX,
