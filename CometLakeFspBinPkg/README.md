@@ -21,10 +21,10 @@ Processor numbers cannot be used to determine the difference between CometLake1 
 
 The desktop processors work in any LGA1120 socket; therefore the difference between CometLakeS and CometLakeV is the Platform Controller Hub (PCH). Motherboards with a 14nm Platform Controller Hub (PCH) use CometLakeS. Motherboards with a 22nm Platform Controller Hub (PCH) use CometLakeV. At time of writing, the following Intel® 400 Series Chipsets use 22nm fabrication:
 
-* Intel® B460C Chipset
+* Intel® B460 Chipset
 * Intel® H410 Chipset
 
-For all other Intel® 400 Series Chipsets, use CometLakeS. For the Intel® B460 Chipset use CometLakeS.
+For all other Intel® 400 Series Chipsets, use CometLakeS.
 
 ## Comet Lake Y-Series
 
