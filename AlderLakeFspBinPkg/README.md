@@ -9,6 +9,7 @@ Directory Name | 12th Generation Intel® Core™ (formerly Alder Lake) SKU Descr
 Client/AlderLakeP | U-Series, P-Series, & H-Series processors for client platforms
 Client/AlderLakeS | HX-Series & desktop processors for client platforms
 IoT/AlderLakeP | U-Series, P-Series, & H-Series processors for IoT platforms
+IoT/AlderLakePS | PS-Series processors for IoT platforms
 IoT/AlderLakeS | Desktop processors for IoT platforms
 
 ## Differentiating Client and IoT
