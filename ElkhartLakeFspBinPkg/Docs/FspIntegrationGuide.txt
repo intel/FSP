@@ -1,6 +1,4 @@
-/** @internal
-@file
-  This file contains doxygen Fsp Integration Guide
+/** Fsp Integration Guide
 
 @copyright
   Copyright (c) 2015 - 2019 Intel Corporation. All rights reserved
@@ -121,8 +119,8 @@ TOUUD   | Top of Upper Usable Memory
 
 ### 2.2.1 Package Layout
   - **Docs (Auto generated)**
-      - ElkhartLake_FSP_Integration_Guide.pdf
-      - ElkhartLake_FSP_Integration_Guide.chm
+      - ElkhartLake_FSP_Integration_Guide
+      
 
   - **Include**
       - FsptUpd.h, FspmUpd.h and FspsUpd.h (FSP UPD structure and related definitions)
