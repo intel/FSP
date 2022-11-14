@@ -79,7 +79,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PlatformMemorySize              8 bytes    $_DEFAULT_ = 0x550000
         $gPlatformFspPkgTokenSpaceGuid_MemorySpdDataLen                2 bytes    $_DEFAULT_ = 0x200
         $gPlatformFspPkgTokenSpaceGuid_EnableAbove4GBMmio              1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_SriovMmioSizeAbove4Gb           1 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_CpuCrashLogDevice               1 bytes    $_DEFAULT_ = 0x1
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_MemorySpdPtr000                 4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_MemorySpdPtr001                 4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_MemorySpdPtr010                 4 bytes    $_DEFAULT_ = 0x00000000
@@ -246,7 +248,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_DdiPort2Ddc                     1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DdiPort3Ddc                     1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DdiPort4Ddc                     1 bytes    $_DEFAULT_ = 0x0
-        Skip 7 bytes
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_GmAdr64                         8 bytes    $_DEFAULT_ = 0xB0000000
         $gPlatformFspPkgTokenSpaceGuid_PerCoreHtDisable                2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_SaVoltageMode                   1 bytes    $_DEFAULT_ = 0x00
@@ -264,7 +266,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_DynamicMemoryBoost              1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_HgSupport                       1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_RealtimeMemoryFrequency         1 bytes    $_DEFAULT_ = 0x0
-        $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd         97 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_OCSafeMode                      1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd         96 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_GtClosEnable                    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DmiMaxLinkSpeed                 1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DmiGen3EqPh2Enable              1 bytes    $_DEFAULT_ = 0x02
@@ -566,7 +569,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VDDQT                           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_RMTBIT                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EccDftEn                        1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_Write0                          1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_Write0                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Ddr4DdpSharedClock              1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Ddr4DdpSharedZq                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ChHashInterleaveBit             1 bytes    $_DEFAULT_ = 0x02
@@ -765,6 +768,172 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_Lp5BankMode                     1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_WRDS                            1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_OverloadSAM                     1 bytes    $_DEFAULT_ = 0x00
+        Skip 15 bytes
+        $gPlatformFspPkgTokenSpaceGuid_SaSvRemapBaseOverride           2 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaSystemAgentClockGatingEnable   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPciePllShutdownEnable        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaSV_DMI_GEN1_halt              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaSV_nFTS_DMI_auto              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaSvDMI_nFTS                    1 bytes    $_DEFAULT_ = 0x60
+        $gPlatformFspPkgTokenSpaceGuid_SanFTS_auto                     1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_SaSvPEG_nFTS                    4 bytes    $_DEFAULT_ = 0x60, 0x60, 0x60, 0x60
+        $gPlatformFspPkgTokenSpaceGuid_SaSvPEG_gen3_ccFTS              4 bytes    $_DEFAULT_ = 0x20, 0x20, 0x20, 0x20
+        $gPlatformFspPkgTokenSpaceGuid_SaSvPEG_gen3_nccFTS             4 bytes    $_DEFAULT_ = 0x20, 0x20, 0x20, 0x20
+        $gPlatformFspPkgTokenSpaceGuid_SanFTS_gen3_auto                1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_SaSVIAER                        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaSvScramblerDmi                1 bytes    $_DEFAULT_ = 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_SaSvDmiSerr                     1 bytes    $_DEFAULT_ = 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_SaSvScramblerPeg                4 bytes    $_DEFAULT_ = 0xFF, 0xFF, 0xFF, 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_SaSvScramblerPegGen3            4 bytes    $_DEFAULT_ = 0xFF, 0xFF, 0xFF, 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_SaSvPegSerr                     4 bytes    $_DEFAULT_ = 0xFF, 0xFF, 0xFF, 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_SaTestTxClkGating               1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestRxClkGating               1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestLowPwrMode                1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaSrMode                        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaSrSeq                         1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaBurstSpacing                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaRestrictedSvPolicyEnable      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaCpuSvBootMode                 1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_XmlCliEnable                    1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_LoadValidationFv                1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestSamplePartStatusOverride   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestWOPCMSize                 1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_SaTestDmiCapRegLock             1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestDmiMaxPayloadSize         1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieVcLimLock                1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieVCmCmpLim                1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieVCmPLim                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieVCmNpLim                 1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PrefetchNonPrefetchRatio        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaPreMemRestrictedRsvd         16 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PsmiHandlerSize                 1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion0                1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion0CacheType           1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion0RangeCompatible     1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion1                1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion1CacheType           1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion1RangeCompatible     1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion2                1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion2CacheType           1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion2RangeCompatible     1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion3                1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion3CacheType           1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion3RangeCompatible     1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion4                1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion4CacheType           1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TraceRegion4RangeCompatible     1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_ContiguousTraceRegion           1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpDekelProgramming       1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpDekelBreakPoint        1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_SkipLinkTraining                1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_ForceDetection                  1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_DGWait                          1 bytes    $_DEFAULT_ = 0x0
+        Skip 7 bytes
+        $gPlatformFspPkgTokenSpaceGuid_MsegSize                        8 bytes    $_DEFAULT_ = 0x03
+        $gPlatformFspPkgTokenSpaceGuid_ForceTxtEnable                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_UnlockMchbarCtrlRegs            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPreMemRestrictedRsvd        22 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_HeciCommunication               1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_HeciCommunication3              1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_HostResetNotification           1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_ManufRstAndHaltOnS3Resume       1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_SendDidMsgRestricted            1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_MePreMemRestrictedRsvd         19 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ForceUnlockAes                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PreMemRestrictedRsvd2           7 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_AsyncOdtDis                     1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_CmdTriStateDis                  1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_MrcTimeMeasure                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_WeaklockEn                      1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_Force1Dpc                       1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ForceSingleRank                 1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_StrongWkLeaker                  1 bytes    $_DEFAULT_ = 0x07
+        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_SrefCfgIdleTmr                  2 bytes    $_DEFAULT_ = 0x200
+        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_OpportunisticRead               1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_MemStackMode                    1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_StackModeChBit                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_LowMemChannel                   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_Disable2CycleBypass             1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_MCREGOFFSET                     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CAVrefCtlOffset                 1 bytes    $_DEFAULT_ = 0x0C
+        $gPlatformFspPkgTokenSpaceGuid_VrefCtlOffset                   1 bytes    $_DEFAULT_ = 0x0C
+        $gPlatformFspPkgTokenSpaceGuid_ClkPiCodeOffset                 1 bytes    $_DEFAULT_ = 0x06
+        $gPlatformFspPkgTokenSpaceGuid_RcvEnOffset                     1 bytes    $_DEFAULT_ = 0x03
+        $gPlatformFspPkgTokenSpaceGuid_RxDqsOffset                     1 bytes    $_DEFAULT_ = 0x03
+        $gPlatformFspPkgTokenSpaceGuid_TxDqOffset                      1 bytes    $_DEFAULT_ = 0x03
+        $gPlatformFspPkgTokenSpaceGuid_TxDqsOffset                     1 bytes    $_DEFAULT_ = 0x03
+        $gPlatformFspPkgTokenSpaceGuid_VrefOffset                      1 bytes    $_DEFAULT_ = 0x06
+        $gPlatformFspPkgTokenSpaceGuid_CntrlrMask                      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ChMask                          1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tRRSG                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tRRDG                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tRRDR                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tRRDD                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tWRSG                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tWRDG                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tWRDR                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tWRDD                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tWWSG                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tWWDG                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tWWDR                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tWWDD                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tRWSG                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tRWDG                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tRWDR                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_tRWDD                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_DcttTest                        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_DcttRhIterationOnRow            1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_DcttRhPageCloseDelay            1 bytes    $_DEFAULT_ = 0x1B
+        $gPlatformFspPkgTokenSpaceGuid_DcttRhRefreshEnable             1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_DcttDataBase                    1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_DcttRowSwizzleType              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_DcttRefreshMultiplier           1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_DcttBankDisableMask             1 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_DcttRhHammerCount               4 bytes    $_DEFAULT_ = 0x186A0
+        $gPlatformFspPkgTokenSpaceGuid_ScramClockGateAB                1 bytes    $_DEFAULT_ = 0x03
+        $gPlatformFspPkgTokenSpaceGuid_ScramClockGateC                 1 bytes    $_DEFAULT_ = 0x03
+        $gPlatformFspPkgTokenSpaceGuid_ScramEnableDbiAB                1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_Interpreter                     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_IoOdtMode                       1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestMenuDprLock                 1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_VddqVoltageOverride             2 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PerBankRefresh                  1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_Ddr5HmpBoard                    1 bytes    $_DEFAULT_ = 0x0
+        Skip 12 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PchTestDmiTranCoOverEn          8 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PchTestDmiTranCoOverPostCur     8 bytes    $_DEFAULT_ = 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05
+        $gPlatformFspPkgTokenSpaceGuid_PchTestDmiTranCoOverPreCur      8 bytes    $_DEFAULT_ = 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05
+        $gPlatformFspPkgTokenSpaceGuid_PchTestDmiUpPortTranPreset      8 bytes    $_DEFAULT_ = 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07
+        $gPlatformFspPkgTokenSpaceGuid_PchTestDmiUpPortTranPresetEn    1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PchTestDmiRtlepceb              1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PchTestDmiMeUmaRootSpaceCheck   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ModPhySelection                 1 bytes    $_DEFAULT_ = 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_DisableResets                   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchHdaTestPowerClockGating      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchHdaTestConfigLockdown        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchHdaTestLowFreqLinkClkSrc     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_DmiHweq                         1 bytes    $_DEFAULT_ = 0x1
+        Skip 9 bytes
+        $gPlatformFspPkgTokenSpaceGuid_DmiGen3MultiVC                  1 bytes    $_DEFAULT_ = 0x2
+        $gPlatformFspPkgTokenSpaceGuid_DmiGen3Vc1Control               1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_DmiGen3VcMControl               1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_DmiSrl                          1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_DmiScramble                     1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_DmiMaxPayload                   1 bytes    $_DEFAULT_ = 0x2
+        $gPlatformFspPkgTokenSpaceGuid_CpuDmiFomsCp                    1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PreMemRestrictedRsvd3           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_WrcVcEnable                     4 bytes    $_DEFAULT_ = 0x00
+        Skip 4 bytes
+        $gPlatformFspPkgTokenSpaceGuid_WrcVcAllocate                   8 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_WrcVcClos                       8 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_WrcVC0aAllocateBase             4 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_WrcVC0aAllocateMask             4 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TmeExcludeBase                  8 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TmeExcludeSize                  8 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_SaTestDeIommuPostedIntCap       1 bytes    $_DEFAULT_ = 0x00
 
     Find "ADLUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x02
@@ -787,9 +956,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SataPortDevSlpPinMux           32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PortUsb20Enable                16 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PortUsb20SwDeviceModeEnable    16 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PortUsb31Speed                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PortUsb31Speed                  2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PortUsb30Enable                10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_XdciEnable                      1 bytes    $_DEFAULT_ = 0x00
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_DevIntConfigPtr                 4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_NumOfDevIntConfig               1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PxRcConfig                      8 bytes    $_DEFAULT_ = 0x0B, 0x0A, 0x0B, 0x0B, 0x0B, 0x0B, 0x0B, 0x0B
@@ -1063,13 +1233,13 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_X2ApicSupport                   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VrPowerDeliveryDesign           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_AcSplitLock                     1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PostedInterruptCapability       1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnableFastVmode                 5 bytes    $_DEFAULT_ = 0x0, 0x0, 0x0, 0x0, 0x0
         $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction   32 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_GpfaultUcLock                   1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PchPwrOptEnable                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchWriteProtectionEnable        5 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchReadProtectionEnable         5 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00
-        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchProtectedRangeLimit         10 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PchProtectedRangeBase          10 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaPme                       1 bytes    $_DEFAULT_ = 0x00
@@ -1237,7 +1407,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuRootportUsedForHybridStorage   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchRootportUsedForCpuAttach     1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchAcpiL6dPmeHandling           1 bytes    $_DEFAULT_ = 0x0
-        Skip 3 bytes
+        Skip 7 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes
@@ -1528,6 +1698,168 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_ThcHidWriteOpcode               8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_ThcHidFlags                     8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_L2QosEnumerationEn              1 bytes    $_DEFAULT_ = 0x0
+        Skip 11 bytes
+        $gPlatformFspPkgTokenSpaceGuid_TestGnaErrorCheckDis            1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_SaTestForceWake                 1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestGfxPause                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestGraphicsFreqModify        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestPmLock                    1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestPavpHeavyMode             1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestDopClockGating            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestUnsolicitedAttackOverride   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestWOPCMSupport              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestPavpAsmf                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestPowerGating               1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestUnitLevelClockGating      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestAutoTearDown              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestGraphicsVideoFreq         1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestGraphicsFreqReq           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestMpllOffSen                1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestMdllOffSen                1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestModeEdramInternal         1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestSecurityLock              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_GtProchotEnable                 1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_SaTestSpcLock                   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaTestSrlLock                   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ITbtImrControl                  1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_SaPostMemRestrictedRsvd        78 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPostMemRestrictedRsvd       15 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SkipAcpiNvs                     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SecurityRestrictedRsvd          1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchDmiTestMemCloseStateEn       1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchDmiTestInternalObffEn        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchDmiTestDmiExtSync            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchDmiTestExternalObffEn        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchDmiTestClientObffEn          1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchDmiTestCxObffEntryDelay      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchDmiTestPchTcLockDown         1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchDmiTestDmiSecureRegLock      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchLanTestPchWOLFastSupport     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchLockDownTestSmiUnlock        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchPostMemRestrictedRsvd       24 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PcieRpTestForceLtrOverride     28 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ThcPort1Clock                   1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_ThcPort0Clock                   1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PchPmTestPchPmRegisterLock      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchPmTestPchClearPowerSts       1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageTestMode   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStoragePortConfigCheck   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageDeviceInterface   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageDeviceBarSizeCheck   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageDeviceBarSelect   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageDeviceInterrupt   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageAspmProgramming   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageSaveRestore   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestLtrEnable               1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestLtrConfigLock           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestLtrOverride             1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestSnoopLatencyOverrideMultiplier   1 bytes    $_DEFAULT_ = 0x02
+        $gPlatformFspPkgTokenSpaceGuid_SataTestSnoopLatencyOverrideValue   2 bytes    $_DEFAULT_ = 0x0A
+        $gPlatformFspPkgTokenSpaceGuid_SataTestSataAssel               1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageRemapSataMsix   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchTestHsTrunkClkReq            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchTestTscLock                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchTestPhlcLock                 1 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PchTestEPTypeLockPolicy         4 bytes    $_DEFAULT_ = 0x00000000
+        $gPlatformFspPkgTokenSpaceGuid_PchTestEPTypeLockPolicyPortControl1   4 bytes    $_DEFAULT_ = 0x00000000
+        $gPlatformFspPkgTokenSpaceGuid_PchTestEPTypeLockPolicyPortControl2   4 bytes    $_DEFAULT_ = 0x00000000
+        $gPlatformFspPkgTokenSpaceGuid_PchTestControllerEnabled        1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PchTestUnlockUsbForSvNoa        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchTestClkGatingXhci            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchTestFlashLockDown            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestPcieMpcSecureRegisterLock   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestUsbXhciAccessControlLock    1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestPchPmErDebugMode            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchDmiTestOpiPllPowerGating     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestCnviBtCore                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestCnviWifiLtrEn               1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestCnviLteCoex                 1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestCnviBtInterface             1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_TestCnviBtUartType              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestCnviSharedXtalClocking      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestPmcDbgModeLock              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestPmcSlpsxStrPolLock          1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_MsbddSupport                    1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TestPchIshFpakEnable            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchSiliconRestrictedRsvd        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SiSvPolicyEnable                1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpTestEqPh2Override      3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpTestAspmOc             3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3EqPh3Bypass        3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4EqPh3Bypass        3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5EqPh3Bypass        3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3EqPh23Bypass       3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4EqPh23Bypass       3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5EqPh23Bypass       3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3PresetCoeffSelection   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4PresetCoeffSelection   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5PresetCoeffSelection   3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff0ListCm     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff0ListCp     3 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff1ListCm     3 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff1ListCp     3 bytes    $_DEFAULT_ = 0x05, 0x05, 0x05
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff2ListCm     3 bytes    $_DEFAULT_ = 0x07, 0x07, 0x07
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff2ListCp     3 bytes    $_DEFAULT_ = 0x08, 0x08, 0x08
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff3ListCm     3 bytes    $_DEFAULT_ = 0x09, 0x09, 0x09
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff3ListCp     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff4ListCm     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff4ListCp     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff0ListCm     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff0ListCp     3 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff1ListCm     3 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff1ListCp     3 bytes    $_DEFAULT_ = 0x05, 0x05, 0x05
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff2ListCm     3 bytes    $_DEFAULT_ = 0x07, 0x07, 0x07
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff2ListCp     3 bytes    $_DEFAULT_ = 0x08, 0x08, 0x08
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff3ListCm     3 bytes    $_DEFAULT_ = 0x09, 0x09, 0x09
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff3ListCp     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff4ListCm     3 bytes    $_DEFAULT_ = 0x09, 0x09, 0x09
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff4ListCp     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff5ListCm     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff5ListCp     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff0ListCm     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff0ListCp     3 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff1ListCm     3 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff1ListCp     3 bytes    $_DEFAULT_ = 0x05, 0x05, 0x05
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff2ListCm     3 bytes    $_DEFAULT_ = 0x07, 0x07, 0x07
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff2ListCp     3 bytes    $_DEFAULT_ = 0x08, 0x08, 0x08
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff3ListCm     3 bytes    $_DEFAULT_ = 0x09, 0x09, 0x09
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff3ListCp     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff4ListCm     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff4ListCp     3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3PcetTimer            3 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4PcetTimer            3 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5PcetTimer            3 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3TsLockTimer          3 bytes    $_DEFAULT_ = 0x03, 0x03, 0x03
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4TsLockTimer          3 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5TsLockTimer          3 bytes    $_DEFAULT_ = 0x04, 0x04, 0x04
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3NumberOfPresetCoeffList   3 bytes    $_DEFAULT_ = 0x03, 0x03, 0x03
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4NumberOfPresetCoeffList   3 bytes    $_DEFAULT_ = 0x03, 0x03, 0x03
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5NumberOfPresetCoeffList   3 bytes    $_DEFAULT_ = 0x03, 0x03, 0x03
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3PreCursor           20 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3PostCursor          20 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4PreCursor           20 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4PostCursor          20 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5PreCursor           20 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5PostCursor          20 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3TxOverride         3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4TxOverride         3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5TxOverride         3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3HwEqOverride         3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4HwEqOverride         3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5HwEqOverride         3 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpAggressiveDynamicClockGating   3 bytes    $_DEFAULT_ = 0x0, 0x1, 0x1
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpTestForceLtrOverride   4 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaSvPegArifen                   4 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieSrl                      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieSerr                     4 bytes    $_DEFAULT_ = 0xFF, 0xFF, 0xFF, 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieSetSecuredRegisterLock   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_Peg60PcieDump                   1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_Peg10PcieDump                   1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_Peg11PcieDump                   1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_Peg62PcieDump                   1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_TestPchPcieClockGating          1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieSerl                     1 bytes    $_DEFAULT_ = 0x01
 
 EndStruct
 
@@ -2275,6 +2607,383 @@ List &gPlatformFspPkgTokenSpaceGuid_Lp5BankMode
     Selection 3 , "BG Mode"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_SaCpuSvBootMode
+    Selection 0 , " Auto"
+    Selection 1 , " Commercial boot mode"
+    Selection 2 , " SV boot mode"
+    Selection 3 , " SV boot JTAG mode with SB loop"
+    Selection 4 , " SV boot JTAG mode without SB loop"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_SaTestWOPCMSize
+    Selection 0 , " 1MB"
+    Selection 1 , " 2MB"
+    Selection 2 , " 4MB"
+    Selection 3 , " 8MB"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PrefetchNonPrefetchRatio
+    Selection 0 , " All prefetch"
+    Selection 1 , " Seven of Eight Prefetch"
+    Selection 2 , " Three of Four Prefetch"
+    Selection 3 , " Half Prefetch Half Non-Prefetch"
+    Selection 4 , " Three of Four Non-Prefetch"
+    Selection 5 , " Seven of Eight Prefetch"
+    Selection 6 , " All Non-prefetch"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PsmiHandlerSize
+    Selection 0 , " 0 KB"
+    Selection 1 , " 256 KB"
+    Selection 2 , " 512 KB"
+    Selection 3 , " 1 MB"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion0
+    Selection 0 , " No Allocation"
+    Selection 1 , " 1MB"
+    Selection 2 , " 2MB"
+    Selection 3 , " 4 MB"
+    Selection 15 , "16GB"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TraceRegion0CacheType
+    Selection 0 , " Don't Care"
+    Selection 1 , " Write Back"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion1
+    Selection 0 , " No Allocation"
+    Selection 1 , "1MB"
+    Selection 2 , "2MB"
+    Selection 3 , "4MB"
+    Selection 4 , "8MB"
+    Selection 15 , "16GB"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TraceRegion1CacheType
+    Selection 0 , " Don't Care"
+    Selection 1 , " Write Back"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion2
+    Selection 0 , " No Allocation"
+    Selection 1 , "1MB"
+    Selection 2 , "2MB"
+    Selection 3 , "4MB"
+    Selection 4 , "8MB"
+    Selection 15 , "16GB"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TraceRegion2CacheType
+    Selection 0 , " Don't Care"
+    Selection 1 , " Write Back"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion3
+    Selection 0 , " No Allocation"
+    Selection 1 , "1MB"
+    Selection 2 , "2MB"
+    Selection 3 , "4MB"
+    Selection 4 , "8MB"
+    Selection 15 , "16GB"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TraceRegion3CacheType
+    Selection 0 , " Don't Care"
+    Selection 1 , " Write Back"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion4
+    Selection 0 , " No Allocation"
+    Selection 1 , "1MB"
+    Selection 2 , "2MB"
+    Selection 3 , "4MB"
+    Selection 4 , "8MB"
+    Selection 15 , "16GB"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TraceRegion4CacheType
+    Selection 0 , " Don't Care"
+    Selection 1 , " Write Back"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpDekelProgramming
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpDekelBreakPoint
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_MsegSize
+    Selection 0  , " 512K"
+    Selection 1  , " 1M"
+    Selection 2  , " 1.5M"
+    Selection 3  , " 2M"
+    Selection 4  , " 2.4M"
+    Selection 5  , " 3M"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_AsyncOdtDis
+    Selection 0 , "Enabled"
+    Selection 1 , "Disabled"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CmdTriStateDis
+    Selection 0 , "Enabled"
+    Selection 1 , "Disabled"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_StackModeChBit
+    Selection 0 , "BIT28"
+    Selection 1 , "BIT29"
+    Selection 2 , "BIT30"
+    Selection 3 , "BIT31"
+    Selection 4 , "BIT32"
+    Selection 5 , "BIT33"
+    Selection 6 , "BIT34"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_LowMemChannel
+    Selection 0 , "Channel A"
+    Selection 1 , "Channel B"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CAVrefCtlOffset
+    Selection -12 , "-12"
+    Selection -11 , "-11"
+    Selection -10 , "-10"
+    Selection -9 , "-9"
+    Selection -8 , "-8"
+    Selection -7 , "-7"
+    Selection -6 , "-6"
+    Selection -5 , "-5"
+    Selection -4 , "-4"
+    Selection -3 , "-3"
+    Selection -2 , "-2"
+    Selection -1 , "-1"
+    Selection 0 , "0"
+    Selection 1 , "+1"
+    Selection 2 , "+2"
+    Selection 3 , "+3"
+    Selection 4 , "+4"
+    Selection 5 , "+5"
+    Selection 6 , "+6"
+    Selection 7 , "+7"
+    Selection 8 , "+8"
+    Selection 9 , "+9"
+    Selection 10 , "+10"
+    Selection 11 , "+11"
+    Selection 12 , "+12"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_VrefCtlOffset
+    Selection -12 , "-12"
+    Selection -11 , "-11"
+    Selection -10 , "-10"
+    Selection -9 , "-9"
+    Selection -8 , "-8"
+    Selection -7 , "-7"
+    Selection -6 , "-6"
+    Selection -5 , "-5"
+    Selection -4 , "-4"
+    Selection -3 , "-3"
+    Selection -2 , "-2"
+    Selection -1 , "-1"
+    Selection 0 , "0"
+    Selection 1 , "+1"
+    Selection 2 , "+2"
+    Selection 3 , "+3"
+    Selection 4 , "+4"
+    Selection 5 , "+5"
+    Selection 6 , "+6"
+    Selection 7 , "+7"
+    Selection 8 , "+8"
+    Selection 9 , "+9"
+    Selection 10 , "+10"
+    Selection 11 , "+11"
+    Selection 12 , "+12"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_ClkPiCodeOffset
+    Selection -6 , "-6"
+    Selection -5 , "-5"
+    Selection -4 , "-4"
+    Selection -3 , "-3"
+    Selection -2 , "-2"
+    Selection -1 , "-1"
+    Selection 0 , "0"
+    Selection 1 , "+1"
+    Selection 2 , "+2"
+    Selection 3 , "+3"
+    Selection 4 , "+4"
+    Selection 5 , "+5"
+    Selection 6 , "+6"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_RcvEnOffset
+    Selection -3 , "-3"
+    Selection -2 , "-2"
+    Selection -1 , "-1"
+    Selection 0 , "0"
+    Selection 1 , "+1"
+    Selection 2 , "+2"
+    Selection 3 , "+3"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_RxDqsOffset
+    Selection -3 , "-3"
+    Selection -2 , "-2"
+    Selection -1 , "-1"
+    Selection 0 , "0"
+    Selection 1 , "+1"
+    Selection 2 , "+2"
+    Selection 3 , "+3"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TxDqOffset
+    Selection -3 , "-3"
+    Selection -2 , "-2"
+    Selection -1 , "-1"
+    Selection 0 , "0"
+    Selection 1 , "+1"
+    Selection 2 , "+2"
+    Selection 3 , "+3"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TxDqsOffset
+    Selection -3 , "-3"
+    Selection -2 , "-2"
+    Selection -1 , "-1"
+    Selection 0 , "0"
+    Selection 1 , "+1"
+    Selection 2 , "+2"
+    Selection 3 , "+3"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_VrefOffset
+    Selection -6 , "-6"
+    Selection -5 , "-5"
+    Selection -4 , "-4"
+    Selection -3 , "-3"
+    Selection -2 , "-2"
+    Selection -1 , "-1"
+    Selection 0 , "0"
+    Selection 1 , "+1"
+    Selection 2 , "+2"
+    Selection 3 , "+3"
+    Selection 4 , "+4"
+    Selection 5 , "+5"
+    Selection 6 , "+6"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_DcttTest
+    Selection 0 , "Basic walking memory test"
+    Selection 1 , "Row Hammer test"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_DcttDataBase
+    Selection 0 , "Zeros"
+    Selection 1 , "Ones"
+    Selection 2 , "Five"
+    Selection 3 , "A"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_DcttRowSwizzleType
+    Selection 0 , "No Swizzle"
+    Selection 1 , "3xOr1_3xOr2"
+    Selection 2 , "01234567EFCDAB89"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_ScramClockGateAB
+    Selection 0 , "Disable"
+    Selection 1 , "2 Cycles"
+    Selection 2 , "3 Cycles"
+    Selection 3 , "4 Cycles"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_ScramClockGateC
+    Selection 0 , "Disable"
+    Selection 1 , "2 Cycles"
+    Selection 2 , "4 Cycles"
+    Selection 3 , "8 Cycles"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_Interpreter
+    Selection 0 , "CMOS"
+    Selection 1 , "Break"
+    Selection 2 , "Force"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_IoOdtMode
+    Selection 0 , "Default"
+    Selection 1 , "Vtt"
+    Selection 2 , "Vddq"
+    Selection 3 , "Vss"
+    Selection 4 , "Max"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestMenuDprLock
+    Selection 0 , "Platform POR"
+    Selection 1 , " Enable"
+    Selection 2 , " Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_Ddr5HmpBoard
+    Selection 0  , " no"
+    Selection 1  , " yes"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PchTestDmiMeUmaRootSpaceCheck
+    Selection 0 , " POR"
+    Selection 1 , " enable"
+    Selection 2 , " disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_DisableResets
+    Selection 0 , "Platform POR"
+    Selection 1 , " Enable"
+    Selection 2 , " Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PchHdaTestConfigLockdown
+    Selection 0 , " POR (Enable)"
+    Selection 1 , " Enable"
+    Selection 2 , " Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PchHdaTestLowFreqLinkClkSrc
+    Selection 0 , " POR (Enable)"
+    Selection 1 , " Enable (XTAL)"
+    Selection 2 , " Disable (Audio PLL)"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_DmiSrl
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_DmiScramble
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_DmiMaxPayload
+    Selection 0 , "Auto"
+    Selection 1 , "128 TLP"
+    Selection 2 , "256 TLP"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CpuDmiFomsCp
+    Selection 0 , " Auto"
+    Selection 1 , " Gen3 Foms"
+    Selection 2 , " Gen4 Foms"
+    Selection 3 , " Gen3 and Gen4 Foms"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_SataMode
     Selection 0 , "AHCI"
     Selection 1 , "RAID"
@@ -2359,6 +3068,12 @@ EndList
 List &gPlatformFspPkgTokenSpaceGuid_Avx3Disable
     Selection 0 , " Enable"
     Selection 1 , " Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PostedInterruptCapability
+    Selection 0 , " Auto"
+    Selection 1 , " Enable"
+    Selection 2 , " Disable"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_EnableFastVmode
@@ -2538,6 +3253,155 @@ List &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpPeerToPeerMode
     Selection 1 , " Enable"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_PchDmiTestDmiSecureRegLock
+    Selection 0 , " POR (Enable)"
+    Selection 1 , " Enable"
+    Selection 2 , " Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_ThcPort1Clock
+    Selection 0x0 , "ThcClockFunctional"
+    Selection 0x1 , "ThcClockUseDfx"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_ThcPort0Clock
+    Selection 0x0 , "ThcClockFunctional"
+    Selection 0x1 , "ThcClockUseDfx"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestPcieMpcSecureRegisterLock
+    Selection 0 , " POR"
+    Selection 1 , " Force Enable"
+    Selection 2 , " Force Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestUsbXhciAccessControlLock
+    Selection 0 , " POR"
+    Selection 1 , " Force Enable"
+    Selection 2 , " Force Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_PchDmiTestOpiPllPowerGating
+    Selection 0 , " POR"
+    Selection 1 , " force enable"
+    Selection 2 , " force disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestCnviBtCore
+    Selection 0 , " POR"
+    Selection 1 , " Force Enable"
+    Selection 2 , " Force Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestCnviWifiLtrEn
+    Selection 0 , " POR"
+    Selection 1 , " Force Enable"
+    Selection 2 , " Force Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestCnviLteCoex
+    Selection 0 , " POR"
+    Selection 1 , " Force Enable"
+    Selection 2 , " Force Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestCnviBtInterface
+    Selection 0 , "UART"
+    Selection 1 , "USB"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestCnviBtUartType
+    Selection 0 , "Serial IO Uart0"
+    Selection 1 , "ISH Uart0"
+    Selection 2 , "Uart over external pads"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestCnviSharedXtalClocking
+    Selection 0 , " POR"
+    Selection 1 , " Force Enable"
+    Selection 2 , " Force Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestPmcDbgModeLock
+    Selection 0 , " POR"
+    Selection 1 , " Force Enable"
+    Selection 2 , " Force Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestPmcSlpsxStrPolLock
+    Selection 0 , " POR"
+    Selection 1 , " Force Enable"
+    Selection 2 , " Force Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_MsbddSupport
+    Selection 0 , " POR (Disable)"
+    Selection 1 , " Enable"
+    Selection 2 , " Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_TestPchIshFpakEnable
+    Selection 0 , " POR"
+    Selection 1 , " Force Enable"
+    Selection 2 , " Force Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3EqPh3Bypass
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4EqPh3Bypass
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5EqPh3Bypass
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3EqPh23Bypass
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4EqPh23Bypass
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5EqPh23Bypass
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_Peg60PcieDump
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_Peg10PcieDump
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_Peg11PcieDump
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_Peg62PcieDump
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
 BeginInfoBlock
     PPVer       "0.1"
     Description "Alder Lake Platform"
@@ -2656,6 +3520,9 @@ Page "Memory Reference Code"
         Help "Length of SPD Data"
     Combo $gPlatformFspPkgTokenSpaceGuid_EnableAbove4GBMmio, "Enable above 4GB MMIO resource support", &EN_DIS,
         Help "Enable/disable above 4GB MMIO resource support"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SriovMmioSizeAbove4Gb, "SRIOV MMIO SIze Above 4GB", HEX,
+        Help "SRIOV Size Above 4GB"
+             "Valid range: 0x0 ~ 0xFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MemorySpdPtr000, "Memory SPD Pointer Controller 0 Channel 0 Dimm 0", HEX,
         Help "Pointer to SPD data, will be used only when SpdAddressTable SPD Address are marked as 00"
              "Valid range: 0x00 ~ 0xFFFFFFFF"
@@ -2896,6 +3763,8 @@ Page "Memory Reference Code"
              "Valid range: 0x00 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_RealtimeMemoryFrequency, "Realtime Memory Frequency", &EN_DIS,
         Help "0(Default): Disabled, 1: Enabled. Ignored unless SpdProfileSelected is an XMP Profile. If enabled, MRC will train the Default SPD Profile, and also the selected XMP Profile, to allow manually triggered switching between frequencies at runtime."
+    Combo $gPlatformFspPkgTokenSpaceGuid_OCSafeMode, "OC Safe Mode", &EN_DIS,
+        Help "0: Disabled, 1(Default): Enabled. Ignored unless SpdProfileSelected is an XMP Profile. If enabled, MRC will use less aggressive controls when training memory."
     Combo $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd, "SaPreMemProductionRsvd", &EN_DIS,
         Help "Reserved for SA Pre-Mem Production"
     Combo $gPlatformFspPkgTokenSpaceGuid_GtClosEnable, "Enable Gt CLOS", &EN_DIS,
@@ -3534,6 +4403,152 @@ Page "Memory Reference Code"
         Help "Enable/Disable Write DS Training"
     Combo $gPlatformFspPkgTokenSpaceGuid_OverloadSAM, "SAM Overlaoding", &EN_DIS,
         Help "Enable: copy the sagv frequency point. Disable: not copy."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PrefetchNonPrefetchRatio, "Prefetch NonPrefetch Ratio", &gPlatformFspPkgTokenSpaceGuid_PrefetchNonPrefetchRatio,
+        Help "0: All prefetch, 1: Seven of Eight Prefetch, 2: Three of Four Prefetch, 3: Half Prefetch Half Non-Prefetch(Default), 4: Three of Four Non-Prefetch, 5: Seven of Eight Prefetch, 6: All Non-prefetch"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SaPreMemRestrictedRsvd, "SaPreMemRestrictedRsvd", &EN_DIS,
+        Help "Reserved for SA Pre-Mem Restricted"
+    Combo $gPlatformFspPkgTokenSpaceGuid_AsyncOdtDis, "Asynchronous ODT", &gPlatformFspPkgTokenSpaceGuid_AsyncOdtDis,
+        Help "This option configures the Memory Controler Asynchronous ODT control"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CmdTriStateDis, "Command Tristate", &gPlatformFspPkgTokenSpaceGuid_CmdTriStateDis,
+        Help "This option controls command bus tristating during idle periods"
+    Combo $gPlatformFspPkgTokenSpaceGuid_MrcTimeMeasure, "Time Measure", &EN_DIS,
+        Help "Time Measure: 0(Default)=Disable, 1=Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_WeaklockEn, "DLL Weak Lock Support", &EN_DIS,
+        Help "Enables/Disable DLL Weak Lock Support"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Force1Dpc, "Force 1 DPC config", &EN_DIS,
+        Help "Enables/Disable Force 1 DPC config"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ForceSingleRank, "Fore Single Rank config", &EN_DIS,
+        Help "Enables/Disable Fore Single Rank config"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_StrongWkLeaker, "Strong Weak Leaker", HEX,
+        Help "Strong Weak Leaker value. 7=def"
+             "Valid range: 0x00 ~ 0x07"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SrefCfgIdleTmr, "SelfRefresh IdleTimer", HEX,
+        Help "SelfRefresh IdleTimer, Default is 512"
+             "Valid range: 0x200 ~ 0xFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_OpportunisticRead, "Opportunistic Read", &EN_DIS,
+        Help "Enables/Disable Opportunistic Read (Def= Enable)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_MemStackMode, "Stacked Mode", &EN_DIS,
+        Help "Memory Stacked Mode Support (Def = Disable)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_StackModeChBit, "Stacked Mode Ch Bit", &gPlatformFspPkgTokenSpaceGuid_StackModeChBit,
+        Help "Channel hash bit used during Stacked Mode(Def= BIT28)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_LowMemChannel, "Low Memory Channel", &gPlatformFspPkgTokenSpaceGuid_LowMemChannel,
+        Help "Selecting which Physical Channel is mapped to low memory."
+    Combo $gPlatformFspPkgTokenSpaceGuid_Disable2CycleBypass, "Cycle Bypass Support", &EN_DIS,
+        Help "Enables/Disable Cycle Bypass Support(Def=Disable)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_MCREGOFFSET, "MC Register Offset", &EN_DIS,
+        Help "Apply user offsets to select MC registers(Def=Disable)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CAVrefCtlOffset, "CA Vref Ctl Offset", &gPlatformFspPkgTokenSpaceGuid_CAVrefCtlOffset,
+        Help "Offset to be applied to DDRDATA7CH1_CR_DDRCRVREFADJUST1.CAVref"
+    Combo $gPlatformFspPkgTokenSpaceGuid_VrefCtlOffset, "DQ Vref Ctrl Offset", &gPlatformFspPkgTokenSpaceGuid_VrefCtlOffset,
+        Help "Offset to be applied to DDRDATA7CH1_CR_DDRCRVREFADJUST1.Ch0VrefCtl"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ClkPiCodeOffset, "Clk PI Code Offset", &gPlatformFspPkgTokenSpaceGuid_ClkPiCodeOffset,
+        Help "Offset to be applied to DDRCLKCH0_CR_DDRCRCLKPICODE.PiSettingRank[0-3]"
+    Combo $gPlatformFspPkgTokenSpaceGuid_RcvEnOffset, "RcvEn Offset", &gPlatformFspPkgTokenSpaceGuid_RcvEnOffset,
+        Help "Offset to be applied to DDRDATACH0_CR_DDRCRDATAOFFSETTRAIN.RcvEn"
+    Combo $gPlatformFspPkgTokenSpaceGuid_RxDqsOffset, "Rx Dqs Offset", &gPlatformFspPkgTokenSpaceGuid_RxDqsOffset,
+        Help "Offset to be applied to DDRDATACHX_CR_DDRCRDATAOFFSETTRAIN.RxDqsOffset"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TxDqOffset, "Tx Dq Offset", &gPlatformFspPkgTokenSpaceGuid_TxDqOffset,
+        Help "Offset to be applied to DDRDATACH0_CR_DDRCRDATAOFFSETTRAIN.TxDqOffset"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TxDqsOffset, "Tx Dqs Offset", &gPlatformFspPkgTokenSpaceGuid_TxDqsOffset,
+        Help "Offset to be applied to DDRDATACH0_CR_DDRCRDATAOFFSETTRAIN.TxDqsOffset"
+    Combo $gPlatformFspPkgTokenSpaceGuid_VrefOffset, "Vref Offset", &gPlatformFspPkgTokenSpaceGuid_VrefOffset,
+        Help "Offset to be applied to DDRDATACH0_CR_DDRCRDATAOFFSETTRAIN.VrefOffset"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CntrlrMask, "Controller mask", HEX,
+        Help "Controller mask to apply on parameter offset"
+             "Valid range: 0x00 ~ 0xff"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_ChMask, "Channel  mask", HEX,
+        Help "Channel  mask to apply on parameter offset"
+             "Valid range: 0x00 ~ 0xff"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tRRSG, "tRRSG Delta", HEX,
+        Help "Delay between Read-to-Read commands in the same Bank Group. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tRRDG, "tRRDG Delta", HEX,
+        Help "Delay between Read-to-Read commands in different Bank Group. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tRRDR, "tRRDR Delta", HEX,
+        Help "Delay between Read-to-Read commands in different Ranks. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tRRDD, "tRRDD Delta", HEX,
+        Help "Delay between Read-to-Read commands in different DIMMs. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tWRSG, "tWRSG Delta", HEX,
+        Help "Delay between Write-to-Read commands in the same Bank Group. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tWRDG, "tWRDG Delta", HEX,
+        Help "Delay between Write-to-Read commands in different Bank Group. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tWRDR, "tWRDR Delta", HEX,
+        Help "Delay between Write-to-Read commands in different Ranks. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tWRDD, "tWRDD Delta", HEX,
+        Help "Delay between Write-to-Read commands in different DIMMs. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tWWSG, "tWWSG Delta", HEX,
+        Help "Delay between Write-to-Write commands in the same Bank Group. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tWWDG, "tWWDG Delta", HEX,
+        Help "Delay between Write-to-Write commands in different Bank Group. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tWWDR, "tWWDR Delta", HEX,
+        Help "Delay between Write-to-Write commands in different Ranks. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tWWDD, "tWWDD Delta", HEX,
+        Help "Delay between Write-to-Write commands in different DIMMs. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tRWSG, "tRWSG Delta", HEX,
+        Help "Delay between Read-to-Write commands in the same Bank Group. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tRWDG, "tRWDG Delta", HEX,
+        Help "Delay between Read-to-Write commands in different Bank Group. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tRWDR, "tRWDR Delta", HEX,
+        Help "Delay between Read-to-Write commands in different Ranks. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tRWDD, "tRWDD Delta", HEX,
+        Help "Delay between Read-to-Write commands in different DIMMs. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
+             "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DcttTest, "DCTT Test", &gPlatformFspPkgTokenSpaceGuid_DcttTest,
+        Help "Select which test to run"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_DcttRhIterationOnRow, "DCTT: Iterations on Row", HEX,
+        Help "Number of repetitions on a Row"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_DcttRhPageCloseDelay, "Page Close Delay Prompt", HEX,
+        Help "SubSequence Delay value used to ensure the page closes (In DClks)"
+             "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DcttRhRefreshEnable, "Row Hammer Refresh", &EN_DIS,
+        Help "Enable/Disables refreshes during the Row Hammer Test"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DcttDataBase, "Data Base", &gPlatformFspPkgTokenSpaceGuid_DcttDataBase,
+        Help "Select which data pattern that is used as the base pattern"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DcttRowSwizzleType, "Row swizzle", &gPlatformFspPkgTokenSpaceGuid_DcttRowSwizzleType,
+        Help "Select which Row swizzle algorithm to use during Row Hammer test"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_DcttRefreshMultiplier, "Refresh Multiplier", HEX,
+        Help "Multiplier applied to tREFI"
+             "Valid range: 0x01 ~ 0x64"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_DcttBankDisableMask, "Bank Disable Mask", HEX,
+        Help "Bit Mask Bank Disable for per-Bank tests (Row Hammer)"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_DcttRhHammerCount, "DCTT: Row Hammer Count", HEX,
+        Help "Number of Hammers for a given Row."
+             "Valid range: 0x00000000 ~ 0xFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ScramClockGateAB, "Clock Gate AB", &gPlatformFspPkgTokenSpaceGuid_ScramClockGateAB,
+        Help "Clock Gate AB"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ScramClockGateC, "Clock Gate C", &gPlatformFspPkgTokenSpaceGuid_ScramClockGateC,
+        Help "Select which Row swizzle algorithm to use during Row Hammer test"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ScramEnableDbiAB, "Enable DBI AB", &EN_DIS,
+        Help "Enable DBI AB"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Interpreter, "MRC Interpreter", &gPlatformFspPkgTokenSpaceGuid_Interpreter,
+        Help "Select CMOS location match of DD01 or Ctrl-Break key or force entry"
+    Combo $gPlatformFspPkgTokenSpaceGuid_IoOdtMode, "ODT mode", &gPlatformFspPkgTokenSpaceGuid_IoOdtMode,
+        Help "ODT mode"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestMenuDprLock, "Lock DPR register", &gPlatformFspPkgTokenSpaceGuid_TestMenuDprLock,
+        Help "Lock DPR register. <b>0: Platform POR </b>; 1: Enable; 2: Disable"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_VddqVoltageOverride, "Vddq Voltage Override", HEX,
+        Help "# is multiple of 1mV where 0 means Auto."
+             "Valid range: 0x00 ~ 0xFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PerBankRefresh, "PerBankRefresh", &EN_DIS,
+        Help "Control of Per Bank Refresh feature for LPDDR4/5 and DDR5"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Ddr5HmpBoard, "RPL DDR5 HMP Board or not", &gPlatformFspPkgTokenSpaceGuid_Ddr5HmpBoard,
+        Help "Indicate whether it's DDR5 HMP board."
 EndPage
 
 Page "CPU (Pre-Mem)"
@@ -3718,6 +4733,14 @@ Page "CPU (Pre-Mem)"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_SaPllFreqOverride, "Sa PLL Frequency", &gPlatformFspPkgTokenSpaceGuid_SaPllFreqOverride,
         Help "Configure Sa PLL Frequency. <b>0: 3200MHz </b>, 1: 1600MHz"
+    Combo $gPlatformFspPkgTokenSpaceGuid_MsegSize, "MSEG Size", &gPlatformFspPkgTokenSpaceGuid_MsegSize,
+        Help "MSEG Size. Valid values 0 : 512K , 1 : 1M , 2 : 1.5M , 3 : 2M , 4 : 2.4M , 5 : 3M"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ForceTxtEnable, "Force TXT Enable", &EN_DIS,
+        Help "Force TXT Enable; 0: disable, 1: enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_UnlockMchbarCtrlRegs, "Unlock MCHBAR control registers", &EN_DIS,
+        Help "Unlock MCHBAR control registers; 0: disable, 1: enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPreMemRestrictedRsvd, "CpuPreMemRestrictedRsvd", &EN_DIS,
+        Help "Reserved for SA Pre-Mem Restricted"
 EndPage
 
 Page "CPU (Post-Mem)"
@@ -3879,6 +4902,8 @@ Page "CPU (Post-Mem)"
              "Valid range: 0x00 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_AcSplitLock, "AC Split Lock", &EN_DIS,
         Help "Enable/Disable #AC check on split lock. <b>0: Disable</b>; 1: Enable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PostedInterruptCapability, "CPU IOP IOMMU Posted Interrupt capability", &gPlatformFspPkgTokenSpaceGuid_PostedInterruptCapability,
+        Help "Enable/ Disable IOP IOMMU Posted Interrupt capability"
     Combo $gPlatformFspPkgTokenSpaceGuid_EnableFastVmode, "Enable/Disable VR FastVmode. The VR will initiate reactive protection if Fast Vmode is enabled.", &gPlatformFspPkgTokenSpaceGuid_EnableFastVmode,
         Help "Enable/Disable VR FastVmode; <b>0: Disable</b>; 1: Enable.For all VR by domain"
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction, "ReservedCpuPostMemProduction", &EN_DIS,
@@ -4150,6 +5175,13 @@ Page "CPU (Post-Mem)"
         Help "Enable, Disable Dual Tau Boost feature. This is only applicable for Desktop; <b>0: Disable</b>; 1: Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemTest, "ReservedCpuPostMemTest", &EN_DIS,
         Help "Reserved for CPU Post-Mem Test"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPostMemRestrictedRsvd, "CpuPostMemRestrictedRsvd", &EN_DIS,
+        Help "Reserved for CPU Post-Mem Restricted"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SkipAcpiNvs, "SkipAcpiNvs", HEX,
+        Help "SkipAcpiNvs default values"
+             "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SecurityRestrictedRsvd, "CpuPostMemRestrictedRsvd", &EN_DIS,
+        Help "Reserved for CPU Post-Mem Restricted"
 EndPage
 
 Page "System Agent (Pre-Mem)"
@@ -4349,6 +5381,190 @@ Page "System Agent (Pre-Mem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_Avx512VoltageScaleFactor, "Avx512 Voltage Guardband Scaling Factor", HEX,
         Help "DEPRECATED"
              "Valid range: 0x00 ~ 0xC8"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvRemapBaseOverride, "Sa Sv Remap Base Override", HEX,
+        Help "SvRemapBaseOverride"
+             "Valid range: 0x00 ~ 0xFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSystemAgentClockGatingEnable, "Sa System Agent ClockGating Enable", HEX,
+        Help "SystemAgentClockGatingEnable"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPciePllShutdownEnable, "Sa Pcie Pll Shutdown Enable", HEX,
+        Help "PciePllShutdownEnable"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSV_DMI_GEN1_halt, "Sa SV_DMI_GEN1_halt", HEX,
+        Help "SV_DMI_GEN1_halt"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSV_nFTS_DMI_auto, "Sa SV_nFTS_DMI_auto", HEX,
+        Help "SV_nFTS_DMI_auto"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvDMI_nFTS, "Sa Sv DMI_nFTS", HEX,
+        Help "SvDMI_nFTS"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SanFTS_auto, "Sa nFTS_auto", HEX,
+        Help "nFTS_auto"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvPEG_nFTS, "Sa SvPEG_nFTS", HEX,
+        Help "SvPEG_nFTS"
+             "Valid range: 0x00 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvPEG_gen3_ccFTS, "Sa SvPEG_gen3_ccFTS", HEX,
+        Help "SvPEG_gen3_ccFTS"
+             "Valid range: 0x00 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvPEG_gen3_nccFTS, "Sa SvPEG_gen3_nccFTS", HEX,
+        Help "SvPEG_gen3_nccFTS"
+             "Valid range: 0x00 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SanFTS_gen3_auto, "Sa nFTS_gen3_auto", HEX,
+        Help "nFTS_gen3_auto"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSVIAER, "Sa SVIAER", HEX,
+        Help "SVIAER"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvScramblerDmi, "Sa Sv Scrambler Dmi", HEX,
+        Help "SvScramblerDmi"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvDmiSerr, "Sa Sv Dmi Serr", HEX,
+        Help "SvDmiSerr"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvScramblerPeg, "Sa Sv Scrambler Peg", HEX,
+        Help "SvScramblerPeg"
+             "Valid range: 0x00 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvScramblerPegGen3, "Sa Sv Scrambler Peg Gen3", HEX,
+        Help "SvScramblerPegGen3"
+             "Valid range: 0x00 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvPegSerr, "Sa Sv Peg Serr", HEX,
+        Help "SvPegSerr"
+             "Valid range: 0x00 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestTxClkGating, "Sa Test Tx ClkGating", HEX,
+        Help "TestTxClkGating"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestRxClkGating, "Sa Test Rx ClkGating", HEX,
+        Help "TestRxClkGating"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestLowPwrMode, "Sa Test Low Pwr Mode", HEX,
+        Help "TestLowPwrMode"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSrMode, "Sa Sr Mode", HEX,
+        Help "SrMode"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSrSeq, "Sa Sr Seq", HEX,
+        Help "SrSeq"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaBurstSpacing, "Sa Burst Spacing", HEX,
+        Help "BurstSpacing"
+             "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SaRestrictedSvPolicyEnable, "SvPolicyEnable", &EN_DIS,
+        Help "Enable: SV policy is enabled, Disable(Default): SV policy is disabled"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SaCpuSvBootMode, "Cpu Sv Boot Mode", &gPlatformFspPkgTokenSpaceGuid_SaCpuSvBootMode,
+        Help "0: Auto (Default), 1: Commercial boot mode, 2: SV boot mode, 3: SV boot JTAG mode with SB loop, 4: SV boot JTAG mode without SB loop"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestSamplePartStatusOverride, "Sa Test Sample Part Status Override", HEX,
+        Help "0-Passthrough,  1-Production part,  2-Preproduction part"
+             "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SaTestWOPCMSize, "Sa Graphics Pei Test WOPCM Size", &gPlatformFspPkgTokenSpaceGuid_SaTestWOPCMSize,
+        Help "0: 1MB, 1(Default): 2MB, 2: 4MB, 3: 8MB"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestDmiCapRegLock, "Sa Test Dmi Cap Reg Lock", HEX,
+        Help "DMI Capability Register Lock"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestDmiMaxPayloadSize, "Sa Test Dmi Max Payload Size", HEX,
+        Help "DMI Max Payload Size"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieVcLimLock, "Sa Pcie VcLim Lock", HEX,
+        Help "Lock bit"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieVCmCmpLim, "Sa Pcie VCm Cmp Lim", HEX,
+        Help "VCm Completions override"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieVCmPLim, "Sa Pcie VCm PLim", HEX,
+        Help "posted VCm Requests override"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieVCmNpLim, "Sa Pcie VCm NpLim", HEX,
+        Help "non-posted VCm Requests override"
+             "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PsmiHandlerSize, "PSMI Handler Size", &gPlatformFspPkgTokenSpaceGuid_PsmiHandlerSize,
+        Help "0(Default): 0 KB, 1: 256 KB, 2: 512 KB, 3: 1 MB"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion0, "Trace Region 0 Size", &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion0,
+        Help "0(Default): No Allocation, 1: 1MB, 2: 2MB, 3: 4 MB, 15:16GB"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion0CacheType, "Region 0 Cache Type", &gPlatformFspPkgTokenSpaceGuid_TraceRegion0CacheType,
+        Help "0 (Default): Don't Care, 1: Write Back"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion0RangeCompatible, "Selection of PSMI Region 0 Range Compatibility On/Off", &EN_DIS,
+        Help "0(Default) = FALSE, 1 = TRUE. When TRUE, it will allow the PSMI Range Compatible"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion1, "Trace Region 1 Size", &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion1,
+        Help "0 (Default): No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion1CacheType, "Region 1 Cache Type", &gPlatformFspPkgTokenSpaceGuid_TraceRegion1CacheType,
+        Help "0 (Default): Don't Care, 1: Write Back"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion1RangeCompatible, "Selection of PSMI Region 1 Range Compatibility On/Off", &EN_DIS,
+        Help "0(Default) = FALSE, 1 = TRUE. When TRUE, it will allow the PSMI Range Compatible"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion2, "Trace Region 2 Size", &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion2,
+        Help "0 (Default): No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion2CacheType, "Region 2 Cache Type", &gPlatformFspPkgTokenSpaceGuid_TraceRegion2CacheType,
+        Help "0 (Default): Don't Care, 1: Write Back"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion2RangeCompatible, "Selection of PSMI Region 2 Range Compatibility On/Off", &EN_DIS,
+        Help "0(Default) = FALSE, 1 = TRUE. When TRUE, it will allow the PSMI Range Compatible"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion3, "Trace Region 3 Size", &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion3,
+        Help "0 (Default): No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion3CacheType, "Region 3 Cache Type", &gPlatformFspPkgTokenSpaceGuid_TraceRegion3CacheType,
+        Help "0 (Default): Don't Care, 1: Write Back"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion3RangeCompatible, "Selection of PSMI Region 3 RangeCompatibility On/Off", &EN_DIS,
+        Help "0(Default) = FALSE, 1 = TRUE. When TRUE, it will allow the PSMI Range Compatible"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion4, "Trace Region 4 Size", &gPlatformFspPkgTokenSpaceGuid_PsmiTraceRegion4,
+        Help "0 (Default): No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion4CacheType, "Region 4 Cache Type", &gPlatformFspPkgTokenSpaceGuid_TraceRegion4CacheType,
+        Help "0 (Default): Don't Care, 1: Write Back"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TraceRegion4RangeCompatible, "Selection of PSMI Region 4 Range Compatibility On/Off", &EN_DIS,
+        Help "0(Default) = FALSE, 1 = TRUE. When TRUE, it will allow the PSMI Range Compatible"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ContiguousTraceRegion, "Selection of PSMI Contiguous TraceRegion", &EN_DIS,
+        Help "1(Default) = TRUE, 0 = FALSE. When TRUE, PSMI contiguous trace region is enabled"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpDekelProgramming, "Dekel Programming", &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpDekelProgramming,
+        Help "Program DEKEL PHY Registers if enabled. Disabled(0x0), Enabled(0x1)(Default)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpDekelBreakPoint, "Dekel Break Point", &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpDekelBreakPoint,
+        Help "If Enabled, BIOS will hang the system for manual DEKEL recipe verification or load. Disabled(0x0)(Default), Enabled(0x1)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SkipLinkTraining, "Skip Link Training for PEG10", &EN_DIS,
+        Help "Skip Link Training for PEG10. 0: will clear 'BLKDQDASD'; 1: will not clear 'BLKDQDASD'(Default)."
+    Combo $gPlatformFspPkgTokenSpaceGuid_ForceDetection, "Enable Force Detection for PEG10", &EN_DIS,
+        Help "Enable Force Detection for PEG10. 0: will not set 'MPC_FORCEDET'; 1: set 'MPC_FORCEDET' to 1(Default)."
+    Combo $gPlatformFspPkgTokenSpaceGuid_DGWait, "DG Wait", &EN_DIS,
+        Help "0(Default) = Disable, 1 = Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ForceUnlockAes, "Force Unlock AES", &EN_DIS,
+        Help "0(Default)=Disable, 1=Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PreMemRestrictedRsvd2, "PreMemRestrictedRsvd2", &EN_DIS,
+        Help "Reserved for Pre-Mem RestrictedReserved"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_DmiGen3MultiVC, "Program DMI GEN3 Extended number of VC", HEX,
+        Help "Program DMI GEN3 Extended number of VC"
+             "Valid range: 0x00 ~ 0xF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DmiGen3Vc1Control, "Enable/Disable DMI GEN3 DmiGen3Vc1Control", &EN_DIS,
+        Help "Enable/Disable DMI GEN3 DmiGen3Vc1Control. Disabled(0x0): DmiGen3Vc1Control, Enabled(0x1)(Default): Enable DmiGen3Vc1Control"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DmiGen3VcMControl, "Enable/Disable DMI GEN3 DmiGen3VcMControl", &EN_DIS,
+        Help "Enable/Disable DMI GEN3 DmiGen3VcMControl. Disabled(0x0): DmiGen3VcMControl, Enabled(0x1)(Default): Enable DmiGen3VcMControl"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DmiSrl, "DMI Secure Register Lock:{Combo", &gPlatformFspPkgTokenSpaceGuid_DmiSrl,
+        Help "Enable Dmi all Secure Register Lock"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DmiScramble, "DMI Scramble Enable:{Combo", &gPlatformFspPkgTokenSpaceGuid_DmiScramble,
+        Help "Enable the data Scrambler"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DmiMaxPayload, "DMI Max Payload Size:{Combo", &gPlatformFspPkgTokenSpaceGuid_DmiMaxPayload,
+        Help "Set the max payload size"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuDmiFomsCp, "FOMS Control Policy", &gPlatformFspPkgTokenSpaceGuid_CpuDmiFomsCp,
+        Help "Choose the Foms Control Policy, <b>Default = 0 </b>"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PreMemRestrictedRsvd3, "PreMemRestrictedRsvd3", &EN_DIS,
+        Help "Reserved for Pre-Mem RestrictedReserved"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_WrcVcEnable, "WRC VC Enable", HEX,
+        Help "Select which path to memory (CMI vs. CII) a VC will be sent."
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_WrcVcAllocate, "WRC VC Allocate", HEX,
+        Help "Select whether requests from VC will be cached in WRC."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_WrcVcClos, "WRC VC CLOS", HEX,
+        Help "Define VC Upstream Request Class-of-Service on a per VC basis."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_WrcVC0aAllocateBase, "WRC VC0a Allocate Base", HEX,
+        Help "Specifies bits 38:20 of the start address of streaming buffer allocate region."
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_WrcVC0aAllocateMask, "WRC VC0a Allocate Mask", HEX,
+        Help "WRC VC0a Allocate Mask."
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_TmeExcludeBase, "TME Exclude Base Address", HEX,
+        Help "TME Exclude Base Address."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_TmeExcludeSize, "TME Exclude Size Value", HEX,
+        Help "TME Exclude Size Value."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SaTestDeIommuPostedIntCap, "DE IOMMU Posted Interrupt capability", &EN_DIS,
+        Help "Enable: DE IOMMU Posted Interrupt capability is enabled, Disble(Default): DE IOMMU Posted Interrupt capability is disabled"
 EndPage
 
 Page "System Agent (Post-Mem)"
@@ -4590,6 +5806,275 @@ Page "System Agent (Post-Mem)"
              "Valid range: 0 ~ 0xFFFFFFFFFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_L2QosEnumerationEn, "Enable L2 Qos Enumerate", &EN_DIS,
         Help "0(Default)=Disable, 1=Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestGnaErrorCheckDis, "Enable or disable GNA Error Check Disable Bit", &EN_DIS,
+        Help "0=Disable, 1(Default)=Enable"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestForceWake, "Sa Graphics Pei Test Force Wake", HEX,
+        Help "Test Force Wake"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestGfxPause, "Sa Graphics Pei Test Gfx Pause", HEX,
+        Help "Test Gfx Pause"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestGraphicsFreqModify, "Sa Graphics Pei Test Graphics Freq Modify", HEX,
+        Help "Test Graphics Freq Modify"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestPmLock, "Sa Graphics Pei Test PmLock", HEX,
+        Help "Test PmLock"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestPavpHeavyMode, "Sa Graphics Pei Test Pavp Heavy Mode", HEX,
+        Help "Test Pavp Heavy Mode"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestDopClockGating, "Sa Graphics Pei Test Dop ClockGating", HEX,
+        Help "Test Dop ClockGating"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestUnsolicitedAttackOverride, "Sa Graphics Pei Test Unsolicited Attack Override", HEX,
+        Help "Test Unsolicited Attack Override"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestWOPCMSupport, "Sa Graphics Pei Test WOPCM Support", HEX,
+        Help "Test WOPCM Support"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestPavpAsmf, "Sa Graphics Pei Test Pavp Asmf", HEX,
+        Help "Test Pavp Asmf"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestPowerGating, "Sa Graphics Pei Test Power Gating", HEX,
+        Help "Test Power Gating"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestUnitLevelClockGating, "Sa Graphics Pei Test Unit Level ClockGating", HEX,
+        Help "Test Unit Level ClockGating"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestAutoTearDown, "Sa Graphics Pei Test Auto TearDown", HEX,
+        Help "Test Auto TearDown"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestGraphicsVideoFreq, "Sa Graphics Pei Test Graphics Video Freq", HEX,
+        Help "Test Graphics Video Freq"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestGraphicsFreqReq, "Sa Graphics Pei Test Graphics Freq Req", HEX,
+        Help "Test Graphics Freq Req"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestMpllOffSen, "Sa Test MpllOffSen", HEX,
+        Help "TestMpllOffSen"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestMdllOffSen, "Sa Test MdllOffSen", HEX,
+        Help "TestMdllOffSen"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestModeEdramInternal, "Sa Test Mode Edram Internal", HEX,
+        Help "Edram Enable Option"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaTestSecurityLock, "Sa Test Security Lock", HEX,
+        Help "Enable/Disable Security lock"
+             "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_GtProchotEnable, "Gt Prochot Enable", &EN_DIS,
+        Help "Enable/Disable Gt Prochot Setting"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SaTestSpcLock, "Sa Graphics Pei Test SPC Lock", &EN_DIS,
+        Help "Test Spc Lock"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SaPostMemRestrictedRsvd, "SaPostMemRestrictedRsvd", &EN_DIS,
+        Help "Reserved for SA Post-Mem Restricted"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpTestEqPh2Override, "Gen3 EQ Phase2 Tx override", HEX,
+        Help "Coefficient requested by the remote device is ignored.0: POR (Default), 1: Enable, 2: Disable(Bypass)"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpTestAspmOc, "Enable/Disable ASPM Optionality Compliance", HEX,
+        Help "Enable/Disable ASPM Optionality Compliance."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3EqPh3Bypass, "Phase3 RP Gen3 EQ enable", &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3EqPh3Bypass,
+        Help "Phase3 Gen3 EQ enable. Disabled(0x0)(Default): Disable phase 3, Enabled(0x1): Enable phase 3"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4EqPh3Bypass, "Phase3 RP Gen4 EQ enable", &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4EqPh3Bypass,
+        Help "Phase3 Gen4 EQ enable. Disabled(0x0)(Default): Disable phase 3, Enabled(0x1): Enable phase 3"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5EqPh3Bypass, "Phase3 RP Gen5 EQ enable", &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5EqPh3Bypass,
+        Help "Phase3 Gen5 EQ enable. Disabled(0x0)(Default): Disable phase 3, Enabled(0x1): Enable phase 3"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3EqPh23Bypass, "Phase2-3 RP Gen3 EQ enable", &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3EqPh23Bypass,
+        Help "Phase2-3 Gen3 EQ enable. Disabled(0x0)(Default): Disable Phase2-3, Enabled(0x1): Enable Phase2-3"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4EqPh23Bypass, "Phase2-3 RP Gen4 EQ enable", &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4EqPh23Bypass,
+        Help "Phase2-3 Gen4 EQ enable. Disabled(0x0)(Default): Disable Phase2-3, Enabled(0x1): Enable Phase2-3"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5EqPh23Bypass, "Phase2-3 RP Gen5 EQ enable", &gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5EqPh23Bypass,
+        Help "Phase2-3 Gen5 EQ enable. Disabled(0x0)(Default): Disable Phase2-3, Enabled(0x1): Enable Phase2-3"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3PresetCoeffSelection, "Presets/Coefficients Selection for Gen3", HEX,
+        Help "Preset or Coefficient Selection for Gen3. See CPU_PCIE_GEN3_PRESET_COEFF_SELECTION. Default is 0x0 (Preset Mode)"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4PresetCoeffSelection, "Presets/Coefficients Selection for Gen4", HEX,
+        Help "Preset or Coefficient Selection for Gen4. See CPU_PCIE_GEN4_PRESET_COEFF_SELECTION. Default is 0x0 (Preset Mode)"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5PresetCoeffSelection, "Presets/Coefficients Selection for Gen5", HEX,
+        Help "Preset or Coefficient Selection for Gen5. See CPU_PCIE_GEN4_PRESET_COEFF_SELECTION. Default is 0x0 (Preset Mode)"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff0ListCm, "PCIE Hw Eq Gen3 Coeff0List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient0 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff0ListCp, "PCIE Hw Eq Gen3 Coeff0List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient0 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff1ListCm, "PCIE Hw Eq Gen3 Coeff1List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient1 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff1ListCp, "PCIE Hw Eq Gen3 Coeff1List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient1 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff2ListCm, "PCIE Hw Eq Gen3 Coeff2List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient2 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff2ListCp, "PCIE Hw Eq Gen3 Coeff2List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient2 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff3ListCm, "PCIE Hw Eq Gen3 Coeff3List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient3 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff3ListCp, "PCIE Hw Eq Gen3 Coeff3List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient3 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff4ListCm, "PCIE Hw Eq Gen3 Coeff4List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient4 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen3Coeff4ListCp, "PCIE Hw Eq Gen3 Coeff4List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient4 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff0ListCm, "PCIE Hw Eq Gen4 Coeff0List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient0 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff0ListCp, "PCIE Hw Eq Gen4 Coeff0List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient0 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff1ListCm, "PCIE Hw Eq Gen4 Coeff1List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient1 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff1ListCp, "PCIE Hw Eq Gen4 Coeff1List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient1 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff2ListCm, "PCIE Hw Eq Gen4 Coeff2List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient2 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff2ListCp, "PCIE Hw Eq Gen4 Coeff2List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient2 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff3ListCm, "PCIE Hw Eq Gen4 Coeff3List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient3 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff3ListCp, "PCIE Hw Eq Gen4 Coeff3List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient3 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff4ListCm, "PCIE Hw Eq Gen4 Coeff4List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient4 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff4ListCp, "PCIE Hw Eq Gen4 Coeff4List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient4 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff5ListCm, "PCIE Hw Eq Gen4 Coeff5List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient5 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen4Coeff5ListCp, "PCIE Hw Eq Gen4 Coeff5List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient5 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff0ListCm, "PCIE Hw Eq Gen5 Coeff0List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient0 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff0ListCp, "PCIE Hw Eq Gen5 Coeff0List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient0 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff1ListCm, "PCIE Hw Eq Gen5 Coeff1List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient1 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff1ListCp, "PCIE Hw Eq Gen5 Coeff1List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient1 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff2ListCm, "PCIE Hw Eq Gen5 Coeff2List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient2 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff2ListCp, "PCIE Hw Eq Gen5 Coeff2List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient2 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff3ListCm, "PCIE Hw Eq Gen5 Coeff3List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient3 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff3ListCp, "PCIE Hw Eq Gen5 Coeff3List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient3 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff4ListCm, "PCIE Hw Eq Gen5 Coeff4List Cm", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient4 C-1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieHwEqGen5Coeff4ListCp, "PCIE Hw Eq Gen5 Coeff4List Cp", HEX,
+        Help "CPU_PCIE_EQ_PARAM. Coefficient4 C+1."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3PcetTimer, "PCET Timer", HEX,
+        Help "Preset/Coefficient Evaluation Timeout Gen3 PCET Timer. See CPU_PCIE_GEN3_PCET. Default is 0x4"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4PcetTimer, "Gen4 PCET Timer", HEX,
+        Help "Preset/Coefficient Evaluation Timeout - Gen4 PCET Timer. See CPU_PCIE_GEN4_PCET. Default is 0x4"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5PcetTimer, "Gen5 PCET Timer", HEX,
+        Help "Preset/Coefficient Evaluation Timeout - Gen5 PCET Timer. See CPU_PCIE_GEN4_PCET. Default is 0x4"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3TsLockTimer, "TS Lock Timer for Gen3", HEX,
+        Help "Training Sequence Wait Latency For Presets/Coefficients Evaluation - Gen3 TS Lock Timer. See CPU_PCIE_GEN3_TS_LOCK_TIMER. Default is 0x3"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4TsLockTimer, "PTS Lock Timer for Gen4", HEX,
+        Help "Training Sequence Wait Latency For Presets/Coefficients Evaluation - Gen4 TS Lock Timer. See CPU_PCIE_GEN4_TS_LCOK_TIMER. Default is 0x4"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5TsLockTimer, "PTS Lock Timer for Gen5", HEX,
+        Help "Training Sequence Wait Latency For Presets/Coefficients Evaluation - Gen5 TS Lock Timer. See CPU_PCIE_GEN5_TS_LCOK_TIMER. Default is 0x4"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3NumberOfPresetCoeffList, "Gen3 Preset/Coeffiecient List Count", HEX,
+        Help "Select Gen3 Hardware Autonomous Preset/Coefficient Count. See Gen3 CPU_PCIE_PRESETCOEFF_LIST. Default is 0x3"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4NumberOfPresetCoeffList, "Gen4 Preset/Coeffiecient List Count", HEX,
+        Help "Select Gen4 Hardware Autonomous Preset/Coefficient Count. See CPU_PCIE_PRESETCOEFF_LIST. Default is 0x3"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5NumberOfPresetCoeffList, "Gen5 Preset/Coeffiecient List Count", HEX,
+        Help "Select Gen5 Hardware Autonomous Preset/Coefficient Count. See CPU_PCIE_PRESETCOEFF_LIST. Default is 0x3"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3PreCursor, "Gen3 Local Tx Coefficient Override PreCursor", HEX,
+        Help "Gen3 Local Tx Coefficient Override PreCursor per lane. 0 is default for each lane"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3PostCursor, "Gen3 Local Tx Coefficient Override PostCursor", HEX,
+        Help "Gen3 Local Tx Coefficient Override PostCursor per lane. 0 is default for each lane"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4PreCursor, "Gen4 Local Tx Coefficient Override PreCursor", HEX,
+        Help "Gen4 Local Tx Coefficient Override PreCursor per lane. 0 is default for each lane"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4PostCursor, "Gen4 Local Tx Coefficient Override PostCursor", HEX,
+        Help "Gen4 Local Tx Coefficient Override PostCursor per lane. 0 is default for each lane"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5PreCursor, "Gen5 Local Tx Coefficient Override PreCursor", HEX,
+        Help "Gen5 Local Tx Coefficient Override PreCursor per lane. 0 is default for each lane"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5PostCursor, "Gen5 Local Tx Coefficient Override PostCursor", HEX,
+        Help "Gen5 Local Tx Coefficient Override PostCursor per lane. 0 is default for each lane"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen3TxOverride, "PCIE RP Gen3 Tx Override", HEX,
+        Help "If Tx Override is disabled, skip CpuPcieTxOverride for Gen3. Used for all Root Ports. Disabled(0x0)(Default), Enabled(0x1)"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen4TxOverride, "PCIE RP Gen4 Tx Override", HEX,
+        Help "If Tx Override is disabled, skip CpuPcieTxOverride for Gen4. Used for all Root Ports. Disabled(0x0)(Default), Enabled(0x1)"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpGen5TxOverride, "PCIE RP Gen5 Tx Override", HEX,
+        Help "If Tx Override is disabled, skip CpuPcieTxOverride for Gen5. Used for all Root Ports. Disabled(0x0)(Default), Enabled(0x1)"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen3HwEqOverride, "PCI Express Gen3 HwEq Override", &EN_DIS,
+        Help "Override HWEQ Preset/Coefficient values for Gen3.0: Disable(Default); 1: Enable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen4HwEqOverride, "PCI Express Gen4 HwEq Override", &EN_DIS,
+        Help "Override HWEQ Preset/Coefficient values for Gen4.0: Disable(Default); 1: Enable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieGen5HwEqOverride, "PCI Express Gen5 HwEq Override", &EN_DIS,
+        Help "Override HWEQ Preset/Coefficient values for Gen5.0: Disable(Default); 1: Enable."
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpAggressiveDynamicClockGating, "PCIE RP Aggressive Clock Gating for SIP17", HEX,
+        Help "If Aggressive Dynamic Clock Gating is disabled, skip register programmig of DynamicClockGating for SIP17. Used for Root Port with SIP17 Controller. Enabled(0x1)(Default), Disabled(0x0)"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpTestForceLtrOverride, "Force LTR Override", HEX,
+        Help "Force LTR Override."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaSvPegArifen, "Sa SvPegArifen", HEX,
+        Help "SvPegArifen"
+             "Valid range: 0x0 ~ 0xFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieSrl, "Unlock SRL bit", &EN_DIS,
+        Help "Unlock SRL bit for CPU PCIE and FIA."
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieSerr, "Sa Pcie Serr", HEX,
+        Help "CpuPcieSerr"
+             "Valid range: 0x00 ~ 0xFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieSetSecuredRegisterLock, "PCIE Secure Register Lock", &EN_DIS,
+        Help "Describes whether Secure Register Lock is enaled or disabled. When it will be enbaled, load CpuPcieRpSetSecuredRegisterLock recipe. 0: Disable(Default); 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Peg60PcieDump, "PEG60 Pcie Dump", &gPlatformFspPkgTokenSpaceGuid_Peg60PcieDump,
+        Help "PEG60 Pcie Dump. Disabled(0x0), Enabled(0x1)(Default)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Peg10PcieDump, "PEG10 Pcie Dump", &gPlatformFspPkgTokenSpaceGuid_Peg10PcieDump,
+        Help "PEG10 Pcie Dump. Disabled(0x0), Enabled(0x1)(Default)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Peg11PcieDump, "PEG11 Pcie Dump", &gPlatformFspPkgTokenSpaceGuid_Peg11PcieDump,
+        Help "PEG11 Pcie Dump. Disabled(0x0), Enabled(0x1)(Default)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Peg62PcieDump, "PEG62 Pcie Dump", &gPlatformFspPkgTokenSpaceGuid_Peg62PcieDump,
+        Help "PEG62 Pcie Dump. Disabled(0x0), Enabled(0x1)(Default)"
 EndPage
 
 Page "PCH (Pre-Mem)"
@@ -4815,6 +6300,36 @@ Page "PCH (Pre-Mem)"
         Help "0(Default)=Disable, 1=Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_PprEnable, "Ppr Enable Type", &gPlatformFspPkgTokenSpaceGuid_PprEnable,
         Help "Enable Soft or Hard PPR <b>0:Disable</b>, 2:Hard PPR"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestDmiTranCoOverEn, "Dmi Test Tran Co Over En", HEX,
+        Help "Enable/Disable Lane Transmitter Coefficient."
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestDmiTranCoOverPostCur, "Dmi Test Tran Co Over Post Cur", HEX,
+        Help "Lane Transmitter Post-Cursor Coefficient Override."
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestDmiTranCoOverPreCur, "Dmi Test Tran Co Over Pre Cur", HEX,
+        Help "Lane Transmitter Pre-Cursor Coefficient Override."
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestDmiUpPortTranPreset, "Dmi Test Up Port Tran Preset", HEX,
+        Help "Upstream Port Lane Transmitter Preset."
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestDmiUpPortTranPresetEn, "Dmi Test UpPort Tran Preset En", HEX,
+        Help "0: POR setting, 1: force enable, 2: force disable."
+             "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestDmiRtlepceb, "Dmi Test Rtlepceb", HEX,
+        Help "DMI Remote Transmit Link Equalization Preset/Coefficient Evaluation Bypass (RTLEPCEB)."
+             "Valid range: 0x0 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchTestDmiMeUmaRootSpaceCheck, "DMI ME UMA Root Space Check", &gPlatformFspPkgTokenSpaceGuid_PchTestDmiMeUmaRootSpaceCheck,
+        Help "DMI IOSF Root Space attribute check for RS3 for cycles targeting MEUMA."
+    Combo $gPlatformFspPkgTokenSpaceGuid_DisableResets, "Disable Reset", &gPlatformFspPkgTokenSpaceGuid_DisableResets,
+        Help "This option disable/enable reset functionality.(Default==POR)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchHdaTestPowerClockGating, "HDA Power/Clock Gating (PGD/CGD)", &gPlatformFspPkgTokenSpaceGuid_PchHdaTestPowerClockGating,
+        Help "Enable/Disable HD Audio Power and Clock Gating(POR: Enable). 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchHdaTestConfigLockdown, "Configuration Lockdown (BCLD)", &gPlatformFspPkgTokenSpaceGuid_PchHdaTestConfigLockdown,
+        Help "0: POR (Enable), 1: Enable, 2: Disable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchHdaTestLowFreqLinkClkSrc, "Low Frequency Link Clock Source (LFLCS)", &gPlatformFspPkgTokenSpaceGuid_PchHdaTestLowFreqLinkClkSrc,
+        Help "0: POR (Enable), 1: Enable (XTAL), 2: Disable (Audio PLL)."
+    Combo $gPlatformFspPkgTokenSpaceGuid_DmiHweq, "Enable/Disable DMI Hardware Eq", &EN_DIS,
+        Help "Enable/Disable DMI Hardware Eq. Disabled(0x0)(Default): Disable Hardware Eq, Enabled(0x1): Enable  EQ Phase1 Static Presets Programming"
 EndPage
 
 Page "PCH (Post-Mem)"
@@ -4838,7 +6353,7 @@ Page "PCH (Post-Mem)"
         Help "Enable/disable SW device mode per USB2 ports. One byte for each port, byte0 for port0, byte1 for port1, and so on."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PortUsb31Speed, "USB 3.1 Speed Selection", &EN_DIS,
-        Help "Choose USB 3.1 Speed Selection. 1: Gen1, 0: Gen2"
+        Help "Choose USB 3.1 Speed Selection per port. One bit for each port, bit1 for port1, and so on 1: Gen1, 0: Gen2"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PortUsb30Enable, "Enable USB3 ports", HEX,
         Help "Enable/disable per USB3 ports. One byte for each port, byte0 for port0, byte1 for port1, and so on."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
@@ -5858,6 +7373,144 @@ Page "PCH (Post-Mem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PmcLpmS0ixSubStateEnableMask, "Low Power Mode Enable/Disable config mask", HEX,
         Help "Configure if respective S0i2/3 sub-states are to be supported. Each bit corresponds to one sub-state (LPMx - BITx): LPM0-s0i2.0, LPM1-s0i2.1, LPM2-s0i2.2, LPM3-s0i3.0, LPM4-s0i3.1, LPM5-s0i3.2, LPM6-s0i3.3, LPM7-s0i3.4."
              "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchDmiTestMemCloseStateEn, "MEM CLOSED State on PCH side", &EN_DIS,
+        Help "Enable/Disable MEM CLOSED State on PCH side."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchDmiTestInternalObffEn, "Optimized Buffer Flush/Fill (OBFF) protocol for internal on PCH side", &EN_DIS,
+        Help "enable/disable Optimized Buffer Flush/Fill (OBFF) protocol for internal on PCH side."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchDmiTestExternalObffEn, "Optimized Buffer Flush/Fill (OBFF) protocol for external on PCH side", &EN_DIS,
+        Help "Enable/Disable Optimized Buffer Flush/Fill (OBFF) protocol for external on PCH side."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchDmiTestClientObffEn, "Client Obff Enable", &EN_DIS,
+        Help "Client Obff Enable."
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchDmiTestCxObffEntryDelay, "CxObff Entry Delay", HEX,
+        Help "CxObff Entry Delay."
+             "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchDmiTestPchTcLockDown, "Pch Tc Lock Down", &EN_DIS,
+        Help "Pch Tc Lock Down."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchDmiTestDmiSecureRegLock, "DMI Secure Reg Lock", &gPlatformFspPkgTokenSpaceGuid_PchDmiTestDmiSecureRegLock,
+        Help "DMI Secure Reg Lock."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchLanTestPchWOLFastSupport, "PCH Lan Test WOL Fast Support", &EN_DIS,
+        Help "Enables bit B_PCH_ACPI_GPE0_EN_127_96_PME_B0 during PchLanSxCallback in PchLanSxSmm."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchLockDownTestSmiUnlock, "Smi Unlock bit for SV policy", &EN_DIS,
+        Help "0: Lock; 1: Unlock."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchPostMemRestrictedRsvd, "PchPostMemRestrictedRsvd", &EN_DIS,
+        Help "Reserved for PCH Post-Mem Restricted Reserved"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRpTestForceLtrOverride, "Force LTR Override", HEX,
+        Help "Force LTR Override."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ThcPort1Clock, "Touch Host Controller Port 1 Clock", &gPlatformFspPkgTokenSpaceGuid_ThcPort1Clock,
+        Help "Set THC Clock for Port 1"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ThcPort0Clock, "Touch Host Controller Port 0 Clock", &gPlatformFspPkgTokenSpaceGuid_ThcPort0Clock,
+        Help "Set THC Clock for Port 0"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchPmTestPchPmRegisterLock, "PCH Pm Register Lock", HEX,
+        Help "PCH Pm Register Lock."
+             "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchPmTestPchClearPowerSts, "PCH Pm Test Clear Power Sts", HEX,
+        Help "@todo ADD DESCRIPTION. Policy for SV usage. NO USE.."
+             "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageTestMode, "PCH Sata Test Rst Pcie Storage Test Mode", HEX,
+        Help "PCIe Storage remapping Test Mode to override existing PCIe Storage remapping POR setting for development purpose."
+             "Valid range: 0x0 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStoragePortConfigCheck, "PCH Sata Test Rst Pcie Storage Port Config Check", HEX,
+        Help "Enable/Disable Port Configuration Check for RST PCIe Storage Remapping."
+             "Valid range: 0x0 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageDeviceInterface, "PCH Sata Test Rst Pcie Storage Device Interface", HEX,
+        Help "Select the device interface (AHCI/NVME) for remapped device. NO USE."
+             "Valid range: 0x0 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageDeviceBarSizeCheck, "PCH Sata Test Rst Pcie Storage Device Bar Size Check", HEX,
+        Help "Enable/Disable Device BAR Size Check for remapped device."
+             "Valid range: 0x0 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageDeviceBarSelect, "PCH Sata Test Rst Pcie Storage Device Bar Select", HEX,
+        Help "Select the device BAR (BAR0-BAR5) that will be used for Remapping."
+             "Valid range: 0x0 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageDeviceInterrupt, "PCH Sata Test Rst Pcie Storage Device Interrupt", HEX,
+        Help "Select the device interrupt (Legacy/MSIX) for remapped device."
+             "Valid range: 0x0 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageAspmProgramming, "PCH Sata Test Rst Pcie Storage Aspm Programming", HEX,
+        Help "Enable/Disable ASPM Programming for remapped device."
+             "Valid range: 0x0 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageSaveRestore, "PCH Sata Test Rst Pcie Storage Save Restore", HEX,
+        Help "Enable/Disable ASPM Programming for remapped device."
+             "Valid range: 0x0 ~ 0xFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestLtrEnable, "Latency Tolerance Reporting Mechanism", HEX,
+        Help "Latency Tolerance Reporting Mechanism."
+             "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestLtrConfigLock, "Latency Tolerance Reporting Mechanism", HEX,
+        Help "Latency Tolerance Reporting Mechanism."
+             "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestLtrOverride, "Latency Tolerance Reporting Mechanism", HEX,
+        Help "Latency Tolerance Reporting Mechanism."
+             "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestSnoopLatencyOverrideMultiplier, "Latency Tolerance Reporting Mechanism", HEX,
+        Help "Latency Tolerance Reporting Mechanism."
+             "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestSnoopLatencyOverrideValue, "Latency Tolerance Reporting Mechanism", HEX,
+        Help "Latency Tolerance Reporting Mechanism."
+             "Valid range: 0x0 ~ 0xFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestSataAssel, "Latency Tolerance Reporting Mechanism", HEX,
+        Help "Latency Tolerance Reporting Mechanism."
+             "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SataTestRstPcieStorageRemapSataMsix, "Latency Tolerance Reporting Mechanism", HEX,
+        Help "Latency Tolerance Reporting Mechanism."
+             "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestHsTrunkClkReq, "(GPPRVRW1) High Speed Trunk Clock Req", HEX,
+        Help "High Speed Trunk Clock Req."
+             "Valid range: 0x0 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchTestTscLock, "This locks down Catastrophic Power-Down Enable and Catastrophic Trip Point Register", &EN_DIS,
+        Help "0: Disabled, 1: Enabled."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchTestPhlcLock, "This locks down PHL and PHLC", &EN_DIS,
+        Help "0: Disabled, 1: Enabled."
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestEPTypeLockPolicy, "USB EP Type Lock Policy", HEX,
+        Help "USB EP Type Lock Policy."
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestEPTypeLockPolicyPortControl1, "USB EP Type Lock Policy Control 1", HEX,
+        Help "USB EP Type Lock Policy Control 1."
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestEPTypeLockPolicyPortControl2, "USB EP Type Lock Policy Control 2", HEX,
+        Help "USB EP Type Lock Policy Control 2."
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTestControllerEnabled, "Xhci Controller Enable", HEX,
+        Help "0: Disable; 1: Enable."
+             "Valid range: 0x0 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchTestUnlockUsbForSvNoa, "Unlock to enable NOA for SV usage", &EN_DIS,
+        Help "1: Unlock to enable NOA usage. 0: Set Xhci OC registers, Set Xhci OCCDone bit, XHCI Access Control Bit."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchTestClkGatingXhci, "Enable XHCI Clock Gating for SV usage", &EN_DIS,
+        Help "1: Enable XHCI Clock Gating. 0: Disable XHCI Clock Gating. Policy for SV usage."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestPcieMpcSecureRegisterLock, "MPC Secure Register Lock", &gPlatformFspPkgTokenSpaceGuid_TestPcieMpcSecureRegisterLock,
+        Help "Enable/Disable Secure Register Lock, 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestUsbXhciAccessControlLock, "XHCI Access Control Lock", &gPlatformFspPkgTokenSpaceGuid_TestUsbXhciAccessControlLock,
+        Help "Enable/Disable Access Control Lock To Xhci Registers, 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestPchPmErDebugMode, "PCH PMC ER Debug mode", &EN_DIS,
+        Help "Disable/Enable Energy Reporting Debug Mode."
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchDmiTestOpiPllPowerGating, "OPI PLL Power Gating", &gPlatformFspPkgTokenSpaceGuid_PchDmiTestOpiPllPowerGating,
+        Help "OPI PLL Power Gating."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestCnviBtCore, "CNVi BT Core", &gPlatformFspPkgTokenSpaceGuid_TestCnviBtCore,
+        Help "Enable/Disable CNVi BT Core. 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestCnviWifiLtrEn, "CNVi WiFi LTR", &gPlatformFspPkgTokenSpaceGuid_TestCnviWifiLtrEn,
+        Help "Enable/Disable CNVi WiFi LTR. 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestCnviLteCoex, "CNVi LTE Coexistence", &gPlatformFspPkgTokenSpaceGuid_TestCnviLteCoex,
+        Help "Enable/Disable MFUART2 connection for coexistence between LTE and Wi-Fi/BT. 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestCnviBtInterface, "CNVi BT Interface", &gPlatformFspPkgTokenSpaceGuid_TestCnviBtInterface,
+        Help "This option configures BT device interface to either USB or UART"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestCnviBtUartType, "CNVi BT Uart Type", &gPlatformFspPkgTokenSpaceGuid_TestCnviBtUartType,
+        Help "This is a test option which allows configuration of UART type for BT communication"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestCnviSharedXtalClocking, "CNVi Shared XTAL Clocking ", &gPlatformFspPkgTokenSpaceGuid_TestCnviSharedXtalClocking,
+        Help "This option is used to tell CNVi that XTAL is being shared. 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestPmcDbgModeLock, "PMC Debug Mode Lock ", &gPlatformFspPkgTokenSpaceGuid_TestPmcDbgModeLock,
+        Help "This option is used to enable or disable debug mode lock. Set to disable to prevent locking. 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestPmcSlpsxStrPolLock, "Sleep Sx Strech Policy Lock", &gPlatformFspPkgTokenSpaceGuid_TestPmcSlpsxStrPolLock,
+        Help "This option is used to enable or disable Sleep Sx Strech Policy Lock. Set to disable to prevent locking. 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE."
+    Combo $gPlatformFspPkgTokenSpaceGuid_MsbddSupport, "Disable MSBDD support", &gPlatformFspPkgTokenSpaceGuid_MsbddSupport,
+        Help "Disable MSBDD support"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestPchIshFpakEnable, "Enable PCH FPAK Controller", &gPlatformFspPkgTokenSpaceGuid_TestPchIshFpakEnable,
+        Help "This option is used to enable or disable Fpak"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchSiliconRestrictedRsvd, "PchSiliconRestrictedRsvd", &EN_DIS,
+        Help "Reserved for PCH Post-Mem Restricted"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SiSvPolicyEnable, "Si Config SvPolicyEnable.", &EN_DIS,
+        Help "Platform specific common policies that used by several silicon components. SvPolicyEnable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TestPchPcieClockGating, "PCIE Disable RootPort Clock Gating", &EN_DIS,
+        Help "Describes whether the PCI Express Clock Gating for each root port is enabled by platform modules. 0: Disable; 1: Enable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuPcieSerl, "SERL", &EN_DIS,
+        Help "Set/Clear SERL(Secure Equalization Register Lock Bit).0: Disable; 1: Enable(Default)."
 EndPage
 
 Page "USB-C/Thunderbolt (Pre-Mem)"
@@ -6011,6 +7664,11 @@ Page "USB-C/Thunderbolt (Post-Mem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MappingPchXhciUsbA, "PCH xhci port x for Type C Port x mapping", HEX,
         Help "input PCH xhci port x for Type C Port 0 mapping."
              "Valid range: 0x0 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SaTestSrlLock, "Sa ITBT PCIe Test SRL Lock", &EN_DIS,
+        Help "Test SRL Lock"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_ITbtImrControl, "ITBT IMR Control", HEX,
+        Help "This UPD is for control the TBT IMR status. 0:Simulate IMR Corrupt case, 1:IMR Status from Silicon"
+             "Valid range: 0x00 ~ 0x01"
 EndPage
 
 Page "Security (Pre-Mem)"
@@ -6092,6 +7750,18 @@ Page "ME (Pre-Mem)"
         Help "Test, 0: disable, 1: enable, Enable or Disable KT device."
     Combo $gPlatformFspPkgTokenSpaceGuid_SkipCpuReplacementCheck, "Skip CPU replacement check", &EN_DIS,
         Help "Test, 0: disable, 1: enable, Setting this option to skip CPU replacement check"
+    Combo $gPlatformFspPkgTokenSpaceGuid_HeciCommunication, "HECI Communication", &EN_DIS,
+        Help "Test, 0: POR, 1: enable, 2: disable, Disables HECI communication causing ME to enter error state."
+    Combo $gPlatformFspPkgTokenSpaceGuid_HeciCommunication3, "HECI3 Interface Communication", &EN_DIS,
+        Help "Test, 0: POR, 1: enable, 2: disable, Adds or Removes HECI3 Device from PCI space."
+    Combo $gPlatformFspPkgTokenSpaceGuid_HostResetNotification, "Notification test for Host Reset", &EN_DIS,
+        Help "Test, 0: POR, 1: enable, 2: disable, Enable test for notification when Host Reset"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ManufRstAndHaltOnS3Resume, "Send Manufacturing Reset And Halt On S3 Resume", &EN_DIS,
+        Help "Test, 0: POR, 1: enable, 2: disable, Enable sending Manufacturing Reset and Halt on S3 Resume"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SendDidMsgRestricted, "ME DID Message", &EN_DIS,
+        Help "Test, 0: disable, 1: enable, Enable/Disable ME DID Message (disable will prevent the DID message from being sent)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_MePreMemRestrictedRsvd, "MePreMemRestrictedRsvd", &EN_DIS,
+        Help "Reserved for ME Pre-Mem Restricted"
 EndPage
 
 Page "ME (Post-Mem)"
@@ -6188,5 +7858,9 @@ Page "Debug"
     EditNum $gPlatformFspPkgTokenSpaceGuid_LpddrRttCa, "LPDDR ODT RttCa", HEX,
         Help "Initial RttCa for LP4/5 in Ohms. 0x0 - Auto"
              "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_XmlCliEnable, "XML CLI Enable", &EN_DIS,
+        Help "Enable: XML CLI is enabled, Disble(Default): XML CLI is disabled"
+    Combo $gPlatformFspPkgTokenSpaceGuid_LoadValidationFv, "LoadValidationFv", &EN_DIS,
+        Help "Enable: Enable loading of ValidationFV, Disable(Default)"
 EndPage
 
