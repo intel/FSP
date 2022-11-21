@@ -1165,11 +1165,18 @@ typedef struct {
 **/
   UINT8                       RealtimeMemoryFrequency;
 
-/** Offset 0x02B0 - SaPreMemProductionRsvd
+/** Offset 0x02B0 - OC Safe Mode
+  0: Disabled, 1(Default): Enabled. Ignored unless SpdProfileSelected is an XMP Profile.
+  If enabled, MRC will use less aggressive controls when training memory.
+  $EN_DIS
+**/
+  UINT8                       OCSafeMode;
+
+/** Offset 0x02B1 - SaPreMemProductionRsvd
   Reserved for SA Pre-Mem Production
   $EN_DIS
 **/
-  UINT8                       SaPreMemProductionRsvd[97];
+  UINT8                       SaPreMemProductionRsvd[96];
 
 /** Offset 0x0311 - Enable Gt CLOS
   0(Default)=Disable, 1=Enable

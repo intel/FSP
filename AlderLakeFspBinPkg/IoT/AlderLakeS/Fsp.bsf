@@ -264,7 +264,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_DynamicMemoryBoost              1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_HgSupport                       1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_RealtimeMemoryFrequency         1 bytes    $_DEFAULT_ = 0x0
-        $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd         97 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_OCSafeMode                      1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd         96 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_GtClosEnable                    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DmiMaxLinkSpeed                 1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DmiGen3EqPh2Enable              1 bytes    $_DEFAULT_ = 0x02
@@ -566,7 +567,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VDDQT                           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_RMTBIT                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EccDftEn                        1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_Write0                          1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_Write0                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Ddr4DdpSharedClock              1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Ddr4DdpSharedZq                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ChHashInterleaveBit             1 bytes    $_DEFAULT_ = 0x02
@@ -787,9 +788,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SataPortDevSlpPinMux           32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PortUsb20Enable                16 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PortUsb20SwDeviceModeEnable    16 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PortUsb31Speed                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PortUsb31Speed                  2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PortUsb30Enable                10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_XdciEnable                      1 bytes    $_DEFAULT_ = 0x00
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_DevIntConfigPtr                 4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_NumOfDevIntConfig               1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PxRcConfig                      8 bytes    $_DEFAULT_ = 0x0B, 0x0A, 0x0B, 0x0B, 0x0B, 0x0B, 0x0B, 0x0B
@@ -1237,7 +1239,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuRootportUsedForHybridStorage   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchRootportUsedForCpuAttach     1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchAcpiL6dPmeHandling           1 bytes    $_DEFAULT_ = 0x0
-        Skip 3 bytes
+        Skip 7 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes
@@ -2896,6 +2898,8 @@ Page "Memory Reference Code"
              "Valid range: 0x00 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_RealtimeMemoryFrequency, "Realtime Memory Frequency", &EN_DIS,
         Help "0(Default): Disabled, 1: Enabled. Ignored unless SpdProfileSelected is an XMP Profile. If enabled, MRC will train the Default SPD Profile, and also the selected XMP Profile, to allow manually triggered switching between frequencies at runtime."
+    Combo $gPlatformFspPkgTokenSpaceGuid_OCSafeMode, "OC Safe Mode", &EN_DIS,
+        Help "0: Disabled, 1(Default): Enabled. Ignored unless SpdProfileSelected is an XMP Profile. If enabled, MRC will use less aggressive controls when training memory."
     Combo $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd, "SaPreMemProductionRsvd", &EN_DIS,
         Help "Reserved for SA Pre-Mem Production"
     Combo $gPlatformFspPkgTokenSpaceGuid_GtClosEnable, "Enable Gt CLOS", &EN_DIS,
@@ -4838,7 +4842,7 @@ Page "PCH (Post-Mem)"
         Help "Enable/disable SW device mode per USB2 ports. One byte for each port, byte0 for port0, byte1 for port1, and so on."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PortUsb31Speed, "USB 3.1 Speed Selection", &EN_DIS,
-        Help "Choose USB 3.1 Speed Selection. 1: Gen1, 0: Gen2"
+        Help "Choose USB 3.1 Speed Selection per port. One bit for each port, bit1 for port1, and so on 1: Gen1, 0: Gen2"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PortUsb30Enable, "Enable USB3 ports", HEX,
         Help "Enable/disable per USB3 ports. One byte for each port, byte0 for port0, byte1 for port1, and so on."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
