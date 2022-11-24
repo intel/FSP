@@ -3678,11 +3678,20 @@ typedef struct {
 
 /** Offset 0x0965
 **/
-  UINT8                       UnusedUpdSpace30[2];
+  UINT8                       UnusedUpdSpace30;
 
-/** Offset 0x0967
+/** Offset 0x0966 -  LCT Command eyewidth
+   LCT Command eyewidth. 0: Auto, otherwise eyewidth , default is 96
 **/
-  UINT8                       ReservedFspmUpd2[1];
+  UINT16                      LctCmdEyeWidth;
+
+/** Offset 0x0968
+**/
+  UINT8                       UnusedUpdSpace31[1];
+
+/** Offset 0x0969
+**/
+  UINT8                       ReservedFspmUpd2[7];
 } FSP_M_CONFIG;
 
 /** Fsp M UPD Configuration
@@ -3701,11 +3710,11 @@ typedef struct {
 **/
   FSP_M_CONFIG                FspmConfig;
 
-/** Offset 0x0968
+/** Offset 0x0970
 **/
-  UINT8                       UnusedUpdSpace31[6];
+  UINT8                       UnusedUpdSpace32[6];
 
-/** Offset 0x096E
+/** Offset 0x0976
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;

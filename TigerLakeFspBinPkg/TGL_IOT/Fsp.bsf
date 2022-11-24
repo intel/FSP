@@ -691,6 +691,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VcRtMappingPegEn                1 bytes    $_DEFAULT_ = 0x00
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_RhRefreshSolution               1 bytes    $_DEFAULT_ = 0x02
+        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_LctCmdEyeWidth                  2 bytes    $_DEFAULT_ = 0x60
 
     Find "TGLUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x00
@@ -1310,7 +1312,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CstateLatencyControl4TimeUnit   1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_CstateLatencyControl5TimeUnit   1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_PpmIrmSetting                   1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_ProcHotLock                     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ProcHotLock                     1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DeprecatedConfigTdpLevel        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_MaxRatio                        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_StateRatio                     40 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
@@ -3303,6 +3305,9 @@ Page "Memory Reference Code"
         Help "Enable VCRt mapping to PEG."
     Combo $gPlatformFspPkgTokenSpaceGuid_RhRefreshSolution, "Row Hammer Refresh Solution", &gPlatformFspPkgTokenSpaceGuid_RhRefreshSolution,
         Help "Type of Refresh Rate used to prevent Row Hammer. Default is 2x Refresh"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_LctCmdEyeWidth, " LCT Command eyewidth", DEC,
+        Help " LCT Command eyewidth. 0: Auto, otherwise eyewidth , default is 96"
+             "Valid range: 0 ~ 256"
 EndPage
 
 Page "CPU (Pre-Mem)"
@@ -3754,7 +3759,7 @@ Page "CPU (Post-Mem)"
         Help "Interrupt Redirection Mode Select.0: Fixed priority; 1: Round robin;2: Hash vector;7: No change."
              "Valid range: 0x00 ~ 0x7"
     Combo $gPlatformFspPkgTokenSpaceGuid_ProcHotLock, "Lock prochot configuration", &EN_DIS,
-        Help "Lock prochot configuration Enable/Disable; <b>0: Disable</b>; 1: Enable"
+        Help "Lock prochot configuration Enable/Disable; 0: Disable; <b>1: Enable</b>"
     EditNum $gPlatformFspPkgTokenSpaceGuid_DeprecatedConfigTdpLevel, "Configuration for boot TDP selection", HEX,
         Help "Deprecated. Move to premem."
              "Valid range: 0x00 ~ 0xFF"

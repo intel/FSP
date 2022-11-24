@@ -3656,7 +3656,7 @@ typedef struct {
   UINT8                       PpmIrmSetting;
 
 /** Offset 0x0BA4 - Lock prochot configuration
-  Lock prochot configuration Enable/Disable; <b>0: Disable</b>; 1: Enable
+  Lock prochot configuration Enable/Disable; 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       ProcHotLock;
