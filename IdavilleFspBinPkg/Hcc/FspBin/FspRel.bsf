@@ -217,7 +217,17 @@ StructDef
         $gServerFspPkgTokenSpaceGuid_PcdTmeEnable                      1 bytes    $_DEFAULT_ = 0x00
         $gServerFspPkgTokenSpaceGuid_PcdMkTmeEnable                    1 bytes    $_DEFAULT_ = 0x00
         $gServerFspPkgTokenSpaceGuid_PcdIioPcieMultiVcEnable           1 bytes    $_DEFAULT_ = 0x00
-        Skip 28 bytes
+        Skip 16 bytes
+        $gServerFspPkgTokenSpaceGuid_PcdPrmrrSize                      8 bytes    $_DEFAULT_ = 0x00
+        $gServerFspPkgTokenSpaceGuid_PcdSgxEnable                      1 bytes    $_DEFAULT_ = 0x01
+        $gServerFspPkgTokenSpaceGuid_PcdSgxAutoRegistrationAgent       1 bytes    $_DEFAULT_ = 0x00
+        $gServerFspPkgTokenSpaceGuid_PcdSgxQoS                         1 bytes    $_DEFAULT_ = 0x00
+        $gServerFspPkgTokenSpaceGuid_PcdSgxDebugMode                   1 bytes    $_DEFAULT_ = 0x00
+        $gServerFspPkgTokenSpaceGuid_PcdSgxLeWr                        1 bytes    $_DEFAULT_ = 0x00
+        $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash0               8 bytes    $_DEFAULT_ = 0x0000000000000000
+        $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash1               8 bytes    $_DEFAULT_ = 0x0000000000000000
+        $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash2               8 bytes    $_DEFAULT_ = 0x0000000000000000
+        $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash3               8 bytes    $_DEFAULT_ = 0x0000000000000000
         $gServerFspPkgTokenSpaceGuid_PcdPcieRootPortEn                 2 bytes    $_DEFAULT_ = 0x0FFF
 
     Find "SOCUPD_S"
@@ -1688,6 +1698,31 @@ Page "Platform Specific"
         Help "Enable or Disable MKTME, Tme should be enabled before enabling MkTme. Cpu addressing is restricted to 46 bit by default. With MKTME normal adressing will be followed"
     Combo $gServerFspPkgTokenSpaceGuid_PcdIioPcieMultiVcEnable, "IIO PCIe Multi VC Enable", &EN_DIS,
         Help "Enable or Disable IIO PCIe Multi Virtual Channels"
+    EditNum $gServerFspPkgTokenSpaceGuid_PcdPrmrrSize, "Protect memory Range size", HEX,
+        Help "Size of the PRMRR region"
+             "Valid range: 0 ~ 0x4000000000"
+    Combo $gServerFspPkgTokenSpaceGuid_PcdSgxEnable, "SGX Enable", &EN_DIS,
+        Help "Enable or Disable Software Guard Extensions"
+    Combo $gServerFspPkgTokenSpaceGuid_PcdSgxAutoRegistrationAgent, "SGX Auto registration", &EN_DIS,
+        Help "Enable or Disable SGX auto registration"
+    Combo $gServerFspPkgTokenSpaceGuid_PcdSgxQoS, "SGX Quality of Service", &EN_DIS,
+        Help "Enable or Disable SGX QoS to use LLC cache for EPC"
+    Combo $gServerFspPkgTokenSpaceGuid_PcdSgxDebugMode, "SGX Debug mode", &EN_DIS,
+        Help "Enable or Disable SGX Debug mode"
+    Combo $gServerFspPkgTokenSpaceGuid_PcdSgxLeWr, "SGX Flexible Launch Control", &EN_DIS,
+        Help "Enable or Disable SGX Flexible Launch Control"
+    EditNum $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash0, "SGX Flexible Launch Control public key Hash 0", HEX,
+        Help "SGX flex launch control public key hash 0"
+             "Valid range: 0 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash1, "SGX Flexible Launch Control public key Hash 1", HEX,
+        Help "SGX flex launch control public key hash 1"
+             "Valid range: 0 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash2, "SGX Flexible Launch Control public key Hash 2", HEX,
+        Help "SGX flex launch control public key hash 2"
+             "Valid range: 0 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash3, "SGX Flexible Launch Control public key Hash 3", HEX,
+        Help "SGX flex launch control public key hash 3"
+             "Valid range: 0 ~ 0xFFFFFFFFFFFFFFFF"
     EditNum $gServerFspPkgTokenSpaceGuid_PcdPcieRootPortEn, "PCI Express Root Port", HEX,
         Help "Enable/Disable PcieRootPort from 1 to 12, each bit represent a port(bit0-bit11) and last nibble is unusedFor example, bit0 0 controls PcieRootPortPort 1, bit1 controls PcieRootPortPort 2..."
              "Valid range: 0 ~ 0x0FFF"
