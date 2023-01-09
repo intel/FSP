@@ -1477,34 +1477,69 @@ typedef struct {
 **/
   UINT32                      PcdMemSpdPtr;
 
-/** Offset 0x01E0
+/** Offset 0x01E0 - Protect memory Range size
+  Size of the PRMRR region
 **/
   UINT64                      PcdPrmrrSize;
 
-/** Offset 0x01E8
+/** Offset 0x01E8 - SGX Enable
+  Enable or Disable Software Guard Extensions
+  $EN_DIS
 **/
   UINT8                       PcdSgxEnable;
 
-/** Offset 0x01E9
+/** Offset 0x01E9 - SGX Auto registration
+  Enable or Disable SGX auto registration
+  $EN_DIS
 **/
   UINT8                       PcdSgxAutoRegistrationAgent;
 
-/** Offset 0x01EA
+/** Offset 0x01EA - SGX Quality of Service
+  Enable or Disable SGX QoS to use LLC cache for EPC
+  $EN_DIS
 **/
   UINT8                       PcdSgxQoS;
 
-/** Offset 0x01EB
+/** Offset 0x01EB - SGX Debug mode
+  Enable or Disable SGX Debug mode
+  $EN_DIS
 **/
   UINT8                       PcdSgxDebugMode;
 
-/** Offset 0x01EC - PCI Express Root Port
+/** Offset 0x01EC - SGX Flexible Launch Control
+  Enable or Disable SGX Flexible Launch Control
+  $EN_DIS
+**/
+  UINT8                       PcdSgxLeWr;
+
+/** Offset 0x01ED - SGX Flexible Launch Control public key Hash 0
+  SGX flex launch control public key hash 0
+**/
+  UINT64                      PcdSgxLePubKeyHash0;
+
+/** Offset 0x01F5 - SGX Flexible Launch Control public key Hash 1
+  SGX flex launch control public key hash 1
+**/
+  UINT64                      PcdSgxLePubKeyHash1;
+
+/** Offset 0x01FD - SGX Flexible Launch Control public key Hash 2
+  SGX flex launch control public key hash 2
+**/
+  UINT64                      PcdSgxLePubKeyHash2;
+
+/** Offset 0x0205 - SGX Flexible Launch Control public key Hash 3
+  SGX flex launch control public key hash 3
+**/
+  UINT64                      PcdSgxLePubKeyHash3;
+
+/** Offset 0x020D - PCI Express Root Port
   Enable/Disable PcieRootPort from 1 to 12, each bit represent a port(bit0-bit11)
   and last nibble is unusedFor example, bit0 0 controls PcieRootPortPort 1, bit1
   controls PcieRootPortPort 2...
 **/
   UINT16                      PcdPcieRootPortEn;
 
-/** Offset 0x01EE
+/** Offset 0x020F
 **/
   UINT8                       ReservedMemoryInitUpd[16];
 } FSP_M_CONFIG;
@@ -1525,11 +1560,11 @@ typedef struct {
 **/
   FSP_M_CONFIG                FspmConfig;
 
-/** Offset 0x01FE
+/** Offset 0x021F
 **/
   UINT8                       UnusedUpdSpace6[13];
 
-/** Offset 0x020B
+/** Offset 0x022C
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;
