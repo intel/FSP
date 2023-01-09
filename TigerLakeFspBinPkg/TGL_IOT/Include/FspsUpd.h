@@ -1266,15 +1266,17 @@ typedef struct {
 **/
   UINT8                       VmdMemBar2Attr;
 
-/** Offset 0x04D0 - Enable/Disable PMC-PD Solution
+/** Offset 0x04D0 - Enable VMD HotPlug
+  Enable/disable to VMD HotPlug.0: Disable(Default); 1: Enable
+  $EN_DIS
+**/
+  UINT8                       VmdHotPlug;
+
+/** Offset 0x04D1 - Enable/Disable PMC-PD Solution
   This policy will enable/disable PMC-PD Solution vs EC-TCPC Solution
   $EN_DIS
 **/
   UINT8                       PmcPdEnable;
-
-/** Offset 0x04D1
-**/
-  UINT8                       UnusedUpdSpace13;
 
 /** Offset 0x04D2 - TCSS Aux Orientation Override Enable
   Bits 0, 2, ... 10 control override enables, bits 1, 3, ... 11 control overrides
@@ -1361,7 +1363,7 @@ typedef struct {
 
 /** Offset 0x04F7
 **/
-  UINT8                       UnusedUpdSpace14[1];
+  UINT8                       UnusedUpdSpace13[1];
 
 /** Offset 0x04F8 - PCIE RP Snoop Latency Override Value
   Latency Tolerance Reporting, Snoop Latency Override Value.
@@ -1413,7 +1415,7 @@ typedef struct {
 
 /** Offset 0x0523
 **/
-  UINT8                       UnusedUpdSpace15[1];
+  UINT8                       UnusedUpdSpace14[1];
 
 /** Offset 0x0524 - Imon slope correction
   PCODE MMIO Mailbox: Imon slope correction. Specified in 1/100 increment values.
@@ -1572,7 +1574,7 @@ typedef struct {
 
 /** Offset 0x05B1
 **/
-  UINT8                       UnusedUpdSpace16[3];
+  UINT8                       UnusedUpdSpace15[3];
 
 /** Offset 0x05B4 - CpuBistData
   Pointer CPU BIST Data
@@ -1649,7 +1651,7 @@ typedef struct {
 
 /** Offset 0x05D4
 **/
-  UINT8                       UnusedUpdSpace17[4];
+  UINT8                       UnusedUpdSpace16[4];
 
 /** Offset 0x05D8 - Base of memory region allocated for Processor Trace
   Base address of memory region allocated for Processor Trace. Processor Trace requires
@@ -1903,7 +1905,7 @@ typedef struct {
 
 /** Offset 0x0765
 **/
-  UINT8                       UnusedUpdSpace18[3];
+  UINT8                       UnusedUpdSpace17[3];
 
 /** Offset 0x0768 - THC Port 0 Interrupt Pin Mux
   Set THC Port 0 Pin Muxing Value if signal can be enabled on multiple pads. Refer
@@ -1931,7 +1933,7 @@ typedef struct {
 
 /** Offset 0x076F
 **/
-  UINT8                       UnusedUpdSpace19;
+  UINT8                       UnusedUpdSpace18;
 
 /** Offset 0x0770 - THC Port 1 Interrupt Pin Mux
   Set THC Port 1 Pin Muxing Value if signal can be enabled on multiple pads. Refer
@@ -2265,7 +2267,7 @@ typedef struct {
 
 /** Offset 0x08A1
 **/
-  UINT8                       UnusedUpdSpace20[1];
+  UINT8                       UnusedUpdSpace19[1];
 
 /** Offset 0x08A2 - Enable SATA Port DmVal
   DEVSLP Idle Timeout (DITO), Default is 625.
@@ -2420,7 +2422,7 @@ typedef struct {
 
 /** Offset 0x08D9
 **/
-  UINT8                       UnusedUpdSpace21;
+  UINT8                       UnusedUpdSpace20;
 
 /** Offset 0x08DA - Thermal Throttling Custimized T0Level Value
   Custimized T0Level value.
@@ -2595,7 +2597,7 @@ typedef struct {
 
 /** Offset 0x08FF
 **/
-  UINT8                       UnusedUpdSpace22;
+  UINT8                       UnusedUpdSpace21;
 
 /** Offset 0x0900 - Thermal Device Temperature
   Decides the temperature.
@@ -2620,7 +2622,7 @@ typedef struct {
 
 /** Offset 0x091D
 **/
-  UINT8                       UnusedUpdSpace23[3];
+  UINT8                       UnusedUpdSpace22[3];
 
 /** Offset 0x0920 - xHCI High Idle Time LTR override
   Value used for overriding LTR recommendation for xHCI High Idle Time LTR setting
@@ -2694,7 +2696,7 @@ typedef struct {
 
 /** Offset 0x0934
 **/
-  UINT8                       UnusedUpdSpace24[4];
+  UINT8                       UnusedUpdSpace23[4];
 
 /** Offset 0x0938 - BgpdtHash[4]
   BgpdtHash values
@@ -2708,7 +2710,7 @@ typedef struct {
 
 /** Offset 0x095C
 **/
-  UINT8                       UnusedUpdSpace25[4];
+  UINT8                       UnusedUpdSpace24[4];
 
 /** Offset 0x0960 - BiosGuardModulePtr
   BiosGuardModulePtr default values
@@ -2734,7 +2736,7 @@ typedef struct {
 
 /** Offset 0x0972
 **/
-  UINT8                       UnusedUpdSpace26[6];
+  UINT8                       UnusedUpdSpace25[6];
 
 /** Offset 0x0978 - SgxEpoch0
   SgxEpoch0 default values
@@ -2767,7 +2769,7 @@ typedef struct {
 
 /** Offset 0x098B
 **/
-  UINT8                       UnusedUpdSpace27;
+  UINT8                       UnusedUpdSpace26;
 
 /** Offset 0x098C - Change Default SVID
   Change the default SVID used in FSP to programming internal devices. This is only
@@ -2976,7 +2978,7 @@ typedef struct {
 
 /** Offset 0x0A83
 **/
-  UINT8                       UnusedUpdSpace28;
+  UINT8                       UnusedUpdSpace27;
 
 /** Offset 0x0A84 - CPU PCIE device override table pointer
   The PCIe device table is being used to override PCIe device ASPM settings. This
@@ -3689,7 +3691,7 @@ typedef struct {
 
 /** Offset 0x0BDF
 **/
-  UINT8                       UnusedUpdSpace29;
+  UINT8                       UnusedUpdSpace28;
 
 /** Offset 0x0BE0 - Platform Power Pmax
   PCODE MMIO Mailbox: Platform Power Pmax. <b>0 - Auto</b> Specified in 1/8 Watt increments.
@@ -4095,7 +4097,7 @@ typedef struct {
 
 /** Offset 0x0DC9
 **/
-  UINT8                       UnusedUpdSpace30[1];
+  UINT8                       UnusedUpdSpace29[1];
 
 /** Offset 0x0DCA - PCIE RP Ltr Max Snoop Latency
   Latency Tolerance Reporting, Max Snoop Latency.
@@ -4171,7 +4173,7 @@ typedef struct {
 
 /** Offset 0x0E0F
 **/
-  UINT8                       UnusedUpdSpace31;
+  UINT8                       UnusedUpdSpace30;
 
 /** Offset 0x0E10 - LogoPixelHeight Address
   Address of LogoPixelHeight
@@ -4207,7 +4209,7 @@ typedef struct {
 
 /** Offset 0x0E79
 **/
-  UINT8                       UnusedUpdSpace32[3];
+  UINT8                       UnusedUpdSpace31[3];
 
 /** Offset 0x0E7C - VMD Variable
   VMD Variable Pointer.
@@ -4258,7 +4260,7 @@ typedef struct {
 
 /** Offset 0x0EA9
 **/
-  UINT8                       UnusedUpdSpace33[3];
+  UINT8                       UnusedUpdSpace32[3];
 
 /** Offset 0x0EAC - FspEventHandler
   <b>Optional</b> pointer to the boot loader's implementation of FSP_EVENT_HANDLER.
@@ -4368,7 +4370,7 @@ typedef struct {
 
 /** Offset 0x0ED8
 **/
-  UINT8                       UnusedUpdSpace34[6];
+  UINT8                       UnusedUpdSpace33[6];
 
 /** Offset 0x0EDE
 **/

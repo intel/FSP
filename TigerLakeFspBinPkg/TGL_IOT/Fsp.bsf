@@ -896,8 +896,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VmdMemBar1Attr                  1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdMemBarSize2                  1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdMemBar2Attr                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_VmdHotPlug                      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PmcPdEnable                     1 bytes    $_DEFAULT_ = 0x01
-        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_TcssAuxOri                      2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_TcssHslOri                      2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_UsbOverride                     1 bytes    $_DEFAULT_ = 0x00
@@ -5672,6 +5672,8 @@ Page "USB-C/Thunderbolt (Post-Mem)"
              "Valid range: 12 ~ 47"
     Combo $gPlatformFspPkgTokenSpaceGuid_VmdMemBar2Attr, "VMD Mem Bar2 Attributes", &gPlatformFspPkgTokenSpaceGuid_VmdMemBar2Attr,
         Help "0: VMD_32BIT_NONPREFETCH, 1: VMD_64BIT_NONPREFETCH(Default), 2: VMD_64BIT_PREFETCH"
+    Combo $gPlatformFspPkgTokenSpaceGuid_VmdHotPlug, "Enable VMD HotPlug", &EN_DIS,
+        Help "Enable/disable to VMD HotPlug.0: Disable(Default); 1: Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_PmcPdEnable, "Enable/Disable PMC-PD Solution ", &EN_DIS,
         Help "This policy will enable/disable PMC-PD Solution vs EC-TCPC Solution"
     EditNum $gPlatformFspPkgTokenSpaceGuid_TcssAuxOri, "TCSS Aux Orientation Override Enable", HEX,
