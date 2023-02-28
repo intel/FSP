@@ -11,6 +11,7 @@ Client/AlderLakeS | HX-Series & desktop processors for client platforms
 IoT/AlderLakeP | U-Series, P-Series, & H-Series processors for IoT platforms
 IoT/AlderLakePS | PS-Series processors for IoT platforms
 IoT/AlderLakeS | Desktop processors for IoT platforms
+IoT/AlderLakeN | N-Series processors for IoT platforms
 
 ## Differentiating Client and IoT
 
