@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -264,7 +264,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_DynamicMemoryBoost              1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_HgSupport                       1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_RealtimeMemoryFrequency         1 bytes    $_DEFAULT_ = 0x0
-        $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd         97 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_OCSafeMode                      1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd         96 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_GtClosEnable                    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DmiMaxLinkSpeed                 1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DmiGen3EqPh2Enable              1 bytes    $_DEFAULT_ = 0x02
@@ -567,7 +568,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VDDQT                           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_RMTBIT                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EccDftEn                        1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_Write0                          1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_Write0                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Ddr4DdpSharedClock              1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Ddr4DdpSharedZq                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ChHashInterleaveBit             1 bytes    $_DEFAULT_ = 0x02
@@ -867,9 +868,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_Usb3HsioTxDownscaleAmp         10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         Skip 80 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchLanEnable                    1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_PchTsnEnable                    1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PchTsnEnable                    2 bytes    $_DEFAULT_ = 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchTsnLinkSpeed                 1 bytes    $_DEFAULT_ = 0x03
-        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchTsnMacAddressHigh            4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PchTsnMacAddressLow             4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PchTsn1MacAddressHigh           4 bytes    $_DEFAULT_ = 0x00000000
@@ -963,8 +963,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_LidStatus                       1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IomStayInTCColdSeconds          1 bytes    $_DEFAULT_ = 0x32
         $gPlatformFspPkgTokenSpaceGuid_IomBeforeEnteringTCColdSeconds   1 bytes    $_DEFAULT_ = 0x0A
-        $gPlatformFspPkgTokenSpaceGuid_SaPostMemRsvd                   5 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaPostMemRsvd                   4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchXhciHsiiEnable               1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_SaXdciIrq                       1 bytes    $_DEFAULT_ = 0x23
         $gPlatformFspPkgTokenSpaceGuid_VmdEnable                       1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_VmdPort                        31 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdPortDev                     31 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
@@ -2908,6 +2909,8 @@ Page "Memory Reference Code"
              "Valid range: 0x00 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_RealtimeMemoryFrequency, "Realtime Memory Frequency", &EN_DIS,
         Help "0(Default): Disabled, 1: Enabled. Ignored unless SpdProfileSelected is an XMP Profile. If enabled, MRC will train the Default SPD Profile, and also the selected XMP Profile, to allow manually triggered switching between frequencies at runtime."
+    Combo $gPlatformFspPkgTokenSpaceGuid_OCSafeMode, "OC Safe Mode", &EN_DIS,
+        Help "0: Disabled, 1(Default): Enabled. Ignored unless SpdProfileSelected is an XMP Profile. If enabled, MRC will use less aggressive controls when training memory."
     Combo $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd, "SaPreMemProductionRsvd", &EN_DIS,
         Help "Reserved for SA Pre-Mem Production"
     Combo $gPlatformFspPkgTokenSpaceGuid_GtClosEnable, "Enable Gt CLOS", &EN_DIS,
@@ -4527,7 +4530,7 @@ Page "System Agent (Post-Mem)"
     Combo $gPlatformFspPkgTokenSpaceGuid_TccErrorLogEn, "TCC Error Log enable/disable", &EN_DIS,
         Help "@deprecated- only need to set fspm upd TccErrorLogEnPreMem"
     Combo $gPlatformFspPkgTokenSpaceGuid_TccMode, "TccMode enable/disable", &EN_DIS,
-        Help "Enable will activate TCC Mode and disable will deactivate TCC Mode .This is temporary to skip some of the TCC related register access in Non-RT SKU's"
+        Help "DEPRECATED.Enable will activate TCC Mode and disable will deactivate TCC Mode .This is temporary to skip some of the TCC related register access in Non-RT SKU's"
     Combo $gPlatformFspPkgTokenSpaceGuid_GtClosEnable, "Enable Gt CLOS", &EN_DIS,
         Help "0(Default)=Disable, 1=Enable"
     EditNum $gPlatformFspPkgTokenSpaceGuid_TurboRatioLimitRatio, "Turbo Ratio Limit Ratio array", HEX,
@@ -5050,8 +5053,9 @@ Page "PCH (Post-Mem)"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchLanEnable, "Enable LAN", &EN_DIS,
         Help "Enable/disable LAN controller."
-    Combo $gPlatformFspPkgTokenSpaceGuid_PchTsnEnable, "Enable PCH TSN", &EN_DIS,
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PchTsnEnable, "Enable PCH TSN", HEX,
         Help "Enable/disable TSN on the PCH."
+             "Valid range: 0x0 ~ 0xFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchTsnLinkSpeed, "TSN Link Speed", &gPlatformFspPkgTokenSpaceGuid_PchTsnLinkSpeed,
         Help "Set TSN Link Speed."
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchTsnMacAddressHigh, "PCH TSN0 MAC Address High Bits", HEX,
@@ -5922,6 +5926,9 @@ Page "USB-C/Thunderbolt (Post-Mem)"
              "Valid range: 0x00 ~ 0xFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_IomBeforeEnteringTCColdSeconds, "Set Iom before entering TC cold seconds in TCSS ", HEX,
         Help "Set Iom before entering TC cold seconds in IOM"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SaXdciIrq, "Set XDCI Interrupt", HEX,
+        Help "Set XDCI Interrupt from 24-119"
              "Valid range: 0x00 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_VmdEnable, "Enable VMD controller", &EN_DIS,
         Help "Enable/disable to VMD controller.0: Disable; 1: Enable(Default)"
