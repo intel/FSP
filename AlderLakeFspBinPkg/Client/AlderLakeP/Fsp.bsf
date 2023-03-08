@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -139,7 +139,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchTraceHubMemReg0Size          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchTraceHubMemReg1Size          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkDmicClockSelect   2 bytes    $_DEFAULT_ = 0x00, 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PchPreMemRsvd                   5 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_DisableDynamicTccoldHandshake   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchPreMemRsvd                   4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_X2ApicOptOut                    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DmaControlGuarantee             1 bytes    $_DEFAULT_ = 0x1
         Skip 3 bytes
@@ -264,7 +265,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_DynamicMemoryBoost              1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_HgSupport                       1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_RealtimeMemoryFrequency         1 bytes    $_DEFAULT_ = 0x0
-        $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd         97 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_OCSafeMode                      1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd         96 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_GtClosEnable                    1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DmiMaxLinkSpeed                 1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DmiGen3EqPh2Enable              1 bytes    $_DEFAULT_ = 0x02
@@ -566,7 +568,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VDDQT                           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_RMTBIT                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EccDftEn                        1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_Write0                          1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_Write0                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Ddr4DdpSharedClock              1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Ddr4DdpSharedZq                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ChHashInterleaveBit             1 bytes    $_DEFAULT_ = 0x02
@@ -1028,7 +1030,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VsysAssertionDeglitchExponent   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VsysDeassertionDeglitchMantissa   1 bytes    $_DEFAULT_ = 0x0D
         $gPlatformFspPkgTokenSpaceGuid_VsysDeassertionDeglitchExponent   1 bytes    $_DEFAULT_ = 0x02
-        $gPlatformFspPkgTokenSpaceGuid_VccInAuxImonSlope               1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_VccInAuxImonSlope               1 bytes    $_DEFAULT_ = 0x64
         $gPlatformFspPkgTokenSpaceGuid_VccInAuxImonOffset              2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_FivrSpectrumEnable              1 bytes    $_DEFAULT_ = 0x01
         Skip 1 bytes
@@ -2836,6 +2838,8 @@ Page "Memory Reference Code"
              "Valid range: 0x00 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_RealtimeMemoryFrequency, "Realtime Memory Frequency", &EN_DIS,
         Help "0(Default): Disabled, 1: Enabled. Ignored unless SpdProfileSelected is an XMP Profile. If enabled, MRC will train the Default SPD Profile, and also the selected XMP Profile, to allow manually triggered switching between frequencies at runtime."
+    Combo $gPlatformFspPkgTokenSpaceGuid_OCSafeMode, "OC Safe Mode", &EN_DIS,
+        Help "0: Disabled, 1(Default): Enabled. Ignored unless SpdProfileSelected is an XMP Profile. If enabled, MRC will use less aggressive controls when training memory."
     Combo $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd, "SaPreMemProductionRsvd", &EN_DIS,
         Help "Reserved for SA Pre-Mem Production"
     Combo $gPlatformFspPkgTokenSpaceGuid_GtClosEnable, "Enable Gt CLOS", &EN_DIS,
@@ -4507,6 +4511,8 @@ Page "PCH (Pre-Mem)"
         Help "Specify size of Pch trace memory region 1 buffer, the size can be 0, 1MB, 8MB, 64MB, 128MB, 256MB, 512MB"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkDmicClockSelect, "HD Audio DMIC Link Clock Select", &gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkDmicClockSelect,
         Help "Determines DMIC<N> Clock Source. 0: Both, 1: ClkA, 2: ClkB"
+    Combo $gPlatformFspPkgTokenSpaceGuid_DisableDynamicTccoldHandshake, "Disable Tccold Handshake", &EN_DIS,
+        Help "Disable Tccold Handshake. <b>0: Do Nothing;</b> 1: Disable"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchPreMemRsvd, "PchPreMemRsvd", &EN_DIS,
         Help "Reserved for PCH Pre-Mem Reserved"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchHdaEnable, "Enable Intel HD Audio (Azalia)", &EN_DIS,
