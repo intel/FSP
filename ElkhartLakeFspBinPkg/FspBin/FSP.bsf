@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -725,11 +725,12 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_TsnConfigSize                   4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PseGbeDllOverride               2 bytes    $_DEFAULT_ = 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PseGbeTxDelay                   2 bytes    $_DEFAULT_ = 0x10, 0x10
+        $gPlatformFspPkgTokenSpaceGuid_TsnPllConflictPrevention        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PciePtm                        24 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PcieDpc                        24 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_PcieEdpc                       24 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_UsbPdoProgramming               1 bytes    $_DEFAULT_ = 0x01
-        Skip 3 bytes
+        Skip 2 bytes
         $gPlatformFspPkgTokenSpaceGuid_PmcPowerButtonDebounce          4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchEspiBmeMasterSlaveEnabled    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_SataRstLegacyOrom               1 bytes    $_DEFAULT_ = 0x00
@@ -2736,8 +2737,8 @@ Page "Memory Reference Code"
         Help "Enable/disable Rank Margin Tool."
     Combo $gPlatformFspPkgTokenSpaceGuid_MarginLimitCheck, "Margin Limit Check", &gPlatformFspPkgTokenSpaceGuid_MarginLimitCheck,
         Help "Margin Limit Check. Choose level of margin check"
-    Combo $gPlatformFspPkgTokenSpaceGuid_MEMTST, "Memory Test", &EN_DIS,
-        Help "Enables/Disable Memory Test"
+    Combo $gPlatformFspPkgTokenSpaceGuid_MEMTST, "Memory Test (Obsolete)", &EN_DIS,
+        Help "This field is obsolete. Enables/Disable Memory Test"
     Combo $gPlatformFspPkgTokenSpaceGuid_ALIASCHK, "DIMM SPD Alias Test", &EN_DIS,
         Help "Enables/Disable DIMM SPD Alias Test"
     Combo $gPlatformFspPkgTokenSpaceGuid_RMC, "Retrain Margin Check", &EN_DIS,
@@ -5054,6 +5055,8 @@ Page "GBETSN"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PseGbeTxDelay, "PSE GBE TX_Delay", HEX,
         Help "PSE GBE TX_Delay configuration."
              "Valid range: 0x00 ~ 0x3F"
+    Combo $gPlatformFspPkgTokenSpaceGuid_TsnPllConflictPrevention, "PLL Lane Conflict Prevention", &EN_DIS,
+        Help "Enable/Disable SGMII PLL lane conflict prevention for TSN 2.5G auto negotiation"
 EndPage
 
 Page "PSE"

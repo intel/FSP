@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -1841,8 +1841,8 @@ typedef struct {
 **/
   UINT16                      MarginLimitL2;
 
-/** Offset 0x0534 - Memory Test
-  Enables/Disable Memory Test
+/** Offset 0x0534 - Memory Test (Obsolete)
+  This field is obsolete. Enables/Disable Memory Test
   $EN_DIS
 **/
   UINT8                       MEMTST;

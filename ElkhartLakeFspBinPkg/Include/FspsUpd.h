@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -940,31 +940,37 @@ typedef struct {
 **/
   UINT8                       PseGbeTxDelay[2];
 
-/** Offset 0x03E0 - PCIe PTM enable/disable
+/** Offset 0x03E0 - PLL Lane Conflict Prevention
+  Enable/Disable SGMII PLL lane conflict prevention for TSN 2.5G auto negotiation
+  $EN_DIS
+**/
+  UINT8                       TsnPllConflictPrevention;
+
+/** Offset 0x03E1 - PCIe PTM enable/disable
   Enable/disable Precision Time Measurement for PCIE Root Ports.
 **/
   UINT8                       PciePtm[24];
 
-/** Offset 0x03F8 - PCIe DPC enable/disable
+/** Offset 0x03F9 - PCIe DPC enable/disable
   Enable/disable Downstream Port Containment for PCIE Root Ports.
 **/
   UINT8                       PcieDpc[24];
 
-/** Offset 0x0410 - PCIe DPC extensions enable/disable
+/** Offset 0x0411 - PCIe DPC extensions enable/disable
   Enable/disable Downstream Port Containment Extensions for PCIE Root Ports.
 **/
   UINT8                       PcieEdpc[24];
 
-/** Offset 0x0428 - USB PDO Programming
+/** Offset 0x0429 - USB PDO Programming
   Enable/disable PDO programming for USB in PEI phase. Disabling will allow for programming
   during later phase. 1: enable, 0: disable
   $EN_DIS
 **/
   UINT8                       UsbPdoProgramming;
 
-/** Offset 0x0429
+/** Offset 0x042A
 **/
-  UINT8                       UnusedUpdSpace20[3];
+  UINT8                       UnusedUpdSpace20[2];
 
 /** Offset 0x042C - Power button debounce configuration
   Debounce time for PWRBTN in microseconds. For values not supported by HW, they will
