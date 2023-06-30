@@ -2,8 +2,8 @@
 #  Platform description for DynamicEx PCDs.
 #
 # @copyright
-#  INTEL CONFIDENTIAL
-#  Copyright 2018 - 2019 Intel Corporation.
+#  
+#  Copyright 2018 - 2023 Intel Corporation.
 #
 #  The source code contained or described herein and all documents related to the
 #  source code ("Material") are owned by Intel Corporation or its suppliers or

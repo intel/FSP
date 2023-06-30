@@ -3,7 +3,7 @@
   end-to-end check-the-checker test result hob.
 
 @copyright
-  INTEL CONFIDENTIAL Copyright 2020 Intel Corporation.
+ Copyright 2023 Intel Corporation.
 
   The source code contained or described herein and all documents related to the
   source code ("Material") are owned by Intel Corporation or its suppliers or
