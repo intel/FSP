@@ -89,10 +89,11 @@ typedef struct {
 
 /** Offset 0x0063
 **/
-  UINT8                       UnusedUpdSpace0;
+  UINT8                       Rsvd00;
 
 /** Offset 0x0064 - PcdSerialIoUartBaudRate - FSPT
   Set default BaudRate Supported from 0 - default to 6000000
+  0:Disabled, 1:Enabled, 2:Auto
 **/
   UINT32                      PcdSerialIoUartBaudRate;
 
@@ -205,7 +206,7 @@ typedef struct {
 
 /** Offset 0x0093
 **/
-  UINT8                       UnusedUpdSpace1;
+  UINT8                       Rsvd01;
 
 /** Offset 0x0094 - PcdSerialIo2ndUartBaudRate - FSPT
   Set default BaudRate Supported from 0 - default to 6000000
@@ -311,16 +312,22 @@ typedef struct {
 
 /** Offset 0x00C1
 **/
-  UINT8                       UnusedUpdSpace2[3];
+  UINT8                       Rsvd02[3];
 
 /** Offset 0x00C4 - Serial Io SPI Device MMIO Base
   Assigns MMIO for Serial Io SPI controller usage in early stage.
 **/
   UINT32                      PcdSerialIoSpiMmioBase;
 
-/** Offset 0x00C8
+/** Offset 0x00C8 - PcdSerialIoUartPowerGating - FSPT
+  Select SerialIo Uart Controller mode
+  0:Disabled, 1:Enabled, 2:Auto
 **/
-  UINT8                       ReservedFsptUpd1[16];
+  UINT8                       PcdSerialIoUartPowerGating;
+
+/** Offset 0x00C9
+**/
+  UINT8                       ReservedFsptUpd1[15];
 } FSP_T_CONFIG;
 
 /** Fsp T UPD Configuration
@@ -345,7 +352,7 @@ typedef struct {
 
 /** Offset 0x00D8
 **/
-  UINT8                       UnusedUpdSpace3[6];
+  UINT8                       Rsvd03[6];
 
 /** Offset 0x00DE
 **/
