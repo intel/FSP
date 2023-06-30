@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -668,19 +668,14 @@ typedef struct {
 
 /** Offset 0x03A9 - Enable PCH TSN
   Enable/disable TSN on the PCH.
-  $EN_DIS
 **/
-  UINT8                       PchTsnEnable;
+  UINT8                       PchTsnEnable[2];
 
-/** Offset 0x03AA - TSN Link Speed
+/** Offset 0x03AB - TSN Link Speed
   Set TSN Link Speed.
   0: Reserved, 1: Reserved, 2: 38.4Mhz 2.5Gbps, 3: 38.4Mhz 1Gbps
 **/
   UINT8                       PchTsnLinkSpeed;
-
-/** Offset 0x03AB
-**/
-  UINT8                       UnusedUpdSpace6;
 
 /** Offset 0x03AC - PCH TSN0 MAC Address High Bits
   Set TSN0 MAC Address High.
@@ -732,7 +727,7 @@ typedef struct {
 
 /** Offset 0x0412
 **/
-  UINT8                       UnusedUpdSpace7[2];
+  UINT8                       UnusedUpdSpace6[2];
 
 /** Offset 0x0414 - Power button debounce configuration
   Debounce time for PWRBTN in microseconds. For values not supported by HW, they will
@@ -785,7 +780,7 @@ typedef struct {
 
 /** Offset 0x0421
 **/
-  UINT8                       UnusedUpdSpace8;
+  UINT8                       UnusedUpdSpace7;
 
 /** Offset 0x0422 - External Vnn Voltage Value that will be used in S0ix/Sx states
   Value is given in 2.5mV increments (0=0mV, 1=2.5mV, 2=5mV...), Default is set to 420
@@ -847,7 +842,7 @@ typedef struct {
 
 /** Offset 0x042F
 **/
-  UINT8                       UnusedUpdSpace9;
+  UINT8                       UnusedUpdSpace8;
 
 /** Offset 0x0430 - Pointer of ChipsetInit Binary
   ChipsetInit Binary Pointer.
@@ -867,7 +862,7 @@ typedef struct {
 
 /** Offset 0x0439
 **/
-  UINT8                       UnusedUpdSpace10;
+  UINT8                       UnusedUpdSpace9;
 
 /** Offset 0x043A - External V1P05 Icc Max Value
   Granularity of this setting is 1mA and maximal possible value is 500mA
@@ -894,7 +889,7 @@ typedef struct {
 
 /** Offset 0x0441
 **/
-  UINT8                       UnusedUpdSpace11[3];
+  UINT8                       UnusedUpdSpace10[3];
 
 /** Offset 0x0444 - Extended BIOS Direct Read Decode Range base
   Bits of 31:16 of a memory address that'll be a base for Extended BIOS Direct Read Decode.
@@ -914,7 +909,7 @@ typedef struct {
 
 /** Offset 0x044D
 **/
-  UINT8                       UnusedUpdSpace12[3];
+  UINT8                       UnusedUpdSpace11[3];
 
 /** Offset 0x0450 - Pointer of SYNPS PHY Binary
   ChipsetInit Binary Pointer.
@@ -1055,7 +1050,7 @@ typedef struct {
 
 /** Offset 0x0479
 **/
-  UINT8                       UnusedUpdSpace13;
+  UINT8                       UnusedUpdSpace12;
 
 /** Offset 0x047A - OS Timer
   16 bits Value, Set OS watchdog timer. Setting is invalid if AmtEnabled is 0.
@@ -1091,7 +1086,7 @@ typedef struct {
 
 /** Offset 0x04D3
 **/
-  UINT8                       UnusedUpdSpace14[1];
+  UINT8                       UnusedUpdSpace13[1];
 
 /** Offset 0x04D4 - PCIE RP Detect Timeout Ms
   The number of milliseconds within 0~65535 in reference code will wait for link to
@@ -1214,13 +1209,18 @@ typedef struct {
   Reserved for PCH Post-Mem
   $EN_DIS
 **/
-  UINT8                       SaPostMemRsvd[5];
+  UINT8                       SaPostMemRsvd[4];
 
-/** Offset 0x054C - PCH xHCI enable HS Interrupt IN Alarm
+/** Offset 0x054B - PCH xHCI enable HS Interrupt IN Alarm
   PCH xHCI enable HS Interrupt IN Alarm. 0: disabled (default), 1: enabled
   $EN_DIS
 **/
   UINT8                       PchXhciHsiiEnable;
+
+/** Offset 0x054C - Set XDCI Interrupt
+  Set XDCI Interrupt from 24-119
+**/
+  UINT8                       SaXdciIrq;
 
 /** Offset 0x054D - Enable VMD controller
   Enable/disable to VMD controller.0: Disable; 1: Enable(Default)
@@ -1279,7 +1279,7 @@ typedef struct {
 
 /** Offset 0x05B1
 **/
-  UINT8                       UnusedUpdSpace15[3];
+  UINT8                       UnusedUpdSpace14[3];
 
 /** Offset 0x05B4 - VMD Variable
   VMD Variable Pointer.
@@ -1361,7 +1361,7 @@ typedef struct {
 
 /** Offset 0x05D5
 **/
-  UINT8                       UnusedUpdSpace16[1];
+  UINT8                       UnusedUpdSpace15[1];
 
 /** Offset 0x05D6 - ITBT DMA LTR
   TCSS DMA1, DMA2 LTR value
@@ -1397,7 +1397,7 @@ typedef struct {
 
 /** Offset 0x05EB
 **/
-  UINT8                       UnusedUpdSpace17[1];
+  UINT8                       UnusedUpdSpace16[1];
 
 /** Offset 0x05EC - PCIE RP Snoop Latency Override Value
   Latency Tolerance Reporting, Snoop Latency Override Value.
@@ -1449,7 +1449,7 @@ typedef struct {
 
 /** Offset 0x0617
 **/
-  UINT8                       UnusedUpdSpace18[1];
+  UINT8                       UnusedUpdSpace17[1];
 
 /** Offset 0x0618 - Imon slope correction
   PCODE MMIO Mailbox: Imon slope correction. Specified in 1/100 increment values.
@@ -1476,7 +1476,7 @@ typedef struct {
 
 /** Offset 0x0636
 **/
-  UINT8                       UnusedUpdSpace19[2];
+  UINT8                       UnusedUpdSpace18[2];
 
 /** Offset 0x0638 - Thermal Design Current time window
   PCODE MMIO Mailbox: Thermal Design Current time window. Defined in milli seconds.
@@ -1525,7 +1525,7 @@ typedef struct {
 
 /** Offset 0x065F
 **/
-  UINT8                       UnusedUpdSpace20[1];
+  UINT8                       UnusedUpdSpace19[1];
 
 /** Offset 0x0660 - Thermal Design Current current limit
   PCODE MMIO Mailbox: Thermal Design Current current limit. Specified in 1/8A units.
@@ -1594,7 +1594,7 @@ typedef struct {
 
 /** Offset 0x06AB
 **/
-  UINT8                       UnusedUpdSpace21;
+  UINT8                       UnusedUpdSpace20;
 
 /** Offset 0x06AC - CpuBistData
   Pointer CPU BIST Data
@@ -1631,7 +1631,7 @@ typedef struct {
 
 /** Offset 0x06B7
 **/
-  UINT8                       UnusedUpdSpace22[1];
+  UINT8                       UnusedUpdSpace21[1];
 
 /** Offset 0x06B8 - VR Voltage Limit
   PCODE MMIO Mailbox: Voltage Limit. Range is 0 - 7999mV
@@ -1698,7 +1698,7 @@ typedef struct {
 
 /** Offset 0x06CF
 **/
-  UINT8                       UnusedUpdSpace23[1];
+  UINT8                       UnusedUpdSpace22[1];
 
 /** Offset 0x06D0 - VR Fast Vmode ICC Limit support
   PCODE MMIO Mailbox: VR Fast Vmode ICC Limit support. 0-255A in 1/4 A units. 400 = 100A
@@ -1738,7 +1738,7 @@ typedef struct {
 
 /** Offset 0x06E1
 **/
-  UINT8                       UnusedUpdSpace24;
+  UINT8                       UnusedUpdSpace23;
 
 /** Offset 0x06E2 - Min Voltage for C8
   PCODE MMIO Mailbox: Minimum voltage for C8. Valid if EnableMinVoltageOverride =
@@ -1825,7 +1825,7 @@ typedef struct {
 
 /** Offset 0x0721
 **/
-  UINT8                       UnusedUpdSpace25[1];
+  UINT8                       UnusedUpdSpace24[1];
 
 /** Offset 0x0722 - PCH Protect Range Limit
   Left shifted address by 12 bits with address bits 11:0 are assumed to be FFFh for
@@ -2016,7 +2016,7 @@ typedef struct {
 
 /** Offset 0x08C2
 **/
-  UINT8                       UnusedUpdSpace26[2];
+  UINT8                       UnusedUpdSpace25[2];
 
 /** Offset 0x08C4 - Touch Host Controller Port 1 Interrupt Pin Mux
   Set THC Port 1 Pin Muxing Value if signal can be enabled on multiple pads. Refer
@@ -2120,7 +2120,7 @@ typedef struct {
 
 /** Offset 0x09CD
 **/
-  UINT8                       UnusedUpdSpace27[3];
+  UINT8                       UnusedUpdSpace26[3];
 
 /** Offset 0x09D0 - PCIe EQ phase 1 downstream transmitter port preset
   Allows to select the downstream port preset value that will be used during phase
@@ -2665,7 +2665,7 @@ typedef struct {
 
 /** Offset 0x0AA3
 **/
-  UINT8                       UnusedUpdSpace28;
+  UINT8                       UnusedUpdSpace27;
 
 /** Offset 0x0AA4 - Thermal Device Temperature
   Decides the temperature.
@@ -2695,7 +2695,7 @@ typedef struct {
 
 /** Offset 0x0AC3
 **/
-  UINT8                       UnusedUpdSpace29;
+  UINT8                       UnusedUpdSpace28;
 
 /** Offset 0x0AC4 - xHCI High Idle Time LTR override
   Value used for overriding LTR recommendation for xHCI High Idle Time LTR setting
@@ -2774,7 +2774,7 @@ typedef struct {
 
 /** Offset 0x0AD9
 **/
-  UINT8                       UnusedUpdSpace30[7];
+  UINT8                       UnusedUpdSpace29[7];
 
 /** Offset 0x0AE0 - BgpdtHash[4]
   BgpdtHash values
@@ -2788,7 +2788,7 @@ typedef struct {
 
 /** Offset 0x0B04
 **/
-  UINT8                       UnusedUpdSpace31[4];
+  UINT8                       UnusedUpdSpace30[4];
 
 /** Offset 0x0B08 - BiosGuardModulePtr
   BiosGuardModulePtr default values
@@ -2821,7 +2821,7 @@ typedef struct {
 
 /** Offset 0x0B1B
 **/
-  UINT8                       UnusedUpdSpace32;
+  UINT8                       UnusedUpdSpace31;
 
 /** Offset 0x0B1C - Change Default SVID
   Change the default SVID used in FSP to programming internal devices. This is only
@@ -2955,7 +2955,7 @@ typedef struct {
 
 /** Offset 0x0B46
 **/
-  UINT8                       UnusedUpdSpace33[2];
+  UINT8                       UnusedUpdSpace32[2];
 
 /** Offset 0x0B48 - PMC ADR source selection
   Specify which sources should cause ADR flow
@@ -3053,7 +3053,7 @@ typedef struct {
 
 /** Offset 0x0C11
 **/
-  UINT8                       UnusedUpdSpace34[3];
+  UINT8                       UnusedUpdSpace33[3];
 
 /** Offset 0x0C14 - CPU PCIE device override table pointer
   The PCIe device table is being used to override PCIe device ASPM settings. This
@@ -3324,7 +3324,7 @@ typedef struct {
 
 /** Offset 0x0CE1
 **/
-  UINT8                       UnusedUpdSpace35[3];
+  UINT8                       UnusedUpdSpace34[3];
 
 /** Offset 0x0CE4 - LogoPixelHeight Address
   Address of LogoPixelHeight
@@ -3756,7 +3756,7 @@ typedef struct {
 
 /** Offset 0x0D6D
 **/
-  UINT8                       UnusedUpdSpace36;
+  UINT8                       UnusedUpdSpace35;
 
 /** Offset 0x0D6E - Platform Power Pmax
   PCODE MMIO Mailbox: Platform Power Pmax. <b>0 - Auto</b> Specified in 1/8 Watt increments.
@@ -3796,7 +3796,7 @@ typedef struct {
 
 /** Offset 0x0D7A
 **/
-  UINT8                       UnusedUpdSpace37[2];
+  UINT8                       UnusedUpdSpace36[2];
 
 /** Offset 0x0D7C - Package Long duration turbo mode power limit
   Package Long duration turbo mode power limit. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.
@@ -4041,7 +4041,7 @@ typedef struct {
 
 /** Offset 0x0DEB
 **/
-  UINT8                       UnusedUpdSpace38[1];
+  UINT8                       UnusedUpdSpace37[1];
 
 /** Offset 0x0DEC - PCIE RP Ltr Max Snoop Latency
   Latency Tolerance Reporting, Max Snoop Latency.
@@ -4325,7 +4325,7 @@ typedef struct {
 
 /** Offset 0x102D
 **/
-  UINT8                       UnusedUpdSpace39[3];
+  UINT8                       UnusedUpdSpace38[3];
 
 /** Offset 0x1030 - FspEventHandler
   <b>Optional</b> pointer to the boot loader's implementation of FSP_EVENT_HANDLER.
@@ -4371,7 +4371,7 @@ typedef struct {
 
 /** Offset 0x103D
 **/
-  UINT8                       UnusedUpdSpace40[3];
+  UINT8                       UnusedUpdSpace39[3];
 
 /** Offset 0x1040 - HorizontalResolution for PEI Logo
   HorizontalResolution from PEIm Gfx for PEI Logo
@@ -4460,7 +4460,7 @@ typedef struct {
 
 /** Offset 0x10B1
 **/
-  UINT8                       UnusedUpdSpace41[5];
+  UINT8                       UnusedUpdSpace40[5];
 
 /** Offset 0x10B6
 **/
@@ -4485,7 +4485,7 @@ typedef struct {
 
 /** Offset 0x10B8
 **/
-  UINT8                       UnusedUpdSpace42[6];
+  UINT8                       UnusedUpdSpace41[6];
 
 /** Offset 0x10BE
 **/

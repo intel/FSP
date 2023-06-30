@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -407,11 +407,17 @@ typedef struct {
 **/
   UINT8                       PchHdaAudioLinkDmicClockSelect[2];
 
-/** Offset 0x019A - PchPreMemRsvd
+/** Offset 0x019A - Disable Tccold Handshake
+  Disable Tccold Handshake. <b>0: Do Nothing;</b> 1: Disable
+  $EN_DIS
+**/
+  UINT8                       DisableDynamicTccoldHandshake;
+
+/** Offset 0x019B - PchPreMemRsvd
   Reserved for PCH Pre-Mem Reserved
   $EN_DIS
 **/
-  UINT8                       PchPreMemRsvd[5];
+  UINT8                       PchPreMemRsvd[4];
 
 /** Offset 0x019F - State of X2APIC_OPT_OUT bit in the DMAR table
   0=Disable/Clear, 1=Enable/Set
