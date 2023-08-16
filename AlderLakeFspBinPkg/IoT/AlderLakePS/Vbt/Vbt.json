@@ -292,7 +292,7 @@
           "Block": {
             "Id": "1",
             "Name": "General Bit Definitions",
-            "SizeInBytes": "9",
+            "SizeInBytes": "13",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -405,6 +405,13 @@
               {
                 "Name": "SKIP",
                 "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "32",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2677,6 +2684,13 @@
                 "Value": ""
               },
               {
+                "Name": "SKIP",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "Int_EFP6_Type",
                 "SizeInBits": "16",
                 "ByteOffset": "",
@@ -2685,7 +2699,14 @@
               },
               {
                 "Name": "SKIP",
-                "SizeInBits": "296",
+                "SizeInBits": "280",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "16",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2699,7 +2720,7 @@
               },
               {
                 "Name": "SKIP",
-                "SizeInBits": "296",
+                "SizeInBits": "280",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -3947,7 +3968,7 @@
                 "Value": ""
               },
               {
-                "Name": "SKIP",
+                "Name": "DisplayShift_Enabled",
                 "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
@@ -8424,7 +8445,7 @@
           "Block": {
             "Id": "42",
             "Name": "Flat Panel Data Tables",
-            "SizeInBytes": "1367",
+            "SizeInBytes": "1369",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -9992,6 +10013,118 @@
               },
               {
                 "Name": "EnablePortSync_Bit_16",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_01",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_02",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_03",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_04",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_05",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_06",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_07",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_08",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_09",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_10",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_11",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_12",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_13",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_14",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_15",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "EnableDithering_Bit_16",
                 "SizeInBits": "1",
                 "ByteOffset": "",
                 "BitOffset": "",
@@ -11929,7 +12062,7 @@
           "Block": {
             "Id": "44",
             "Name": "BIA (Backlight Image Adaption) Support",
-            "SizeInBytes": "61",
+            "SizeInBytes": "81",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -13302,6 +13435,454 @@
               {
                 "Name": "VRR_Status_16",
                 "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_01",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_02",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_03",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_04",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_05",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_06",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_07",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_08",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_09",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_10",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_11",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_12",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_13",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_14",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_15",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Enable_16",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_01",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_02",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_03",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_04",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_05",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_06",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_07",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_08",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_09",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_10",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_11",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_12",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_13",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_14",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_15",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Enable_16",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_01",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_01",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_02",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_02",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_03",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_03",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_04",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_04",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_05",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_05",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_06",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_06",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_07",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_07",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_08",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_08",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_09",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_09",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_10",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_10",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_11",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_11",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_12",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_12",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_13",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_13",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_14",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_14",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_15",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_15",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "OPST_Aggressiveness_Profile_16",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "ELP_Aggressiveness_Profile_16",
+                "SizeInBits": "4",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -22904,7 +23485,7 @@
               },
               {
                 "WidgetType": "Label",
-                "WidgetName": "VBT Version: 244",
+                "WidgetName": "VBT Version: 250",
                 "Visibility": "",
                 "Data": [],
                 "HelpText": "",
@@ -23002,6 +23583,30 @@
                   },
                   {
                     "Key": "Disabled",
+                    "Value": "0"
+                  }
+                ]
+              },
+              {
+                "WidgetType": "ComboBox",
+                "WidgetName": "Display Shift Support: ",
+                "Visibility": "",
+                "Data": [
+                  "12",
+                  "DisplayShift_Enabled"
+                ],
+                "HelpText": "This feature allows Runtime eDP Display Shift between iGfx and dGfx.",
+                "WidgetValues": [
+                  {
+                    "Key": "Supported between Intel Integrated and Intel Discrete Adapter",
+                    "Value": "1"
+                  },
+                  {
+                    "Key": "Supported between Intel Adapter and non-Intel Adapter",
+                    "Value": "2"
+                  },
+                  {
+                    "Key": "Not Supported",
                     "Value": "0"
                   }
                 ]
@@ -26076,11 +26681,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -26096,11 +26701,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -28743,11 +29348,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -28763,11 +29368,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -31410,11 +32015,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -31430,11 +32035,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -34077,11 +34682,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -34097,11 +34702,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -36744,11 +37349,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -36764,11 +37369,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -39411,11 +40016,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -39431,11 +40036,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -42062,11 +42667,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -42082,11 +42687,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -44103,11 +44708,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -44123,11 +44728,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -46144,11 +46749,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -46164,11 +46769,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -48185,11 +48790,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -48205,11 +48810,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -50226,11 +50831,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -50246,11 +50851,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -52267,11 +52872,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -54308,11 +54913,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -56349,11 +56954,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -56369,11 +56974,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -58390,11 +58995,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -58410,11 +59015,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -60431,11 +61036,11 @@
                                   "HelpText": "When panel is in PSR mode and 'Full Link Enable' is set to Yes, Link is kept in standby state.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -60451,11 +61056,11 @@
                                   "HelpText": "When panel is exiting PSR mode and 'Require AUX to wake up' is set to Yes, the AUX channel handshake(link training is required) will be used.",
                                   "WidgetValues": [
                                     {
-                                      "Key": "Yes",
+                                      "Key": "No",
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "No",
+                                      "Key": "Yes",
                                       "Value": "1"
                                     }
                                   ]
@@ -62219,7 +62824,7 @@
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
                               },
-                              {
+							  {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
                               }
@@ -63028,7 +63633,7 @@
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
                               },
-                              {
+							  {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
                               }
@@ -63837,7 +64442,7 @@
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
                               },
-                              {
+							  {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
                               }
@@ -64646,7 +65251,7 @@
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
                               },
-                              {
+							  {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
                               }
@@ -65455,7 +66060,7 @@
                                 "Key": "HBR2 (5.4 Gbps)",
                                 "Value": "3"
                               },
-                              {
+							  {
                                 "Key": "HBR3 (8.1 Gbps)",
                                 "Value": "4"
                               }
