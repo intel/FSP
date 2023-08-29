@@ -1590,158 +1590,172 @@ typedef struct {
 **/
   UINT8                       SkipMpInit;
 
-/** Offset 0x06B0 - FIVR RFI Frequency
+/** Offset 0x06B0 - Enable or Disable CpuFeaturesInitS3Resume
+  Enable or Disable CpuFeaturesInitS3Resume; 0: Disable; <b>1: Enable</b>.
+  $EN_DIS
+**/
+  UINT8                       CpuFeaturesInitOnS3ResumeOverride;
+
+/** Offset 0x06B1
+**/
+  UINT8                       UnusedUpdSpace3;
+
+/** Offset 0x06B2 - FIVR RFI Frequency
   PCODE MMIO Mailbox: Set the desired RFI frequency, in increments of 100KHz. <b>0:
   Auto</b>. Range varies based on XTAL clock: 0-1918 (Up to 191.8HMz) for 24MHz clock;
   0-1535 (Up to 153.5MHz) for 19MHz clock.
 **/
   UINT16                      FivrRfiFrequency;
 
-/** Offset 0x06B2 - FIVR RFI Spread Spectrum
+/** Offset 0x06B4 - FIVR RFI Spread Spectrum
   Set the Spread Spectrum Range. <b>1.5%</b>; Range: 0.5%, 1%, 1.5%, 2%, 3%, 4%, 5%,
   6%. Each Range is translated to an encoded value for FIVR register. 0.5% = 0, 1%
   = 3, 1.5% = 8, 2% = 18, 3% = 28, 4% = 34, 5% = 39, 6% = 44.
 **/
   UINT8                       FivrSpreadSpectrum;
 
-/** Offset 0x06B3
+/** Offset 0x06B5
 **/
-  UINT8                       Rsvd20;
+  UINT8                       UnusedUpdSpace4[3];
 
-/** Offset 0x06B4 - CpuBistData
+/** Offset 0x06B8
+**/
+  UINT32                      Rsvd20;
+
+/** Offset 0x06BC - CpuBistData
   Pointer CPU BIST Data
 **/
   UINT32                      CpuBistData;
 
-/** Offset 0x06B8 - CpuMpPpi
+/** Offset 0x06C0 - CpuMpPpi
   <b>Optional</b> pointer to the boot loader's implementation of EFI_PEI_MP_SERVICES_PPI.
   If not NULL, FSP will use the boot loader's implementation of multiprocessing.
   See section 5.1.4 of the FSP Integration Guide for more details.
 **/
   UINT32                      CpuMpPpi;
 
-/** Offset 0x06BC - Pre Wake Randomization time
+/** Offset 0x06C4 - Pre Wake Randomization time
   PCODE MMIO Mailbox: Acoustic Noise Mitigation Range.Defines the maximum pre-wake
   randomization time in micro ticks.This can be programmed only if AcousticNoiseMitigation
   is enabled. Range 0-255 <b>0</b>.
 **/
   UINT8                       PreWake;
 
-/** Offset 0x06BD - Ramp Up Randomization time
+/** Offset 0x06C5 - Ramp Up Randomization time
   PCODE MMIO Mailbox: Acoustic Noise Mitigation Range.Defines the maximum Ramp Up
   randomization time in micro ticks.This can be programmed only if AcousticNoiseMitigation
   is enabled.Range 0-255 <b>0</b>.
 **/
   UINT8                       RampUp;
 
-/** Offset 0x06BE - Ramp Down Randomization time
+/** Offset 0x06C6 - Ramp Down Randomization time
   PCODE MMIO Mailbox: Acoustic Noise Mitigation Range.Defines the maximum Ramp Down
   randomization time in micro ticks.This can be programmed only if AcousticNoiseMitigation
   is enabled.Range 0-255 <b>0</b>.
 **/
   UINT8                       RampDown;
 
-/** Offset 0x06BF
+/** Offset 0x06C7
 **/
   UINT8                       Rsvd21[1];
 
-/** Offset 0x06C0 - VR Voltage Limit
+/** Offset 0x06C8 - VR Voltage Limit
   PCODE MMIO Mailbox: Voltage Limit. Range is 0 - 7999mV
 **/
   UINT16                      VrVoltageLimit[5];
 
-/** Offset 0x06CA - VccIn Aux Imon IccMax
+/** Offset 0x06D2 - VccIn Aux Imon IccMax
   PCODE MMIO Mailbox: VccIn Aux Imon IccMax. <b>0 - Auto</b> Values are in 1/4 Amp
   increments. Range is 0-512.
 **/
   UINT16                      VccInAuxImonIccImax;
 
-/** Offset 0x06CC - Vsys Critical
+/** Offset 0x06D4 - Vsys Critical
   PCODE MMIO Mailbox: Vsys Critical. <b>0: Disable</b>; 1: Enable Range is 0-255.
 **/
   UINT8                       EnableVsysCritical;
 
-/** Offset 0x06CD - Vsys Full Scale
+/** Offset 0x06D5 - Vsys Full Scale
   DEPRECATED
 **/
   UINT8                       VsysFullScale;
 
-/** Offset 0x06CE - Vsys Critical Threshold
+/** Offset 0x06D6 - Vsys Critical Threshold
   DEPRECATED
 **/
   UINT8                       VsysCriticalThreshold;
 
-/** Offset 0x06CF - Assertion Deglitch Mantissa
+/** Offset 0x06D7 - Assertion Deglitch Mantissa
   Assertion Deglitch Mantissa, Range is 0-255
 **/
   UINT8                       VsysAssertionDeglitchMantissa;
 
-/** Offset 0x06D0 - Assertion Deglitch Exponent
+/** Offset 0x06D8 - Assertion Deglitch Exponent
   Assertion Deglitch Exponent, Range is 0-255
 **/
   UINT8                       VsysAssertionDeglitchExponent;
 
-/** Offset 0x06D1 - De assertion Deglitch Mantissa
+/** Offset 0x06D9 - De assertion Deglitch Mantissa
   De assertion Deglitch Mantissa, Range is 0-255
 **/
   UINT8                       VsysDeassertionDeglitchMantissa;
 
-/** Offset 0x06D2 - De assertion Deglitch Exponent
+/** Offset 0x06DA - De assertion Deglitch Exponent
   De assertion Deglitch Exponent, Range is 0-255
 **/
   UINT8                       VsysDeassertionDeglitchExponent;
 
-/** Offset 0x06D3 - VccIn Aux Imon slope correction
+/** Offset 0x06DB - VccIn Aux Imon slope correction
   PCODE MMIO Mailbox: VccIn Aux Imon slope correction. <b>0 - Auto</b> Specified in
   1/100 increment values. Range is 0-200. 125 = 1.25
 **/
   UINT8                       VccInAuxImonSlope;
 
-/** Offset 0x06D4 - VccIn Aux Imon offset correction
+/** Offset 0x06DC - VccIn Aux Imon offset correction
   PCODE MMIO Mailbox: VccIn Aux Imon offset correction. <b>0 - Auto</b> Units 1/1000,
   Range 0-63999. For an offset of 25.348, enter 25348.
 **/
   UINT16                      VccInAuxImonOffset;
 
-/** Offset 0x06D6 - FIVR RFI Spread Spectrum Enable or disable
+/** Offset 0x06DE - FIVR RFI Spread Spectrum Enable or disable
   Enable or Disable FIVR RFI Spread Spectrum. 0: Disable ; <b> 1: Enable </b>
 **/
   UINT8                       FivrSpectrumEnable;
 
-/** Offset 0x06D7
+/** Offset 0x06DF
 **/
   UINT8                       Rsvd22[1];
 
-/** Offset 0x06D8 - VR Fast Vmode ICC Limit support
+/** Offset 0x06E0 - VR Fast Vmode ICC Limit support
   PCODE MMIO Mailbox: The non-zero value will only be effective by setting the corresponding
   EnableFastVmode to 1. 0-510A in 1/4 A units. 400 = 100A
 **/
   UINT16                      IccLimit[5];
 
-/** Offset 0x06E2
+/** Offset 0x06EA
 **/
   UINT8                       CpuPostMemRsvd[2];
 
-/** Offset 0x06E4 - PpinSupport to view Protected Processor Inventory Number
+/** Offset 0x06EC - PpinSupport to view Protected Processor Inventory Number
   Enable or Disable or Auto (Based on End of Manufacturing flag. Disabled if this
   flag is set) for PPIN Support
   0: Disable, 1: Enable, 2: Auto
 **/
   UINT8                       PpinSupport;
 
-/** Offset 0x06E5 - Enable or Disable Minimum Voltage Override
+/** Offset 0x06ED - Enable or Disable Minimum Voltage Override
   Enable or disable Minimum Voltage overrides ; <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       EnableMinVoltageOverride;
 
-/** Offset 0x06E6 - Min Voltage for Runtime
+/** Offset 0x06EE - Min Voltage for Runtime
   PCODE MMIO Mailbox: Minimum voltage for runtime. Valid if EnableMinVoltageOverride
   = 1. Range 0 to 1999mV. <b> 0: 0mV </b>
 **/
   UINT16                      MinVoltageRuntime;
 
-/** Offset 0x06E8 - Memory size per thread allocated for Processor Trace
+/** Offset 0x06F0 - Memory size per thread allocated for Processor Trace
   Memory size per thread for Processor Trace. Processor Trace requires 2^N alignment
   and size in bytes per thread, from 4KB to 128MB.\n
   <b> 0xff:none </b>, 0:4k, 0x1:8k, 0x2:16k, 0x3:32k, 0x4:64k, 0x5:128k, 0x6:256k,
@@ -1749,780 +1763,787 @@ typedef struct {
 **/
   UINT8                       ProcessorTraceMemSize;
 
-/** Offset 0x06E9
+/** Offset 0x06F1
 **/
   UINT8                       Rsvd23;
 
-/** Offset 0x06EA - Min Voltage for C8
+/** Offset 0x06F2 - Min Voltage for C8
   PCODE MMIO Mailbox: Minimum voltage for C8. Valid if EnableMinVoltageOverride =
   1. Range 0 to 1999mV. <b> 0: 0mV </b>
 **/
   UINT16                      MinVoltageC8;
 
-/** Offset 0x06EC - Smbios Type4 Max Speed Override
+/** Offset 0x06F4 - Smbios Type4 Max Speed Override
   Provide the option for platform to override the MaxSpeed field of Smbios Type 4.
   If this value is not zero, it dominates the field.
 **/
   UINT16                      SmbiosType4MaxSpeedOverride;
 
-/** Offset 0x06EE - Current root mean square
+/** Offset 0x06F6 - Current root mean square
   PCODE MMIO Mailbox: Current root mean square; <b>0: Disable</b>; 1: Enable.For all
   VR Indexes
 **/
   UINT8                       Irms[5];
 
-/** Offset 0x06F3 - AvxDisable
+/** Offset 0x06FB - AvxDisable
   Enable or Disable AVX Support. This only applicable when all small core is disabled.
   0: Enable, 1: Disable
 **/
   UINT8                       AvxDisable;
 
-/** Offset 0x06F4 - Avx3Disable
+/** Offset 0x06FC - Avx3Disable
   DEPRECATED
   0: Enable, 1: Disable
 **/
   UINT8                       Avx3Disable;
 
-/** Offset 0x06F5 - X2ApicSupport
+/** Offset 0x06FD - X2ApicSupport
   Enable or Disable X2APIC Support
   $EN_DIS
 **/
   UINT8                       X2ApicSupport;
 
-/** Offset 0x06F6 - CPU VR Power Delivery Design
+/** Offset 0x06FE - CPU VR Power Delivery Design
   Used to communicate the power delivery design capability of the board. This value
   is an enum of the available power delivery segments that are defined in the Platform
   Design Guide.
 **/
   UINT8                       VrPowerDeliveryDesign;
 
-/** Offset 0x06F7 - AC Split Lock
+/** Offset 0x06FF - AC Split Lock
   Enable/Disable #AC check on split lock. <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       AcSplitLock;
 
-/** Offset 0x06F8
+/** Offset 0x0700
 **/
   UINT8                       EmbReserved0FspsUpd[3];
 
-/** Offset 0x06FB - Enable/Disable VR FastVmode. The VR will initiate reactive protection if Fast Vmode is enabled.
+/** Offset 0x0703 - Enable/Disable VR FastVmode. The VR will initiate reactive protection if Fast Vmode is enabled.
   Enable/Disable VR FastVmode; The value will only be effective by enabling the corresponding
   CEP.<b>0: Disable</b>; 1: Enable.For all VR by domain
   0: Disable, 1: Enable
 **/
   UINT8                       EnableFastVmode[5];
 
-/** Offset 0x0700 - Vsys Full Scale
+/** Offset 0x0708 - Vsys Full Scale
   Vsys Full Scale, Range is 0-255000mV
 **/
   UINT32                      VsysFullScale1;
 
-/** Offset 0x0704 - Vsys Critical Threshold
+/** Offset 0x070C - Vsys Critical Threshold
   Vsys Critical Threshold, Range is 0-255000mV
 **/
   UINT32                      VsysCriticalThreshold1;
 
-/** Offset 0x0708 - Psys Full Scale
+/** Offset 0x0710 - Psys Full Scale
   Vsys Full Scale, Range is 0-255000mV
 **/
   UINT32                      PsysFullScale;
 
-/** Offset 0x070C - Psys Critical Threshold
+/** Offset 0x0714 - Psys Critical Threshold
   Vsys Critical Threshold, Range is 0-255000mV
 **/
   UINT32                      PsysCriticalThreshold;
 
-/** Offset 0x0710 - ReservedCpuPostMemProduction
+/** Offset 0x0718 - ReservedCpuPostMemProduction
   Reserved for CPU Post-Mem Production
   $EN_DIS
 **/
   UINT8                       ReservedCpuPostMemProduction[11];
 
-/** Offset 0x071B - GP Fault UC Lock
+/** Offset 0x0723 - GP Fault UC Lock
   Enable/Disable GP Fault check on US lock. <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       GpfaultUcLock;
 
-/** Offset 0x071C
+/** Offset 0x0724
 **/
   UINT8                       EmbReserved1FspsUpd[3];
 
-/** Offset 0x071F - Enable Power Optimizer
+/** Offset 0x0727 - Enable Power Optimizer
   Enable DMI Power Optimizer on PCH side.
   $EN_DIS
 **/
   UINT8                       PchPwrOptEnable;
 
-/** Offset 0x0720 - PCH Flash Protection Ranges Write Enble
+/** Offset 0x0728 - PCH Flash Protection Ranges Write Enble
   Write or erase is blocked by hardware.
 **/
   UINT8                       PchWriteProtectionEnable[5];
 
-/** Offset 0x0725 - PCH Flash Protection Ranges Read Enble
+/** Offset 0x072D - PCH Flash Protection Ranges Read Enble
   Read is blocked by hardware.
 **/
   UINT8                       PchReadProtectionEnable[5];
 
-/** Offset 0x072A - PCH Protect Range Limit
+/** Offset 0x0732 - PCH Protect Range Limit
   Left shifted address by 12 bits with address bits 11:0 are assumed to be FFFh for
   limit comparison.
 **/
   UINT16                      PchProtectedRangeLimit[5];
 
-/** Offset 0x0734 - PCH Protect Range Base
+/** Offset 0x073C - PCH Protect Range Base
   Left shifted address by 12 bits with address bits 11:0 are assumed to be 0.
 **/
   UINT16                      PchProtectedRangeBase[5];
 
-/** Offset 0x073E - Enable Pme
+/** Offset 0x0746 - Enable Pme
   Enable Azalia wake-on-ring.
   $EN_DIS
 **/
   UINT8                       PchHdaPme;
 
-/** Offset 0x073F - HD Audio Link Frequency
+/** Offset 0x0747 - HD Audio Link Frequency
   HDA Link Freq (PCH_HDAUDIO_LINK_FREQUENCY enum): 0: 6MHz, 1: 12MHz, 2: 24MHz.
   0: 6MHz, 1: 12MHz, 2: 24MHz
 **/
   UINT8                       PchHdaLinkFrequency;
 
-/** Offset 0x0740 - Enable PCH ISH SPI Cs0 pins assigned
+/** Offset 0x0748 - Enable PCH ISH SPI Cs0 pins assigned
   Set if ISH SPI Cs0 pins are to be enabled by BIOS. 0: Disable; 1: Enable.
 **/
   UINT8                       PchIshSpiCs0Enable[1];
 
-/** Offset 0x0741 - Enable PCH Io Apic Entry 24-119
+/** Offset 0x0749 - Enable PCH Io Apic Entry 24-119
   0: Disable; 1: Enable.
   $EN_DIS
 **/
   UINT8                       PchIoApicEntry24_119;
 
-/** Offset 0x0742 - PCH Io Apic ID
+/** Offset 0x074A - PCH Io Apic ID
   This member determines IOAPIC ID. Default is 0x02.
 **/
   UINT8                       PchIoApicId;
 
-/** Offset 0x0743 - Enable PCH ISH SPI pins assigned
+/** Offset 0x074B - Enable PCH ISH SPI pins assigned
   Set if ISH SPI native pins are to be enabled by BIOS. 0: Disable; 1: Enable.
 **/
   UINT8                       PchIshSpiEnable[1];
 
-/** Offset 0x0744 - Enable PCH ISH UART pins assigned
+/** Offset 0x074C - Enable PCH ISH UART pins assigned
   Set if ISH UART native pins are to be enabled by BIOS. 0: Disable; 1: Enable.
 **/
   UINT8                       PchIshUartEnable[2];
 
-/** Offset 0x0746 - Enable PCH ISH I2C pins assigned
+/** Offset 0x074E - Enable PCH ISH I2C pins assigned
   Set if ISH I2C native pins are to be enabled by BIOS. 0: Disable; 1: Enable.
 **/
   UINT8                       PchIshI2cEnable[3];
 
-/** Offset 0x0749 - Enable PCH ISH GP pins assigned
+/** Offset 0x0751 - Enable PCH ISH GP pins assigned
   Set if ISH GP native pins are to be enabled by BIOS. 0: Disable; 1: Enable.
 **/
   UINT8                       PchIshGpEnable[8];
 
-/** Offset 0x0751 - PCH ISH PDT Unlock Msg
+/** Offset 0x0759 - PCH ISH PDT Unlock Msg
   0: False; 1: True.
   $EN_DIS
 **/
   UINT8                       PchIshPdtUnlock;
 
-/** Offset 0x0752 - Enable PCH Lan LTR capabilty of PCH internal LAN
+/** Offset 0x075A - Enable PCH Lan LTR capabilty of PCH internal LAN
   0: Disable; 1: Enable.
   $EN_DIS
 **/
   UINT8                       PchLanLtrEnable;
 
-/** Offset 0x0753 - Enable LOCKDOWN BIOS LOCK
+/** Offset 0x075B - Enable LOCKDOWN BIOS LOCK
   Enable the BIOS Lock feature and set EISS bit (D31:F5:RegDCh[5]) for the BIOS region
   protection.
   $EN_DIS
 **/
   UINT8                       PchLockDownBiosLock;
 
-/** Offset 0x0754 - PCH Compatibility Revision ID
+/** Offset 0x075C - PCH Compatibility Revision ID
   This member describes whether or not the CRID feature of PCH should be enabled.
   $EN_DIS
 **/
   UINT8                       PchCrid;
 
-/** Offset 0x0755 - RTC BIOS Interface Lock
+/** Offset 0x075D - RTC BIOS Interface Lock
   Enable RTC BIOS interface lock. When set, prevents RTC TS (BUC.TS) from being changed.
   $EN_DIS
 **/
   UINT8                       RtcBiosInterfaceLock;
 
-/** Offset 0x0756 - RTC Cmos Memory Lock
+/** Offset 0x075E - RTC Cmos Memory Lock
   Enable RTC lower and upper 128 byte Lock bits to lock Bytes 38h-3Fh in the upper
   and and lower 128-byte bank of RTC RAM.
   $EN_DIS
 **/
   UINT8                       RtcMemoryLock;
 
-/** Offset 0x0757 - Enable PCIE RP HotPlug
+/** Offset 0x075F - Enable PCIE RP HotPlug
   Indicate whether the root port is hot plug available.
 **/
   UINT8                       PcieRpHotPlug[28];
 
-/** Offset 0x0773 - Enable PCIE RP Pm Sci
+/** Offset 0x077B - Enable PCIE RP Pm Sci
   Indicate whether the root port power manager SCI is enabled.
 **/
   UINT8                       PcieRpPmSci[28];
 
-/** Offset 0x078F - Enable PCIE RP Transmitter Half Swing
+/** Offset 0x0797 - Enable PCIE RP Transmitter Half Swing
   Indicate whether the Transmitter Half Swing is enabled.
 **/
   UINT8                       PcieRpTransmitterHalfSwing[28];
 
-/** Offset 0x07AB - Enable PCIE RP Clk Req Detect
+/** Offset 0x07B3 - Enable PCIE RP Clk Req Detect
   Probe CLKREQ# signal before enabling CLKREQ# based power management.
 **/
   UINT8                       PcieRpClkReqDetect[28];
 
-/** Offset 0x07C7 - PCIE RP Advanced Error Report
+/** Offset 0x07CF - PCIE RP Advanced Error Report
   Indicate whether the Advanced Error Reporting is enabled.
 **/
   UINT8                       PcieRpAdvancedErrorReporting[28];
 
-/** Offset 0x07E3 - PCIE RP Unsupported Request Report
+/** Offset 0x07EB - PCIE RP Unsupported Request Report
   Indicate whether the Unsupported Request Report is enabled.
 **/
   UINT8                       PcieRpUnsupportedRequestReport[28];
 
-/** Offset 0x07FF - PCIE RP Fatal Error Report
+/** Offset 0x0807 - PCIE RP Fatal Error Report
   Indicate whether the Fatal Error Report is enabled.
 **/
   UINT8                       PcieRpFatalErrorReport[28];
 
-/** Offset 0x081B - PCIE RP No Fatal Error Report
+/** Offset 0x0823 - PCIE RP No Fatal Error Report
   Indicate whether the No Fatal Error Report is enabled.
 **/
   UINT8                       PcieRpNoFatalErrorReport[28];
 
-/** Offset 0x0837 - PCIE RP Correctable Error Report
+/** Offset 0x083F - PCIE RP Correctable Error Report
   Indicate whether the Correctable Error Report is enabled.
 **/
   UINT8                       PcieRpCorrectableErrorReport[28];
 
-/** Offset 0x0853 - PCIE RP System Error On Fatal Error
+/** Offset 0x085B - PCIE RP System Error On Fatal Error
   Indicate whether the System Error on Fatal Error is enabled.
 **/
   UINT8                       PcieRpSystemErrorOnFatalError[28];
 
-/** Offset 0x086F - PCIE RP System Error On Non Fatal Error
+/** Offset 0x0877 - PCIE RP System Error On Non Fatal Error
   Indicate whether the System Error on Non Fatal Error is enabled.
 **/
   UINT8                       PcieRpSystemErrorOnNonFatalError[28];
 
-/** Offset 0x088B - PCIE RP System Error On Correctable Error
+/** Offset 0x0893 - PCIE RP System Error On Correctable Error
   Indicate whether the System Error on Correctable Error is enabled.
 **/
   UINT8                       PcieRpSystemErrorOnCorrectableError[28];
 
-/** Offset 0x08A7 - PCIE RP Max Payload
+/** Offset 0x08AF - PCIE RP Max Payload
   Max Payload Size supported, Default 128B, see enum PCH_PCIE_MAX_PAYLOAD.
 **/
   UINT8                       PcieRpMaxPayload[28];
 
-/** Offset 0x08C3 - Touch Host Controller Port 0 Assignment
+/** Offset 0x08CB - Touch Host Controller Port 0 Assignment
   Assign THC Port 0
   0x0:ThcAssignmentNone, 0x1:ThcAssignmentThc0
 **/
   UINT8                       ThcPort0Assignment;
 
-/** Offset 0x08C4 - Touch Host Controller Port 0 Interrupt Pin Mux
+/** Offset 0x08CC - Touch Host Controller Port 0 Interrupt Pin Mux
   Set THC Port 0 Pin Muxing Value if signal can be enabled on multiple pads. Refer
   to GPIO_*_MUXING_THC_SPIx_INTB_* for possible values.
 **/
   UINT32                      ThcPort0InterruptPinMuxing;
 
-/** Offset 0x08C8 - Touch Host Controller Port 0 Wake On Touch
+/** Offset 0x08D0 - Touch Host Controller Port 0 Wake On Touch
   Based on this setting vGPIO for given THC will be in native mode, and additional
   _CRS for wake will be exposed in ACPI
   $EN_DIS
 **/
   UINT8                       ThcPort0WakeOnTouch;
 
-/** Offset 0x08C9 - Touch Host Controller Port 1 Assignment
+/** Offset 0x08D1 - Touch Host Controller Port 1 Assignment
   Assign THC Port 1
   0x0:ThcAssignmentNone, 0x1:ThcPort1AssignmentThc0, 0x2:ThcAssignmentThc1
 **/
   UINT8                       ThcPort1Assignment;
 
-/** Offset 0x08CA - Touch Host Controller Port 1 Hid Over Spi Reset Sequencing Delay [ms]
+/** Offset 0x08D2 - Touch Host Controller Port 1 Hid Over Spi Reset Sequencing Delay [ms]
   Policy control for reset sequencing delay (ACPI _INI, _RST) default 300ms
 **/
   UINT16                      ThcPort1HidResetSequencingDelay;
 
-/** Offset 0x08CC - Touch Host Controller Port 1 Interrupt Pin Mux
+/** Offset 0x08D4 - Touch Host Controller Port 1 Interrupt Pin Mux
   Set THC Port 1 Pin Muxing Value if signal can be enabled on multiple pads. Refer
   to GPIO_*_MUXING_THC_SPIx_INTB_* for possible values.
 **/
   UINT32                      ThcPort1InterruptPinMuxing;
 
-/** Offset 0x08D0 - Touch Host Controller Port 1 Wake On Touch
+/** Offset 0x08D8 - Touch Host Controller Port 1 Wake On Touch
   Based on this setting vGPIO for given THC will be in native mode, and additional
   _CRS for wake will be exposed in ACPI
   $EN_DIS
 **/
   UINT8                       ThcPort1WakeOnTouch;
 
-/** Offset 0x08D1 - PCIE RP Pcie Speed
+/** Offset 0x08D9 - PCIE RP Pcie Speed
   Determines each PCIE Port speed capability. 0: Auto; 1: Gen1; 2: Gen2; 3: Gen3;
   4: Gen4 (see: PCIE_SPEED).
 **/
   UINT8                       PcieRpPcieSpeed[28];
 
-/** Offset 0x08ED - PCIE RP Physical Slot Number
+/** Offset 0x08F5 - PCIE RP Physical Slot Number
   Indicates the slot number for the root port. Default is the value as root port index.
 **/
   UINT8                       PcieRpPhysicalSlotNumber[28];
 
-/** Offset 0x0909 - PCIE RP Completion Timeout
+/** Offset 0x0911 - PCIE RP Completion Timeout
   The root port completion timeout(see: PCIE_COMPLETION_TIMEOUT). Default is PchPcieCompletionTO_Default.
 **/
   UINT8                       PcieRpCompletionTimeout[28];
 
-/** Offset 0x0925 - PCIE RP Aspm
+/** Offset 0x092D - PCIE RP Aspm
   The ASPM configuration of the root port (see: PCH_PCIE_ASPM_CONTROL). Default is
   PchPcieAspmAutoConfig.
 **/
   UINT8                       PcieRpAspm[28];
 
-/** Offset 0x0941 - PCIE RP L1 Substates
+/** Offset 0x0949 - PCIE RP L1 Substates
   The L1 Substates configuration of the root port (see: PCH_PCIE_L1SUBSTATES_CONTROL).
   Default is PchPcieL1SubstatesL1_1_2.
 **/
   UINT8                       PcieRpL1Substates[28];
 
-/** Offset 0x095D - PCIE RP L1 Low Substate
+/** Offset 0x0965 - PCIE RP L1 Low Substate
   The L1 Low Substate configuration of the root port. 0: Disable; 1: Enable.
 **/
   UINT8                       PcieRpL1Low[28];
 
-/** Offset 0x0979 - PCIE RP Ltr Enable
+/** Offset 0x0981 - PCIE RP Ltr Enable
   Latency Tolerance Reporting Mechanism.
 **/
   UINT8                       PcieRpLtrEnable[28];
 
-/** Offset 0x0995 - PCIE RP Ltr Config Lock
+/** Offset 0x099D - PCIE RP Ltr Config Lock
   0: Disable; 1: Enable.
 **/
   UINT8                       PcieRpLtrConfigLock[28];
 
-/** Offset 0x09B1 - PCIe override default settings for EQ
+/** Offset 0x09B9 - PCIe override default settings for EQ
   Choose PCIe EQ method
   $EN_DIS
 **/
   UINT8                       PcieEqOverrideDefault;
 
-/** Offset 0x09B2 - PCIe choose EQ method
+/** Offset 0x09BA - PCIe choose EQ method
   Choose PCIe EQ method
   0: HardwareEq, 1: FixedEq
 **/
   UINT8                       PcieEqMethod;
 
-/** Offset 0x09B3 - PCIe choose EQ mode
+/** Offset 0x09BB - PCIe choose EQ mode
   Choose PCIe EQ mode
   0: PresetEq, 1: CoefficientEq
 **/
   UINT8                       PcieEqMode;
 
-/** Offset 0x09B4 - PCIe EQ local transmitter override
+/** Offset 0x09BC - PCIe EQ local transmitter override
   Enable/Disable local transmitter override
   $EN_DIS
 **/
   UINT8                       PcieEqLocalTransmitterOverrideEnable;
 
-/** Offset 0x09B5 - PCIe number of valid list entries
+/** Offset 0x09BD - PCIe number of valid list entries
   Select number of presets or coefficients depending on the mode
 **/
   UINT8                       PcieEqPh3NumberOfPresetsOrCoefficients;
 
-/** Offset 0x09B6 - PCIe pre-cursor coefficient list
+/** Offset 0x09BE - PCIe pre-cursor coefficient list
   Provide a list of pre-cursor coefficients to be used during phase 3 EQ
 **/
   UINT8                       PcieEqPh3PreCursorList[10];
 
-/** Offset 0x09C0 - PCIe post-cursor coefficient list
+/** Offset 0x09C8 - PCIe post-cursor coefficient list
   Provide a list of post-cursor coefficients to be used during phase 3 EQ
 **/
   UINT8                       PcieEqPh3PostCursorList[10];
 
-/** Offset 0x09CA - PCIe preset list
+/** Offset 0x09D2 - PCIe preset list
   Provide a list of presets to be used during phase 3 EQ
 **/
   UINT8                       PcieEqPh3PresetList[11];
 
-/** Offset 0x09D5
+/** Offset 0x09DD - PCIe Clock Gating
+  Describes whether the PCH PCI Express Clock Gating is enabled by platform modules.
+  0: Disable; 1: Enable(Default).
+  $EN_DIS
 **/
-  UINT8                       Rsvd24;
+  UINT8                       PchPcieClockGating;
 
-/** Offset 0x09D6 - Touch Host Controller Port 0 Hid Over Spi Reset Sequencing Delay [ms]
+/** Offset 0x09DE - Touch Host Controller Port 0 Hid Over Spi Reset Sequencing Delay [ms]
   Policy control for reset sequencing delay (ACPI _INI, _RST) default 300ms
 **/
   UINT16                      ThcPort0HidResetSequencingDelay;
 
-/** Offset 0x09D8 - PCIe EQ phase 1 downstream transmitter port preset
+/** Offset 0x09E0 - PCIe EQ phase 1 downstream transmitter port preset
   Allows to select the downstream port preset value that will be used during phase
   1 of equalization
 **/
   UINT32                      PcieEqPh1DownstreamPortTransmitterPreset;
 
-/** Offset 0x09DC - PCIe EQ phase 1 upstream tranmitter port preset
+/** Offset 0x09E4 - PCIe EQ phase 1 upstream tranmitter port preset
   Allows to select the upstream port preset value that will be used during phase 1
   of equalization
 **/
   UINT32                      PcieEqPh1UpstreamPortTransmitterPreset;
 
-/** Offset 0x09E0 - PCIe EQ phase 2 local transmitter override preset
+/** Offset 0x09E8 - PCIe EQ phase 2 local transmitter override preset
   Allows to select the value of the preset used during phase 2 local transmitter override
 **/
   UINT8                       PcieEqPh2LocalTransmitterOverridePreset;
 
-/** Offset 0x09E1 - PCIE Enable Peer Memory Write
+/** Offset 0x09E9 - PCIE Enable Peer Memory Write
   This member describes whether Peer Memory Writes are enabled on the platform.
   $EN_DIS
 **/
   UINT8                       PcieEnablePeerMemoryWrite[28];
 
-/** Offset 0x09FD - PCIE Compliance Test Mode
+/** Offset 0x0A05 - PCIE Compliance Test Mode
   Compliance Test Mode shall be enabled when using Compliance Load Board.
   $EN_DIS
 **/
   UINT8                       PcieComplianceTestMode;
 
-/** Offset 0x09FE - PCIE Rp Function Swap
+/** Offset 0x0A06 - PCIE Rp Function Swap
   DEPRECATED. Allows BIOS to use root port function number swapping when root port
   of function 0 is disabled.
   $EN_DIS
 **/
   UINT8                       PcieRpFunctionSwap;
 
-/** Offset 0x09FF - Enable/Disable PEG GEN3 Static EQ Phase1 programming
+/** Offset 0x0A07 - Enable/Disable PEG GEN3 Static EQ Phase1 programming
   Program Gen3 EQ Phase1 Static Presets. Disabled(0x0): Disable EQ Phase1 Static Presets
   Programming, Enabled(0x1)(Default): Enable  EQ Phase1 Static Presets Programming
   $EN_DIS
 **/
   UINT8                       CpuPcieGen3ProgramStaticEq;
 
-/** Offset 0x0A00 - Enable/Disable GEN4 Static EQ Phase1 programming
+/** Offset 0x0A08 - Enable/Disable GEN4 Static EQ Phase1 programming
   Program Gen4 EQ Phase1 Static Presets. Disabled(0x0): Disable EQ Phase1 Static Presets
   Programming, Enabled(0x1)(Default): Enable  EQ Phase1 Static Presets Programming
   $EN_DIS
 **/
   UINT8                       CpuPcieGen4ProgramStaticEq;
 
-/** Offset 0x0A01 - PCH Pm PME_B0_S5_DIS
+/** Offset 0x0A09 - PCH Pm PME_B0_S5_DIS
   When cleared (default), wake events from PME_B0_STS are allowed in S5 if PME_B0_EN = 1.
   $EN_DIS
 **/
   UINT8                       PchPmPmeB0S5Dis;
 
-/** Offset 0x0A02 - PCIE IMR
+/** Offset 0x0A0A - PCIE IMR
   Enables Isolated Memory Region for PCIe.
   $EN_DIS
 **/
   UINT8                       PcieRpImrEnabled;
 
-/** Offset 0x0A03 - PCIE IMR port number
+/** Offset 0x0A0B - PCIE IMR port number
   Selects PCIE root port number for IMR feature.
 **/
   UINT8                       PcieRpImrSelection;
 
-/** Offset 0x0A04 - PCH Pm Wol Enable Override
+/** Offset 0x0A0C - PCH Pm Wol Enable Override
   Corresponds to the WOL Enable Override bit in the General PM Configuration B (GEN_PMCON_B) register.
   $EN_DIS
 **/
   UINT8                       PchPmWolEnableOverride;
 
-/** Offset 0x0A05 - PCH Pm Pcie Wake From DeepSx
+/** Offset 0x0A0D - PCH Pm Pcie Wake From DeepSx
   Determine if enable PCIe to wake from deep Sx.
   $EN_DIS
 **/
   UINT8                       PchPmPcieWakeFromDeepSx;
 
-/** Offset 0x0A06 - PCH Pm WoW lan Enable
+/** Offset 0x0A0E - PCH Pm WoW lan Enable
   Determine if WLAN wake from Sx, corresponds to the HOST_WLAN_PP_EN bit in the PWRM_CFG3 register.
   $EN_DIS
 **/
   UINT8                       PchPmWoWlanEnable;
 
-/** Offset 0x0A07 - PCH Pm WoW lan DeepSx Enable
+/** Offset 0x0A0F - PCH Pm WoW lan DeepSx Enable
   Determine if WLAN wake from DeepSx, corresponds to the DSX_WLAN_PP_EN bit in the
   PWRM_CFG3 register.
   $EN_DIS
 **/
   UINT8                       PchPmWoWlanDeepSxEnable;
 
-/** Offset 0x0A08 - PCH Pm Lan Wake From DeepSx
+/** Offset 0x0A10 - PCH Pm Lan Wake From DeepSx
   Determine if enable LAN to wake from deep Sx.
   $EN_DIS
 **/
   UINT8                       PchPmLanWakeFromDeepSx;
 
-/** Offset 0x0A09 - PCH Pm Deep Sx Pol
+/** Offset 0x0A11 - PCH Pm Deep Sx Pol
   Deep Sx Policy.
   $EN_DIS
 **/
   UINT8                       PchPmDeepSxPol;
 
-/** Offset 0x0A0A - PCH Pm Slp S3 Min Assert
+/** Offset 0x0A12 - PCH Pm Slp S3 Min Assert
   SLP_S3 Minimum Assertion Width Policy. Default is PchSlpS350ms.
 **/
   UINT8                       PchPmSlpS3MinAssert;
 
-/** Offset 0x0A0B - PCH Pm Slp S4 Min Assert
+/** Offset 0x0A13 - PCH Pm Slp S4 Min Assert
   SLP_S4 Minimum Assertion Width Policy. Default is PchSlpS44s.
 **/
   UINT8                       PchPmSlpS4MinAssert;
 
-/** Offset 0x0A0C - PCH Pm Slp Sus Min Assert
+/** Offset 0x0A14 - PCH Pm Slp Sus Min Assert
   SLP_SUS Minimum Assertion Width Policy. Default is PchSlpSus4s.
 **/
   UINT8                       PchPmSlpSusMinAssert;
 
-/** Offset 0x0A0D - PCH Pm Slp A Min Assert
+/** Offset 0x0A15 - PCH Pm Slp A Min Assert
   SLP_A Minimum Assertion Width Policy. Default is PchSlpA2s.
 **/
   UINT8                       PchPmSlpAMinAssert;
 
-/** Offset 0x0A0E - USB Overcurrent Override for VISA
+/** Offset 0x0A16 - USB Overcurrent Override for VISA
   This option overrides USB Over Current enablement state that USB OC will be disabled
   after enabling this option. Enable when VISA pin is muxed with USB OC
   $EN_DIS
 **/
   UINT8                       PchEnableDbcObs;
 
-/** Offset 0x0A0F - PCH Pm Slp Strch Sus Up
+/** Offset 0x0A17 - PCH Pm Slp Strch Sus Up
   Enable SLP_X Stretching After SUS Well Power Up.
   $EN_DIS
 **/
   UINT8                       PchPmSlpStrchSusUp;
 
-/** Offset 0x0A10 - PCH Pm Slp Lan Low Dc
+/** Offset 0x0A18 - PCH Pm Slp Lan Low Dc
   Enable/Disable SLP_LAN# Low on DC Power.
   $EN_DIS
 **/
   UINT8                       PchPmSlpLanLowDc;
 
-/** Offset 0x0A11 - PCH Pm Pwr Btn Override Period
+/** Offset 0x0A19 - PCH Pm Pwr Btn Override Period
   PCH power button override period. 000b-4s, 001b-6s, 010b-8s, 011b-10s, 100b-12s, 101b-14s.
 **/
   UINT8                       PchPmPwrBtnOverridePeriod;
 
-/** Offset 0x0A12 - PCH Pm Disable Dsx Ac Present Pulldown
+/** Offset 0x0A1A - PCH Pm Disable Dsx Ac Present Pulldown
   When Disable, PCH will internal pull down AC_PRESENT in deep SX and during G3 exit.
   $EN_DIS
 **/
   UINT8                       PchPmDisableDsxAcPresentPulldown;
 
-/** Offset 0x0A13 - PCH Pm Disable Native Power Button
+/** Offset 0x0A1B - PCH Pm Disable Native Power Button
   Power button native mode disable.
   $EN_DIS
 **/
   UINT8                       PchPmDisableNativePowerButton;
 
-/** Offset 0x0A14 - PCH Pm ME_WAKE_STS
+/** Offset 0x0A1C - PCH Pm ME_WAKE_STS
   Clear the ME_WAKE_STS bit in the Power and Reset Status (PRSTS) register.
   $EN_DIS
 **/
   UINT8                       PchPmMeWakeSts;
 
-/** Offset 0x0A15 - PCH Pm WOL_OVR_WK_STS
+/** Offset 0x0A1D - PCH Pm WOL_OVR_WK_STS
   Clear the WOL_OVR_WK_STS bit in the Power and Reset Status (PRSTS) register.
   $EN_DIS
 **/
   UINT8                       PchPmWolOvrWkSts;
 
-/** Offset 0x0A16 - PCH Pm Reset Power Cycle Duration
+/** Offset 0x0A1E - PCH Pm Reset Power Cycle Duration
   Could be customized in the unit of second. Please refer to EDS for all support settings.
   0 is default, 1 is 1 second, 2 is 2 seconds, ...
 **/
   UINT8                       PchPmPwrCycDur;
 
-/** Offset 0x0A17 - PCH Pm Pcie Pll Ssc
+/** Offset 0x0A1F - PCH Pm Pcie Pll Ssc
   Specifies the Pcie Pll Spread Spectrum Percentage. The default is 0xFF: AUTO - No
   BIOS override.
 **/
   UINT8                       PchPmPciePllSsc;
 
-/** Offset 0x0A18 - PCH Legacy IO Low Latency Enable
+/** Offset 0x0A20 - PCH Legacy IO Low Latency Enable
   Set to enable low latency of legacy IO. <b>0: Disable</b>, 1: Enable
   $EN_DIS
 **/
   UINT8                       PchLegacyIoLowLatency;
 
-/** Offset 0x0A19 - PCH Sata Pwr Opt Enable
+/** Offset 0x0A21 - PCH Sata Pwr Opt Enable
   SATA Power Optimizer on PCH side.
   $EN_DIS
 **/
   UINT8                       SataPwrOptEnable;
 
-/** Offset 0x0A1A - PCH Sata eSATA Speed Limit
+/** Offset 0x0A22 - PCH Sata eSATA Speed Limit
   When enabled, BIOS will configure the PxSCTL.SPD to 2 to limit the eSATA port speed.
   $EN_DIS
 **/
   UINT8                       EsataSpeedLimit;
 
-/** Offset 0x0A1B - PCH Sata Speed Limit
+/** Offset 0x0A23 - PCH Sata Speed Limit
   Indicates the maximum speed the SATA controller can support 0h: PchSataSpeedDefault.
 **/
   UINT8                       SataSpeedLimit;
 
-/** Offset 0x0A1C - Enable SATA Port HotPlug
+/** Offset 0x0A24 - Enable SATA Port HotPlug
   Enable SATA Port HotPlug.
 **/
   UINT8                       SataPortsHotPlug[8];
 
-/** Offset 0x0A24 - Enable SATA Port Interlock Sw
+/** Offset 0x0A2C - Enable SATA Port Interlock Sw
   Enable SATA Port Interlock Sw.
 **/
   UINT8                       SataPortsInterlockSw[8];
 
-/** Offset 0x0A2C - Enable SATA Port External
+/** Offset 0x0A34 - Enable SATA Port External
   Enable SATA Port External.
 **/
   UINT8                       SataPortsExternal[8];
 
-/** Offset 0x0A34 - Enable SATA Port SpinUp
+/** Offset 0x0A3C - Enable SATA Port SpinUp
   Enable the COMRESET initialization Sequence to the device.
 **/
   UINT8                       SataPortsSpinUp[8];
 
-/** Offset 0x0A3C - Enable SATA Port Solid State Drive
+/** Offset 0x0A44 - Enable SATA Port Solid State Drive
   0: HDD; 1: SSD.
 **/
   UINT8                       SataPortsSolidStateDrive[8];
 
-/** Offset 0x0A44 - Enable SATA Port Enable Dito Config
+/** Offset 0x0A4C - Enable SATA Port Enable Dito Config
   Enable DEVSLP Idle Timeout settings (DmVal, DitoVal).
 **/
   UINT8                       SataPortsEnableDitoConfig[8];
 
-/** Offset 0x0A4C - Enable SATA Port DmVal
+/** Offset 0x0A54 - Enable SATA Port DmVal
   DITO multiplier. Default is 15.
 **/
   UINT8                       SataPortsDmVal[8];
 
-/** Offset 0x0A54 - Enable SATA Port DmVal
+/** Offset 0x0A5C - Enable SATA Port DmVal
   DEVSLP Idle Timeout (DITO), Default is 625.
 **/
   UINT16                      SataPortsDitoVal[8];
 
-/** Offset 0x0A64 - Enable SATA Port ZpOdd
+/** Offset 0x0A6C - Enable SATA Port ZpOdd
   Support zero power ODD.
 **/
   UINT8                       SataPortsZpOdd[8];
 
-/** Offset 0x0A6C - PCH Sata Rst Raid Alternate Id
+/** Offset 0x0A74 - PCH Sata Rst Raid Alternate Id
   Enable RAID Alternate ID.
   $EN_DIS
 **/
   UINT8                       SataRstRaidDeviceId;
 
-/** Offset 0x0A6D - PCH Sata Rst Pcie Storage Remap enable
+/** Offset 0x0A75 - PCH Sata Rst Pcie Storage Remap enable
   Enable Intel RST for PCIe Storage remapping.
 **/
   UINT8                       SataRstPcieEnable[3];
 
-/** Offset 0x0A70 - PCH Sata Rst Pcie Storage Port
+/** Offset 0x0A78 - PCH Sata Rst Pcie Storage Port
   Intel RST for PCIe Storage remapping - PCIe Port Selection (1-based, 0 = autodetect).
 **/
   UINT8                       SataRstPcieStoragePort[3];
 
-/** Offset 0x0A73 - PCH Sata Rst Pcie Device Reset Delay
+/** Offset 0x0A7B - PCH Sata Rst Pcie Device Reset Delay
   PCIe Storage Device Reset Delay in milliseconds. Default value is 100ms
 **/
   UINT8                       SataRstPcieDeviceResetDelay[3];
 
-/** Offset 0x0A76 - UFS enable/disable
-  PCIe Storage Device Reset Delay in milliseconds. Default value is 100ms
+/** Offset 0x0A7E - UFS enable/disable
+  Enable/Disable UFS controller, One byte for each Controller - (1,0) to enable controller
+  0 and (0,1) to enable controller 1
   $EN_DIS
 **/
   UINT8                       UfsEnable[2];
 
-/** Offset 0x0A78 - IEH Mode
+/** Offset 0x0A80 - IEH Mode
   Integrated Error Handler Mode, 0: Bypass, 1: Enable
   0: Bypass, 1:Enable
 **/
   UINT8                       IehMode;
 
-/** Offset 0x0A79
+/** Offset 0x0A81 - PCIe Power Gating
+  Describes whether the PCH PCI Express Power Gating is enabled by platform modules.
+  0: Disable; 1: Enable(Default).
+  $EN_DIS
 **/
-  UINT8                       Rsvd25;
+  UINT8                       PchPciePowerGating;
 
-/** Offset 0x0A7A - PSF Tcc
+/** Offset 0x0A82 - PSF Tcc
   Psf Tcc (Time Coordinated Computing) Enable will decrease psf transaction latency
   by disable some psf power management features, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       PsfTccEnable;
 
-/** Offset 0x0A7B - Fusa Display Configuration
+/** Offset 0x0A83 - Fusa Display Configuration
   Fusa (Functional Safety) Enable Fusa Feature on Display, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       DisplayFusaConfigEnable;
 
-/** Offset 0x0A7C - Fusa Graphics Configuration
+/** Offset 0x0A84 - Fusa Graphics Configuration
   Fusa (Functional Safety) Enable Fusa Feature on Graphics, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       GraphicFusaConfigEnable;
 
-/** Offset 0x0A7D - Fusa Opio Configuration
+/** Offset 0x0A85 - Fusa Opio Configuration
   Fusa (Functional Safety) Enable Fusa Feature on Opio, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       OpioFusaConfigEnable;
 
-/** Offset 0x0A7E - Fusa IOP Configuration
+/** Offset 0x0A86 - Fusa IOP Configuration
   Fusa (Functional Safety) Enable Fusa Feature on IOP, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       IopFusaConfigEnable;
 
-/** Offset 0x0A7F - Fusa Psf Configuration
+/** Offset 0x0A87 - Fusa Psf Configuration
   Fusa (Functional Safety) Enable Fusa Feature on Psf, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       PsfFusaConfigEnable;
 
-/** Offset 0x0A80 - Fusa Configuration
+/** Offset 0x0A88 - Fusa Configuration
   Fusa (Functional Safety) Enable Fusa Feature, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       FusaConfigEnable;
 
-/** Offset 0x0A81 - Fusa Run Start Up Array BIST
+/** Offset 0x0A89 - Fusa Run Start Up Array BIST
   Enabling this will execute startup array test during boot, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       FusaRunStartupArrayBist;
 
-/** Offset 0x0A82 - Fusa Run Start Up Scan BIST
+/** Offset 0x0A8A - Fusa Run Start Up Scan BIST
   Enabling this will execute startup scan test during boot, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       FusaRunStartupScanBist;
 
-/** Offset 0x0A83 - Fusa Run Periodic Array BIST
+/** Offset 0x0A8B - Fusa Run Periodic Array BIST
   Enabling this will execute periodic array test during boot, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       FusaRunPeriodicArrayBist;
 
-/** Offset 0x0A84 - Fusa Run Periodic Scan BIST
+/** Offset 0x0A8C - Fusa Run Periodic Scan BIST
   Enabling this will execute periodic scan test during boot, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       FusaRunPeriodicScanBist;
 
-/** Offset 0x0A85 - Fusa Module 0 Lockstep Configuration
+/** Offset 0x0A8D - Fusa Module 0 Lockstep Configuration
   Enable/Disable Lockstep for Atom module 0, which has 4 cores; 0: Disable lockstep;
   1: Enable lockstep for Core 0 with Core 1, Core 2 with Core 3; 2: Enable lockstep
   for Core 0 with Core 1; 3: Enable lockstep for Core 2 with Core 3
@@ -2531,7 +2552,7 @@ typedef struct {
 **/
   UINT8                       Module0Lockstep;
 
-/** Offset 0x0A86 - Fusa Module 1 Lockstep Configuration
+/** Offset 0x0A8E - Fusa Module 1 Lockstep Configuration
   Enable/Disable Lockstep for Atom module 1, which has 4 cores; 0: Disable lockstep;
   1: Enable lockstep for Core 0 with Core 1, Core 2 with Core 3; 2: Enable lockstep
   for Core 0 with Core 1; 3: Enable lockstep for Core 2 with Core 3
@@ -2540,245 +2561,303 @@ typedef struct {
 **/
   UINT8                       Module1Lockstep;
 
-/** Offset 0x0A87 - Opio Recentering Ctrl
+/** Offset 0x0A8F - Opio Recentering Ctrl
   Opio Recentering Disabling for Pcie Latency Improvement, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       OpioRecenter;
 
-/** Offset 0x0A88
+/** Offset 0x0A90 - Fusa Run Start Up Array BIST for Module 0
+  Enabling this will execute startup array test for Module 0 during boot, 0: Disable, 1: Enable
+  $EN_DIS
+**/
+  UINT8                       FusaRunStartupArrayBistMod0;
+
+/** Offset 0x0A91 - Fusa Run Start Up Array BIST for Module 1
+  Enabling this will execute startup array test for Module 1 during boot, 0: Disable, 1: Enable
+  $EN_DIS
+**/
+  UINT8                       FusaRunStartupArrayBistMod1;
+
+/** Offset 0x0A92 - Fusa Run Start Up Scan BIST for Module 0
+  Enabling this will execute startup scan test for module 0 during boot, 0: Disable, 1: Enable
+  $EN_DIS
+**/
+  UINT8                       FusaRunStartupScanBistMod0;
+
+/** Offset 0x0A93 - Fusa Run Start Up Scan BIST for Module 1
+  Enabling this will execute startup scan test for module 1 during boot, 0: Disable, 1: Enable
+  $EN_DIS
+**/
+  UINT8                       FusaRunStartupScanBistMod1;
+
+/** Offset 0x0A94 - Fusa Run Periodic Array BIST for Module 0
+  Enabling this will execute periodic array test for module 0 during boot, 0: Disable, 1: Enable
+  $EN_DIS
+**/
+  UINT8                       FusaRunPeriodicArrayBistMod0;
+
+/** Offset 0x0A95 - Fusa Run Periodic Array BIST for Module 1
+  Enabling this will execute periodic array test for module 1 during boot, 0: Disable, 1: Enable
+  $EN_DIS
+**/
+  UINT8                       FusaRunPeriodicArrayBistMod1;
+
+/** Offset 0x0A96 - Fusa Run Periodic Scan BIST for Module 0
+  Enabling this will execute periodic scan test for module 0 during boot, 0: Disable, 1: Enable
+  $EN_DIS
+**/
+  UINT8                       FusaRunPeriodicScanBistMod0;
+
+/** Offset 0x0A97 - Fusa Run Periodic Scan BIST for Module 1
+  Enabling this will execute periodic scan test for module 1 during boot, 0: Disable, 1: Enable
+  $EN_DIS
+**/
+  UINT8                       FusaRunPeriodicScanBistMod1;
+
+/** Offset 0x0A98
 **/
   UINT8                       EmbReserved2FspsUpd[3];
 
-/** Offset 0x0A8B
+/** Offset 0x0A9B
 **/
-  UINT8                       UnusedUpdSpace3;
+  UINT8                       UnusedUpdSpace5;
 
-/** Offset 0x0A8C - Thermal Throttling Custimized T0Level Value
+/** Offset 0x0A9C - Fusa Startup Pattern File Base Address
+  Fusa (Functional Safety) Startup Pattern File Base Address
+**/
+  UINT32                      FusaStartupPatternAddr;
+
+/** Offset 0x0AA0 - Fusa Periodic Pattern File Base Address
+  Fusa (Functional Safety) Periodic Pattern File Base Address
+**/
+  UINT32                      FusaPeriodicPatternAddr;
+
+/** Offset 0x0AA4 - Thermal Throttling Custimized T0Level Value
   Custimized T0Level value.
 **/
   UINT16                      PchT0Level;
 
-/** Offset 0x0A8E - Thermal Throttling Custimized T1Level Value
+/** Offset 0x0AA6 - Thermal Throttling Custimized T1Level Value
   Custimized T1Level value.
 **/
   UINT16                      PchT1Level;
 
-/** Offset 0x0A90 - Thermal Throttling Custimized T2Level Value
+/** Offset 0x0AA8 - Thermal Throttling Custimized T2Level Value
   Custimized T2Level value.
 **/
   UINT16                      PchT2Level;
 
-/** Offset 0x0A92 - Enable The Thermal Throttle
+/** Offset 0x0AAA - Enable The Thermal Throttle
   Enable the thermal throttle function.
   $EN_DIS
 **/
   UINT8                       PchTTEnable;
 
-/** Offset 0x0A93 - PMSync State 13
+/** Offset 0x0AAB - PMSync State 13
   When set to 1 and the programmed GPIO pin is a 1, then PMSync state 13 will force
   at least T2 state.
   $EN_DIS
 **/
   UINT8                       PchTTState13Enable;
 
-/** Offset 0x0A94 - Thermal Throttle Lock
+/** Offset 0x0AAC - Thermal Throttle Lock
   Thermal Throttle Lock.
   $EN_DIS
 **/
   UINT8                       PchTTLock;
 
-/** Offset 0x0A95 - Thermal Throttling Suggested Setting
+/** Offset 0x0AAD - Thermal Throttling Suggested Setting
   Thermal Throttling Suggested Setting.
   $EN_DIS
 **/
   UINT8                       TTSuggestedSetting;
 
-/** Offset 0x0A96 - Enable PCH Cross Throttling
+/** Offset 0x0AAE - Enable PCH Cross Throttling
   Enable/Disable PCH Cross Throttling
   $EN_DIS
 **/
   UINT8                       TTCrossThrottling;
 
-/** Offset 0x0A97 - DMI Thermal Sensor Autonomous Width Enable
+/** Offset 0x0AAF - DMI Thermal Sensor Autonomous Width Enable
   DMI Thermal Sensor Autonomous Width Enable.
   $EN_DIS
 **/
   UINT8                       PchDmiTsawEn;
 
-/** Offset 0x0A98 - DMI Thermal Sensor Suggested Setting
+/** Offset 0x0AB0 - DMI Thermal Sensor Suggested Setting
   DMT thermal sensor suggested representative values.
   $EN_DIS
 **/
   UINT8                       DmiSuggestedSetting;
 
-/** Offset 0x0A99 - Thermal Sensor 0 Target Width
+/** Offset 0x0AB1 - Thermal Sensor 0 Target Width
   Thermal Sensor 0 Target Width.
   0:x1, 1:x2, 2:x4, 3:x8, 4:x16
 **/
   UINT8                       DmiTS0TW;
 
-/** Offset 0x0A9A - Thermal Sensor 1 Target Width
+/** Offset 0x0AB2 - Thermal Sensor 1 Target Width
   Thermal Sensor 1 Target Width.
   0:x1, 1:x2, 2:x4, 3:x8, 4:x16
 **/
   UINT8                       DmiTS1TW;
 
-/** Offset 0x0A9B - Thermal Sensor 2 Target Width
+/** Offset 0x0AB3 - Thermal Sensor 2 Target Width
   Thermal Sensor 2 Target Width.
   0:x1, 1:x2, 2:x4, 3:x8, 4:x16
 **/
   UINT8                       DmiTS2TW;
 
-/** Offset 0x0A9C - Thermal Sensor 3 Target Width
+/** Offset 0x0AB4 - Thermal Sensor 3 Target Width
   Thermal Sensor 3 Target Width.
   0:x1, 1:x2, 2:x4, 3:x8, 4:x16
 **/
   UINT8                       DmiTS3TW;
 
-/** Offset 0x0A9D - Port 0 T1 Multipler
+/** Offset 0x0AB5 - Port 0 T1 Multipler
   Port 0 T1 Multipler.
 **/
   UINT8                       SataP0T1M;
 
-/** Offset 0x0A9E - Port 0 T2 Multipler
+/** Offset 0x0AB6 - Port 0 T2 Multipler
   Port 0 T2 Multipler.
 **/
   UINT8                       SataP0T2M;
 
-/** Offset 0x0A9F - Port 0 T3 Multipler
+/** Offset 0x0AB7 - Port 0 T3 Multipler
   Port 0 T3 Multipler.
 **/
   UINT8                       SataP0T3M;
 
-/** Offset 0x0AA0 - Port 0 Tdispatch
+/** Offset 0x0AB8 - Port 0 Tdispatch
   Port 0 Tdispatch.
 **/
   UINT8                       SataP0TDisp;
 
-/** Offset 0x0AA1 - Port 1 T1 Multipler
+/** Offset 0x0AB9 - Port 1 T1 Multipler
   Port 1 T1 Multipler.
 **/
   UINT8                       SataP1T1M;
 
-/** Offset 0x0AA2 - Port 1 T2 Multipler
+/** Offset 0x0ABA - Port 1 T2 Multipler
   Port 1 T2 Multipler.
 **/
   UINT8                       SataP1T2M;
 
-/** Offset 0x0AA3 - Port 1 T3 Multipler
+/** Offset 0x0ABB - Port 1 T3 Multipler
   Port 1 T3 Multipler.
 **/
   UINT8                       SataP1T3M;
 
-/** Offset 0x0AA4 - Port 1 Tdispatch
+/** Offset 0x0ABC - Port 1 Tdispatch
   Port 1 Tdispatch.
 **/
   UINT8                       SataP1TDisp;
 
-/** Offset 0x0AA5 - Port 0 Tinactive
+/** Offset 0x0ABD - Port 0 Tinactive
   Port 0 Tinactive.
 **/
   UINT8                       SataP0Tinact;
 
-/** Offset 0x0AA6 - Port 0 Alternate Fast Init Tdispatch
+/** Offset 0x0ABE - Port 0 Alternate Fast Init Tdispatch
   Port 0 Alternate Fast Init Tdispatch.
   $EN_DIS
 **/
   UINT8                       SataP0TDispFinit;
 
-/** Offset 0x0AA7 - Port 1 Tinactive
+/** Offset 0x0ABF - Port 1 Tinactive
   Port 1 Tinactive.
 **/
   UINT8                       SataP1Tinact;
 
-/** Offset 0x0AA8 - Port 1 Alternate Fast Init Tdispatch
+/** Offset 0x0AC0 - Port 1 Alternate Fast Init Tdispatch
   Port 1 Alternate Fast Init Tdispatch.
   $EN_DIS
 **/
   UINT8                       SataP1TDispFinit;
 
-/** Offset 0x0AA9 - Sata Thermal Throttling Suggested Setting
+/** Offset 0x0AC1 - Sata Thermal Throttling Suggested Setting
   Sata Thermal Throttling Suggested Setting.
   $EN_DIS
 **/
   UINT8                       SataThermalSuggestedSetting;
 
-/** Offset 0x0AAA - Enable Memory Thermal Throttling
+/** Offset 0x0AC2 - Enable Memory Thermal Throttling
   Enable Memory Thermal Throttling.
   $EN_DIS
 **/
   UINT8                       PchMemoryThrottlingEnable;
 
-/** Offset 0x0AAB - Memory Thermal Throttling
+/** Offset 0x0AC3 - Memory Thermal Throttling
   Enable Memory Thermal Throttling.
 **/
   UINT8                       PchMemoryPmsyncEnable[2];
 
-/** Offset 0x0AAD - Enable Memory Thermal Throttling
+/** Offset 0x0AC5 - Enable Memory Thermal Throttling
   Enable Memory Thermal Throttling.
 **/
   UINT8                       PchMemoryC0TransmitEnable[2];
 
-/** Offset 0x0AAF - Enable Memory Thermal Throttling
+/** Offset 0x0AC7 - Enable Memory Thermal Throttling
   Enable Memory Thermal Throttling.
 **/
   UINT8                       PchMemoryPinSelection[2];
 
-/** Offset 0x0AB1
+/** Offset 0x0AC9
 **/
   UINT8                       Rsvd26;
 
-/** Offset 0x0AB2 - Thermal Device Temperature
+/** Offset 0x0ACA - Thermal Device Temperature
   Decides the temperature.
 **/
   UINT16                      PchTemperatureHotLevel;
 
-/** Offset 0x0AB4 - USB2 Port Over Current Pin
+/** Offset 0x0ACC - USB2 Port Over Current Pin
   Describe the specific over current pin number of USB 2.0 Port N.
 **/
   UINT8                       Usb2OverCurrentPin[16];
 
-/** Offset 0x0AC4 - USB3 Port Over Current Pin
+/** Offset 0x0ADC - USB3 Port Over Current Pin
   Describe the specific over current pin number of USB 3.0 Port N.
 **/
   UINT8                       Usb3OverCurrentPin[10];
 
-/** Offset 0x0ACE - Enable xHCI LTR override
+/** Offset 0x0AE6 - Enable xHCI LTR override
   Enables override of recommended LTR values for xHCI
   $EN_DIS
 **/
   UINT8                       PchUsbLtrOverrideEnable;
 
-/** Offset 0x0ACF - Touch Host Controller Mode
+/** Offset 0x0AE7 - Touch Host Controller Mode
   Switch between Intel THC protocol and Industry standard HID Over SPI protocol. 0x0:Thc, 0x1:Hid
 **/
   UINT8                       ThcMode[2];
 
-/** Offset 0x0AD1
+/** Offset 0x0AE9
 **/
   UINT8                       Rsvd27;
 
-/** Offset 0x0AD2
+/** Offset 0x0AEA
 **/
-  UINT8                       UnusedUpdSpace4[2];
+  UINT8                       UnusedUpdSpace6[2];
 
-/** Offset 0x0AD4 - xHCI High Idle Time LTR override
+/** Offset 0x0AEC - xHCI High Idle Time LTR override
   Value used for overriding LTR recommendation for xHCI High Idle Time LTR setting
 **/
   UINT32                      PchUsbLtrHighIdleTimeOverride;
 
-/** Offset 0x0AD8 - xHCI Medium Idle Time LTR override
+/** Offset 0x0AF0 - xHCI Medium Idle Time LTR override
   Value used for overriding LTR recommendation for xHCI Medium Idle Time LTR setting
 **/
   UINT32                      PchUsbLtrMediumIdleTimeOverride;
 
-/** Offset 0x0ADC - xHCI Low Idle Time LTR override
+/** Offset 0x0AF4 - xHCI Low Idle Time LTR override
   Value used for overriding LTR recommendation for xHCI Low Idle Time LTR setting
 **/
   UINT32                      PchUsbLtrLowIdleTimeOverride;
 
-/** Offset 0x0AE0 - Enable 8254 Static Clock Gating
+/** Offset 0x0AF8 - Enable 8254 Static Clock Gating
   Set 8254CGE=1 is required for SLP_S0 support. However, set 8254CGE=1 in POST time
   might fail to boot legacy OS using 8254 timer. Make sure it is disabled to support
   legacy OS using 8254 timer. Also enable this while S0ix is enabled.
@@ -2786,7 +2865,7 @@ typedef struct {
 **/
   UINT8                       Enable8254ClockGating;
 
-/** Offset 0x0AE1 - Enable 8254 Static Clock Gating On S3
+/** Offset 0x0AF9 - Enable 8254 Static Clock Gating On S3
   This is only applicable when Enable8254ClockGating is disabled. FSP will do the
   8254 CGE programming on S3 resume when Enable8254ClockGatingOnS3 is enabled. This
   avoids the SMI requirement for the programming.
@@ -2794,7 +2873,7 @@ typedef struct {
 **/
   UINT8                       Enable8254ClockGatingOnS3;
 
-/** Offset 0x0AE2 - Enable TCO timer.
+/** Offset 0x0AFA - Enable TCO timer.
   When FALSE, it disables PCH ACPI timer, and stops TCO timer. NOTE: This will have
   huge power impact when it's enabled. If TCO timer is disabled, uCode ACPI timer
   emulation must be enabled, and WDAT table must not be exposed to the OS.
@@ -2802,138 +2881,138 @@ typedef struct {
 **/
   UINT8                       EnableTcoTimer;
 
-/** Offset 0x0AE3 - Enable Timed GPIO 0.
+/** Offset 0x0AFB - Enable Timed GPIO 0.
   When FALSE, it disables Timed GPIO 0.
   $EN_DIS
 **/
   UINT8                       EnableTimedGpio0;
 
-/** Offset 0x0AE4 - Enable Timed GPIO 1.
+/** Offset 0x0AFC - Enable Timed GPIO 1.
   When FALSE, it disables Timed GPIO 1.
   $EN_DIS
 **/
   UINT8                       EnableTimedGpio1;
 
-/** Offset 0x0AE5
+/** Offset 0x0AFD
 **/
   UINT8                       EmbReserved3FspsUpd[2];
 
-/** Offset 0x0AE7 - Hybrid Storage Detection and Configuration Mode
+/** Offset 0x0AFF - Hybrid Storage Detection and Configuration Mode
   Enables support for Hybrid storage devices. 0: Disabled; 1: Dynamic Configuration.
   Default is 0: Disabled
   0: Disabled, 1: Dynamic Configuration
 **/
   UINT8                       HybridStorageMode;
 
-/** Offset 0x0AE8 - CPU Root Port used for Hybrid Storage
+/** Offset 0x0B00 - CPU Root Port used for Hybrid Storage
   Specifies the CPU root port used for Hybrid storage.
 **/
   UINT8                       CpuRootportUsedForHybridStorage;
 
-/** Offset 0x0AE9 - PCH Root Port used for Hybrid Storage when two lanes are connected to CPU
+/** Offset 0x0B01 - PCH Root Port used for Hybrid Storage when two lanes are connected to CPU
   Specifies PCH Root Port used for Hybrid Storage when two lanes are connected to CPU.
 **/
   UINT8                       PchRootportUsedForCpuAttach;
 
-/** Offset 0x0AEA - PCH GPE event handler
+/** Offset 0x0B02 - PCH GPE event handler
   Enabled _L6D ACPI handler. PME GPE is shared by multiple devices So BIOS must verify
   the same in the ASL handler by reading offset for PMEENABLE and PMESTATUS bit
   $EN_DIS
 **/
   UINT8                       PchAcpiL6dPmeHandling;
 
-/** Offset 0x0AEB
+/** Offset 0x0B03
 **/
   UINT8                       Rsvd28[1];
 
-/** Offset 0x0AEC
+/** Offset 0x0B04
 **/
-  UINT8                       UnusedUpdSpace5[4];
+  UINT8                       UnusedUpdSpace7[4];
 
-/** Offset 0x0AF0 - BgpdtHash[4]
+/** Offset 0x0B08 - BgpdtHash[4]
   BgpdtHash values
 **/
   UINT64                      BgpdtHash[4];
 
-/** Offset 0x0B10 - BiosGuardAttr
+/** Offset 0x0B28 - BiosGuardAttr
   BiosGuardAttr default values
 **/
   UINT32                      BiosGuardAttr;
 
-/** Offset 0x0B14
+/** Offset 0x0B2C
 **/
   UINT8                       Rsvd29[4];
 
-/** Offset 0x0B18 - BiosGuardModulePtr
+/** Offset 0x0B30 - BiosGuardModulePtr
   BiosGuardModulePtr default values
 **/
   UINT64                      BiosGuardModulePtr;
 
-/** Offset 0x0B20 - SendEcCmd
+/** Offset 0x0B38 - SendEcCmd
   SendEcCmd function pointer. \n
   @code typedef EFI_STATUS (EFIAPI *PLATFORM_SEND_EC_COMMAND) (IN EC_COMMAND_TYPE
   EcCmdType, IN UINT8  EcCmd, IN UINT8  SendData, IN OUT UINT8  *ReceiveData); @endcode
 **/
   UINT64                      SendEcCmd;
 
-/** Offset 0x0B28 - EcCmdProvisionEav
+/** Offset 0x0B40 - EcCmdProvisionEav
   Ephemeral Authorization Value default values. Provisions an ephemeral shared secret to the EC
 **/
   UINT8                       EcCmdProvisionEav;
 
-/** Offset 0x0B29 - EcCmdLock
+/** Offset 0x0B41 - EcCmdLock
   EcCmdLock default values. Locks Ephemeral Authorization Value sent previously
 **/
   UINT8                       EcCmdLock;
 
-/** Offset 0x0B2A - Skip Ssid Programming.
+/** Offset 0x0B42 - Skip Ssid Programming.
   When set to TRUE, silicon code will not do any SSID programming and platform code
   needs to handle that by itself properly.
   $EN_DIS
 **/
   UINT8                       SiSkipSsidProgramming;
 
-/** Offset 0x0B2B
+/** Offset 0x0B43
 **/
   UINT8                       Rsvd30;
 
-/** Offset 0x0B2C - Change Default SVID
+/** Offset 0x0B44 - Change Default SVID
   Change the default SVID used in FSP to programming internal devices. This is only
   valid when SkipSsidProgramming is FALSE.
 **/
   UINT16                      SiCustomizedSvid;
 
-/** Offset 0x0B2E - Change Default SSID
+/** Offset 0x0B46 - Change Default SSID
   Change the default SSID used in FSP to programming internal devices. This is only
   valid when SkipSsidProgramming is FALSE.
 **/
   UINT16                      SiCustomizedSsid;
 
-/** Offset 0x0B30 - SVID SDID table Poniter.
+/** Offset 0x0B48 - SVID SDID table Poniter.
   The address of the table of SVID SDID to customize each SVID SDID entry. This is
   only valid when SkipSsidProgramming is FALSE.
 **/
   UINT32                      SiSsidTablePtr;
 
-/** Offset 0x0B34 - Number of ssid table.
+/** Offset 0x0B4C - Number of ssid table.
   SiNumberOfSsidTableEntry should match the table entries created in SiSsidTablePtr.
   This is only valid when SkipSsidProgramming is FALSE.
 **/
   UINT16                      SiNumberOfSsidTableEntry;
 
-/** Offset 0x0B36 - USB2 Port Reset Message Enable
+/** Offset 0x0B4E - USB2 Port Reset Message Enable
   0: Disable USB2 Port Reset Message; 1: Enable USB2 Port Reset Message; This must
   be enable for USB2 Port those are paired with CPU XHCI Port
 **/
   UINT8                       PortResetMessageEnable[16];
 
-/** Offset 0x0B46 - SATA RST Interrupt Mode
+/** Offset 0x0B5E - SATA RST Interrupt Mode
   Allowes to choose which interrupts will be implemented by SATA controller in RAID mode.
   0:Msix, 1:Msi, 2:Legacy
 **/
   UINT8                       SataRstInterrupt;
 
-/** Offset 0x0B47 - ME Unconfig on RTC clear
+/** Offset 0x0B5F - ME Unconfig on RTC clear
   0: Disable ME Unconfig On Rtc Clear. <b>1: Enable ME Unconfig On Rtc Clear</b>.
   2: Cmos is clear, status unkonwn. 3: Reserved
   0: Disable ME Unconfig On Rtc Clear, 1: Enable ME Unconfig On Rtc Clear, 2: Cmos
@@ -2941,13 +3020,13 @@ typedef struct {
 **/
   UINT8                       MeUnconfigOnRtcClear;
 
-/** Offset 0x0B48 - Enforce Enhanced Debug Mode
+/** Offset 0x0B60 - Enforce Enhanced Debug Mode
   Determine if ME should enter Enhanced Debug Mode. <b>0: disable</b>, 1: enable
   $EN_DIS
 **/
   UINT8                       EnforceEDebugMode;
 
-/** Offset 0x0B49 - Enable PS_ON.
+/** Offset 0x0B61 - Enable PS_ON.
   PS_ON is a new C10 state from the CPU on desktop SKUs that enables a lower power
   target that will be required by the California Energy Commission (CEC). When FALSE,
   PS_ON is to be disabled.
@@ -2955,181 +3034,181 @@ typedef struct {
 **/
   UINT8                       PsOnEnable;
 
-/** Offset 0x0B4A - Pmc Cpu C10 Gate Pin Enable
+/** Offset 0x0B62 - Pmc Cpu C10 Gate Pin Enable
   Enable/Disable platform support for CPU_C10_GATE# pin to control gating of CPU VccIO
   and VccSTG rails instead of SLP_S0# pin.
   $EN_DIS
 **/
   UINT8                       PmcCpuC10GatePinEnable;
 
-/** Offset 0x0B4B - Pch Dmi Aspm Ctrl
+/** Offset 0x0B63 - Pch Dmi Aspm Ctrl
   ASPM configuration on the PCH side of the DMI/OPI Link. Default is <b>PchPcieAspmL1</b>
   0:Disabled, 1:L0s, 2:L1, 3:L0sL1, 4:Auto
 **/
   UINT8                       PchDmiAspmCtrl;
 
-/** Offset 0x0B4C - PchDmiCwbEnable
+/** Offset 0x0B64 - PchDmiCwbEnable
   Central Write Buffer feature configurable and enabled by default
   $EN_DIS
 **/
   UINT8                       PchDmiCwbEnable;
 
-/** Offset 0x0B4D - OS IDLE Mode Enable
+/** Offset 0x0B65 - OS IDLE Mode Enable
   Enable/Disable OS Idle Mode
   $EN_DIS
 **/
   UINT8                       PmcOsIdleEnable;
 
-/** Offset 0x0B4E - S0ix Auto-Demotion
+/** Offset 0x0B66 - S0ix Auto-Demotion
   Enable/Disable the Low Power Mode Auto-Demotion Host Control feature.
   $EN_DIS
 **/
   UINT8                       PchS0ixAutoDemotion;
 
-/** Offset 0x0B4F - Latch Events C10 Exit
+/** Offset 0x0B67 - Latch Events C10 Exit
   When this bit is set to 1, SLP_S0# entry events in SLP_S0_DEBUG_REGx registers are
   captured on C10 exit (instead of C10 entry which is default)
   $EN_DIS
 **/
   UINT8                       PchPmLatchEventsC10Exit;
 
-/** Offset 0x0B50 - PMC ADR enable
+/** Offset 0x0B68 - PMC ADR enable
   Enable/disable asynchronous DRAM refresh
   $EN_DIS
 **/
   UINT8                       PmcAdrEn;
 
-/** Offset 0x0B51 - PMC ADR timer configuration enable
+/** Offset 0x0B69 - PMC ADR timer configuration enable
   Enable/disable ADR timer configuration
   $EN_DIS
 **/
   UINT8                       PmcAdrTimerEn;
 
-/** Offset 0x0B52 - PMC ADR phase 1 timer value
+/** Offset 0x0B6A - PMC ADR phase 1 timer value
   Enable/disable ADR timer configuration
 **/
   UINT8                       PmcAdrTimer1Val;
 
-/** Offset 0x0B53 - PMC ADR phase 1 timer multiplier value
+/** Offset 0x0B6B - PMC ADR phase 1 timer multiplier value
   Specify the multiplier value for phase 1 ADR timer
 **/
   UINT8                       PmcAdrMultiplier1Val;
 
-/** Offset 0x0B54 - PMC ADR host reset partition enable
+/** Offset 0x0B6C - PMC ADR host reset partition enable
   Specify whether PMC should set ADR_RST_STS bit after receiving Reset_Warn_Ack DMI message
   $EN_DIS
 **/
   UINT8                       PmcAdrHostPartitionReset;
 
-/** Offset 0x0B55 - PMC ADR source select override enable
+/** Offset 0x0B6D - PMC ADR source select override enable
   Tells the FSP to update the source select with platform value
   $EN_DIS
 **/
   UINT8                       PmcAdrSrcOverride;
 
-/** Offset 0x0B56
+/** Offset 0x0B6E
 **/
   UINT8                       Rsvd31[2];
 
-/** Offset 0x0B58 - PMC ADR source selection
+/** Offset 0x0B70 - PMC ADR source selection
   Specify which sources should cause ADR flow
 **/
   UINT32                      PmcAdrSrcSel;
 
-/** Offset 0x0B5C - PCIE Eq Ph3 Lane Param Cm
+/** Offset 0x0B74 - PCIE Eq Ph3 Lane Param Cm
   CPU_PCIE_EQ_LANE_PARAM. Coefficient C-1.
 **/
   UINT8                       CpuPcieEqPh3LaneParamCm[32];
 
-/** Offset 0x0B7C - PCIE Eq Ph3 Lane Param Cp
+/** Offset 0x0B94 - PCIE Eq Ph3 Lane Param Cp
   CPU_PCIE_EQ_LANE_PARAM. Coefficient C+1.
 **/
   UINT8                       CpuPcieEqPh3LaneParamCp[32];
 
-/** Offset 0x0B9C - Gen3 Root port preset values per lane
+/** Offset 0x0BB4 - Gen3 Root port preset values per lane
   Used for programming Pcie Gen3 preset values per lane. Range: 0-9, 8 is default
   for each lane
 **/
   UINT8                       CpuPcieGen3RootPortPreset[20];
 
-/** Offset 0x0BB0 - Pcie Gen4 Root port preset values per lane
+/** Offset 0x0BC8 - Pcie Gen4 Root port preset values per lane
   Used for programming Pcie Gen4 preset values per lane. Range: 0-9, 8 is default
   for each lane
 **/
   UINT8                       CpuPcieGen4RootPortPreset[20];
 
-/** Offset 0x0BC4 - Pcie Gen3 End port preset values per lane
+/** Offset 0x0BDC - Pcie Gen3 End port preset values per lane
   Used for programming Pcie Gen3 preset values per lane. Range: 0-9, 7 is default
   for each lane
 **/
   UINT8                       CpuPcieGen3EndPointPreset[20];
 
-/** Offset 0x0BD8 - Pcie Gen4 End port preset values per lane
+/** Offset 0x0BF0 - Pcie Gen4 End port preset values per lane
   Used for programming Pcie Gen4 preset values per lane. Range: 0-9, 7 is default
   for each lane
 **/
   UINT8                       CpuPcieGen4EndPointPreset[20];
 
-/** Offset 0x0BEC - Pcie Gen3 End port Hint values per lane
+/** Offset 0x0C04 - Pcie Gen3 End port Hint values per lane
   Used for programming Pcie Gen3 Hint values per lane. Range: 0-6, 2 is default for each lane
 **/
   UINT8                       CpuPcieGen3EndPointHint[20];
 
-/** Offset 0x0C00 - Pcie Gen4 End port Hint values per lane
+/** Offset 0x0C18 - Pcie Gen4 End port Hint values per lane
   Used for programming Pcie Gen4 Hint values per lane. Range: 0-6, 2 is default for each lane
 **/
   UINT8                       CpuPcieGen4EndPointHint[20];
 
-/** Offset 0x0C14 - CPU PCIe Fia Programming
+/** Offset 0x0C2C - CPU PCIe Fia Programming
   Load Fia configuration if enable. 0: Disable; 1: Enable(Default).
   $EN_DIS
 **/
   UINT8                       CpuPcieFiaProgramming;
 
-/** Offset 0x0C15 - CPU PCIe RootPort Clock Gating
+/** Offset 0x0C2D - CPU PCIe RootPort Clock Gating
   Describes whether the PCI Express Clock Gating for each root port is enabled by
   platform modules. 0: Disable; 1: Enable(Default).
   $EN_DIS
 **/
   UINT8                       CpuPcieClockGating[4];
 
-/** Offset 0x0C19 - CPU PCIe RootPort Power Gating
+/** Offset 0x0C31 - CPU PCIe RootPort Power Gating
   Describes whether the PCI Express Power Gating for each root port is enabled by
   platform modules. 0: Disable; 1: Enable(Default).
   $EN_DIS
 **/
   UINT8                       CpuPciePowerGating[4];
 
-/** Offset 0x0C1D - PCIE Compliance Test Mode
+/** Offset 0x0C35 - PCIE Compliance Test Mode
   Compliance Test Mode shall be enabled when using Compliance Load Board.
   $EN_DIS
 **/
   UINT8                       CpuPcieComplianceTestMode;
 
-/** Offset 0x0C1E - PCIE Enable Peer Memory Write
+/** Offset 0x0C36 - PCIE Enable Peer Memory Write
   This member describes whether Peer Memory Writes are enabled on the platform.
   $EN_DIS
 **/
   UINT8                       CpuPcieEnablePeerMemoryWrite;
 
-/** Offset 0x0C1F - PCIE Rp Function Swap
+/** Offset 0x0C37 - PCIE Rp Function Swap
   Allows BIOS to use root port function number swapping when root port of function
   0 is disabled.
   $EN_DIS
 **/
   UINT8                       CpuPcieRpFunctionSwap;
 
-/** Offset 0x0C20 - PCI Express Slot Selection
+/** Offset 0x0C38 - PCI Express Slot Selection
   Select the PCIe M2 or CEMx4 slot.0: CEMx4 slot; 1: M2 slot(Default).
   $EN_DIS
 **/
   UINT8                       CpuPcieSlotSelection;
 
-/** Offset 0x0C21
+/** Offset 0x0C39
 **/
   UINT8                       Rsvd32[3];
 
-/** Offset 0x0C24 - CPU PCIE device override table pointer
+/** Offset 0x0C3C - CPU PCIE device override table pointer
   The PCIe device table is being used to override PCIe device ASPM settings. This
   is a pointer points to a 32bit address. And it's only used in PostMem phase. Please
   refer to CPU_PCIE_DEVICE_OVERRIDE structure for the table. Last entry VendorId
@@ -3137,233 +3216,233 @@ typedef struct {
 **/
   UINT32                      CpuPcieDeviceOverrideTablePtr;
 
-/** Offset 0x0C28 - Enable PCIE RP HotPlug
+/** Offset 0x0C40 - Enable PCIE RP HotPlug
   Indicate whether the root port is hot plug available.
 **/
   UINT8                       CpuPcieRpHotPlug[4];
 
-/** Offset 0x0C2C - Enable PCIE RP Pm Sci
+/** Offset 0x0C44 - Enable PCIE RP Pm Sci
   Indicate whether the root port power manager SCI is enabled.
 **/
   UINT8                       CpuPcieRpPmSci[4];
 
-/** Offset 0x0C30 - Enable PCIE RP Transmitter Half Swing
+/** Offset 0x0C48 - Enable PCIE RP Transmitter Half Swing
   Indicate whether the Transmitter Half Swing is enabled.
 **/
   UINT8                       CpuPcieRpTransmitterHalfSwing[4];
 
-/** Offset 0x0C34 - PCIE RP Access Control Services Extended Capability
+/** Offset 0x0C4C - PCIE RP Access Control Services Extended Capability
   Enable/Disable PCIE RP Access Control Services Extended Capability
 **/
   UINT8                       CpuPcieRpAcsEnabled[4];
 
-/** Offset 0x0C38 - PCIE RP Clock Power Management
+/** Offset 0x0C50 - PCIE RP Clock Power Management
   Enable/Disable PCIE RP Clock Power Management, even if disabled, CLKREQ# signal
   can still be controlled by L1 PM substates mechanism
 **/
   UINT8                       CpuPcieRpEnableCpm[4];
 
-/** Offset 0x0C3C - PCIE RP Advanced Error Report
+/** Offset 0x0C54 - PCIE RP Advanced Error Report
   Indicate whether the Advanced Error Reporting is enabled.
 **/
   UINT8                       CpuPcieRpAdvancedErrorReporting[4];
 
-/** Offset 0x0C40 - PCIE RP Unsupported Request Report
+/** Offset 0x0C58 - PCIE RP Unsupported Request Report
   Indicate whether the Unsupported Request Report is enabled.
 **/
   UINT8                       CpuPcieRpUnsupportedRequestReport[4];
 
-/** Offset 0x0C44 - PCIE RP Fatal Error Report
+/** Offset 0x0C5C - PCIE RP Fatal Error Report
   Indicate whether the Fatal Error Report is enabled.
 **/
   UINT8                       CpuPcieRpFatalErrorReport[4];
 
-/** Offset 0x0C48 - PCIE RP No Fatal Error Report
+/** Offset 0x0C60 - PCIE RP No Fatal Error Report
   Indicate whether the No Fatal Error Report is enabled.
 **/
   UINT8                       CpuPcieRpNoFatalErrorReport[4];
 
-/** Offset 0x0C4C - PCIE RP Correctable Error Report
+/** Offset 0x0C64 - PCIE RP Correctable Error Report
   Indicate whether the Correctable Error Report is enabled.
 **/
   UINT8                       CpuPcieRpCorrectableErrorReport[4];
 
-/** Offset 0x0C50 - PCIE RP System Error On Fatal Error
+/** Offset 0x0C68 - PCIE RP System Error On Fatal Error
   Indicate whether the System Error on Fatal Error is enabled.
 **/
   UINT8                       CpuPcieRpSystemErrorOnFatalError[4];
 
-/** Offset 0x0C54 - PCIE RP System Error On Non Fatal Error
+/** Offset 0x0C6C - PCIE RP System Error On Non Fatal Error
   Indicate whether the System Error on Non Fatal Error is enabled.
 **/
   UINT8                       CpuPcieRpSystemErrorOnNonFatalError[4];
 
-/** Offset 0x0C58 - PCIE RP System Error On Correctable Error
+/** Offset 0x0C70 - PCIE RP System Error On Correctable Error
   Indicate whether the System Error on Correctable Error is enabled.
 **/
   UINT8                       CpuPcieRpSystemErrorOnCorrectableError[4];
 
-/** Offset 0x0C5C - PCIE RP Max Payload
+/** Offset 0x0C74 - PCIE RP Max Payload
   Max Payload Size supported, Default 128B, see enum CPU_PCIE_MAX_PAYLOAD.
 **/
   UINT8                       CpuPcieRpMaxPayload[4];
 
-/** Offset 0x0C60 - DPC for PCIE RP Mask
+/** Offset 0x0C78 - DPC for PCIE RP Mask
   Enable/disable Downstream Port Containment for PCIE Root Ports. 0: disable, 1: enable.
   One bit for each port, bit0 for port1, bit1 for port2, and so on.
 **/
   UINT8                       CpuPcieRpDpcEnabled[4];
 
-/** Offset 0x0C64 - DPC Extensions PCIE RP Mask
+/** Offset 0x0C7C - DPC Extensions PCIE RP Mask
   Enable/disable DPC Extensions for PCIE Root Ports. 0: disable, 1: enable. One bit
   for each port, bit0 for port1, bit1 for port2, and so on.
 **/
   UINT8                       CpuPcieRpDpcExtensionsEnabled[4];
 
-/** Offset 0x0C68 - CPU PCIe root port connection type
-  0: built-in device, 1:slot
+/** Offset 0x0C80 - CPU PCIe root port connection type
+  DEPRECATED
 **/
   UINT8                       CpuPcieRpSlotImplemented[4];
 
-/** Offset 0x0C6C - PCIE RP Gen3 Equalization Phase Method
+/** Offset 0x0C84 - PCIE RP Gen3 Equalization Phase Method
   PCIe Gen3 Eq Ph3 Method (see CPU_PCIE_EQ_METHOD). 0: DEPRECATED, hardware equalization;
   1: hardware equalization; 4: Fixed Coeficients.
 **/
   UINT8                       CpuPcieRpGen3EqPh3Method[4];
 
-/** Offset 0x0C70 - PCIE RP Gen4 Equalization Phase Method
+/** Offset 0x0C88 - PCIE RP Gen4 Equalization Phase Method
   PCIe Gen4 Eq Ph3 Method (see CPU_PCIE_EQ_METHOD). 0: DEPRECATED, hardware equalization;
   1: hardware equalization; 4: Fixed Coeficients.
 **/
   UINT8                       CpuPcieRpGen4EqPh3Method[4];
 
-/** Offset 0x0C74 - PCIE RP Physical Slot Number
+/** Offset 0x0C8C - PCIE RP Physical Slot Number
   Indicates the slot number for the root port. Default is the value as root port index.
 **/
   UINT8                       CpuPcieRpPhysicalSlotNumber[4];
 
-/** Offset 0x0C78 - PCIE RP Aspm
+/** Offset 0x0C90 - PCIE RP Aspm
   The ASPM configuration of the root port (see: CPU_PCIE_ASPM_CONTROL).0: Disable;
   1: CpuPcieAspmL0s; 2: CpuPcieAspmL1; 3:CpuPcieAspmL0sL1(Default)
 **/
   UINT8                       CpuPcieRpAspm[4];
 
-/** Offset 0x0C7C - PCIE RP L1 Substates
+/** Offset 0x0C94 - PCIE RP L1 Substates
   The L1 Substates configuration of the root port (see: CPU_PCIE_L1SUBSTATES_CONTROL).
   Default is CpuPcieL1SubstatesL1_1_2.
 **/
   UINT8                       CpuPcieRpL1Substates[4];
 
-/** Offset 0x0C80 - PCIE RP Ltr Enable
+/** Offset 0x0C98 - PCIE RP Ltr Enable
   Latency Tolerance Reporting Mechanism.
 **/
   UINT8                       CpuPcieRpLtrEnable[4];
 
-/** Offset 0x0C84 - PCIE RP Ltr Config Lock
+/** Offset 0x0C9C - PCIE RP Ltr Config Lock
   0: Disable; 1: Enable.
 **/
   UINT8                       CpuPcieRpLtrConfigLock[4];
 
-/** Offset 0x0C88 - PTM for PCIE RP Mask
+/** Offset 0x0CA0 - PTM for PCIE RP Mask
   Enable/disable Precision Time Measurement for PCIE Root Ports. 0: disable, 1: enable.
   One bit for each port, bit0 for port1, bit1 for port2, and so on.
 **/
   UINT8                       CpuPcieRpPtmEnabled[4];
 
-/** Offset 0x0C8C - PCIE RP Detect Timeout Ms
+/** Offset 0x0CA4 - PCIE RP Detect Timeout Ms
   The number of milliseconds within 0~65535 in reference code will wait for link to
   exit Detect state for enabled ports before assuming there is no device and potentially
   disabling the port.
 **/
   UINT16                      CpuPcieRpDetectTimeoutMs[4];
 
-/** Offset 0x0C94 - Multi-VC for PCIE RP Mask
+/** Offset 0x0CAC - Multi-VC for PCIE RP Mask
   Enable/disable Multiple Virtual Channel for PCIE Root Ports. 0: disable, 1: enable.
   One bit for each port, bit0 for port1, bit1 for port2, and so on.
 **/
   UINT8                       CpuPcieRpMultiVcEnabled[4];
 
-/** Offset 0x0C98 - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 3
+/** Offset 0x0CB0 - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 3
   Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 3, Each
   value in array can be between 0-1. One byte for each port.
 **/
   UINT8                       Usb3HsioTxRate3UniqTranEnable[10];
 
-/** Offset 0x0CA2 - USB 3.0 TX Output Unique Transition Bit Scale for rate 3
+/** Offset 0x0CBA - USB 3.0 TX Output Unique Transition Bit Scale for rate 3
   USB 3.0 TX Output Unique Transition Bit Scale for rate 3, HSIO_TX_DWORD9[6:0], <b>Default
   = 4Ch</b>. One byte for each port.
 **/
   UINT8                       Usb3HsioTxRate3UniqTran[10];
 
-/** Offset 0x0CAC - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 2
+/** Offset 0x0CC4 - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 2
   Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 2, Each
   value in array can be between 0-1. One byte for each port.
 **/
   UINT8                       Usb3HsioTxRate2UniqTranEnable[10];
 
-/** Offset 0x0CB6 - USB 3.0 TX Output Unique Transition Bit Scale for rate 2
+/** Offset 0x0CCE - USB 3.0 TX Output Unique Transition Bit Scale for rate 2
   USB 3.0 TX Output Unique Transition Bit Scale for rate 2, HSIO_TX_DWORD9[14:8],
   <b>Default = 4Ch</b>. One byte for each port.
 **/
   UINT8                       Usb3HsioTxRate2UniqTran[10];
 
-/** Offset 0x0CC0 - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 1
+/** Offset 0x0CD8 - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 1
   Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 1, Each
   value in array can be between 0-1. One byte for each port.
 **/
   UINT8                       Usb3HsioTxRate1UniqTranEnable[10];
 
-/** Offset 0x0CCA - USB 3.0 TX Output Unique Transition Bit Scale for rate 1
+/** Offset 0x0CE2 - USB 3.0 TX Output Unique Transition Bit Scale for rate 1
   USB 3.0 TX Output Unique Transition Bit Scale for rate 1, HSIO_TX_DWORD9[22:16],
   <b>Default = 4Ch</b>. One byte for each port.
 **/
   UINT8                       Usb3HsioTxRate1UniqTran[10];
 
-/** Offset 0x0CD4 - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 0
+/** Offset 0x0CEC - Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 0
   Enable the write to USB 3.0 TX Output Unique Transition Bit Mode for rate 0, Each
   value in array can be between 0-1. One byte for each port.
 **/
   UINT8                       Usb3HsioTxRate0UniqTranEnable[10];
 
-/** Offset 0x0CDE - USB 3.0 TX Output Unique Transition Bit Scale for rate 0
+/** Offset 0x0CF6 - USB 3.0 TX Output Unique Transition Bit Scale for rate 0
   USB 3.0 TX Output Unique Transition Bit Scale for rate 0, HSIO_TX_DWORD9[30:24],
   <b>Default = 4Ch</b>. One byte for each port.
 **/
   UINT8                       Usb3HsioTxRate0UniqTran[10];
 
-/** Offset 0x0CE8 - Skip PAM regsiter lock
+/** Offset 0x0D00 - Skip PAM regsiter lock
   Enable: PAM register will not be locked by RC, platform code should lock it, Disable(Default):
   PAM registers will be locked by RC
   $EN_DIS
 **/
   UINT8                       SkipPamLock;
 
-/** Offset 0x0CE9 - EDRAM Test Mode
+/** Offset 0x0D01 - EDRAM Test Mode
   Enable: PAM register will not be locked by RC, platform code should lock it, Disable(Default):
   PAM registers will be locked by RC
   0: EDRAM SW disable, 1: EDRAM SW Enable, 2: EDRAM HW mode
 **/
   UINT8                       EdramTestMode;
 
-/** Offset 0x0CEA - Enable/Disable IGFX RenderStandby
+/** Offset 0x0D02 - Enable/Disable IGFX RenderStandby
   Enable(Default): Enable IGFX RenderStandby, Disable: Disable IGFX RenderStandby
   $EN_DIS
 **/
   UINT8                       RenderStandby;
 
-/** Offset 0x0CEB - Enable/Disable IGFX PmSupport
+/** Offset 0x0D03 - Enable/Disable IGFX PmSupport
   Enable(Default): Enable IGFX PmSupport, Disable: Disable IGFX PmSupport
   $EN_DIS
 **/
   UINT8                       PmSupport;
 
-/** Offset 0x0CEC - Enable/Disable CdynmaxClamp
+/** Offset 0x0D04 - Enable/Disable CdynmaxClamp
   Enable: Enable CdynmaxClamp, Disable(Default): Disable CdynmaxClamp
   $EN_DIS
 **/
   UINT8                       CdynmaxClampEnable;
 
-/** Offset 0x0CED - GT Frequency Limit
+/** Offset 0x0D05 - GT Frequency Limit
   0xFF: Auto(Default), 2: 100 Mhz, 3: 150 Mhz, 4: 200 Mhz, 5: 250 Mhz, 6: 300 Mhz,
   7: 350 Mhz, 8: 400 Mhz, 9: 450 Mhz, 0xA: 500 Mhz, 0xB: 550 Mhz, 0xC: 600 Mhz, 0xD:
   650 Mhz, 0xE: 700 Mhz, 0xF: 750 Mhz, 0x10: 800 Mhz, 0x11: 850 Mhz, 0x12:900 Mhz,
@@ -3377,128 +3456,128 @@ typedef struct {
 **/
   UINT8                       GtFreqMax;
 
-/** Offset 0x0CEE - Disable Turbo GT
+/** Offset 0x0D06 - Disable Turbo GT
    0=Disable: GT frequency is not limited, 1=Enable: Disables Turbo GT frequency
   $EN_DIS
 **/
   UINT8                       DisableTurboGt;
 
-/** Offset 0x0CEF - Enable/Disable CdClock Init
+/** Offset 0x0D07 - Enable/Disable CdClock Init
   Enable: Skip Full CD clock initializaton, Disable(Default): Initialize the full
   CD clock if not initialized by Gfx PEIM
   $EN_DIS
 **/
   UINT8                       SkipCdClockInit;
 
-/** Offset 0x0CF0 - Enable RC1p frequency request to PMA (provided all other conditions are met)
+/** Offset 0x0D08 - Enable RC1p frequency request to PMA (provided all other conditions are met)
   0(Default)=Disable, 1=Enable
   $EN_DIS
 **/
   UINT8                       RC1pFreqEnable;
 
-/** Offset 0x0CF1 - Enable TSN Multi-VC
+/** Offset 0x0D09 - Enable TSN Multi-VC
   Enable/disable Multi Virtual Channels(VC) in TSN.
   $EN_DIS
 **/
   UINT8                       PchTsnMultiVcEnable;
 
-/** Offset 0x0CF2
+/** Offset 0x0D0A
 **/
   UINT8                       Rsvd33[2];
 
-/** Offset 0x0CF4 - LogoPixelHeight Address
+/** Offset 0x0D0C - LogoPixelHeight Address
   Address of LogoPixelHeight
 **/
   UINT32                      LogoPixelHeight;
 
-/** Offset 0x0CF8 - LogoPixelWidth Address
+/** Offset 0x0D10 - LogoPixelWidth Address
   Address of LogoPixelWidth
 **/
   UINT32                      LogoPixelWidth;
 
-/** Offset 0x0CFC - ITbt Usb4CmMode value
+/** Offset 0x0D14 - ITbt Usb4CmMode value
   ITbt Usb4CmMode value. 0:Firmware CM, 1:Software CM
 **/
   UINT8                       Usb4CmMode;
 
-/** Offset 0x0CFD - PCIE Resizable BAR Support
+/** Offset 0x0D15 - PCIE Resizable BAR Support
   Enable/Disable PCIE Resizable BAR Support.0: Disable; 1: Enable; 2: Auto(Default).
   $EN_DIS
 **/
   UINT8                       CpuPcieResizableBarSupport;
 
-/** Offset 0x0CFE - SaPostMemTestRsvd
+/** Offset 0x0D16 - SaPostMemTestRsvd
   Reserved for SA Post-Mem Test
   $EN_DIS
 **/
   UINT8                       SaPostMemTestRsvd[3];
 
-/** Offset 0x0D01 - RSR feature
+/** Offset 0x0D19 - RSR feature
   Enable or Disable RSR feature; 0: Disable; <b>1: Enable </b>
   $EN_DIS
 **/
   UINT8                       EnableRsr;
 
-/** Offset 0x0D02 - ReservedCpuPostMem1
+/** Offset 0x0D1A - ReservedCpuPostMem1
   Reserved for CPU Post-Mem 1
   $EN_DIS
 **/
   UINT8                       ReservedCpuPostMem1[4];
 
-/** Offset 0x0D06 - Enable or Disable HWP
+/** Offset 0x0D1E - Enable or Disable HWP
   Enable or Disable HWP(Hardware P states) Support. 0: Disable; <b>1: Enable;</b>
   2-3:Reserved
   $EN_DIS
 **/
   UINT8                       Hwp;
 
-/** Offset 0x0D07 - Hardware Duty Cycle Control
+/** Offset 0x0D1F - Hardware Duty Cycle Control
   Hardware Duty Cycle Control configuration. 0: Disabled; <b>1: Enabled</b> 2-3:Reserved
   $EN_DIS
 **/
   UINT8                       HdcControl;
 
-/** Offset 0x0D08 - Package Long duration turbo mode time
+/** Offset 0x0D20 - Package Long duration turbo mode time
   Package Long duration turbo mode time window in seconds. Valid values(Unit in seconds)
   0 to 8 , 10 , 12 ,14 , 16 , 20 , 24 , 28 , 32 , 40 , 48 , 56 , 64 , 80 , 96 , 112 , 128
 **/
   UINT8                       PowerLimit1Time;
 
-/** Offset 0x0D09 - Short Duration Turbo Mode
+/** Offset 0x0D21 - Short Duration Turbo Mode
   Enable or Disable short duration Turbo Mode. </b>0 : Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       PowerLimit2;
 
-/** Offset 0x0D0A - Turbo settings Lock
+/** Offset 0x0D22 - Turbo settings Lock
   Lock all Turbo settings Enable/Disable; <b>0: Disable , </b> 1: Enable
   $EN_DIS
 **/
   UINT8                       TurboPowerLimitLock;
 
-/** Offset 0x0D0B - Package PL3 time window
+/** Offset 0x0D23 - Package PL3 time window
   Package PL3 time window range for this policy from 0 to 64ms
 **/
   UINT8                       PowerLimit3Time;
 
-/** Offset 0x0D0C - Package PL3 Duty Cycle
+/** Offset 0x0D24 - Package PL3 Duty Cycle
   Package PL3 Duty Cycle; Valid Range is 0 to 100
 **/
   UINT8                       PowerLimit3DutyCycle;
 
-/** Offset 0x0D0D - Package PL3 Lock
+/** Offset 0x0D25 - Package PL3 Lock
   Package PL3 Lock Enable/Disable; <b>0: Disable</b> ; 1:Enable
   $EN_DIS
 **/
   UINT8                       PowerLimit3Lock;
 
-/** Offset 0x0D0E - Package PL4 Lock
+/** Offset 0x0D26 - Package PL4 Lock
   Package PL4 Lock Enable/Disable; <b>0: Disable</b> ; 1:Enable
   $EN_DIS
 **/
   UINT8                       PowerLimit4Lock;
 
-/** Offset 0x0D0F - TCC Activation Offset
+/** Offset 0x0D27 - TCC Activation Offset
   TCC Activation Offset. Offset from factory set TCC activation temperature at which
   the Thermal Control Circuit must be activated. TCC will be activated at TCC Activation
   Temperature, in volts.For SKL Y SKU, the recommended default for this policy is
@@ -3506,7 +3585,7 @@ typedef struct {
 **/
   UINT8                       TccActivationOffset;
 
-/** Offset 0x0D10 - Tcc Offset Clamp Enable/Disable
+/** Offset 0x0D28 - Tcc Offset Clamp Enable/Disable
   Tcc Offset Clamp for Runtime Average Temperature Limit (RATL) allows CPU to throttle
   below P1.For SKL Y SKU, the recommended default for this policy is <b>1: Enabled</b>,
   For all other SKUs the recommended default are  <b>0: Disabled</b>.
@@ -3514,318 +3593,318 @@ typedef struct {
 **/
   UINT8                       TccOffsetClamp;
 
-/** Offset 0x0D11 - Tcc Offset Lock
+/** Offset 0x0D29 - Tcc Offset Lock
   Tcc Offset Lock for Runtime Average Temperature Limit (RATL) to lock temperature
   target; <b>0: Disabled</b>; 1: Enabled.
   $EN_DIS
 **/
   UINT8                       TccOffsetLock;
 
-/** Offset 0x0D12 - Custom Ratio State Entries
+/** Offset 0x0D2A - Custom Ratio State Entries
   The number of custom ratio state entries, ranges from 0 to 40 for a valid custom
   ratio table.Sets the number of custom P-states. At least 2 states must be present
 **/
   UINT8                       NumberOfEntries;
 
-/** Offset 0x0D13 - Custom Short term Power Limit time window
+/** Offset 0x0D2B - Custom Short term Power Limit time window
   Short term Power Limit time window value for custom CTDP level 1. Valid Range 0 to 128
 **/
   UINT8                       Custom1PowerLimit1Time;
 
-/** Offset 0x0D14 - Custom Turbo Activation Ratio
+/** Offset 0x0D2C - Custom Turbo Activation Ratio
   Turbo Activation Ratio for custom cTDP level 1. Valid Range 0 to 255
 **/
   UINT8                       Custom1TurboActivationRatio;
 
-/** Offset 0x0D15 - Custom Config Tdp Control
+/** Offset 0x0D2D - Custom Config Tdp Control
   Config Tdp Control (0/1/2) value for custom cTDP level 1. Valid Range is 0 to 2
 **/
   UINT8                       Custom1ConfigTdpControl;
 
-/** Offset 0x0D16 - Custom Short term Power Limit time window
+/** Offset 0x0D2E - Custom Short term Power Limit time window
   Short term Power Limit time window value for custom CTDP level 2. Valid Range 0 to 128
 **/
   UINT8                       Custom2PowerLimit1Time;
 
-/** Offset 0x0D17 - Custom Turbo Activation Ratio
+/** Offset 0x0D2F - Custom Turbo Activation Ratio
   Turbo Activation Ratio for custom cTDP level 2. Valid Range 0 to 255
 **/
   UINT8                       Custom2TurboActivationRatio;
 
-/** Offset 0x0D18 - Custom Config Tdp Control
+/** Offset 0x0D30 - Custom Config Tdp Control
   Config Tdp Control (0/1/2) value for custom cTDP level 1. Valid Range is 0 to 2
 **/
   UINT8                       Custom2ConfigTdpControl;
 
-/** Offset 0x0D19 - Custom Short term Power Limit time window
+/** Offset 0x0D31 - Custom Short term Power Limit time window
   Short term Power Limit time window value for custom CTDP level 3. Valid Range 0 to 128
 **/
   UINT8                       Custom3PowerLimit1Time;
 
-/** Offset 0x0D1A - Custom Turbo Activation Ratio
+/** Offset 0x0D32 - Custom Turbo Activation Ratio
   Turbo Activation Ratio for custom cTDP level 3. Valid Range 0 to 255
 **/
   UINT8                       Custom3TurboActivationRatio;
 
-/** Offset 0x0D1B - Custom Config Tdp Control
+/** Offset 0x0D33 - Custom Config Tdp Control
   Config Tdp Control (0/1/2) value for custom cTDP level 1. Valid Range is 0 to 2
 **/
   UINT8                       Custom3ConfigTdpControl;
 
-/** Offset 0x0D1C - ConfigTdp mode settings Lock
+/** Offset 0x0D34 - ConfigTdp mode settings Lock
   Lock the ConfigTdp mode settings from runtime changes; <b>0: Disable</b>; 1: Enable
   $EN_DIS
 **/
   UINT8                       ConfigTdpLock;
 
-/** Offset 0x0D1D - Load Configurable TDP SSDT
+/** Offset 0x0D35 - Load Configurable TDP SSDT
   Configure whether to load Configurable TDP SSDT; <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       ConfigTdpBios;
 
-/** Offset 0x0D1E - PL1 Enable value
+/** Offset 0x0D36 - PL1 Enable value
   PL1 Enable value to limit average platform power. <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       PsysPowerLimit1;
 
-/** Offset 0x0D1F - PL1 timewindow
+/** Offset 0x0D37 - PL1 timewindow
   PL1 timewindow in seconds.Valid values(Unit in seconds) 0 to 8 , 10 , 12 ,14 , 16
   , 20 , 24 , 28 , 32 , 40 , 48 , 56 , 64 , 80 , 96 , 112 , 128
 **/
   UINT8                       PsysPowerLimit1Time;
 
-/** Offset 0x0D20 - PL2 Enable Value
+/** Offset 0x0D38 - PL2 Enable Value
   PL2 Enable activates the PL2 value to limit average platform power.<b>0: Disable</b>;
   1: Enable.
   $EN_DIS
 **/
   UINT8                       PsysPowerLimit2;
 
-/** Offset 0x0D21 - Enable or Disable MLC Streamer Prefetcher
+/** Offset 0x0D39 - Enable or Disable MLC Streamer Prefetcher
   Enable or Disable MLC Streamer Prefetcher; 0: Disable; <b>1: Enable</b>.
   $EN_DIS
 **/
   UINT8                       MlcStreamerPrefetcher;
 
-/** Offset 0x0D22 - Enable or Disable MLC Spatial Prefetcher
+/** Offset 0x0D3A - Enable or Disable MLC Spatial Prefetcher
   Enable or Disable MLC Spatial Prefetcher; 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       MlcSpatialPrefetcher;
 
-/** Offset 0x0D23 - Enable or Disable Monitor /MWAIT instructions
+/** Offset 0x0D3B - Enable or Disable Monitor /MWAIT instructions
   Enable or Disable Monitor /MWAIT instructions; 0: Disable; <b>1: Enable</b>.
   $EN_DIS
 **/
   UINT8                       MonitorMwaitEnable;
 
-/** Offset 0x0D24 - Enable or Disable initialization of machine check registers
+/** Offset 0x0D3C - Enable or Disable initialization of machine check registers
   Enable or Disable initialization of machine check registers; 0: Disable; <b>1: Enable</b>.
   $EN_DIS
 **/
   UINT8                       MachineCheckEnable;
 
-/** Offset 0x0D25 - AP Idle Manner of waiting for SIPI
+/** Offset 0x0D3D - AP Idle Manner of waiting for SIPI
   AP Idle Manner of waiting for SIPI; 1: HALT loop; <b>2: MWAIT loop</b>; 3: RUN loop.
   1: HALT loop, 2: MWAIT loop, 3: RUN loop
 **/
   UINT8                       ApIdleManner;
 
-/** Offset 0x0D26 - Control on Processor Trace output scheme
+/** Offset 0x0D3E - Control on Processor Trace output scheme
   Control on Processor Trace output scheme; <b>0: Single Range Output</b>; 1: ToPA Output.
   0: Single Range Output, 1: ToPA Output
 **/
   UINT8                       ProcessorTraceOutputScheme;
 
-/** Offset 0x0D27 - Enable or Disable Processor Trace feature
+/** Offset 0x0D3F - Enable or Disable Processor Trace feature
   Enable or Disable Processor Trace feature; <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       ProcessorTraceEnable;
 
-/** Offset 0x0D28 - Enable or Disable Intel SpeedStep Technology
+/** Offset 0x0D40 - Enable or Disable Intel SpeedStep Technology
   Enable or Disable Intel SpeedStep Technology. 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       Eist;
 
-/** Offset 0x0D29 - Enable or Disable Energy Efficient P-state
+/** Offset 0x0D41 - Enable or Disable Energy Efficient P-state
   Enable or Disable Energy Efficient P-state will be applied in Turbo mode. Disable;
   <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       EnergyEfficientPState;
 
-/** Offset 0x0D2A - Enable or Disable Energy Efficient Turbo
+/** Offset 0x0D42 - Enable or Disable Energy Efficient Turbo
   Enable or Disable Energy Efficient Turbo, will be applied in Turbo mode. <b>0: Disable</b>; 1: Enable
   $EN_DIS
 **/
   UINT8                       EnergyEfficientTurbo;
 
-/** Offset 0x0D2B - Enable or Disable T states
+/** Offset 0x0D43 - Enable or Disable T states
   Enable or Disable T states; <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       TStates;
 
-/** Offset 0x0D2C - Enable or Disable Bi-Directional PROCHOT#
+/** Offset 0x0D44 - Enable or Disable Bi-Directional PROCHOT#
   Enable or Disable Bi-Directional PROCHOT#; 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       BiProcHot;
 
-/** Offset 0x0D2D - Enable or Disable PROCHOT# signal being driven externally
+/** Offset 0x0D45 - Enable or Disable PROCHOT# signal being driven externally
   Enable or Disable PROCHOT# signal being driven externally; 0: Disable; <b>1: Enable</b>.
   $EN_DIS
 **/
   UINT8                       DisableProcHotOut;
 
-/** Offset 0x0D2E - Enable or Disable PROCHOT# Response
+/** Offset 0x0D46 - Enable or Disable PROCHOT# Response
   Enable or Disable PROCHOT# Response; 0: Disable; <b>1: Enable</b>.
   $EN_DIS
 **/
   UINT8                       ProcHotResponse;
 
-/** Offset 0x0D2F - Enable or Disable VR Thermal Alert
+/** Offset 0x0D47 - Enable or Disable VR Thermal Alert
   Enable or Disable VR Thermal Alert; <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       DisableVrThermalAlert;
 
-/** Offset 0x0D30 - Enable or Disable Thermal Reporting
+/** Offset 0x0D48 - Enable or Disable Thermal Reporting
   Enable or Disable Thermal Reporting through ACPI tables; 0: Disable; <b>1: Enable</b>.
   $EN_DIS
 **/
   UINT8                       EnableAllThermalFunctions;
 
-/** Offset 0x0D31 - Enable or Disable Thermal Monitor
+/** Offset 0x0D49 - Enable or Disable Thermal Monitor
   Enable or Disable Thermal Monitor; 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       ThermalMonitor;
 
-/** Offset 0x0D32 - Enable or Disable CPU power states (C-states)
+/** Offset 0x0D4A - Enable or Disable CPU power states (C-states)
   Enable or Disable CPU power states (C-states). 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       Cx;
 
-/** Offset 0x0D33 - Configure C-State Configuration Lock
+/** Offset 0x0D4B - Configure C-State Configuration Lock
   Configure C-State Configuration Lock; 0: Disable; <b>1: Enable</b>.
   $EN_DIS
 **/
   UINT8                       PmgCstCfgCtrlLock;
 
-/** Offset 0x0D34 - Enable or Disable Enhanced C-states
+/** Offset 0x0D4C - Enable or Disable Enhanced C-states
   Enable or Disable Enhanced C-states. 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       C1e;
 
-/** Offset 0x0D35 - Enable or Disable Package Cstate Demotion
+/** Offset 0x0D4D - Enable or Disable Package Cstate Demotion
   Enable or Disable Package Cstate Demotion. 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       PkgCStateDemotion;
 
-/** Offset 0x0D36 - Enable or Disable Package Cstate UnDemotion
+/** Offset 0x0D4E - Enable or Disable Package Cstate UnDemotion
   Enable or Disable Package Cstate UnDemotion. 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       PkgCStateUnDemotion;
 
-/** Offset 0x0D37 - Enable or Disable CState-Pre wake
+/** Offset 0x0D4F - Enable or Disable CState-Pre wake
   Enable or Disable CState-Pre wake. 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       CStatePreWake;
 
-/** Offset 0x0D38 - Enable or Disable TimedMwait Support.
+/** Offset 0x0D50 - Enable or Disable TimedMwait Support.
   Enable or Disable TimedMwait Support. <b>0: Disable</b>; 1: Enable
   $EN_DIS
 **/
   UINT8                       TimedMwait;
 
-/** Offset 0x0D39 - Enable or Disable IO to MWAIT redirection
+/** Offset 0x0D51 - Enable or Disable IO to MWAIT redirection
   Enable or Disable IO to MWAIT redirection; <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       CstCfgCtrIoMwaitRedirection;
 
-/** Offset 0x0D3A - Set the Max Pkg Cstate
+/** Offset 0x0D52 - Set the Max Pkg Cstate
   Set the Max Pkg Cstate. Default set to Auto which limits the Max Pkg Cstate to deep
   C-state. Valid values 0 - C0/C1 , 1 - C2 , 2 - C3 , 3 - C6 , 4 - C7 , 5 - C7S ,
   6 - C8 , 7 - C9 , 8 - C10 , 254 - CPU Default , 255 - Auto
 **/
   UINT8                       PkgCStateLimit;
 
-/** Offset 0x0D3B - TimeUnit for C-State Latency Control0
+/** Offset 0x0D53 - TimeUnit for C-State Latency Control0
   TimeUnit for C-State Latency Control0; Valid values 0 - 1ns , 1 - 32ns , 2 - 1024ns
   , 3 - 32768ns , 4 - 1048576ns , 5 - 33554432ns
 **/
   UINT8                       CstateLatencyControl0TimeUnit;
 
-/** Offset 0x0D3C - TimeUnit for C-State Latency Control1
+/** Offset 0x0D54 - TimeUnit for C-State Latency Control1
   TimeUnit for C-State Latency Control1;Valid values 0 - 1ns , 1 - 32ns , 2 - 1024ns
   , 3 - 32768ns , 4 - 1048576ns , 5 - 33554432ns
 **/
   UINT8                       CstateLatencyControl1TimeUnit;
 
-/** Offset 0x0D3D - TimeUnit for C-State Latency Control2
+/** Offset 0x0D55 - TimeUnit for C-State Latency Control2
   TimeUnit for C-State Latency Control2;Valid values 0 - 1ns , 1 - 32ns , 2 - 1024ns
   , 3 - 32768ns , 4 - 1048576ns , 5 - 33554432ns
 **/
   UINT8                       CstateLatencyControl2TimeUnit;
 
-/** Offset 0x0D3E - TimeUnit for C-State Latency Control3
+/** Offset 0x0D56 - TimeUnit for C-State Latency Control3
   TimeUnit for C-State Latency Control3;Valid values 0 - 1ns , 1 - 32ns , 2 - 1024ns
   , 3 - 32768ns , 4 - 1048576ns , 5 - 33554432ns
 **/
   UINT8                       CstateLatencyControl3TimeUnit;
 
-/** Offset 0x0D3F - TimeUnit for C-State Latency Control4
+/** Offset 0x0D57 - TimeUnit for C-State Latency Control4
   Time - 1ns , 1 - 32ns , 2 - 1024ns , 3 - 32768ns , 4 - 1048576ns , 5 - 33554432ns
 **/
   UINT8                       CstateLatencyControl4TimeUnit;
 
-/** Offset 0x0D40 - TimeUnit for C-State Latency Control5
+/** Offset 0x0D58 - TimeUnit for C-State Latency Control5
   TimeUnit for C-State Latency Control5;Valid values 0 - 1ns , 1 - 32ns , 2 - 1024ns
   , 3 - 32768ns , 4 - 1048576ns , 5 - 33554432ns
 **/
   UINT8                       CstateLatencyControl5TimeUnit;
 
-/** Offset 0x0D41 - Interrupt Redirection Mode Select
+/** Offset 0x0D59 - Interrupt Redirection Mode Select
   Interrupt Redirection Mode Select.0: Fixed priority; 1: Round robin;2: Hash vector;7:
   No change.
 **/
   UINT8                       PpmIrmSetting;
 
-/** Offset 0x0D42 - Lock prochot configuration
+/** Offset 0x0D5A - Lock prochot configuration
   Lock prochot configuration Enable/Disable; 0: Disable;<b> 1: Enable</b>
   $EN_DIS
 **/
   UINT8                       ProcHotLock;
 
-/** Offset 0x0D43 - Configuration for boot TDP selection
+/** Offset 0x0D5B - Configuration for boot TDP selection
   Deprecated. Move to premem.
 **/
   UINT8                       ConfigTdpLevel;
 
-/** Offset 0x0D44 - Max P-State Ratio
+/** Offset 0x0D5C - Max P-State Ratio
   Max P-State Ratio, Valid Range 0 to 0x7F
 **/
   UINT8                       MaxRatio;
 
-/** Offset 0x0D45 - P-state ratios for custom P-state table
+/** Offset 0x0D5D - P-state ratios for custom P-state table
   P-state ratios for custom P-state table. NumberOfEntries has valid range between
   0 to 40. For no. of P-States supported(NumberOfEntries) , StateRatio[NumberOfEntries]
   are configurable. Valid Range of each entry is 0 to 0x7F
 **/
   UINT8                       StateRatio[40];
 
-/** Offset 0x0D6D - P-state ratios for max 16 version of custom P-state table
+/** Offset 0x0D85 - P-state ratios for max 16 version of custom P-state table
   P-state ratios for max 16 version of custom P-state table. This table is used for
   OS versions limited to a max of 16 P-States. If the first entry of this table is
   0, or if Number of Entries is 16 or less, then this table will be ignored, and
@@ -3834,129 +3913,129 @@ typedef struct {
 **/
   UINT8                       StateRatioMax16[16];
 
-/** Offset 0x0D7D
+/** Offset 0x0D95
 **/
   UINT8                       Rsvd34;
 
-/** Offset 0x0D7E - Platform Power Pmax
+/** Offset 0x0D96 - Platform Power Pmax
   PCODE MMIO Mailbox: Platform Power Pmax. <b>0 - Auto</b> Specified in 1/8 Watt increments.
   Range 0-1024 Watts. Value of 800 = 100W
 **/
   UINT16                      PsysPmax;
 
-/** Offset 0x0D80 - Interrupt Response Time Limit of C-State LatencyContol1
+/** Offset 0x0D98 - Interrupt Response Time Limit of C-State LatencyContol1
   Interrupt Response Time Limit of C-State LatencyContol1.Range of value 0 to 0x3FF.
   0 is Auto.
 **/
   UINT16                      CstateLatencyControl1Irtl;
 
-/** Offset 0x0D82 - Interrupt Response Time Limit of C-State LatencyContol2
+/** Offset 0x0D9A - Interrupt Response Time Limit of C-State LatencyContol2
   Interrupt Response Time Limit of C-State LatencyContol2.Range of value 0 to 0x3FF.
   0 is Auto.
 **/
   UINT16                      CstateLatencyControl2Irtl;
 
-/** Offset 0x0D84 - Interrupt Response Time Limit of C-State LatencyContol3
+/** Offset 0x0D9C - Interrupt Response Time Limit of C-State LatencyContol3
   Interrupt Response Time Limit of C-State LatencyContol3.Range of value 0 to 0x3FF.
   0 is Auto.
 **/
   UINT16                      CstateLatencyControl3Irtl;
 
-/** Offset 0x0D86 - Interrupt Response Time Limit of C-State LatencyContol4
+/** Offset 0x0D9E - Interrupt Response Time Limit of C-State LatencyContol4
   Interrupt Response Time Limit of C-State LatencyContol4.Range of value 0 to 0x3FF.
   0 is Auto.
 **/
   UINT16                      CstateLatencyControl4Irtl;
 
-/** Offset 0x0D88 - Interrupt Response Time Limit of C-State LatencyContol5
+/** Offset 0x0DA0 - Interrupt Response Time Limit of C-State LatencyContol5
   Interrupt Response Time Limit of C-State LatencyContol5.Range of value 0 to 0x3FF.
   0 is Auto.
 **/
   UINT16                      CstateLatencyControl5Irtl;
 
-/** Offset 0x0D8A
+/** Offset 0x0DA2
 **/
   UINT8                       Rsvd35[2];
 
-/** Offset 0x0D8C - Package Long duration turbo mode power limit
+/** Offset 0x0DA4 - Package Long duration turbo mode power limit
   Package Long duration turbo mode power limit. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.
   Valid Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      PowerLimit1;
 
-/** Offset 0x0D90 - Package Short duration turbo mode power limit
+/** Offset 0x0DA8 - Package Short duration turbo mode power limit
   Package Short duration turbo mode power limit. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      PowerLimit2Power;
 
-/** Offset 0x0D94 - Package PL3 power limit
+/** Offset 0x0DAC - Package PL3 power limit
   Package PL3 power limit. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      PowerLimit3;
 
-/** Offset 0x0D98 - Package PL4 power limit
+/** Offset 0x0DB0 - Package PL4 power limit
   Package PL4 power limit. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      PowerLimit4;
 
-/** Offset 0x0D9C - Tcc Offset Time Window for RATL
+/** Offset 0x0DB4 - Tcc Offset Time Window for RATL
   Package PL4 power limit. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      TccOffsetTimeWindowForRatl;
 
-/** Offset 0x0DA0 - Short term Power Limit value for custom cTDP level 1
+/** Offset 0x0DB8 - Short term Power Limit value for custom cTDP level 1
   Short term Power Limit value for custom cTDP level 1. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      Custom1PowerLimit1;
 
-/** Offset 0x0DA4 - Long term Power Limit value for custom cTDP level 1
+/** Offset 0x0DBC - Long term Power Limit value for custom cTDP level 1
   Long term Power Limit value for custom cTDP level 1. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      Custom1PowerLimit2;
 
-/** Offset 0x0DA8 - Short term Power Limit value for custom cTDP level 2
+/** Offset 0x0DC0 - Short term Power Limit value for custom cTDP level 2
   Short term Power Limit value for custom cTDP level 2. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      Custom2PowerLimit1;
 
-/** Offset 0x0DAC - Long term Power Limit value for custom cTDP level 2
+/** Offset 0x0DC4 - Long term Power Limit value for custom cTDP level 2
   Long term Power Limit value for custom cTDP level 2. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      Custom2PowerLimit2;
 
-/** Offset 0x0DB0 - Short term Power Limit value for custom cTDP level 3
+/** Offset 0x0DC8 - Short term Power Limit value for custom cTDP level 3
   Short term Power Limit value for custom cTDP level 3. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      Custom3PowerLimit1;
 
-/** Offset 0x0DB4 - Long term Power Limit value for custom cTDP level 3
+/** Offset 0x0DCC - Long term Power Limit value for custom cTDP level 3
   Long term Power Limit value for custom cTDP level 3. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid
   Range 0 to 4095875 in Step size of 125
 **/
   UINT32                      Custom3PowerLimit2;
 
-/** Offset 0x0DB8 - Platform PL1 power
+/** Offset 0x0DD0 - Platform PL1 power
   Platform PL1 power. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid Range
   0 to 4095875 in Step size of 125
 **/
   UINT32                      PsysPowerLimit1Power;
 
-/** Offset 0x0DBC - Platform PL2 power
+/** Offset 0x0DD4 - Platform PL2 power
   Platform PL2 power. Units are based on POWER_MGMT_CONFIG.CustomPowerUnit.Valid Range
   0 to 4095875 in Step size of 125
 **/
   UINT32                      PsysPowerLimit2Power;
 
-/** Offset 0x0DC0 - Race To Halt
+/** Offset 0x0DD8 - Race To Halt
   Enable/Disable Race To Halt feature. RTH will dynamically increase CPU frequency
   in order to enter pkg C-State faster to reduce overall power. (RTH is controlled
   through MSR 1FC bit 20)Disable; <b>1: Enable</b>
@@ -3964,489 +4043,489 @@ typedef struct {
 **/
   UINT8                       RaceToHalt;
 
-/** Offset 0x0DC1 - Set Three Strike Counter Disable
+/** Offset 0x0DD9 - Set Three Strike Counter Disable
   False (default): Three Strike counter will be incremented and True: Prevents Three
   Strike counter from incrementing; <b>0: False</b>; 1: True.
   0: False, 1: True
 **/
   UINT8                       ThreeStrikeCounterDisable;
 
-/** Offset 0x0DC2 - Set HW P-State Interrupts Enabled for for MISC_PWR_MGMT
+/** Offset 0x0DDA - Set HW P-State Interrupts Enabled for for MISC_PWR_MGMT
   Set HW P-State Interrupts Enabled for for MISC_PWR_MGMT; <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       HwpInterruptControl;
 
-/** Offset 0x0DC3 - ReservedCpuPostMem2
+/** Offset 0x0DDB - ReservedCpuPostMem2
   Reserved for CPU Post-Mem 2
   $EN_DIS
 **/
   UINT8                       ReservedCpuPostMem2[4];
 
-/** Offset 0x0DC7 - Intel Turbo Boost Max Technology 3.0
+/** Offset 0x0DDF - Intel Turbo Boost Max Technology 3.0
   Intel Turbo Boost Max Technology 3.0. 0: Disabled; <b>1: Enabled</b>
   $EN_DIS
 **/
   UINT8                       EnableItbm;
 
-/** Offset 0x0DC8 - Enable or Disable C1 Cstate Demotion
+/** Offset 0x0DE0 - Enable or Disable C1 Cstate Demotion
   Enable or Disable C1 Cstate Demotion. Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       C1StateAutoDemotion;
 
-/** Offset 0x0DC9 - Enable or Disable C1 Cstate UnDemotion
+/** Offset 0x0DE1 - Enable or Disable C1 Cstate UnDemotion
   Enable or Disable C1 Cstate UnDemotion. Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       C1StateUnDemotion;
 
-/** Offset 0x0DCA - Minimum Ring ratio limit override
+/** Offset 0x0DE2 - Minimum Ring ratio limit override
   Minimum Ring ratio limit override. <b>0: Hardware defaults.</b> Range: 0 - Max turbo
   ratio limit
 **/
   UINT8                       MinRingRatioLimit;
 
-/** Offset 0x0DCB - Maximum Ring ratio limit override
+/** Offset 0x0DE3 - Maximum Ring ratio limit override
   Maximum Ring ratio limit override. <b>0: Hardware defaults.</b> Range: 0 - Max turbo
   ratio limit
 **/
   UINT8                       MaxRingRatioLimit;
 
-/** Offset 0x0DCC - Enable or Disable Per Core P State OS control
+/** Offset 0x0DE4 - Enable or Disable Per Core P State OS control
   Enable or Disable Per Core P State OS control. 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       EnablePerCorePState;
 
-/** Offset 0x0DCD - Enable or Disable HwP Autonomous Per Core P State OS control
+/** Offset 0x0DE5 - Enable or Disable HwP Autonomous Per Core P State OS control
   Enable or Disable HwP Autonomous Per Core P State OS control. 0: Disable; <b>1:
   Enable</b>
   $EN_DIS
 **/
   UINT8                       EnableHwpAutoPerCorePstate;
 
-/** Offset 0x0DCE - Enable or Disable HwP Autonomous EPP Grouping
+/** Offset 0x0DE6 - Enable or Disable HwP Autonomous EPP Grouping
   Enable or Disable HwP Autonomous EPP Grouping. 0: Disable; <b>1: Enable</b>
   $EN_DIS
 **/
   UINT8                       EnableHwpAutoEppGrouping;
 
-/** Offset 0x0DCF - Enable or Disable EPB override over PECI
+/** Offset 0x0DE7 - Enable or Disable EPB override over PECI
   Enable or Disable EPB override over PECI. <b>0: Disable;</b> 1: Enable
   $EN_DIS
 **/
   UINT8                       EnableEpbPeciOverride;
 
-/** Offset 0x0DD0 - Enable or Disable Fast MSR for IA32_HWP_REQUEST
+/** Offset 0x0DE8 - Enable or Disable Fast MSR for IA32_HWP_REQUEST
   Enable or Disable Fast MSR for IA32_HWP_REQUEST. 0: Disable;<b> 1: Enable</b>
   $EN_DIS
 **/
   UINT8                       EnableFastMsrHwpReq;
 
-/** Offset 0x0DD1 - Enable Configurable TDP
+/** Offset 0x0DE9 - Enable Configurable TDP
   Applies TDP initialization settings based on non-cTDP or cTDP.; 0: Applies to non-cTDP;
   <b>1: Applies to cTDP</b>
   $EN_DIS
 **/
   UINT8                       ApplyConfigTdp;
 
-/** Offset 0x0DD2 - Misc Power Management MSR Lock
+/** Offset 0x0DEA - Misc Power Management MSR Lock
   Lock Misc Power Management MSR. Enable/Disable; 0: Disable , <b> 1: Enable </b>
   $EN_DIS
 **/
   UINT8                       HwpLock;
 
-/** Offset 0x0DD3 - Dual Tau Boost
+/** Offset 0x0DEB - Dual Tau Boost
   Enable, Disable Dual Tau Boost feature. This is only applicable for Desktop; <b>0:
   Disable</b>; 1: Enable
   $EN_DIS
 **/
   UINT8                       DualTauBoost;
 
-/** Offset 0x0DD4 - Is Battery Present
+/** Offset 0x0DEC - Is Battery Present
   BatteryPresent Enable/Disable; <b>0: Disable</b> ; 1:Enable
   $EN_DIS
 **/
   UINT8                       StepDownMode;
 
-/** Offset 0x0DD5 - Platform ATX Telemetry Unit
+/** Offset 0x0DED - Platform ATX Telemetry Unit
   Set ATX Telemetry Unit in Watts or Percentage; <b>0: Watts</b>; 1: Percent
 **/
   UINT8                       PlatformAtxTelemetryUnit;
 
-/** Offset 0x0DD6 - ProcHot Demotion Algorithm configuration
+/** Offset 0x0DEE - ProcHot Demotion Algorithm configuration
   ProcHot Demotion Algorithm configuration. Hardware Default/Disable; 0: Disable;<b>
   1: Hardware Default</b>
   $EN_DIS
 **/
   UINT8                       ProcHotDemotion;
 
-/** Offset 0x0DD7 - ReservedCpuPostMemTest
+/** Offset 0x0DEF - ReservedCpuPostMemTest
   Reserved for CPU Post-Mem Test
   $EN_DIS
 **/
   UINT8                       ReservedCpuPostMemTest[13];
 
-/** Offset 0x0DE4
+/** Offset 0x0DFC
 **/
   UINT8                       SecurityPostMemRsvd[16];
 
-/** Offset 0x0DF4 - End of Post message
+/** Offset 0x0E0C - End of Post message
   Test, Send End of Post message. Disable(0x0): Disable EOP message, Send in PEI(0x1):
   EOP send in PEI, Send in DXE(0x2)(Default): EOP send in DXE
   0:Disable, 1:Send in PEI, 2:Send in DXE, 3:Reserved
 **/
   UINT8                       EndOfPostMessage;
 
-/** Offset 0x0DF5 - D0I3 Setting for HECI Disable
+/** Offset 0x0E0D - D0I3 Setting for HECI Disable
   Test, 0: disable, 1: enable, Setting this option disables setting D0I3 bit for all
   HECI devices
   $EN_DIS
 **/
   UINT8                       DisableD0I3SettingForHeci;
 
-/** Offset 0x0DF6 - Mctp Broadcast Cycle
+/** Offset 0x0E0E - Mctp Broadcast Cycle
   Test, Determine if MCTP Broadcast is enabled <b>0: Disable</b>; 1: Enable.
   $EN_DIS
 **/
   UINT8                       MctpBroadcastCycle;
 
-/** Offset 0x0DF7 - Enable LOCKDOWN SMI
+/** Offset 0x0E0F - Enable LOCKDOWN SMI
   Enable SMI_LOCK bit to prevent writes to the Global SMI Enable bit.
   $EN_DIS
 **/
   UINT8                       PchLockDownGlobalSmi;
 
-/** Offset 0x0DF8 - Enable LOCKDOWN BIOS Interface
+/** Offset 0x0E10 - Enable LOCKDOWN BIOS Interface
   Enable BIOS Interface Lock Down bit to prevent writes to the Backup Control Register.
   $EN_DIS
 **/
   UINT8                       PchLockDownBiosInterface;
 
-/** Offset 0x0DF9 - Unlock all GPIO pads
+/** Offset 0x0E11 - Unlock all GPIO pads
   Force all GPIO pads to be unlocked for debug purpose.
   $EN_DIS
 **/
   UINT8                       PchUnlockGpioPads;
 
-/** Offset 0x0DFA - PCH Unlock SideBand access
+/** Offset 0x0E12 - PCH Unlock SideBand access
   The SideBand PortID mask for certain end point (e.g. PSFx) will be locked before
   3rd party code execution. 0: Lock SideBand access; 1: Unlock SideBand access.
   $EN_DIS
 **/
   UINT8                       PchSbAccessUnlock;
 
-/** Offset 0x0DFB
+/** Offset 0x0E13
 **/
   UINT8                       Rsvd36[1];
 
-/** Offset 0x0DFC - PCIE RP Ltr Max Snoop Latency
+/** Offset 0x0E14 - PCIE RP Ltr Max Snoop Latency
   Latency Tolerance Reporting, Max Snoop Latency.
 **/
   UINT16                      PcieRpLtrMaxSnoopLatency[28];
 
-/** Offset 0x0E34 - PCIE RP Ltr Max No Snoop Latency
+/** Offset 0x0E4C - PCIE RP Ltr Max No Snoop Latency
   Latency Tolerance Reporting, Max Non-Snoop Latency.
 **/
   UINT16                      PcieRpLtrMaxNoSnoopLatency[28];
 
-/** Offset 0x0E6C - PCIE RP Snoop Latency Override Mode
+/** Offset 0x0E84 - PCIE RP Snoop Latency Override Mode
   Latency Tolerance Reporting, Snoop Latency Override Mode.
 **/
   UINT8                       PcieRpSnoopLatencyOverrideMode[28];
 
-/** Offset 0x0E88 - PCIE RP Snoop Latency Override Multiplier
+/** Offset 0x0EA0 - PCIE RP Snoop Latency Override Multiplier
   Latency Tolerance Reporting, Snoop Latency Override Multiplier.
 **/
   UINT8                       PcieRpSnoopLatencyOverrideMultiplier[28];
 
-/** Offset 0x0EA4 - PCIE RP Snoop Latency Override Value
+/** Offset 0x0EBC - PCIE RP Snoop Latency Override Value
   Latency Tolerance Reporting, Snoop Latency Override Value.
 **/
   UINT16                      PcieRpSnoopLatencyOverrideValue[28];
 
-/** Offset 0x0EDC - PCIE RP Non Snoop Latency Override Mode
+/** Offset 0x0EF4 - PCIE RP Non Snoop Latency Override Mode
   Latency Tolerance Reporting, Non-Snoop Latency Override Mode.
 **/
   UINT8                       PcieRpNonSnoopLatencyOverrideMode[28];
 
-/** Offset 0x0EF8 - PCIE RP Non Snoop Latency Override Multiplier
+/** Offset 0x0F10 - PCIE RP Non Snoop Latency Override Multiplier
   Latency Tolerance Reporting, Non-Snoop Latency Override Multiplier.
 **/
   UINT8                       PcieRpNonSnoopLatencyOverrideMultiplier[28];
 
-/** Offset 0x0F14 - PCIE RP Non Snoop Latency Override Value
+/** Offset 0x0F2C - PCIE RP Non Snoop Latency Override Value
   Latency Tolerance Reporting, Non-Snoop Latency Override Value.
 **/
   UINT16                      PcieRpNonSnoopLatencyOverrideValue[28];
 
-/** Offset 0x0F4C - PCIE RP Slot Power Limit Scale
+/** Offset 0x0F64 - PCIE RP Slot Power Limit Scale
   Specifies scale used for slot power limit value. Leave as 0 to set to default.
 **/
   UINT8                       PcieRpSlotPowerLimitScale[28];
 
-/** Offset 0x0F68 - PCIE RP Slot Power Limit Value
+/** Offset 0x0F80 - PCIE RP Slot Power Limit Value
   Specifies upper limit on power supplie by slot. Leave as 0 to set to default.
 **/
   UINT16                      PcieRpSlotPowerLimitValue[28];
 
-/** Offset 0x0FA0 - PCIE RP Enable Port8xh Decode
+/** Offset 0x0FB8 - PCIE RP Enable Port8xh Decode
   This member describes whether PCIE root port Port 8xh Decode is enabled. 0: Disable;
   1: Enable.
   $EN_DIS
 **/
   UINT8                       PcieEnablePort8xhDecode;
 
-/** Offset 0x0FA1 - PCIE Port8xh Decode Port Index
+/** Offset 0x0FB9 - PCIE Port8xh Decode Port Index
   The Index of PCIe Port that is selected for Port8xh Decode (0 Based).
 **/
   UINT8                       PchPciePort8xhDecodePortIndex;
 
-/** Offset 0x0FA2 - PCH Energy Reporting
+/** Offset 0x0FBA - PCH Energy Reporting
   Disable/Enable PCH to CPU energy report feature.
   $EN_DIS
 **/
   UINT8                       PchPmDisableEnergyReport;
 
-/** Offset 0x0FA3 - PCH Sata Test Mode
+/** Offset 0x0FBB - PCH Sata Test Mode
   Allow entrance to the PCH SATA test modes.
   $EN_DIS
 **/
   UINT8                       SataTestMode;
 
-/** Offset 0x0FA4 - PCH USB OverCurrent mapping lock enable
+/** Offset 0x0FBC - PCH USB OverCurrent mapping lock enable
   If this policy option is enabled then BIOS will program OCCFDONE bit in xHCI meaning
   that OC mapping data will be consumed by xHCI and OC mapping registers will be locked.
   $EN_DIS
 **/
   UINT8                       PchXhciOcLock;
 
-/** Offset 0x0FA5 - Low Power Mode Enable/Disable config mask
+/** Offset 0x0FBD - Low Power Mode Enable/Disable config mask
   Configure if respective S0i2/3 sub-states are to be supported. Each bit corresponds
   to one sub-state (LPMx - BITx): LPM0-s0i2.0, LPM1-s0i2.1, LPM2-s0i2.2, LPM3-s0i3.0,
   LPM4-s0i3.1, LPM5-s0i3.2, LPM6-s0i3.3, LPM7-s0i3.4.
 **/
   UINT8                       PmcLpmS0ixSubStateEnableMask;
 
-/** Offset 0x0FA6 - PCIE RP Ltr Max Snoop Latency
+/** Offset 0x0FBE - PCIE RP Ltr Max Snoop Latency
   Latency Tolerance Reporting, Max Snoop Latency.
 **/
   UINT16                      CpuPcieRpLtrMaxSnoopLatency[4];
 
-/** Offset 0x0FAE - PCIE RP Ltr Max No Snoop Latency
+/** Offset 0x0FC6 - PCIE RP Ltr Max No Snoop Latency
   Latency Tolerance Reporting, Max Non-Snoop Latency.
 **/
   UINT16                      CpuPcieRpLtrMaxNoSnoopLatency[4];
 
-/** Offset 0x0FB6 - PCIE RP Snoop Latency Override Mode
+/** Offset 0x0FCE - PCIE RP Snoop Latency Override Mode
   Latency Tolerance Reporting, Snoop Latency Override Mode.
 **/
   UINT8                       CpuPcieRpSnoopLatencyOverrideMode[4];
 
-/** Offset 0x0FBA - PCIE RP Snoop Latency Override Multiplier
+/** Offset 0x0FD2 - PCIE RP Snoop Latency Override Multiplier
   Latency Tolerance Reporting, Snoop Latency Override Multiplier.
 **/
   UINT8                       CpuPcieRpSnoopLatencyOverrideMultiplier[4];
 
-/** Offset 0x0FBE - PCIE RP Snoop Latency Override Value
+/** Offset 0x0FD6 - PCIE RP Snoop Latency Override Value
   Latency Tolerance Reporting, Snoop Latency Override Value.
 **/
   UINT16                      CpuPcieRpSnoopLatencyOverrideValue[4];
 
-/** Offset 0x0FC6 - PCIE RP Non Snoop Latency Override Mode
+/** Offset 0x0FDE - PCIE RP Non Snoop Latency Override Mode
   Latency Tolerance Reporting, Non-Snoop Latency Override Mode.
 **/
   UINT8                       CpuPcieRpNonSnoopLatencyOverrideMode[4];
 
-/** Offset 0x0FCA - PCIE RP Non Snoop Latency Override Multiplier
+/** Offset 0x0FE2 - PCIE RP Non Snoop Latency Override Multiplier
   Latency Tolerance Reporting, Non-Snoop Latency Override Multiplier.
 **/
   UINT8                       CpuPcieRpNonSnoopLatencyOverrideMultiplier[4];
 
-/** Offset 0x0FCE - PCIE RP Non Snoop Latency Override Value
+/** Offset 0x0FE6 - PCIE RP Non Snoop Latency Override Value
   Latency Tolerance Reporting, Non-Snoop Latency Override Value.
 **/
   UINT16                      CpuPcieRpNonSnoopLatencyOverrideValue[4];
 
-/** Offset 0x0FD6 - PCIE RP Upstream Port Transmiter Preset
+/** Offset 0x0FEE - PCIE RP Upstream Port Transmiter Preset
   Used during Gen3 Link Equalization. Used for all lanes.  Default is 7.
 **/
   UINT8                       CpuPcieRpGen3Uptp[4];
 
-/** Offset 0x0FDA - PCIE RP Downstream Port Transmiter Preset
+/** Offset 0x0FF2 - PCIE RP Downstream Port Transmiter Preset
   Used during Gen3 Link Equalization. Used for all lanes.  Default is 7.
 **/
   UINT8                       CpuPcieRpGen3Dptp[4];
 
-/** Offset 0x0FDE - PCIE RP Upstream Port Transmiter Preset
+/** Offset 0x0FF6 - PCIE RP Upstream Port Transmiter Preset
   Used during Gen4 Link Equalization. Used for all lanes.  Default is 8.
 **/
   UINT8                       CpuPcieRpGen4Uptp[4];
 
-/** Offset 0x0FE2 - PCIE RP Downstream Port Transmiter Preset
+/** Offset 0x0FFA - PCIE RP Downstream Port Transmiter Preset
   Used during Gen4 Link Equalization. Used for all lanes.  Default is 9.
 **/
   UINT8                       CpuPcieRpGen4Dptp[4];
 
-/** Offset 0x0FE6 - PCIE RP Upstream Port Transmiter Preset
+/** Offset 0x0FFE - PCIE RP Upstream Port Transmiter Preset
   Used during Gen5 Link Equalization. Used for all lanes.  Default is 7.
 **/
   UINT8                       CpuPcieRpGen5Uptp[4];
 
-/** Offset 0x0FEA - PCIE RP Downstream Port Transmiter Preset
+/** Offset 0x1002 - PCIE RP Downstream Port Transmiter Preset
   Used during Gen5 Link Equalization. Used for all lanes.  Default is 7.
 **/
   UINT8                       CpuPcieRpGen5Dptp[4];
 
-/** Offset 0x0FEE - Type C Port x Convert to TypeA
+/** Offset 0x1006 - Type C Port x Convert to TypeA
   Enable / Disable(default) Type C Port x Convert to TypeA
   $EN_DIS
 **/
   UINT8                       EnableTcssCovTypeA[4];
 
-/** Offset 0x0FF2 - PCH xhci port x for Type C Port x mapping
+/** Offset 0x100A - PCH xhci port x for Type C Port x mapping
   input PCH xhci port x for Type C Port 0 mapping.
 **/
   UINT8                       MappingPchXhciUsbA[4];
 
-/** Offset 0x0FF6 - FOMS Control Policy
+/** Offset 0x100E - FOMS Control Policy
   Choose the Foms Control Policy, <b>Default = 0 </b>
   0: Auto, 1: Gen3 Foms, 2: Gen4 Foms, 3: Gen3 and Gen4 Foms
 **/
   UINT8                       CpuPcieFomsCp[4];
 
-/** Offset 0x0FFA - PMC C10 dynamic threshold dajustment enable
+/** Offset 0x1012 - PMC C10 dynamic threshold dajustment enable
   Set if you want to enable PMC C10 dynamic threshold adjustment. Only works on supported SKUs
   $EN_DIS
 **/
   UINT8                       PmcC10DynamicThresholdAdjustment;
 
-/** Offset 0x0FFB - P2P mode for PCIE RP
+/** Offset 0x1013 - P2P mode for PCIE RP
   Enable/disable peer to peer mode for PCIE Root Ports. 0: Disable, 1: Enable.
   0: Disable, 1: Enable
 **/
   UINT8                       CpuPcieRpPeerToPeerMode[4];
 
-/** Offset 0x0FFF - IFU enable/disable
+/** Offset 0x1017 - IFU enable/disable
   Enable or Disable Instruction Fetch Unit(IFU). When enabled, Instructions will be
   prefetch to the cache.
   $EN_DIS
 **/
   UINT8                       IfuEnable;
 
-/** Offset 0x1000 - Tcc Cache Config File Base Address
+/** Offset 0x1018 - Tcc Cache Config File Base Address
   Tcc (Time Coordinated Computing) Cache Config File Base Address
 **/
   UINT32                      TccCacheCfgBase;
 
-/** Offset 0x1004 - Tcc Cache Config File Size
+/** Offset 0x101C - Tcc Cache Config File Size
   Tcc (Time Coordinated Computing) Cache Config File Size
 **/
   UINT32                      TccCacheCfgSize;
 
-/** Offset 0x1008 - Tcc Stream Config File Base Address
+/** Offset 0x1020 - Tcc Stream Config File Base Address
   Tcc (Time Coordinated Computing) Stream Config File Base Address
 **/
   UINT32                      TccStreamCfgBase;
 
-/** Offset 0x100C - Tcc Stream Config File Size
+/** Offset 0x1024 - Tcc Stream Config File Size
   Tcc (Time Coordinated Computing) Stream Config File Size
 **/
   UINT32                      TccStreamCfgSize;
 
-/** Offset 0x1010
+/** Offset 0x1028
 **/
   UINT8                       TccStreamCfgStatus;
 
-/** Offset 0x1011
+/** Offset 0x1029
 **/
-  UINT8                       UnusedUpdSpace6[3];
+  UINT8                       UnusedUpdSpace8[3];
 
-/** Offset 0x1014 - Tcc CRL Binary File Base Address
+/** Offset 0x102C - Tcc CRL Binary File Base Address
   Tcc (Time Coordinated Computing) CRL Binary File Base Address
 **/
   UINT32                      TccCrlBinBase;
 
-/** Offset 0x1018 - Tcc CRL Binary File Size
+/** Offset 0x1030 - Tcc CRL Binary File Size
   Tcc (Time Coordinated Computing) CRL Binary Config File Size
 **/
   UINT32                      TccCrlBinSize;
 
-/** Offset 0x101C - Software SRAM enable/disable
+/** Offset 0x1034 - Software SRAM enable/disable
   Enable will allocate part of LLC as SSRAM. If Cache Configuration Subregion is available,
   it will allocate base off Cache Configuration Subregion
   $EN_DIS
 **/
   UINT8                       SoftwareSramEn;
 
-/** Offset 0x101D - Data Streams Optimizer enable/disable
+/** Offset 0x1035 - Data Streams Optimizer enable/disable
   Enable will utilize DSO Subregion to tune system.
   $EN_DIS
 **/
   UINT8                       DsoTuningEn;
 
-/** Offset 0x101E - TCC Error Log enable/disable
+/** Offset 0x1036 - TCC Error Log enable/disable
   @deprecated- only need to set fspm upd TccErrorLogEnPreMem
   $EN_DIS
 **/
   UINT8                       TccErrorLogEn;
 
-/** Offset 0x101F - TccMode enable/disable
+/** Offset 0x1037 - TccMode enable/disable
   DEPRECATED.Enable will activate TCC Mode and disable will deactivate TCC Mode .This
   is temporary to skip some of the TCC related register access in Non-RT SKU's
   $EN_DIS
 **/
   UINT8                       TccMode;
 
-/** Offset 0x1020 - Enable Gt CLOS
+/** Offset 0x1038 - Enable Gt CLOS
   0(Default)=Disable, 1=Enable
   $EN_DIS
 **/
   UINT8                       GtClosEnable;
 
-/** Offset 0x1021
+/** Offset 0x1039
 **/
   UINT8                       EmbReserved4FspsUpd[1];
 
-/** Offset 0x1022 - Turbo Ratio Limit Ratio array
+/** Offset 0x103A - Turbo Ratio Limit Ratio array
   TurboRatioLimitRatio[7-0] will pair with TurboRatioLimitNumCore[7-0] to determine
   the active core ranges for each frequency point.
 **/
   UINT8                       TurboRatioLimitRatio[8];
 
-/** Offset 0x102A - Turbo Ratio Limit Num Core array
+/** Offset 0x1042 - Turbo Ratio Limit Num Core array
   TurboRatioLimitNumCore[7-0] will pair with TurboRatioLimitRatio[7-0] to determine
   the active core ranges for each frequency point.
 **/
   UINT8                       TurboRatioLimitNumCore[8];
 
-/** Offset 0x1032 - ATOM Turbo Ratio Limit Ratio array
+/** Offset 0x104A - ATOM Turbo Ratio Limit Ratio array
   AtomTurboRatioLimitRatio[7-0] will pair with AtomTurboRatioLimitNumCore[7-0] to
   determine the active core ranges for each frequency point.
 **/
   UINT8                       AtomTurboRatioLimitRatio[8];
 
-/** Offset 0x103A - ATOM Turbo Ratio Limit Num Core array
+/** Offset 0x1052 - ATOM Turbo Ratio Limit Num Core array
   AtomTurboRatioLimitNumCore[7-0] will pair with AtomTurboRatioLimitRatio[7-0] to
   determine the active core ranges for each frequency point.
 **/
   UINT8                       AtomTurboRatioLimitNumCore[8];
 
-/** Offset 0x1042
+/** Offset 0x105A
 **/
   UINT8                       Rsvd37;
 
-/** Offset 0x1043
+/** Offset 0x105B
 **/
-  UINT8                       UnusedUpdSpace7;
+  UINT8                       UnusedUpdSpace9;
 
-/** Offset 0x1044 - FspEventHandler
+/** Offset 0x105C - FspEventHandler
   <b>Optional</b> pointer to the boot loader's implementation of FSP_EVENT_HANDLER.
 **/
   UINT32                      FspEventHandler;
 
-/** Offset 0x1048 - Skip setting BIOS_DONE When Fw Update.
+/** Offset 0x1060 - Skip setting BIOS_DONE When Fw Update.
   When set to TRUE and boot mode is BOOT_ON_FLASH_UPDATE,skip setting BIOS_DONE MSR
   at EndofPei. Note: BIOS_DONE MSR should be set in later phase before executing
   3rd party code if SiSkipBiosDoneWhenFwUpdate set to TRUE.
@@ -4454,161 +4533,161 @@ typedef struct {
 **/
   UINT8                       SiSkipBiosDoneWhenFwUpdate;
 
-/** Offset 0x1049
+/** Offset 0x1061
 **/
   UINT8                       EmbReserved5FspsUpd[3];
 
-/** Offset 0x104C - Enable VMD Global Mapping
+/** Offset 0x1064 - Enable VMD Global Mapping
   Enable/disable to VMD controller.0: Disable; 1: Enable(Default)
   $EN_DIS
 **/
   UINT8                       VmdGlobalMapping;
 
-/** Offset 0x104D - CPU PCIE Port0 Link Disable
+/** Offset 0x1065 - CPU PCIE Port0 Link Disable
   CPU PCIE Port0 Link Disable while Device attached into Port0 and Port1.0: Disable(Default);
   1: Enable.
   $EN_DIS
 **/
   UINT8                       CpuPcieFunc0LinkDisable[4];
 
-/** Offset 0x1051 - Skip VccIn Configuration
+/** Offset 0x1069 - Skip VccIn Configuration
   Skips VccIn configuration when enabled
   $EN_DIS
 **/
   UINT8                       PmcSkipVccInConfig;
 
-/** Offset 0x1052 - CSE Data Resilience Support
+/** Offset 0x106A - CSE Data Resilience Support
   0: Disable CSE Data Resilience Support. <b>; 1: Enable CSE Data Resilience Support.</b>
   $EN_DIS
 **/
   UINT8                       CseDataResilience;
 
-/** Offset 0x1053 - SPIn Device Mode
+/** Offset 0x106B - SPIn Device Mode
   Selects SPI operation mode. N represents controller index: SPI0, SPI1, ... Available
   modes: 0:SerialIoSpiDisabled, 1:SerialIoSpiPci, 2:SerialIoSpiHidden
 **/
   UINT8                       SerialIoD3State;
 
-/** Offset 0x1054
+/** Offset 0x106C
 **/
   UINT32                      Rsvd38;
 
-/** Offset 0x1058 - HorizontalResolution for PEI Logo
+/** Offset 0x1070 - HorizontalResolution for PEI Logo
   HorizontalResolution from PEIm Gfx for PEI Logo
 **/
   UINT32                      HorizontalResolution;
 
-/** Offset 0x105C - VerticalResolution for PEI Logo
+/** Offset 0x1074 - VerticalResolution for PEI Logo
   VerticalResolution from PEIm Gfx for PEI Logo
 **/
   UINT32                      VerticalResolution;
 
-/** Offset 0x1060 - Touch Host Controller Active Ltr
+/** Offset 0x1078 - Touch Host Controller Active Ltr
   Expose Active Ltr for OS driver to set
 **/
   UINT32                      ThcActiveLtr[2];
 
-/** Offset 0x1068 - Touch Host Controller Idle Ltr
+/** Offset 0x1080 - Touch Host Controller Idle Ltr
   Expose Idle Ltr for OS driver to set
 **/
   UINT32                      ThcIdleLtr[2];
 
-/** Offset 0x1070 - Touch Host Controller Hid Over Spi ResetPad
+/** Offset 0x1088 - Touch Host Controller Hid Over Spi ResetPad
   Hid Over Spi ResetPad 0x0 - Use THC HW default Pad, For other pad setting refer
   to GpioPins
 **/
   UINT32                      ThcHidResetPad[2];
 
-/** Offset 0x1078 - Touch Host Controller Hid Over Spi ResetPad Trigger
+/** Offset 0x1090 - Touch Host Controller Hid Over Spi ResetPad Trigger
   Hid Over Spi Reset Pad Trigger 0x0:Low, 0x1:High
 **/
   UINT32                      ThcHidResetPadTrigger[2];
 
-/** Offset 0x1080 - Touch Host Controller Hid Over Spi Connection Speed
+/** Offset 0x1098 - Touch Host Controller Hid Over Spi Connection Speed
   Hid Over Spi Connection Speed - SPI Frequency
 **/
   UINT32                      ThcHidConnectionSpeed[2];
 
-/** Offset 0x1088 - Touch Host Controller Hid Over Spi Limit PacketSize
+/** Offset 0x10A0 - Touch Host Controller Hid Over Spi Limit PacketSize
   When set, limits SPI read & write packet size to 64B. Otherwise, THC uses Max Soc
   packet size for SPI Read and Write 0x0- Max Soc Packet Size,  0x11 - 64 Bytes
 **/
   UINT32                      ThcLimitPacketSize[2];
 
-/** Offset 0x1090 - Touch Host Controller Hid Over Spi Limit PacketSize
+/** Offset 0x10A8 - Touch Host Controller Hid Over Spi Limit PacketSize
   Minimum amount of delay the THC/QUICKSPI driver must wait between end of write operation
   and begin of read operation. This value shall be in 10us multiples 0x0: Disabled,
   1-65535 (0xFFFF) - up to 655350 us
 **/
   UINT32                      ThcPerformanceLimitation[2];
 
-/** Offset 0x1098 - Touch Host Controller Hid Over Spi Input Report Header Address
+/** Offset 0x10B0 - Touch Host Controller Hid Over Spi Input Report Header Address
   Hid Over Spi Input Report Header Address
 **/
   UINT32                      ThcHidInputReportHeaderAddress[2];
 
-/** Offset 0x10A0 - Touch Host Controller Hid Over Spi Input Report Body Address
+/** Offset 0x10B8 - Touch Host Controller Hid Over Spi Input Report Body Address
   Hid Over Spi Input Report Body Address
 **/
   UINT32                      ThcHidInputReportBodyAddress[2];
 
-/** Offset 0x10A8 - Touch Host Controller Hid Over Spi Output Report Address
+/** Offset 0x10C0 - Touch Host Controller Hid Over Spi Output Report Address
   Hid Over Spi Output Report Address
 **/
   UINT32                      ThcHidOutputReportAddress[2];
 
-/** Offset 0x10B0 - Touch Host Controller Hid Over Spi Read Opcode
+/** Offset 0x10C8 - Touch Host Controller Hid Over Spi Read Opcode
   Hid Over Spi Read Opcode
 **/
   UINT32                      ThcHidReadOpcode[2];
 
-/** Offset 0x10B8 - Touch Host Controller Hid Over Spi Write Opcode
+/** Offset 0x10D0 - Touch Host Controller Hid Over Spi Write Opcode
   Hid Over Spi Write Opcode
 **/
   UINT32                      ThcHidWriteOpcode[2];
 
-/** Offset 0x10C0 - Touch Host Controller Hid Over Spi Flags
+/** Offset 0x10D8 - Touch Host Controller Hid Over Spi Flags
   Hid Over Spi Flags 0x0:Single SPI Mode, 0x4000:Dual SPI Mode, 0x8000:Quad SPI Mode
 **/
   UINT32                      ThcHidFlags[2];
 
-/** Offset 0x10C8
+/** Offset 0x10E0
 **/
   UINT8                       Rsvd39[4];
 
-/** Offset 0x10CC
+/** Offset 0x10E4
 **/
-  UINT8                       UnusedUpdSpace8[4];
+  UINT8                       UnusedUpdSpace10[4];
 
-/** Offset 0x10D0 - MemoryBuffer
+/** Offset 0x10E8 - MemoryBuffer
   MemoryBuffer address
 **/
   UINT64                      MemoryBuffer;
 
-/** Offset 0x10D8 - Enable L2 Qos Enumerate
+/** Offset 0x10F0 - Enable L2 Qos Enumerate
   0(Default)=Disable, 1=Enable
   $EN_DIS
 **/
   UINT8                       L2QosEnumerationEn;
 
-/** Offset 0x10D9
+/** Offset 0x10F1
 **/
-  UINT8                       UnusedUpdSpace9[3];
+  UINT8                       UnusedUpdSpace11[3];
 
-/** Offset 0x10DC - MemorySize
+/** Offset 0x10F4 - MemorySize
   MemorySize value
 **/
   UINT32                      MemorySize;
 
-/** Offset 0x10E0
+/** Offset 0x10F8
 **/
   UINT8                       Rsvd40[2];
 
-/** Offset 0x10E2
+/** Offset 0x10FA
 **/
-  UINT8                       UnusedUpdSpace10[5];
+  UINT8                       UnusedUpdSpace12[5];
 
-/** Offset 0x10E7
+/** Offset 0x10FF
 **/
   UINT8                       ReservedFspsUpd[1];
 } FSP_S_CONFIG;
@@ -4629,11 +4708,11 @@ typedef struct {
 **/
   FSP_S_CONFIG                FspsConfig;
 
-/** Offset 0x10E8
+/** Offset 0x1100
 **/
   UINT8                       Rsvd41[6];
 
-/** Offset 0x10EE
+/** Offset 0x1106
 **/
   UINT16                      UpdTerminator;
 } FSPS_UPD;

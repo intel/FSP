@@ -93,6 +93,7 @@ typedef struct {
 
 /** Offset 0x0064 - PcdSerialIoUartBaudRate - FSPT
   Set default BaudRate Supported from 0 - default to 6000000
+  0:Disabled, 1:Enabled, 2:Auto
 **/
   UINT32                      PcdSerialIoUartBaudRate;
 
