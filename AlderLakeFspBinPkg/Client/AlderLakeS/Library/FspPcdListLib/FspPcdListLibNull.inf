@@ -30,7 +30,7 @@
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
   UefiCpuPkg/UefiCpuPkg.dec
-  ClientOneSiliconPkg/SiPkg.dec
+  AlderlakeSiliconPkg/SiPkg.dec
 
 [Sources]
   FspPcdListLibNull.c
