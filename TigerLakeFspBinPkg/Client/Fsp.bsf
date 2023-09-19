@@ -3,7 +3,7 @@
   Boot Setting File for Platform Configuration.
 
  @copyright
-  Copyright (c) 2020 - 2021, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2020 - 2023, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -671,6 +671,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_BoostRefVoltage                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieRefPllSsc                   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_RefreshWm                       1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_RhRefreshSolution               1 bytes    $_DEFAULT_ = 0x02
+        $gPlatformFspPkgTokenSpaceGuid_LctCmdEyeWidth                  2 bytes    $_DEFAULT_ = 0x60
 
     Find "TGLUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x00
@@ -808,7 +810,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchEspiLockLinkConfiguration    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeEnable   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_EnforceEDebugMode               1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PchPostMemRsvd                  1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchXhciHsiiEnable               1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeBase   4 bytes    $_DEFAULT_ = 0xF8000000
         $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeLimit   4 bytes    $_DEFAULT_ = 0xF9FFFFFF
         $gPlatformFspPkgTokenSpaceGuid_CnviMode                        1 bytes    $_DEFAULT_ = 0x01
@@ -879,10 +881,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_TcssHslOri                      2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_UsbOverride                     1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_UsbTcPortEn                     1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_ITbtPcieRootPortEn              4 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_ITbtPcieRootPortEn              4 bytes    $_DEFAULT_ = 0x01,0x01,0x01,0x01
         $gPlatformFspPkgTokenSpaceGuid_ITbtForcePowerOnTimeoutInMs     2 bytes    $_DEFAULT_ = 0x1F4
         $gPlatformFspPkgTokenSpaceGuid_ITbtConnectTopologyTimeoutInMs   2 bytes    $_DEFAULT_ = 0x1388
-        $gPlatformFspPkgTokenSpaceGuid_VccSt                           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_VccSt                           1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_Usb3ComplModeEnable             1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ITbtDmaLtr                      4 bytes    $_DEFAULT_ = 0xFF,0x97,0xFF,0x97
         $gPlatformFspPkgTokenSpaceGuid_DeprecatedCpuCrashLogEnable     1 bytes    $_DEFAULT_ = 0x1
@@ -947,7 +949,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SmbiosType4MaxSpeedOverride     2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_AvxDisable                      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Avx3Disable                     1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction    4 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_RaceConditionResponse           1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction    3 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchPwrOptEnable                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchWriteProtectionEnable        5 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchReadProtectionEnable         5 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00
@@ -1078,9 +1081,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_TTCrossThrottling               1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchDmiTsawEn                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_DmiSuggestedSetting             1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_DmiTS0TW                        1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_DmiTS1TW                        1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_DmiTS2TW                        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_DmiTS0TW                        1 bytes    $_DEFAULT_ = 0x03
+        $gPlatformFspPkgTokenSpaceGuid_DmiTS1TW                        1 bytes    $_DEFAULT_ = 0x02
+        $gPlatformFspPkgTokenSpaceGuid_DmiTS2TW                        1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DmiTS3TW                        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SataP0T1M                       1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_SataP0T2M                       1 bytes    $_DEFAULT_ = 0x02
@@ -1277,7 +1280,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CstateLatencyControl4TimeUnit   1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_CstateLatencyControl5TimeUnit   1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_PpmIrmSetting                   1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_ProcHotLock                     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ProcHotLock                     1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DeprecatedConfigTdpLevel        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_MaxRatio                        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_StateRatio                     40 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
@@ -1350,8 +1353,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PmcLpmS0ixSubStateEnableMask    1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_MctpBroadcastCycle              1 bytes    $_DEFAULT_ = 0x0
         Skip 1 bytes
-        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpLtrMaxSnoopLatency     8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
-        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpLtrMaxNoSnoopLatency   8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpLtrMaxSnoopLatency     8 bytes    $_DEFAULT_ = 0x0F,0x10,0x0F,0x10,0x0F,0x10,0x0F,0x10
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpLtrMaxNoSnoopLatency   8 bytes    $_DEFAULT_ = 0x0F,0x10,0x0F,0x10,0x0F,0x10,0x0F,0x10
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpSnoopLatencyOverrideMode   4 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpSnoopLatencyOverrideMultiplier   4 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpSnoopLatencyOverrideValue   8 bytes    $_DEFAULT_ = 0x3C,0x00,0x3C,0x00,0x3C,0x00,0x3C,0x00
@@ -1616,6 +1619,7 @@ List &gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit
     Selection 2400 , "2400"
     Selection 2667 , "2667"
     Selection 2933 , "2933"
+    Selection 3200 , "3200"
     Selection 0 , "Auto"
 EndList
 
@@ -1856,7 +1860,6 @@ List &gPlatformFspPkgTokenSpaceGuid_DdiPortBConfig
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_DmiMaxLinkSpeed
-    Selection 0 , "Auto"
     Selection 1 , "Gen1"
     Selection 2 , "Gen2"
     Selection 3 , "Gen3"
@@ -2184,6 +2187,14 @@ List &gPlatformFspPkgTokenSpaceGuid_RefreshWm
     Selection 0 , "Enable Refresh Watermark Low"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_RhRefreshSolution
+    Selection 0 , "Hardware RHP"
+    Selection 1 , "1x Refresh"
+    Selection 2 , "2x Refresh"
+    Selection 3 , "4x Refresh"
+    Selection 4 , "NORMAL Refresh"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_SataMode
     Selection 0 , "AHCI"
     Selection 1 , "RAID"
@@ -2263,6 +2274,11 @@ EndList
 List &gPlatformFspPkgTokenSpaceGuid_Avx3Disable
     Selection 0 , " Enable"
     Selection 1 , " Disable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_RaceConditionResponse
+    Selection 0 , " Disable"
+    Selection 1 , " Enable"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_PchHdaLinkFrequency
@@ -2694,7 +2710,7 @@ Page "Memory Reference Code"
     Combo $gPlatformFspPkgTokenSpaceGuid_UserBd, "Board Type", &gPlatformFspPkgTokenSpaceGuid_UserBd,
         Help "MrcBoardType, Options are 0=Mobile/Mobile Halo, 1=Desktop/DT Halo, 5=ULT/ULX/Mobile Halo, 7=UP Server"
     Combo $gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit, "DDR Frequency Limit", &gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit,
-        Help "Maximum Memory Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867, 2133, 2400, 2667, 2933 and 0 for Auto."
+        Help "Maximum Memory Frequency Selections in Mhz. Options are 1067, 1333, 1600, 1867, 2133, 2400, 2667, 2933, 3200 and 0 for Auto."
     Combo $gPlatformFspPkgTokenSpaceGuid_SaGv, "SA GV", &gPlatformFspPkgTokenSpaceGuid_SaGv,
         Help "System Agent dynamic frequency support and when enabled memory will be training at three different frequencies."
     Combo $gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot, "Memory Test on Warm Boot", &gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot,
@@ -3179,7 +3195,7 @@ Page "Memory Reference Code"
         Help "% of L1 check for margin limit check"
              "Valid range: 0x01 ~ 0x12C"
     Combo $gPlatformFspPkgTokenSpaceGuid_IotgPllSscEn, "Iotg Pll SscEn", &EN_DIS,
-        Help "Enable or disable CPU SSC. 0: Disable, <b>1: Enable</b>"
+        Help "<b>@deprecated</b> - Not used and has no effect, Please use Pcie Ref Pll SSC"
     EditNum $gPlatformFspPkgTokenSpaceGuid_GpioOverride, "GPIO Override", HEX,
         Help "Gpio Override Level - FSP will not configure any GPIOs and rely on GPIO setings before moved to FSP. Available configurations 0: Disable;1: Level 1 - skips GpioSetNativePadByFunction;Level 2 - skips GpioSetNativePadByFunction and GpioSetPadMode"
              "Valid range: 0x00 ~ 0x7"
@@ -3212,6 +3228,11 @@ Page "Memory Reference Code"
              "Valid range: 0x00 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_RefreshWm, "Refresh Watermarks", &gPlatformFspPkgTokenSpaceGuid_RefreshWm,
         Help "Refresh Watermark, High, Low"
+    Combo $gPlatformFspPkgTokenSpaceGuid_RhRefreshSolution, "Row Hammer Refresh Solution", &gPlatformFspPkgTokenSpaceGuid_RhRefreshSolution,
+        Help "Type of Refresh Rate used to prevent Row Hammer. Default is 2x Refresh"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_LctCmdEyeWidth, " LCT Command eyewidth", DEC,
+        Help " LCT Command eyewidth. 0: Auto, otherwise eyewidth , default is 96"
+             "Valid range: 0 ~ 256"
 EndPage
 
 Page "CPU (Pre-Mem)"
@@ -3481,6 +3502,8 @@ Page "CPU (Post-Mem)"
         Help "Enable or Disable AVX Support."
     Combo $gPlatformFspPkgTokenSpaceGuid_Avx3Disable, "Avx3Disable", &gPlatformFspPkgTokenSpaceGuid_Avx3Disable,
         Help "Enable or Disable AVX3 Support"
+    Combo $gPlatformFspPkgTokenSpaceGuid_RaceConditionResponse, "RaceConditionResponse to select Race Condition Response under specific conditions", &gPlatformFspPkgTokenSpaceGuid_RaceConditionResponse,
+        Help "Enable or Disable for MSR_IA32_CSTAR.Bit0"
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction, "ReservedCpuPostMemProduction", &EN_DIS,
         Help "Reserved for CPU Post-Mem Production"
     EditNum $gPlatformFspPkgTokenSpaceGuid_BgpdtHash, "BgpdtHash[4]", HEX,
@@ -3659,7 +3682,7 @@ Page "CPU (Post-Mem)"
         Help "Interrupt Redirection Mode Select.0: Fixed priority; 1: Round robin;2: Hash vector;7: No change."
              "Valid range: 0x00 ~ 0x7"
     Combo $gPlatformFspPkgTokenSpaceGuid_ProcHotLock, "Lock prochot configuration", &EN_DIS,
-        Help "Lock prochot configuration Enable/Disable; <b>0: Disable</b>; 1: Enable"
+        Help "Lock prochot configuration Enable/Disable; 0: Disable; <b>1: Enable</b>"
     EditNum $gPlatformFspPkgTokenSpaceGuid_DeprecatedConfigTdpLevel, "Configuration for boot TDP selection", HEX,
         Help "Deprecated. Move to premem."
              "Valid range: 0x00 ~ 0xFF"
@@ -3819,7 +3842,7 @@ Page "System Agent (Pre-Mem)"
         Help "Positive number means increasing MMIO size, Negative value means decreasing MMIO size: 0 (Default)=no change to AUTO mode MMIO size"
              "Valid range: 0 ~ 0xFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_InitPcieAspmAfterOprom, "PCIe ASPM programming will happen in relation to the Oprom", &gPlatformFspPkgTokenSpaceGuid_InitPcieAspmAfterOprom,
-        Help "Select when PCIe ASPM programming will happen in relation to the Oprom. Before(0x0)(Default): Do PCIe ASPM programming before Oprom, After(0x1): Do PCIe ASPM programming after Oprom, requires an SMI handler to save/restore ASPM settings during S3 resume"
+        Help "(DEPRECATED)"
     Combo $gPlatformFspPkgTokenSpaceGuid_PrimaryDisplay, "Selection of the primary display device", &gPlatformFspPkgTokenSpaceGuid_PrimaryDisplay,
         Help "0=iGFX, 1=PEG, 2=PCIe Graphics on PCH, 3(Default)=AUTO, 4=Hybrid Graphics"
     Combo $gPlatformFspPkgTokenSpaceGuid_PsmiRegionSize, "Selection of PSMI Region size", &gPlatformFspPkgTokenSpaceGuid_PsmiRegionSize,
@@ -3946,7 +3969,7 @@ Page "System Agent (Pre-Mem)"
     Combo $gPlatformFspPkgTokenSpaceGuid_SaPreMemProductionRsvd, "SaPreMemProductionRsvd", &EN_DIS,
         Help "Reserved for SA Pre-Mem Production"
     Combo $gPlatformFspPkgTokenSpaceGuid_DmiMaxLinkSpeed, "DMI Max Link Speed", &gPlatformFspPkgTokenSpaceGuid_DmiMaxLinkSpeed,
-        Help "Auto (0x0): Maximum possible link speed, Gen1(0x1): Limit Link to Gen1 Speed, Gen2(0x2): Limit Link to Gen2 Speed, (Default) Gen3(0x3):Limit Link to Gen3 Speed"
+        Help "Gen1(0x1): Limit Link to Gen1 Speed, Gen2(0x2): Limit Link to Gen2 Speed, (Default) Gen3(0x3):Limit Link to Gen3 Speed"
     Combo $gPlatformFspPkgTokenSpaceGuid_DmiGen3EqPh2Enable, "DMI Equalization Phase 2", &gPlatformFspPkgTokenSpaceGuid_DmiGen3EqPh2Enable,
         Help "DMI Equalization Phase 2. (0x0): Disable phase 2, (0x1): Enable phase 2, (0x2)(Default): AUTO - Use the current default method"
     Combo $gPlatformFspPkgTokenSpaceGuid_DmiGen3EqPh3Method, "DMI Gen3 Equalization Phase3", &gPlatformFspPkgTokenSpaceGuid_DmiGen3EqPh3Method,
@@ -3994,7 +4017,7 @@ Page "System Agent (Pre-Mem)"
         Help "Root port number for IMR.If PCieImrRpLocation is PCH PCIe then select root port from 0 to 23 and if it is SA PCIe then select root port from 0 to 3"
              "Valid range: 0x00 ~ 0x17"
     Combo $gPlatformFspPkgTokenSpaceGuid_Peg3Aspm, "PCIe ASPM programming will happen in relation to the Oprom", &gPlatformFspPkgTokenSpaceGuid_Peg3Aspm,
-        Help "This option is specifically needed for ASPM configuration in 2LM feature"
+        Help "(DEPRECATED)"
     Combo $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan, "Skip external display device scanning", &EN_DIS,
         Help "Enable: Do not scan for external display device, Disable (Default): Scan external display devices"
     Combo $gPlatformFspPkgTokenSpaceGuid_ScanExtGfxForLegacyOpRom, "Detect External Graphics device for LegacyOpROM", &EN_DIS,
@@ -4868,8 +4891,8 @@ Page "PCH (Post-Mem)"
         Help "Enable/Disable lock of communication through SET_CONFIG/GET_CONFIG to eSPI slaves addresseses from range 0x0 - 0x7FF"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeEnable, "Extented BIOS Direct Read Decode enable", &EN_DIS,
         Help "Enable/Disable access to bigger than 16MB BIOS Region through Direct Memory Reads. 0: disabled (default), 1: enabled"
-    Combo $gPlatformFspPkgTokenSpaceGuid_PchPostMemRsvd, "PchPostMemRsvd", &EN_DIS,
-        Help "Reserved for PCH Post-Mem"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchXhciHsiiEnable, "PCH xHCI enable HS Interrupt IN Alarm", &EN_DIS,
+        Help "PCH xHCI enable HS Interrupt IN Alarm. 0: disabled (default), 1: enabled"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchSpiExtendedBiosDecodeRangeBase, "Extended BIOS Direct Read Decode Range base", HEX,
         Help "Bits of 31:16 of a memory address that'll be a base for Extended BIOS Direct Read Decode."
              "Valid range: 0x0 ~ 0xFFFFFFFF"
