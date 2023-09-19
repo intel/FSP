@@ -1,0 +1,19 @@
+## @file
+#  Component description file for RaptorLake Fsp Bin package.
+#
+# @copyright
+#  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+# @par Specification
+##
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = RaptorLakeFspBinPkg
+  PACKAGE_GUID                   = E0205114-2CEA-4DDF-B08F-27EB91A83287
+  PACKAGE_VERSION                = 1.02
+
+[Includes]
+  Include
