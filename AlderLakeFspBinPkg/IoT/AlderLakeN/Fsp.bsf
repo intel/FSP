@@ -960,10 +960,12 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_GnaEnable                       1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_IomTypeCPortPadCfg             32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x04,0x06,0x11,0x00,0x04,0x06,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_CpuUsb3OverCurrentPin           8 bytes    $_DEFAULT_ = 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_EnTcssUsbOverCurrentCrb         1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_D3ColdEnable                    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ITbtPcieTunnelingForUsb4        1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_SkipFspGop                      1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_TcCstateLimit                   1 bytes    $_DEFAULT_ = 0x0A
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_VbtSize                         4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_LidStatus                       1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IomStayInTCColdSeconds          1 bytes    $_DEFAULT_ = 0x32
@@ -1036,9 +1038,11 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_IccMax                         10 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_TxtEnable                       1 bytes    $_DEFAULT_ = 0
         $gPlatformFspPkgTokenSpaceGuid_SkipMpInit                      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuFeaturesInitOnS3ResumeOverride   1 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_FivrRfiFrequency                2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_FivrSpreadSpectrum              1 bytes    $_DEFAULT_ = 0x08
-        Skip 1 bytes
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_CpuBistData                     4 bytes    $_DEFAULT_ = 0
         $gPlatformFspPkgTokenSpaceGuid_CpuMpPpi                        4 bytes    $_DEFAULT_ = 0
         $gPlatformFspPkgTokenSpaceGuid_PreWake                         1 bytes    $_DEFAULT_ = 0x00
@@ -3859,6 +3863,8 @@ Page "CPU (Post-Mem)"
         Help "Enable or Disable TXT; 0: Disable; <b>1: Enable</b>."
     Combo $gPlatformFspPkgTokenSpaceGuid_SkipMpInit, "Skip Multi-Processor Initialization", &EN_DIS,
         Help "When this is skipped, boot loader must initialize processors before SilicionInit API. </b>0: Initialize; <b>1: Skip"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CpuFeaturesInitOnS3ResumeOverride, "Enable or Disable CpuFeaturesInitS3Resume", &EN_DIS,
+        Help "If its enabled It will override the Build time S3 resume flag and initalize CPU feature while S3 resume; 0: Disable; <b>1: Enable</b>."
     EditNum $gPlatformFspPkgTokenSpaceGuid_FivrRfiFrequency, "FIVR RFI Frequency", HEX,
         Help "PCODE MMIO Mailbox: Set the desired RFI frequency, in increments of 100KHz. <b>0: Auto</b>. Range varies based on XTAL clock: 0-1918 (Up to 191.8HMz) for 24MHz clock; 0-1535 (Up to 153.5MHz) for 19MHz clock."
              "Valid range: 0x0 ~ 0xFFFF"
