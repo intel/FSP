@@ -3880,9 +3880,14 @@ typedef struct {
 **/
   UINT8                       IbeccErrInjControl;
 
-/** Offset 0x0ADE
+/** Offset 0x0ADE - CPU PCIe root port connection type
+  0: built-in device, 1:slot
 **/
-  UINT8                       Rsvd28[6];
+  UINT8                       CpuPcieRpSlotImplemented[4];
+
+/** Offset 0x0AE2
+**/
+  UINT8                       Rsvd28[2];
 
 /** Offset 0x0AE4
 **/
@@ -4136,23 +4141,39 @@ typedef struct {
 **/
   UINT8                       CsPiStartHighinEct;
 
-/** Offset 0x0B60 - McParity
+/** Offset 0x0B60 - Use user provided power weights, and channel power floor values
+  Enables/Disable Use user provided power weights and channel power floor values
+  $EN_DIS
+**/
+  UINT8                       UserPowerWeightsEn;
+
+/** Offset 0x0B61 - DisableFGRAndPBRWA
+  Disable FGR And PBR WA: 0(Default)=Disable, 1=Enable
+  $EN_DIS
+**/
+  UINT8                       DisableFGRAndPBRWA;
+
+/** Offset 0x0B62 - McParity
   CMI/MC Parity Control
   $EN_DIS
 **/
   UINT8                       McParity;
 
-/** Offset 0x0B61 - IbeccParity
+/** Offset 0x0B63 - IbeccParity
   In-Band ECC Parity Control
   $EN_DIS
 **/
   UINT8                       IbeccParity;
 
-/** Offset 0x0B62
-**/
-  UINT8                       Rsvd32[2];
-
 /** Offset 0x0B64
+**/
+  UINT8                       Rsvd32[4];
+
+/** Offset 0x0B68
+**/
+  UINT8                       UnusedUpdSpace5[4];
+
+/** Offset 0x0B6C
 **/
   UINT8                       ReservedFspmUpd2[4];
 } FSP_M_CONFIG;
@@ -4173,11 +4194,11 @@ typedef struct {
 **/
   FSP_M_CONFIG                FspmConfig;
 
-/** Offset 0x0B68
+/** Offset 0x0B70
 **/
   UINT8                       Rsvd33[6];
 
-/** Offset 0x0B6E
+/** Offset 0x0B76
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;

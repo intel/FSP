@@ -4,7 +4,7 @@
   data hobs.
 
 @copyright
-  Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -23,8 +23,6 @@ extern EFI_GUID gSiMemoryPlatformDataGuid;
 #define MAX_NODE        2
 #define MAX_CH          4
 #define MAX_DIMM        2
-// Must match definitions in
-// Intel\ClientOneSiliconPkg\IpBlock\MemoryInit\Mtl\Include\MrcInterface.h
 #define HOB_MAX_SAGV_POINTS 4
 
 ///

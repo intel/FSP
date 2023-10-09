@@ -292,7 +292,7 @@
           "Block": {
             "Id": "1",
             "Name": "General Bit Definitions",
-            "SizeInBytes": "9",
+            "SizeInBytes": "13",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -412,6 +412,20 @@
               {
                 "Name": "SKIP",
                 "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "AfcStartUpBitsConfigType",
+                "SizeInBits": "2",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "30",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -1186,8 +1200,15 @@
                 "Value": ""
               },
               {
+                "Name": "EFP1_External_Compression_Enable",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "SKIP",
-                "SizeInBits": "3",
+                "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -1543,8 +1564,15 @@
                 "Value": ""
               },
               {
+                "Name": "EFP2_External_Compression_Enable",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "SKIP",
-                "SizeInBits": "3",
+                "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -1900,8 +1928,15 @@
                 "Value": ""
               },
               {
+                "Name": "EFP3_External_Compression_Enable",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "SKIP",
-                "SizeInBits": "3",
+                "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2257,8 +2292,15 @@
                 "Value": ""
               },
               {
+                "Name": "EFP4_External_Compression_Enable",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "SKIP",
-                "SizeInBits": "3",
+                "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2614,8 +2656,15 @@
                 "Value": ""
               },
               {
+                "Name": "EFP5_External_Compression_Enable",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "SKIP",
-                "SizeInBits": "3",
+                "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2971,8 +3020,15 @@
                 "Value": ""
               },
               {
+                "Name": "EFP6_External_Compression_Enable",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "SKIP",
-                "SizeInBits": "3",
+                "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -3328,8 +3384,15 @@
                 "Value": ""
               },
               {
+                "Name": "EFP7_External_Compression_Enable",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "SKIP",
-                "SizeInBits": "3",
+                "SizeInBits": "2",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -5353,7 +5416,7 @@
           "Block": {
             "Id": "27",
             "Name": "eDP Power Sequencing",
-            "SizeInBytes": "815",
+            "SizeInBytes": "817",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -8511,6 +8574,118 @@
               {
                 "Name": "eDP_Max_Port_Link_Rate_16",
                 "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_01",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_02",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_03",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_04",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_05",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_06",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_07",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_08",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_09",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_10",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_11",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_12",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_13",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_14",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_15",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_DSC_Feature_16",
+                "SizeInBits": "1",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -24584,7 +24759,7 @@
               },
               {
                 "WidgetType": "Label",
-                "WidgetName": "VBT Version: 249",
+                "WidgetName": "VBT Version: 251",
                 "Visibility": "",
                 "Data": [],
                 "HelpText": "",
@@ -28146,8 +28321,8 @@
                               "27",
                               "eDP_VswingPreEmph_1"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -29482,11 +29657,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_01"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -29789,6 +29992,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_01"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -30908,8 +31131,8 @@
                               "27",
                               "eDP_VswingPreEmph_2"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -32244,11 +32467,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_02"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -32551,6 +32802,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_02"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -33670,8 +33941,8 @@
                               "27",
                               "eDP_VswingPreEmph_3"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -35006,11 +35277,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_03"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -35313,6 +35612,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_03"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -36432,8 +36751,8 @@
                               "27",
                               "eDP_VswingPreEmph_4"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -37768,11 +38087,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_04"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -38075,6 +38422,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_04"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -39194,8 +39561,8 @@
                               "27",
                               "eDP_VswingPreEmph_5"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -40530,11 +40897,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_05"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -40837,6 +41232,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_05"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -41956,8 +42371,8 @@
                               "27",
                               "eDP_VswingPreEmph_6"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -43292,11 +43707,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_06"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -43599,6 +44042,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_06"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -44702,7 +45165,7 @@
                               "27",
                               "eDP_VswingPreEmph_7"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
 						    "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
@@ -46038,11 +46501,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_07"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -46345,6 +46836,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_07"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -46838,8 +47349,8 @@
                               "27",
                               "eDP_VswingPreEmph_8"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -48174,11 +48685,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_08"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -48481,6 +49020,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_08"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -48974,7 +49533,7 @@
                               "27",
                               "eDP_VswingPreEmph_9"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
 						    "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
@@ -50310,11 +50869,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_09"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -50617,6 +51204,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_09"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -51110,8 +51717,8 @@
                               "27",
                               "eDP_VswingPreEmph_10"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -52446,11 +53053,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_10"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -52753,6 +53388,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_10"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -53246,8 +53901,8 @@
                               "27",
                               "eDP_VswingPreEmph_11"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -54582,11 +55237,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_11"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -54889,6 +55572,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_11"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -55382,8 +56085,8 @@
                               "27",
                               "eDP_VswingPreEmph_12"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -56718,11 +57421,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_12"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -57025,6 +57756,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_12"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -57518,8 +58269,8 @@
                               "27",
                               "eDP_VswingPreEmph_13"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -58854,11 +59605,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_13"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -59161,6 +59940,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_13"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -59654,7 +60453,7 @@
                               "27",
                               "eDP_VswingPreEmph_14"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
 						    "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
@@ -60990,11 +61789,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_14"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -61297,6 +62124,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_14"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -61790,8 +62637,8 @@
                               "27",
                               "eDP_VswingPreEmph_15"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
-							"WidgetValues": [
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+							              "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
                                 "Value": "1"
@@ -63126,11 +63973,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_15"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -63433,6 +64308,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_15"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -63926,7 +64821,7 @@
                               "27",
                               "eDP_VswingPreEmph_16"
                             ],
-                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Tigerlake, based on the selection respective table will be used.\nTables for Tigerlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
+                            "HelpText": "This feature selects the VSwing Pre-Emphasis setting table to be used. For Alderlake, based on the selection respective table will be used.\nTables for Alderlake:\nLow Power VSwing Pre-Emphasis Setting Table:\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/200mV \t\t 200mV, 0.0db \t\t 200mV, 1.9db \t\t 200mV, 3.5db \t\t 200mV, 4.9db\nSwing \t\t Level-1/250mV \t\t 250mV, 0.0db \t\t 250mV, 1.6db \t\t 250mV, 2.9db \t\t N/A\n(mV) \t\t Level-2/300mV \t\t 300mV, 0.0db \t\t 300mV, 1.3db \t\t N/A \t\t  N/A\n\t\t Level-3/350mV \t\t 350mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR3:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nDefault VSwing Pre-Emphasis Setting Table:\nFor HBR:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A\n\n\nFor HBR2:\n\t\t\t\t\t\t Pre-Emphasis (db)\n\t\t DP Applet \t\t Level-0/0dB \t\t Level-1/1.5dB \t\t Level-2/4dB \t\t Level-3/6dB\nVoltage \t\t Level-0/350mV \t\t 350mV, 0.0db \t\t 350mV, 3.1db \t\t 350mV, 6.0db \t\t 350mV, 8.2db\nSwing \t\t Level-1/500mV \t\t 500mV, 0.0db \t\t 500mV, 2.9db \t\t 500mV, 5.1db \t\t N/A\n(mV) \t\t Level-2/650mV \t\t 650mV, 0.6db \t\t 600mV, 3.5db \t\t N/A \t\t  N/A\n\t\t Level-3/900mV \t\t 900mV, 0.0db \t\t N/A \t\t  N/A \t\t  N/A",
 						    "WidgetValues": [
                               {
                                 "Key": "Default VSwing/Pre-Emphasis Table",
@@ -65262,11 +66157,39 @@
                                     "43",
                                     "BrightnessPrecisionBits_16"
                                   ],
-                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8 = Brightness range of 0 to 255.\n 16 = Brightness range of 0 to 65535",
+                                  "HelpText": "This field represents the range of brightness in terms of bit precision.\n 8  = Brightness range of 0 to 255 \n 9  = Brightness range of 0 to 511 \n 10 = Brightness range of 0 to 1023 \n 11 = Brightness range of 0 to 2047 \n 12 = Brightness range of 0 to 4095 \n 13 = Brightness range of 0 to 8191 \n 14 = Brightness range of 0 to 16383 \n 15 = Brightness range of 0 to 32767 \n 16 = Brightness range of 0 to 65535.",
                                   "WidgetValues": [
                                     {
                                       "Key": "8",
                                       "Value": "8"
+                                    },
+                                    {
+                                      "Key": "9",
+                                      "Value": "9"
+                                    },
+                                    {
+                                      "Key": "10",
+                                      "Value": "10"
+                                    },
+                                    {
+                                      "Key": "11",
+                                      "Value": "11"
+                                    },
+                                    {
+                                      "Key": "12",
+                                      "Value": "12"
+                                    },
+                                    {
+                                      "Key": "13",
+                                      "Value": "13"
+                                    },
+                                    {
+                                      "Key": "14",
+                                      "Value": "14"
+                                    },
+                                    {
+                                      "Key": "15",
+                                      "Value": "15"
                                     },
                                     {
                                       "Key": "16",
@@ -65569,6 +66492,26 @@
                                   "Data": [],
                                   "HelpText": "",
                                   "WidgetValues": []
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
+                                  "WidgetName": "eDP DSC Feature: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "27",
+                                    "eDP_DSC_Feature_16"
+                                  ],
+                                  "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for eDP display.",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "Disabled",
+                                      "Value": "1"
+                                    },
+                                    {
+                                      "Key": "Enabled",
+                                      "Value": "0"
+                                    }
+                                  ]
                                 },
                                 {
                                   "WidgetType": "EntryInt",
@@ -66112,7 +67055,7 @@
                               "2",
                               "Int_EFP1_HDMI_LS_Type"
                             ],
-                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY\t|\tDKL-PHY\t\t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t400mV 0dB\t\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t450mV 0.0dB\t|\tFULL -2dB\t|\n|\tLevel 9\t\t|\t450mV 0.0dB\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t450mV 0.0dB\t|\tFULL -3dB\t|\n",
+                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\nNote: Configure the valid levels 1 to 7 for Combo PHY. \n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY  \t|\tDKL-PHY    \t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t  400mV 0dB\t|\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t  500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t  650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t  800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t 1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t----NA-----\t|\tFULL -2dB  \t|\n|\tLevel 9\t\t|\t----NA-----\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t----NA-----\t|\tFULL -3dB  \t|\n Valid levels for combo phy: Level 1 to 7\n Valid levels for DKL phy: Level 1 to 10",
                             "WidgetValues": [
                               {
                                 "Key": "Level 1",
@@ -66164,10 +67107,10 @@
                               "2",
                               "Int_EFP1_HDMI_Maximum_Data_Rate"
                             ],
-                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote: OEM’s need to configure the maximum data rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote:\n1.OEM’s need to configure the maximum data rate as per mother board support\n2.Default max would be 3.4Gbps for HDMI 1.4 and 6Gbps for HDMI 2.0.",
                             "WidgetValues": [
                               {
-                                "Key": "6.00 Gbps",
+                                "Key": "Default Max Data Rate supported by Platform",
                                 "Value": "0"
                               },
                               {
@@ -66496,6 +67439,26 @@
                               },
                               {
                                 "Key": "No",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "DSC Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP1_External_Compression_Enable"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
@@ -67033,7 +67996,7 @@
                               "2",
                               "Int_EFP2_HDMI_LS_Type"
                             ],
-                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY\t|\tDKL-PHY\t\t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t400mV 0dB\t\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t450mV 0.0dB\t|\tFULL -2dB\t|\n|\tLevel 9\t\t|\t450mV 0.0dB\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t450mV 0.0dB\t|\tFULL -3dB\t|\n",
+                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\nNote: Configure the valid levels 1 to 7 for Combo PHY. \n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY  \t|\tDKL-PHY    \t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t  400mV 0dB\t|\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t  500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t  650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t  800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t 1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t----NA-----\t|\tFULL -2dB  \t|\n|\tLevel 9\t\t|\t----NA-----\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t----NA-----\t|\tFULL -3dB  \t|\n Valid levels for combo phy: Level 1 to 7\n Valid levels for DKL phy: Level 1 to 10",
                             "WidgetValues": [
                               {
                                 "Key": "Level 1",
@@ -67085,10 +68048,10 @@
                               "2",
                               "Int_EFP2_HDMI_Maximum_Data_Rate"
                             ],
-                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote: OEM’s need to configure the maximum data rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote:\n1.OEM’s need to configure the maximum data rate as per mother board support\n2.Default max would be 3.4Gbps for HDMI 1.4 and 6Gbps for HDMI 2.0.",
                             "WidgetValues": [
                               {
-                                "Key": "6.00 Gbps",
+                                "Key": "Default Max Data Rate supported by Platform",
                                 "Value": "0"
                               },
                               {
@@ -67417,6 +68380,26 @@
                               },
                               {
                                 "Key": "No",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "DSC Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP2_External_Compression_Enable"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
@@ -67954,7 +68937,7 @@
                               "2",
                               "Int_EFP3_HDMI_LS_Type"
                             ],
-                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY\t|\tDKL-PHY\t\t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t400mV 0dB\t\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t450mV 0.0dB\t|\tFULL -2dB\t|\n|\tLevel 9\t\t|\t450mV 0.0dB\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t450mV 0.0dB\t|\tFULL -3dB\t|\n",
+                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\nNote: Configure the valid levels 1 to 7 for Combo PHY. \n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY  \t|\tDKL-PHY    \t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t  400mV 0dB\t|\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t  500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t  650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t  800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t 1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t----NA-----\t|\tFULL -2dB  \t|\n|\tLevel 9\t\t|\t----NA-----\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t----NA-----\t|\tFULL -3dB  \t|\n Valid levels for combo phy: Level 1 to 7\n Valid levels for DKL phy: Level 1 to 10",
                             "WidgetValues": [
                               {
                                 "Key": "Level 1",
@@ -68006,10 +68989,10 @@
                               "2",
                               "Int_EFP3_HDMI_Maximum_Data_Rate"
                             ],
-                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote: OEM’s need to configure the maximum data rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote:\n1.OEM’s need to configure the maximum data rate as per mother board support\n2.Default max would be 3.4Gbps for HDMI 1.4 and 6Gbps for HDMI 2.0.",
                             "WidgetValues": [
                               {
-                                "Key": "6.00 Gbps",
+                                "Key": "Default Max Data Rate supported by Platform",
                                 "Value": "0"
                               },
                               {
@@ -68338,6 +69321,26 @@
                               },
                               {
                                 "Key": "No",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "DSC Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP3_External_Compression_Enable"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
@@ -68875,7 +69878,7 @@
                               "2",
                               "Int_EFP4_HDMI_LS_Type"
                             ],
-                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY\t|\tDKL-PHY\t\t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t400mV 0dB\t\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t450mV 0.0dB\t|\tFULL -2dB\t|\n|\tLevel 9\t\t|\t450mV 0.0dB\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t450mV 0.0dB\t|\tFULL -3dB\t|\n",
+                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\nNote: Configure the valid levels 1 to 7 for Combo PHY. \n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY  \t|\tDKL-PHY    \t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t  400mV 0dB\t|\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t  500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t  650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t  800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t 1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t----NA-----\t|\tFULL -2dB  \t|\n|\tLevel 9\t\t|\t----NA-----\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t----NA-----\t|\tFULL -3dB  \t|\n Valid levels for combo phy: Level 1 to 7\n Valid levels for DKL phy: Level 1 to 10",
                             "WidgetValues": [
                               {
                                 "Key": "Level 1",
@@ -68927,10 +69930,10 @@
                               "2",
                               "Int_EFP4_HDMI_Maximum_Data_Rate"
                             ],
-                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote: OEM’s need to configure the maximum data rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote:\n1.OEM’s need to configure the maximum data rate as per mother board support\n2.Default max would be 3.4Gbps for HDMI 1.4 and 6Gbps for HDMI 2.0.",
                             "WidgetValues": [
                               {
-                                "Key": "6.00 Gbps",
+                                "Key": "Default Max Data Rate supported by Platform",
                                 "Value": "0"
                               },
                               {
@@ -69259,6 +70262,26 @@
                               },
                               {
                                 "Key": "No",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "DSC Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP4_External_Compression_Enable"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
@@ -69796,7 +70819,7 @@
                               "2",
                               "Int_EFP5_HDMI_LS_Type"
                             ],
-                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY\t|\tDKL-PHY\t\t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t400mV 0dB\t\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t450mV 0.0dB\t|\tFULL -2dB\t|\n|\tLevel 9\t\t|\t450mV 0.0dB\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t450mV 0.0dB\t|\tFULL -3dB\t|\n",
+                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\nNote: Configure the valid levels 1 to 7 for Combo PHY. \n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY  \t|\tDKL-PHY    \t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t  400mV 0dB\t|\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t  500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t  650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t  800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t 1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t----NA-----\t|\tFULL -2dB  \t|\n|\tLevel 9\t\t|\t----NA-----\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t----NA-----\t|\tFULL -3dB  \t|\n Valid levels for combo phy: Level 1 to 7\n Valid levels for DKL phy: Level 1 to 10",
                             "WidgetValues": [
                               {
                                 "Key": "Level 1",
@@ -69848,10 +70871,10 @@
                               "2",
                               "Int_EFP5_HDMI_Maximum_Data_Rate"
                             ],
-                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote: OEM’s need to configure the maximum data rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote:\n1.OEM’s need to configure the maximum data rate as per mother board support\n2.Default max would be 3.4Gbps for HDMI 1.4 and 6Gbps for HDMI 2.0.",
                             "WidgetValues": [
                               {
-                                "Key": "6.00 Gbps",
+                                "Key": "Default Max Data Rate supported by Platform",
                                 "Value": "0"
                               },
                               {
@@ -70180,6 +71203,26 @@
                               },
                               {
                                 "Key": "No",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "DSC Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP5_External_Compression_Enable"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
@@ -70717,7 +71760,7 @@
                               "2",
                               "Int_EFP6_HDMI_LS_Type"
                             ],
-                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY\t|\tDKL-PHY\t\t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t400mV 0dB\t\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t450mV 0.0dB\t|\tFULL -2dB\t|\n|\tLevel 9\t\t|\t450mV 0.0dB\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t450mV 0.0dB\t|\tFULL -3dB\t|\n",
+                            "HelpText": "This feature specifies the Level shifter configuration for HDMI. This field is valid only if HDMI is selected for Device Type.\nNote: Configure the valid levels 1 to 7 for Combo PHY. \n\n-------------------------------------------------------------------------------------------------------------\n|\t\t\t|\tCOMBO-PHY  \t|\tDKL-PHY    \t|\n-------------------------------------------------------------------------------------------------------------\n|\tLevel 1\t\t|\t450mV 0.0dB\t|\t  400mV 0dB\t|\n|\tLevel 2\t\t|\t450mV 3.2dB\t|\t  500mV 0dB\t|\n|\tLevel 3\t\t|\t450mV 5.5dB\t|\t  650mV 0dB\t|\n|\tLevel 4\t\t|\t650mV 0.0dB\t|\t  800mV 0dB\t|\n|\tLevel 5\t\t|\t650mV 2.3dB\t|\t 1000mV 0dB\t|\n|\tLevel 6\t\t|\t850mV 0.0dB\t|\tFULL -1.5dB\t|\n|\tLevel 7\t\t|\t600mV 3.0dB\t|\tFULL -1.8dB\t|\n|\tLevel 8\t\t|\t----NA-----\t|\tFULL -2dB  \t|\n|\tLevel 9\t\t|\t----NA-----\t|\tFULL -2.5dB\t|\n|\tLevel 10\t\t|\t----NA-----\t|\tFULL -3dB  \t|\n Valid levels for combo phy: Level 1 to 7\n Valid levels for DKL phy: Level 1 to 10",
                             "WidgetValues": [
                               {
                                 "Key": "Level 1",
@@ -70769,10 +71812,10 @@
                               "2",
                               "Int_EFP6_HDMI_Maximum_Data_Rate"
                             ],
-                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote: OEM’s need to configure the maximum data rate as per mother board support.",
+                            "HelpText": "This feature limits the maximum data rate per lane for HDMI. This field is valid only if HDMI is selected for Device Type. \n\nNote:\n1.OEM’s need to configure the maximum data rate as per mother board support\n2.Default max would be 3.4Gbps for HDMI 1.4 and 6Gbps for HDMI 2.0.",
                             "WidgetValues": [
                               {
-                                "Key": "6.00 Gbps",
+                                "Key": "Default Max Data Rate supported by Platform",
                                 "Value": "0"
                               },
                               {
@@ -71101,6 +72144,26 @@
                               },
                               {
                                 "Key": "No",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "DSC Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "2",
+                              "EFP6_External_Compression_Enable"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
+                            "WidgetValues": [
+                              {
+                                "Key": "Disabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
