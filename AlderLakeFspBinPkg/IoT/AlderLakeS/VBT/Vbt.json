@@ -2684,6 +2684,13 @@
                 "Value": ""
               },
               {
+                "Name": "SKIP",
+                "SizeInBits": "16",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "Int_EFP6_Type",
                 "SizeInBits": "16",
                 "ByteOffset": "",
@@ -2692,7 +2699,14 @@
               },
               {
                 "Name": "SKIP",
-                "SizeInBits": "296",
+                "SizeInBits": "280",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "16",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2706,7 +2720,7 @@
               },
               {
                 "Name": "SKIP",
-                "SizeInBits": "296",
+                "SizeInBits": "280",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
