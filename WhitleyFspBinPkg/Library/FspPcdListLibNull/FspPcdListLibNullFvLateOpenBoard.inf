@@ -72,3 +72,5 @@
   gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesSystemVersion
   gSmbiosTablesTokenSpaceGuid.PcdSmbiosTablesTemperatureProbeDescription
 
+[BuildOptions]
+  GCC:*_*_*_CC_FLAGS = -Wno-unused-function

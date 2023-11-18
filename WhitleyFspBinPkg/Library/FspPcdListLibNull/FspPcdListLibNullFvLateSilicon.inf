@@ -81,3 +81,5 @@
   gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesCapability
   gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesSetting
 
+[BuildOptions]
+  GCC:*_*_*_CC_FLAGS = -Wno-unused-function
