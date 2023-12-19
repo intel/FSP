@@ -4431,15 +4431,17 @@ typedef struct {
 **/
   UINT8                       ScsEmmcHs400Enabled;
 
-/** Offset 0x1046 - Use DLL values from policy
+/** Offset 0x1046 - Enable eMMC HS200 Mode
+  Enable eMMC HS200 Mode.
+  $EN_DIS
+**/
+  UINT8                       ScsEmmcHs200Enabled;
+
+/** Offset 0x1047 - Use DLL values from policy
   Set if FSP should use HS400 DLL values from policy
   $EN_DIS
 **/
   UINT8                       EmmcUseCustomDlls;
-
-/** Offset 0x1047
-**/
-  UINT8                       UnusedUpdSpace42;
 
 /** Offset 0x1048 - Emmc Tx CMD Delay control register value
   Please see Tx CMD Delay Control register definition for help
@@ -4496,7 +4498,7 @@ typedef struct {
 
 /** Offset 0x108D
 **/
-  UINT8                       UnusedUpdSpace43[3];
+  UINT8                       UnusedUpdSpace42[3];
 
 /** Offset 0x1090 - Emmc Rclk PinMux
   Select Rclk pin muxing. Refer to GPIO_*_MUXING_EMMC_RCLK* for possible values.
@@ -4511,7 +4513,7 @@ typedef struct {
 
 /** Offset 0x1095
 **/
-  UINT8                       UnusedUpdSpace44[3];
+  UINT8                       UnusedUpdSpace43[3];
 
 /** Offset 0x1098 - Emmc Clock Pin Mux
   Select Clock pin muxing. Refer to GPIO_*_MUXING_EMMC_CLK* for possible values.
@@ -4526,7 +4528,7 @@ typedef struct {
 
 /** Offset 0x109D
 **/
-  UINT8                       UnusedUpdSpace45[3];
+  UINT8                       UnusedUpdSpace44[3];
 
 /** Offset 0x10A0 - Emmc Resetb PinMux
   Select Resetb pin muxing. Refer to GPIO_*_MUXING_EMMC_RESETB* for possible values.
@@ -4578,7 +4580,7 @@ typedef struct {
 
 /** Offset 0x10AE
 **/
-  UINT8                       UnusedUpdSpace46[2];
+  UINT8                       UnusedUpdSpace45[2];
 
 /** Offset 0x10B0 - HorizontalResolution for PEI Logo
   HorizontalResolution from PEIm Gfx for PEI Logo
@@ -4671,7 +4673,7 @@ typedef struct {
 
 /** Offset 0x112C
 **/
-  UINT8                       UnusedUpdSpace47[2];
+  UINT8                       UnusedUpdSpace46[2];
 
 /** Offset 0x112E
 **/
@@ -4696,7 +4698,7 @@ typedef struct {
 
 /** Offset 0x1130
 **/
-  UINT8                       UnusedUpdSpace48[6];
+  UINT8                       UnusedUpdSpace47[6];
 
 /** Offset 0x1136
 **/

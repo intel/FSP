@@ -1531,8 +1531,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_FspEventHandler                 4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_ScsEmmcEnabled                  1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ScsEmmcHs400Enabled             1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_ScsEmmcHs200Enabled             1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_EmmcUseCustomDlls               1 bytes    $_DEFAULT_ = 0x0
-        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_EmmcTxCmdDelayRegValue          4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_EmmcTxDataDelay1RegValue        4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_EmmcTxDataDelay2RegValue        4 bytes    $_DEFAULT_ = 0x0
@@ -4629,6 +4629,8 @@ Page "System Agent (Post-Mem)"
         Help "Enable/disable eMMC Controller."
     Combo $gPlatformFspPkgTokenSpaceGuid_ScsEmmcHs400Enabled, "Enable eMMC HS400 Mode", &EN_DIS,
         Help "Enable eMMC HS400 Mode."
+    Combo $gPlatformFspPkgTokenSpaceGuid_ScsEmmcHs200Enabled, "Enable eMMC HS200 Mode", &EN_DIS,
+        Help "Enable eMMC HS200 Mode."
     Combo $gPlatformFspPkgTokenSpaceGuid_EmmcUseCustomDlls, "Use DLL values from policy", &EN_DIS,
         Help "Set if FSP should use HS400 DLL values from policy"
     EditNum $gPlatformFspPkgTokenSpaceGuid_EmmcTxCmdDelayRegValue, "Emmc Tx CMD Delay control register value", HEX,
