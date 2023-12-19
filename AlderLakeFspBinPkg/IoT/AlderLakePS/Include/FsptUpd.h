@@ -330,19 +330,6 @@ typedef struct {
   UINT8                       ReservedFsptUpd1[15];
 } FSP_T_CONFIG;
 
-/** Fsp T Restricted Configuration
-**/
-typedef struct {
-
-/** Offset 0x00D8
-**/
-  UINT32                      Signature;
-
-/** Offset 0x00DC
-**/
-  UINT8                       ReservedFsptRestrictedUpd[12];
-} FSP_T_RESTRICTED_CONFIG;
-
 /** Fsp T UPD Configuration
 **/
 typedef struct {
@@ -365,13 +352,9 @@ typedef struct {
 
 /** Offset 0x00D8
 **/
-  FSP_T_RESTRICTED_CONFIG     FsptRestrictedConfig;
-
-/** Offset 0x00E8
-**/
   UINT8                       Rsvd03[6];
 
-/** Offset 0x00EE
+/** Offset 0x00DE
 **/
   UINT16                      UpdTerminator;
 } FSPT_UPD;
