@@ -1,0 +1,117 @@
+## @file
+# This lists all dynamic PCD used by the FvLateSilicon.fv.  It needs to be provided as part
+# of the *FspBinPkg so edk2 bootloaders can include it and build a complete
+# PCD database.
+#
+# @copyright
+# Copyright (C) 2023 Intel Corporation
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = FspPcdListLibNullFvLateSilicon
+  FILE_GUID                      = dc42df7c-2ab0-4aa7-bea7-fcbd552a3535
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = NULL
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
+  IntelSiliconPkg/IntelSiliconPkg.dec
+  EaglestreamSiliconPkg/SiliconPkg.dec
+  EaglestreamSiliconPkg/Cpu/CpuRcPkg.dec
+  EaglestreamSiliconPkg/CpRcPkg.dec
+  EaglestreamOpenBoardPkg/PlatformPkg.dec
+
+[Sources]
+  FspPcdListLibNull.c
+
+[Pcd]
+  gCpuPkgTokenSpaceGuid.PcdCpuConfigContextBuffer
+  gCpuPkgTokenSpaceGuid.PcdCpuEnergyPolicy
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmMsrSaveStateEnable
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmProtectedModeEnable
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmRuntimeCtlHooks
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmUseBlockIndication
+  gCpuPkgTokenSpaceGuid.PcdCpuSmmUseDelayIndication
+  gCpuPkgTokenSpaceGuid.PcdPlatformCpuSocketCount
+
+  gEfiCpRcPkgTokenSpaceGuid.PcdDprMemSize
+  gEfiCpRcPkgTokenSpaceGuid.PcdImonAddr
+  gEfiCpRcPkgTokenSpaceGuid.PcdImr2Enable
+  gEfiCpRcPkgTokenSpaceGuid.PcdImr2Size
+  gEfiCpRcPkgTokenSpaceGuid.PcdLtMemSize
+  gEfiCpRcPkgTokenSpaceGuid.PcdMemMapHostMemoryAddress
+  gEfiCpRcPkgTokenSpaceGuid.PcdMemSrvidMap
+  gEfiCpRcPkgTokenSpaceGuid.PcdPcieMmcfgTablePtr
+  gEfiCpRcPkgTokenSpaceGuid.PcdPeiSyshostMemorySize
+  gEfiCpRcPkgTokenSpaceGuid.PcdSyshostMemoryAddress
+
+  gEfiMdeModulePkgTokenSpaceGuid.PcdAriSupport
+  gEfiMdeModulePkgTokenSpaceGuid.PcdGhcbBase
+  gEfiMdeModulePkgTokenSpaceGuid.PcdGhcbSize
+  gEfiMdeModulePkgTokenSpaceGuid.PcdS3BootScriptTablePrivateDataPtr
+  gEfiMdeModulePkgTokenSpaceGuid.PcdS3BootScriptTablePrivateSmmDataPtr
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSrIovSupport
+  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeUseSerial
+  gEfiMdeModulePkgTokenSpaceGuid.PcdUse5LevelPageTable
+
+  gEfiMdePkgTokenSpaceGuid.PcdUartDefaultBaudRate
+  gEfiMdePkgTokenSpaceGuid.PcdUartDefaultDataBits
+  gEfiMdePkgTokenSpaceGuid.PcdUartDefaultParity
+  gEfiMdePkgTokenSpaceGuid.PcdUartDefaultStopBits
+
+  gIntelSiliconPkgTokenSpaceGuid.PcdVTdPolicyPropertyMask
+
+  gOemSkuTokenSpaceGuid.PcdOemSkuBmcPciePortNumber
+  gOemSkuTokenSpaceGuid.PcdOemSkuBoardSocketCount
+  gOemSkuTokenSpaceGuid.PcdOemSkuMaxChannel
+  gOemSkuTokenSpaceGuid.PcdOemSkuMaxDimmPerChannel
+  gOemSkuTokenSpaceGuid.PcdOemSkuMaxDimmSize
+  gOemSkuTokenSpaceGuid.PcdOemSkuPlatformFeatureFlag
+  gOemSkuTokenSpaceGuid.PcdOemSkuSubBoardID
+  gOemSkuTokenSpaceGuid.PcdOemSkuUplinkPortIndex
+  gOemSkuTokenSpaceGuid.PcdOemSku_GPIO_TABLE_SIZE
+
+  gOobMsmTokenSpaceGuid.PcdPciBmcVendorDeviceId
+  gOobMsmTokenSpaceGuid.PcdPciPmtBDF
+
+  gPlatformModuleTokenSpaceGuid.PcdProcessorLtsxEnable
+
+  gPlatformTokenSpaceGuid.PcdBoardTypeBitmask
+  gPlatformTokenSpaceGuid.PcdDfxAdvDebugJumper
+  gPlatformTokenSpaceGuid.PcdImr3Enable
+  gPlatformTokenSpaceGuid.PcdPlatformType
+
+  gReferenceCodePolicyTokenSpaceGuid.PcdDfxB2PErrAssertAtCommand
+  gReferenceCodePolicyTokenSpaceGuid.PcdDfxRstCplBitsEn
+  gReferenceCodePolicyTokenSpaceGuid.PcdEvMode
+
+  gSecurityPkgPcdSpaceGuid.PcdSgxAddPackageSupport
+  gSecurityPkgPcdSpaceGuid.PcdSgxPrivacy
+
+  gSiPkgTokenSpaceGuid.PcdBiosGuardHobPtrModuleAddr
+  gSiPkgTokenSpaceGuid.PcdEmuBiosSkipS3MAccess
+  gSiPkgTokenSpaceGuid.PcdHvmModeEnabled
+  gSiPkgTokenSpaceGuid.PcdMaxCxlMemExpNum
+  gSiPkgTokenSpaceGuid.PcdNumaAcpiDataStaticPointer
+  gSiPkgTokenSpaceGuid.PcdRasIerrPresent
+  gSiPkgTokenSpaceGuid.PcdWarmResetEliminationEn
+
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuApLoopMode
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesCapability
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesSetting
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuHotPlugDataAddress
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMicrocodePatchAddress
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMicrocodePatchRegionSize
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuS3DataAddress
+  gUefiCpuPkgTokenSpaceGuid.PcdIsPowerOnReset
+  gUefiCpuPkgTokenSpaceGuid.PcdSevEsIsEnabled
+
+  gEfiMdeModulePkgTokenSpaceGuid.PcdUse1GPageTable
+  gPlatformModuleTokenSpaceGuid.PcdBootState
+

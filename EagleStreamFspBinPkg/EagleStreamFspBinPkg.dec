@@ -1,0 +1,22 @@
+## @file
+# Component description file for Cedar Island FSP binary package.
+#
+# @copyright
+# Copyright (C) 2023 Intel Corporation
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = EagleStreamFspBinPkg
+  PACKAGE_GUID                   = 192E6323-FC98-4BFC-AB81-9353C8A63E07
+  PACKAGE_VERSION                = 1.00
+
+[Includes]
+  Include
+
+[Guids]
+  gSaveHostToMemoryGuid       = { 0x9da19038, 0x2085, 0x486a, { 0xad, 0x53, 0xc4, 0x97, 0xda, 0xaa, 0x20, 0x48 } }
+  gSaveFSPsPcdToHobGuid       = { 0xfbd5b2cc, 0xbe80, 0x4aa3, { 0x9d, 0xc8, 0x68, 0xc5, 0x2c, 0xe0, 0xe7, 0x9a } }
+

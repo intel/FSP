@@ -1,0 +1,91 @@
+## @file
+# This lists all dynamic PCD used by the FSP.  It needs to be provided as part
+# of the *FspBinPkg so edk2 bootloaders can include it and build a complete
+# PCD database.
+#
+# @copyright
+# Copyright (C) 2023 Intel Corporation
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010017
+  BASE_NAME                      = FspPcdListLibNull
+  FILE_GUID                      = 982C2966-2251-4078-824F-5CEB39A90D17
+  VERSION_STRING                 = 1.0
+  MODULE_TYPE                    = BASE
+  LIBRARY_CLASS                  = NULL
+#
+# The following information is for reference only and not required by the build tools.
+#
+# VALID_ARCHITECTURES = IA32 X64 IPF EBC
+#
+
+[LibraryClasses]
+  BaseLib
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
+  EaglestreamSiliconPkg/SiliconPkg.dec
+  EaglestreamSiliconPkg/Cpu/CpuRcPkg.dec
+  EaglestreamSiliconPkg/CpRcPkg.dec
+  EaglestreamOpenBoardPkg/PlatformPkg.dec
+  IntelSiliconPkg/IntelSiliconPkg.dec
+
+[Sources]
+  FspPcdListLibNull.c
+
+[Pcd]
+  #
+  # Note: PCD list here should match DynamicExPcd.dsc
+  #
+  # List all the DynamicEx PCDs that FSP will consume.
+  # FSP Dispatch mode bootloader will include this INF to ensure all the PCDs are
+  # built into PCD database.
+  #
+  gEfiCpRcPkgTokenSpaceGuid.PcdMemSrvidMap
+  gEfiCpRcPkgTokenSpaceGuid.PcdImonAddr
+  gEfiCpRcPkgTokenSpaceGuid.PcdPcieMmcfgTablePtr
+  gOemSkuTokenSpaceGuid.PcdOemSkuBmcPciePortNumber
+  gOemSkuTokenSpaceGuid.PcdOemSkuPlatformFeatureFlag
+  gOemSkuTokenSpaceGuid.PcdOemSkuSubBoardID
+  gOemSkuTokenSpaceGuid.PcdOemSkuUplinkPortIndex
+  gOemSkuTokenSpaceGuid.PcdOemSku_GPIO_TABLE_SIZE
+  gPlatformModuleTokenSpaceGuid.PcdProcessorLtsxEnable
+  gPlatformTokenSpaceGuid.PcdBoardTypeBitmask
+  gPlatformTokenSpaceGuid.PcdDfxAdvDebugJumper
+  gEfiCpRcPkgTokenSpaceGuid.PcdDprMemSize
+  gEfiCpRcPkgTokenSpaceGuid.PcdImr2Enable
+  gEfiCpRcPkgTokenSpaceGuid.PcdImr2Size
+  gPlatformTokenSpaceGuid.PcdImr3Enable
+  gEfiCpRcPkgTokenSpaceGuid.PcdLtMemSize
+  gEfiCpRcPkgTokenSpaceGuid.PcdMemMapHostMemoryAddress
+  gPlatformTokenSpaceGuid.PcdPlatformType
+  gEfiCpRcPkgTokenSpaceGuid.PcdSyshostMemoryAddress
+  gEfiCpRcPkgTokenSpaceGuid.PcdPeiSyshostMemorySize
+  gReferenceCodePolicyTokenSpaceGuid.PcdDfxB2PErrAssertAtCommand
+  gReferenceCodePolicyTokenSpaceGuid.PcdDfxRstCplBitsEn
+  gReferenceCodePolicyTokenSpaceGuid.PcdEvMode
+  gSiPkgTokenSpaceGuid.PcdWarmResetEliminationEn
+  gEfiMdeModulePkgTokenSpaceGuid.PcdUse5LevelPageTable
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuS3DataAddress
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesCapability
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesSetting
+  gUefiCpuPkgTokenSpaceGuid.PcdIsPowerOnReset
+  gCpuPkgTokenSpaceGuid.PcdCpuEnergyPolicy
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuApLoopMode
+  gEfiMdeModulePkgTokenSpaceGuid.PcdStatusCodeUseSerial
+  gEfiMdeModulePkgTokenSpaceGuid.PcdGhcbBase
+  gEfiMdeModulePkgTokenSpaceGuid.PcdGhcbSize
+  gUefiCpuPkgTokenSpaceGuid.PcdSevEsIsEnabled
+  gSiPkgTokenSpaceGuid.PcdEmuBiosSkipS3MAccess
+  gEfiMdeModulePkgTokenSpaceGuid.PcdUse1GPageTable
+  gPlatformModuleTokenSpaceGuid.PcdBootState
+  gIntelSiliconPkgTokenSpaceGuid.PcdVTdPolicyPropertyMask
+  gSecurityPkgPcdSpaceGuid.PcdSgxPrivacy
+  gSecurityPkgPcdSpaceGuid.PcdSgxAddPackageSupport
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMicrocodePatchAddress
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMicrocodePatchRegionSize
