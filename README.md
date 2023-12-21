@@ -34,6 +34,7 @@ Intel® Pentium® and Celeron® Processor N3000 Product Families and Intel® Ato
 9th & 8th Generation Intel® Core™ processors and chipsets (formerly Coffee Lake Refresh, Coffee Lake, and Whiskey Lake) | CoffeeLakeFspBinPkg | v2.0
 10th Generation Intel® Core™ processors and chipsets (formerly Comet Lake) | CometLakeFspBinPkg | v2.1
 Intel® Atom™ processor C3XXX product family (formerly Denverton) | DenvertonNSFspBinPkg | v2.0
+4th Generation Intel® Xeon® Scalable processors and chipsets (formerly Sapphire Rapids) | EagleStreamFspBinPkg | v2.3
 Intel Atom® x6000E series, and Intel Pentium® and Celeron® N and J Series processors | ElkhartLakeFspBinPkg | v2.1
 10th Generation Intel® Core™ processors and chipsets (formerly Ice Lake) | IceLakeFspBinPkg | v2.1
 Intel® Xeon® D-1700 and D-2700 Processor Family (formerly Ice Lake-D LCC and HCC) | IdavilleFspBinPkg | v2.1
