@@ -142,3 +142,432 @@ StructDef
         $gEagleStreamFspPkgTokenSpaceGuid_HwMemTest                    1 bytes    $_DEFAULT_ = 0x01
         Skip 1 bytes
         $gEagleStreamFspPkgTokenSpaceGuid_MemTestLoops                 2 bytes    $_DEFAULT_ = 0x01
+
+EndStruct
+
+List &EN_DIS
+    Selection 0x1 , "Enabled"
+    Selection 0x0 , "Disabled"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_FsptPort80RouteDisable
+    Selection 0 , "VPD-Style"
+    Selection 1 , "Enable Port80 Output[Default]"
+    Selection 2 , "Disable Port80 Output"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_D2KCreditConfig
+    Selection 1 , "Min"
+    Selection 2 , "Med"
+    Selection 3 , "Max"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_SnoopThrottleConfig
+    Selection 0 , "Disable"
+    Selection 1 , "Min"
+    Selection 2 , "Med"
+    Selection 3 , "Max"
+EndList
+
+
+
+List &gEagleStreamFspPkgTokenSpaceGuid_DebugPrintLevel
+    Selection 1 , "Fatal"
+    Selection 2 , "Warning"
+    Selection 4 , "Summary"
+    Selection 8 , "Detail"
+    Selection 0x0F , "All"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_UmaClustering
+    Selection 0 , "Disable"
+    Selection 2 , "Two Clusters"
+    Selection 4 , "Four Clusters"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_IoDcMode
+    Selection 0 , "Disable"
+    Selection 1 , "Auto"
+    Selection 2 , "Push"
+    Selection 3 , "AllocFlow"
+    Selection 4 , "NonAlloc"
+    Selection 5 , "WCILF"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_DegradePrecedence
+    Selection 0 , "Topology"
+    Selection 1 , "Feature"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_Degrade4SPreference
+    Selection 0 , "Fully Connect"
+    Selection 1 , "Dual Link Ring"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_XptPrefetchEn
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_DdrtQosMode
+    Selection 0 , "Mode 0"
+    Selection 1 , "Mode 1"
+    Selection 2 , "Mode 2)"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_KtiLinkSpeedMode
+    Selection 0 , "Slow"
+    Selection 1 , "Full"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_KtiLinkSpeed
+    Selection 0 , "128GT"
+    Selection 1 , "144GT"
+    Selection 2 , "160GT"
+    Selection 3 , "Max KTI Link Speed"
+    Selection 4 , "Frequency Per Link"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_KtiLinkL0pEn
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , " Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_KtiLinkL1En
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , " Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_KtiFailoverEn
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , " Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_KtiCrcMode
+    Selection 0 , "16bit"
+    Selection 1 , "32bit"
+    Selection 2 , "Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_KtiCpuSktHotPlugTopology
+    Selection 0 , "4Socket"
+    Selection 1 , "8Socket"
+EndList
+
+
+List &gEagleStreamFspPkgTokenSpaceGuid_TorThresLoctoremNorm
+    Selection 0 , "Disable"
+    Selection 1 , "Auto"
+    Selection 2 , "Low"
+    Selection 3 , "Medium"
+    Selection 4 , "High"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_TorThresLoctoremEmpty
+    Selection 0 , "Disable"
+    Selection 1 , "Auto"
+    Selection 2 , "Low"
+    Selection 3 , "Medium"
+    Selection 4 , "High"
+EndList
+
+
+List &gEagleStreamFspPkgTokenSpaceGuid_TscSyncEn
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_StaleAtoSOptEn
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_SplitLock
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+    Selection 2 , "Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_mmCfgBase
+    Selection 0 , "1GB"
+    Selection 1 , "1.5GB"
+    Selection 2 , "1.75GB"
+    Selection 3 , "2GB"
+    Selection 4 , "2.25GB"
+    Selection 5 , "3GB"
+    Selection 6 , "Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_mmCfgSize
+    Selection 0 , "64MB"
+    Selection 1 , "128MB"
+    Selection 2 , "256MB"
+    Selection 3 , "512MB"
+    Selection 4 , "1GB"
+    Selection 5 , "2GB"
+    Selection 6 , " Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_CpuPaLimit
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_serialDebugMsgLvl
+    Selection 0 , "Disable"
+    Selection 1 , "Minimum"
+    Selection 2 , "Normal"
+    Selection 3 , "Maximum"
+    Selection 4 , "Auto"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_MeUmaEnable
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugEnable
+    Selection 0 , "Disable"
+    Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugIoBase
+    Selection 0x3F8 , "0x3F8"
+    Selection 0x2F8 , "0x2F8"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_EnableGbE
+    Selection 0 , "Disable LAN 0 & LAN 1"
+    Selection 1 , "Enable LAN 0 & LAN 1"
+    Selection 2 , "Disable LAN 1 only"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_PcieRootPort0DeEmphasis
+    Selection 0 , "6dB"
+    Selection 1 , "3.5dB"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_PcieRootPort1DeEmphasis
+    Selection 0 , "6dB"
+    Selection 1 , "3.5dB"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_PcieRootPort2DeEmphasis
+    Selection 0 , "6dB"
+    Selection 1 , "3.5dB"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_PcieRootPort3DeEmphasis
+    Selection 0 , "6dB"
+    Selection 1 , "3.5dB"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_PcieRootPort4DeEmphasis
+    Selection 0 , "6dB"
+    Selection 1 , "3.5dB"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_PcieRootPort5DeEmphasis
+    Selection 0 , "6dB"
+    Selection 1 , "3.5dB"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_PcieRootPort6DeEmphasis
+    Selection 0 , "6dB"
+    Selection 1 , "3.5dB"
+EndList
+
+List &gEagleStreamFspPkgTokenSpaceGuid_PcieRootPort7DeEmphasis
+    Selection 0 , "6dB"
+    Selection 1 , "3.5dB"
+EndList
+
+BeginInfoBlock
+    PPVer       "0.1"
+    Description "4th Gen Xeon Platform"
+EndInfoBlock
+
+Page "FSP-T Settings"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_FsptPort80RouteDisable, "Disable Port80 output in FSP-T", &gEagleStreamFspPkgTokenSpaceGuid_FsptPort80RouteDisable,
+        Help "Select Port80 Control in FSP-T (0:VPD-Style, 1:Enable Port80 Output, 2:Disable Port80 Output, refer to FSP Integration Guide for details"
+EndPage
+
+Page "Memory Reference Code"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_DdrFreqLimit, "DDR frequency limit ", HEX,
+        Help "Enable(Default) or Disable Processor X2apic Function"
+             "Valid range: 0x00 ~ 0x0D"
+EndPage
+
+Page "CPU (Pre-Mem)"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_VmxEnable, "Processor VmxEnable Function", &EN_DIS,
+        Help "Enable(Default) or Disable Processor VmxEnable Function"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_X2apic, "Processor X2apic Function", &EN_DIS,
+        Help "Enable(Default) or Disable Processor X2apic Function"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_VtdSupport, "VT-d Support", &EN_DIS,
+        Help "Enable or <b>Disable(Default)</b> VT-d Support"
+EndPage
+
+
+
+Page "Uncore (Pre-Mem)"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_BusRatio, "Bus Ratio", HEX,
+        Help "Indicates the ratio of Bus/MMIOL/IO resource to be allocated for each CPU's IIO. Default 0x1"
+             "Valid range: 0x0 ~ 0xFFFFFFFFFFFFFFFF"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_D2KCreditConfig, "D2K Credit Config", &gEagleStreamFspPkgTokenSpaceGuid_D2KCreditConfig,
+        Help "Set the D2K Credit Config. 1: Min,<b>2: Med (Default), 3: Max."
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_SnoopThrottleConfig, "Snoop Throttle Config", &gEagleStreamFspPkgTokenSpaceGuid_SnoopThrottleConfig,
+        Help "Set the Snoop Throttle Config. <b>0: Disable(Default)</b>, 1: Min, 2: Med, 3: Max"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_LegacyVgaSoc, "Legacy VGA Socket", HEX,
+        Help "Socket that claims the legacy VGA range. Default: Socket 0"
+             "Valid range: 0x00 ~ 0x03"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_LegacyVgaStack, "Legacy VGA Stack", HEX,
+        Help "Stack that claims the legacy VGA range. Default: Stack 0"
+             "Valid range: 0x00 ~ 0x06"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_P2pRelaxedOrdering, "Pcie P2P Performance Mode", &EN_DIS,
+        Help "Enable: Enable PCIe P2P Performance Mode, <b>Disable(Default)</b>: Disable PCIe P2P Performance Mode"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_SncEn, "SNC", &EN_DIS,
+        Help "<b>Enable(Default)</b> or Disable SNC"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_UmaClustering, "UMA Clustering", &gEagleStreamFspPkgTokenSpaceGuid_UmaClustering,
+        Help "Set number of enabled UMA Clusters. <b>0: Disable(Default)</b>, 2: Two Clusters, 4: Four Clusters"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_IoDcMode, "IODC Mode", &gEagleStreamFspPkgTokenSpaceGuid_IoDcMode,
+        Help "IODC Mode. 0: Disable, <b>1: Auto(Default)</b>, 2: Push, 3: AllocFlow, 4: NonAlloc, 5: WCILF"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_DegradePrecedence, "Degrade Precedence", &gEagleStreamFspPkgTokenSpaceGuid_DegradePrecedence,
+        Help "Degrade Precedence. <b>0: Topology(Default)</b>, 1: Feature"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_Degrade4SPreference, "Degrade 4 Socket Preference", &gEagleStreamFspPkgTokenSpaceGuid_Degrade4SPreference,
+        Help "Degrade 4 Socket Preference. <b>0: Fully Connect(Default)</b>, 1: Dual Link Ring"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_DirectoryModeEn, "Directory Mode", &EN_DIS,
+        Help "<b>Enable(Default)</b> or Disable Directory Mode"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_XptPrefetchEn, "XPT Prefetch Enable", &gEagleStreamFspPkgTokenSpaceGuid_XptPrefetchEn,
+        Help "XPT Prefetch. 0: Disable, 1: Enable, <b>2: Auto(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiPrefetchEn, "KTI Prefetch Enable", &EN_DIS,
+        Help "<b>Enable(Default)</b> or Disable KTI Prefetch"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_XptRemotePrefetchEn, "XPT Remote Prefetch Enable", &EN_DIS,
+        Help "Enable or <b>Disable(Default)</b> XPT Remote Prefetch"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiFpgaEnable, "KTI FPGA", &EN_DIS,
+        Help "Enable or Disable KTI FPGA, Default: 0x1 (Enable)"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_DdrtQosMode, "DDRT QoS Mode", &gEagleStreamFspPkgTokenSpaceGuid_DdrtQosMode,
+        Help "DDRT QoS. <b>0: Mode 0(Default)</b>, 1: Mode 1, 2: Mode 2"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiLinkSpeedMode, "KTI Link Speed Mode", &gEagleStreamFspPkgTokenSpaceGuid_KtiLinkSpeedMode,
+        Help "KTI Link Speed Mode. 0: Slow, <b>1: Full(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiLinkSpeed, "KTI Link Speed", &gEagleStreamFspPkgTokenSpaceGuid_KtiLinkSpeed,
+        Help "KTI Link Speed. 0: 128GT, 1: 144GT, 2: 160GT, <b>3: Max KTI Link Speed(Default)</b>, 4: Frequency Per Link"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiLinkL0pEn, "KTI Link L0p", &gEagleStreamFspPkgTokenSpaceGuid_KtiLinkL0pEn,
+        Help "KTI Link L0p. 0: Disable, 1: Enable, <b>2: Auto(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiLinkL1En, "KTI Link L1", &gEagleStreamFspPkgTokenSpaceGuid_KtiLinkL1En,
+        Help "KTI Link L1. 0: Disable, 1: Enable, <b>2: Auto(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiFailoverEn, "KTI Failover", &gEagleStreamFspPkgTokenSpaceGuid_KtiFailoverEn,
+        Help "KTI Failover. 0: Disable, 1: Enable, <b>2: Auto(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiLbEn, "KTI LB Enable", &EN_DIS,
+        Help "Enable or <b>Disable(Default)</b> KTI LB"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiCrcMode, "KTI CRC Mode", &gEagleStreamFspPkgTokenSpaceGuid_KtiCrcMode,
+        Help "KTI CRC Mode.  0: 16bit, 1: 32bit, <b>2: Auto(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiCpuSktHotPlugEn, "KTI CPU Socket Hotplug", &EN_DIS,
+        Help "Enable or <b>Disable(Default)</b> KTI CPU Socket Hotplug"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiCpuSktHotPlugTopology, "KTI CPU Socket HotPlug Topology", &gEagleStreamFspPkgTokenSpaceGuid_KtiCpuSktHotPlugTopology,
+        Help "KTI CPU Socket HotPlug Topology. <b>0: 4 Socket(Default)</b>, 1: 8 Socket"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiSkuMismatchCheck, "KTI SKU Mismatch Check", &EN_DIS,
+        Help "<b>Enable(Default)</b> or Disable KTI SKU Mismatch Check"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_TorThresLoctoremNorm, "TOR threshold - Loctorem threshold normal", &gEagleStreamFspPkgTokenSpaceGuid_TorThresLoctoremNorm,
+        Help "TOR threshold - Loctorem threshold normal. 0: Disable, <b>1: Auto(Default)</b>, 2: Low, 3: Medium, 4: High"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_TorThresLoctoremEmpty, "TOR threshold - Loctorem threshold empty", &gEagleStreamFspPkgTokenSpaceGuid_TorThresLoctoremEmpty,
+        Help "TOR threshold - Loctorem threshold empty.  0: Disable, <b>1: Auto(Default)</b>, 2: Low, 3: Medium, 4: High"
+
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_TscSyncEn, "TSC Sync in Sockets", &gEagleStreamFspPkgTokenSpaceGuid_TscSyncEn,
+        Help "TSC Sync in Sockets. 0: Disable, 1: Enable, <b>2: Auto(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_StaleAtoSOptEn, "HA A to S directory optimization", &gEagleStreamFspPkgTokenSpaceGuid_StaleAtoSOptEn,
+        Help "HA A to S directory optimization. 0: Disable, 1: Enable, <b>2: Auto(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_LLCDeadLineAlloc, "LLC Deadline Allocation", &EN_DIS,
+        Help "<b>Enable(Default)</b> or Disable LLC Deadline Allocation"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_SplitLock, "Split Lock", &gEagleStreamFspPkgTokenSpaceGuid_SplitLock,
+        Help "Split Lock. <b>0: Disable(Default)</b>, 1: Enable, 2: Auto"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_mmCfgBase, "MMCFG Base Address", &gEagleStreamFspPkgTokenSpaceGuid_mmCfgBase,
+        Help "MMCFG Base Address. 0: 1GB, 1: 1.5GB, 2: 1.75GB, 3: 2GB, 4: 2.25GB, 5: 3GB, <b>6: Auto(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_mmCfgSize, "MMCFG Size", &gEagleStreamFspPkgTokenSpaceGuid_mmCfgSize,
+        Help "Select MMCFG Size. 0: 64MB, 1: 128MB, 2: 256MB, 3: 512MB, 4: 1GB, 5: 2GB, <b>6: Auto(Default)</b>"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_mmiohBase, "MMIO High Base Address", HEX,
+        Help "MMIO High Base Address, a hex number for Bit[51:32]. Default: 0x6 (Gives 0x200)"
+             "Valid range: 0x0000 ~ 0xFFFFFFFF"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_CpuPaLimit, "CPU Physical Address Limit", &gEagleStreamFspPkgTokenSpaceGuid_CpuPaLimit,
+        Help "<b>Enable(Default)</b> or Disable CPU Physical Address Limit"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_mmiohSize, "MMIO High Size", DEC,
+        Help "MMIO High Size, Number of 1GB contiguous regions to be assigned for MMIOH space per CPU.  Range 1-1024, Default: 3"
+             "Valid range: 1 ~ 1024"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_isocEn, "ISOC", &EN_DIS,
+        Help "<b>Enable(Default)</b> or Disable ISOC"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_dcaEn, "DCA", &EN_DIS,
+        Help "Enable or <b>Disable(Default)</b> DCA"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_BoardTypeBitmask, "BoardTypeBitmask", HEX,
+        Help "Board Type Bitmask. Default: 0x1"
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_AllLanesPtr, "AllLanesPtr", HEX,
+        Help "Pointer to array of ALL_LANES_EPARAM_LINK_INFO"
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_PerLanePtr, "PerLanePtr", HEX,
+        Help "Pointer to array of PER_LANE_EPARAM_LINK_INFO"
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_AllLanesSizeOfTable, "AllLanesSizeOfTable", HEX,
+        Help "Number of elements in AllLanesPtr array."
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_PerLaneSizeOfTable, "PerLaneSizeOfTable", HEX,
+        Help "Number of elements in PerLanePtr array."
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_WaitTimeForPSBP, "WaitTimeForPSBP", HEX,
+        Help "Number of milliseconds to wait for remote CPUs to initialize. Default: 30 sec"
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_WaSerializationEn, "WaSerializationEn", &EN_DIS,
+        Help "<b>Enable(Default)</b> or Disable BIOS serialization WA"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_KtiInEnableMktme, "KtiInEnableMktme", &EN_DIS,
+        Help "Enable(Default) or Disable MkTme status decides D2Kti feature state"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_IioConfigIOU0, "IIO ConfigIOU0", HEX,
+        Help "ConfigIOU[MAX_SOCKET][0]: MAX_SOCKET=8, 0x00:x4x4x4x4, 0x01:x4x4xxx8, 0x02:xxx8x4x4, 0x03:xxx8xxx8, 0x04:xxxxxx16, <b>0xFF:AUTO(Default)</b>"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_IioConfigIOU1, "IIO ConfigIOU1", HEX,
+        Help "ConfigIOU[MAX_SOCKET][1]: MAX_SOCKET=8, 0x00:x4x4x4x4, 0x01:x4x4xxx8, 0x02:xxx8x4x4, 0x03:xxx8xxx8, 0x04:xxxxxx16, <b>0xFF:AUTO(Default)</b>"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_IioConfigIOU2, "IIO ConfigIOU2", HEX,
+        Help "ConfigIOU[MAX_SOCKET][2]: MAX_SOCKET=8, 0x00:x4x4x4x4, 0x01:x4x4xxx8, 0x02:xxx8x4x4, 0x03:xxx8xxx8, 0x04:xxxxxx16, <b>0xFF:AUTO(Default)</b>"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_IioConfigIOU3, "IIO ConfigIOU3", HEX,
+        Help "ConfigIOU[MAX_SOCKET][3]: MAX_SOCKET=8, 0x00:x4x4x4x4, 0x01:x4x4xxx8, 0x02:xxx8x4x4, 0x03:xxx8xxx8, 0x04:xxxxxx16, <b>0xFF:AUTO(Default)</b>"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_IioConfigIOU4, "IIO ConfigIOU4", HEX,
+        Help "ConfigIOU[MAX_SOCKET][4]: MAX_SOCKET=8, 0x00:x4x4x4x4, 0x01:x4x4xxx8, 0x02:xxx8x4x4, 0x03:xxx8xxx8, 0x04:xxxxxx16, <b>0xFF:AUTO(Default)</b>"
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_IioPcieConfigTablePtr, "IIO PCIE Config Table Ptr", HEX,
+        Help "Pointer to array of UPD_IIO_PCIE_PORT_CONFIG"
+             "Valid range: 0x00000000 ~ 0xFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_IioPcieConfigTableNumber, "IIO PCIE Config Table Number", HEX,
+        Help "Number of elements in IioPcieConfigTablePtr array."
+             "Valid range: 0x00000000 ~ 0xFFFFFFFF"
+    EditNum $gEagleStreamFspPkgTokenSpaceGuid_DeEmphasisPtr, "IIO DeEmphasis", HEX,
+        Help "IIO DeEmphasis. Default: 0x00"
+             "Valid range: 0x00 ~ 0xFF"
+EndPage
+
+Page "PCH (Pre-Mem)"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_MeUmaEnable, "MeUmaEnable", &gEagleStreamFspPkgTokenSpaceGuid_MeUmaEnable,
+        Help "Enable or disable ME UMA feature"
+EndPage
+
+
+Page "Platform Specific"
+    EditText $gEagleStreamFspPkgTokenSpaceGuid_CustomerRevision, "Customer Revision",
+        Help "The Customer can set this revision string for their own purpose."
+EndPage
+
+Page "Debug"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_DebugPrintLevel, "UPI Debug Print Level", &gEagleStreamFspPkgTokenSpaceGuid_DebugPrintLevel,
+        Help "UPI Debug Print Level Bitmask. 0: Disable, 1: Fatal, 2: Warning, 4: Summary, 8: Detail, <b>0xF: All(Default)</b>"
+    Combo $gEagleStreamFspPkgTokenSpaceGuid_serialDebugMsgLvl, "Memory Serial Debug Message Level ", &gEagleStreamFspPkgTokenSpaceGuid_serialDebugMsgLvl,
+        Help "Select Memory Serial Debug Message Level, 0: Disable, 1: Minimum, 2: Normal, <b>3: Maximum(Default)</b>, 4: Auto"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugEnable, "SerialIoUartDebugEnable", &gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugEnable,
+        Help "<b>Enable(Default)</b> or Disable SerialIo Uart debug library in FSP. "
+    Combo $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugIoBase, "ISA Serial Base selection", &gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugIoBase,
+        Help "Select ISA Serial Base address could be initialized by boot loader. Default is 0x3F8"
+EndPage

@@ -22,10 +22,10 @@
   MdeModulePkg/MdeModulePkg.dec
   UefiCpuPkg/UefiCpuPkg.dec
   IntelSiliconPkg/IntelSiliconPkg.dec
-  EaglestreamSiliconPkg/SiliconPkg.dec
-  EaglestreamSiliconPkg/Cpu/CpuRcPkg.dec
-  EaglestreamSiliconPkg/CpRcPkg.dec
-  EaglestreamOpenBoardPkg/PlatformPkg.dec
+  EagleStreamSiliconPkg/SiliconPkg.dec
+  EagleStreamSiliconPkg/Cpu/CpuRcPkg.dec
+  EagleStreamSiliconPkg/CpRcPkg.dec
+  EagleStreamOpenBoardPkg/PlatformPkg.dec
 
 [Sources]
   FspPcdListLibNull.c

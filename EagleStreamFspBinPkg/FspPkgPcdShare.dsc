@@ -11,9 +11,9 @@
 # MRC common configuration options defined here
 #
 
-!include EaglestreamSiliconPkg/MrcCommonConfig.dsc
+!include EagleStreamSiliconPkg/MrcCommonConfig.dsc
 
-!include EaglestreamFspBinPkg/DynamicExPcd.dsc
+!include EagleStreamFspBinPkg/DynamicExPcd.dsc
 
 [PcdsFixedAtBuild]
   gCpuUncoreTokenSpaceGuid.PcdWaSerializationEn|FALSE
