@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -1539,7 +1539,19 @@ typedef struct {
 **/
   UINT16                      PcdPcieRootPortEn;
 
-/** Offset 0x020F
+/** Offset 0x020F - Enable spread spectrum
+  Enable/Disable spread spectrum.
+  0:Disabled,1:Enabled
+**/
+  UINT8                       PcdSpsIccClkSscSetting;
+
+/** Offset 0x0210 - PCH PCIE PLL Ssc
+  Valid spread range : 0x00-0x14 (A value of 0 is SSC of 0.0%. A value of 20 is SSC
+  of 2.0%)(Default), Auto : 0xFE(Set to hardware default), <b>Disable</b> : 0xFF
+**/
+  UINT8                       PchPciePllSsc;
+
+/** Offset 0x0211
 **/
   UINT8                       ReservedMemoryInitUpd[16];
 } FSP_M_CONFIG;
@@ -1560,11 +1572,11 @@ typedef struct {
 **/
   FSP_M_CONFIG                FspmConfig;
 
-/** Offset 0x021F
+/** Offset 0x0221
 **/
   UINT8                       UnusedUpdSpace6[13];
 
-/** Offset 0x022C
+/** Offset 0x022E
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;

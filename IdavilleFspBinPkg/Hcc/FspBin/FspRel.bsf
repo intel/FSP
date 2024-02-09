@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -229,6 +229,8 @@ StructDef
         $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash2               8 bytes    $_DEFAULT_ = 0x0000000000000000
         $gServerFspPkgTokenSpaceGuid_PcdSgxLePubKeyHash3               8 bytes    $_DEFAULT_ = 0x0000000000000000
         $gServerFspPkgTokenSpaceGuid_PcdPcieRootPortEn                 2 bytes    $_DEFAULT_ = 0x0FFF
+        $gServerFspPkgTokenSpaceGuid_PcdSpsIccClkSscSetting            1 bytes    $_DEFAULT_ = 0
+        $gServerFspPkgTokenSpaceGuid_PchPciePllSsc                     1 bytes    $_DEFAULT_ = 0x00
 
     Find "SOCUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x01
@@ -833,6 +835,11 @@ EndList
 List &gServerFspPkgTokenSpaceGuid_PcdPcieAllocatingFlow
     Selection 0x00 , "Non-Allocating"
     Selection 0x01 , "Allocating"
+EndList
+
+List &gServerFspPkgTokenSpaceGuid_PcdSpsIccClkSscSetting
+    Selection 0 , "Disabled"
+    Selection 1 , "Enabled"
 EndList
 
 List &gServerFspPkgTokenSpaceGuid_PcdPcieRootPort0LinkSpeed
@@ -1726,6 +1733,11 @@ Page "Platform Specific"
     EditNum $gServerFspPkgTokenSpaceGuid_PcdPcieRootPortEn, "PCI Express Root Port", HEX,
         Help "Enable/Disable PcieRootPort from 1 to 12, each bit represent a port(bit0-bit11) and last nibble is unusedFor example, bit0 0 controls PcieRootPortPort 1, bit1 controls PcieRootPortPort 2..."
              "Valid range: 0 ~ 0x0FFF"
+    Combo $gServerFspPkgTokenSpaceGuid_PcdSpsIccClkSscSetting, "Enable spread spectrum", &gServerFspPkgTokenSpaceGuid_PcdSpsIccClkSscSetting,
+        Help "Enable/Disable spread spectrum."
+    EditNum $gServerFspPkgTokenSpaceGuid_PchPciePllSsc, "PCH PCIE PLL Ssc", HEX,
+        Help "Valid spread range : 0x00-0x14 (A value of 0 is SSC of 0.0%. A value of 20 is SSC of 2.0%)(Default), Auto : 0xFE(Set to hardware default), <b>Disable</b> : 0xFF"
+             "Valid range: 0x00 ~ 0xFF"
 EndPage
 
 Page "MRC RMT"
