@@ -1,7 +1,7 @@
 /** @file
 
   @copyright
-  Copyright (C) 2023 Intel Corporation
+  Copyright (C) 2023 - 2024 Intel Corporation
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -652,7 +652,7 @@ typedef struct {
 /** Offset 0x01F4 - MemTest Loops
   Number of memory test loops during normal boot, set to 0 to run memtest infinitely
   in FSP - <b> 1 (Default)</b>.
-  minimum = 0, maximum = 65535
+  0:indefinite, 1: 1, 65535:maximum = 65535
 **/
   UINT16                      MemTestLoops;
 
@@ -1266,12 +1266,14 @@ typedef struct {
 
 /** Offset 0x02A6 - C1E
   C1E - <b>1: Enable(Default)</b>, 0: Disable.
+  0:Disabled, 1:Enabled
 **/
   UINT8                       CpuPmC1eEnable;
 
 /** Offset 0x02A7 - Intel SST-PP
   Intel SST-PP Select allows user to choose level - <b>0xFF: Choose lowest level hardware
   supported(Default)</b>, 0: Level 0, 3: Level 3, 4: Level 4.
+  0xFF: AUTO (default), 0: Level 0, 3: Level 3, 4: Level 4
 **/
   UINT8                       CpuPmIssTdpLevel;
 
