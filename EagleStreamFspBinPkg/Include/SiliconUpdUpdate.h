@@ -14,7 +14,7 @@
 
 #define MAX_IIO_PORTS_PER_SOCKET   57
 #define MAX_IOU_PER_SOCKET         7
-#define MAX_VMD_STACKS_PER_SOCKET  6
+#define MAX_VMD_STACKS_PER_SOCKET  8
 
 #pragma pack(1)
 
