@@ -13,7 +13,7 @@
 
 !include EaglestreamSiliconPkg/MrcCommonConfig.dsc
 
-!include EaglestreamFspBinPkg/DynamicExPcd.dsc
+!include EagleStreamFspBinPkg/DynamicExPcd.dsc
 
 [PcdsFixedAtBuild]
   gCpuUncoreTokenSpaceGuid.PcdWaSerializationEn|FALSE
