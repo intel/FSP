@@ -1,0 +1,2 @@
+# MeteorLakeFspBinPkg/IoT/MeteorLake
+These FSP binaries are intended to be used with IoT SKUs of the Intel® Core™ Ultra Processors for IoT Edge (Formerly known as Meteor Lake-UH and Meteor Lake-PS). Please consult RaptorLakeFspBinPkg/README.md for more information on how to select the correct FSP binary to use.
