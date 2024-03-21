@@ -8,3 +8,4 @@ Directory Name | Intel® Xeon® D (formerly Icelake-D) SKU Description
 :------------- | :-------------------------
 Hcc            | Intel® Xeon® D-2700 Processor Family
 Lcc            | Intel® Xeon® D-1700 Processor Family
+EDL-D
