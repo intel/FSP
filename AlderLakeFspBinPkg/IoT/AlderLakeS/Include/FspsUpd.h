@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2024, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -4161,11 +4161,23 @@ typedef struct {
 **/
   UINT8                       ProcHotDemotion;
 
-/** Offset 0x0DEF - ReservedCpuPostMemTest
+/** Offset 0x0DEF - Turbo Configuration
+  To change the PL2 and Tau. <b>0: Max Transient Turbo;</b> 1: 1.2 X TDP
+  0: Max Transient Turbo, 1: 1.2 X TDP
+**/
+  UINT8                       TurboConfiguration;
+
+/** Offset 0x0DF0 - Enable or Disable HwP Scalability Tracking
+  Enable or Disable HwP Scalability Tracking. 0: Disable; <b>1: Enable</b>
+  $EN_DIS
+**/
+  UINT8                       EnableHwpScalabilityTracking;
+
+/** Offset 0x0DF1 - ReservedCpuPostMemTest
   Reserved for CPU Post-Mem Test
   $EN_DIS
 **/
-  UINT8                       ReservedCpuPostMemTest[13];
+  UINT8                       ReservedCpuPostMemTest[11];
 
 /** Offset 0x0DFC
 **/
@@ -4651,9 +4663,10 @@ typedef struct {
 **/
   UINT32                      ThcHidFlags[2];
 
-/** Offset 0x10E0
+/** Offset 0x10E0 - Force LTR Override
+  Force LTR Override.
 **/
-  UINT8                       Rsvd39[4];
+  UINT8                       CpuPcieRpTestForceLtrOverride[4];
 
 /** Offset 0x10E4
 **/

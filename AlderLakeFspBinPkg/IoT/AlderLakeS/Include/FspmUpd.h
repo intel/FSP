@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2024, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -1611,9 +1611,11 @@ typedef struct {
 **/
   UINT8                       TjMaxOffset;
 
-/** Offset 0x03D1
+/** Offset 0x03D1 - FastThrottleThreshold
+  FastThrottleThreshold. Specified value for max allowed temperature when cores throttle.
+  Support FastThrottleThreshold in the range of 63 to 115 deg Celsius.
 **/
-  UINT8                       Rsvd09;
+  UINT8                       FastThrottleThreshold;
 
 /** Offset 0x03D2 - Ring voltage override
   The ring voltage override which is applied to the entire range of cpu ring frequencies.
@@ -1911,8 +1913,8 @@ typedef struct {
   UINT8                       IaIccUnlimitedMode;
 
 /** Offset 0x04B0 - IA ICCMAX
-  IA ICCMAX value is represented in 1/4 A increments. A value of 400 = 100A. <b>4
-  </b>. Range is 4-2047.
+  IA ICCMAX value is represented in 1/4 A increments. A value of 400 = 100A. <b>0
+  (HW default)</b>. Range is 4-2047.
 **/
   UINT16                      IaIccMax;
 
@@ -1927,8 +1929,8 @@ typedef struct {
   UINT8                       Rsvd13;
 
 /** Offset 0x04B4 - GT ICCMAX
-  GT ICCMAX value is represented in 1/4 A increments. A value of 400 = 100A. <b>4
-  </b>. Range is 4-2047.
+  GT ICCMAX value is represented in 1/4 A increments. A value of 400 = 100A. <b>0
+  (HW default)</b>. Range is 4-2047.
 **/
   UINT16                      GtIccMax;
 
@@ -2272,7 +2274,7 @@ typedef struct {
   UINT8                       PchPort80Route;
 
 /** Offset 0x0743 - Iotg Pll SscEn
-  Enable or disable CPU SSC. 0: Disable, <b>1: Enable</b>
+  <b>@deprecated</b> - Not used and has no effect, Please use Pcie Ref Pll SSC
   $EN_DIS
 **/
   UINT8                       IotgPllSscEn;
@@ -2292,9 +2294,11 @@ typedef struct {
 **/
   UINT8                       PchNumRsvdSmbusAddresses;
 
-/** Offset 0x074D
+/** Offset 0x074D - Pcie Ref Pll SSC
+  Pcie Ref Pll SSC Percentatge. 0x0: 0.0%, 0x1: 0.1%, 0x2:0.2%, 0x3: 0.3%, 0x4: 0.4%,
+  0x5: 0.5%, 0xFE: Disable, 0xFF: Auto
 **/
-  UINT8                       Rsvd16;
+  UINT8                       PcieRefPllSsc;
 
 /** Offset 0x074E - SMBUS Base Address
   SMBUS Base Address (IO space).
@@ -3587,9 +3591,15 @@ typedef struct {
 **/
   UINT8                       BdatTestType;
 
-/** Offset 0x0901
+/** Offset 0x0901 - DRAMEMPHASIS Training
+  Enable/Disable DRAMEMPHASIS Training
+  $EN_DIS
 **/
-  UINT8                       Rsvd23[3];
+  UINT8                       DRAMEMPHASIS;
+
+/** Offset 0x0902
+**/
+  UINT8                       Rsvd23[2];
 
 /** Offset 0x0904 - PMR Size
   Size of PMR memory buffer. 0x400000 for normal boot and 0x200000 for S3 boot
@@ -3885,9 +3895,17 @@ typedef struct {
 **/
   UINT8                       CpuPcieRpSlotImplemented[4];
 
-/** Offset 0x0AE2
+/** Offset 0x0AE2 - Ppr Run Once
+  Enable PPR Run Once 0:Disable, <b>1:Enable<b>
+  0:Disable, 1:Enable
 **/
-  UINT8                       Rsvd28[2];
+  UINT8                       PprRunOnce;
+
+/** Offset 0x0AE3 - Post Package Repair
+  Enables/Disable Post Package Repair
+  $EN_DIS
+**/
+  UINT8                       PPR;
 
 /** Offset 0x0AE4
 **/
@@ -4154,24 +4172,36 @@ typedef struct {
   UINT8                       DisableFGRAndPBRWA;
 
 /** Offset 0x0B62 - McParity
-  CMI/MC Parity Control
+  CMI/MC Parity Control: 1(Default)=Enable
   $EN_DIS
 **/
   UINT8                       McParity;
 
 /** Offset 0x0B63 - IbeccParity
-  In-Band ECC Parity Control
+  In-Band ECC Parity Control: 1(Default)=Enable
   $EN_DIS
 **/
   UINT8                       IbeccParity;
 
-/** Offset 0x0B64
+/** Offset 0x0B64 - LowerBasicMemTestSize
+  Reduce BasicMemoryTest size WA: 0(Default)=Disable, 1=Enable
+  $EN_DIS
+**/
+  UINT8                       LowerBasicMemTestSize;
+
+/** Offset 0x0B65 - DisableSagvReorder
+  Disable Sagv reorder on warm boot: 0(Default)=Disable, 1=Enable
+  $EN_DIS
+**/
+  UINT8                       DisableSagvReorder;
+
+/** Offset 0x0B66
 **/
   UINT8                       Rsvd32[4];
 
-/** Offset 0x0B68
+/** Offset 0x0B6A
 **/
-  UINT8                       UnusedUpdSpace5[4];
+  UINT8                       UnusedUpdSpace5[2];
 
 /** Offset 0x0B6C
 **/
