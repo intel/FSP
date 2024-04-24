@@ -1847,11 +1847,17 @@ typedef struct {
 **/
   UINT32                      PsysCriticalThreshold;
 
-/** Offset 0x0718 - ReservedCpuPostMemProduction
+/** Offset 0x0718 - CepEnable
+  Enable or Disable Cep (Current Excursion Protection) Support.
+  1: Enable, 0: Disable
+**/
+  UINT8                       CepEnable[5];
+
+/** Offset 0x071D - ReservedCpuPostMemProduction
   Reserved for CPU Post-Mem Production
   $EN_DIS
 **/
-  UINT8                       ReservedCpuPostMemProduction[11];
+  UINT8                       ReservedCpuPostMemProduction[6];
 
 /** Offset 0x0723 - GP Fault UC Lock
   Enable/Disable GP Fault check on US lock. <b>0: Disable</b>; 1: Enable.
