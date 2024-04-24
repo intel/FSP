@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2024, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -28,8 +28,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x02
         Skip 87 bytes
         $gPlatformFspPkgTokenSpaceGuid_PcdSerialIoUartDebugEnable      1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PcdSerialIoUartNumber           1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_PcdSerialIoUartMode             1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PcdSerialIoUartNumber           1 bytes    $_DEFAULT_ = 0x02
+        $gPlatformFspPkgTokenSpaceGuid_PcdSerialIoUartMode             1 bytes    $_DEFAULT_ = 0x02
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_PcdSerialIoUartBaudRate         4 bytes    $_DEFAULT_ = 115200
         $gPlatformFspPkgTokenSpaceGuid_PcdPciExpressBaseAddress        8 bytes    $_DEFAULT_ = 0xC0000000
@@ -157,7 +157,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_UserBd                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_DisableMrcRetrainingOnRtcPowerLoss   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit                    2 bytes    $_DEFAULT_ = 0
-        $gPlatformFspPkgTokenSpaceGuid_SaGv                            1 bytes    $_DEFAULT_ = 0x05
+        $gPlatformFspPkgTokenSpaceGuid_SaGv                            1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot               1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DdrSpeedControl                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_RMT                             1 bytes    $_DEFAULT_ = 0x00
@@ -226,7 +226,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PcieMultipleSegmentEnabled      1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_SaIpuEnable                     1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_IpuLaneUsed                     8 bytes    $_DEFAULT_ = 0x04, 0x01, 0x02, 0x04, 0x04, 0x04, 0x00, 0x00
-        $gPlatformFspPkgTokenSpaceGuid_CsiSpeed                        8 bytes    $_DEFAULT_ = 0x2, 0x1, 0x2, 0x2, 0x2, 0x2, 0x0, 0x0
+        $gPlatformFspPkgTokenSpaceGuid_CsiSpeed                        8 bytes    $_DEFAULT_ = 0x2, 0x2, 0x2, 0x2, 0x2, 0x2, 0x0, 0x0
         $gPlatformFspPkgTokenSpaceGuid_ImguClkOutEn                    6 bytes    $_DEFAULT_ = 0x1, 0x1, 0x1, 0x1, 0x0, 0x0
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpEnableMask             4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpLinkDownGpios          1 bytes    $_DEFAULT_ = 0x0
@@ -253,7 +253,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_GmAdr64                         8 bytes    $_DEFAULT_ = 0xB0000000
         $gPlatformFspPkgTokenSpaceGuid_PerCoreHtDisable                2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_SaVoltageMode                   1 bytes    $_DEFAULT_ = 0x00
-        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_IgdGsm2Size                     1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_SaVoltageOverride               2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SaExtraTurboVoltage             2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_TvbRatioClipping                1 bytes    $_DEFAULT_ = 0x0
@@ -485,7 +485,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchHdaIDispCodecDisconnect      1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_CnviDdrRfim                     1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PcdDebugInterfaceFlags          1 bytes    $_DEFAULT_ = 0x32
-        $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugControllerNumber   1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugControllerNumber   1 bytes    $_DEFAULT_ = 0x2
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugAutoFlow       1 bytes    $_DEFAULT_ = 0x0
         Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugBaudRate       4 bytes    $_DEFAULT_ = 115200
@@ -712,7 +712,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuPcie3Rtd3Gpio               96 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_Avx2VoltageScaleFactor          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Avx512VoltageScaleFactor        1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugMode           1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugMode           1 bytes    $_DEFAULT_ = 0x02
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugRxPinMux       4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugTxPinMux       4 bytes    $_DEFAULT_ = 0x0
@@ -728,7 +728,7 @@ StructDef
         Skip 4 bytes
         $gPlatformFspPkgTokenSpaceGuid_DisableStarv2medPrioOnNewReq    1 bytes    $_DEFAULT_ = 0x0
         Skip 3 bytes
-        $gPlatformFspPkgTokenSpaceGuid_PprEnable                       1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PprEnable                       1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_MarginLimitCheck                1 bytes    $_DEFAULT_ = 0x00
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_MarginLimitL2                   2 bytes    $_DEFAULT_ = 100
@@ -849,7 +849,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartCtsPinMuxPolicy    28 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartRxPinMuxPolicy     28 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartTxPinMuxPolicy     28 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
-        $gPlatformFspPkgTokenSpaceGuid_SerialIoDebugUartNumber         1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SerialIoDebugUartNumber         1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDbg2                7 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoI2cMode                 8 bytes    $_DEFAULT_ = 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchSerialIoI2cSdaPinMux        32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
@@ -975,12 +975,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_GnaEnable                       1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_IomTypeCPortPadCfg             32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x04,0x06,0x11,0x00,0x04,0x06,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_CpuUsb3OverCurrentPin           8 bytes    $_DEFAULT_ = 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
-        $gPlatformFspPkgTokenSpaceGuid_EnTcssUsbOcCurrentCrb           1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_D3ColdEnable                    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ITbtPcieTunnelingForUsb4        1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_SkipFspGop                      1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_TcCstateLimit                   1 bytes    $_DEFAULT_ = 0x0A
-        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_VbtSize                         4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_LidStatus                       1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IomStayInTCColdSeconds          1 bytes    $_DEFAULT_ = 0x32
@@ -1098,7 +1096,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VsysCriticalThreshold1          4 bytes    $_DEFAULT_ = 0x1770
         $gPlatformFspPkgTokenSpaceGuid_PsysFullScale                   4 bytes    $_DEFAULT_ = 0x30D40
         $gPlatformFspPkgTokenSpaceGuid_PsysCriticalThreshold           4 bytes    $_DEFAULT_ = 0x1FBD0
-        $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction   11 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CepEnable                       5 bytes    $_DEFAULT_ = 1, 1, 1, 1, 1
+        $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction    6 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_GpfaultUcLock                   1 bytes    $_DEFAULT_ = 0x0
         Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchPwrOptEnable                 1 bytes    $_DEFAULT_ = 0x00
@@ -1286,7 +1285,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuRootportUsedForHybridStorage   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchRootportUsedForCpuAttach     1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchAcpiL6dPmeHandling           1 bytes    $_DEFAULT_ = 0x0
-        Skip 1 bytes
+        Skip 5 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes
@@ -1522,7 +1521,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchPmDisableEnergyReport        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SataTestMode                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchXhciOcLock                   1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_PmcLpmS0ixSubStateEnableMask    1 bytes    $_DEFAULT_ = 0x9
+        $gPlatformFspPkgTokenSpaceGuid_PmcLpmS0ixSubStateEnableMask    1 bytes    $_DEFAULT_ = 0x3
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpLtrMaxSnoopLatency     8 bytes    $_DEFAULT_ = 0x0F,0x10,0x0F,0x10,0x0F,0x10,0x0F,0x10
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpLtrMaxNoSnoopLatency   8 bytes    $_DEFAULT_ = 0x0F,0x10,0x0F,0x10,0x0F,0x10,0x0F,0x10
         $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpSnoopLatencyOverrideMode   4 bytes    $_DEFAULT_ = 0x02, 0x02, 0x02, 0x02
@@ -2011,6 +2010,26 @@ List &gPlatformFspPkgTokenSpaceGuid_DdiPortBConfig
     Selection 2 , "MIPI DSI"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_IgdGsm2Size
+    Selection 0 , "2GB"
+    Selection 1 , "4GB"
+    Selection 2 , "6GB"
+    Selection 3 , "8GB"
+    Selection 4 , "10GB"
+    Selection 5 , "12GB"
+    Selection 6 , "14GB"
+    Selection 7 , "16GB"
+    Selection 8 , "18GB"
+    Selection 9 , "20GB"
+    Selection 10 , "22GB"
+    Selection 11 , "24GB"
+    Selection 12 , "26GB"
+    Selection 13 , "28GB"
+    Selection 14 , "30GB"
+    Selection 15 , "32GB"
+    Selection 0xFF , "No Allocation"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_TvbRatioClipping
     Selection 0 , " Disabled"
     Selection 1 , " Enabled"
@@ -2325,7 +2344,9 @@ EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_PprEnable
     Selection 0 , "Disable"
+    Selection 1 , "Soft PPR"
     Selection 2 , "Hard PPR"
+    Selection 3 , "No Repair"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_MarginLimitCheck
@@ -2454,6 +2475,11 @@ EndList
 List &gPlatformFspPkgTokenSpaceGuid_EnableFastVmode
     Selection 0 , " Disable"
     Selection 1 , " Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_CepEnable
+    Selection 1 , " Enable"
+    Selection 0 , " Disable"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_PchHdaLinkFrequency
@@ -4028,6 +4054,8 @@ Page "CPU (Post-Mem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PsysCriticalThreshold, "Psys Critical Threshold", DEC,
         Help "Vsys Critical Threshold, Range is 0-255000mV "
              "Valid range: 0 ~ 255000"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CepEnable, "CepEnable", &gPlatformFspPkgTokenSpaceGuid_CepEnable,
+        Help "Enable or Disable Cep (Current Excursion Protection) Support."
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedCpuPostMemProduction, "ReservedCpuPostMemProduction", &EN_DIS,
         Help "Reserved for CPU Post-Mem Production"
     Combo $gPlatformFspPkgTokenSpaceGuid_GpfaultUcLock, "GP Fault UC Lock", &EN_DIS,
@@ -4446,6 +4474,8 @@ Page "System Agent (Pre-Mem)"
              "Valid range: 0x00 ~ 0x7F"
     Combo $gPlatformFspPkgTokenSpaceGuid_SaVoltageMode, "SA/Uncore voltage mode", &EN_DIS,
         Help "SA/Uncore voltage mode; <b>0: Adaptive</b>; 1: Override."
+    Combo $gPlatformFspPkgTokenSpaceGuid_IgdGsm2Size, "Internal Graphics Data Stolen Memory GSM2", &gPlatformFspPkgTokenSpaceGuid_IgdGsm2Size,
+        Help "Size of memory preallocated for internal graphics GSM2."
     EditNum $gPlatformFspPkgTokenSpaceGuid_SaVoltageOverride, "SA/Uncore Voltage Override", HEX,
         Help "The SA/Uncore voltage override applicable when SA/Uncore voltage mode is in Override mode. Valid Range 0 to 2000"
              "Valid range: 0x00 ~ 0x7D0"
@@ -4993,7 +5023,7 @@ Page "PCH (Pre-Mem)"
     Combo $gPlatformFspPkgTokenSpaceGuid_DisableStarv2medPrioOnNewReq, "Enable/Disable MC Starv2Med Priority on New Request", &EN_DIS,
         Help "0(Default)=Disable, 1=Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_PprEnable, "Ppr Enable Type", &gPlatformFspPkgTokenSpaceGuid_PprEnable,
-        Help "Enable Soft or Hard PPR <b>0:Disable</b>, 2:Hard PPR"
+        Help "Enable Soft or Hard PPR 0:Disable, 1:Soft PPR, <b>2:Hard PPR</b>, 3:No Repair"
 EndPage
 
 Page "PCH (Post-Mem)"
