@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2023 - 2024, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -4294,9 +4294,10 @@ typedef struct {
 **/
   UINT32                      ThcHidFlags[2];
 
-/** Offset 0x104C
+/** Offset 0x104C - Force LTR Override
+  Force LTR Override.
 **/
-  UINT8                       Rsvd39[4];
+  UINT8                       CpuPcieRpTestForceLtrOverride[4];
 
 /** Offset 0x1050 - MemoryBuffer
   MemoryBuffer address
