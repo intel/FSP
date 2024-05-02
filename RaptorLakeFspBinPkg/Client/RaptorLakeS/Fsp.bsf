@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2023 - 2024, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -1505,7 +1505,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_ThcHidReadOpcode                8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_ThcHidWriteOpcode               8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_ThcHidFlags                     8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
-        Skip 4 bytes
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpTestForceLtrOverride   4 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_MemoryBuffer                    8 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_MemorySize                      4 bytes    $_DEFAULT_ = 0x00
 
@@ -4596,6 +4596,9 @@ Page "System Agent (Post-Mem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_ThcHidFlags, "Touch Host Controller Hid Over Spi Flags", HEX,
         Help "Hid Over Spi Flags 0x0:Single SPI Mode, 0x4000:Dual SPI Mode, 0x8000:Quad SPI Mode"
              "Valid range: 0 ~ 0xFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieRpTestForceLtrOverride, "Force LTR Override", HEX,
+        Help "Force LTR Override."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MemoryBuffer, "MemoryBuffer", HEX,
         Help "MemoryBuffer address"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
