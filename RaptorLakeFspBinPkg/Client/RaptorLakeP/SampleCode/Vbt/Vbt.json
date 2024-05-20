@@ -13070,7 +13070,7 @@
           "Block": {
             "Id": "44",
             "Name": "BIA (Backlight Image Adaption) Support",
-            "SizeInBytes": "81",
+            "SizeInBytes": "101",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -14890,6 +14890,454 @@
               },
               {
                 "Name": "ELP_Aggressiveness_Profile_16",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_01",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_02",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_03",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_04",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_05",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_06",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_07",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_08",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_09",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_10",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_11",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_12",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_13",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_14",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_15",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Enable_16",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_01",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_02",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_03",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_04",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_05",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_06",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_07",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_08",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_09",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_10",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_11",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_12",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_13",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_14",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_15",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "PixOptix_Enable_16",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_01",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_02",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_03",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_04",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_05",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_06",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_07",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_08",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_09",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_10",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_11",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_12",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_13",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_14",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_15",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "APD_Aggressiveness_Profile_16",
+                "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
                 "SizeInBits": "4",
                 "ByteOffset": "",
                 "BitOffset": "",
@@ -24759,7 +25207,7 @@
               },
               {
                 "WidgetType": "Label",
-                "WidgetName": "VBT Version: 251",
+                "WidgetName": "VBT Version: 253",
                 "Visibility": "",
                 "Data": [],
                 "HelpText": "",
@@ -28079,34 +28527,6 @@
                             "WidgetValues": []
                           },
                           {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_01"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
-                          },
-                          {
                             "WidgetType": "ComboBox",
                             "WidgetName": "                Panel Rotation: ",
                             "Visibility": "",
@@ -30887,34 +31307,6 @@
                             ],
                             "HelpText": "Using this field the minimum Refresh Rate to be used for Seamless DRRS feature can be entered in Hertz.\nNote: Graphics driver will use this field only when EDID support is disabled in VBT configuration.",
                             "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_02"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
                           },
                           {
                             "WidgetType": "ComboBox",
@@ -33699,34 +34091,6 @@
                             "WidgetValues": []
                           },
                           {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_03"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
-                          },
-                          {
                             "WidgetType": "ComboBox",
                             "WidgetName": "                Panel Rotation: ",
                             "Visibility": "",
@@ -36507,34 +36871,6 @@
                             ],
                             "HelpText": "Using this field the minimum Refresh Rate to be used for Seamless DRRS feature can be entered in Hertz.\nNote: Graphics driver will use this field only when EDID support is disabled in VBT configuration.",
                             "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_04"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
                           },
                           {
                             "WidgetType": "ComboBox",
@@ -39319,34 +39655,6 @@
                             "WidgetValues": []
                           },
                           {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_05"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
-                          },
-                          {
                             "WidgetType": "ComboBox",
                             "WidgetName": "                Panel Rotation: ",
                             "Visibility": "",
@@ -42127,34 +42435,6 @@
                             ],
                             "HelpText": "Using this field the minimum Refresh Rate to be used for Seamless DRRS feature can be entered in Hertz.\nNote: Graphics driver will use this field only when EDID support is disabled in VBT configuration.",
                             "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_06"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
                           },
                           {
                             "WidgetType": "ComboBox",
@@ -44939,34 +45219,6 @@
                             "WidgetValues": []
                           },
                           {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_07"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
-                          },
-                          {
                             "WidgetType": "ComboBox",
                             "WidgetName": "                Panel Rotation: ",
                             "Visibility": "",
@@ -47121,34 +47373,6 @@
                             ],
                             "HelpText": "Using this field the minimum Refresh Rate to be used for Seamless DRRS feature can be entered in Hertz.\nNote: Graphics driver will use this field only when EDID support is disabled in VBT configuration.",
                             "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_08"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
                           },
                           {
                             "WidgetType": "ComboBox",
@@ -49307,34 +49531,6 @@
                             "WidgetValues": []
                           },
                           {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_09"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
-                          },
-                          {
                             "WidgetType": "ComboBox",
                             "WidgetName": "                Panel Rotation: ",
                             "Visibility": "",
@@ -51489,34 +51685,6 @@
                             ],
                             "HelpText": "Using this field the minimum Refresh Rate to be used for Seamless DRRS feature can be entered in Hertz.\nNote: Graphics driver will use this field only when EDID support is disabled in VBT configuration.",
                             "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_10"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
                           },
                           {
                             "WidgetType": "ComboBox",
@@ -53675,34 +53843,6 @@
                             "WidgetValues": []
                           },
                           {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_11"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
-                          },
-                          {
                             "WidgetType": "ComboBox",
                             "WidgetName": "                Panel Rotation: ",
                             "Visibility": "",
@@ -55857,34 +55997,6 @@
                             ],
                             "HelpText": "Using this field the minimum Refresh Rate to be used for Seamless DRRS feature can be entered in Hertz.\nNote: Graphics driver will use this field only when EDID support is disabled in VBT configuration.",
                             "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_12"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
                           },
                           {
                             "WidgetType": "ComboBox",
@@ -58043,34 +58155,6 @@
                             "WidgetValues": []
                           },
                           {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_13"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
-                          },
-                          {
                             "WidgetType": "ComboBox",
                             "WidgetName": "                Panel Rotation: ",
                             "Visibility": "",
@@ -60225,34 +60309,6 @@
                             ],
                             "HelpText": "Using this field the minimum Refresh Rate to be used for Seamless DRRS feature can be entered in Hertz.\nNote: Graphics driver will use this field only when EDID support is disabled in VBT configuration.",
                             "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_14"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
                           },
                           {
                             "WidgetType": "ComboBox",
@@ -62411,34 +62467,6 @@
                             "WidgetValues": []
                           },
                           {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_15"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
-                          },
-                          {
                             "WidgetType": "ComboBox",
                             "WidgetName": "                Panel Rotation: ",
                             "Visibility": "",
@@ -64593,34 +64621,6 @@
                             ],
                             "HelpText": "Using this field the minimum Refresh Rate to be used for Seamless DRRS feature can be entered in Hertz.\nNote: Graphics driver will use this field only when EDID support is disabled in VBT configuration.",
                             "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "LabelHeading",
-                            "WidgetName": "            BackLight Technology Type Features",
-                            "Visibility": "",
-                            "Data": [],
-                            "HelpText": "",
-                            "WidgetValues": []
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "                BackLight Technology: ",
-                            "Visibility": "",
-                            "Data": [
-                              "40",
-                              "Blt_Control_16"
-                            ],
-                            "HelpText": "This feature allows OEM to select the Backlight Technology.",
-                            "WidgetValues": [
-                              {
-                                "Key": "LED Backlight",
-                                "Value": "2"
-                              },
-                              {
-                                "Key": "CCFL Backlight",
-                                "Value": "1"
-                              }
-                            ]
                           },
                           {
                             "WidgetType": "ComboBox",

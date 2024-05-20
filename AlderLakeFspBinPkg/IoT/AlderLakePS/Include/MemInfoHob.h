@@ -4,12 +4,13 @@
   data hobs.
 
 @copyright
-  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 1999 - 2023, Intel Corporation. All rights reserved.<BR>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
 @par Specification Reference:
 **/
+
 #ifndef _MEM_INFO_HOB_H_
 #define _MEM_INFO_HOB_H_
 
@@ -276,6 +277,8 @@ typedef struct {
   BOOLEAN           MemorySpeedReducedWrongDimmSlot;   ///< Can be used by OEM BIOS to display a warning on the screen that DDR speed was reduced due to wrong DIMM population
   BOOLEAN           MemorySpeedReducedMixedConfig;     ///< Can be used by OEM BIOS to display a warning on the screen that DDR speed was reduced due to mixed DIMM config
   BOOLEAN           DynamicMemoryBoostTrainingFailed;  ///< TRUE if Dynamic Memory Boost failed to train and was force disabled on the last full training boot. FALSE otherwise.
+  UINT16            PprDetectedErrors;                 ///< PPR: Counts of detected bad rows.
+  UINT16            PprRepairFails;                    ///< PPR: Counts of repair failure.
 } MEMORY_INFO_DATA_HOB;
 
 /**
