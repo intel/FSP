@@ -9,7 +9,8 @@ Directory Name | SKU Description
 Client/RaptorLakeP | U-Series, P-Series, & H-Series processors for client platforms
 Client/RaptorLakeS | HX-Series & desktop processors for client platforms
 IoT/RaptorLakeS | Desktop processors for IoT platforms
-
+IoT/RaptorLakeP | Mobile processors for IoT platforms
+IoT/RaptorLakePS | PS-Series processors for IoT platforms
 
 ## Differentiating Client and IoT
 
