@@ -1,0 +1,2 @@
+# RaptorLakeFspBinPkg/IoT/RaptorLakePS
+These FSP binaries are intended to be used with IoT SKUs of the 13th Generation Intel® Core™ PS-Series Processors for IoT Edge (Formerly known as Raptor Lake-PS). Please consult RaptorLakeFspBinPkg/README.md for more information on how to select the correct FSP binary to use.
