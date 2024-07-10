@@ -4591,6 +4591,296 @@ typedef struct {
   UINT8                       ReservedFspsUpd[12];
 } FSP_S_CONFIG;
 
+/** Fsp S Restricted Configuration
+**/
+typedef struct {
+
+/** Offset 0x1F38
+**/
+  UINT32                      Signature;
+
+/** Offset 0x1F3C - Enable or disable GNA Error Check Disable Bit
+  0(Default)=Enable, 1=Disable
+  $EN_DIS
+**/
+  UINT8                       TestGnaErrorCheckDis;
+
+/** Offset 0x1F3D - Sa Graphics Pei Test Force Wake
+  Test Force Wake
+**/
+  UINT8                       SaTestForceWake;
+
+/** Offset 0x1F3E - Sa Graphics Pei Test PmLock
+  Test PmLock
+**/
+  UINT8                       SaTestPmLock;
+
+/** Offset 0x1F3F - Sa Graphics Pei Test Pavp Heavy Mode
+  Test Pavp Heavy Mode
+**/
+  UINT8                       SaTestPavpHeavyMode;
+
+/** Offset 0x1F40 - Sa Graphics Pei Test Unsolicited Attack Override
+  Test Unsolicited Attack Override
+**/
+  UINT8                       SaTestUnsolicitedAttackOverride;
+
+/** Offset 0x1F41 - Sa Graphics Pei Test Pavp Asmf
+  Test Pavp Asmf
+**/
+  UINT8                       SaTestPavpAsmf;
+
+/** Offset 0x1F42 - Sa Graphics Pei Test Auto TearDown
+  Test Auto TearDown
+**/
+  UINT8                       SaTestAutoTearDown;
+
+/** Offset 0x1F43 - Sa Test Security Lock
+  Enable/Disable Security lock
+**/
+  UINT8                       SaTestSecurityLock;
+
+/** Offset 0x1F44 - SaPostMemRestrictedRsvd
+  Reserved for SA Post-Mem Restricted
+  $EN_DIS
+**/
+  UINT8                       SaPostMemRestrictedRsvd[87];
+
+/** Offset 0x1F9B - MEM CLOSED State on PCH side
+  Enable/Disable MEM CLOSED State on PCH side.
+  $EN_DIS
+**/
+  UINT8                       PchDmiTestMemCloseStateEn;
+
+/** Offset 0x1F9C - Optimized Buffer Flush/Fill (OBFF) protocol for internal on PCH side
+  enable/disable Optimized Buffer Flush/Fill (OBFF) protocol for internal on PCH side.
+  $EN_DIS
+**/
+  UINT8                       PchDmiTestInternalObffEn;
+
+/** Offset 0x1F9D - Determines if force extended transmission of FTS ordered sets
+  Determines if force extended transmission of FTS ordered sets when exiting L0s prior
+  to entering L0.
+**/
+  UINT8                       PchDmiTestDmiExtSync;
+
+/** Offset 0x1F9E - Optimized Buffer Flush/Fill (OBFF) protocol for external on PCH side
+  Enable/Disable Optimized Buffer Flush/Fill (OBFF) protocol for external on PCH side.
+  $EN_DIS
+**/
+  UINT8                       PchDmiTestExternalObffEn;
+
+/** Offset 0x1F9F - Client Obff Enable
+  Client Obff Enable.
+  $EN_DIS
+**/
+  UINT8                       PchDmiTestClientObffEn;
+
+/** Offset 0x1FA0 - CxObff Entry Delay
+  CxObff Entry Delay.
+**/
+  UINT8                       PchDmiTestCxObffEntryDelay;
+
+/** Offset 0x1FA1 - Pch Tc Lock Down
+  Pch Tc Lock Down.
+  $EN_DIS
+**/
+  UINT8                       PchDmiTestPchTcLockDown;
+
+/** Offset 0x1FA2 - DMI Secure Reg Lock
+  DMI Secure Reg Lock.
+  0: POR (Enable), 1: Enable, 2: Disable
+**/
+  UINT8                       PchDmiTestDmiSecureRegLock;
+
+/** Offset 0x1FA3 - Smi Unlock bit for SV policy
+  0: Lock; 1: Unlock.
+  $EN_DIS
+**/
+  UINT8                       PchLockDownTestSmiUnlock;
+
+/** Offset 0x1FA4 - PchPostMemRestrictedRsvd
+  Reserved for PCH Post-Mem Restricted Reserved
+  $EN_DIS
+**/
+  UINT8                       PchPostMemRestrictedRsvd[25];
+
+/** Offset 0x1FBD - Force LTR Override
+  Force LTR Override.
+**/
+  UINT8                       PcieRpTestForceLtrOverride[29];
+
+/** Offset 0x1FDA - Touch Host Controller Clock
+  Set THC Clock 0x0:ThcClockFunctional, 0x1:ThcClockUseDfx
+**/
+  UINT8                       ThcClock[2];
+
+/** Offset 0x1FDC - PCH Pm Register Lock
+  PCH Pm Register Lock.
+**/
+  UINT8                       PchPmTestPchPmRegisterLock;
+
+/** Offset 0x1FDD - PCH Pm Test Clear Power Sts
+  @todo ADD DESCRIPTION. Policy for SV usage. NO USE..
+**/
+  UINT8                       PchPmTestPchClearPowerSts;
+
+/** Offset 0x1FDE - PCH Sata Test Rst Pcie Storage Test Mode
+  PCIe Storage remapping Test Mode to override existing PCIe Storage remapping POR
+  setting for development purpose.
+**/
+  UINT8                       SataTestRstPcieStorageTestMode[3];
+
+/** Offset 0x1FE1 - PCH Sata Test Rst Pcie Storage Port Config Check
+  Enable/Disable Port Configuration Check for RST PCIe Storage Remapping.
+**/
+  UINT8                       SataTestRstPcieStoragePortConfigCheck[3];
+
+/** Offset 0x1FE4 - PCH Sata Test Rst Pcie Storage Device Interface
+  Select the device interface (AHCI/NVME) for remapped device. NO USE.
+**/
+  UINT8                       SataTestRstPcieStorageDeviceInterface[3];
+
+/** Offset 0x1FE7 - PCH Sata Test Rst Pcie Storage Device Bar Size Check
+  Enable/Disable Device BAR Size Check for remapped device.
+**/
+  UINT8                       SataTestRstPcieStorageDeviceBarSizeCheck[3];
+
+/** Offset 0x1FEA - PCH Sata Test Rst Pcie Storage Device Bar Select
+  Select the device BAR (BAR0-BAR5) that will be used for Remapping.
+**/
+  UINT8                       SataTestRstPcieStorageDeviceBarSelect[3];
+
+/** Offset 0x1FED - PCH Sata Test Rst Pcie Storage Device Interrupt
+  Select the device interrupt (Legacy/MSIX) for remapped device.
+**/
+  UINT8                       SataTestRstPcieStorageDeviceInterrupt[3];
+
+/** Offset 0x1FF0 - PCH Sata Test Rst Pcie Storage Aspm Programming
+  Enable/Disable ASPM Programming for remapped device.
+**/
+  UINT8                       SataTestRstPcieStorageAspmProgramming[3];
+
+/** Offset 0x1FF3 - PCH Sata Test Rst Pcie Storage Save Restore
+  Enable/Disable ASPM Programming for remapped device.
+**/
+  UINT8                       SataTestRstPcieStorageSaveRestore[3];
+
+/** Offset 0x1FF6 - Latency Tolerance Reporting Mechanism
+  Latency Tolerance Reporting Mechanism.
+**/
+  UINT8                       SataTestLtrEnable;
+
+/** Offset 0x1FF7 - Latency Tolerance Reporting Mechanism
+  Latency Tolerance Reporting Mechanism.
+**/
+  UINT8                       SataTestLtrConfigLock;
+
+/** Offset 0x1FF8 - Latency Tolerance Reporting Mechanism
+  Latency Tolerance Reporting Mechanism.
+**/
+  UINT8                       SataTestLtrOverride;
+
+/** Offset 0x1FF9 - Latency Tolerance Reporting Mechanism
+  Latency Tolerance Reporting Mechanism.
+**/
+  UINT8                       SataTestSnoopLatencyOverrideMultiplier;
+
+/** Offset 0x1FFA - Latency Tolerance Reporting Mechanism
+  Latency Tolerance Reporting Mechanism.
+**/
+  UINT16                      SataTestSnoopLatencyOverrideValue;
+
+/** Offset 0x1FFC - Latency Tolerance Reporting Mechanism
+  Latency Tolerance Reporting Mechanism.
+**/
+  UINT8                       SataTestSataAssel;
+
+/** Offset 0x1FFD - Latency Tolerance Reporting Mechanism
+  Latency Tolerance Reporting Mechanism.
+**/
+  UINT8                       SataTestRstPcieStorageRemapSataMsix;
+
+/** Offset 0x1FFE - (GPPRVRW1) High Speed Trunk Clock Req
+  High Speed Trunk Clock Req.
+**/
+  UINT8                       PchTestHsTrunkClkReq;
+
+/** Offset 0x1FFF - Xhci Controller Enable
+  0: Disable; 1: Enable.
+**/
+  UINT8                       PchTestControllerEnabled;
+
+/** Offset 0x2000 - XHCI Access Control Lock
+  Enable/Disable Access Control Lock To Xhci Registers, 0: PLATFORM_POR, 1: FORCE_ENABLE,
+  2: FORCE_DISABLE.
+  0: POR, 1: Force Enable, 2: Force Disable
+**/
+  UINT8                       TestUsbXhciAccessControlLock;
+
+/** Offset 0x2001 - CNVi BT Interface
+  This option configures BT device interface to either USB or UART
+  0:UART, 1:USB
+**/
+  UINT8                       TestCnviBtInterface;
+
+/** Offset 0x2002 - CNVi BT Uart Type
+  This is a test option which allows configuration of UART type for BT communication
+  0:Serial IO Uart0, 1:ISH Uart0, 2:Uart over external pads
+**/
+  UINT8                       TestCnviBtUartType;
+
+/** Offset 0x2003 - PMC Debug Mode Lock
+  This option is used to enable or disable debug mode lock. Set to disable to prevent
+  locking. 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE.
+  0: POR, 1: Force Enable, 2: Force Disable
+**/
+  UINT8                       TestPmcDbgModeLock;
+
+/** Offset 0x2004 - Sleep Sx Strech Policy Lock
+  This option is used to enable or disable Sleep Sx Strech Policy Lock. Set to disable
+  to prevent locking. 0: PLATFORM_POR, 1: FORCE_ENABLE, 2: FORCE_DISABLE.
+  0: POR, 1: Force Enable, 2: Force Disable
+**/
+  UINT8                       TestPmcSlpsxStrPolLock;
+
+/** Offset 0x2005 - Disable MSBDD support
+  Disable MSBDD support
+  0: POR (Disable), 1: Enable, 2: Disable
+**/
+  UINT8                       MsbddSupport;
+
+/** Offset 0x2006 - PchSiliconRestrictedRsvd
+  Reserved for PCH Post-Mem Restricted
+  $EN_DIS
+**/
+  UINT8                       PchSiliconRestrictedRsvd[2];
+
+/** Offset 0x2008 - Enable ISSE Device
+  Test, 0: POR, 1: enable, 2: disable, Enable/Disable ISSE/ISSE++ Devices from PCI
+  config space
+  $EN_DIS
+**/
+  UINT8                       EseCommunication;
+
+/** Offset 0x2009 - PCIE Disable RootPort Clock Gating
+  Describes whether the PCI Express Clock Gating for each root port is enabled by
+  platform modules. 0: Disable; 1: Enable.
+  $EN_DIS
+**/
+  UINT8                       TestPchPcieClockGating;
+
+/** Offset 0x200A - Enable/Disable FPB
+  Enable: Enable FPB, Disable(Default): Disable FPB
+  $EN_DIS
+**/
+  UINT8                       FpbEnable;
+
+/** Offset 0x200B
+**/
+  UINT8                       ReservedFspsRestrictedUpd[5];
+} FSP_S_RESTRICTED_CONFIG;
+
 /** Fsp S UPD Configuration
 **/
 typedef struct {
@@ -4609,9 +4899,13 @@ typedef struct {
 
 /** Offset 0x1F38
 **/
+  FSP_S_RESTRICTED_CONFIG     FspsRestrictedConfig;
+
+/** Offset 0x2010
+**/
   UINT8                       Rsvd600[6];
 
-/** Offset 0x1F3E
+/** Offset 0x2016
 **/
   UINT16                      UpdTerminator;
 } FSPS_UPD;

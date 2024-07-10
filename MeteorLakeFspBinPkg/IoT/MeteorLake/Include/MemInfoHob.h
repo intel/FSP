@@ -1,26 +1,59 @@
-/**@file
+/** @file
   This file contains definitions required for creation of
   Memory S3 Save data, Memory Info data and Memory Platform
   data hobs.
 
-  Copyright (c) 2021, Intel Corporation. All rights reserved.<BR>
-  SPDX-License-Identifier: BSD-2-Clause-Patent
-**/
+@copyright
+  Copyright 1999 - 2022 Intel Corporation.
 
+  The source code contained or described herein and all documents related to the
+  source code ("Material") are owned by Intel Corporation or its suppliers or
+  licensors. Title to the Material remains with Intel Corporation or its suppliers
+  and licensors. The Material may contain trade secrets and proprietary and
+  confidential information of Intel Corporation and its suppliers and licensors,
+  and is protected by worldwide copyright and trade secret laws and treaty
+  provisions. No part of the Material may be used, copied, reproduced, modified,
+  published, uploaded, posted, transmitted, distributed, or disclosed in any way
+  without Intel's prior express written permission.
+
+  No license under any patent, copyright, trade secret or other intellectual
+  property right is granted to or conferred upon you by disclosure or delivery
+  of the Materials, either expressly, by implication, inducement, estoppel or
+  otherwise. Any license under such intellectual property rights must be
+  express and approved by Intel in writing.
+
+  Unless otherwise agreed by Intel in writing, you may not remove or alter
+  this notice or any other notice embedded in Materials by Intel or
+  Intel's suppliers or licensors in any way.
+
+  This file contains an 'Intel Peripheral Driver' and is uniquely identified as
+  "Intel Reference Module" and is licensed for Intel CPUs and chipsets under
+  the terms of your license agreement with Intel or your vendor. This file may
+  be modified by the user, subject to additional terms of the license agreement.
+
+@par Specification Reference:
+**/
 #ifndef _MEM_INFO_HOB_H_
 #define _MEM_INFO_HOB_H_
+
 
 #pragma pack (push, 1)
 
 extern EFI_GUID gSiMemoryS3DataGuid;
+extern EFI_GUID gSiMemoryS3Data2Guid;
 extern EFI_GUID gSiMemoryInfoDataGuid;
 extern EFI_GUID gSiMemoryPlatformDataGuid;
 
-
 #define MAX_NODE        2
 #define MAX_CH          4
+#define MAX_DDR5_CH     2
 #define MAX_DIMM        2
 // Must match definitions in
+// Intel\ClientOneSiliconPkg\IpBlock\MemoryInit\Mtl\Include\MrcInterface.h
+// SA:RestrictedBegin
+//   This should move to a public interface to share the same constant \ struct
+//   defintion between MRC and wrapper platform code.
+// SA:RestrictedEnd
 #define HOB_MAX_SAGV_POINTS 4
 
 ///
@@ -34,6 +67,7 @@ extern EFI_GUID gSiMemoryPlatformDataGuid;
 #define   B_RANK2_PRS           BIT4
 #define   B_RANK3_PRS           BIT5
 
+// @todo remove and use the MdePkg\Include\Pi\PiHob.h
 #if !defined(_PEI_HOB_H_) && !defined(__PI_HOB_H__)
 #ifndef __HOB__H__
 typedef struct _EFI_HOB_GENERIC_HEADER {
@@ -52,6 +86,9 @@ typedef struct _EFI_HOB_GUID_TYPE {
 #endif
 #endif
 
+///
+/// Defines taken from MRC so avoid having to include MrcInterface.h
+///
 
 //
 // Matches MAX_SPD_SAVE define in MRC
@@ -133,10 +170,19 @@ typedef enum {
 #define MRC_DDR_TYPE_UNKNOWN  4
 #endif
 
-#define MAX_PROFILE_NUM     4 // number of memory profiles supported
-#define MAX_XMP_PROFILE_NUM 2 // number of XMP profiles supported
-#define MAX_TRACE_REGION             5
-#define MAX_TRACE_CACHE_TYPE         2
+#define MAX_PROFILE_NUM       7 // number of memory profiles supported
+#define MAX_XMP_PROFILE_NUM   5 // number of XMP profiles supported
+
+#ifndef MAX_RCOMP_TARGETS
+#define MAX_RCOMP_TARGETS     5
+#endif
+
+#ifndef MAX_ODT_ENTRIES
+#define MAX_ODT_ENTRIES       11
+#endif
+
+#define MAX_TRACE_REGION              5
+#define MAX_TRACE_CACHE_TYPE          2
 
 //
 // DIMM timings
@@ -163,8 +209,10 @@ typedef struct {
   UINT16 tWTR;      ///< Number of tCK cycles for the channel DIMM's minimum internal write to read command delay time.
   UINT16 tWTR_L;    ///< Number of tCK cycles for the channel DIMM's minimum internal write to read command delay time for same bank groups.
   UINT16 tWTR_S;    ///< Number of tCK cycles for the channel DIMM's minimum internal write to read command delay time for different bank groups.
-  UINT16 tCCD_L;  ///< Number of tCK cycles for the channel DIMM's minimum CAS-to-CAS delay for same bank group.
+  UINT16 tCCD_L;    ///< Number of tCK cycles for the channel DIMM's minimum CAS-to-CAS delay for same bank group.
+  UINT16 tCCD_L_WR; ///< Number of tCK cycles for the channel DIMM's minimum Write-to-Write delay for same bank group.
 } MRC_CH_TIMING;
+
 typedef struct {
   UINT16 tRDPRE;     ///< Read CAS to Precharge cmd delay
 } MRC_IP_TIMING;
@@ -177,7 +225,7 @@ typedef struct {
   UINT8            DimmId;
   UINT32           DimmCapacity;            ///< DIMM size in MBytes.
   UINT16           MfgId;
-  UINT8            ModulePartNum[20];       ///< Module part number for DDR3 is 18 bytes however for DRR4 20 bytes as per JEDEC Spec, so reserving 20 bytes
+  UINT8            ModulePartNum[20];       ///< Module part number for DDR3 is 18 bytes however for DDR4 20 bytes as per JEDEC Spec, so reserving 20 bytes
   UINT8            RankInDimm;              ///< The number of ranks in this DIMM.
   UINT8            SpdDramDeviceType;       ///< Save SPD DramDeviceType information needed for SMBIOS structure creation.
   UINT8            SpdModuleType;           ///< Save SPD ModuleType information needed for SMBIOS structure creation.
@@ -211,16 +259,20 @@ typedef struct {
   UINT8    Rsvd[2];
 } PSMI_MEM_INFO;
 
+/// This data structure contains per-SaGv timing values that are considered output by the MRC.
 typedef struct {
   UINT32        DataRate;    ///< The memory rate for the current SaGv Point in units of MT/s
   MRC_CH_TIMING JedecTiming; ///< Timings used for this entry's corresponding SaGv Point - derived from JEDEC SPD spec
   MRC_IP_TIMING IpTiming;    ///< Timings used for this entry's corresponding SaGv Point - IP specific
 } HOB_SAGV_TIMING_OUT;
+
+/// This data structure contains SAGV config values that are considered output by the MRC.
 typedef struct {
   UINT32              NumSaGvPointsEnabled; ///< Count of the total number of SAGV Points enabled.
   UINT32              SaGvPointMask;        ///< Bit mask where each bit indicates an enabled SAGV point.
   HOB_SAGV_TIMING_OUT SaGvTiming[HOB_MAX_SAGV_POINTS];
 } HOB_SAGV_INFO;
+
 typedef struct {
   UINT8             Revision;
   UINT16            DataWidth;              ///< Data width, in bits, of this memory device
@@ -242,17 +294,22 @@ typedef struct {
   UINT32            DefaultXmptCK[MAX_XMP_PROFILE_NUM];///< Stores the tCK value read from SPD XMP profiles if they exist.
   UINT8             XmpProfileEnable;                  ///< If XMP capable DIMMs are detected, this will indicate which XMP Profiles are common among all DIMMs.
   UINT8             XmpConfigWarning;                  ///< If XMP capable DIMMs config support only 1DPC, but 2DPC is installed
-  UINT8             Ratio;
+  BOOLEAN           DynamicMemoryBoostTrainingFailed;  ///< TRUE if Dynamic Memory Boost failed to train and was force disabled on the last full training boot. FALSE otherwise.
+  UINT16            Ratio;                             ///< DDR Frequency Ratio, used for programs that require ratios higher then 255
   UINT8             RefClk;
   UINT32            VddVoltage[MAX_PROFILE_NUM];
   UINT32            VddqVoltage[MAX_PROFILE_NUM];
   UINT32            VppVoltage[MAX_PROFILE_NUM];
+  UINT16            RcompTarget[MAX_PROFILE_NUM][MAX_RCOMP_TARGETS];
+  UINT16            DimmOdt[MAX_PROFILE_NUM][MAX_DIMM][MAX_ODT_ENTRIES];
   CONTROLLER_INFO   Controller[MAX_NODE];
-  UINT16            Ratio_UINT16;                      ///< DDR Frequency Ratio, used for programs that require ratios higher then 255
   UINT32            NumPopulatedChannels;              ///< Total number of memory channels populated
   HOB_SAGV_INFO     SagvConfigInfo;                    ///< This data structure contains SAGV config values that are considered output by the MRC.
   BOOLEAN           IsIbeccEnabled;
   UINT16            TotalMemWidth;                     ///< Total Memory Width in bits from all populated channels
+  UINT16            PprDetectedErrors;                 ///< PPR: Counts of detected bad rows
+  UINT16            PprRepairFails;                    ///< PPR: Counts of repair failure
+  UINT16            PprForceRepairStatus;              ///< PPR: Force Repair Status
 } MEMORY_INFO_DATA_HOB;
 
 /**
@@ -274,6 +331,13 @@ typedef struct {
   UINT32            GttBase;
   UINT32            MmioSize;
   UINT32            PciEBaseAddress;
+//
+// SV:RestrictedBegin
+//
+  UINT32            SharedMailboxBase;
+//
+// SV:RestrictedEnd
+//
   PSMI_MEM_INFO     PsmiInfo[MAX_TRACE_CACHE_TYPE];
   PSMI_MEM_INFO     PsmiRegionInfo[MAX_TRACE_REGION];
   BOOLEAN           MrcBasicMemoryTestPass;
