@@ -4,6 +4,7 @@
   data hobs.
 
 @copyright
+  INTEL CONFIDENTIAL
   Copyright 1999 - 2022 Intel Corporation.
 
   The source code contained or described herein and all documents related to the
@@ -50,10 +51,6 @@ extern EFI_GUID gSiMemoryPlatformDataGuid;
 #define MAX_DIMM        2
 // Must match definitions in
 // Intel\ClientOneSiliconPkg\IpBlock\MemoryInit\Mtl\Include\MrcInterface.h
-// SA:RestrictedBegin
-//   This should move to a public interface to share the same constant \ struct
-//   defintion between MRC and wrapper platform code.
-// SA:RestrictedEnd
 #define HOB_MAX_SAGV_POINTS 4
 
 ///
@@ -195,7 +192,7 @@ typedef struct {
   UINT16 tFAW;      ///< Number of tCK cycles for the channel DIMM's minimum four activate window delay time.
   UINT16 tRAS;      ///< Number of tCK cycles for the channel DIMM's minimum active to precharge delay time.
   UINT16 tRCDtRP;   ///< Number of tCK cycles for the channel DIMM's minimum RAS# to CAS# delay time and Row Precharge delay time.
-  UINT16 tREFI;     ///< Number of tCK cycles for the channel DIMM's minimum Average Periodic Refresh Interval.
+  UINT32 tREFI;     ///< Number of tCK cycles for the channel DIMM's minimum Average Periodic Refresh Interval.
   UINT16 tRFC;      ///< Number of tCK cycles for the channel DIMM's minimum refresh recovery delay time.
   UINT16 tRFCpb;    ///< Number of tCK cycles for the channel DIMM's minimum per bank refresh recovery delay time.
   UINT16 tRFC2;     ///< Number of tCK cycles for the channel DIMM's minimum refresh recovery delay time.
@@ -211,6 +208,7 @@ typedef struct {
   UINT16 tWTR_S;    ///< Number of tCK cycles for the channel DIMM's minimum internal write to read command delay time for different bank groups.
   UINT16 tCCD_L;    ///< Number of tCK cycles for the channel DIMM's minimum CAS-to-CAS delay for same bank group.
   UINT16 tCCD_L_WR; ///< Number of tCK cycles for the channel DIMM's minimum Write-to-Write delay for same bank group.
+  UINT8  Resv[2];   ///< Resv
 } MRC_CH_TIMING;
 
 typedef struct {
@@ -331,13 +329,6 @@ typedef struct {
   UINT32            GttBase;
   UINT32            MmioSize;
   UINT32            PciEBaseAddress;
-//
-// SV:RestrictedBegin
-//
-  UINT32            SharedMailboxBase;
-//
-// SV:RestrictedEnd
-//
   PSMI_MEM_INFO     PsmiInfo[MAX_TRACE_CACHE_TYPE];
   PSMI_MEM_INFO     PsmiRegionInfo[MAX_TRACE_REGION];
   BOOLEAN           MrcBasicMemoryTestPass;

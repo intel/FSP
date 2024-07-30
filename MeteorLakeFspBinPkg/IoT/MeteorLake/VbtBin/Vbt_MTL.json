@@ -683,7 +683,7 @@
           "Block": {
             "Id": "2",
             "Name": "General Data Definitions",
-            "SizeInBytes": "398",
+            "SizeInBytes": "408",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -893,6 +893,13 @@
               },
               {
                 "Name": "SKIP",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
                 "SizeInBits": "16",
                 "ByteOffset": "",
                 "BitOffset": "",
@@ -1055,6 +1062,13 @@
               {
                 "Name": "SKIP",
                 "SizeInBits": "4",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -1432,6 +1446,13 @@
               },
               {
                 "Name": "SKIP",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
                 "SizeInBits": "16",
                 "ByteOffset": "",
                 "BitOffset": "",
@@ -1796,6 +1817,13 @@
               },
               {
                 "Name": "SKIP",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
                 "SizeInBits": "16",
                 "ByteOffset": "",
                 "BitOffset": "",
@@ -2154,6 +2182,13 @@
               {
                 "Name": "SKIP",
                 "SizeInBits": "5",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -2530,6 +2565,13 @@
                 "Value": ""
               },
               {
+                "Name": "SKIP",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
                 "Name": "Int_EFP5_Type",
                 "SizeInBits": "16",
                 "ByteOffset": "",
@@ -2882,6 +2924,13 @@
               {
                 "Name": "SKIP",
                 "SizeInBits": "5",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "8",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -3252,6 +3301,13 @@
               },
               {
                 "Name": "SKIP",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
                 "SizeInBits": "16",
                 "ByteOffset": "",
                 "BitOffset": "",
@@ -3616,7 +3672,14 @@
               },
               {
                 "Name": "SKIP",
-                "SizeInBits": "312",
+                "SizeInBits": "8",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "320",
                 "ByteOffset": "",
                 "BitOffset": "",
                 "Value": ""
@@ -25207,7 +25270,7 @@
               },
               {
                 "WidgetType": "Label",
-                "WidgetName": "VBT Version: 253",
+                "WidgetName": "VBT Version: 256",
                 "Visibility": "",
                 "Data": [],
                 "HelpText": "",
@@ -29222,7 +29285,7 @@
                                     "44",
                                     "ELP_Enable_01"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -29276,13 +29339,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_01"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -29316,13 +29379,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_01"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -29355,30 +29418,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_01"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -30847,7 +30886,7 @@
                                     "44",
                                     "ELP_Enable_02"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -30901,13 +30940,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_02"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -30941,13 +30980,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_02"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -30980,30 +31019,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_02"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -32472,7 +32487,7 @@
                                     "44",
                                     "ELP_Enable_03"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -32526,13 +32541,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_03"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -32566,13 +32581,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_03"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -32605,30 +32620,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_03"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -34097,7 +34088,7 @@
                                     "44",
                                     "ELP_Enable_04"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -34151,13 +34142,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_04"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -34191,13 +34182,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_04"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -34230,30 +34221,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_04"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -35722,7 +35689,7 @@
                                     "44",
                                     "ELP_Enable_05"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -35776,13 +35743,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_05"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -35816,13 +35783,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_05"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -35855,30 +35822,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_05"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -37347,7 +37290,7 @@
                                     "44",
                                     "ELP_Enable_06"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -37401,13 +37344,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_06"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -37441,13 +37384,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_06"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -37480,30 +37423,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_06"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -38972,7 +38891,7 @@
                                     "44",
                                     "ELP_Enable_07"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -39026,13 +38945,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_07"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -39066,13 +38985,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_07"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -39105,30 +39024,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_07"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -40597,7 +40492,7 @@
                                     "44",
                                     "ELP_Enable_08"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -40651,13 +40546,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_08"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -40691,13 +40586,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_08"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -40730,30 +40625,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_08"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -42222,7 +42093,7 @@
                                     "44",
                                     "ELP_Enable_09"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -42276,13 +42147,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_09"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -42316,13 +42187,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_09"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -42355,30 +42226,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_09"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -43847,7 +43694,7 @@
                                     "44",
                                     "ELP_Enable_10"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -43901,13 +43748,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_10"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -43941,13 +43788,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_10"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -43980,30 +43827,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_10"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -45472,7 +45295,7 @@
                                     "44",
                                     "ELP_Enable_11"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -45526,13 +45349,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_11"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -45566,13 +45389,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_11"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -45605,30 +45428,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_11"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -47097,7 +46896,7 @@
                                     "44",
                                     "ELP_Enable_12"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -47151,13 +46950,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_12"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -47191,13 +46990,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_12"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -47230,30 +47029,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_12"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -48722,7 +48497,7 @@
                                     "44",
                                     "ELP_Enable_13"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -48776,13 +48551,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_13"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -48816,13 +48591,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_13"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -48855,30 +48630,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_13"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -50347,7 +50098,7 @@
                                     "44",
                                     "ELP_Enable_14"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -50401,13 +50152,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_14"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -50441,13 +50192,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_14"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -50480,30 +50231,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_14"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -51972,7 +51699,7 @@
                                     "44",
                                     "ELP_Enable_15"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -52026,13 +51753,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_15"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -52066,13 +51793,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_15"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -52105,30 +51832,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_15"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
@@ -53597,7 +53300,7 @@
                                     "44",
                                     "ELP_Enable_16"
                                   ],
-                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST and OPST ((i.e.) OPST, DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
+                                  "HelpText": "This feature determines whether the ELP feature is enabled or disabled.\nEdge Luminance Profile (ELP) is a panel technology which reduce luminance on the edge of screen to save panel power.\nNote:This technology cannot co-exist with DPST ((i.e.) DPST and ELP cannot exist together.They are all mutually exclusive to each other.)",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -53651,13 +53354,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Enable Display Lace Support: ",
+                                  "WidgetName": "Enable Display Lighting Aware Contrast Enhancement Support: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Enable_16"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Display Lace Support otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Display Lighting Aware Contrast Enhancement Support otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -53691,13 +53394,13 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Default Display LACE Enabled status: ",
+                                  "WidgetName": "Default Display Lighting Aware Contrast Enhancement Enabled status: ",
                                   "Visibility": "",
                                   "Data": [
                                     "44",
                                     "LACE_Status_16"
                                   ],
-                                  "HelpText": "This feature, when enabled, will set Default Display LACE Enabled status otherwise, the  functionality will be disabled.",
+                                  "HelpText": "This feature, when enabled, will set Default Display Lighting Aware Contrast Enhancement Enabled status otherwise, the  functionality will be disabled.",
                                   "WidgetValues": [
                                     {
                                       "Key": "Enabled",
@@ -53730,30 +53433,6 @@
                                     {
                                       "Key": "3 - Maximum Power Savings",
                                       "Value": "3"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "LACE Aggressiveness Level: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "44",
-                                    "LACE_Aggressiveness_Profile_16"
-                                  ],
-                                  "HelpText": "This feature allows for the selection of LACE Aggressiveness level for this Panel Type.\nMinimum   0\nModerate  1\nHigh      2",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "Minimum",
-                                      "Value": "0"
-                                    },
-                                    {
-                                      "Key": "Moderate",
-                                      "Value": "1"
-                                    },
-                                    {
-                                      "Key": "High",
-                                      "Value": "2"
                                     }
                                   ]
                                 },
