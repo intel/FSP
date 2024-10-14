@@ -3,7 +3,9 @@
   Memory S3 Save data, Memory Info data and Memory Platform
   data hobs.
 
-	Copyright 1999 - 2022 Intel Corporation.
+@copyright
+  INTEL CONFIDENTIAL
+  Copyright 1999 - 2022 Intel Corporation.
 
   The source code contained or described herein and all documents related to the
   source code ("Material") are owned by Intel Corporation or its suppliers or
