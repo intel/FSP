@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2024, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -937,13 +937,15 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CdClock                         1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PeiGraphicsPeimInit             1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_D3HotEnable                     1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_GnaEnable                       1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_GnaEnable                       1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IomTypeCPortPadCfg             32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x04,0x06,0x11,0x00,0x04,0x06,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_CpuUsb3OverCurrentPin           8 bytes    $_DEFAULT_ = 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_TcssUsbOverCurrentVirtualWireEnable   1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_D3ColdEnable                    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ITbtPcieTunnelingForUsb4        1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_SkipFspGop                      1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_TcCstateLimit                   1 bytes    $_DEFAULT_ = 0x0A
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_VbtSize                         4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_LidStatus                       1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IomStayInTCColdSeconds          1 bytes    $_DEFAULT_ = 0x32
@@ -1214,7 +1216,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuRootportUsedForHybridStorage   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchRootportUsedForCpuAttach     1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchAcpiL6dPmeHandling           1 bytes    $_DEFAULT_ = 0x0
-        Skip 1 bytes
+        Skip 5 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes

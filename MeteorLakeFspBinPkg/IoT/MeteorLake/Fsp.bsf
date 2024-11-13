@@ -131,7 +131,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_RmtPerTask                      1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_TrainTrace                      1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_RxVrefTempCoeff                 1 bytes    $_DEFAULT_ = 0x6
-        Skip 2 bytes
+        $gPlatformFspPkgTokenSpaceGuid_CaParityPatternRotation         1 bytes    $_DEFAULT_ = 0x0
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_TsegSize                        4 bytes    $_DEFAULT_ = 0x0400000
         $gPlatformFspPkgTokenSpaceGuid_MmioSize                        2 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_ProbelessTrace                  1 bytes    $_DEFAULT_ = 0x00
@@ -160,7 +161,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VtdDisable                      1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_VtdIgdEnable                    1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_VtdIopEnable                    1 bytes    $_DEFAULT_ = 0x1
-        $gPlatformFspPkgTokenSpaceGuid_IgdDvmt50PreAlloc               1 bytes    $_DEFAULT_ = 0x2
+        $gPlatformFspPkgTokenSpaceGuid_IgdDvmt50PreAlloc               1 bytes    $_DEFAULT_ = 0x4
         $gPlatformFspPkgTokenSpaceGuid_InternalGfx                     1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_OemT12DelayOverride             1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_UserBd                          1 bytes    $_DEFAULT_ = 0x00
@@ -199,7 +200,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_tRWDG                           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_tRWDR                           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_tRWDD                           1 bytes    $_DEFAULT_ = 0x00
-        Skip 81 bytes
+        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_tREFI32                         4 bytes    $_DEFAULT_ = 0x0000
+        Skip 76 bytes
         $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv                          2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_RefClk                          1 bytes    $_DEFAULT_ = 0x00
         Skip 1 bytes
@@ -490,7 +493,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_ImonOffset                     24 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_VrConfigEnable                  6 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
         $gPlatformFspPkgTokenSpaceGuid_TdcEnable                       6 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        $gPlatformFspPkgTokenSpaceGuid_TdcTimeWindow                  24 bytes    $_DEFAULT_ = 0x01,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x01,0x00,0x00,0x00
+        $gPlatformFspPkgTokenSpaceGuid_TdcTimeWindow                  24 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_TdcLock                         6 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_DlvrRfiFrequency                2 bytes    $_DEFAULT_ = 0x055A
         $gPlatformFspPkgTokenSpaceGuid_DlvrSpreadSpectrumPercentage    1 bytes    $_DEFAULT_ = 0x06
@@ -692,7 +695,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CMDVC                           1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_LCT                             1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_TAT                             1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_RMT                             1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_RMT                             1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_LVRAUTOTRIM                     1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ALIASCHK                        1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_RMC                             1 bytes    $_DEFAULT_ = 0x01
@@ -710,7 +713,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_DDRPRECOMP                      1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_RDVREFDC                        1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_VDDQT                           1 bytes    $_DEFAULT_ = 0x01
-        $gPlatformFspPkgTokenSpaceGuid_RMTBIT                          1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_RMTBIT                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_DQDQSSWZ                        1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_REFPI                           1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_RXSALCAL                        1 bytes    $_DEFAULT_ = 0x01
@@ -744,8 +747,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_IbeccProtectedRegionOverallBase  16 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl              1 bytes    $_DEFAULT_ = 0x0
         Skip 3 bytes
-        $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjAddrBase             8 bytes    $_DEFAULT_ = 0x0
-        $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjAddrMask             8 bytes    $_DEFAULT_ = 0x1FFFFFFFF
+        $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjAddrBase             4 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjAddrMask             4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjCount                1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_RemapEnable                     1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_RankInterleave                  1 bytes    $_DEFAULT_ = 0x01
@@ -868,7 +871,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_OppSrefIdleTmr                  2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_LowerBasicMemTestSize           1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_BoardTopology                   1 bytes    $_DEFAULT_ = 0x00
-        Skip 16 bytes
+        Skip 24 bytes
         $gPlatformFspPkgTokenSpaceGuid_PprTestType                     1 bytes    $_DEFAULT_ = 0x3
         $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpd                 2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SkipExtGfxScan                  1 bytes    $_DEFAULT_ = 0x0
@@ -890,10 +893,19 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SaPreMemTestRsvd               75 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PprRunOnce                      1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_PprRunAtFastboot                1 bytes    $_DEFAULT_ = 0x0
-        $gPlatformFspPkgTokenSpaceGuid_PprRepairType                   1 bytes    $_DEFAULT_ = 0x02
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairType                   1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PprErrorInjection               1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PprForceRepair                  1 bytes    $_DEFAULT_ = 0x0
-        Skip 44 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairController             1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairChannel                1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairDimm                   1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairRank                   1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairRow                    4 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairPhysicalAddrLow        4 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairPhysicalAddrHigh       4 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairBankGroup              1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_PprRepairBank                   1 bytes    $_DEFAULT_ = 0x0
+        Skip 26 bytes
         $gPlatformFspPkgTokenSpaceGuid_TotalFlashSize                  2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_BiosSize                        2 bytes    $_DEFAULT_ = 0x2800
         $gPlatformFspPkgTokenSpaceGuid_SecurityTestRsvd               12 bytes    $_DEFAULT_ = 0x00
@@ -1086,10 +1098,12 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchTsn1MacAddressHigh           4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PchTsn1MacAddressLow            4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PciePtm                        29 bytes    $_DEFAULT_ = 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
+        $gPlatformFspPkgTokenSpaceGuid_PcieMultiVc                    29 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        Skip 2 bytes
         $gPlatformFspPkgTokenSpaceGuid_DmiPowerGatingDis               1 bytes    $_DEFAULT_ = 0x01
         Skip 28 bytes
         $gPlatformFspPkgTokenSpaceGuid_UsbPdoProgramming               1 bytes    $_DEFAULT_ = 0x01
-        Skip 5 bytes
+        Skip 6 bytes
         $gPlatformFspPkgTokenSpaceGuid_PmcPowerButtonDebounce          4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchEspiBmeHostDeviceEnabled     1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchEspiLockLinkConfiguration    1 bytes    $_DEFAULT_ = 0x01
@@ -2504,9 +2518,9 @@ List &gPlatformFspPkgTokenSpaceGuid_VgaInitControl
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_PprRepairType
-    Selection 0 , "Do not Repair"
+    Selection 0 , "Do not Repair (Default)"
     Selection 1 , "Soft Repair"
-    Selection 2 , "Hard Repair (Default)"
+    Selection 2 , "Hard Repair"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugMode
@@ -3025,6 +3039,9 @@ Page "Memory Reference Code"
     EditNum $gPlatformFspPkgTokenSpaceGuid_RxVrefTempCoeff, "RxVrefTempCoeff", HEX,
         Help "Default = 6. Range from 0-255"
              "Valid range: 0x0 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CaParityPatternRotation, "CaParityPatternRotation", HEX,
+        Help "Default = 0 (Auto). 1 for High stress pattern rotation, 2 for no rotation."
+             "Valid range: 0x0 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_TsegSize, "Tseg Size", &gPlatformFspPkgTokenSpaceGuid_TsegSize,
         Help "Size of SMRAM memory reserved. 0x400000 for Release build and 0x1000000 for Debug build"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MmioSize, "MMIO Size", HEX,
@@ -3120,6 +3137,9 @@ Page "Memory Reference Code"
     EditNum $gPlatformFspPkgTokenSpaceGuid_tRWDD, "tRWDD Delta", HEX,
         Help "Delay between Read-to-Write commands in different DIMMs. 0 - Auto. Signed TAT delta is (Value - 128). Input value range of [0..255] will give a TAT delta range of [-127..127]"
              "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_tREFI32, "tREFI32", HEX,
+        Help "Refresh Interval, 0: AUTO, max: 131071. Only used if FspmUpd->FspmConfig.SpdProfileSelected == 1 (Custom Profile)."
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv, "Vdd2Mv", &gPlatformFspPkgTokenSpaceGuid_Vdd2Mv,
         Help "VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc. "
     Combo $gPlatformFspPkgTokenSpaceGuid_RefClk, "Memory Reference Clock", &gPlatformFspPkgTokenSpaceGuid_RefClk,
@@ -3160,7 +3180,7 @@ Page "Memory Reference Code"
         Help "RAS to CAS delay time and Row Precharge delay time, 0: AUTO, max: 255. Only used if FspmUpd->FspmConfig.SpdProfileSelected == 1 (Custom Profile)."
              "Valid range: 0x00 ~ 0x3F"
     EditNum $gPlatformFspPkgTokenSpaceGuid_tREFI, "tREFI", HEX,
-        Help "Refresh Interval, 0: AUTO, max: 65535. Only used if FspmUpd->FspmConfig.SpdProfileSelected == 1 (Custom Profile)."
+        Help "Obsolete, use tREFI32 instead. Refresh Interval, 0: AUTO, max: 65535. Only used if FspmUpd->FspmConfig.SpdProfileSelected == 1 (Custom Profile)."
              "Valid range: 0x00 ~ 0xFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_tRFC, "tRFC", HEX,
         Help "Min Refresh Recovery Delay Time, 0: AUTO, max: 65535. Only used if FspmUpd->FspmConfig.SpdProfileSelected == 1 (Custom Profile)."
@@ -3647,7 +3667,7 @@ Page "Memory Reference Code"
         Help "Thermal Design Current enable/disable; <b>0: Disable</b>; 1: Enable. [0] for IA, [1] for GT, [2] for SA, [3] through [5] are Reserved."
              "Valid range: 0x00 ~ 0xFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_TdcTimeWindow, "Thermal Design Current time window", HEX,
-        Help "TDC Time Window, value of IA either in milliseconds or seconds, value of GT/SA is in milliseconds. 1ms is default. Range of IA from 1ms to 448s, Range of GT/SA is 1ms to 10ms, except for 9ms. 9ms has no valid encoding in the MSR definition."
+        Help "TDC Time Window, value in seconds. Range from 1s to 448s, 0 = Auto/HW default. <b>0: Auto</b>. [0] for IA, [1] for GT, [2] for SA, [3] through [5] are Reserved."
              "Valid range: 0x00 ~ 0x0006D6000006D6000006D6000006D6000006D600"
     EditNum $gPlatformFspPkgTokenSpaceGuid_TdcLock, "Thermal Design Current Lock", HEX,
         Help "Thermal Design Current Lock; <b>0: Disable</b>; 1: Enable. For all VR Indexes"
@@ -4303,11 +4323,38 @@ Page "Memory Reference Code"
     Combo $gPlatformFspPkgTokenSpaceGuid_ReservedFspmUpd, "PreMemRsvd", &EN_DIS,
         Help "Reserved for Pre-Mem"
     Combo $gPlatformFspPkgTokenSpaceGuid_PprRepairType, "PPR Repair Type", &gPlatformFspPkgTokenSpaceGuid_PprRepairType,
-        Help "PPR Repair Type: 0:Do not Repair, 1:Soft Repair, 2:Hard Repair (Default)"
+        Help "PPR Repair Type: 0:Do not Repair (Default), 1:Soft Repair, 2:Hard Repair"
     Combo $gPlatformFspPkgTokenSpaceGuid_PprErrorInjection, "PPR Error Injection", &EN_DIS,
         Help "When Eanble, PPR will inject bad rows during testing"
     Combo $gPlatformFspPkgTokenSpaceGuid_PprForceRepair, "PPR ForceRepair", &EN_DIS,
         Help "When Eanble, PPR will force repair some rows many times (90)"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PprRepairController, "PPR Repair Controller", HEX,
+        Help "PPR repair controller: User chooses to force repair specifc address "
+             "Valid range: 0x00 ~ 0x01"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PprRepairChannel, "PPR Repair Channel", HEX,
+        Help "PPR repair Channel: User chooses to force repair specifc address "
+             "Valid range: 0x00 ~ 0x01"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PprRepairDimm, "PPR Repair Dimm", HEX,
+        Help "PPR repair Dimm: User chooses to force repair specifc address "
+             "Valid range: 0x00 ~ 0x01"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PprRepairRank, "PPR Repair Rank", HEX,
+        Help "PPR repair Rank: User chooses to force repair specifc address "
+             "Valid range: 0x00 ~ 0x01"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PprRepairRow, "PPR Repair Row", HEX,
+        Help "PPR repair Row: User chooses to force repair specifc address "
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PprRepairPhysicalAddrLow, "PPR Repair Physical Address Low", HEX,
+        Help "PPR repair Physical Address Low: User chooses to force repair specifc address "
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PprRepairPhysicalAddrHigh, "PPR Repair Physical Address High", HEX,
+        Help "PPR repair Physical Address High: User chooses to force repair specifc address "
+             "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PprRepairBankGroup, "PPR Repair BankGroup", HEX,
+        Help "PPR repair BankGroup: User chooses to force repair specifc address "
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PprRepairBank, "PPR Repair Bank", HEX,
+        Help "PPR repair Bank: User chooses to force repair specifc address "
+             "Valid range: 0x00 ~ 0xFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_TotalFlashSize, "TotalFlashSize", HEX,
         Help "Enable/Disable. 0: Disable, define default value of TotalFlashSize , 1: enable"
              "Valid range: 0x00 ~ 0xFFFF"
@@ -5418,6 +5465,9 @@ Page "PCH(PostMem)"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PciePtm, "PCIe PTM enable/disable", HEX,
         Help "Enable/disable Precision Time Measurement for PCIE Root Ports."
+             "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PcieMultiVc, "Multi-VC for PCIE RP Mask", HEX,
+        Help "Enable/disable Multiple Virtual Channel for PCIE Root Ports. 0: disable, 1: enable. One bit for each port, bit0 for port1, bit1 for port2, and so on."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_DmiPowerGatingDis, "Disable DMI Power Gating", &EN_DIS,
         Help "Enable/disable DMI Power Gating Disable."

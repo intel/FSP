@@ -283,9 +283,14 @@ typedef struct {
 **/
   UINT8                       RxVrefTempCoeff;
 
-/** Offset 0x012E
+/** Offset 0x012E - CaParityPatternRotation
+  Default = 0 (Auto). 1 for High stress pattern rotation, 2 for no rotation.
 **/
-  UINT8                       Rsvd020[2];
+  UINT8                       CaParityPatternRotation;
+
+/** Offset 0x012F
+**/
+  UINT8                       Rsvd020[1];
 
 /** Offset 0x0130 - Tseg Size
   Size of SMRAM memory reserved. 0x400000 for Release build and 0x1000000 for Debug build
@@ -760,7 +765,17 @@ typedef struct {
 
 /** Offset 0x01AF
 **/
-  UINT8                       Rsvd031[81];
+  UINT8                       Rsvd031[1];
+
+/** Offset 0x01B0 - tREFI32
+  Refresh Interval, 0: AUTO, max: 131071. Only used if FspmUpd->FspmConfig.SpdProfileSelected
+  == 1 (Custom Profile).
+**/
+  UINT32                      tREFI32;
+
+/** Offset 0x01B4
+**/
+  UINT8                       Rsvd036[76];
 
 /** Offset 0x0200 - Vdd2Mv
   VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc.
@@ -875,8 +890,8 @@ typedef struct {
   UINT8                       Rsvd040[1];
 
 /** Offset 0x021C - tREFI
-  Refresh Interval, 0: AUTO, max: 65535. Only used if FspmUpd->FspmConfig.SpdProfileSelected
-  == 1 (Custom Profile).
+  Obsolete, use tREFI32 instead. Refresh Interval, 0: AUTO, max: 65535. Only used
+  if FspmUpd->FspmConfig.SpdProfileSelected == 1 (Custom Profile).
 **/
   UINT16                      tREFI;
 
@@ -2503,9 +2518,8 @@ typedef struct {
   UINT8                       TdcEnable[6];
 
 /** Offset 0x069C - Thermal Design Current time window
-  TDC Time Window, value of IA either in milliseconds or seconds, value of GT/SA is
-  in milliseconds. 1ms is default. Range of IA from 1ms to 448s, Range of GT/SA is
-  1ms to 10ms, except for 9ms. 9ms has no valid encoding in the MSR definition.
+  TDC Time Window, value in seconds. Range from 1s to 448s, 0 = Auto/HW default. <b>0:
+  Auto</b>. [0] for IA, [1] for GT, [2] for SA, [3] through [5] are Reserved.
 **/
   UINT32                      TdcTimeWindow[6];
 
@@ -3942,467 +3956,467 @@ typedef struct {
 /** Offset 0x0BE8 - IbeccEccInjAddrBase
   Address to match against for ECC error injection. Example: 1 = 32MB, 2 = 64MB
 **/
-  UINT64                      IbeccEccInjAddrBase;
+  UINT32                      IbeccEccInjAddrBase;
 
-/** Offset 0x0BF0 - IbeccEccInjAddrMask
+/** Offset 0x0BEC - IbeccEccInjAddrMask
   Mask to match against for ECC error injection
 **/
-  UINT64                      IbeccEccInjAddrMask;
+  UINT32                      IbeccEccInjAddrMask;
 
-/** Offset 0x0BF8 - IbeccEccInjCount
+/** Offset 0x0BF0 - IbeccEccInjCount
   Number of memory transactions between ECC error injection
 **/
   UINT8                       IbeccEccInjCount;
 
-/** Offset 0x0BF9 - Memory Remap
+/** Offset 0x0BF1 - Memory Remap
   Enables/Disable Memory Remap
   $EN_DIS
 **/
   UINT8                       RemapEnable;
 
-/** Offset 0x0BFA - Rank Interleave support
+/** Offset 0x0BF2 - Rank Interleave support
   Enables/Disable Rank Interleave support. NOTE: RI and HORI can not be enabled at
   the same time.
   $EN_DIS
 **/
   UINT8                       RankInterleave;
 
-/** Offset 0x0BFB - Enhanced Interleave support
+/** Offset 0x0BF3 - Enhanced Interleave support
   Enables/Disable Enhanced Interleave support
   $EN_DIS
 **/
   UINT8                       EnhancedInterleave;
 
-/** Offset 0x0BFC - Ch Hash Support
+/** Offset 0x0BF4 - Ch Hash Support
   Enable/Disable Channel Hash Support. NOTE: ONLY if Memory interleaved Mode
   $EN_DIS
 **/
   UINT8                       ChHashEnable;
 
-/** Offset 0x0BFD - Extern Therm Status
+/** Offset 0x0BF5 - Extern Therm Status
   Enables/Disable Extern Therm Status
   $EN_DIS
 **/
   UINT8                       EnableExtts;
 
-/** Offset 0x0BFE - DDR PowerDown and idle counter
+/** Offset 0x0BF6 - DDR PowerDown and idle counter
   Enables/Disable DDR PowerDown and idle counter(For LPDDR Only)
   $EN_DIS
 **/
   UINT8                       EnablePwrDn;
 
-/** Offset 0x0BFF - DDR PowerDown and idle counter
+/** Offset 0x0BF7 - DDR PowerDown and idle counter
   Enables/Disable DDR PowerDown and idle counter(For LPDDR Only)
   $EN_DIS
 **/
   UINT8                       EnablePwrDnLpddr;
 
-/** Offset 0x0C00 - SelfRefresh Enable
+/** Offset 0x0BF8 - SelfRefresh Enable
   Enables/Disable SelfRefresh Enable
   $EN_DIS
 **/
   UINT8                       SrefCfgEna;
 
-/** Offset 0x0C01 - Throttler CKEMin Defeature
+/** Offset 0x0BF9 - Throttler CKEMin Defeature
   Enables/Disable Throttler CKEMin Defeature(For LPDDR Only)
   $EN_DIS
 **/
   UINT8                       ThrtCkeMinDefeatLpddr;
 
-/** Offset 0x0C02 - Throttler CKEMin Defeature
+/** Offset 0x0BFA - Throttler CKEMin Defeature
   Enables/Disable Throttler CKEMin Defeature
   $EN_DIS
 **/
   UINT8                       ThrtCkeMinDefeat;
 
-/** Offset 0x0C03 - Row Hammer Select
+/** Offset 0x0BFB - Row Hammer Select
   Row Hammer Select
   0:Disable, 1:RFM, 2:pTRR
 **/
   UINT8                       RhSelect;
 
-/** Offset 0x0C04 - Exit On Failure (MRC)
+/** Offset 0x0BFC - Exit On Failure (MRC)
   Enables/Disable Exit On Failure (MRC)
   $EN_DIS
 **/
   UINT8                       ExitOnFailure;
 
-/** Offset 0x0C05 - DCC Single Rank Tracking
+/** Offset 0x0BFD - DCC Single Rank Tracking
   Force DCC to track single rank only
   $EN_DIS
 **/
   UINT8                       DccSingleRankTrack;
 
-/** Offset 0x0C06 - DDR5 supports MR7 WICA 0.5 tCK offset
+/** Offset 0x0BFE - DDR5 supports MR7 WICA 0.5 tCK offset
   DDR5 DRAM Device supports MR7 WICA 0.5 tCK offset, <b>0:False</b>, 1:True
   0:False, 1:True
 **/
   UINT8                       IsDdr5MR7WicaSupported;
 
-/** Offset 0x0C07 - Write0 feature
+/** Offset 0x0BFF - Write0 feature
   Enables/Disable Write0 feature
   $EN_DIS
 **/
   UINT8                       Write0;
 
-/** Offset 0x0C08 - Select if CLK0 is shared between Rank0 and Rank1 in DDR4 DDP
+/** Offset 0x0C00 - Select if CLK0 is shared between Rank0 and Rank1 in DDR4 DDP
   Select if CLK0 is shared between Rank0 and Rank1 in DDR4 DDP
   $EN_DIS
 **/
   UINT8                       DdpSharedClock;
 
-/** Offset 0x0C09 - Select if ZQ pin is shared between Rank0 and Rank1 in DDR4 DDP
+/** Offset 0x0C01 - Select if ZQ pin is shared between Rank0 and Rank1 in DDR4 DDP
   ESelect if ZQ pin is shared between Rank0 and Rank1 in DDR4 DDP
   $EN_DIS
 **/
   UINT8                       Ddr4DdpSharedZq;
 
-/** Offset 0x0C0A - Ch Hash Interleaved Bit
+/** Offset 0x0C02 - Ch Hash Interleaved Bit
   Select the BIT to be used for Channel Interleaved mode. NOTE: BIT7 will interlave
   the channels at a 2 cacheline granularity, BIT8 at 4 and BIT9 at 8. Default is BIT8
   0:BIT6, 1:BIT7, 2:BIT8, 3:BIT9, 4:BIT10, 5:BIT11, 6:BIT12, 7:BIT13
 **/
   UINT8                       ChHashInterleaveBit;
 
-/** Offset 0x0C0B
+/** Offset 0x0C03
 **/
   UINT8                       UnusedUpdSpace1;
 
-/** Offset 0x0C0C - Ch Hash Mask
+/** Offset 0x0C04 - Ch Hash Mask
   Set the BIT(s) to be included in the XOR function. NOTE BIT mask corresponds to
   BITS [19:6] Default is 0x30CC
 **/
   UINT16                      ChHashMask;
 
-/** Offset 0x0C0E
+/** Offset 0x0C06
 **/
   UINT8                       UnusedUpdSpace2[2];
 
-/** Offset 0x0C10 - Base reference clock value
+/** Offset 0x0C08 - Base reference clock value
   Base reference clock value, in Hertz(Default is 125Hz)
   100000000:100Hz, 125000000:125Hz, 167000000:167Hz, 250000000:250Hz
 **/
   UINT32                      BClkFrequency;
 
-/** Offset 0x0C14 - EPG DIMM Idd3N
+/** Offset 0x0C0C - EPG DIMM Idd3N
   Active standby current (Idd3N) in milliamps from datasheet. Must be calculated on
   a per DIMM basis. Default is 26
 **/
   UINT16                      Idd3n;
 
-/** Offset 0x0C16 - EPG DIMM Idd3P
+/** Offset 0x0C0E - EPG DIMM Idd3P
   Active power-down current (Idd3P) in milliamps from datasheet. Must be calculated
   on a per DIMM basis. Default is 11
 **/
   UINT16                      Idd3p;
 
-/** Offset 0x0C18 - CMD Normalization
+/** Offset 0x0C10 - CMD Normalization
   Enable/Disable CMD Normalization
   $EN_DIS
 **/
   UINT8                       CMDNORM;
 
-/** Offset 0x0C19 - Early DQ Write Drive Strength and Equalization Training
+/** Offset 0x0C11 - Early DQ Write Drive Strength and Equalization Training
   Enable/Disable Early DQ Write Drive Strength and Equalization Training
   $EN_DIS
 **/
   UINT8                       EWRDSEQ;
 
-/** Offset 0x0C1A - Idle Energy Mc0Ch0Dimm0
+/** Offset 0x0C12 - Idle Energy Mc0Ch0Dimm0
   Idle Energy Consumed for 1 clk w/dimm idle/cke on, range[63;0],(10= Def)
 **/
   UINT8                       IdleEnergyMc0Ch0Dimm0;
 
-/** Offset 0x0C1B - Idle Energy Mc0Ch0Dimm1
+/** Offset 0x0C13 - Idle Energy Mc0Ch0Dimm1
   Idle Energy Consumed for 1 clk w/dimm idle/cke on, range[63;0],(10= Def)
 **/
   UINT8                       IdleEnergyMc0Ch0Dimm1;
 
-/** Offset 0x0C1C - Idle Energy Mc0Ch1Dimm0
+/** Offset 0x0C14 - Idle Energy Mc0Ch1Dimm0
   Idle Energy Consumed for 1 clk w/dimm idle/cke on, range[63;0],(10= Def)
 **/
   UINT8                       IdleEnergyMc0Ch1Dimm0;
 
-/** Offset 0x0C1D - Idle Energy Mc0Ch1Dimm1
+/** Offset 0x0C15 - Idle Energy Mc0Ch1Dimm1
   Idle Energy Consumed for 1 clk w/dimm idle/cke on, range[63;0],(10= Def)
 **/
   UINT8                       IdleEnergyMc0Ch1Dimm1;
 
-/** Offset 0x0C1E - Idle Energy Mc1Ch0Dimm0
+/** Offset 0x0C16 - Idle Energy Mc1Ch0Dimm0
   Idle Energy Consumed for 1 clk w/dimm idle/cke on, range[63;0],(10= Def)
 **/
   UINT8                       IdleEnergyMc1Ch0Dimm0;
 
-/** Offset 0x0C1F - Idle Energy Mc1Ch0Dimm1
+/** Offset 0x0C17 - Idle Energy Mc1Ch0Dimm1
   Idle Energy Consumed for 1 clk w/dimm idle/cke on, range[63;0],(10= Def)
 **/
   UINT8                       IdleEnergyMc1Ch0Dimm1;
 
-/** Offset 0x0C20 - Idle Energy Mc1Ch1Dimm0
+/** Offset 0x0C18 - Idle Energy Mc1Ch1Dimm0
   Idle Energy Consumed for 1 clk w/dimm idle/cke on, range[63;0],(10= Def)
 **/
   UINT8                       IdleEnergyMc1Ch1Dimm0;
 
-/** Offset 0x0C21 - Idle Energy Mc1Ch1Dimm1
+/** Offset 0x0C19 - Idle Energy Mc1Ch1Dimm1
   Idle Energy Consumed for 1 clk w/dimm idle/cke on, range[63;0],(10= Def)
 **/
   UINT8                       IdleEnergyMc1Ch1Dimm1;
 
-/** Offset 0x0C22 - PowerDown Energy Mc0Ch0Dimm0
+/** Offset 0x0C1A - PowerDown Energy Mc0Ch0Dimm0
   PowerDown Energy Consumed w/dimm idle/cke off, range[63;0],(6= Def)
 **/
   UINT8                       PdEnergyMc0Ch0Dimm0;
 
-/** Offset 0x0C23 - PowerDown Energy Mc0Ch0Dimm1
+/** Offset 0x0C1B - PowerDown Energy Mc0Ch0Dimm1
   PowerDown Energy Consumed w/dimm idle/cke off, range[63;0],(6= Def)
 **/
   UINT8                       PdEnergyMc0Ch0Dimm1;
 
-/** Offset 0x0C24 - PowerDown Energy Mc0Ch1Dimm0
+/** Offset 0x0C1C - PowerDown Energy Mc0Ch1Dimm0
   PowerDown Energy Consumed w/dimm idle/cke off, range[63;0],(6= Def)
 **/
   UINT8                       PdEnergyMc0Ch1Dimm0;
 
-/** Offset 0x0C25 - PowerDown Energy Mc0Ch1Dimm1
+/** Offset 0x0C1D - PowerDown Energy Mc0Ch1Dimm1
   PowerDown Energy Consumed w/dimm idle/cke off, range[63;0],(6= Def)
 **/
   UINT8                       PdEnergyMc0Ch1Dimm1;
 
-/** Offset 0x0C26 - PowerDown Energy Mc1Ch0Dimm0
+/** Offset 0x0C1E - PowerDown Energy Mc1Ch0Dimm0
   PowerDown Energy Consumed w/dimm idle/cke off, range[63;0],(6= Def)
 **/
   UINT8                       PdEnergyMc1Ch0Dimm0;
 
-/** Offset 0x0C27 - PowerDown Energy Mc1Ch0Dimm1
+/** Offset 0x0C1F - PowerDown Energy Mc1Ch0Dimm1
   PowerDown Energy Consumed w/dimm idle/cke off, range[63;0],(6= Def)
 **/
   UINT8                       PdEnergyMc1Ch0Dimm1;
 
-/** Offset 0x0C28 - PowerDown Energy Mc1Ch1Dimm0
+/** Offset 0x0C20 - PowerDown Energy Mc1Ch1Dimm0
   PowerDown Energy Consumed w/dimm idle/cke off, range[63;0],(6= Def)
 **/
   UINT8                       PdEnergyMc1Ch1Dimm0;
 
-/** Offset 0x0C29 - PowerDown Energy Mc1Ch1Dimm1
+/** Offset 0x0C21 - PowerDown Energy Mc1Ch1Dimm1
   PowerDown Energy Consumed w/dimm idle/cke off, range[63;0],(6= Def)
 **/
   UINT8                       PdEnergyMc1Ch1Dimm1;
 
-/** Offset 0x0C2A - Activate Energy Mc0Ch0Dimm0
+/** Offset 0x0C22 - Activate Energy Mc0Ch0Dimm0
   Activate Energy Contribution, range[255;0],(172= Def)
 **/
   UINT8                       ActEnergyMc0Ch0Dimm0;
 
-/** Offset 0x0C2B - Activate Energy Mc0Ch0Dimm1
+/** Offset 0x0C23 - Activate Energy Mc0Ch0Dimm1
   Activate Energy Contribution, range[255;0],(172= Def)
 **/
   UINT8                       ActEnergyMc0Ch0Dimm1;
 
-/** Offset 0x0C2C - Activate Energy Mc0Ch1Dimm0
+/** Offset 0x0C24 - Activate Energy Mc0Ch1Dimm0
   Activate Energy Contribution, range[255;0],(172= Def)
 **/
   UINT8                       ActEnergyMc0Ch1Dimm0;
 
-/** Offset 0x0C2D - Activate Energy Mc0Ch1Dimm1
+/** Offset 0x0C25 - Activate Energy Mc0Ch1Dimm1
   Activate Energy Contribution, range[255;0],(172= Def)
 **/
   UINT8                       ActEnergyMc0Ch1Dimm1;
 
-/** Offset 0x0C2E - Activate Energy Mc1Ch0Dimm0
+/** Offset 0x0C26 - Activate Energy Mc1Ch0Dimm0
   Activate Energy Contribution, range[255;0],(172= Def)
 **/
   UINT8                       ActEnergyMc1Ch0Dimm0;
 
-/** Offset 0x0C2F - Activate Energy Mc1Ch0Dimm1
+/** Offset 0x0C27 - Activate Energy Mc1Ch0Dimm1
   Activate Energy Contribution, range[255;0],(172= Def)
 **/
   UINT8                       ActEnergyMc1Ch0Dimm1;
 
-/** Offset 0x0C30 - Activate Energy Mc1Ch1Dimm0
+/** Offset 0x0C28 - Activate Energy Mc1Ch1Dimm0
   Activate Energy Contribution, range[255;0],(172= Def)
 **/
   UINT8                       ActEnergyMc1Ch1Dimm0;
 
-/** Offset 0x0C31 - Activate Energy Mc1Ch1Dimm1
+/** Offset 0x0C29 - Activate Energy Mc1Ch1Dimm1
   Activate Energy Contribution, range[255;0],(172= Def)
 **/
   UINT8                       ActEnergyMc1Ch1Dimm1;
 
-/** Offset 0x0C32 - Read Energy Mc0Ch0Dimm0
+/** Offset 0x0C2A - Read Energy Mc0Ch0Dimm0
   Read Energy Contribution, range[255;0],(212= Def)
 **/
   UINT8                       RdEnergyMc0Ch0Dimm0;
 
-/** Offset 0x0C33 - Read Energy Mc0Ch0Dimm1
+/** Offset 0x0C2B - Read Energy Mc0Ch0Dimm1
   Read Energy Contribution, range[255;0],(212= Def)
 **/
   UINT8                       RdEnergyMc0Ch0Dimm1;
 
-/** Offset 0x0C34 - Read Energy Mc0Ch1Dimm0
+/** Offset 0x0C2C - Read Energy Mc0Ch1Dimm0
   Read Energy Contribution, range[255;0],(212= Def)
 **/
   UINT8                       RdEnergyMc0Ch1Dimm0;
 
-/** Offset 0x0C35 - Read Energy Mc0Ch1Dimm1
+/** Offset 0x0C2D - Read Energy Mc0Ch1Dimm1
   Read Energy Contribution, range[255;0],(212= Def)
 **/
   UINT8                       RdEnergyMc0Ch1Dimm1;
 
-/** Offset 0x0C36 - Read Energy Mc1Ch0Dimm0
+/** Offset 0x0C2E - Read Energy Mc1Ch0Dimm0
   Read Energy Contribution, range[255;0],(212= Def)
 **/
   UINT8                       RdEnergyMc1Ch0Dimm0;
 
-/** Offset 0x0C37 - Read Energy Mc1Ch0Dimm1
+/** Offset 0x0C2F - Read Energy Mc1Ch0Dimm1
   Read Energy Contribution, range[255;0],(212= Def)
 **/
   UINT8                       RdEnergyMc1Ch0Dimm1;
 
-/** Offset 0x0C38 - Read Energy Mc1Ch1Dimm0
+/** Offset 0x0C30 - Read Energy Mc1Ch1Dimm0
   Read Energy Contribution, range[255;0],(212= Def)
 **/
   UINT8                       RdEnergyMc1Ch1Dimm0;
 
-/** Offset 0x0C39 - Read Energy Mc1Ch1Dimm1
+/** Offset 0x0C31 - Read Energy Mc1Ch1Dimm1
   Read Energy Contribution, range[255;0],(212= Def)
 **/
   UINT8                       RdEnergyMc1Ch1Dimm1;
 
-/** Offset 0x0C3A - Write Energy Mc0Ch0Dimm0
+/** Offset 0x0C32 - Write Energy Mc0Ch0Dimm0
   Write Energy Contribution, range[255;0],(221= Def)
 **/
   UINT8                       WrEnergyMc0Ch0Dimm0;
 
-/** Offset 0x0C3B - Write Energy Mc0Ch0Dimm1
+/** Offset 0x0C33 - Write Energy Mc0Ch0Dimm1
   Write Energy Contribution, range[255;0],(221= Def)
 **/
   UINT8                       WrEnergyMc0Ch0Dimm1;
 
-/** Offset 0x0C3C - Write Energy Mc0Ch1Dimm0
+/** Offset 0x0C34 - Write Energy Mc0Ch1Dimm0
   Write Energy Contribution, range[255;0],(221= Def)
 **/
   UINT8                       WrEnergyMc0Ch1Dimm0;
 
-/** Offset 0x0C3D - Write Energy Mc0Ch1Dimm1
+/** Offset 0x0C35 - Write Energy Mc0Ch1Dimm1
   Write Energy Contribution, range[255;0],(221= Def)
 **/
   UINT8                       WrEnergyMc0Ch1Dimm1;
 
-/** Offset 0x0C3E - Write Energy Mc1Ch0Dimm0
+/** Offset 0x0C36 - Write Energy Mc1Ch0Dimm0
   Write Energy Contribution, range[255;0],(221= Def)
 **/
   UINT8                       WrEnergyMc1Ch0Dimm0;
 
-/** Offset 0x0C3F - Write Energy Mc1Ch0Dimm1
+/** Offset 0x0C37 - Write Energy Mc1Ch0Dimm1
   Write Energy Contribution, range[255;0],(221= Def)
 **/
   UINT8                       WrEnergyMc1Ch0Dimm1;
 
-/** Offset 0x0C40 - Write Energy Mc1Ch1Dimm0
+/** Offset 0x0C38 - Write Energy Mc1Ch1Dimm0
   Write Energy Contribution, range[255;0],(221= Def)
 **/
   UINT8                       WrEnergyMc1Ch1Dimm0;
 
-/** Offset 0x0C41 - Write Energy Mc1Ch1Dimm1
+/** Offset 0x0C39 - Write Energy Mc1Ch1Dimm1
   Write Energy Contribution, range[255;0],(221= Def)
 **/
   UINT8                       WrEnergyMc1Ch1Dimm1;
 
-/** Offset 0x0C42 - Throttler CKEMin Timer
+/** Offset 0x0C3A - Throttler CKEMin Timer
   Timer value for CKEMin, range[255;0]. Req'd min of SC_ROUND_T + BYTE_LENGTH (4).
   Dfault is 0x00
 **/
   UINT8                       ThrtCkeMinTmr;
 
-/** Offset 0x0C43 - Allow Opp Ref Below Write Threhold
+/** Offset 0x0C3B - Allow Opp Ref Below Write Threhold
   Allow opportunistic refreshes while we don't exit power down.
   $EN_DIS
 **/
   UINT8                       AllowOppRefBelowWriteThrehold;
 
-/** Offset 0x0C44 - Write Threshold
+/** Offset 0x0C3C - Write Threshold
   Number of writes that can be accumulated while CKE is low before CKE is asserted.
 **/
   UINT8                       WriteThreshold;
 
-/** Offset 0x0C45 - Rapl Power Floor Ch0
+/** Offset 0x0C3D - Rapl Power Floor Ch0
   Power budget ,range[255;0],(0= 5.3W Def)
 **/
   UINT8                       RaplPwrFlCh0;
 
-/** Offset 0x0C46 - Rapl Power Floor Ch1
+/** Offset 0x0C3E - Rapl Power Floor Ch1
   Power budget ,range[255;0],(0= 5.3W Def)
 **/
   UINT8                       RaplPwrFlCh1;
 
-/** Offset 0x0C47 - Command Rate Support
+/** Offset 0x0C3F - Command Rate Support
   CMD Rate and Limit Support Option. NOTE: ONLY supported in 1N Mode, Default is 3 CMDs
   0:Disable, 5:2 CMDS, 7:3 CMDS, 9:4 CMDS, 11:5 CMDS, 13:6 CMDS, 15:7 CMDS
 **/
   UINT8                       EnCmdRate;
 
-/** Offset 0x0C48 - MC_REFRESH_RATE
+/** Offset 0x0C40 - MC_REFRESH_RATE
   Type of Refresh Rate used to prevent Row Hammer. Default is NORMAL Refresh
   0:NORMAL Refresh, 1:1x Refresh, 2:2x Refresh, 3:4x Refresh
 **/
   UINT8                       McRefreshRate;
 
-/** Offset 0x0C49 - Energy Performance Gain
+/** Offset 0x0C41 - Energy Performance Gain
   Enable/disable Energy Performance Gain. <b>0: Disable</b>; 1: Enable
   $EN_DIS
 **/
   UINT8                       EpgEnable;
 
-/** Offset 0x0C4A - RH pTRR LFSR0 Mask
+/** Offset 0x0C42 - RH pTRR LFSR0 Mask
   Row Hammer pTRR LFSR0 Mask, 1/2^(value)
 **/
   UINT8                       Lfsr0Mask;
 
-/** Offset 0x0C4B - User Manual Threshold
+/** Offset 0x0C43 - User Manual Threshold
   Disabled: Predefined threshold will be used.\n
   Enabled: User Input will be used.
   $EN_DIS
 **/
   UINT8                       UserThresholdEnable;
 
-/** Offset 0x0C4C - User Manual Budget
+/** Offset 0x0C44 - User Manual Budget
   Disabled: Configuration of memories will defined the Budget value.\n
   Enabled: User Input will be used.
   $EN_DIS
 **/
   UINT8                       UserBudgetEnable;
 
-/** Offset 0x0C4D - Opportunistic Self Refresh
+/** Offset 0x0C45 - Opportunistic Self Refresh
   Enable\Disable Opportunistic Self Refresh.
   0:Disabled, 1:Enabled
 **/
   UINT8                       OpportunisticSref;
 
-/** Offset 0x0C4E - Power Down Mode
+/** Offset 0x0C46 - Power Down Mode
   This option controls command bus tristating during idle periods
   0x0:No Power Down, 0x1:APD, 0x6:PPD DLL OFF, 0xFF:Auto
 **/
   UINT8                       PowerDownMode;
 
-/** Offset 0x0C4F - Pwr Down Idle Timer
+/** Offset 0x0C47 - Pwr Down Idle Timer
   The minimum value should = to the worst case Roundtrip delay + Burst_Length. 0 means
   AUTO: 64 for ULX/ULT, 128 for DT/Halo
 **/
   UINT8                       PwdwnIdleCounter;
 
-/** Offset 0x0C50 - Page Close Idle Timeout
+/** Offset 0x0C48 - Page Close Idle Timeout
   This option controls Page Close Idle Timeout
   0:Enabled, 1:Disabled
 **/
   UINT8                       DisPgCloseIdleTimeout;
 
-/** Offset 0x0C51 - Bitmask of ranks that have CA bus terminated
+/** Offset 0x0C49 - Bitmask of ranks that have CA bus terminated
   Offset 225 LPDDR4: Bitmask of ranks that have CA bus terminated. <b>0x01=Default,
   Rank0 is terminating and Rank1 is non-terminating</b>
 **/
   UINT8                       CmdRanksTerminated;
 
-/** Offset 0x0C52 - PcdSerialDebugLevel
+/** Offset 0x0C4A - PcdSerialDebugLevel
   Serial Debug Message Level. 0:Disable, 1:Error Only, 2:Error & Warnings, 3:Load,
   Error, Warnings & Info, 4:Load, Error, Warnings, Info & Event, 5:Load, Error, Warnings,
   Info & Verbose.
@@ -4411,7 +4425,7 @@ typedef struct {
 **/
   UINT8                       PcdSerialDebugLevel;
 
-/** Offset 0x0C53 - MRC Safe Mode Override
+/** Offset 0x0C4B - MRC Safe Mode Override
   SafeModeOverride[0] Enable DdrSafeMode override, SafeModeOverride[1] Enable McSafeMode
   override, SafeModeOverride[2] Enable MrcSafeMode override, SafeModeOverride[3]
   Enable Training Algorithm (TrainingEnables) safe mode override, SafeModeOverride[4]
@@ -4419,19 +4433,19 @@ typedef struct {
 **/
   UINT8                       SafeModeOverride;
 
-/** Offset 0x0C54 - MRC Safe Mode Support
+/** Offset 0x0C4C - MRC Safe Mode Support
   MrcSafeMode[0]: Safe Frequency, MrcSafeMode[1]: Safe Gear, SafeMode[2]: Safe VCC
   IOG/CLK, SafeMode[3]: Safe VCC DDQ
 **/
   UINT8                       MrcSafeMode;
 
-/** Offset 0x0C55 - Retrain On Working Channel
+/** Offset 0x0C4D - Retrain On Working Channel
   Enables/Disable Retrain On Working Channel feature
   $EN_DIS
 **/
   UINT8                       RetrainToWorkingChannel;
 
-/** Offset 0x0C56 - DDR Phy Safe Mode Support
+/** Offset 0x0C4E - DDR Phy Safe Mode Support
   DdrSafeMode[0]: Basic PM Features, DdrSafeMode[1]: Spine Gating, DdrSafeMode[2]:
   Advanced DCC, DdrSafeMode[3]: R2R Training, DdrSafeMode[4]: Transformer Mode, DdrSafeMode[5]:
   PLL Operation, DdrSafeMode[6]: Safe ODT/SenseAmp Timing, DdrSafeMode[7]: Vtt Termination,
@@ -4439,7 +4453,7 @@ typedef struct {
 **/
   UINT16                      DdrSafeMode;
 
-/** Offset 0x0C58 - Mc Safe Mode Support
+/** Offset 0x0C50 - Mc Safe Mode Support
   McSafeMode[0]: Clk Gate / BGF, McSafeMode[1]: CKE Pdwn, McSafeMode[2]: Tristate,
   McSafeMode[3]: PHY Power States / Clock Spine, McSafeMode[4]: Same Rank TA, McSafeMode[5]:
   Different Rank TA, McSafeMode[6]: MR4_Period / ZQCAL_Period McSafeMode[7]: LP5
@@ -4448,94 +4462,94 @@ typedef struct {
 **/
   UINT16                      McSafeMode;
 
-/** Offset 0x0C5A - Board Stack Up
+/** Offset 0x0C52 - Board Stack Up
   0: Typical, 1: Frequency Limited
 **/
   UINT8                       BoardStackUp;
 
-/** Offset 0x0C5B - Ask MRC to clear memory content
+/** Offset 0x0C53 - Ask MRC to clear memory content
   Ask MRC to clear memory content <b>0: Do not Clear Memory;</b> 1: Clear Memory.
   $EN_DIS
 **/
   UINT8                       CleanMemory;
 
-/** Offset 0x0C5C - TCSS USB Port Enable
+/** Offset 0x0C54 - TCSS USB Port Enable
   Bitmap for per port enabling
 **/
   UINT8                       UsbTcPortEnPreMem;
 
-/** Offset 0x0C5D - Power Down Mode
+/** Offset 0x0C55 - Power Down Mode
   This option controls command bus tristating during idle periods
   0x0:Enable, 0x1:Disable, 0x2:Auto
 **/
   UINT8                       PwDownMode;
 
-/** Offset 0x0C5E - Post Code Output Port
+/** Offset 0x0C56 - Post Code Output Port
   This option configures Post Code Output Port
 **/
   UINT16                      PostCodeOutputPort;
 
-/** Offset 0x0C60 - Enable/Disable I2cPostcode
+/** Offset 0x0C58 - Enable/Disable I2cPostcode
   Enable (Default): Postcode via I2C, Disable: Postcode via Port80
   $EN_DIS
 **/
   UINT8                       I2cPostCodeEnable;
 
-/** Offset 0x0C61 - RMTLoopCount
+/** Offset 0x0C59 - RMTLoopCount
   Specifies the Loop Count to be used during Rank Margin Tool Testing. 0 - AUTO
 **/
   UINT8                       RMTLoopCount;
 
-/** Offset 0x0C62 - Enable/Disable SA CRID
+/** Offset 0x0C5A - Enable/Disable SA CRID
   Enable: SA CRID, Disable (Default): SA CRID
   $EN_DIS
 **/
   UINT8                       CridEnable;
 
-/** Offset 0x0C63
+/** Offset 0x0C5B
 **/
   UINT8                       UnusedUpdSpace3;
 
-/** Offset 0x0C64 - Pwr Down Idle Timer
+/** Offset 0x0C5C - Pwr Down Idle Timer
   Default 0 = AUTO. Range is 30 to 2000(in us)
 **/
   UINT16                      PwDownIdleTimer;
 
-/** Offset 0x0C66
+/** Offset 0x0C5E
 **/
   UINT8                       UnusedUpdSpace4[2];
 
-/** Offset 0x0C68 - BCLK RFI Frequency
+/** Offset 0x0C60 - BCLK RFI Frequency
   Bclk RFI Frequency for each SAGV point in Hz units. 98000000Hz = 98MHz <b>0 - No
   RFI Tuning</b>. Range is 98Mhz-100Mhz.
 **/
   UINT32                      BclkRfiFreq[4];
 
-/** Offset 0x0C78 - Size of PCIe IMR.
+/** Offset 0x0C70 - Size of PCIe IMR.
   Size of PCIe IMR in megabytes
 **/
   UINT16                      PcieImrSize;
 
-/** Offset 0x0C7A - Enable PCIe IMR
+/** Offset 0x0C72 - Enable PCIe IMR
   0: Disable(AUTO), 1: Enable
   $EN_DIS
 **/
   UINT8                       PcieImrEnabled;
 
-/** Offset 0x0C7B - Enable PCIe IMR
+/** Offset 0x0C73 - Enable PCIe IMR
   1: PCH PCIE, 2: SA PCIE. If PCIeImrEnabled is TRUE then this will use to select
   the Root port location from PCH PCIe or SA PCIe
   $EN_DIS
 **/
   UINT8                       PcieImrRpLocation;
 
-/** Offset 0x0C7C - Root port number for IMR.
+/** Offset 0x0C74 - Root port number for IMR.
   Root port number for IMR.If PCieImrRpLocation is PCH PCIe then select root port
   from 0 to 23 and if it is SA PCIe then select root port from 0 to 3
 **/
   UINT8                       PcieImrRpSelection;
 
-/** Offset 0x0C7D - SerialDebugMrcLevel
+/** Offset 0x0C75 - SerialDebugMrcLevel
   MRC Serial Debug Message Level. 0:Disable, 1:Error Only, 2:Error & Warnings, 3:Load,
   Error, Warnings & Info, 4:Load, Error, Warnings, Info & Event, 5:Load, Error, Warnings,
   Info & Verbose.
@@ -4544,97 +4558,97 @@ typedef struct {
 **/
   UINT8                       SerialDebugMrcLevel;
 
-/** Offset 0x0C7E - DdrOneDpc
+/** Offset 0x0C76 - DdrOneDpc
   DDR 1DPC performance feature for 2R DIMMs. Can be enabled on DIMM0 or DIMM1 only,
   or on both (default)
   0: Disabled, 1: Enabled on DIMM0 only, 2: Enabled on DIMM1 only, 3: Enabled
 **/
   UINT8                       DdrOneDpc;
 
-/** Offset 0x0C7F - Override Driver Type
+/** Offset 0x0C77 - Override Driver Type
   Override Driver Type. 0=Auto, 1=CMOS, 2=NMOS
 **/
   UINT8                       OverrideDriverType;
 
-/** Offset 0x0C80 - Lp5 Bypass Vddq Limits
+/** Offset 0x0C78 - Lp5 Bypass Vddq Limits
   Bypass Lp5 Vccddq Fuse limits. Advised to keep disabled
 **/
   UINT8                       Lp5BypassVddqLimits;
 
-/** Offset 0x0C81
+/** Offset 0x0C79
 **/
   UINT8                       Rsvd320[1];
 
-/** Offset 0x0C82 - Vddq Voltage Override
+/** Offset 0x0C7A - Vddq Voltage Override
   # is multiple of 1mV where 0 means Auto.
 **/
   UINT16                      VddqVoltageOverride;
 
-/** Offset 0x0C84 - VccIog Voltage Override
+/** Offset 0x0C7C - VccIog Voltage Override
   # is multiple of 1mV where 0 means Auto.
 **/
   UINT16                      VccIogVoltageOverride;
 
-/** Offset 0x0C86 - VccClk Voltage Override
+/** Offset 0x0C7E - VccClk Voltage Override
   # is multiple of 1mV where 0 means Auto.
 **/
   UINT16                      VccClkVoltageOverride;
 
-/** Offset 0x0C88 - Extended Bank Hashing
+/** Offset 0x0C80 - Extended Bank Hashing
   Eanble/Disable ExtendedBankHashing
   $EN_DIS
 **/
   UINT8                       ExtendedBankHashing;
 
-/** Offset 0x0C89 - RH pTRR LFSR1 Mask
+/** Offset 0x0C81 - RH pTRR LFSR1 Mask
   Row Hammer pTRR LFSR1 Mask, 1/2^(value)
 **/
   UINT8                       Lfsr1Mask;
 
-/** Offset 0x0C8A - Refresh Watermarks
+/** Offset 0x0C82 - Refresh Watermarks
   Refresh Watermarks: 0-Low, 1-High (default)
   0:Set Refresh Watermarks to Low, 1:Set Refresh Watermarks to High (Default)
 **/
   UINT8                       RefreshWm;
 
-/** Offset 0x0C8B - Command Pins Mapping
+/** Offset 0x0C83 - Command Pins Mapping
   BitMask where bits [3:0] are Controller 0 Channel [3:0] and bits [7:4] are Controller
   1 Channel [3:0]. 0 = CCC pin mapping is Ascending, 1 = CCC pin mapping is Descending.
 **/
   UINT8                       Lp5CccConfig;
 
-/** Offset 0x0C8C - Command Pins Mirrored
+/** Offset 0x0C84 - Command Pins Mirrored
   BitMask where bits [3:0] are Controller 0 Channel [3:0] and bits [7:4] are Controller
   1 Channel [3:0]. 0 = No Command Mirror and 1 = Command Mirror.
 **/
   UINT8                       CmdMirror;
 
-/** Offset 0x0C8D - Skip override boot mode When Fw Update.
+/** Offset 0x0C85 - Skip override boot mode When Fw Update.
   When set to TRUE and boot mode is BOOT_ON_FLASH_UPDATE, skip setting boot mode to
   BOOT_WITH_FULL_CONFIGURATION in PEI memory init.
   $EN_DIS
 **/
   UINT8                       SiSkipOverrideBootModeWhenFwUpdate;
 
-/** Offset 0x0C8E - Opportunistic Self Refresh IdleTimer
+/** Offset 0x0C86 - Opportunistic Self Refresh IdleTimer
   Default 0 = AUTO. Range is 500 to 10000(in us)
 **/
   UINT16                      OppSrefIdleTmr;
 
-/** Offset 0x0C90 - LowerBasicMemTestSize
+/** Offset 0x0C88 - LowerBasicMemTestSize
   Reduce BasicMemoryTest size WA: 0(Default)=Disable, 1=Enable
   $EN_DIS
 **/
   UINT8                       LowerBasicMemTestSize;
 
-/** Offset 0x0C91 - Board Topology
+/** Offset 0x0C89 - Board Topology
   0: Daisy, 1: Tee
 **/
   UINT8                       BoardTopology;
 
-/** Offset 0x0C92
+/** Offset 0x0C8A
 **/
-  UINT8                       MrcFspmUpdRsvd[16];
+  UINT8                       MrcFspmUpdRsvd[24];
 
 /** Offset 0x0CA2 - PPR Test Type
   Select memory tests used in Post Package Repair flow. This option is only valid
@@ -4759,8 +4773,8 @@ typedef struct {
   UINT8                       PprRunAtFastboot;
 
 /** Offset 0x0D11 - PPR Repair Type
-  PPR Repair Type: 0:Do not Repair, 1:Soft Repair, 2:Hard Repair (Default)
-  0:Do not Repair, 1:Soft Repair, 2:Hard Repair (Default)
+  PPR Repair Type: 0:Do not Repair (Default), 1:Soft Repair, 2:Hard Repair
+  0:Do not Repair (Default), 1:Soft Repair, 2:Hard Repair
 **/
   UINT8                       PprRepairType;
 
@@ -4776,9 +4790,54 @@ typedef struct {
 **/
   UINT8                       PprForceRepair;
 
-/** Offset 0x0D14
+/** Offset 0x0D14 - PPR Repair Controller
+  PPR repair controller: User chooses to force repair specifc address
 **/
-  UINT8                       SaFspmUpdRsvd[44];
+  UINT8                       PprRepairController;
+
+/** Offset 0x0D15 - PPR Repair Channel
+  PPR repair Channel: User chooses to force repair specifc address
+**/
+  UINT8                       PprRepairChannel;
+
+/** Offset 0x0D16 - PPR Repair Dimm
+  PPR repair Dimm: User chooses to force repair specifc address
+**/
+  UINT8                       PprRepairDimm;
+
+/** Offset 0x0D17 - PPR Repair Rank
+  PPR repair Rank: User chooses to force repair specifc address
+**/
+  UINT8                       PprRepairRank;
+
+/** Offset 0x0D18 - PPR Repair Row
+  PPR repair Row: User chooses to force repair specifc address
+**/
+  UINT32                      PprRepairRow;
+
+/** Offset 0x0D1C - PPR Repair Physical Address Low
+  PPR repair Physical Address Low: User chooses to force repair specifc address
+**/
+  UINT32                      PprRepairPhysicalAddrLow;
+
+/** Offset 0x0D20 - PPR Repair Physical Address High
+  PPR repair Physical Address High: User chooses to force repair specifc address
+**/
+  UINT32                      PprRepairPhysicalAddrHigh;
+
+/** Offset 0x0D24 - PPR Repair BankGroup
+  PPR repair BankGroup: User chooses to force repair specifc address
+**/
+  UINT8                       PprRepairBankGroup;
+
+/** Offset 0x0D25 - PPR Repair Bank
+  PPR repair Bank: User chooses to force repair specifc address
+**/
+  UINT8                       PprRepairBank;
+
+/** Offset 0x0D26
+**/
+  UINT8                       SaFspmUpdRsvd[26];
 
 /** Offset 0x0D40 - TotalFlashSize
   Enable/Disable. 0: Disable, define default value of TotalFlashSize , 1: enable
