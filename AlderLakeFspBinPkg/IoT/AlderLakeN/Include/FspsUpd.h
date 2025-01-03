@@ -2182,9 +2182,12 @@ typedef struct {
 **/
   UINT8                       PcieEqPh3PresetList[11];
 
-/** Offset 0x09DD
+/** Offset 0x09DD - PCIe Clock Gating
+  Describes whether the PCH PCI Express Clock Gating is enabled by platform modules.
+  0: Disable; 1: Enable(Default).
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace29;
+  UINT8                       PchPcieClockGating;
 
 /** Offset 0x09DE - Touch Host Controller Port 0 Hid Over Spi Reset Sequencing Delay [ms]
   Policy control for reset sequencing delay (ACPI _INI, _RST) default 300ms
@@ -2476,68 +2479,75 @@ typedef struct {
 **/
   UINT8                       IehMode;
 
-/** Offset 0x0A81 - PSF Tcc
+/** Offset 0x0A81 - PCIe Power Gating
+  Describes whether the PCH PCI Express Power Gating is enabled by platform modules.
+  0: Disable; 1: Enable(Default).
+  $EN_DIS
+**/
+  UINT8                       PchPciePowerGating;
+
+/** Offset 0x0A82 - PSF Tcc
   Psf Tcc (Time Coordinated Computing) Enable will decrease psf transaction latency
   by disable some psf power management features, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       PsfTccEnable;
 
-/** Offset 0x0A82 - Fusa Display Configuration
+/** Offset 0x0A83 - Fusa Display Configuration
   Fusa (Functional Safety) Enable Fusa Feature on Display, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       DisplayFusaConfigEnable;
 
-/** Offset 0x0A83 - Fusa Graphics Configuration
+/** Offset 0x0A84 - Fusa Graphics Configuration
   Fusa (Functional Safety) Enable Fusa Feature on Graphics, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       GraphicFusaConfigEnable;
 
-/** Offset 0x0A84 - Fusa Opio Configuration
+/** Offset 0x0A85 - Fusa Opio Configuration
   Fusa (Functional Safety) Enable Fusa Feature on Opio, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       OpioFusaConfigEnable;
 
-/** Offset 0x0A85 - Fusa IOP Configuration
+/** Offset 0x0A86 - Fusa IOP Configuration
   Fusa (Functional Safety) Enable Fusa Feature on IOP, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       IopFusaConfigEnable;
 
-/** Offset 0x0A86 - Fusa Psf Configuration
+/** Offset 0x0A87 - Fusa Psf Configuration
   Fusa (Functional Safety) Enable Fusa Feature on Psf, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       PsfFusaConfigEnable;
 
-/** Offset 0x0A87 - Fusa Configuration
+/** Offset 0x0A88 - Fusa Configuration
   Fusa (Functional Safety) Enable Fusa Feature, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       FusaConfigEnable;
 
-/** Offset 0x0A88 - Fusa Run Start Up Array BIST
+/** Offset 0x0A89 - Fusa Run Start Up Array BIST
   Enabling this will execute startup array test during boot, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       FusaRunStartupArrayBist;
 
-/** Offset 0x0A89 - Fusa Run Start Up Scan BIST
+/** Offset 0x0A8A - Fusa Run Start Up Scan BIST
   Enabling this will execute startup scan test during boot, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       FusaRunStartupScanBist;
 
-/** Offset 0x0A8A - Fusa Run Periodic Scan BIST
+/** Offset 0x0A8B - Fusa Run Periodic Scan BIST
   Enabling this will execute periodic scan test during boot, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       FusaRunPeriodicScanBist;
 
-/** Offset 0x0A8B - Fusa Module 0 Lockstep Configuration
+/** Offset 0x0A8C - Fusa Module 0 Lockstep Configuration
   Enable/Disable Lockstep for Atom module 0, which has 4 cores; 0: Disable lockstep;
   1: Enable lockstep for Core 0 with Core 1, Core 2 with Core 3; 2: Enable lockstep
   for Core 0 with Core 1; 3: Enable lockstep for Core 2 with Core 3
@@ -2546,7 +2556,7 @@ typedef struct {
 **/
   UINT8                       Module0Lockstep;
 
-/** Offset 0x0A8C - Fusa Module 1 Lockstep Configuration
+/** Offset 0x0A8D - Fusa Module 1 Lockstep Configuration
   Enable/Disable Lockstep for Atom module 1, which has 4 cores; 0: Disable lockstep;
   1: Enable lockstep for Core 0 with Core 1, Core 2 with Core 3; 2: Enable lockstep
   for Core 0 with Core 1; 3: Enable lockstep for Core 2 with Core 3
@@ -2555,233 +2565,237 @@ typedef struct {
 **/
   UINT8                       Module1Lockstep;
 
-/** Offset 0x0A8D - Opio Recentering Ctrl
+/** Offset 0x0A8E - Opio Recentering Ctrl
   Opio Recentering Disabling for Pcie Latency Improvement, 0: Disable, 1: Enable
   $EN_DIS
 **/
   UINT8                       OpioRecenter;
 
-/** Offset 0x0A8E - Thermal Throttling Custimized T0Level Value
+/** Offset 0x0A8F
+**/
+  UINT8                       UnusedUpdSpace29;
+
+/** Offset 0x0A90 - Thermal Throttling Custimized T0Level Value
   Custimized T0Level value.
 **/
   UINT16                      PchT0Level;
 
-/** Offset 0x0A90 - Thermal Throttling Custimized T1Level Value
+/** Offset 0x0A92 - Thermal Throttling Custimized T1Level Value
   Custimized T1Level value.
 **/
   UINT16                      PchT1Level;
 
-/** Offset 0x0A92 - Thermal Throttling Custimized T2Level Value
+/** Offset 0x0A94 - Thermal Throttling Custimized T2Level Value
   Custimized T2Level value.
 **/
   UINT16                      PchT2Level;
 
-/** Offset 0x0A94 - Enable The Thermal Throttle
+/** Offset 0x0A96 - Enable The Thermal Throttle
   Enable the thermal throttle function.
   $EN_DIS
 **/
   UINT8                       PchTTEnable;
 
-/** Offset 0x0A95 - PMSync State 13
+/** Offset 0x0A97 - PMSync State 13
   When set to 1 and the programmed GPIO pin is a 1, then PMSync state 13 will force
   at least T2 state.
   $EN_DIS
 **/
   UINT8                       PchTTState13Enable;
 
-/** Offset 0x0A96 - Thermal Throttle Lock
+/** Offset 0x0A98 - Thermal Throttle Lock
   Thermal Throttle Lock.
   $EN_DIS
 **/
   UINT8                       PchTTLock;
 
-/** Offset 0x0A97 - Thermal Throttling Suggested Setting
+/** Offset 0x0A99 - Thermal Throttling Suggested Setting
   Thermal Throttling Suggested Setting.
   $EN_DIS
 **/
   UINT8                       TTSuggestedSetting;
 
-/** Offset 0x0A98 - Enable PCH Cross Throttling
+/** Offset 0x0A9A - Enable PCH Cross Throttling
   Enable/Disable PCH Cross Throttling
   $EN_DIS
 **/
   UINT8                       TTCrossThrottling;
 
-/** Offset 0x0A99 - DMI Thermal Sensor Autonomous Width Enable
+/** Offset 0x0A9B - DMI Thermal Sensor Autonomous Width Enable
   DMI Thermal Sensor Autonomous Width Enable.
   $EN_DIS
 **/
   UINT8                       PchDmiTsawEn;
 
-/** Offset 0x0A9A - DMI Thermal Sensor Suggested Setting
+/** Offset 0x0A9C - DMI Thermal Sensor Suggested Setting
   DMT thermal sensor suggested representative values.
   $EN_DIS
 **/
   UINT8                       DmiSuggestedSetting;
 
-/** Offset 0x0A9B - Thermal Sensor 0 Target Width
+/** Offset 0x0A9D - Thermal Sensor 0 Target Width
   Thermal Sensor 0 Target Width.
   0:x1, 1:x2, 2:x4, 3:x8, 4:x16
 **/
   UINT8                       DmiTS0TW;
 
-/** Offset 0x0A9C - Thermal Sensor 1 Target Width
+/** Offset 0x0A9E - Thermal Sensor 1 Target Width
   Thermal Sensor 1 Target Width.
   0:x1, 1:x2, 2:x4, 3:x8, 4:x16
 **/
   UINT8                       DmiTS1TW;
 
-/** Offset 0x0A9D - Thermal Sensor 2 Target Width
+/** Offset 0x0A9F - Thermal Sensor 2 Target Width
   Thermal Sensor 2 Target Width.
   0:x1, 1:x2, 2:x4, 3:x8, 4:x16
 **/
   UINT8                       DmiTS2TW;
 
-/** Offset 0x0A9E - Thermal Sensor 3 Target Width
+/** Offset 0x0AA0 - Thermal Sensor 3 Target Width
   Thermal Sensor 3 Target Width.
   0:x1, 1:x2, 2:x4, 3:x8, 4:x16
 **/
   UINT8                       DmiTS3TW;
 
-/** Offset 0x0A9F - Port 0 T1 Multipler
+/** Offset 0x0AA1 - Port 0 T1 Multipler
   Port 0 T1 Multipler.
 **/
   UINT8                       SataP0T1M;
 
-/** Offset 0x0AA0 - Port 0 T2 Multipler
+/** Offset 0x0AA2 - Port 0 T2 Multipler
   Port 0 T2 Multipler.
 **/
   UINT8                       SataP0T2M;
 
-/** Offset 0x0AA1 - Port 0 T3 Multipler
+/** Offset 0x0AA3 - Port 0 T3 Multipler
   Port 0 T3 Multipler.
 **/
   UINT8                       SataP0T3M;
 
-/** Offset 0x0AA2 - Port 0 Tdispatch
+/** Offset 0x0AA4 - Port 0 Tdispatch
   Port 0 Tdispatch.
 **/
   UINT8                       SataP0TDisp;
 
-/** Offset 0x0AA3 - Port 1 T1 Multipler
+/** Offset 0x0AA5 - Port 1 T1 Multipler
   Port 1 T1 Multipler.
 **/
   UINT8                       SataP1T1M;
 
-/** Offset 0x0AA4 - Port 1 T2 Multipler
+/** Offset 0x0AA6 - Port 1 T2 Multipler
   Port 1 T2 Multipler.
 **/
   UINT8                       SataP1T2M;
 
-/** Offset 0x0AA5 - Port 1 T3 Multipler
+/** Offset 0x0AA7 - Port 1 T3 Multipler
   Port 1 T3 Multipler.
 **/
   UINT8                       SataP1T3M;
 
-/** Offset 0x0AA6 - Port 1 Tdispatch
+/** Offset 0x0AA8 - Port 1 Tdispatch
   Port 1 Tdispatch.
 **/
   UINT8                       SataP1TDisp;
 
-/** Offset 0x0AA7 - Port 0 Tinactive
+/** Offset 0x0AA9 - Port 0 Tinactive
   Port 0 Tinactive.
 **/
   UINT8                       SataP0Tinact;
 
-/** Offset 0x0AA8 - Port 0 Alternate Fast Init Tdispatch
+/** Offset 0x0AAA - Port 0 Alternate Fast Init Tdispatch
   Port 0 Alternate Fast Init Tdispatch.
   $EN_DIS
 **/
   UINT8                       SataP0TDispFinit;
 
-/** Offset 0x0AA9 - Port 1 Tinactive
+/** Offset 0x0AAB - Port 1 Tinactive
   Port 1 Tinactive.
 **/
   UINT8                       SataP1Tinact;
 
-/** Offset 0x0AAA - Port 1 Alternate Fast Init Tdispatch
+/** Offset 0x0AAC - Port 1 Alternate Fast Init Tdispatch
   Port 1 Alternate Fast Init Tdispatch.
   $EN_DIS
 **/
   UINT8                       SataP1TDispFinit;
 
-/** Offset 0x0AAB - Sata Thermal Throttling Suggested Setting
+/** Offset 0x0AAD - Sata Thermal Throttling Suggested Setting
   Sata Thermal Throttling Suggested Setting.
   $EN_DIS
 **/
   UINT8                       SataThermalSuggestedSetting;
 
-/** Offset 0x0AAC - Enable Memory Thermal Throttling
+/** Offset 0x0AAE - Enable Memory Thermal Throttling
   Enable Memory Thermal Throttling.
   $EN_DIS
 **/
   UINT8                       PchMemoryThrottlingEnable;
 
-/** Offset 0x0AAD - Memory Thermal Throttling
+/** Offset 0x0AAF - Memory Thermal Throttling
   Enable Memory Thermal Throttling.
 **/
   UINT8                       PchMemoryPmsyncEnable[2];
 
-/** Offset 0x0AAF - Enable Memory Thermal Throttling
+/** Offset 0x0AB1 - Enable Memory Thermal Throttling
   Enable Memory Thermal Throttling.
 **/
   UINT8                       PchMemoryC0TransmitEnable[2];
 
-/** Offset 0x0AB1 - Enable Memory Thermal Throttling
+/** Offset 0x0AB3 - Enable Memory Thermal Throttling
   Enable Memory Thermal Throttling.
 **/
   UINT8                       PchMemoryPinSelection[2];
 
-/** Offset 0x0AB3
+/** Offset 0x0AB5
 **/
   UINT8                       UnusedUpdSpace30;
 
-/** Offset 0x0AB4 - Thermal Device Temperature
+/** Offset 0x0AB6 - Thermal Device Temperature
   Decides the temperature.
 **/
   UINT16                      PchTemperatureHotLevel;
 
-/** Offset 0x0AB6 - USB2 Port Over Current Pin
+/** Offset 0x0AB8 - USB2 Port Over Current Pin
   Describe the specific over current pin number of USB 2.0 Port N.
 **/
   UINT8                       Usb2OverCurrentPin[16];
 
-/** Offset 0x0AC6 - USB3 Port Over Current Pin
+/** Offset 0x0AC8 - USB3 Port Over Current Pin
   Describe the specific over current pin number of USB 3.0 Port N.
 **/
   UINT8                       Usb3OverCurrentPin[10];
 
-/** Offset 0x0AD0 - Enable xHCI LTR override
+/** Offset 0x0AD2 - Enable xHCI LTR override
   Enables override of recommended LTR values for xHCI
   $EN_DIS
 **/
   UINT8                       PchUsbLtrOverrideEnable;
 
-/** Offset 0x0AD1 - Touch Host Controller Mode
+/** Offset 0x0AD3 - Touch Host Controller Mode
   Switch between Intel THC protocol and Industry standard HID Over SPI protocol. 0x0:Thc, 0x1:Hid
 **/
   UINT8                       ThcMode[2];
 
-/** Offset 0x0AD3
+/** Offset 0x0AD5
 **/
-  UINT8                       UnusedUpdSpace31;
+  UINT8                       UnusedUpdSpace31[3];
 
-/** Offset 0x0AD4 - xHCI High Idle Time LTR override
+/** Offset 0x0AD8 - xHCI High Idle Time LTR override
   Value used for overriding LTR recommendation for xHCI High Idle Time LTR setting
 **/
   UINT32                      PchUsbLtrHighIdleTimeOverride;
 
-/** Offset 0x0AD8 - xHCI Medium Idle Time LTR override
+/** Offset 0x0ADC - xHCI Medium Idle Time LTR override
   Value used for overriding LTR recommendation for xHCI Medium Idle Time LTR setting
 **/
   UINT32                      PchUsbLtrMediumIdleTimeOverride;
 
-/** Offset 0x0ADC - xHCI Low Idle Time LTR override
+/** Offset 0x0AE0 - xHCI Low Idle Time LTR override
   Value used for overriding LTR recommendation for xHCI Low Idle Time LTR setting
 **/
   UINT32                      PchUsbLtrLowIdleTimeOverride;
 
-/** Offset 0x0AE0 - Enable 8254 Static Clock Gating
+/** Offset 0x0AE4 - Enable 8254 Static Clock Gating
   Set 8254CGE=1 is required for SLP_S0 support. However, set 8254CGE=1 in POST time
   might fail to boot legacy OS using 8254 timer. Make sure it is disabled to support
   legacy OS using 8254 timer. Also enable this while S0ix is enabled.
@@ -2789,7 +2803,7 @@ typedef struct {
 **/
   UINT8                       Enable8254ClockGating;
 
-/** Offset 0x0AE1 - Enable 8254 Static Clock Gating On S3
+/** Offset 0x0AE5 - Enable 8254 Static Clock Gating On S3
   This is only applicable when Enable8254ClockGating is disabled. FSP will do the
   8254 CGE programming on S3 resume when Enable8254ClockGatingOnS3 is enabled. This
   avoids the SMI requirement for the programming.
@@ -2797,7 +2811,7 @@ typedef struct {
 **/
   UINT8                       Enable8254ClockGatingOnS3;
 
-/** Offset 0x0AE2 - Enable TCO timer.
+/** Offset 0x0AE6 - Enable TCO timer.
   When FALSE, it disables PCH ACPI timer, and stops TCO timer. NOTE: This will have
   huge power impact when it's enabled. If TCO timer is disabled, uCode ACPI timer
   emulation must be enabled, and WDAT table must not be exposed to the OS.
@@ -2805,45 +2819,45 @@ typedef struct {
 **/
   UINT8                       EnableTcoTimer;
 
-/** Offset 0x0AE3 - Enable Timed GPIO 0.
+/** Offset 0x0AE7 - Enable Timed GPIO 0.
   When FALSE, it disables Timed GPIO 0.
   $EN_DIS
 **/
   UINT8                       EnableTimedGpio0;
 
-/** Offset 0x0AE4 - Enable Timed GPIO 1.
+/** Offset 0x0AE8 - Enable Timed GPIO 1.
   When FALSE, it disables Timed GPIO 1.
   $EN_DIS
 **/
   UINT8                       EnableTimedGpio1;
 
-/** Offset 0x0AE5 - Hybrid Storage Detection and Configuration Mode
+/** Offset 0x0AE9 - Hybrid Storage Detection and Configuration Mode
   Enables support for Hybrid storage devices. 0: Disabled; 1: Dynamic Configuration.
   Default is 0: Disabled
   0: Disabled, 1: Dynamic Configuration
 **/
   UINT8                       HybridStorageMode;
 
-/** Offset 0x0AE6 - CPU Root Port used for Hybrid Storage
+/** Offset 0x0AEA - CPU Root Port used for Hybrid Storage
   Specifies the CPU root port used for Hybrid storage.
 **/
   UINT8                       CpuRootportUsedForHybridStorage;
 
-/** Offset 0x0AE7 - PCH Root Port used for Hybrid Storage when two lanes are connected to CPU
+/** Offset 0x0AEB - PCH Root Port used for Hybrid Storage when two lanes are connected to CPU
   Specifies PCH Root Port used for Hybrid Storage when two lanes are connected to CPU.
 **/
   UINT8                       PchRootportUsedForCpuAttach;
 
-/** Offset 0x0AE8 - PCH GPE event handler
+/** Offset 0x0AEC - PCH GPE event handler
   Enabled _L6D ACPI handler. PME GPE is shared by multiple devices So BIOS must verify
   the same in the ASL handler by reading offset for PMEENABLE and PMESTATUS bit
   $EN_DIS
 **/
   UINT8                       PchAcpiL6dPmeHandling;
 
-/** Offset 0x0AE9
+/** Offset 0x0AED
 **/
-  UINT8                       UnusedUpdSpace32[7];
+  UINT8                       UnusedUpdSpace32[3];
 
 /** Offset 0x0AF0 - BgpdtHash[4]
   BgpdtHash values
