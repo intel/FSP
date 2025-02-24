@@ -1143,7 +1143,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PcieEqPh3PreCursorList         10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieEqPh3PostCursorList        10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieEqPh3PresetList            11 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PchPcieClockGating              1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ThcPort0HidResetSequencingDelay   2 bytes    $_DEFAULT_ = 0x12C
         $gPlatformFspPkgTokenSpaceGuid_PcieEqPh1DownstreamPortTransmitterPreset   4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_PcieEqPh1UpstreamPortTransmitterPreset   4 bytes    $_DEFAULT_ = 0x0
@@ -1195,6 +1195,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_SataRstPcieDeviceResetDelay     3 bytes    $_DEFAULT_ = 100, 100, 100
         $gPlatformFspPkgTokenSpaceGuid_UfsEnable                       2 bytes    $_DEFAULT_ = 0, 0
         $gPlatformFspPkgTokenSpaceGuid_IehMode                         1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PchPciePowerGating              1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PsfTccEnable                    1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_DisplayFusaConfigEnable         1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_GraphicFusaConfigEnable         1 bytes    $_DEFAULT_ = 0x01
@@ -1208,6 +1209,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_Module0Lockstep                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Module1Lockstep                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_OpioRecenter                    1 bytes    $_DEFAULT_ = 0x01
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchT0Level                      2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_PchT1Level                      2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_PchT2Level                      2 bytes    $_DEFAULT_ = 0x0000
@@ -1245,7 +1247,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_Usb3OverCurrentPin             10 bytes    $_DEFAULT_ = 0x00, 0x00, 0x01, 0x01, 0x02, 0x02, 0x03, 0x03, 0x04, 0x04
         $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrOverrideEnable         1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_ThcMode                         2 bytes    $_DEFAULT_ = 0x0, 0x0
-        Skip 1 bytes
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrHighIdleTimeOverride   4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrMediumIdleTimeOverride   4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PchUsbLtrLowIdleTimeOverride    4 bytes    $_DEFAULT_ = 0x00000000
@@ -1258,7 +1260,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuRootportUsedForHybridStorage   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchRootportUsedForCpuAttach     1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchAcpiL6dPmeHandling           1 bytes    $_DEFAULT_ = 0x0
-        Skip 7 bytes
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes
@@ -5518,6 +5520,8 @@ Page "PCH (Post-Mem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcieEqPh3PresetList, "PCIe preset list", HEX,
         Help "Provide a list of presets to be used during phase 3 EQ"
              "Valid range: 0 ~ 0x3F3F3F3F3F3F3F3F3F3F3F"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchPcieClockGating, "PCIe Clock Gating", &EN_DIS,
+        Help "Describes whether the PCH PCI Express Clock Gating is enabled by platform modules. 0: Disable; 1: Enable(Default)."
     EditNum $gPlatformFspPkgTokenSpaceGuid_ThcPort0HidResetSequencingDelay, "Touch Host Controller Port 0 Hid Over Spi Reset Sequencing Delay [ms]", HEX,
         Help "Policy control for reset sequencing delay (ACPI _INI, _RST) default 300ms"
              "Valid range: 0 ~ 0xFFFF"
@@ -5645,6 +5649,8 @@ Page "PCH (Post-Mem)"
         Help "PCIe Storage Device Reset Delay in milliseconds. Default value is 100ms"
     Combo $gPlatformFspPkgTokenSpaceGuid_IehMode, "IEH Mode", &gPlatformFspPkgTokenSpaceGuid_IehMode,
         Help "Integrated Error Handler Mode, 0: Bypass, 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PchPciePowerGating, "PCIe Power Gating", &EN_DIS,
+        Help "Describes whether the PCH PCI Express Power Gating is enabled by platform modules. 0: Disable; 1: Enable(Default)."
     Combo $gPlatformFspPkgTokenSpaceGuid_PsfTccEnable, "PSF Tcc", &EN_DIS,
         Help "Psf Tcc (Time Coordinated Computing) Enable will decrease psf transaction latency by disable some psf power management features, 0: Disable, 1: Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_DisplayFusaConfigEnable, "Fusa Display Configuration", &EN_DIS,

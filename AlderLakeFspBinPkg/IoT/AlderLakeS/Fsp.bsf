@@ -996,7 +996,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VmdMemBar1Attr                  1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdMemBarSize2                  1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdMemBar2Attr                  1 bytes    $_DEFAULT_ = 0x00
-        Skip 3 bytes
+        $gPlatformFspPkgTokenSpaceGuid_VmdHotPlug                      1 bytes    $_DEFAULT_ = 0x00
+        Skip 6 bytes
         $gPlatformFspPkgTokenSpaceGuid_VmdVariablePtr                  4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdCfgBarBase                   4 bytes    $_DEFAULT_ = 0xA0000000
         $gPlatformFspPkgTokenSpaceGuid_VmdMemBar1Base                  4 bytes    $_DEFAULT_ = 0xA2000000
@@ -1285,7 +1286,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuRootportUsedForHybridStorage   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchRootportUsedForCpuAttach     1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchAcpiL6dPmeHandling           1 bytes    $_DEFAULT_ = 0x0
-        Skip 5 bytes
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes
@@ -6171,6 +6172,8 @@ Page "USB-C/Thunderbolt (Post-Mem)"
              "Valid range: 12 ~ 47"
     Combo $gPlatformFspPkgTokenSpaceGuid_VmdMemBar2Attr, "VMD Mem Bar2 Attributes", &gPlatformFspPkgTokenSpaceGuid_VmdMemBar2Attr,
         Help "0: VMD_32BIT_NONPREFETCH, 1: VMD_64BIT_NONPREFETCH(Default), 2: VMD_64BIT_PREFETCH"
+    Combo $gPlatformFspPkgTokenSpaceGuid_VmdHotPlug, "Enable VMD HotPlug", &EN_DIS,
+        Help "Enable/disable to VMD HotPlug.0: Disable(Default); 1: Enable"
     EditNum $gPlatformFspPkgTokenSpaceGuid_VmdVariablePtr, "VMD Variable", HEX,
         Help "VMD Variable Pointer."
              "Valid range: 0x00 ~ 0xFFFFFFFF"
