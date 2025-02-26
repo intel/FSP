@@ -1,0 +1,2 @@
+# ArrowLakeFspBinPkg/IoT/ArrowLakeUH
+These FSP binaries are intended to be used with  Embedded/IoT SKUs of the Intel® Core™ Ultra Processors for Edge platforms (Formerly known as Arrow Lake - UH). Please consult ArrowLakeFspBinPkg/README.md for more information on how to select the correct FSP binary to use.
