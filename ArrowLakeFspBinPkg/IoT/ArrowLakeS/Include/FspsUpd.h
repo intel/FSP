@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2024, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2025, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -4574,7 +4574,11 @@ typedef struct {
 
 /** Offset 0x1F48
 **/
-  UINT8                       Rsvd440[4];
+  UINT8                       PlatformReliabilityTuning;
+
+/** Offset 0x1F49
+**/
+  UINT8                       Rsvd440[3];
 
 /** Offset 0x1F4C - FspEventHandler
   <b>Optional</b> pointer to the boot loader's implementation of FSP_EVENT_HANDLER.
