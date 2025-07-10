@@ -4,7 +4,7 @@
 # PCD database.
 #
 # @copyright
-# Copyright (c) 2020 - 2021, Intel Corporation. All rights reserved.<BR>
+# Copyright (c) 2020 - 2025, Intel Corporation. All rights reserved.<BR>
 #
 # SPDX-License-Identifier: BSD-2-Clause-Patent
 ##
@@ -81,3 +81,5 @@
   gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesCapability
   gUefiCpuPkgTokenSpaceGuid.PcdCpuFeaturesSetting
 
+[BuildOptions]
+  GCC:*_*_*_CC_FLAGS = -Wno-unused-function
