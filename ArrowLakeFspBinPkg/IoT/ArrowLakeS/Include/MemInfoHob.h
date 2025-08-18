@@ -4,13 +4,12 @@
   data hobs.
 
 @copyright
-  Copyright (c) 1999 - 2025, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 1999 - 2025, Intel Corporation. All rights reserved.
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
 @par Specification Reference:
 **/
-
 #ifndef _MEM_INFO_HOB_H_
 #define _MEM_INFO_HOB_H_
 
@@ -285,6 +284,8 @@ typedef struct {
   UINT16            PprDetectedErrors;                 ///< PPR: Counts of detected bad rows
   UINT16            PprRepairFails;                    ///< PPR: Counts of repair failure
   UINT16            PprForceRepairStatus;              ///< PPR: Force Repair Status
+  BOOLEAN           MemorySpeedReducedWrongDimmSlot;   ///< Can be used by OEM BIOS to display a warning on the screen that DDR speed was reduced due to wrong DIMM population
+  BOOLEAN           MemorySpeedReducedMixedConfig;     ///< Can be used by OEM BIOS to display a warning on the screen that DDR speed was reduced due to mixed DIMM config
 } MEMORY_INFO_DATA_HOB;
 
 /**

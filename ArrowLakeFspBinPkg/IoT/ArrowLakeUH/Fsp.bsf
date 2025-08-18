@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2024, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2025, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -214,7 +214,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_lp5GlitchWAEnable               1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_TxVrefOverride                  2 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IsForceCkdBypass                1 bytes    $_DEFAULT_ = 0x00
-        Skip 55 bytes
+        $gPlatformFspPkgTokenSpaceGuid_VendorForceDdr5G4               1 bytes    $_DEFAULT_ = 0x0
+        $gPlatformFspPkgTokenSpaceGuid_Ddr5WrLvlMinLimit               1 bytes    $_DEFAULT_ = 0x00
+        Skip 53 bytes
         $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv                          2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_RefClk                          1 bytes    $_DEFAULT_ = 0x00
         Skip 1 bytes
@@ -562,7 +564,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_NpuAdaptiveVoltage              2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_NpuVoltageOffset                2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_MaxVoltageLimitNew             18 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
-        Skip 50 bytes
+        $gPlatformFspPkgTokenSpaceGuid_ForcePcoreResidency             1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_VrLimitBypass                   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_TurboThermalProtection          1 bytes    $_DEFAULT_ = 0x01
+        Skip 47 bytes
         $gPlatformFspPkgTokenSpaceGuid_BiosGuard                       1 bytes    $_DEFAULT_ = 0x01
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_Txt                             1 bytes    $_DEFAULT_ = 0x00
@@ -765,7 +770,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_IbeccProtectedRegionMask       16 bytes    $_DEFAULT_ = 0xFF,0x3F,0xFF,0x3F,0xFF,0x3F,0xFF,0x3F,0xFF,0x3F,0xFF,0x3F,0xFF,0x3F,0xFF,0x3F
         $gPlatformFspPkgTokenSpaceGuid_IbeccProtectedRegionOverallBase  16 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl              1 bytes    $_DEFAULT_ = 0x0
-        Skip 3 bytes
+        $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl1Enable       1 bytes    $_DEFAULT_ = 0x1
+        $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl2Enable       1 bytes    $_DEFAULT_ = 0x1
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjAddrBase             4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjAddrMask             4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjCount                1 bytes    $_DEFAULT_ = 0x1
@@ -2343,6 +2350,11 @@ List &gPlatformFspPkgTokenSpaceGuid_EnableFastVmode
     Selection 1 , " Enable"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_TurboThermalProtection
+    Selection 1 , "Enable"
+    Selection 0 , "Disable"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_PchHdaVcType
     Selection 0 , " VC0"
     Selection 1 , " VC1"
@@ -2443,6 +2455,16 @@ List &gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl
     Selection 3 , "Inject Correctable Error on insertion counter"
     Selection 5 , " Inject Uncorrectable Error Address match"
     Selection 7 , "Inject Uncorrectable Error on insertion counter"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl1Enable
+    Selection 0 , " Disabled"
+    Selection 1 , "Enabled"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl2Enable
+    Selection 0 , " Disabled"
+    Selection 1 , "Enabled"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_RhSelect
@@ -3217,6 +3239,11 @@ Page "Memory Reference Code"
              "Valid range: 0 ~ 975"
     Combo $gPlatformFspPkgTokenSpaceGuid_IsForceCkdBypass, "Force CKD in Bypass Mode", &EN_DIS,
         Help "Enable/Disable Force CKD in Bypass Mode"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_VendorForceDdr5G4, "VendorForceDdr5G4", HEX,
+        Help "Default = 0. Range from 0-2"
+             "Valid range: 0x0 ~ 0x10"
+    Combo $gPlatformFspPkgTokenSpaceGuid_Ddr5WrLvlMinLimit, "Increase External Coarse WrLvl sweep", &EN_DIS,
+        Help "Enable/Disable Increase two extra clocks to External Coarse WrLvl sweep"
     Combo $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv, "Vdd2Mv", &gPlatformFspPkgTokenSpaceGuid_Vdd2Mv,
         Help "VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc. "
     Combo $gPlatformFspPkgTokenSpaceGuid_RefClk, "Memory Reference Clock", &gPlatformFspPkgTokenSpaceGuid_RefClk,
@@ -3870,7 +3897,7 @@ Page "Memory Reference Code"
         Help "Array for the Per Atom Cluster Max OC Ratio"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MaxVoltageLimit, "OC Max Voltage limits", HEX,
-        Help "DEPRECATED. OC Max Voltage limits"
+        Help "OC Max Voltage limits"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_CorePllCurrentRefTuningOffset, "Core PLL Current Reference Tuning Offset", HEX,
         Help "Core PLL Current Reference Tuning Offset. <b>0: No offset</b>. Range 0-15"
@@ -3885,22 +3912,28 @@ Page "Memory Reference Code"
         Help "This configuration can be used only when OC is enabled,user can either use legacy num of cores option or the OC specific per core disable configuration. <b>0: Disable</b>, 1: Enable"
              "Valid range: 0x0 ~ 0x1"
     EditNum $gPlatformFspPkgTokenSpaceGuid_NpuMaxOcRatio, "Maximum Npu turbo ratio override", HEX,
-        Help "Maximum Npu turbo ratio override allows to increase NPU frequency beyond the fused max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-120"
+        Help "DEPRECATED. Maximum Npu turbo ratio override allows to increase NPU frequency beyond the fused max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-120"
              "Valid range: 0x00 ~ 0x55"
     Combo $gPlatformFspPkgTokenSpaceGuid_NpuVoltageMode, "NPU voltage mode", &EN_DIS,
-        Help "NPU voltage mode; <b>0: Adaptive</b>; 1: Override."
+        Help "DEPRECATED. NPU voltage mode; <b>0: Adaptive</b>; 1: Override."
     EditNum $gPlatformFspPkgTokenSpaceGuid_NpuVoltageOverride, "NPU voltage override", HEX,
-        Help "The NPU voltage override which is applied to the entire range of cpu NPU frequencies. Valid Range 0 to 2000"
+        Help "DEPRECATED. The NPU voltage override which is applied to the entire range of cpu NPU frequencies. Valid Range 0 to 2000"
              "Valid range: 0x00 ~ 0x7D0"
     EditNum $gPlatformFspPkgTokenSpaceGuid_NpuAdaptiveVoltage, "adaptive voltage applied during turbo frequencies", HEX,
-        Help "0(Default)=Minimal, 2000=Maximum"
+        Help "DEPRECATED. 0(Default)=Minimal, 2000=Maximum"
              "Valid range: 0x00 ~ 0x7D0"
     EditNum $gPlatformFspPkgTokenSpaceGuid_NpuVoltageOffset, "NPU Turbo voltage Offset", HEX,
-        Help "The voltage offset applied to the NPU while operating in turbo mode. Valid Range 0 to 1000"
+        Help "DEPRECATED. The voltage offset applied to the NPU while operating in turbo mode. Valid Range 0 to 1000"
              "Valid range: 0x00 ~ 0x3E8"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MaxVoltageLimitNew, "OC Max Voltage limits", HEX,
-        Help "OC Max Voltage limits"
+        Help "DEPRECATED. OC Max Voltage limits"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ForcePcoreResidency, "Force Pcore Residency", &EN_DIS,
+        Help "Enable/Disable Force Pcore Residency. <b>0: Disable</b>; 1: Enable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_VrLimitBypass, "VR Limit Bypass", &EN_DIS,
+        Help "Enable/Disable VR Limit Bypass. <b>0: Disable</b>; 1: Enable."
+    Combo $gPlatformFspPkgTokenSpaceGuid_TurboThermalProtection, "Turbo Thermal Protection", &gPlatformFspPkgTokenSpaceGuid_TurboThermalProtection,
+        Help "This control allow user to disable Turbo Thermal Protection (TTP) for overclocking. <b>1: Enable</b>; 0: Disable"
     Combo $gPlatformFspPkgTokenSpaceGuid_BiosGuard, "BiosGuard", &EN_DIS,
         Help "Enable/Disable. 0: Disable, Enable/Disable BIOS Guard feature, 1: enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_Txt, "Txt", &EN_DIS,
@@ -4103,6 +4136,10 @@ Page "Memory Reference Code"
         Help "IBECC Protected Region Bases based on enabled IBECC instance"
              "Valid range: 0x00 ~ 0xFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl, "IbeccEccInjControl", &gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl,
+        Help "IBECC Error Injection Control"
+    Combo $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl1Enable, "IbeccEccInjControl1Enable", &gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl1Enable,
+        Help "IBECC Error Injection Control"
+    Combo $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl2Enable, "IbeccEccInjControl2Enable", &gPlatformFspPkgTokenSpaceGuid_IbeccEccInjControl2Enable,
         Help "IBECC Error Injection Control"
     EditNum $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjAddrBase, "IbeccEccInjAddrBase", HEX,
         Help "Address to match against for ECC error injection. Example: 1 = 32MB, 2 = 64MB"

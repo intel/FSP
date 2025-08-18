@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2024, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2025, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -863,9 +863,20 @@ typedef struct {
 **/
   UINT8                       IsForceCkdBypass;
 
-/** Offset 0x01C9
+/** Offset 0x01C9 - VendorForceDdr5G4
+  Default = 0. Range from 0-2
 **/
-  UINT8                       Rsvd036[55];
+  UINT8                       VendorForceDdr5G4;
+
+/** Offset 0x01CA - Increase External Coarse WrLvl sweep
+  Enable/Disable Increase two extra clocks to External Coarse WrLvl sweep
+  $EN_DIS
+**/
+  UINT8                       Ddr5WrLvlMinLimit;
+
+/** Offset 0x01CB
+**/
+  UINT8                       Rsvd036[53];
 
 /** Offset 0x0200 - Vdd2Mv
   VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc.
@@ -2897,7 +2908,7 @@ typedef struct {
   UINT8                       PerAtomClusterMaxRatio[8];
 
 /** Offset 0x07A4 - OC Max Voltage limits
-  DEPRECATED. OC Max Voltage limits
+  OC Max Voltage limits
 **/
   UINT16                      MaxVoltageLimit[8];
 
@@ -2923,41 +2934,61 @@ typedef struct {
   UINT8                       PerCoreDisableConfiguration;
 
 /** Offset 0x07B8 - Maximum Npu turbo ratio override
-  Maximum Npu turbo ratio override allows to increase NPU frequency beyond the fused
-  max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-120
+  DEPRECATED. Maximum Npu turbo ratio override allows to increase NPU frequency beyond
+  the fused max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-120
 **/
   UINT8                       NpuMaxOcRatio;
 
 /** Offset 0x07B9 - NPU voltage mode
-  NPU voltage mode; <b>0: Adaptive</b>; 1: Override.
+  DEPRECATED. NPU voltage mode; <b>0: Adaptive</b>; 1: Override.
   $EN_DIS
 **/
   UINT8                       NpuVoltageMode;
 
 /** Offset 0x07BA - NPU voltage override
-  The NPU voltage override which is applied to the entire range of cpu NPU frequencies.
-  Valid Range 0 to 2000
+  DEPRECATED. The NPU voltage override which is applied to the entire range of cpu
+  NPU frequencies. Valid Range 0 to 2000
 **/
   UINT16                      NpuVoltageOverride;
 
 /** Offset 0x07BC - adaptive voltage applied during turbo frequencies
-  0(Default)=Minimal, 2000=Maximum
+  DEPRECATED. 0(Default)=Minimal, 2000=Maximum
 **/
   UINT16                      NpuAdaptiveVoltage;
 
 /** Offset 0x07BE - NPU Turbo voltage Offset
-  The voltage offset applied to the NPU while operating in turbo mode. Valid Range 0 to 1000
+  DEPRECATED. The voltage offset applied to the NPU while operating in turbo mode.
+  Valid Range 0 to 1000
 **/
   UINT16                      NpuVoltageOffset;
 
 /** Offset 0x07C0 - OC Max Voltage limits
-  OC Max Voltage limits
+  DEPRECATED. OC Max Voltage limits
 **/
   UINT16                      MaxVoltageLimitNew[9];
 
-/** Offset 0x07D2
+/** Offset 0x07D2 - Force Pcore Residency
+  Enable/Disable Force Pcore Residency. <b>0: Disable</b>; 1: Enable.
+  $EN_DIS
 **/
-  UINT8                       CpuFspmUpdRsvd[50];
+  UINT8                       ForcePcoreResidency;
+
+/** Offset 0x07D3 - VR Limit Bypass
+  Enable/Disable VR Limit Bypass. <b>0: Disable</b>; 1: Enable.
+  $EN_DIS
+**/
+  UINT8                       VrLimitBypass;
+
+/** Offset 0x07D4 - Turbo Thermal Protection
+  This control allow user to disable Turbo Thermal Protection (TTP) for overclocking.
+  <b>1: Enable</b>; 0: Disable
+  1:Enable, 0:Disable
+**/
+  UINT8                       TurboThermalProtection;
+
+/** Offset 0x07D5
+**/
+  UINT8                       CpuFspmUpdRsvd[47];
 
 /** Offset 0x0804 - BiosGuard
   Enable/Disable. 0: Disable, Enable/Disable BIOS Guard feature, 1: enable
@@ -4086,9 +4117,21 @@ typedef struct {
 **/
   UINT8                       IbeccEccInjControl;
 
-/** Offset 0x0BE5
+/** Offset 0x0BE5 - IbeccEccInjControl1Enable
+  IBECC Error Injection Control
+  0: Disabled, 1:Enabled
 **/
-  UINT8                       UnusedUpdSpace0[3];
+  UINT8                       IbeccEccInjControl1Enable;
+
+/** Offset 0x0BE6 - IbeccEccInjControl2Enable
+  IBECC Error Injection Control
+  0: Disabled, 1:Enabled
+**/
+  UINT8                       IbeccEccInjControl2Enable;
+
+/** Offset 0x0BE7
+**/
+  UINT8                       UnusedUpdSpace0;
 
 /** Offset 0x0BE8 - IbeccEccInjAddrBase
   Address to match against for ECC error injection. Example: 1 = 32MB, 2 = 64MB

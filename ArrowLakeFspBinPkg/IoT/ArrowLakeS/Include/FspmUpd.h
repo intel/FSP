@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2024, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2025, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -2902,7 +2902,7 @@ typedef struct {
   UINT8                       PerAtomClusterMaxRatio[8];
 
 /** Offset 0x07AC - OC Max Voltage limits
-  DEPRECATED. OC Max Voltage limits
+  OC Max Voltage limits
 **/
   UINT16                      MaxVoltageLimit[8];
 
@@ -2928,35 +2928,36 @@ typedef struct {
   UINT8                       PerCoreDisableConfiguration;
 
 /** Offset 0x07C0 - Maximum Npu turbo ratio override
-  Maximum Npu turbo ratio override allows to increase NPU frequency beyond the fused
-  max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-120
+  DEPRECATED. Maximum Npu turbo ratio override allows to increase NPU frequency beyond
+  the fused max turbo ratio limit. <b>0: Hardware defaults.</b>  Range: 0-120
 **/
   UINT8                       NpuMaxOcRatio;
 
 /** Offset 0x07C1 - NPU voltage mode
-  NPU voltage mode; <b>0: Adaptive</b>; 1: Override.
+  DEPRECATED. NPU voltage mode; <b>0: Adaptive</b>; 1: Override.
   $EN_DIS
 **/
   UINT8                       NpuVoltageMode;
 
 /** Offset 0x07C2 - NPU voltage override
-  The NPU voltage override which is applied to the entire range of cpu NPU frequencies.
-  Valid Range 0 to 2000
+  DEPRECATED. The NPU voltage override which is applied to the entire range of cpu
+  NPU frequencies. Valid Range 0 to 2000
 **/
   UINT16                      NpuVoltageOverride;
 
 /** Offset 0x07C4 - adaptive voltage applied during turbo frequencies
-  0(Default)=Minimal, 2000=Maximum
+  DEPRECATED. 0(Default)=Minimal, 2000=Maximum
 **/
   UINT16                      NpuAdaptiveVoltage;
 
 /** Offset 0x07C6 - NPU Turbo voltage Offset
-  The voltage offset applied to the NPU while operating in turbo mode. Valid Range 0 to 1000
+  DEPRECATED. The voltage offset applied to the NPU while operating in turbo mode.
+  Valid Range 0 to 1000
 **/
   UINT16                      NpuVoltageOffset;
 
 /** Offset 0x07C8 - OC Max Voltage limits
-  OC Max Voltage limits
+  DEPRECATED. OC Max Voltage limits
 **/
   UINT16                      MaxVoltageLimitNew[9];
 
@@ -2972,9 +2973,16 @@ typedef struct {
 **/
   UINT8                       VrLimitBypass;
 
-/** Offset 0x07DC
+/** Offset 0x07DC - Turbo Thermal Protection
+  This control allow user to disable Turbo Thermal Protection (TTP) for overclocking.
+  <b>1: Enable</b>; 0: Disable
+  1:Enable, 0:Disable
 **/
-  UINT8                       CpuFspmUpdRsvd[48];
+  UINT8                       TurboThermalProtection;
+
+/** Offset 0x07DD
+**/
+  UINT8                       CpuFspmUpdRsvd[47];
 
 /** Offset 0x080C - BiosGuard
   Enable/Disable. 0: Disable, Enable/Disable BIOS Guard feature, 1: enable
