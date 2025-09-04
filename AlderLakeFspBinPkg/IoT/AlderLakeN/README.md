@@ -6,4 +6,3 @@ ASL - Intel Atom® x7000RE & x7000C Processor Series
 TWL - Intel® Processor N150 & N250, Intel® Core™ 3 Processor N355
 
 ADL-N/ASL/TWL are sharing the same FSP binaries.
-Although this release targets ASL MR4 and TWL MR1, it remains applicable to ADL-N as well.
