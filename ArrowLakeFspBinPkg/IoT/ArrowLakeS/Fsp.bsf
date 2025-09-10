@@ -213,7 +213,8 @@ StructDef
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_TxVrefOverride                  2 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IsForceCkdBypass                1 bytes    $_DEFAULT_ = 0x00
-        Skip 59 bytes
+        $gPlatformFspPkgTokenSpaceGuid_CaParityForCmd                  1 bytes    $_DEFAULT_ = 0x02
+        Skip 58 bytes
         $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv                          2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_RefClk                          1 bytes    $_DEFAULT_ = 0x00
         Skip 1 bytes
@@ -2076,6 +2077,12 @@ List &gPlatformFspPkgTokenSpaceGuid_SpdProfileSelected
     Selection 6 , "XMP User Profile 5"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_CaParityForCmd
+    Selection 0 , " Disable"
+    Selection 1 , " Enable"
+    Selection 2 , " Auto"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_Vdd2Mv
     Selection 0 , "Default"
     Selection 1200 , "1.20 Volts"
@@ -3220,6 +3227,8 @@ Page "Memory Reference Code"
              "Valid range: 0 ~ 975"
     Combo $gPlatformFspPkgTokenSpaceGuid_IsForceCkdBypass, "Force CKD in Bypass Mode", &EN_DIS,
         Help "Enable/Disable Force CKD in Bypass Mode"
+    Combo $gPlatformFspPkgTokenSpaceGuid_CaParityForCmd, "Use CA Parity for CMDT/CMDV for RMT and training", &gPlatformFspPkgTokenSpaceGuid_CaParityForCmd,
+        Help "0: Use legacy funtional CMD test, 1: Use CA Parity for CMDT/CMDV for RMT and training, 2: Auto"
     Combo $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv, "Vdd2Mv", &gPlatformFspPkgTokenSpaceGuid_Vdd2Mv,
         Help "VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc. "
     Combo $gPlatformFspPkgTokenSpaceGuid_RefClk, "Memory Reference Clock", &gPlatformFspPkgTokenSpaceGuid_RefClk,

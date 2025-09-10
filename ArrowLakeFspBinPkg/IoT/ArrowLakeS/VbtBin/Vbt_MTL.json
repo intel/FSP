@@ -5479,7 +5479,7 @@
           "Block": {
             "Id": "27",
             "Name": "eDP Power Sequencing",
-            "SizeInBytes": "817",
+            "SizeInBytes": "853",
             "BlockIdSizeInBytes": "1",
             "BlockSizeSizeInBytes": "2",
             "StartOffset": "",
@@ -8748,6 +8748,125 @@
               },
               {
                 "Name": "eDP_DSC_Feature_16",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "SKIP",
+                "SizeInBits": "272",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_01",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_02",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_03",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_04",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_05",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_06",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_07",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_08",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_09",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_10",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_11",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_12",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_13",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_14",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_15",
+                "SizeInBits": "1",
+                "ByteOffset": "",
+                "BitOffset": "",
+                "Value": ""
+              },
+              {
+                "Name": "eDP_Pipe_Joiner_Feature_16",
                 "SizeInBits": "1",
                 "ByteOffset": "",
                 "BitOffset": "",
@@ -25934,7 +26053,7 @@
             "PageID": [
               {
                 "WidgetType": "Label",
-                "WidgetName": "PLATFORM: MeteorLake",
+                "WidgetName": "PLATFORM: MeteorLake/ArrowLake",
                 "Visibility": "",
                 "Data": [],
                 "HelpText": "",
@@ -25942,7 +26061,7 @@
               },
               {
                 "WidgetType": "Label",
-                "WidgetName": "VBT Version: 256",
+                "WidgetName": "VBT Version: 261",
                 "Visibility": "",
                 "Data": [],
                 "HelpText": "",
@@ -29290,6 +29409,26 @@
                             ]
                           },
                           {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_01"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
                             "WidgetType": "Button",
                             "WidgetName": "Power Features",
                             "Visibility": "",
@@ -30283,6 +30422,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_01"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -30296,36 +30455,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_01"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -30351,7 +30482,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -30886,6 +31017,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_02"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -31884,6 +32035,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_02"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -31897,36 +32068,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_02"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -31952,7 +32095,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -32487,6 +32630,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_03"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -33485,6 +33648,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_03"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -33498,36 +33681,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_03"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -33553,7 +33708,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -34088,6 +34243,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_04"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -35086,6 +35261,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_04"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -35099,36 +35294,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_04"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -35154,7 +35321,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -35689,6 +35856,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_05"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -36687,6 +36874,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_05"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -36700,36 +36907,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_05"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -36755,7 +36934,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -37290,6 +37469,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_06"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -38288,6 +38487,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_06"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -38301,36 +38520,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_06"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -38356,7 +38547,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -38891,6 +39082,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_07"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -39889,6 +40100,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_07"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -39902,36 +40133,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_07"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -39957,7 +40160,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -40492,6 +40695,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_08"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -41490,6 +41713,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_08"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -41503,36 +41746,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_08"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -41558,7 +41773,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -42093,6 +42308,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_09"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -43091,6 +43326,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_09"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -43104,36 +43359,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_09"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -43159,7 +43386,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -43694,6 +43921,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_10"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -44692,6 +44939,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_10"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -44705,36 +44972,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_10"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -44760,7 +44999,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -45295,6 +45534,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_11"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -46293,6 +46552,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_11"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -46306,36 +46585,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_11"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -46361,7 +46612,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -46896,6 +47147,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_12"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -47894,6 +48165,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_12"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -47907,36 +48198,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_12"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -47962,7 +48225,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -48497,6 +48760,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_13"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -49495,6 +49778,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_13"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -49508,36 +49811,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_13"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -49563,7 +49838,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -50098,6 +50373,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_14"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -51096,6 +51391,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_14"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -51109,36 +51424,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_14"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -51164,7 +51451,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -51699,6 +51986,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_15"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -52697,6 +53004,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_15"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -52710,36 +53037,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_15"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -52765,7 +53064,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -53300,6 +53599,26 @@
                               },
                               {
                                 "Key": "Enabled",
+                                "Value": "0"
+                              }
+                            ]
+                          },
+                          {
+                            "WidgetType": "ComboBox",
+                            "WidgetName": "                eDP Pipe Joiner Feature: ",
+                            "Visibility": "",
+                            "Data": [
+                              "27",
+                              "eDP_Pipe_Joiner_Feature_16"
+                            ],
+                            "HelpText": "This feature when set to yes, will enable Pipe Joiner feature for eDP display. Please note: Feature is only supported in ARL platform and Not supported in pre-OS.",
+                            "WidgetValues": [
+                              {
+                                "Key": "Enabled",
+                                "Value": "1"
+                              },
+                              {
+                                "Key": "Disabled",
                                 "Value": "0"
                               }
                             ]
@@ -54298,6 +54617,26 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
+                                  "WidgetName": "Brightness Control Selection: ",
+                                  "Visibility": "",
+                                  "Data": [
+                                    "43",
+                                    "Lfp_Pwm_Source_Selection_16"
+                                  ],
+                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'Brightness Control Selection' will be used",
+                                  "WidgetValues": [
+                                    {
+                                      "Key": "PWM From Display Engine/AUX default",
+                                      "Value": "2"
+                                    },
+                                    {
+                                      "Key": "Legacy VESA eDP AUX Interface",
+                                      "Value": "5"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "WidgetType": "ComboBox",
                                   "WidgetName": "Inverter Type: ",
                                   "Visibility": "",
                                   "Data": [
@@ -54311,36 +54650,8 @@
                                       "Value": "0"
                                     },
                                     {
-                                      "Key": "PWM",
+                                      "Key": "PWM/Internal",
                                       "Value": "2"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "WidgetType": "ComboBox",
-                                  "WidgetName": "        Pwm Source Selection: ",
-                                  "Visibility": "",
-                                  "Data": [
-                                    "43",
-                                    "Lfp_Pwm_Source_Selection_16"
-                                  ],
-                                  "HelpText": "If panel supports 'Intel HDR AUX Interface', it will always be chosen by default. If not, value in 'PWM Source Selection' will be used",
-                                  "WidgetValues": [
-                                    {
-                                      "Key": "PWM From Display Engine",
-                                      "Value": "2"
-                                    },
-                                    {
-                                      "Key": "PWM From LCD Panel",
-                                      "Value": "3"
-                                    },
-                                    {
-                                      "Key": "Panel Driver Interface",
-                                      "Value": "4"
-                                    },
-                                    {
-                                      "Key": "VESA eDP AUX Interface",
-                                      "Value": "5"
                                     }
                                   ]
                                 },
@@ -54366,7 +54677,7 @@
                                 },
                                 {
                                   "WidgetType": "ComboBox",
-                                  "WidgetName": "Inverter Polarity: ",
+                                  "WidgetName": "        Inverter Polarity: ",
                                   "Visibility": "",
                                   "Data": [
                                     "43",
@@ -55413,26 +55724,6 @@
                                 "Value": "0"
                               }
                             ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP1_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
-                                "Value": "0"
-                              }
-                            ]
                           }
                         ],
                         "NestedPages": [
@@ -56295,26 +56586,6 @@
                               },
                               {
                                 "Key": "No",
-                                "Value": "0"
-                              }
-                            ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP2_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
@@ -57183,26 +57454,6 @@
                                 "Value": "0"
                               }
                             ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP3_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
-                                "Value": "0"
-                              }
-                            ]
                           }
                         ],
                         "NestedPages": [
@@ -58065,26 +58316,6 @@
                               },
                               {
                                 "Key": "No",
-                                "Value": "0"
-                              }
-                            ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP4_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
@@ -58953,26 +59184,6 @@
                                 "Value": "0"
                               }
                             ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP5_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
-                                "Value": "0"
-                              }
-                            ]
                           }
                         ],
                         "NestedPages": [
@@ -59835,26 +60046,6 @@
                               },
                               {
                                 "Key": "No",
-                                "Value": "0"
-                              }
-                            ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP6_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
