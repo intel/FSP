@@ -42,6 +42,17 @@
 ///
 typedef UINT32 GPIO_PAD;
 
+//
+// PCH:InternalOnlyBegin
+//
+// Keep GPIO pad values above 0x80000000 as reserved for platform code.
+// Used for RVP IO expander only.
+// Do not use this range with GPIO library functions.
+//
+#define GPIO_PAD_USER  0x80000000
+//
+// PCH:InternalOnlyEnd
+//
 
 ///
 /// For any GpioGroup usage in code use GPIO_GROUP type
@@ -114,6 +125,23 @@ typedef struct {
   UINT32 RsvdBits          : 17;    ///< Reserved bits for future extension
 } GPIO_CONFIG;
 
+//
+// PCH:RestrictedBegin
+//
+// Values for each setting below is built in following way:
+//
+// Seting0_BIT0 :  0 - leave Setting0 unchanged
+//                 1 - program Setting0
+// Seting0_BITx, (y>x>0) - value to write if BIT0 = 1.
+//
+// Seting1_BIT(x_max+1) : 0 - leave Setting1 unchanged
+//                        1 - program Setting1
+// Seting1_BITy, (y>x_max+1) - value to write if Seting1_BIT(x_max+1) = 1.
+//
+// This allows Settin0 to be OR'ed with Setting1 and store in one variable.
+//
+// PCH:RestrictedEnd
+//
 
 typedef enum {
   GpioHardwareDefault        = 0x0    ///< Leave setting unmodified

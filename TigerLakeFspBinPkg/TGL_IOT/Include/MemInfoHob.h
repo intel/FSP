@@ -3,15 +3,34 @@
   Memory S3 Save data, Memory Info data and Memory Platform
   data hobs.
 
-  @copyright
-  Copyright (c) 1999 - 2020, Intel Corporation. All rights reserved.<BR>
-  This program and the accompanying materials are licensed and made available under
-  the terms and conditions of the BSD License that accompanies this distribution.
-  The full text of the license may be found at
-  http://opensource.org/licenses/bsd-license.php.
+@copyright
+  INTEL CONFIDENTIAL
+  Copyright 1999 - 2020 Intel Corporation.
 
-  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
-  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+  The source code contained or described herein and all documents related to the
+  source code ("Material") are owned by Intel Corporation or its suppliers or
+  licensors. Title to the Material remains with Intel Corporation or its suppliers
+  and licensors. The Material may contain trade secrets and proprietary and
+  confidential information of Intel Corporation and its suppliers and licensors,
+  and is protected by worldwide copyright and trade secret laws and treaty
+  provisions. No part of the Material may be used, copied, reproduced, modified,
+  published, uploaded, posted, transmitted, distributed, or disclosed in any way
+  without Intel's prior express written permission.
+
+  No license under any patent, copyright, trade secret or other intellectual
+  property right is granted to or conferred upon you by disclosure or delivery
+  of the Materials, either expressly, by implication, inducement, estoppel or
+  otherwise. Any license under such intellectual property rights must be
+  express and approved by Intel in writing.
+
+  Unless otherwise agreed by Intel in writing, you may not remove or alter
+  this notice or any other notice embedded in Materials by Intel or
+  Intel's suppliers or licensors in any way.
+
+  This file contains an 'Intel Peripheral Driver' and is uniquely identified as
+  "Intel Reference Module" and is licensed for Intel CPUs and chipsets under
+  the terms of your license agreement with Intel or your vendor. This file may
+  be modified by the user, subject to additional terms of the license agreement.
 
 @par Specification Reference:
 **/
@@ -26,9 +45,15 @@ extern EFI_GUID gSiMemoryPlatformDataGuid;
 
 #define MAX_TRACE_CACHE_TYPE  3
 
+#ifndef CPU_TGL
+#define MAX_NODE        1
+#define MAX_CH          2
+#define MAX_DIMM        2
+#else
 #define MAX_NODE        2
 #define MAX_CH          4
 #define MAX_DIMM        2
+#endif // #ifndef CPU_TGL
 
 ///
 /// Host reset states from MRC.
@@ -272,6 +297,13 @@ typedef struct {
   UINT32            GttBase;
   UINT32            MmioSize;
   UINT32            PciEBaseAddress;
+//
+// CPU:RestrictedBegin
+//
+  UINT32            SharedMailboxBase;
+//
+// CPU:RestrictedEnd
+//
   PSMI_MEM_INFO     PsmiInfo[MAX_TRACE_CACHE_TYPE];
 } MEMORY_PLATFORM_DATA;
 

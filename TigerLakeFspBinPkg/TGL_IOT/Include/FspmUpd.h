@@ -3685,14 +3685,965 @@ typedef struct {
 **/
   UINT16                      LctCmdEyeWidth;
 
-/** Offset 0x0968
+/** Offset 0x0968 - Data Link Feature Exchange
+  Data Link Feature Exchange. Disabled(0x0)(Default): Disable , Enabled(0x1): Enable
+  0:Disable, 1:Enable
 **/
-  UINT8                       UnusedUpdSpace31[1];
+  UINT8                       CpuPcieRpDataLinkFeatureExchange;
 
 /** Offset 0x0969
 **/
   UINT8                       ReservedFspmUpd2[7];
 } FSP_M_CONFIG;
+
+/** Fsp M Restricted Configuration
+**/
+typedef struct {
+
+/** Offset 0x0970
+**/
+  UINT32                      Signature;
+
+/** Offset 0x0974 - Sa Sv Remap Base Override
+  SvRemapBaseOverride
+**/
+  UINT16                      SaSvRemapBaseOverride;
+
+/** Offset 0x0976 - Sa System Agent ClockGating Enable
+  SystemAgentClockGatingEnable
+**/
+  UINT8                       SaSystemAgentClockGatingEnable;
+
+/** Offset 0x0977 - Sa Pcie Pll Shutdown Enable
+  PciePllShutdownEnable
+**/
+  UINT8                       CpuPciePllShutdownEnable;
+
+/** Offset 0x0978 - Sa SV_DMI_GEN1_halt
+  SV_DMI_GEN1_halt
+**/
+  UINT8                       SaSV_DMI_GEN1_halt;
+
+/** Offset 0x0979 - Sa SV_nFTS_DMI_auto
+  SV_nFTS_DMI_auto
+**/
+  UINT8                       SaSV_nFTS_DMI_auto;
+
+/** Offset 0x097A - Sa Sv DMI_nFTS
+  SvDMI_nFTS
+**/
+  UINT8                       SaSvDMI_nFTS;
+
+/** Offset 0x097B - Sa nFTS_auto
+  nFTS_auto
+**/
+  UINT8                       SanFTS_auto;
+
+/** Offset 0x097C - Sa SvPEG_nFTS
+  SvPEG_nFTS
+**/
+  UINT8                       SaSvPEG_nFTS[4];
+
+/** Offset 0x0980 - Sa SvPEG_gen3_ccFTS
+  SvPEG_gen3_ccFTS
+**/
+  UINT8                       SaSvPEG_gen3_ccFTS[4];
+
+/** Offset 0x0984 - Sa SvPEG_gen3_nccFTS
+  SvPEG_gen3_nccFTS
+**/
+  UINT8                       SaSvPEG_gen3_nccFTS[4];
+
+/** Offset 0x0988 - Sa nFTS_gen3_auto
+  nFTS_gen3_auto
+**/
+  UINT8                       SanFTS_gen3_auto;
+
+/** Offset 0x0989 - Sa SVIAER
+  SVIAER
+**/
+  UINT8                       SaSVIAER;
+
+/** Offset 0x098A - Sa Sv Scrambler Dmi
+  SvScramblerDmi
+**/
+  UINT8                       SaSvScramblerDmi;
+
+/** Offset 0x098B - Sa Sv Dmi Serr
+  SvDmiSerr
+**/
+  UINT8                       SaSvDmiSerr;
+
+/** Offset 0x098C - Sa Sv Scrambler Peg
+  SvScramblerPeg
+**/
+  UINT8                       SaSvScramblerPeg[4];
+
+/** Offset 0x0990 - Sa Sv Scrambler Peg Gen3
+  SvScramblerPegGen3
+**/
+  UINT8                       SaSvScramblerPegGen3[4];
+
+/** Offset 0x0994 - Sa Sv Peg Serr
+  SvPegSerr
+**/
+  UINT8                       SaSvPegSerr[4];
+
+/** Offset 0x0998 - Sa Test Tx ClkGating
+  TestTxClkGating
+**/
+  UINT8                       SaTestTxClkGating;
+
+/** Offset 0x0999 - Sa Test Rx ClkGating
+  TestRxClkGating
+**/
+  UINT8                       SaTestRxClkGating;
+
+/** Offset 0x099A - Sa Test Low Pwr Mode
+  TestLowPwrMode
+**/
+  UINT8                       SaTestLowPwrMode;
+
+/** Offset 0x099B - Sa Sr Mode
+  SrMode
+**/
+  UINT8                       SaSrMode;
+
+/** Offset 0x099C - Sa Sr Seq
+  SrSeq
+**/
+  UINT8                       SaSrSeq;
+
+/** Offset 0x099D - Sa Burst Spacing
+  BurstSpacing
+**/
+  UINT8                       SaBurstSpacing;
+
+/** Offset 0x099E - SvPolicyEnable
+  Enable: SV policy is enabled, Disable(Default): SV policy is disabled
+  $EN_DIS
+**/
+  UINT8                       SaRestrictedSvPolicyEnable;
+
+/** Offset 0x099F - Cpu Sv Boot Mode
+  0: Auto (Default), 1: Commercial boot mode, 2: SV boot mode, 3: SV boot JTAG mode
+  with SB loop, 4: SV boot JTAG mode without SB loop
+  0: Auto , 1: Commercial boot mode, 2: SV boot mode, 3: SV boot JTAG mode with SB
+  loop, 4: SV boot JTAG mode without SB loop
+**/
+  UINT8                       SaCpuSvBootMode;
+
+/** Offset 0x09A0 - XML CLI Enable
+  Enable: XML CLI is enabled, Disble(Default): XML CLI is disabled
+  $EN_DIS
+**/
+  UINT8                       XmlCliEnable;
+
+/** Offset 0x09A1 - LoadValidationFv
+  Enable: Enable loading of ValidationFV, Disable(Default)
+  $EN_DIS
+**/
+  UINT8                       LoadValidationFv;
+
+/** Offset 0x09A2 - Sa Test Sample Part Status Override
+  0-Passthrough,  1-Production part,  2-Preproduction part
+**/
+  UINT8                       SaTestSamplePartStatusOverride;
+
+/** Offset 0x09A3 - Sa Graphics Pei Test WOPCM Size
+  0: 1MB, 1(Default): 2MB, 2: 4MB, 3: 8MB
+  0: 1MB, 1: 2MB, 2: 4MB, 3: 8MB
+**/
+  UINT8                       SaTestWOPCMSize;
+
+/** Offset 0x09A4 - Sa Test Dmi Cap Reg Lock
+  DMI Capability Register Lock
+**/
+  UINT8                       SaTestDmiCapRegLock;
+
+/** Offset 0x09A5 - Sa Test Dmi Max Payload Size
+  DMI Max Payload Size
+**/
+  UINT8                       SaTestDmiMaxPayloadSize;
+
+/** Offset 0x09A6 - Sa Pcie VcLim Lock
+  Lock bit
+**/
+  UINT8                       CpuPcieVcLimLock;
+
+/** Offset 0x09A7 - Sa Pcie VCm Cmp Lim
+  VCm Completions override
+**/
+  UINT8                       CpuPcieVCmCmpLim;
+
+/** Offset 0x09A8 - Sa Pcie VCm PLim
+  posted VCm Requests override
+**/
+  UINT8                       CpuPcieVCmPLim;
+
+/** Offset 0x09A9 - Sa Pcie VCm NpLim
+  non-posted VCm Requests override
+**/
+  UINT8                       CpuPcieVCmNpLim;
+
+/** Offset 0x09AA - Prefetch NonPrefetch Ratio
+  0: All prefetch, 1: Seven of Eight Prefetch, 2: Three of Four Prefetch, 3: Half
+  Prefetch Half Non-Prefetch(Default), 4: Three of Four Non-Prefetch, 5: Seven of
+  Eight Prefetch, 6: All Non-prefetch
+  0: All prefetch, 1: Seven of Eight Prefetch, 2: Three of Four Prefetch, 3: Half
+  Prefetch Half Non-Prefetch, 4: Three of Four Non-Prefetch, 5: Seven of Eight Prefetch,
+  6: All Non-prefetch
+**/
+  UINT8                       PrefetchNonPrefetchRatio;
+
+/** Offset 0x09AB - SaPreMemRestrictedRsvd
+  Reserved for SA Pre-Mem Restricted
+  $EN_DIS
+**/
+  UINT8                       SaPreMemRestrictedRsvd[16];
+
+/** Offset 0x09BB - PSMI Handler Size
+  0(Default): 0 KB, 1: 256 KB, 2: 512 KB, 3: 1 MB
+  0: 0 KB, 1: 256 KB, 2: 512 KB, 3: 1 MB
+**/
+  UINT8                       PsmiHandlerSize;
+
+/** Offset 0x09BC - Trace Region 0 Size
+  0(Default): No Allocation, 1: 1MB, 2: 2MB, 3: 4 MB, 15:16GB
+  0: No Allocation, 1: 1MB, 2: 2MB, 3: 4 MB, 15:16GB
+**/
+  UINT8                       PsmiTraceRegion0;
+
+/** Offset 0x09BD - Region 0 Cache Type
+  0 (Default): Don't Care, 1: Uncacheable, 2: Write Combine
+  0: Don't Care, 1: Uncacheable, 2: Write Combine
+**/
+  UINT8                       TraceRegion0CacheType;
+
+/** Offset 0x09BE - Trace Region 1 Size
+  0 (Default): No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB
+  0: No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB
+**/
+  UINT8                       PsmiTraceRegion1;
+
+/** Offset 0x09BF - Region 1 Cache Type
+  0 (Default): Don't Care, 1: Uncacheable, 2: Write Combine
+  0: Don't Care, 1: Uncacheable, 2: Write Combine
+**/
+  UINT8                       TraceRegion1CacheType;
+
+/** Offset 0x09C0 - Trace Region 2 Size
+  0 (Default): No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB
+  0: No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB
+**/
+  UINT8                       PsmiTraceRegion2;
+
+/** Offset 0x09C1 - Region 2 Cache Type
+  0 (Default): Don't Care, 1: Uncacheable, 2: Write Combine
+  0: Don't Care, 1: Uncacheable, 2: Write Combine
+**/
+  UINT8                       TraceRegion2CacheType;
+
+/** Offset 0x09C2 - Trace Region 3 Size
+  0 (Default): No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB
+  0: No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB
+**/
+  UINT8                       PsmiTraceRegion3;
+
+/** Offset 0x09C3 - Region 3 Cache Type
+  0 (Default): Don't Care, 1: Uncacheable, 2: Write Combine
+  0: Don't Care, 1: Uncacheable, 2: Write Combine
+**/
+  UINT8                       TraceRegion3CacheType;
+
+/** Offset 0x09C4 - Trace Region 4 Size
+  0 (Default): No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB
+  0: No Allocation, 1:1MB, 2:2MB, 3:4MB, 4:8MB, 15:16GB
+**/
+  UINT8                       PsmiTraceRegion4;
+
+/** Offset 0x09C5 - Region 4 Cache Type
+  0 (Default): Don't Care, 1: Uncacheable, 2: Write Combine
+  0: Don't Care, 1: Uncacheable, 2: Write Combine
+**/
+  UINT8                       TraceRegion4CacheType;
+
+/** Offset 0x09C6
+**/
+  UINT8                       UnusedUpdSpace31[2];
+
+/** Offset 0x09C8 - Fmhc Device LTR
+  FmhcDevLtr
+**/
+  UINT32                      FmhcDevLtr;
+
+/** Offset 0x09CC - Far skip lock
+  FmhcSkipLock
+**/
+  UINT8                       FmhcSkipLock;
+
+/** Offset 0x09CD
+**/
+  UINT8                       UnusedUpdSpace32[3];
+
+/** Offset 0x09D0 - Fmhc CMI Credit control
+  FmhcCcrdc
+**/
+  UINT32                      FmhcCcrdc;
+
+/** Offset 0x09D4 - TwoLm DFX mode
+  DfxMode
+**/
+  UINT8                       DfxMode;
+
+/** Offset 0x09D5 - Far Memory Read Weighted Round Robin
+  FMRWRR
+**/
+  UINT8                       FmRwrr;
+
+/** Offset 0x09D6 - Far Memory Write Weighted Round Robin
+  FMWWRR
+**/
+  UINT8                       FmWwrr;
+
+/** Offset 0x09D7 - Far Memory Weighted Round Robin
+  FMWRR
+**/
+  UINT8                       Fmwrr;
+
+/** Offset 0x09D8 - Storage Weighted Round Robin
+  SWRR
+**/
+  UINT8                       Swrr;
+
+/** Offset 0x09D9
+**/
+  UINT8                       UnusedUpdSpace33;
+
+/** Offset 0x09DA - Partial Write time out in micro sec
+  PartialWriteTimeout
+**/
+  UINT16                      PartialWriteTimeout;
+
+/** Offset 0x09DC - Multipurpose buffer Mode enable/disable
+  1: enable, 0: disable
+  $EN_DIS
+**/
+  UINT8                       MdmEn;
+
+/** Offset 0x09DD - In order execution enable/disable
+  1: enable, 0: disable
+  $EN_DIS
+**/
+  UINT8                       InOrdExe;
+
+/** Offset 0x09DE - Disable 2K read cache
+  1: enable, 0: disable
+  $EN_DIS
+**/
+  UINT8                       Dis2kRdC;
+
+/** Offset 0x09DF
+**/
+  UINT8                       UnusedUpdSpace34;
+
+/** Offset 0x09E0 - Thermal Management Temperature 1
+  TMT1
+**/
+  UINT16                      Tmt1;
+
+/** Offset 0x09E2 - Thermal Management Temperature 2
+  TMT2
+**/
+  UINT16                      Tmt2;
+
+/** Offset 0x09E4 - Dekel Programming
+  Program DEKEL PHY Registers if enabled. Disabled(0x0), Enabled(0x1)(Default)
+  0:Disable, 1:Enable
+**/
+  UINT8                       CpuPcieRpDekelProgramming;
+
+/** Offset 0x09E5 - Dekel Break Point
+  If Enabled, BIOS will hang the system for manual DEKEL recipe verification or load.
+  Disabled(0x0)(Default), Enabled(0x1)
+  0:Disable, 1:Enable
+**/
+  UINT8                       CpuPcieRpDekelBreakPoint;
+
+/** Offset 0x09E6
+**/
+  UINT8                       UnusedUpdSpace35[2];
+
+/** Offset 0x09E8 - MSEG Size
+  MSEG Size. Valid values 0 : 512K , 1 : 1M , 2 : 1.5M , 3 : 2M , 4 : 2.4M , 5 : 3M
+  0 : 512K , 1 : 1M , 2 : 1.5M , 3 : 2M , 4 : 2.4M , 5 : 3M
+**/
+  UINT64                      MsegSize;
+
+/** Offset 0x09F0 - Force TXT Enable
+  Force TXT Enable; 0: disable, 1: enable
+  $EN_DIS
+**/
+  UINT8                       ForceTxtEnable;
+
+/** Offset 0x09F1 - Unlock MCHBAR control registers
+  Unlock MCHBAR control registers; 0: disable, 1: enable
+  $EN_DIS
+**/
+  UINT8                       UnlockMchbarCtrlRegs;
+
+/** Offset 0x09F2 - Xl1el
+  Enable/Disable Xl1el. 0: Disable(Default); 1: Enable
+**/
+  UINT8                       Xl1el[4];
+
+/** Offset 0x09F6 - CpuPreMemRestrictedRsvd
+  Reserved for SA Pre-Mem Restricted
+  $EN_DIS
+**/
+  UINT8                       CpuPreMemRestrictedRsvd[18];
+
+/** Offset 0x0A08 - HECI Communication
+  Test, 0: POR, 1: enable, 2: disable, Disables HECI communication causing ME to enter
+  error state.
+  $EN_DIS
+**/
+  UINT8                       HeciCommunication;
+
+/** Offset 0x0A09 - HECI3 Interface Communication
+  Test, 0: POR, 1: enable, 2: disable, Adds or Removes HECI3 Device from PCI space.
+  $EN_DIS
+**/
+  UINT8                       HeciCommunication3;
+
+/** Offset 0x0A0A - Notification test for Host Reset
+  Test, 0: POR, 1: enable, 2: disable, Enable test for notification when Host Reset
+  $EN_DIS
+**/
+  UINT8                       HostResetNotification;
+
+/** Offset 0x0A0B - Send Manufacturing Reset And Halt On S3 Resume
+  Test, 0: POR, 1: enable, 2: disable, Enable sending Manufacturing Reset and Halt
+  on S3 Resume
+  $EN_DIS
+**/
+  UINT8                       ManufRstAndHaltOnS3Resume;
+
+/** Offset 0x0A0C - ME DID Message
+  Test, 0: disable, 1: enable, Enable/Disable ME DID Message (disable will prevent
+  the DID message from being sent)
+  $EN_DIS
+**/
+  UINT8                       SendDidMsgRestricted;
+
+/** Offset 0x0A0D - MePreMemRestrictedRsvd
+  Reserved for ME Pre-Mem Restricted
+  $EN_DIS
+**/
+  UINT8                       MePreMemRestrictedRsvd[19];
+
+/** Offset 0x0A20 - Force Unlock AES
+  0(Default)=Disable, 1=Enable
+  $EN_DIS
+**/
+  UINT8                       ForceUnlockAes;
+
+/** Offset 0x0A21 - PreMemRestrictedRsvd2
+  Reserved for Pre-Mem RestrictedReserved
+  $EN_DIS
+**/
+  UINT8                       PreMemRestrictedRsvd2[7];
+
+/** Offset 0x0A28 - Asynchronous ODT
+  This option configures the Memory Controler Asynchronous ODT control
+  0:Enabled, 1:Disabled
+**/
+  UINT8                       AsyncOdtDis;
+
+/** Offset 0x0A29 - Command Tristate
+  This option controls command bus tristating during idle periods
+  0:Enabled, 1:Disabled
+**/
+  UINT8                       CmdTriStateDis;
+
+/** Offset 0x0A2A - Time Measure
+  Time Measure: 0(Default)=Disable, 1=Enable
+  $EN_DIS
+**/
+  UINT8                       MrcTimeMeasure;
+
+/** Offset 0x0A2B - DLL Weak Lock Support
+  Enables/Disable DLL Weak Lock Support
+  $EN_DIS
+**/
+  UINT8                       WeaklockEn;
+
+/** Offset 0x0A2C - Force 1 DPC config
+  Enables/Disable Force 1 DPC config
+  $EN_DIS
+**/
+  UINT8                       Force1Dpc;
+
+/** Offset 0x0A2D - Fore Single Rank config
+  Enables/Disable Fore Single Rank config
+  $EN_DIS
+**/
+  UINT8                       ForceSingleRank;
+
+/** Offset 0x0A2E - Strong Weak Leaker
+  Strong Weak Leaker value. 7=def
+**/
+  UINT8                       StrongWkLeaker;
+
+/** Offset 0x0A2F
+**/
+  UINT8                       UnusedUpdSpace36;
+
+/** Offset 0x0A30 - SelfRefresh IdleTimer
+  SelfRefresh IdleTimer, Default is 512
+**/
+  UINT16                      SrefCfgIdleTmr;
+
+/** Offset 0x0A32
+**/
+  UINT8                       MrcRestrictedRsvd0x065A;
+
+/** Offset 0x0A33 - Opportunistic Read
+  Enables/Disable Opportunistic Read (Def= Enable)
+  $EN_DIS
+**/
+  UINT8                       OpportunisticRead;
+
+/** Offset 0x0A34 - Stacked Mode
+  Memory Stacked Mode Support (Def = Disable)
+  $EN_DIS
+**/
+  UINT8                       MemStackMode;
+
+/** Offset 0x0A35 - Stacked Mode Ch Bit
+  Channel hash bit used during Stacked Mode(Def= BIT28)
+  0:BIT28, 1:BIT29, 2:BIT30, 3:BIT31, 4:BIT32, 5:BIT33, 6:BIT34
+**/
+  UINT8                       StackModeChBit;
+
+/** Offset 0x0A36 - Low Memory Channel
+  Selecting which Physical Channel is mapped to low memory.
+  0:Channel A, 1:Channel B
+**/
+  UINT8                       LowMemChannel;
+
+/** Offset 0x0A37 - Cycle Bypass Support
+  Enables/Disable Cycle Bypass Support(Def=Disable)
+  $EN_DIS
+**/
+  UINT8                       Disable2CycleBypass;
+
+/** Offset 0x0A38 - MC Register Offset
+  Apply user offsets to select MC registers(Def=Disable)
+  $EN_DIS
+**/
+  UINT8                       MCREGOFFSET;
+
+/** Offset 0x0A39 - CA Vref Ctl Offset
+  Offset to be applied to DDRDATA7CH1_CR_DDRCRVREFADJUST1.CAVref
+  0:-12,1:-11, 2:-10, 3:-9, 4:-8, 5:-7, 6:-6, 7:-5, 8:-4, 9:-3, 10:-2, 11:-1, 12:0,
+  13:+1, 14:+2, 15:+3, 16:+4, 17:+5, 18:+6, 19:+7, 20:+8, 21:+9, 22:+10, 23:+11,
+  24:+12, 0xFF:RANDOM
+**/
+  UINT8                       CAVrefCtlOffset;
+
+/** Offset 0x0A3A - Ch0 DQ Vref Ctrl Offset
+  Offset to be applied to DDRDATA7CH1_CR_DDRCRVREFADJUST1.Ch0VrefCtl
+  0:-12,1:-11, 2:-10, 3:-9, 4:-8, 5:-7, 6:-6, 7:-5, 8:-4, 9:-3, 10:-2, 11:-1, 12:0,
+  13:+1, 14:+2, 15:+3, 16:+4, 17:+5, 18:+6, 19:+7, 20:+8, 21:+9, 22:+10, 23:+11,
+  24:+12, 0xFF:RANDOM
+**/
+  UINT8                       Ch0VrefCtlOffset;
+
+/** Offset 0x0A3B - Ch1 DQ Vref Ctrl Offset
+  Offset to be applied to DDRDATA7CH1_CR_DDRCRVREFADJUST1.Ch1VrefCtl
+  0:-12,1:-11, 2:-10, 3:-9, 4:-8, 5:-7, 6:-6, 7:-5, 8:-4, 9:-3, 10:-2, 11:-1, 12:0,
+  13:+1, 14:+2, 15:+3, 16:+4, 17:+5, 18:+6, 19:+7, 20:+8, 21:+9, 22:+10, 23:+11,
+  24:+12, 0xFF:RANDOM
+**/
+  UINT8                       Ch1VrefCtlOffset;
+
+/** Offset 0x0A3C - Ch0 Clk PI Code Offset
+  Offset to be applied to DDRCLKCH0_CR_DDRCRCLKPICODE.PiSettingRank[0-3]
+  0:-6,1:-5, 2:-4, 3:-3, 4:-2, 5:-1, 6:0, 7:1, 8:2, 9:3, 10:4, 11:5, 12:6, 0xFF:RANDOM
+**/
+  UINT8                       Ch0ClkPiCodeOffset;
+
+/** Offset 0x0A3D - Ch1 Clk PI Code Offset
+  Offset to be applied to DDRCLKCH1_CR_DDRCRCLKPICODE.PiSettingRank[0-3]
+  0:-6,1:-5, 2:-4, 3:-3, 4:-2, 5:-1, 6:0, 7:1, 8:2, 9:3, 10:4, 11:5, 12:6, 0xFF:RANDOM
+**/
+  UINT8                       Ch1ClkPiCodeOffset;
+
+/** Offset 0x0A3E - Ch0 RcvEn Offset
+  Offset to be applied to DDRDATACH0_CR_DDRCRDATAOFFSETTRAIN.RcvEn
+  0:-3,1:-2, 2:-1, 3:0, 4:1, 5:2, 6:3, 0xFF:RANDOM
+**/
+  UINT8                       Ch0RcvEnOffset;
+
+/** Offset 0x0A3F - Ch1 RcvEn Offset
+  Offset to be applied to DDRDATACH1_CR_DDRCRDATAOFFSETTRAIN.RcvEn
+  0:-3,1:-2, 2:-1, 3:0, 4:1, 5:2, 6:3, 0xFF:RANDOM
+**/
+  UINT8                       Ch1RcvEnOffset;
+
+/** Offset 0x0A40 - Ch0 Rx Dqs Offset
+  Offset to be applied to DDRDATACH0_CR_DDRCRDATAOFFSETTRAIN.RxDqsOffset
+  0:-3,1:-2, 2:-1, 3:0, 4:1, 5:2, 6:3, 0xFF:RANDOM
+**/
+  UINT8                       Ch0RxDqsOffset;
+
+/** Offset 0x0A41 - Ch1 Rx Dqs Offset
+  Offset to be applied to DDRDATACH1_CR_DDRCRDATAOFFSETTRAIN.RxDqsOffset
+  0:-3,1:-2, 2:-1, 3:0, 4:1, 5:2, 6:3, 0xFF:RANDOM
+**/
+  UINT8                       Ch1RxDqsOffset;
+
+/** Offset 0x0A42 - Ch0 Tx Dq Offset
+  Offset to be applied to DDRDATACH0_CR_DDRCRDATAOFFSETTRAIN.TxDqOffset
+  0:-3,1:-2, 2:-1, 3:0, 4:1, 5:2, 6:3, 0xFF:RANDOM
+**/
+  UINT8                       Ch0TxDqOffset;
+
+/** Offset 0x0A43 - Ch1 Tx Dq Offset
+  Offset to be applied to DDRDATACH1_CR_DDRCRDATAOFFSETTRAIN.TxDqOffset
+  0:-3,1:-2, 2:-1, 3:0, 4:1, 5:2, 6:3, 0xFF:RANDOM
+**/
+  UINT8                       Ch1TxDqOffset;
+
+/** Offset 0x0A44 - Ch0 Tx Dqs Offset
+  Offset to be applied to DDRDATACH0_CR_DDRCRDATAOFFSETTRAIN.TxDqsOffset
+  0:-3,1:-2, 2:-1, 3:0, 4:1, 5:2, 6:3, 0xFF:RANDOM
+**/
+  UINT8                       Ch0TxDqsOffset;
+
+/** Offset 0x0A45 - Ch1 Tx Dqs Offset
+  Offset to be applied to DDRDATACH1_CR_DDRCRDATAOFFSETTRAIN.TxDqsOffset
+  0:-3,1:-2, 2:-1, 3:0, 4:1, 5:2, 6:3, 0xFF:RANDOM
+**/
+  UINT8                       Ch1TxDqsOffset;
+
+/** Offset 0x0A46 - Ch0 Vref Offset
+  Offset to be applied to DDRDATACH0_CR_DDRCRDATAOFFSETTRAIN.VrefOffset
+  0:-6,1:-5, 2:-4, 3:-3, 4:-2, 5:-1, 6:0, 7:1, 8:2, 9:3, 10:4, 11:5, 12:6, 0xFF:RANDOM
+**/
+  UINT8                       Ch0VrefOffset;
+
+/** Offset 0x0A47 - Ch1 Vref Offset
+  Offset to be applied to DDRDATACH1_CR_DDRCRDATAOFFSETTRAIN.VrefOffset
+  0:-6,1:-5, 2:-4, 3:-3, 4:-2, 5:-1, 6:0, 7:1, 8:2, 9:3, 10:4, 11:5, 12:6, 0xFF:RANDOM
+**/
+  UINT8                       Ch1VrefOffset;
+
+/** Offset 0x0A48 - tRRSG
+  Delay between Read-to-Read commands in the same Bank Group for DDR4 or Same Rank
+  for DDR3/LPDDR3. 0-Auto, Range 4-54.
+**/
+  UINT8                       tRRSG;
+
+/** Offset 0x0A49 - tRRDG
+  Delay between Read-to-Read commands in different Bank Group for DDR4 or Same Rank
+  for DDR3/LPDDR3. 0-Auto, Range 4-54.
+**/
+  UINT8                       tRRDG;
+
+/** Offset 0x0A4A - tRRDR
+  Delay between Read-to-Read commands in different Ranks. 0-Auto, Range 4-54.
+**/
+  UINT8                       tRRDR;
+
+/** Offset 0x0A4B - tRRDD
+  Delay between Read-to-Read commands in different DIMMs. 0-Auto, Range 4-54.
+**/
+  UINT8                       tRRDD;
+
+/** Offset 0x0A4C - tWRSG
+  Delay between Write-to-Read commands in the same Bank Group for DDR4 or Same Rank
+  for DDR3/LPDDR3. 0-Auto, Range 4-86.
+**/
+  UINT8                       tWRSG;
+
+/** Offset 0x0A4D - tWRDG
+  Delay between Write-to-Read commands in different Bank Group for DDR4 or Same Rank
+  for DDR3/LPDDR3. 0-Auto, Range 4-54.
+**/
+  UINT8                       tWRDG;
+
+/** Offset 0x0A4E - tWRDR
+  Delay between Write-to-Read commands in different Ranks. 0-Auto, Range 4-54.
+**/
+  UINT8                       tWRDR;
+
+/** Offset 0x0A4F - tWRDD
+  Delay between Write-to-Read commands in different DIMMs. 0-Auto, Range 4-54.
+**/
+  UINT8                       tWRDD;
+
+/** Offset 0x0A50 - tWWSG
+  Delay between Write-to-Write commands in the same Bank Group for DDR4 or Same Rank
+  for DDR3/LPDDR3. 0-Auto, Range 4-54.
+**/
+  UINT8                       tWWSG;
+
+/** Offset 0x0A51 - tWWDG
+  Delay between Write-to-Write commands in different Bank Group for DDR4 or Same Rank
+  for DDR3/LPDDR3. 0-Auto, Range 4-54.
+**/
+  UINT8                       tWWDG;
+
+/** Offset 0x0A52 - tWWDR
+  Delay between Write-to-Write commands in different Ranks. 0-Auto, Range 4-54.
+**/
+  UINT8                       tWWDR;
+
+/** Offset 0x0A53 - tWWDD
+  Delay between Write-to-Write commands in different DIMMs. 0-Auto, Range 4-54.
+**/
+  UINT8                       tWWDD;
+
+/** Offset 0x0A54 - tRWSG
+  Delay between Read-to-Write commands in the same Bank Group for DDR4 or Same Rank
+  for DDR3/LPDDR3. 0-Auto, Range 4-54.
+**/
+  UINT8                       tRWSG;
+
+/** Offset 0x0A55 - tRWDG
+  Delay between Read-to-Write commands in different Bank Group for DDR4 or Same Rank
+  for DDR3/LPDDR3. 0-Auto, Range 4-54.
+**/
+  UINT8                       tRWDG;
+
+/** Offset 0x0A56 - tRWDR
+  Delay between Read-to-Write commands in different Ranks. 0-Auto, Range 4-54.
+**/
+  UINT8                       tRWDR;
+
+/** Offset 0x0A57 - tRWDD
+  Delay between Read-to-Write commands in different DIMMs. 0-Auto, Range 4-54.
+**/
+  UINT8                       tRWDD;
+
+/** Offset 0x0A58 - DCTT Test
+  Select which test to run
+  0:Basic walking memory test, 1:Row Hammer test
+**/
+  UINT8                       DcttTest;
+
+/** Offset 0x0A59 - DCTT: Iterations on Row
+  Number of repetitions on a Row
+**/
+  UINT8                       DcttRhIterationOnRow;
+
+/** Offset 0x0A5A - Page Close Delay Prompt
+  SubSequence Delay value used to ensure the page closes (In DClks)
+**/
+  UINT8                       DcttRhPageCloseDelay;
+
+/** Offset 0x0A5B - Row Hammer Refresh
+  Enable/Disables refreshes during the Row Hammer Test
+  $EN_DIS
+**/
+  UINT8                       DcttRhRefreshEnable;
+
+/** Offset 0x0A5C - Data Base
+  Select which data pattern that is used as the base pattern
+  0:Zeros, 1:Ones, 2:Five, 3:A
+**/
+  UINT8                       DcttDataBase;
+
+/** Offset 0x0A5D - Row swizzle
+  Select which Row swizzle algorithm to use during Row Hammer test
+  0:No Swizzle, 1:3xOr1_3xOr2, 2:01234567EFCDAB89
+**/
+  UINT8                       DcttRowSwizzleType;
+
+/** Offset 0x0A5E - Refresh Multiplier
+  Multiplier applied to tREFI
+**/
+  UINT8                       DcttRefreshMultiplier;
+
+/** Offset 0x0A5F - Bank Disable Mask
+  Bit Mask Bank Disable for per-Bank tests (Row Hammer)
+**/
+  UINT8                       DcttBankDisableMask;
+
+/** Offset 0x0A60 - DCTT: Row Hammer Count
+  Number of Hammers for a given Row.
+**/
+  UINT32                      DcttRhHammerCount;
+
+/** Offset 0x0A64 - Clock Gate AB
+  Clock Gate AB
+  0:Disable, 1:2 Cycles, 2:3 Cycles, 3:4 Cycles
+**/
+  UINT8                       ScramClockGateAB;
+
+/** Offset 0x0A65 - Clock Gate C
+  Select which Row swizzle algorithm to use during Row Hammer test
+  0:Disable, 1:2 Cycles, 2:4 Cycles, 3:8 Cycles
+**/
+  UINT8                       ScramClockGateC;
+
+/** Offset 0x0A66 - Enable DBI AB
+  Enable DBI AB
+  $EN_DIS
+**/
+  UINT8                       ScramEnableDbiAB;
+
+/** Offset 0x0A67 - MRC Interpreter
+  Select CMOS location match of DD01 or Ctrl-Break key or force entry
+  0:CMOS, 1:Break, 2:Force
+**/
+  UINT8                       Interpreter;
+
+/** Offset 0x0A68 - ODT mode
+  ODT mode
+  0:Default, 1:Vtt, 2:Vddq, 3:Vss, 4:Max
+**/
+  UINT8                       IoOdtMode;
+
+/** Offset 0x0A69 - Lock DPR register
+  Lock DPR register. <b>0: Platform POR </b>; 1: Enable; 2: Disable
+  0:Platform POR, 1: Enable, 2: Disable
+**/
+  UINT8                       TestMenuDprLock;
+
+/** Offset 0x0A6A - PerBankRefresh
+  Control of Per Bank Refresh feature for LPDDR DRAMs
+  $EN_DIS
+**/
+  UINT8                       PerBankRefresh;
+
+/** Offset 0x0A6B
+**/
+  UINT8                       MrcRestrictedRsvd[13];
+
+/** Offset 0x0A78 - Dmi Test Tran Co Over En
+  Enable/Disable Lane Transmitter Coefficient.
+**/
+  UINT8                       PchTestDmiTranCoOverEn[4];
+
+/** Offset 0x0A7C - Dmi Test Tran Co Over Post Cur
+  Lane Transmitter Post-Cursor Coefficient Override.
+**/
+  UINT8                       PchTestDmiTranCoOverPostCur[4];
+
+/** Offset 0x0A80 - Dmi Test Tran Co Over Pre Cur
+  Lane Transmitter Pre-Cursor Coefficient Override.
+**/
+  UINT8                       PchTestDmiTranCoOverPreCur[4];
+
+/** Offset 0x0A84 - Dmi Test Up Port Tran Preset
+  Upstream Port Lane Transmitter Preset.
+**/
+  UINT8                       PchTestDmiUpPortTranPreset[4];
+
+/** Offset 0x0A88 - Dmi Test UpPort Tran Preset En
+  0: POR setting, 1: force enable, 2: force disable.
+**/
+  UINT8                       PchTestDmiUpPortTranPresetEn;
+
+/** Offset 0x0A89 - Dmi Test Rtlepceb
+  DMI Remote Transmit Link Equalization Preset/Coefficient Evaluation Bypass (RTLEPCEB).
+**/
+  UINT8                       PchTestDmiRtlepceb;
+
+/** Offset 0x0A8A - DMI ME UMA Root Space Check
+  DMI IOSF Root Space attribute check for RS3 for cycles targeting MEUMA.
+  0: POR, 1: enable, 2: disable
+**/
+  UINT8                       PchTestDmiMeUmaRootSpaceCheck;
+
+/** Offset 0x0A8B - ModPhy Selection Policy
+  ModPhy Selection for ChipsetInitTable
+**/
+  UINT8                       ModPhySelection;
+
+/** Offset 0x0A8C - Disable Reset
+  This option disable/enable reset functionality.(Default==POR)
+  0:Platform POR, 1: Enable, 2: Disable
+**/
+  UINT8                       DisableResets;
+
+/** Offset 0x0A8D - HDA Power/Clock Gating (PGD/CGD)
+  Enable/Disable HD Audio Power and Clock Gating(POR: Enable). 0: PLATFORM_POR, 1:
+  FORCE_ENABLE, 2: FORCE_DISABLE.
+  0: POR, 1: Force Enable, 2: Force Disable
+**/
+  UINT8                       PchHdaTestPowerClockGating;
+
+/** Offset 0x0A8E - Configuration Lockdown (BCLD)
+  0: POR (Enable), 1: Enable, 2: Disable.
+  0: POR (Enable), 1: Enable, 2: Disable
+**/
+  UINT8                       PchHdaTestConfigLockdown;
+
+/** Offset 0x0A8F - Low Frequency Link Clock Source (LFLCS)
+  0: POR (Enable), 1: Enable (XTAL), 2: Disable (Audio PLL).
+  0: POR (Enable), 1: Enable (XTAL), 2: Disable (Audio PLL)
+**/
+  UINT8                       PchHdaTestLowFreqLinkClkSrc;
+
+/** Offset 0x0A90
+**/
+  UINT8                       PchPreMemRestrictedRsvd[5];
+
+/** Offset 0x0A95 - Program DMI GEN3 Extended number of VC
+  Program DMI GEN3 Extended number of VC (default) 0x2
+**/
+  UINT8                       DmiGen3MultiVC;
+
+/** Offset 0x0A96 - Enable/Disable DMI GEN3 DmiGen3Vc1Control
+  Enable/Disable DMI GEN3 DmiGen3Vc1Control. Disabled(0x0): DmiGen3Vc1Control, Enabled(0x1)(Default):
+  Enable DmiGen3Vc1Control
+  $EN_DIS
+**/
+  UINT8                       DmiGen3Vc1Control;
+
+/** Offset 0x0A97 - Enable/Disable DMI GEN3 DmiGen3VcMControl
+  Enable/Disable DMI GEN3 DmiGen3VcMControl. Disabled(0x0): DmiGen3VcMControl, Enabled(0x1)(Default):
+  Enable DmiGen3VcMControl
+  $EN_DIS
+**/
+  UINT8                       DmiGen3VcMControl;
+
+/** Offset 0x0A98 - DMI Secure Register Lock:{Combo
+  Enable Dmi all Secure Register Lock (Default) Enable
+  0:Disable, 1:Enable
+**/
+  UINT8                       DmiSrl;
+
+/** Offset 0x0A99 - DMI Scramble Enable:{Combo
+  Enable the data Scrambler (Default) Disabled
+  0:Disable, 1:Enable
+**/
+  UINT8                       DmiScramble;
+
+/** Offset 0x0A9A - DMI Max Payload Size:{Combo
+  Set the max payload size (Default) 256 TLP
+  0:Auto, 1:128 TLP, 2:256 TLP
+**/
+  UINT8                       DmiMaxPayload;
+
+/** Offset 0x0A9B - PreMemRestrictedRsvd3
+  Reserved for Pre-Mem RestrictedReserved
+  $EN_DIS
+**/
+  UINT8                       PreMemRestrictedRsvd3[2];
+
+/** Offset 0x0A9D
+**/
+  UINT8                       UnusedUpdSpace37[5];
+
+/** Offset 0x0AA2
+**/
+  UINT8                       ReservedFspmRestrictedUpd[14];
+} FSP_M_RESTRICTED_CONFIG;
 
 /** Fsp M UPD Configuration
 **/
@@ -3712,9 +4663,13 @@ typedef struct {
 
 /** Offset 0x0970
 **/
-  UINT8                       UnusedUpdSpace32[6];
+  FSP_M_RESTRICTED_CONFIG     FspmRestrictedConfig;
 
-/** Offset 0x0976
+/** Offset 0x0AB0
+**/
+  UINT8                       UnusedUpdSpace38[6];
+
+/** Offset 0x0AB6
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;
