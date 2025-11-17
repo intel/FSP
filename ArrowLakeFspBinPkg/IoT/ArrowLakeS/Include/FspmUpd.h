@@ -856,9 +856,15 @@ typedef struct {
 **/
   UINT8                       IsForceCkdBypass;
 
-/** Offset 0x01C7
+/** Offset 0x01C7 - Use CA Parity for CMDT/CMDV for RMT and training
+  0: Use legacy funtional CMD test, 1: Use CA Parity for CMDT/CMDV for RMT and training, 2: Auto
+  0: Disable, 1: Enable, 2: Auto
 **/
-  UINT8                       Rsvd036[58];
+  UINT8                       CaParityForCmd;
+
+/** Offset 0x01C8
+**/
+  UINT8                       Rsvd036[57];
 
 /** Offset 0x0201
 **/
