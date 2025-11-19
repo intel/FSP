@@ -153,7 +153,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_InternalGfx                     1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_ApertureSize                    1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_UserBd                          1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_DisableMrcRetrainingOnRtcPowerLoss   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_DisableMrcRetrainingOnRtcPowerLoss   1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit                    2 bytes    $_DEFAULT_ = 0
         $gPlatformFspPkgTokenSpaceGuid_SaGv                            1 bytes    $_DEFAULT_ = 0x05
         $gPlatformFspPkgTokenSpaceGuid_MemTestOnWarmBoot               1 bytes    $_DEFAULT_ = 0x01
@@ -772,6 +772,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_OverloadSAM                     1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_MrcTimeMeasure                  1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieRefPllSsc                   1 bytes    $_DEFAULT_ = 0xFF
+        $gPlatformFspPkgTokenSpaceGuid_McParity                        1 bytes    $_DEFAULT_ = 0x01
+        $gPlatformFspPkgTokenSpaceGuid_IbeccParity                     1 bytes    $_DEFAULT_ = 0x01
 
     Find "ADLUPD_S"
         $gPlatformFspPkgTokenSpaceGuid_Revision                        1 bytes    $_DEFAULT_ = 0x02
@@ -1205,11 +1207,21 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_FusaConfigEnable                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupArrayBist         1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupScanBist          1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_FusaRunPeriodicArrayBist        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_FusaRunPeriodicScanBist         1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Module0Lockstep                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Module1Lockstep                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_OpioRecenter                    1 bytes    $_DEFAULT_ = 0x01
-        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupArrayBistMod0     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupArrayBistMod1     1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupScanBistMod0      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupScanBistMod1      1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_FusaRunPeriodicArrayBistMod0    1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_FusaRunPeriodicArrayBistMod1    1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_EmbReserved2FspsUpd             3 bytes    $_DEFAULT_ = 0x00
+        Skip 3 bytes
+        $gPlatformFspPkgTokenSpaceGuid_FusaStartupPatternAddr          4 bytes    $_DEFAULT_ = 0x00000000
+        $gPlatformFspPkgTokenSpaceGuid_FusaPeriodicPatternAddr         4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_PchT0Level                      2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_PchT1Level                      2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_PchT2Level                      2 bytes    $_DEFAULT_ = 0x0000
@@ -1260,7 +1272,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_CpuRootportUsedForHybridStorage   1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchRootportUsedForCpuAttach     1 bytes    $_DEFAULT_ = 0xFF
         $gPlatformFspPkgTokenSpaceGuid_PchAcpiL6dPmeHandling           1 bytes    $_DEFAULT_ = 0x0
-        Skip 3 bytes
+        Skip 7 bytes
         $gPlatformFspPkgTokenSpaceGuid_BgpdtHash                      32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_BiosGuardAttr                   4 bytes    $_DEFAULT_ = 0xFFFFFFFF
         Skip 4 bytes
@@ -3607,6 +3619,10 @@ Page "Memory Reference Code"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcieRefPllSsc, "Pcie Ref Pll SSC", HEX,
         Help "Pcie Ref Pll SSC Percentatge. 0x0: 0.0%, 0x1: 0.1%, 0x2:0.2%, 0x3: 0.3%, 0x4: 0.4%, 0x5: 0.5%, 0xFE: Disable, 0xFF: Auto"
              "Valid range: 0x00 ~ 0xFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_McParity, "McParity", &EN_DIS,
+        Help "CMI/MC Parity Control: 1(Default)=Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_IbeccParity, "IbeccParity", &EN_DIS,
+        Help "In-Band ECC Parity Control: 1(Default)=Enable"
 EndPage
 
 Page "CPU (Pre-Mem)"
@@ -5669,6 +5685,8 @@ Page "PCH (Post-Mem)"
         Help "Enabling this will execute startup array test during boot, 0: Disable, 1: Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupScanBist, "Fusa Run Start Up Scan BIST", &EN_DIS,
         Help "Enabling this will execute startup scan test during boot, 0: Disable, 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_FusaRunPeriodicArrayBist, "Fusa Run Periodic Array BIST", &EN_DIS,
+        Help "Enabling this will execute periodic array test during boot, 0: Disable, 1: Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_FusaRunPeriodicScanBist, "Fusa Run Periodic Scan BIST", &EN_DIS,
         Help "Enabling this will execute periodic scan test during boot, 0: Disable, 1: Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_Module0Lockstep, "Fusa Module 0 Lockstep Configuration", &gPlatformFspPkgTokenSpaceGuid_Module0Lockstep,
@@ -5677,6 +5695,26 @@ Page "PCH (Post-Mem)"
         Help "Enable/Disable Lockstep for Atom module 1, which has 4 cores; 0: Disable lockstep; 1: Enable lockstep for Core 0 with Core 1, Core 2 with Core 3; 2: Enable lockstep for Core 0 with Core 1; 3: Enable lockstep for Core 2 with Core 3"
     Combo $gPlatformFspPkgTokenSpaceGuid_OpioRecenter, "Opio Recentering Ctrl", &EN_DIS,
         Help "Opio Recentering Disabling for Pcie Latency Improvement, 0: Disable, 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupArrayBistMod0, "Fusa Run Start Up Array BIST for Module 0", &EN_DIS,
+        Help "Enabling this will execute startup array test for Module 0 during boot, 0: Disable, 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupArrayBistMod1, "Fusa Run Start Up Array BIST for Module 1", &EN_DIS,
+        Help "Enabling this will execute startup array test for Module 1 during boot, 0: Disable, 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupScanBistMod0, "Fusa Run Start Up Scan BIST for Module 0", &EN_DIS,
+        Help "Enabling this will execute startup scan test for module 0 during boot, 0: Disable, 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_FusaRunStartupScanBistMod1, "Fusa Run Start Up Scan BIST for Module 1", &EN_DIS,
+        Help "Enabling this will execute startup scan test for module 1 during boot, 0: Disable, 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_FusaRunPeriodicArrayBistMod0, "Fusa Run Periodic Array BIST for Module 0", &EN_DIS,
+        Help "Enabling this will execute periodic array test for module 0 during boot, 0: Disable, 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_FusaRunPeriodicArrayBistMod1, "Fusa Run Periodic Array BIST for Module 1", &EN_DIS,
+        Help "Enabling this will execute periodic array test for module 1 during boot, 0: Disable, 1: Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_EmbReserved2FspsUpd, "Fusa Run Periodic Scan BIST for Module 1", &EN_DIS,
+        Help "Enabling this will execute periodic scan test for module 1 during boot, 0: Disable, 1: Enable"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_FusaStartupPatternAddr, "Fusa Startup Pattern File Base Address", HEX,
+        Help "Fusa (Functional Safety) Startup Pattern File Base Address"
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_FusaPeriodicPatternAddr, "Fusa Periodic Pattern File Base Address", HEX,
+        Help "Fusa (Functional Safety) Periodic Pattern File Base Address"
+             "Valid range: 0x0 ~ 0xFFFFFFFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchT0Level, "Thermal Throttling Custimized T0Level Value", HEX,
         Help "Custimized T0Level value."
              "Valid range: 0x00 ~ 0xFFFF"

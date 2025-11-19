@@ -12,6 +12,8 @@ IoT/AlderLakeP | U-Series, P-Series, & H-Series processors for IoT platforms
 IoT/AlderLakePS | PS-Series processors for IoT platforms
 IoT/AlderLakeS | Desktop processors for IoT platforms
 IoT/AlderLakeN | N-Series processors for IoT platforms
+IoT/AmstonLake | x7000RE & x7000C series processor for IoT platforms
+IoT/TwinLake | N150 & N250, N355 series processor for IoT platforms
 
 ## Differentiating Client and IoT
 

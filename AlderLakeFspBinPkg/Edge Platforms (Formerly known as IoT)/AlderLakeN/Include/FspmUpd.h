@@ -4092,9 +4092,21 @@ typedef struct {
 **/
   UINT8                       PcieRefPllSsc;
 
-/** Offset 0x0B47
+/** Offset 0x0B47 - McParity
+  CMI/MC Parity Control: 1(Default)=Enable
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace36[4];
+  UINT8                       McParity;
+
+/** Offset 0x0B48 - IbeccParity
+  In-Band ECC Parity Control: 1(Default)=Enable
+  $EN_DIS
+**/
+  UINT8                       IbeccParity;
+
+/** Offset 0x0B49
+**/
+  UINT8                       UnusedUpdSpace36[2];
 
 /** Offset 0x0B4B
 **/
