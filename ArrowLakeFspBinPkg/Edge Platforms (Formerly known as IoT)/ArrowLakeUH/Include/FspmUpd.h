@@ -874,9 +874,26 @@ typedef struct {
 **/
   UINT8                       Ddr5WrLvlMinLimit;
 
-/** Offset 0x01CB
+/** Offset 0x01CB - ForceCsoDimmSagvOverride
+  Force CsoDimm SAGV Override on ARL-H
 **/
-  UINT8                       Rsvd036[53];
+  UINT8                       ForceCsoDimmSagvOverride;
+
+/** Offset 0x01CC - VccClkLimitUpdate
+  Increase the VccClk Limit to 870mV
+  0: Disable, 1: Enable
+**/
+  UINT8                       VccClkLimitUpdate;
+
+/** Offset 0x01CD - RdOdt80Init
+  Init Read SOC Odt to 80
+  0: Disable, 1: Enable
+**/
+  UINT8                       RdOdt80Init;
+
+/** Offset 0x01CE
+**/
+  UINT8                       Rsvd036[50];
 
 /** Offset 0x0200 - Vdd2Mv
   VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc.
