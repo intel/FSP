@@ -862,9 +862,21 @@ typedef struct {
 **/
   UINT8                       CaParityForCmd;
 
-/** Offset 0x01C8
+/** Offset 0x01C8 - HigherFreqCapable
+  Board is Capable of 7200
+  0: FALSE, 1: TRUE
 **/
-  UINT8                       Rsvd036[57];
+  UINT8                       HigherFreqCapable;
+
+/** Offset 0x01C9 - SkuForceWP04000G4
+  Set WP0 to 4000G4 on Desktop SKU
+  0: Disable, 1: Enable
+**/
+  UINT8                       SkuForceWP04000G4;
+
+/** Offset 0x01CA
+**/
+  UINT8                       Rsvd036[55];
 
 /** Offset 0x0201
 **/
@@ -4893,8 +4905,10 @@ typedef struct {
 
 /** Offset 0x0CB3 - Control VGA Initialition sequence
   Initialise VGA Init, Set BIT0 - 0 (No VGA Support), BIT0 = 1 (VGA Supported) BIT1
-  = 1 (VGA Exit)
-  0x0: NO VGA Init, 0x1: VGA Init, 0x3: VGA Init and VGA Exit
+  = 1 (VGA Exit), BIT2 = 0 (VGA Init During Display Init) BIT2 = 1 (VGA Init on MRC
+  cold boot)
+  0x0: NO VGA Init, 0x1: VGA Init, 0x3: VGA Init and VGA Exit, 0x5: VGA Init and VGA
+  Exit on MRC cold boot
 **/
   UINT8                       VgaInitControl;
 
