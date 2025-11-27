@@ -46,5 +46,3 @@ are permitted provided that the following conditions are met:
 #pragma pack()
 
 #endif
-
-
