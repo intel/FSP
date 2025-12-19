@@ -14,4 +14,6 @@ IoT/RaptorLakePS | PS-Series processors for IoT platforms
 
 ## Differentiating Client and IoT
 
-Client and IoT (Internet of Things) SKUs of 12th, 13th, & 14th Generation Intel® Core™ processors and chipsets (formerly Alder Lake, Raptor Lake, & Raptor Lake Refresh) processors can be differentiated by checking the processor number. Processor numbers ending in a "E" are IoT SKUs, processor numbers that do not end in "E" are client SKUs. For example, the Intel® Core™ i9-13900 is a client SKU and the Intel® Core™ i9-13900E is an IoT SKU.
+Client and IoT (Internet of Things) SKUs of 12th, 13th, & 14th Generation Intel® Core™ processors and chipsets (formerly Alder Lake, Raptor Lake, & Raptor Lake Refresh) processors can be differentiated by checking the processor number. Processor numbers ending in a "E" are IoT/Edge SKUs, processor numbers that do not end in "E" are client SKUs. For example, the Intel® Core™ i9-13900 is a client SKU and the Intel® Core™ i9-13900E is an IoT/Edge SKU.
+
+Renaming the directory to the original "IoT" from "Edge (formerly known as IoT)" to fix the corrupted path.

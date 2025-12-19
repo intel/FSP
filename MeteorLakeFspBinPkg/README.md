@@ -6,5 +6,6 @@ For descriptions of the Intel® Core™ Ultra Processors Family (Products former
 
 Directory Name | 13th Generation Intel® Core™ (formerly Raptor Lake) SKU Description
 :------------- | :-------------------------
-IoT/MeteorLake | U/H-Series and PS-Series Embedded processors for IoT and Edge platforms
+IoT/MeteorLake | U/H-Series and PS-Series Embedded processors for Edge platforms
 
+Renaming the directory to the original "IoT" from "Edge (formerly known as IoT)" to fix the corrupted path.
