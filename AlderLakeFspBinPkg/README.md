@@ -19,3 +19,4 @@ IoT/TwinLake | N150 & N250, N355 series processor for IoT platforms
 
 Client and IoT (Internet of Things) SKUs of 12th Generation Intel® Core™ (formerly Alder Lake) processors can be differentiated by checking the processor number. Processor numbers ending in a "E" are IoT SKUs, processor numbers that do not end in "E" are client SKUs. For example, the Intel® Core™ i7-1270P is a client SKU and the Intel® Core™ i7-1270PE is an IoT SKU.
 
+Renaming the directory to the original "IoT" from "Edge (formerly known as IoT)" to fix the corrupted path.
