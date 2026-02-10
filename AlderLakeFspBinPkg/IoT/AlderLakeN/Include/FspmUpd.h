@@ -3600,9 +3600,11 @@ typedef struct {
 **/
   UINT8                       SaPreMemTestRsvd[88];
 
-/** Offset 0x095B
+/** Offset 0x095B - Enable/Disable I2cPostcode
+  Enable (Default): Postcode via I2C, Disable: Postcode via Port80
+  $EN_DIS
 **/
-  UINT8                       UnusedUpdSpace27;
+  UINT8                       I2cPostCodeEnable;
 
 /** Offset 0x095C - TotalFlashSize
   Enable/Disable. 0: Disable, define default value of TotalFlashSize , 1: enable
@@ -3686,7 +3688,7 @@ typedef struct {
 
 /** Offset 0x0976
 **/
-  UINT8                       UnusedUpdSpace28[2];
+  UINT8                       UnusedUpdSpace27[2];
 
 /** Offset 0x0978 - Hybrid Graphics GPIO information for PEG 1
   Hybrid Graphics GPIO information for PEG 1, for Reset, power and wake GPIOs
@@ -3723,7 +3725,7 @@ typedef struct {
 
 /** Offset 0x0A9B
 **/
-  UINT8                       UnusedUpdSpace29;
+  UINT8                       UnusedUpdSpace28;
 
 /** Offset 0x0A9C - SerialIoUartDebugRxPinMux - FSPT
   Select RX pin muxing for SerialIo UART used for debug
@@ -3755,7 +3757,7 @@ typedef struct {
 
 /** Offset 0x0AAD
 **/
-  UINT8                       UnusedUpdSpace30[3];
+  UINT8                       UnusedUpdSpace29[3];
 
 /** Offset 0x0AB0 - Tcc Cache Config File Base Address
   Tcc (Time Coordinated Computing) Cache Config File File Base Address
@@ -3840,7 +3842,7 @@ typedef struct {
 
 /** Offset 0x0ACE
 **/
-  UINT8                       UnusedUpdSpace31[2];
+  UINT8                       UnusedUpdSpace30[2];
 
 /** Offset 0x0AD0 - IbeccErrInjAddress
   Address to match against for ECC error injection
@@ -3869,7 +3871,7 @@ typedef struct {
 
 /** Offset 0x0AED
 **/
-  UINT8                       UnusedUpdSpace32[3];
+  UINT8                       UnusedUpdSpace31[3];
 
 /** Offset 0x0AF0 - Debug Value
   Debug Value
@@ -3888,7 +3890,7 @@ typedef struct {
 
 /** Offset 0x0AF9
 **/
-  UINT8                       UnusedUpdSpace33;
+  UINT8                       UnusedUpdSpace32;
 
 /** Offset 0x0AFA - tRFCpb
   Min Internal per bank refresh recovery delay time, 0: AUTO, max: 0xFFFF. Only used
@@ -3940,7 +3942,7 @@ typedef struct {
 
 /** Offset 0x0B05
 **/
-  UINT8                       UnusedUpdSpace34[3];
+  UINT8                       UnusedUpdSpace33[3];
 
 /** Offset 0x0B08 - EccErrInjAddress
   Address to match against for ECC error injection
@@ -4008,7 +4010,7 @@ typedef struct {
 
 /** Offset 0x0B25
 **/
-  UINT8                       UnusedUpdSpace35;
+  UINT8                       UnusedUpdSpace34;
 
 /** Offset 0x0B26 - Frequency Limit for Mixed 2DPC DDR5 1 Rank 8GB and 8GB
   Frequency Limit for 2DPC Mixed or non-POR Config. 0: Auto, otherwise a frequency
@@ -4106,7 +4108,7 @@ typedef struct {
 
 /** Offset 0x0B49
 **/
-  UINT8                       UnusedUpdSpace36[2];
+  UINT8                       UnusedUpdSpace35[2];
 
 /** Offset 0x0B4B
 **/
@@ -4131,7 +4133,7 @@ typedef struct {
 
 /** Offset 0x0B50
 **/
-  UINT8                       UnusedUpdSpace37[6];
+  UINT8                       UnusedUpdSpace36[6];
 
 /** Offset 0x0B56
 **/
