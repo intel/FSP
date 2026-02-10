@@ -685,7 +685,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_OemT12DelayOverride             1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_DQSOFFSETADJUST                 1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_SaPreMemTestRsvd               88 bytes    $_DEFAULT_ = 0x00
-        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_I2cPostCodeEnable               1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_TotalFlashSize                  2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_BiosSize                        2 bytes    $_DEFAULT_ = 0x2800
         $gPlatformFspPkgTokenSpaceGuid_SecurityTestRsvd               12 bytes    $_DEFAULT_ = 0x00
@@ -3491,6 +3491,8 @@ Page "Memory Reference Code"
         Help "Enable/Disable DQS Offset Adjust Training"
     Combo $gPlatformFspPkgTokenSpaceGuid_SaPreMemTestRsvd, "SaPreMemTestRsvd", &EN_DIS,
         Help "Reserved for SA Pre-Mem Test"
+    Combo $gPlatformFspPkgTokenSpaceGuid_I2cPostCodeEnable, "Enable/Disable I2cPostcode", &EN_DIS,
+        Help "Enable (Default): Postcode via I2C, Disable: Postcode via Port80"
     Combo $gPlatformFspPkgTokenSpaceGuid_MarginLimitCheck, "Margin Limit Check", &gPlatformFspPkgTokenSpaceGuid_MarginLimitCheck,
         Help "Margin Limit Check. Choose level of margin check"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MarginLimitL2, "Margin Limit L2", HEX,
