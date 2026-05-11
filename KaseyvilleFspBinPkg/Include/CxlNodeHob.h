@@ -2,7 +2,7 @@
   CXL GUID HOB definitions
 
   @copyright
-
+  INTEL CONFIDENTIAL
   Copyright 2021 Intel Corporation. <BR>
 
   The source code contained or described herein and all documents related to the
@@ -78,6 +78,7 @@ typedef struct {
   UINT32                       Size;
   UINT8                        Ways;
   UINT8                        SocketBitmap;
+  UINT8                        ClusterId;
   BOOLEAN                      AcpiSratSpMemFlag;
   CXL_EFI_MEM_TYPE             EfiMemType;
   CXL_PERF_DATA                InitiatorPerfData;        // Performance data between device egress and initiator.

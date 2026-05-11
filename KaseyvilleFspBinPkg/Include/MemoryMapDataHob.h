@@ -2,7 +2,7 @@
   GUID used for Memory Map Data entries in the HOB list.
 
   @copyright
- 
+  INTEL CONFIDENTIAL
   Copyright 2021 - 2022 Intel Corporation. <BR>
 
   The source code contained or described herein and all documents related to the
@@ -129,7 +129,7 @@
 
 typedef UINT8               INTLV_SET_KEY;
 
-#define FSP_RESERVED1_LEN		5266
+#define FSP_RESERVED1_LEN		5267
 #define FSP_RESERVED2_LEN		1
 #define FSP_RESERVED3_LEN		220
 #define FSP_RESERVED4_LEN		10

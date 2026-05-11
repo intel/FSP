@@ -2,7 +2,7 @@
   Previous Boot Error Source HOB Header File
 
   @copyright
- 
+  INTEL CONFIDENTIAL
   Copyright 2007 -2021  Intel Corporation. <BR>
 
   The source code contained or described herein and all documents related to the

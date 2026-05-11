@@ -3,7 +3,7 @@
   take some actions to handle those error scenarios.
 
   @copyright
- 
+  INTEL CONFIDENTIAL
   Copyright (C) 2023 Intel Corporation.
 
   This software and the related documents are Intel copyrighted materials,

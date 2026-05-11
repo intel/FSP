@@ -2,7 +2,7 @@
   Data format for IIO Universal Data HOB Structure
 
   @copyright
-
+  INTEL CONFIDENTIAL
   Copyright 1999 - 2023 Intel Corporation. <BR>
 
   The source code contained or described herein and all documents related to the

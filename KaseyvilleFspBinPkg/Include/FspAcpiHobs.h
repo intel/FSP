@@ -2,7 +2,7 @@
   RAS ACPI GUID HOB definitions
 
   @copyright
-
+  INTEL CONFIDENTIAL
   Copyright 2023 Intel Corporation. <BR>
 
   The source code contained or described herein and all documents related to the

@@ -2,7 +2,7 @@
   CXL CEDT GUID HOB definitions
 
   @copyright
- 
+  INTEL CONFIDENTIAL
   Copyright 2022 Intel Corporation. <BR>
 
   The source code contained or described herein and all documents related to the
@@ -98,6 +98,7 @@ typedef struct {
   UINT8    PeId;               // CXL host bridge PE index within socket.
   UINT8    CxlVersion;         // CXL specification version that the CXL host bridge complies with.
   UINT32   Uid;                // CXL host bridge unique ID.
+  UINT8    ClusterId;          // CXL host bridge cluster ID.
 } CXL_HOST_BRIDGE_ENTRY;
 
 typedef struct {
