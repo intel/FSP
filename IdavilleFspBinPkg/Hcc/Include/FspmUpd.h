@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2026, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -1551,7 +1551,87 @@ typedef struct {
 **/
   UINT8                       PchPciePllSsc;
 
-/** Offset 0x0211
+/** Offset 0x0211 - Configure NTB PPD
+  Configure Non-Transparent Bridge (NTB) PCIe Port Definition (PPD) feature
+  0:Transparent Bridge,1:NTB to NTB
+**/
+  UINT8                       PcdNtbPpd[2];
+
+/** Offset 0x0213 - Enable NTB BARs
+  [IMBAR1] If Enabled, BIOS will program NTB BAR size registers
+  0:No,1:Yes
+**/
+  UINT8                       PcdNtbBarSizeOverride[2];
+
+/** Offset 0x0215 - Enable SPLIT BARs
+  [IMBAR2, EMBAR2SZ] If Enabled, will use two 32 bit BARs instead of 64 bit BAR
+  0:No,1:Yes
+**/
+  UINT8                       PcdNtbSplitBar[2];
+
+/** Offset 0x0217 - Imbar1 Size
+  [IMBAR1SZ] Used to set the prefetchable Imbar1 size on primary side of NTB.  Value
+  range <12...51> representing BAR sizes <4KB ... 128PB>.
+  Minimum = 12,Maximum = 51,Step = 1,Default = 22
+**/
+  UINT8                       PcdNtbBarSizeImBar1[2];
+
+/** Offset 0x0219 - Imbar2 Size
+  [IMBAR2SZ] Used to set the prefetchable Imbar2 size on primary side of NTB.  Value
+  range <12...51> representing BAR sizes <4KB ... 128PB>.
+  Minimum = 12,Maximum = 51,Step = 1,Default = 22
+**/
+  UINT8                       PcdNtbBarSizeImBar2[2];
+
+/** Offset 0x021B - Imbar2_0 Size
+  Used to set the prefetchable Imbar2_0 size on primary side of NTB.  Value < than
+  12 or > 29 (39 for BIOS supporting > 4G PCI) disables BAR.
+  Minimum = 0,Maximum = 39,Step = 1,Default = 12
+**/
+  UINT8                       PcdNtbBarSizeImBar2_0[2];
+
+/** Offset 0x021D - Imbar2_1 Size
+  Used to set the prefetchable Imbar2_1 size on primary side of NTB.  Value < than
+  12 or > 29 (39 for BIOS supporting > 4G PCI) disables BAR.
+  Minimum = 0,Maximum = 39,Step = 1,Default = 12
+**/
+  UINT8                       PcdNtbBarSizeImBar2_1[2];
+
+/** Offset 0x021F - Embar1 Size
+  [EMBAR1SZ] Used to set the prefetchable Embar1 size on secondary side of NTB. Value
+  range <12...51> representing BAR sizes <4KB ... 128PB>.
+  Minimum = 12,Maximum = 51,Step = 1,Default = 22
+**/
+  UINT8                       PcdNtbBarSizeEmBarSZ1[2];
+
+/** Offset 0x0221 - Embar2 Size
+  [EMBAR2SZ] Used to set the prefetchable Embar2 size on secondary side of NTB. Value
+  range <12...51> representing BAR sizes <4KB ... 128PB>.
+  Minimum = 12,Maximum = 51,Step = 1,Default = 22
+**/
+  UINT8                       PcdNtbBarSizeEmBarSZ2[2];
+
+/** Offset 0x0223 - Embar2_0 Size
+  Used to set the prefetchable Embar2_0 size on Secondary side of NTB.  Value < than
+  12 or > 29 (39 for BIOS supporting > 4G PCI) disables BAR.
+  Minimum = 12,Maximum = 39,Step = 1,Default = 12
+**/
+  UINT8                       PcdNtbBarSizeEmBarSZ2_0[2];
+
+/** Offset 0x0225 - Embar2_1 Size
+  Used to set the prefetchable Embar2_1 size on Secondary side of NTB.  Value < than
+  12 or > 29 (39 for BIOS supporting > 4G PCI) disables BAR.
+  Minimum = 12,Maximum = 39,Step = 1,Default = 12
+**/
+  UINT8                       PcdNtbBarSizeEmBarSZ2_1[2];
+
+/** Offset 0x0227 - Crosslink control Override
+  Configure NTB port as DSP/USP, USD/DSP, or use external pin
+  3:DSD/USP,2:USD/DSP
+**/
+  UINT8                       PcdNtbXlinkCtlOverride[2];
+
+/** Offset 0x0229
 **/
   UINT8                       ReservedMemoryInitUpd[16];
 } FSP_M_CONFIG;
@@ -1572,11 +1652,7 @@ typedef struct {
 **/
   FSP_M_CONFIG                FspmConfig;
 
-/** Offset 0x0221
-**/
-  UINT8                       UnusedUpdSpace6[13];
-
-/** Offset 0x022E
+/** Offset 0x0239
 **/
   UINT16                      UpdTerminator;
 } FSPM_UPD;
