@@ -12,8 +12,11 @@ IoT/AlderLakeP | U-Series, P-Series, & H-Series processors for IoT platforms
 IoT/AlderLakePS | PS-Series processors for IoT platforms
 IoT/AlderLakeS | Desktop processors for IoT platforms
 IoT/AlderLakeN | N-Series processors for IoT platforms
+IoT/AmstonLake | x7000RE & x7000C series processor for IoT platforms
+IoT/TwinLake | N150 & N250, N355 series processor for IoT platforms
 
 ## Differentiating Client and IoT
 
 Client and IoT (Internet of Things) SKUs of 12th Generation Intel® Core™ (formerly Alder Lake) processors can be differentiated by checking the processor number. Processor numbers ending in a "E" are IoT SKUs, processor numbers that do not end in "E" are client SKUs. For example, the Intel® Core™ i7-1270P is a client SKU and the Intel® Core™ i7-1270PE is an IoT SKU.
 
+Renaming the directory to the original "IoT" from "Edge (formerly known as IoT)" to fix the corrupted path.

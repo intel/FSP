@@ -63,5 +63,3 @@ typedef struct {
 #pragma pack()
 
 #endif // _FIRMWARE_VERSION_INFO_HOB_H_
-
-

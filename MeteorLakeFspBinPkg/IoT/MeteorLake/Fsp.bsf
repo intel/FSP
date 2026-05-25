@@ -216,7 +216,10 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_IsForceCkdBypass                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VendorForceDdr5G4               1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_Ddr5WrLvlMinLimit               1 bytes    $_DEFAULT_ = 0x00
-        Skip 53 bytes
+        $gPlatformFspPkgTokenSpaceGuid_ForceCsoDimmSagvOverride        1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_VccClkLimitUpdate               1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_RdOdt80Init                     1 bytes    $_DEFAULT_ = 0x00
+        Skip 50 bytes
         $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv                          2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_RefClk                          1 bytes    $_DEFAULT_ = 0x00
         Skip 1 bytes
@@ -3244,6 +3247,15 @@ Page "Memory Reference Code"
              "Valid range: 0x0 ~ 0x10"
     Combo $gPlatformFspPkgTokenSpaceGuid_Ddr5WrLvlMinLimit, "Increase External Coarse WrLvl sweep", &EN_DIS,
         Help "Enable/Disable Increase two extra clocks to External Coarse WrLvl sweep"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_ForceCsoDimmSagvOverride, "ForceCsoDimmSagvOverride", HEX,
+        Help "Force CsoDimm SAGV Override on ARL-H"
+             "Valid range: 0x00 ~ 0xFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_VccClkLimitUpdate, "VccClkLimitUpdate", HEX,
+        Help "Increase the VccClk Limit to 870mV"
+             "Valid range: 0x00 ~ 0xFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_RdOdt80Init, "RdOdt80Init", HEX,
+        Help "Init Read SOC Odt to 80"
+             "Valid range: 0x00 ~ 0xFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv, "Vdd2Mv", &gPlatformFspPkgTokenSpaceGuid_Vdd2Mv,
         Help "VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc. "
     Combo $gPlatformFspPkgTokenSpaceGuid_RefClk, "Memory Reference Clock", &gPlatformFspPkgTokenSpaceGuid_RefClk,

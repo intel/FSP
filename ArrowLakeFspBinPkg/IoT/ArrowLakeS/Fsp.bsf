@@ -214,7 +214,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_TxVrefOverride                  2 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IsForceCkdBypass                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_CaParityForCmd                  1 bytes    $_DEFAULT_ = 0x02
-        Skip 58 bytes
+        $gPlatformFspPkgTokenSpaceGuid_HigherFreqCapable               1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SkuForceWP04000G4               1 bytes    $_DEFAULT_ = 0x00
+        Skip 56 bytes
         $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv                          2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_RefClk                          1 bytes    $_DEFAULT_ = 0x00
         Skip 1 bytes
@@ -2083,6 +2085,16 @@ List &gPlatformFspPkgTokenSpaceGuid_CaParityForCmd
     Selection 2 , " Auto"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_HigherFreqCapable
+    Selection 0 , " FALSE"
+    Selection 1 , " TRUE"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_SkuForceWP04000G4
+    Selection 0 , " Disable"
+    Selection 1 , " Enable"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_Vdd2Mv
     Selection 0 , "Default"
     Selection 1200 , "1.20 Volts"
@@ -2570,6 +2582,7 @@ List &gPlatformFspPkgTokenSpaceGuid_VgaInitControl
     Selection 0x0 , " NO VGA Init"
     Selection 0x1 , " VGA Init"
     Selection 0x3 , " VGA Init and VGA Exit"
+    Selection 0x5 , " VGA Init and VGA Exit on MRC cold boot"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_PprRepairType
@@ -2953,7 +2966,7 @@ Page "System Agent(PreMem)"
     Combo $gPlatformFspPkgTokenSpaceGuid_LidStatus, "Platform LID Status for LFP Displays.", &gPlatformFspPkgTokenSpaceGuid_LidStatus,
         Help "LFP Display Lid Status (LID_STATUS enum): 0 (Default): LidClosed, 1: LidOpen."
     Combo $gPlatformFspPkgTokenSpaceGuid_VgaInitControl, "Control VGA Initialition sequence", &gPlatformFspPkgTokenSpaceGuid_VgaInitControl,
-        Help "Initialise VGA Init, Set BIT0 - 0 (No VGA Support), BIT0 = 1 (VGA Supported) BIT1 = 1 (VGA Exit)"
+        Help "Initialise VGA Init, Set BIT0 - 0 (No VGA Support), BIT0 = 1 (VGA Supported) BIT1 = 1 (VGA Exit), BIT2 = 0 (VGA Init During Display Init) BIT2 = 1 (VGA Init on MRC cold boot)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_VbtPtr, "Graphics Configuration Ptr", HEX,
         Help "Points to VBT"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
@@ -3229,6 +3242,10 @@ Page "Memory Reference Code"
         Help "Enable/Disable Force CKD in Bypass Mode"
     Combo $gPlatformFspPkgTokenSpaceGuid_CaParityForCmd, "Use CA Parity for CMDT/CMDV for RMT and training", &gPlatformFspPkgTokenSpaceGuid_CaParityForCmd,
         Help "0: Use legacy funtional CMD test, 1: Use CA Parity for CMDT/CMDV for RMT and training, 2: Auto"
+    Combo $gPlatformFspPkgTokenSpaceGuid_HigherFreqCapable, "HigherFreqCapable", &gPlatformFspPkgTokenSpaceGuid_HigherFreqCapable,
+        Help "Board is Capable of 7200"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SkuForceWP04000G4, "SkuForceWP04000G4", &gPlatformFspPkgTokenSpaceGuid_SkuForceWP04000G4,
+        Help "Set WP0 to 4000G4 on Desktop SKU"
     Combo $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv, "Vdd2Mv", &gPlatformFspPkgTokenSpaceGuid_Vdd2Mv,
         Help "VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc. "
     Combo $gPlatformFspPkgTokenSpaceGuid_RefClk, "Memory Reference Clock", &gPlatformFspPkgTokenSpaceGuid_RefClk,

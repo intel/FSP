@@ -1,0 +1,2 @@
+# PantherLakeFspBinPkg/IoT/PantherLake
+These FSP binaries are intended to be used with the Intel® Core™ Ultra Series 3 processor (Code named Panther Lake-H) for Edge platforms. Please consult PantherLakeFspBinPkg/README.md for more information on how to select the correct FSP binary to use.

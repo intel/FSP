@@ -55724,26 +55724,6 @@
                                 "Value": "0"
                               }
                             ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP1_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
-                                "Value": "0"
-                              }
-                            ]
                           }
                         ],
                         "NestedPages": [
@@ -56606,26 +56586,6 @@
                               },
                               {
                                 "Key": "No",
-                                "Value": "0"
-                              }
-                            ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP2_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
@@ -57494,26 +57454,6 @@
                                 "Value": "0"
                               }
                             ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP3_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
-                                "Value": "0"
-                              }
-                            ]
                           }
                         ],
                         "NestedPages": [
@@ -58376,26 +58316,6 @@
                               },
                               {
                                 "Key": "No",
-                                "Value": "0"
-                              }
-                            ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP4_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]
@@ -59264,26 +59184,6 @@
                                 "Value": "0"
                               }
                             ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP5_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
-                                "Value": "0"
-                              }
-                            ]
                           }
                         ],
                         "NestedPages": [
@@ -60146,26 +60046,6 @@
                               },
                               {
                                 "Key": "No",
-                                "Value": "0"
-                              }
-                            ]
-                          },
-                          {
-                            "WidgetType": "ComboBox",
-                            "WidgetName": "DSC Feature: ",
-                            "Visibility": "",
-                            "Data": [
-                              "2",
-                              "EFP6_External_Compression_Enable"
-                            ],
-                            "HelpText": "This feature when set to yes, will enable VESA DSC compression feature for EFP display",
-                            "WidgetValues": [
-                              {
-                                "Key": "Disabled",
-                                "Value": "1"
-                              },
-                              {
-                                "Key": "Enabled",
                                 "Value": "0"
                               }
                             ]

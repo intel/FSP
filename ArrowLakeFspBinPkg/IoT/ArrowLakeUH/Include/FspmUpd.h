@@ -874,9 +874,51 @@ typedef struct {
 **/
   UINT8                       Ddr5WrLvlMinLimit;
 
-/** Offset 0x01CB
+/** Offset 0x01CB - ForceCsoDimmSagvOverride
+  Force CsoDimm SAGV Override on ARL-H
 **/
-  UINT8                       Rsvd036[53];
+  UINT8                       ForceCsoDimmSagvOverride;
+
+/** Offset 0x01CC - VccClkLimitUpdate
+  Increase the VccClk Limit to 870mV
+  0: Disable, 1: Enable
+**/
+  UINT8                       VccClkLimitUpdate;
+
+/** Offset 0x01CD - RdOdt80Init
+  Init Read SOC Odt to 80
+  0: Disable, 1: Enable
+**/
+  UINT8                       RdOdt80Init;
+
+/** Offset 0x01CE - Use CA Parity for CMDT/CMDV for RMT and training
+  0: Use legacy funtional CMD test, 1: Use CA Parity for CMDT/CMDV for RMT and training, 2: Auto
+  0: Disable, 1: Enable, 2: Auto
+**/
+  UINT8                       CaParityForCmd;
+
+/** Offset 0x01CF - DisableWakeForZqcal
+  Used to Disable wakeup for ZQ Calibration: 0=WakeOnZqcal is enabled(default), 1=WakeOnZqcal
+  is Disabled
+  0: Disable, 1: Enable
+**/
+  UINT8                       DisableWakeForZqcal;
+
+/** Offset 0x01D0 - SkuForceWP04000G4
+  Set WP0 to 4000G4 on Desktop SKU
+  0: Disable, 1: Enable
+**/
+  UINT8                       SkuForceWP04000G4;
+
+/** Offset 0x01D1 - Vccclk3200Override
+  Override 3200 to 4800 for VccClk
+  0: Disable, 1: Enable
+**/
+  UINT8                       Vccclk3200Override;
+
+/** Offset 0x01D2
+**/
+  UINT8                       Rsvd036[46];
 
 /** Offset 0x0200 - Vdd2Mv
   VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc.
@@ -4907,8 +4949,10 @@ typedef struct {
 
 /** Offset 0x0CAB - Control VGA Initialition sequence
   Initialise VGA Init, Set BIT0 - 0 (No VGA Support), BIT0 = 1 (VGA Supported) BIT1
-  = 1 (VGA Exit)
-  0x0: NO VGA Init, 0x1: VGA Init, 0x3: VGA Init and VGA Exit
+  = 1 (VGA Exit), BIT2 = 0 (VGA Init During Display Init) BIT2 = 1 (VGA Init on MRC
+  cold boot)
+  0x0: NO VGA Init, 0x1: VGA Init, 0x3: VGA Init and VGA Exit, 0x5: VGA Init and VGA
+  Exit on MRC cold boot
 **/
   UINT8                       VgaInitControl;
 
