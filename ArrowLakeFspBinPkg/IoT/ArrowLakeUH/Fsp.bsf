@@ -2,7 +2,7 @@
 
   Boot Setting File for Platform Configuration.
 
-  Copyright (c) 2025, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2026, Intel Corporation. All rights reserved.<BR>
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
   which accompanies this distribution.  The full text of the license may be found at
@@ -223,7 +223,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_DisableWakeForZqcal             1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SkuForceWP04000G4               1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_Vccclk3200Override              1 bytes    $_DEFAULT_ = 0x00
-        Skip 46 bytes
+        $gPlatformFspPkgTokenSpaceGuid_VendorCaParityOverride          1 bytes    $_DEFAULT_ = 0x00
+        Skip 45 bytes
         $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv                          2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_RefClk                          1 bytes    $_DEFAULT_ = 0x00
         Skip 1 bytes
@@ -2108,6 +2109,11 @@ List &gPlatformFspPkgTokenSpaceGuid_Vccclk3200Override
     Selection 1 , " Enable"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_VendorCaParityOverride
+    Selection 0 , " Disable"
+    Selection 1 , " Enable"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_Vdd2Mv
     Selection 0 , "Default"
     Selection 1200 , "1.20 Volts"
@@ -3290,6 +3296,8 @@ Page "Memory Reference Code"
         Help "Set WP0 to 4000G4 on Desktop SKU"
     Combo $gPlatformFspPkgTokenSpaceGuid_Vccclk3200Override, "Vccclk3200Override", &gPlatformFspPkgTokenSpaceGuid_Vccclk3200Override,
         Help "Override 3200 to 4800 for VccClk"
+    Combo $gPlatformFspPkgTokenSpaceGuid_VendorCaParityOverride, "VendorCaParityOverride", &gPlatformFspPkgTokenSpaceGuid_VendorCaParityOverride,
+        Help "Force CaParity Mode for specific vendor configs"
     Combo $gPlatformFspPkgTokenSpaceGuid_Vdd2Mv, "Vdd2Mv", &gPlatformFspPkgTokenSpaceGuid_Vdd2Mv,
         Help "VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc. "
     Combo $gPlatformFspPkgTokenSpaceGuid_RefClk, "Memory Reference Clock", &gPlatformFspPkgTokenSpaceGuid_RefClk,

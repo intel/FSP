@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2025, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2026, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -916,9 +916,15 @@ typedef struct {
 **/
   UINT8                       Vccclk3200Override;
 
-/** Offset 0x01D2
+/** Offset 0x01D2 - VendorCaParityOverride
+  Force CaParity Mode for specific vendor configs
+  0: Disable, 1: Enable
 **/
-  UINT8                       Rsvd036[46];
+  UINT8                       VendorCaParityOverride;
+
+/** Offset 0x01D3
+**/
+  UINT8                       Rsvd036[45];
 
 /** Offset 0x0200 - Vdd2Mv
   VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc.
