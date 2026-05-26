@@ -1,6 +1,6 @@
 /** @file
 
-Copyright (c) 2025, Intel Corporation. All rights reserved.<BR>
+Copyright (c) 2026, Intel Corporation. All rights reserved.<BR>
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -4538,7 +4538,7 @@ typedef struct {
 
 /** Offset 0x105A
 **/
-  UINT8                       Rsvd37;
+  UINT8                       PlatformReliabilityTuning;
 
 /** Offset 0x105B
 **/
