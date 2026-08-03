@@ -1591,6 +1591,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_L2QosEnumerationEn              1 bytes    $_DEFAULT_ = 0x0
         Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_MemorySize                      4 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieFixGen1Trn               4 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00
 
 EndStruct
 
@@ -4795,6 +4796,9 @@ Page "System Agent (Post-Mem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MemorySize, "MemorySize", HEX,
         Help "MemorySize value"
              "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieFixGen1Trn, "CpuPcieFixGen1Trn", HEX,
+        Help "Per CPU PCIe RP (byte index = RpIndex). 0=Disable (default), 1=Apply Dekel/XL710 Gen1 training fix (clear R_PCIE_ACGR3S2 BIT4 then 25ms delay)."
+             "Valid range: 0x00 ~ 0xFF"
 EndPage
 
 Page "PCH (Pre-Mem)"
