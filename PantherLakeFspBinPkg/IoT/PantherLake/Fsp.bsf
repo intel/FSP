@@ -90,7 +90,7 @@ StructDef
         Skip 87 bytes
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugMode           1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugAutoFlow       1 bytes    $_DEFAULT_ = 0x0
-        Skip 2 bytes
+        $gPlatformFspPkgTokenSpaceGuid_OppSrefIdleTmr                  2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugRxPinMux       4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugTxPinMux       4 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugRtsPinMux      4 bytes    $_DEFAULT_ = 0x0
@@ -195,7 +195,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_ProbelessTrace                  1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_IbeccEccInjCount                1 bytes    $_DEFAULT_ = 0x1
         $gPlatformFspPkgTokenSpaceGuid_DdrFreqLimit                    2 bytes    $_DEFAULT_ = 0x0
-        $gPlatformFspPkgTokenSpaceGuid_SaGv                            1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_SaGv                            1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_SaGvWpMask                      1 bytes    $_DEFAULT_ = 0x0F
         $gPlatformFspPkgTokenSpaceGuid_SaGvGear                        4 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_SaGvFreq                        8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
@@ -411,7 +411,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_NnFlexDdr5RonDn                 1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_NnFlexPhyOvrdMask               1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_NnFlexDramOvrdMask              1 bytes    $_DEFAULT_ = 0x00
-        $gPlatformFspPkgTokenSpaceGuid_MrcPreMemRsvd                   1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_ForceDIMMRXOFFSET               1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_UserBd                          1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SpdAddressTable                16 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_TxtImplemented                  1 bytes    $_DEFAULT_ = 0x1
@@ -439,7 +439,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkHdaEnable        1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PchHdaSdiEnable                 2 bytes    $_DEFAULT_ = 0x01, 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkDmicEnable       2 bytes    $_DEFAULT_ = 0x00, 0x00
-        Skip 2 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PwDownMode                      1 bytes    $_DEFAULT_ = 0x02
+        $gPlatformFspPkgTokenSpaceGuid_ForceDdr5ReadDca                1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkDmicClkAPinMux   8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaDspEnable                 1 bytes    $_DEFAULT_ = 0x01
         Skip 3 bytes
@@ -455,7 +456,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PchHdaIDispLinkFrequency        1 bytes    $_DEFAULT_ = 0x04
         $gPlatformFspPkgTokenSpaceGuid_PchHdaIDispLinkTmode            1 bytes    $_DEFAULT_ = 0x02
         $gPlatformFspPkgTokenSpaceGuid_PchHdAudioSndwMultilaneEnable   2 bytes    $_DEFAULT_ = 0x00, 0x02
-        Skip 3 bytes
+        $gPlatformFspPkgTokenSpaceGuid_NnFlexCmdOvrdMask               1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_NnFlexCmdDrvVrefUp              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_NnFlexCtlDrvVrefUp              1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkMultilaneClkPinMux   8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkMultilaneData0PinMux   8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkMultilaneData1PinMux   8 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
@@ -476,7 +479,9 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PcieClkReqGpioMux              32 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_PcieRpEnableMask                4 bytes    $_DEFAULT_ = 0x00FFFFFF
         $gPlatformFspPkgTokenSpaceGuid_PcdDebugInterfaceFlags          1 bytes    $_DEFAULT_ = 0x32
-        Skip 3 bytes
+        $gPlatformFspPkgTokenSpaceGuid_NnFlexCmdCaTxEq                 1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_NnFlexCtlDrvVrefDn              1 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_FspmUpdRsvd12                   1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugMmioBase       4 bytes    $_DEFAULT_ = 0xFE02C000
         $gPlatformFspPkgTokenSpaceGuid_PcdSerialDebugLevel             1 bytes    $_DEFAULT_ = 0x03
         $gPlatformFspPkgTokenSpaceGuid_SerialDebugMrcLevel             1 bytes    $_DEFAULT_ = 0x03
@@ -796,7 +801,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_PanelPowerEnable                1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_PrimaryDisplay                  1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_IGpuGsm2Size                    1 bytes    $_DEFAULT_ = 0xFF
-        Skip 2 bytes
+        $gPlatformFspPkgTokenSpaceGuid_DisplayScaling                  1 bytes    $_DEFAULT_ = 0x00
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_VbtSize                         4 bytes    $_DEFAULT_ = 0x00000000
         Skip 4 bytes
         $gPlatformFspPkgTokenSpaceGuid_VbtPtr                          8 bytes    $_DEFAULT_ = 0x00000000
@@ -834,7 +840,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_McParity                        1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_AsyncOdtDis                     1 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_WeaklockEn                      1 bytes    $_DEFAULT_ = 0x00
-        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_BlockCkeInDfiSwitch             1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_RxDqsDelayCompEn                1 bytes    $_DEFAULT_ = 0x00
         Skip 2 bytes
         $gPlatformFspPkgTokenSpaceGuid_MrcFailureOnUnsupportedDimm     1 bytes    $_DEFAULT_ = 0x00
@@ -882,7 +888,8 @@ StructDef
         Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_SubChHashMask                   2 bytes    $_DEFAULT_ = 0x838
         $gPlatformFspPkgTokenSpaceGuid_ForceCkdBypass                  1 bytes    $_DEFAULT_ = 0x00
-        Skip 3 bytes
+        Skip 1 bytes
+        $gPlatformFspPkgTokenSpaceGuid_ReadMprPerBitSpeed              2 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_DisableZq                       4 bytes    $_DEFAULT_ = 0
         $gPlatformFspPkgTokenSpaceGuid_ReplicateSagv                   4 bytes    $_DEFAULT_ = 0
         $gPlatformFspPkgTokenSpaceGuid_AdjustWckMode                   1 bytes    $_DEFAULT_ = 0x03
@@ -971,6 +978,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_TurboRatioLimitNumCore          8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_AtomTurboRatioLimitRatio        8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         $gPlatformFspPkgTokenSpaceGuid_AtomTurboRatioLimitNumCore      8 bytes    $_DEFAULT_ = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        $gPlatformFspPkgTokenSpaceGuid_PlatformReliabilityTuning       1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_RaceToHalt                      1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_C1StateAutoDemotion             1 bytes    $_DEFAULT_ = 0x01
         $gPlatformFspPkgTokenSpaceGuid_C1StateUnDemotion               1 bytes    $_DEFAULT_ = 0x01
@@ -999,12 +1007,12 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_UfsInlineEncryption             2 bytes    $_DEFAULT_ = 0, 0
         $gPlatformFspPkgTokenSpaceGuid_UfsDeviceConnected              2 bytes    $_DEFAULT_ = 0x1, 0x1
         $gPlatformFspPkgTokenSpaceGuid_ITbtPcieTunnelingForUsb4        1 bytes    $_DEFAULT_ = 0x01
-        Skip 2 bytes
+        Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_ITbtForcePowerOnTimeoutInMs     2 bytes    $_DEFAULT_ = 0x1F4
         $gPlatformFspPkgTokenSpaceGuid_ITbtConnectTopologyTimeoutInMs   2 bytes    $_DEFAULT_ = 0x1388
         $gPlatformFspPkgTokenSpaceGuid_ITbtDmaLtr                      4 bytes    $_DEFAULT_ = 0xFF,0x97,0xFF,0x97
         $gPlatformFspPkgTokenSpaceGuid_Usb4CmMode                      1 bytes    $_DEFAULT_ = 0x01
-        Skip 11 bytes
+        Skip 17 bytes
         $gPlatformFspPkgTokenSpaceGuid_FspsValidationPtr               8 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_IehMode                         1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_PsfTccEnable                    1 bytes    $_DEFAULT_ = 0x00
@@ -1342,7 +1350,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_VmdPortBus                     31 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdPortDev                     31 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdPortFunc                    31 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
-        Skip 7 bytes
+        $gPlatformFspPkgTokenSpaceGuid_VmdHotPlug                      1 bytes    $_DEFAULT_ = 0x00
+        Skip 6 bytes
         $gPlatformFspPkgTokenSpaceGuid_VmdVariablePtr                  8 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_VmdCfgBarBase                   4 bytes    $_DEFAULT_ = 0xA0000000
         $gPlatformFspPkgTokenSpaceGuid_VmdMemBar1Base                  4 bytes    $_DEFAULT_ = 0xA2000000
@@ -1538,7 +1547,8 @@ StructDef
         Skip 2 bytes
         $gPlatformFspPkgTokenSpaceGuid_HorizontalResolution            4 bytes    $_DEFAULT_ = 0x00000000
         $gPlatformFspPkgTokenSpaceGuid_VerticalResolution              4 bytes    $_DEFAULT_ = 0x00000000
-        Skip 56 bytes
+        $gPlatformFspPkgTokenSpaceGuid_PowerFloorAggressiveMedia       1 bytes    $_DEFAULT_ = 0x00
+        Skip 55 bytes
         $gPlatformFspPkgTokenSpaceGuid_DevIntConfigPtr                 4 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_NumOfDevIntConfig               1 bytes    $_DEFAULT_ = 0x00
         $gPlatformFspPkgTokenSpaceGuid_GpioIrqRoute                    1 bytes    $_DEFAULT_ = 0x0E
@@ -2051,6 +2061,12 @@ List &gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkDmicClockSelect
     Selection 2 , " ClkB"
 EndList
 
+List &gPlatformFspPkgTokenSpaceGuid_PwDownMode
+    Selection 0x0 , "Enable"
+    Selection 0x1 , "Disable"
+    Selection 0x2 , "Auto"
+EndList
+
 List &gPlatformFspPkgTokenSpaceGuid_PchHdaIDispLinkFrequency
     Selection 4 , " 96MHz"
     Selection 3 , " 48MHz"
@@ -2307,6 +2323,11 @@ List &gPlatformFspPkgTokenSpaceGuid_IGpuGsm2Size
     Selection 14 , "30GB"
     Selection 15 , "32GB"
     Selection 0xFF , "No Allocation"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_DisplayScaling
+    Selection 0 , "Default"
+    Selection 1 , "Center Scaling"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_LidStatus
@@ -3308,12 +3329,12 @@ Page "Memory Reference Code"
         Help "Enables/Disable Enhanced Interleave support"
     Combo $gPlatformFspPkgTokenSpaceGuid_ChHashEnable, "Ch Hash Support", &EN_DIS,
         Help "Enable/Disable Channel Hash Support. NOTE: ONLY if Memory interleaved Mode"
-    Combo $gPlatformFspPkgTokenSpaceGuid_EnablePwrDn, "DDR PowerDown and idle counter", &EN_DIS,
-        Help "Enables/Disable DDR PowerDown and idle counter(For LPDDR Only)"
-    Combo $gPlatformFspPkgTokenSpaceGuid_EnablePwrDnLpddr, "DDR PowerDown and idle counter", &EN_DIS,
-        Help "Enables/Disable DDR PowerDown and idle counter(For LPDDR Only)"
-    Combo $gPlatformFspPkgTokenSpaceGuid_SrefCfgEna, "SelfRefresh Enable", &EN_DIS,
-        Help "Enables/Disable SelfRefresh Enable"
+    Combo $gPlatformFspPkgTokenSpaceGuid_EnablePwrDn, "DDR PowerDown and idle counter - Deprecated", &EN_DIS,
+        Help "Deprecated"
+    Combo $gPlatformFspPkgTokenSpaceGuid_EnablePwrDnLpddr, "DDR PowerDown and idle counter - Deprecated", &EN_DIS,
+        Help "Deprecated"
+    Combo $gPlatformFspPkgTokenSpaceGuid_SrefCfgEna, "SelfRefresh Enable - Deprecated", &EN_DIS,
+        Help "Deprecated"
     Combo $gPlatformFspPkgTokenSpaceGuid_ThrtCkeMinDefeatLpddr, "Throttler CKEMin Defeature", &EN_DIS,
         Help "Enables/Disable Throttler CKEMin Defeature(For LPDDR Only)"
     Combo $gPlatformFspPkgTokenSpaceGuid_ThrtCkeMinDefeat, "Throttler CKEMin Defeature", &EN_DIS,
@@ -3382,10 +3403,10 @@ Page "Memory Reference Code"
         Help "Disabled: Predefined threshold will be used.\nEnabled: User Input will be used."
     Combo $gPlatformFspPkgTokenSpaceGuid_UserBudgetEnable, "User Manual Budget", &EN_DIS,
         Help "Disabled: Configuration of memories will defined the Budget value.\nEnabled: User Input will be used."
-    Combo $gPlatformFspPkgTokenSpaceGuid_PowerDownMode, "Power Down Mode", &gPlatformFspPkgTokenSpaceGuid_PowerDownMode,
-        Help "This option controls command bus tristating during idle periods"
-    EditNum $gPlatformFspPkgTokenSpaceGuid_PwdwnIdleCounter, "Pwr Down Idle Timer", HEX,
-        Help "The minimum value should = to the worst case Roundtrip delay + Burst_Length. 0 means AUTO: 64 for ULX/ULT, 128 for DT/Halo"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PowerDownMode, "Power Down Mode - Deprecated", &gPlatformFspPkgTokenSpaceGuid_PowerDownMode,
+        Help "Deprecated"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_PwdwnIdleCounter, "Pwr Down Idle Timer - Deprecated", HEX,
+        Help "Deprecated"
              "Valid range: 0x0 ~ 0xFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_DisPgCloseIdleTimeout, "Page Close Idle Timeout", &gPlatformFspPkgTokenSpaceGuid_DisPgCloseIdleTimeout,
         Help "This option controls Page Close Idle Timeout"
@@ -3549,8 +3570,8 @@ Page "Memory Reference Code"
     EditNum $gPlatformFspPkgTokenSpaceGuid_NnFlexDramOvrdMask, "NnFlex LP5/DDR5 Override Enable bit mask", HEX,
         Help "Bitmask to enable LP5/DDR5 NnFlex overrides. [0]: Lp5Dfeq/Ddr5DfeTap1 [1]: Lp5PdDrvStr/Ddr5DfeTap2 [2]: Lp5SocOdt/Ddr5RttWr [3]: Lp5PreEmpDn/Ddr5RttNomWr [4]: Lp5PreEmpUp/Ddr5RttNomRd [5]: Lp5WckDcaWr/Ddr5RonUp [6]: Lp5WckDcaRd/Ddr5RonDn [7]: Lp5RttNT"
              "Valid range: 0x00 ~ 0xFF"
-    Combo $gPlatformFspPkgTokenSpaceGuid_MrcPreMemRsvd, "MrcPreMemRsvd", &EN_DIS,
-        Help "Reserved for MRC Pre-Mem"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ForceDIMMRXOFFSET, "Force DIMM Rx Offset Calibration training", &EN_DIS,
+        Help "Force DIMM Rx Offset Calibration training for LPDDR5X: 0 = Disable, 1 = Enable"
     Combo $gPlatformFspPkgTokenSpaceGuid_UserBd, "Board Type", &gPlatformFspPkgTokenSpaceGuid_UserBd,
         Help "MrcBoardType, Options are 0=Mobile/Mobile Halo, 1=Desktop/DT Halo, 5=ULT/ULX/Mobile Halo, 7=UP Server"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SpdAddressTable, "Spd Address Table", HEX,
@@ -3622,6 +3643,10 @@ Page "Memory Reference Code"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkDmicEnable, "Enable HD Audio DMIC_N Link", HEX,
         Help "Enable/disable HD Audio DMIC1 link. Muxed with SNDW3."
              "Valid range: 0x00 ~ 0xFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PwDownMode, "Power Down Mode", &gPlatformFspPkgTokenSpaceGuid_PwDownMode,
+        Help "CKE Power Down Mode: 0=Enabled, 1=Disabled, 2=Auto (default)"
+    Combo $gPlatformFspPkgTokenSpaceGuid_ForceDdr5ReadDca, "Force DDR5 Read DCA", &EN_DIS,
+        Help "Force Enable DDR5 Read DCA: 0 = Disable, 1 = Enable"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkDmicClkAPinMux, "DMIC<N> ClkA Pin Muxing (N - DMIC number)", HEX,
         Help "Determines DMIC<N> ClkA Pin muxing. See  GPIO_*_MUXING_DMIC<N>_CLKA_*"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
@@ -3654,6 +3679,15 @@ Page "Memory Reference Code"
         Help "iDisp-Link T-Mode (PCH_HDAUDIO_IDISP_TMODE enum): 0: 2T, 2: 4T, 3: 8T, 4: 16T"
     Combo $gPlatformFspPkgTokenSpaceGuid_PchHdAudioSndwMultilaneEnable, "Sndw Multilane enablement", &EN_DIS,
         Help "SoundWire Multiline enablement. Default is DISABLE. 0: DISABLE, 1: Two lines enabled, 2: Three lines enabled, 3: Four Lines enabled."
+    EditNum $gPlatformFspPkgTokenSpaceGuid_NnFlexCmdOvrdMask, "NnFlexCmdOvrdMask", HEX,
+        Help "Bitmask to enable CMD NnFlex overrides. [0]: CmdDrvVrefUp, [1]: CtlDrvVrefUp, [2]: CmdCaTxEq, [3]: CtlDrvVrefDn"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_NnFlexCmdDrvVrefUp, "NnFlexCmdDrvVrefUp", HEX,
+        Help "Controlled by NnFlexCmdOvrdMask bit[0], [0..191]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_NnFlexCtlDrvVrefUp, "NnFlexCtlDrvVrefUp", HEX,
+        Help "Controlled by NnFlexCmdOvrdMask bit[1], [0..191]"
+             "Valid range: 0x00 ~ 0xFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PchHdaAudioLinkMultilaneClkPinMux, "SoundWire<N> Clk Pin Muxing (N - SoundWire number)", HEX,
         Help "Determines SoundWire<N> Clk Pin muxing. See  GPIOV2_*_MUXING_SNDW<N>_CLK*"
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
@@ -3859,6 +3893,15 @@ Page "Debug"
     EditNum $gPlatformFspPkgTokenSpaceGuid_PcdDebugInterfaceFlags, "Debug Interfaces", HEX,
         Help "Debug Interfaces. BIT0-RAM, BIT1-UART, BIT3-USB3, BIT4-Serial IO, BIT5-TraceHub, BIT2 - Not used."
              "Valid range: 0x00 ~ 0x3F"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_NnFlexCmdCaTxEq, "NnFlexCmdCaTxEq", HEX,
+        Help "Controlled by NnFlexCmdOvrdMask bit[2], [0..31]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_NnFlexCtlDrvVrefDn, "NnFlexCtlDrvVrefDn", HEX,
+        Help "Controlled by NnFlexCmdOvrdMask bit[3], [0..191]"
+             "Valid range: 0x00 ~ 0xFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_FspmUpdRsvd12, "FspmUpdRsvd12", HEX,
+        Help "Reserved"
+             "Valid range: 0x00 ~ 0xFF"
     EditNum $gPlatformFspPkgTokenSpaceGuid_SerialIoUartDebugMmioBase, "Serial Io Uart Debug Mmio Base", HEX,
         Help "Select SerialIo Uart default MMIO resource in SEC/PEI phase when PcdLpssUartMode = SerialIoUartPci."
              "Valid range: 0 ~ 0xFFFFFFFF"
@@ -4482,6 +4525,8 @@ Page "CPU(PreMem)"
         Help "3(Default)=AUTO, 0=IGFX, 4=Hybrid Graphics"
     Combo $gPlatformFspPkgTokenSpaceGuid_IGpuGsm2Size, "Internal Graphics Data Stolen Memory GSM2", &gPlatformFspPkgTokenSpaceGuid_IGpuGsm2Size,
         Help "Size of memory preallocated for internal graphics GSM2."
+    Combo $gPlatformFspPkgTokenSpaceGuid_DisplayScaling, "PreMemory Display Scaling", &gPlatformFspPkgTokenSpaceGuid_DisplayScaling,
+        Help "Configure the Display Scaling for PreMemory"
     EditNum $gPlatformFspPkgTokenSpaceGuid_VbtSize, "Intel Graphics VBT (Video BIOS Table) Size", HEX,
         Help "Size of Internal Graphics VBT Image"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
@@ -4567,6 +4612,8 @@ Page "CPU(PreMem)"
         Help "This option configures the Memory Controler Asynchronous ODT control"
     Combo $gPlatformFspPkgTokenSpaceGuid_WeaklockEn, "DLL Weak Lock Support", &EN_DIS,
         Help "Enables/Disable DLL Weak Lock Support"
+    Combo $gPlatformFspPkgTokenSpaceGuid_BlockCkeInDfiSwitch, "Block CKE in DFI Switch", &EN_DIS,
+        Help "DDR5 only: 0: keep block_cke disabled during DFI switch (default), 1: enable block_cke during DFI switch"
     Combo $gPlatformFspPkgTokenSpaceGuid_RxDqsDelayCompEn, "Rx DQS Delay Comp Support", &EN_DIS,
         Help "Enables/Disable Rx DQS Delay Comp Support"
     Combo $gPlatformFspPkgTokenSpaceGuid_MrcFailureOnUnsupportedDimm, "Mrc Failure On Unsupported Dimm", &EN_DIS,
@@ -4577,8 +4624,8 @@ Page "CPU(PreMem)"
         Help "Enable/Disable Dynamic Memory Boost Feature. Only valid if SpdProfileSelected is an XMP Profile; otherwise ignored. <b>0=Disabled</b>, 1=Enabled."
     Combo $gPlatformFspPkgTokenSpaceGuid_RealtimeMemoryFrequency, "RealtimeMemoryFrequency", &EN_DIS,
         Help "Enable/Disable Realtime Memory Frequency feature. Only valid if SpdProfileSelected is an XMP Profile; otherwise ignored. <b>0=Disabled</b>, 1=Enabled."
-    EditNum $gPlatformFspPkgTokenSpaceGuid_SrefCfgIdleTmr, "SelfRefresh IdleTimer", HEX,
-        Help "SelfRefresh IdleTimer, Default is 256"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_SrefCfgIdleTmr, "SelfRefresh IdleTimer - Deprecated", HEX,
+        Help "Deprecated"
              "Valid range: 0x100 ~ 0xFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_MCREGOFFSET, "MC Register Offset", &EN_DIS,
         Help "Apply user offsets to select MC registers(Def=Disable)"
@@ -4678,6 +4725,9 @@ Page "CPU(PreMem)"
              "Valid range: 0x0000 ~ 0x3FFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_ForceCkdBypass, "Force CKD in Bypass Mode", &EN_DIS,
         Help "Enable/Disable Force CKD in Bypass Mode"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_ReadMprPerBitSpeed, "RDMPR Per-Bit Speed", HEX,
+        Help "Controls the frequency at which ERDMPR2D uses per-bit. 0: Auto (6400 and up), otherwise the frequency value (3200, 4800 etc.)"
+             "Valid range: 0x0 ~ 0xFFFF"
     Combo $gPlatformFspPkgTokenSpaceGuid_DisableZq, "Disable Zq", &EN_DIS,
         Help "Enable/Disable Zq Calibration: 0:Enabled, 1:Disabled"
     Combo $gPlatformFspPkgTokenSpaceGuid_ReplicateSagv, "Replicate SAGV", &EN_DIS,
@@ -5493,6 +5543,8 @@ Page "Management Engine(PostMem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_VmdPortFunc, "VMD Port Func", DEC,
         Help "VMD Root port function number."
              "Valid range: 0 ~ 7"
+    Combo $gPlatformFspPkgTokenSpaceGuid_VmdHotPlug, "Enable VMD HotPlug", &EN_DIS,
+        Help "Enable/disable to VMD HotPlug.0: Disable(Default); 1: Enable"
     EditNum $gPlatformFspPkgTokenSpaceGuid_VmdVariablePtr, "VMD Variable", HEX,
         Help "VMD Variable Pointer."
              "Valid range: 0x00 ~ 0xFFFFFFFF"
@@ -6030,6 +6082,8 @@ Page "CPU(PostMem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_AtomTurboRatioLimitNumCore, "ATOM Turbo Ratio Limit Num Core array", HEX,
         Help "Efficient-core Turbo Ratio Limit CoreCount0-7 defines the core range, the turbo ratio is defined in E-core Turbo Ratio Limit Ratio0-7. If value is zero, this entry is ignored."
              "Valid range: 0x00 ~ 0xFFFFFFFFFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PlatformReliabilityTuning, "Configure the Platform Reliability Tuning based on Embedded", &EN_DIS,
+        Help "Enable/Disable Energy Efficient Turbo Feature. This feature will Configure the Platform Turbo Ratio Limit(PTR) based on Embedded <b>0: Default</b>; <b>1: Embedded</b>;<b>2: FUSA</b>;<b>3: INDU</b>;"
     Combo $gPlatformFspPkgTokenSpaceGuid_RaceToHalt, "Race To Halt", &EN_DIS,
         Help "Enable/Disable Race To Halt feature. RTH will dynamically increase CPU frequency in order to enter pkg C-State faster to reduce overall power. 0: Disable; <b>1: Enable</b>"
     Combo $gPlatformFspPkgTokenSpaceGuid_C1StateAutoDemotion, "Enable or Disable C1 Cstate Demotion", &EN_DIS,
@@ -6289,6 +6343,8 @@ Page "System Agent(PostMem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_VerticalResolution, "VerticalResolution for PEI Logo", HEX,
         Help "VerticalResolution from PEIm Gfx for PEI Logo"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_PowerFloorAggressiveMedia, "Power Floor Aggressive Media Throttling", &EN_DIS,
+        Help "SoC can divide the media PLL to lower SoC floor power (Default disabled).  0: Disable: Aggressive Media Throttling will not be used by SoC., </b>1: Enable <b>"
     EditNum $gPlatformFspPkgTokenSpaceGuid_DevIntConfigPtr, "Address of PCH_DEVICE_INTERRUPT_CONFIG table.", HEX,
         Help "The address of the table of PCH_DEVICE_INTERRUPT_CONFIG."
              "Valid range: 0x00 ~ 0xFFFFFFFF"

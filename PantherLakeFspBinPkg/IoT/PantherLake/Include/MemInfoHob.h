@@ -4,7 +4,7 @@
   data hobs.
 
   @copyright
-  
+  INTEL CONFIDENTIAL
   Copyright (C) 1999 Intel Corporation.
 
   This software and the related documents are Intel copyrighted materials,
