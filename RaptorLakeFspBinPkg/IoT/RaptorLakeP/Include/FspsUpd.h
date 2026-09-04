@@ -4713,17 +4713,15 @@ typedef struct {
 **/
   UINT32                      MemorySize;
 
-/** Offset 0x1100
+/** Offset 0x1100 - CpuPcieFixGen1Trn
+  Per CPU PCIe RP (byte index = RpIndex). 0=Disable (default), 1=Apply Dekel/XL710
+  Gen1 training fix (clear R_PCIE_ACGR3S2 BIT4 then 25ms delay).
 **/
-  UINT8                       Rsvd40[2];
+  UINT8                       CpuPcieFixGen1Trn[4];
 
-/** Offset 0x1102
+/** Offset 0x1104
 **/
-  UINT8                       UnusedUpdSpace14[5];
-
-/** Offset 0x1107
-**/
-  UINT8                       ReservedFspsUpd[1];
+  UINT8                       ReservedFspsUpd[4];
 } FSP_S_CONFIG;
 
 /** Fsp S UPD Configuration
