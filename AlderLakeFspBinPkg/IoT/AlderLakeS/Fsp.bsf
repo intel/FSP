@@ -759,6 +759,8 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_EccErrInjAddress                8 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_EccErrInjMask                   8 bytes    $_DEFAULT_ = 0x0
         $gPlatformFspPkgTokenSpaceGuid_EccErrInjCount                  4 bytes    $_DEFAULT_ = 0xF
+        $gPlatformFspPkgTokenSpaceGuid_EccErrInjMcSelect               1 bytes    $_DEFAULT_ = 0x1
+        Skip 1 bytes
         $gPlatformFspPkgTokenSpaceGuid_FreqLimitMixedConfig            2 bytes    $_DEFAULT_ = 0x0000
         $gPlatformFspPkgTokenSpaceGuid_FirstDimmBitMask                1 bytes    $_DEFAULT_ = 0x0A
         $gPlatformFspPkgTokenSpaceGuid_SagvSwitchFactorIA              1 bytes    $_DEFAULT_ = 0x1E
@@ -1591,6 +1593,7 @@ StructDef
         $gPlatformFspPkgTokenSpaceGuid_L2QosEnumerationEn              1 bytes    $_DEFAULT_ = 0x0
         Skip 3 bytes
         $gPlatformFspPkgTokenSpaceGuid_MemorySize                      4 bytes    $_DEFAULT_ = 0x00
+        $gPlatformFspPkgTokenSpaceGuid_CpuPcieFixGen1Trn               4 bytes    $_DEFAULT_ = 0x00,0x00,0x00,0x00
 
 EndStruct
 
@@ -2368,6 +2371,12 @@ EndList
 List &gPlatformFspPkgTokenSpaceGuid_PprRunOnce
     Selection 0 , "Disable"
     Selection 1 , "Enable"
+EndList
+
+List &gPlatformFspPkgTokenSpaceGuid_EccErrInjMcSelect
+    Selection 0 , "MC0 Only"
+    Selection 1 , "MC1 Only"
+    Selection 2 , "Both MC0 and MC1"
 EndList
 
 List &gPlatformFspPkgTokenSpaceGuid_Lp5BankMode
@@ -3616,6 +3625,8 @@ Page "Memory Reference Code"
     EditNum $gPlatformFspPkgTokenSpaceGuid_EccErrInjCount, "EccErrInjCount", HEX,
         Help "Number of transactions between ECC error injection"
              "Valid range: 0x0 ~ 0xFFFFFFFF"
+    Combo $gPlatformFspPkgTokenSpaceGuid_EccErrInjMcSelect, "EccErrInjMcSelect", &gPlatformFspPkgTokenSpaceGuid_EccErrInjMcSelect,
+        Help "Select which Memory Controller to inject ECC errors. 0=MC0 Only, 1=MC1 Only, 2=Both"
     EditNum $gPlatformFspPkgTokenSpaceGuid_FreqLimitMixedConfig, "Frequency Limit for 2DPC Mixed or non-POR Config", DEC,
         Help "Frequency Limit for 2DPC Mixed or non-POR Config. 0: Auto (default), otherwise a frequency in MT/s"
              "Valid range: 0 ~ 10000"
@@ -4795,6 +4806,9 @@ Page "System Agent (Post-Mem)"
     EditNum $gPlatformFspPkgTokenSpaceGuid_MemorySize, "MemorySize", HEX,
         Help "MemorySize value"
              "Valid range: 0x00 ~ 0xFFFFFFFF"
+    EditNum $gPlatformFspPkgTokenSpaceGuid_CpuPcieFixGen1Trn, "CpuPcieFixGen1Trn", HEX,
+        Help "Per CPU PCIe RP (byte index = RpIndex). 0=Disable (default), 1=Apply Dekel/XL710 Gen1 training fix (clear R_PCIE_ACGR3S2 BIT4 then 25ms delay)."
+             "Valid range: 0x00 ~ 0xFF"
 EndPage
 
 Page "PCH (Pre-Mem)"
