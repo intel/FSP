@@ -842,7 +842,7 @@ typedef struct {
 
 /** Offset 0x01C3
 **/
-  UINT8                       UnusedUpdSpace0;
+  UINT8                       Rsvd01[1];
 
 /** Offset 0x01C4 - Initial DDR5 TxVref Override
   Override for initial DDR5 TxVref value , 0 = Auto (default), valid range from 350
@@ -876,11 +876,7 @@ typedef struct {
 
 /** Offset 0x01CA
 **/
-  UINT8                       Rsvd036[55];
-
-/** Offset 0x0201
-**/
-  UINT8                       UnusedUpdSpace1;
+  UINT8                       Rsvd036[56];
 
 /** Offset 0x0202 - Vdd2Mv
   VDD2 in MilliVolts. <b>0=Platform Default (no override), 1200=1.2V, 1350=1.35V etc.
@@ -1212,7 +1208,7 @@ typedef struct {
 
 /** Offset 0x0292
 **/
-  UINT8                       UnusedUpdSpace2[2];
+  UINT8                       Rsvd02[2];
 
 /** Offset 0x0294 - Temporary MMIO address for GMADR
   Obsolete field now and it has been extended to 64 bit address, used LMemBar
@@ -1410,11 +1406,7 @@ typedef struct {
 
 /** Offset 0x02C4
 **/
-  UINT8                       Rsvd070[8];
-
-/** Offset 0x02CC
-**/
-  UINT8                       UnusedUpdSpace3[4];
+  UINT8                       Rsvd070[12];
 
 /** Offset 0x02D0 - Temporary MMIO address for GMADR
   The reference code will use this as Temporary MMIO address space to access GMADR
@@ -3036,11 +3028,7 @@ typedef struct {
 
 /** Offset 0x0811
 **/
-  UINT8                       Rsvd210[1];
-
-/** Offset 0x0812
-**/
-  UINT8                       UnusedUpdSpace4[2];
+  UINT8                       Rsvd210[3];
 
 /** Offset 0x0814 - PrmrrSize
   Enable/Disable. 0: Disable, define default value of PrmrrSize , 1: enable
@@ -3054,11 +3042,7 @@ typedef struct {
 
 /** Offset 0x081C
 **/
-  UINT8                       Rsvd220[8];
-
-/** Offset 0x0824
-**/
-  UINT8                       UnusedUpdSpace5[4];
+  UINT8                       Rsvd220[12];
 
 /** Offset 0x0828 - TxtDprMemoryBase
   Enable/Disable. 0: Disable, define default value of TxtDprMemoryBase , 1: enable
@@ -4151,7 +4135,7 @@ typedef struct {
 
 /** Offset 0x0BF5
 **/
-  UINT8                       UnusedUpdSpace6[3];
+  UINT8                       UnusedUpdSpace0[3];
 
 /** Offset 0x0BF8 - IbeccEccInjAddrBase
   Address to match against for ECC error injection. Example: 1 = 32MB, 2 = 64MB
@@ -4280,7 +4264,7 @@ typedef struct {
 
 /** Offset 0x0C13
 **/
-  UINT8                       UnusedUpdSpace7;
+  UINT8                       UnusedUpdSpace1;
 
 /** Offset 0x0C14 - Ch Hash Mask
   Set the BIT(s) to be included in the XOR function. NOTE BIT mask corresponds to
@@ -4290,7 +4274,7 @@ typedef struct {
 
 /** Offset 0x0C16
 **/
-  UINT8                       UnusedUpdSpace8[2];
+  UINT8                       UnusedUpdSpace2[2];
 
 /** Offset 0x0C18 - Base reference clock value
   Base reference clock value, in Hertz(Default is 125Hz)
