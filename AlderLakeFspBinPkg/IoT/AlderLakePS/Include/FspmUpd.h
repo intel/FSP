@@ -4021,190 +4021,196 @@ typedef struct {
 **/
   UINT32                      EccErrInjCount;
 
-/** Offset 0x0B34 - Frequency Limit for 2DPC Mixed or non-POR Config
+/** Offset 0x0B34 - EccErrInjMcSelect
+  Select which Memory Controller to inject ECC errors. 0=MC0 Only, 1=MC1 Only, 2=Both
+  0:MC0 Only, 1:MC1 Only, 2:Both MC0 and MC1
+**/
+  UINT8                       EccErrInjMcSelect;
+
+/** Offset 0x0B35
+**/
+  UINT8                       UnusedUpdSpace5;
+
+/** Offset 0x0B36 - Frequency Limit for 2DPC Mixed or non-POR Config
   Frequency Limit for 2DPC Mixed or non-POR Config. 0: Auto (default), otherwise a
   frequency in MT/s
 **/
   UINT16                      FreqLimitMixedConfig;
 
-/** Offset 0x0B36 - First Dimm BitMask
+/** Offset 0x0B38 - First Dimm BitMask
   Defines which DIMM should be populated first on a 2DPC board. Bit0: MC0 DIMM0, Bit1:
   MC0 DIMM1, Bit2: MC1 DIMM0, Bit3: MC1 DIMM1. For each MC, the first DIMM to be
   populated should be set to '1'
 **/
   UINT8                       FirstDimmBitMask;
 
-/** Offset 0x0B37 - SAGV Switch Factor IA DDR BW
+/** Offset 0x0B39 - SAGV Switch Factor IA DDR BW
   SAGV Switch Factor IA DDR BW: IA DDR load percentage when system switch to high
   SAGV point from 1 to 50%.
 **/
   UINT8                       SagvSwitchFactorIA;
 
-/** Offset 0x0B38 - SAGV Switch Factor GT DDR BW
+/** Offset 0x0B3A - SAGV Switch Factor GT DDR BW
   SAGV Switch Factor GT DDR BW: GT DDR load percentage when system switch to high
   SAGV point from 1 to 50%.
 **/
   UINT8                       SagvSwitchFactorGT;
 
-/** Offset 0x0B39 - SAGV Switch Factor IO DDR BW
+/** Offset 0x0B3B - SAGV Switch Factor IO DDR BW
   SAGV Switch Factor IO DDR BW: IO DDR load percentage when system switch to high
   SAGV point from 1 to 50%.
 **/
   UINT8                       SagvSwitchFactorIO;
 
-/** Offset 0x0B3A - SAGV Switch Factor IA and GT Stall
+/** Offset 0x0B3C - SAGV Switch Factor IA and GT Stall
   SAGV Switch Factor IA and GT Stall: IA and GT percentage when system switch to high
   SAGV point from 1 to 50%.
 **/
   UINT8                       SagvSwitchFactorStall;
 
-/** Offset 0x0B3B - Threshold For Switch Down
+/** Offset 0x0B3D - Threshold For Switch Down
   SAGV heuristics down control: Duration in ms of low activity after which SAGV will
   switch down, from 1 to 50ms.
 **/
   UINT8                       SagvHeuristicsDownControl;
 
-/** Offset 0x0B3C - Threshold For Switch Up
+/** Offset 0x0B3E - Threshold For Switch Up
   SAGV heuristics up control: Duration in ms of low activity after which SAGV will
   switch up, from 1 to 50ms.
 **/
   UINT8                       SagvHeuristicsUpControl;
 
-/** Offset 0x0B3D
+/** Offset 0x0B3F
 **/
   UINT8                       Rsvd31;
 
-/** Offset 0x0B3E - Frequency Limit for Mixed 2DPC DDR5 1 Rank 8GB and 8GB
+/** Offset 0x0B40 - Frequency Limit for Mixed 2DPC DDR5 1 Rank 8GB and 8GB
   Frequency Limit for 2DPC Mixed or non-POR Config. 0: Auto, otherwise a frequency
   in MT/s, default is 2000
 **/
   UINT16                      FreqLimitMixedConfig_1R1R_8GB;
 
-/** Offset 0x0B40 - Frequency Limit for Mixed 2DPC DDR5 1 Rank 16GB and 16GB
+/** Offset 0x0B42 - Frequency Limit for Mixed 2DPC DDR5 1 Rank 16GB and 16GB
   Frequency Limit for 2DPC Mixed or non-POR Config. 0: Auto, otherwise a frequency
   in MT/s, default is 2000
 **/
   UINT16                      FreqLimitMixedConfig_1R1R_16GB;
 
-/** Offset 0x0B42 - Frequency Limit for Mixed 2DPC DDR5 1 Rank 8GB and 16GB
+/** Offset 0x0B44 - Frequency Limit for Mixed 2DPC DDR5 1 Rank 8GB and 16GB
   Frequency Limit for 2DPC Mixed or non-POR Config. 0: Auto, otherwise a frequency
   in MT/s, default is 2000
 **/
   UINT16                      FreqLimitMixedConfig_1R1R_8GB_16GB;
 
-/** Offset 0x0B44 - Frequency Limit for Mixed 2DPC DDR5 2 Rank
+/** Offset 0x0B46 - Frequency Limit for Mixed 2DPC DDR5 2 Rank
   Frequency Limit for 2DPC Mixed or non-POR Config. 0: Auto, otherwise a frequency
   in MT/s, default is 2000
 **/
   UINT16                      FreqLimitMixedConfig_2R2R;
 
-/** Offset 0x0B46 - DMI Hw Eq Gen3 CoeffList Cm
+/** Offset 0x0B48 - DMI Hw Eq Gen3 CoeffList Cm
   PCH_DMI_EQ_PARAM. Coefficient C-1.
 **/
   UINT8                       PchDmiHwEqGen3CoeffListCm[8];
 
-/** Offset 0x0B4E - DMI Hw Eq Gen3 CoeffList Cp
+/** Offset 0x0B50 - DMI Hw Eq Gen3 CoeffList Cp
   PCH_DMI_EQ_PARAM. Coefficient C+1.
 **/
   UINT8                       PchDmiHwEqGen3CoeffListCp[8];
 
-/** Offset 0x0B56 -  LCT Command eyewidth
+/** Offset 0x0B58 -  LCT Command eyewidth
    LCT Command eyewidth. 0: Auto, otherwise eyewidth , default is 96
 **/
   UINT16                      LctCmdEyeWidth;
 
-/** Offset 0x0B58 - For LPDDR Only: Throttler CKEMin Timer
+/** Offset 0x0B5A - For LPDDR Only: Throttler CKEMin Timer
   For LPDDR Only: Timer value for CKEMin, range[255;0]. Reqd min of SC_ROUND_T + BYTE_LENGTH
   (4). Dfault is 0x00
 **/
   UINT8                       ThrtCkeMinTmrLpddr;
 
-/** Offset 0x0B59 - First ECC Dimm BitMask
+/** Offset 0x0B5B - First ECC Dimm BitMask
   Defines which ECC DIMM should be populated first on a 2DPC board. Bit0: MC0 DIMM0,
   Bit1: MC0 DIMM1, Bit2: MC1 DIMM0, Bit3: MC1 DIMM1. For each MC, the first DIMM
   to be populated should be set to '1'
 **/
   UINT8                       FirstDimmBitMaskEcc;
 
-/** Offset 0x0B5A -  LP5 Bank Mode
+/** Offset 0x0B5C -  LP5 Bank Mode
   LP5 Bank Mode. 0: Auto, 1: 8 Bank Mode, 2: 16 Bank Mode, 3: BG Mode, default is 0
   0:Auto, 1:8 Bank Mode, 2:16 Bank Mode, 3:BG Mode
 **/
   UINT8                       Lp5BankMode;
 
-/** Offset 0x0B5B - Write DS Training
+/** Offset 0x0B5D - Write DS Training
   Enable/Disable Write DS Training
   $EN_DIS
 **/
   UINT8                       WRDS;
 
-/** Offset 0x0B5C - SAM Overlaoding
+/** Offset 0x0B5E - SAM Overlaoding
   Enable: copy the sagv frequency point. Disable: not copy.
   $EN_DIS
 **/
   UINT8                       OverloadSAM;
 
-/** Offset 0x0B5D - Time Measure
+/** Offset 0x0B5F - Time Measure
   Time Measure: 0(Default)=Disable, 1=Enable
   $EN_DIS
 **/
   UINT8                       MrcTimeMeasure;
 
-/** Offset 0x0B5E -  Dfe Gain
+/** Offset 0x0B60 -  Dfe Gain
    Dfe Gain. 0:0 default value, 1: 1, 2: 2, 3: 3, 9: -1, 10: -2, 11: -3
   0:0, 1:1, 2:2, 3:3, 9:-1, 10:-2, 11:-3
 **/
   UINT8                       DfeGain;
 
-/** Offset 0x0B5F - CsPiStartHighinEct
+/** Offset 0x0B61 - CsPiStartHighinEct
   Cs Pi Start with High value in Ect: 0(Default)=Disable, 1=Enable
   $EN_DIS
 **/
   UINT8                       CsPiStartHighinEct;
 
-/** Offset 0x0B60 - Use user provided power weights, and channel power floor values
+/** Offset 0x0B62 - Use user provided power weights, and channel power floor values
   Enables/Disable Use user provided power weights and channel power floor values
   $EN_DIS
 **/
   UINT8                       UserPowerWeightsEn;
 
-/** Offset 0x0B61 - DisableFGRAndPBRWA
+/** Offset 0x0B63 - DisableFGRAndPBRWA
   Disable FGR And PBR WA: 0(Default)=Disable, 1=Enable
   $EN_DIS
 **/
   UINT8                       DisableFGRAndPBRWA;
 
-/** Offset 0x0B62 - McParity
+/** Offset 0x0B64 - McParity
   CMI/MC Parity Control: 1(Default)=Enable
   $EN_DIS
 **/
   UINT8                       McParity;
 
-/** Offset 0x0B63 - IbeccParity
+/** Offset 0x0B65 - IbeccParity
   In-Band ECC Parity Control: 1(Default)=Enable
   $EN_DIS
 **/
   UINT8                       IbeccParity;
 
-/** Offset 0x0B64 - LowerBasicMemTestSize
+/** Offset 0x0B66 - LowerBasicMemTestSize
   Reduce BasicMemoryTest size WA: 0(Default)=Disable, 1=Enable
   $EN_DIS
 **/
   UINT8                       LowerBasicMemTestSize;
 
-/** Offset 0x0B65 - DisableSagvReorder
+/** Offset 0x0B67 - DisableSagvReorder
   Disable Sagv reorder on warm boot: 0(Default)=Disable, 1=Enable
   $EN_DIS
 **/
   UINT8                       DisableSagvReorder;
 
-/** Offset 0x0B66
+/** Offset 0x0B68
 **/
   UINT8                       Rsvd32[4];
-
-/** Offset 0x0B6A
-**/
-  UINT8                       UnusedUpdSpace5[2];
 
 /** Offset 0x0B6C
 **/
